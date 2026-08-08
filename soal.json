@@ -1,741 +1,756 @@
 {
-  "elektronika": [
+  "dasar": [
     {
-      "q": "Pada rangkaian voltage divider dengan R1=10kΩ dan R2=5kΩ, berapakah tegangan output jika Vin=12V?",
-      "opts": ["3V", "4V", "6V", "8V"],
-      "ans": 1
-    },
-    {
-      "q": "Kapasitor 100µF dicharge ke 5V, lalu dilepas dari sumber. Apa yang terjadi jika disambung ke resistor 1kΩ?",
+      "q": "Pada sensor ultrasonik HC-SR04, jika waktu echo yang terdeteksi adalah 2.9 ms, berapa estimasi jarak objek (kecepatan suara 343 m/s)?",
       "opts": [
-        "Tegangan langsung 0V",
-        "Tegangan turun secara eksponensial menuju 0V dengan time constant 0.1 detik",
-        "Kapasitor mengisi ulang diri sendiri",
-        "Tegangan naik dua kali lipat"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa fungsi pull-up resistor pada pin INPUT Arduino yang terhubung ke tombol?",
-      "opts": [
-        "Membatasi arus agar tombol tidak rusak",
-        "Memastikan pin terbaca HIGH saat tombol tidak ditekan, mencegah floating state",
-        "Menurunkan tegangan ke 3.3V",
-        "Mempercepat respons tombol"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Sebuah LED merah memiliki Vf=2V dan If=20mA. Dihubungkan ke Arduino 5V. Berapa nilai resistor seri yang tepat?",
-      "opts": ["100Ω", "150Ω", "200Ω", "220Ω"],
-      "ans": 3
-    },
-    {
-      "q": "Apa perbedaan utama antara transistor BJT dan MOSFET dalam kontrol motor DC?",
-      "opts": [
-        "BJT lebih tahan panas dari MOSFET",
-        "MOSFET dikontrol oleh tegangan gate, BJT dikontrol oleh arus base — MOSFET lebih efisien untuk switching cepat",
-        "BJT digunakan untuk AC, MOSFET untuk DC",
-        "Tidak ada perbedaan signifikan untuk motor DC"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan H-Bridge dalam kontrol motor DC?",
-      "opts": [
-        "Jembatan penyearah arus AC ke DC",
-        "Rangkaian 4 switch yang memungkinkan motor berputar maju dan mundur dengan membalik polaritas",
-        "Filter tegangan untuk motor",
-        "Penguat arus untuk sensor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Kenapa kapasitor bypass/decoupling 100nF sering dipasang dekat IC atau mikrokontroler?",
-      "opts": [
-        "Untuk menyimpan energi cadangan",
-        "Untuk menyaring noise tegangan frekuensi tinggi agar pasokan daya ke IC bersih dan stabil",
-        "Untuk memperlambat arus agar IC tidak kelebihan",
-        "Untuk mengkonversi tegangan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Sensor ultrasonik HC-SR04 menggunakan rumus jarak = (waktu × kecepatan suara) / 2. Mengapa dibagi 2?",
-      "opts": [
-        "Karena sensor bekerja setengah efisiensi",
-        "Karena sinyal menempuh jarak pergi-pulang (ke objek lalu kembali), sehingga waktu total harus dibagi 2",
-        "Karena kecepatan suara di udara setengah dari kecepatan cahaya",
-        "Karena mikrokontroler membaca dua kali"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang terjadi pada motor DC jika dibalik polaritasnya?",
-      "opts": [
-        "Motor rusak permanen",
-        "Motor berhenti",
-        "Motor berputar ke arah sebaliknya",
-        "Kecepatan motor berkurang setengah"
-      ],
-      "ans": 2
-    },
-    {
-      "q": "Apa itu back-EMF (back electromotive force) pada motor DC?",
-      "opts": [
-        "Tegangan lebih dari baterai",
-        "Tegangan yang dihasilkan motor berputar yang melawan tegangan sumber, menyebabkan lonjakan saat motor tiba-tiba dihentikan",
-        "Arus balik ke sensor",
-        "Noise dari PWM"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Mengapa dioda flyback/freewheeling dipasang paralel dengan motor DC atau relay?",
-      "opts": [
-        "Untuk mempercepat motor",
-        "Untuk melindungi rangkaian dari lonjakan tegangan back-EMF saat motor/relay dimatikan",
-        "Untuk mengatur arah putaran",
-        "Untuk mengukur arus motor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "ADC (Analog to Digital Converter) 10-bit pada Arduino Uno menghasilkan nilai 0-1023. Jika tegangan referensi 5V, tegangan input 2.5V menghasilkan nilai ADC berapa?",
-      "opts": ["256", "511", "512", "1023"],
-      "ans": 2
-    },
-    {
-      "q": "Apa fungsi komponen opto-isolator/optocoupler?",
-      "opts": [
-        "Mengkonversi cahaya menjadi listrik untuk sensor",
-        "Mengisolasi dua rangkaian secara elektrik sambil tetap mentransfer sinyal melalui cahaya",
-        "Memperkuat sinyal optik",
-        "Mengubah sinyal digital ke analog"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Protokol komunikasi I2C menggunakan berapa jalur kabel data?",
-      "opts": [
-        "1 jalur (SDA saja)",
-        "2 jalur (SDA dan SCL)",
-        "3 jalur (SDA, SCL, SS)",
-        "4 jalur (MOSI, MISO, SCK, SS)"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa perbedaan protokol SPI dan I2C?",
-      "opts": [
-        "SPI lebih lambat tapi bisa menghubungkan lebih banyak perangkat",
-        "SPI menggunakan 4 jalur dan lebih cepat, I2C hanya 2 jalur dan mendukung banyak perangkat dengan alamat unik",
-        "I2C tidak bisa digunakan di Arduino",
-        "SPI hanya untuk sensor, I2C hanya untuk motor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Saat membaca sensor NTC thermistor, nilainya turun saat suhu naik. Ini disebut?",
-      "opts": [
-        "Positive Temperature Coefficient",
-        "Negative Temperature Coefficient — resistansi berbanding terbalik dengan suhu",
-        "Linear Temperature Response",
-        "Zero Temperature Drift"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa itu PWM frequency dan mengapa penting untuk motor DC?",
-      "opts": [
-        "Tegangan rata-rata motor; tidak berpengaruh pada bunyi",
-        "Frekuensi switching sinyal PWM; frekuensi rendah menyebabkan motor mendengung/bergetar, frekuensi tinggi lebih senyap",
-        "Kecepatan rotasi maksimum motor",
-        "Tegangan maksimum yang aman untuk motor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan duty cycle 75% pada sinyal PWM?",
-      "opts": [
-        "Sinyal HIGH selama 75% dari satu periode, LOW selama 25%",
-        "Tegangan output 75% dari tegangan maksimum secara langsung",
-        "Frekuensi 75 Hz",
-        "Motor berputar 75 RPM"
+        "49.7 cm",
+        "99.5 cm",
+        "24.8 cm",
+        "199 cm"
       ],
       "ans": 0
     },
     {
-      "q": "Regulator tegangan LM7805 menghasilkan tegangan output berapa, dan apa kelemahannya?",
+      "q": "Sebuah motor DC 12V menarik arus 2A saat berbeban. Berapa daya yang dikonsumsi dan panas yang dihasilkan jika efisiensi motor 75%?",
       "opts": [
-        "3.3V; tidak bisa diatur",
-        "5V; efisiensi rendah karena kelebihan tegangan dibuang sebagai panas (linear regulator)",
-        "5V; tidak tahan arus tinggi",
-        "12V; membutuhkan heatsink besar"
+        "Daya 24W, panas 6W",
+        "Daya 24W, panas 18W",
+        "Daya 12W, panas 3W",
+        "Daya 24W, panas 12W"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Mengapa sinyal output dari sensor analog (0-5V) tidak boleh langsung disambungkan ke pin digital Arduino 3.3V tanpa proteksi?",
+      "opts": [
+        "Karena perbedaan frekuensi sinyal",
+        "Karena tegangan 5V dapat merusak GPIO 3.3V yang toleransinya lebih rendah",
+        "Karena resistance input tidak match",
+        "Karena Arduino tidak bisa baca sinyal analog"
       ],
       "ans": 1
     },
     {
-      "q": "Kenapa buck converter lebih efisien dibanding linear regulator seperti LM7805?",
+      "q": "Kapasitor 100µF dipasang paralel dengan supply motor DC pada robot. Apa fungsi utamanya?",
       "opts": [
-        "Buck converter menghasilkan panas lebih sedikit",
-        "Buck converter menggunakan switching cepat untuk mengkonversi tegangan dengan efisiensi tinggi (>90%), bukan membuang kelebihan energi sebagai panas",
-        "Buck converter lebih murah",
-        "Buck converter tidak perlu kapasitor"
+        "Meningkatkan torsi motor",
+        "Menstabilkan tegangan supply dengan menyerap voltage spike saat motor start/stop",
+        "Menyimpan cadangan energi jangka panjang",
+        "Memfilter sinyal PWM dari motor driver"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu UART dan berapa jalur minimum yang dibutuhkan untuk komunikasi dua arah?",
+      "q": "Pada L298N motor driver, jika IN1=HIGH, IN2=LOW dan EN=PWM 50%, apa yang terjadi?",
       "opts": [
-        "Universal Asynchronous Receiver Transmitter; 1 jalur",
-        "Universal Asynchronous Receiver Transmitter; 2 jalur (TX dan RX)",
-        "Universal Analog Radio Transmitter; 3 jalur",
-        "Unified Arduino Radio Terminal; 4 jalur"
+        "Motor berhenti",
+        "Motor berputar maju dengan setengah kecepatan",
+        "Motor berputar mundur penuh",
+        "Motor brake/pengereman"
       ],
       "ans": 1
     },
     {
-      "q": "Pada sensor IMU (Inertial Measurement Unit), gyroscope mengukur apa?",
+      "q": "Resistor pull-up 10kΩ dipasang pada pin input digital yang terhubung ke tombol. Ketika tombol tidak ditekan, berapa arus yang mengalir?",
       "opts": [
-        "Percepatan linear dalam m/s²",
-        "Kecepatan sudut rotasi dalam °/s atau rad/s",
-        "Medan magnet dalam Tesla",
-        "Tekanan udara dalam Pascal"
+        "0 mA (tidak ada arus)",
+        "0.5 mA dari VCC ke GND melalui resistor",
+        "1 mA dari resistor ke pin",
+        "Arus tak terbatas"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang dimaksud dengan sensor fusion pada IMU?",
+      "q": "Dalam komunikasi I2C, jika dua slave memiliki alamat yang sama pada bus yang sama, apa yang terjadi?",
       "opts": [
-        "Menggabungkan dua IMU menjadi satu",
-        "Menggabungkan data dari accelerometer, gyroscope, dan magnetometer menggunakan algoritma (seperti Kalman/Mahony filter) untuk mendapatkan orientasi yang akurat",
-        "Mengkalibrasi IMU dengan panas",
-        "Menyambungkan IMU ke GPS"
+        "Keduanya merespons serentak menyebabkan bus collision dan data corrupt",
+        "Slave pertama akan otomatis dimatikan",
+        "Master akan memilih salah satu secara acak",
+        "Komunikasi masih berjalan normal dengan prioritas ke salah satu"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Tegangan drop pada dioda Schottky adalah ~0.2V sedangkan dioda biasa ~0.7V. Mengapa Schottky sering dipilih untuk flyback diode pada motor DC?",
+      "opts": [
+        "Karena lebih murah dan mudah didapat",
+        "Karena tegangan drop kecil dan switching lebih cepat meminimalkan disipasi daya dari back-EMF",
+        "Karena tahan arus lebih tinggi",
+        "Karena lebih kecil ukurannya"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu brown-out detection pada mikrokontroler?",
+      "q": "Sebuah IMU mengembalikan nilai akselerometer (1.02g, -0.05g, 0.08g) dalam kondisi diam. Apa yang bisa disimpulkan?",
       "opts": [
-        "Deteksi ketika PCB terbakar",
-        "Fitur yang mereset mikrokontroler secara otomatis jika tegangan supply turun di bawah ambang minimum agar tidak terjadi perilaku tak terduga",
-        "Deteksi ketika baterai habis total",
-        "Fitur penghemat daya saat tidak ada aktivitas"
+        "Robot sedang bergerak maju",
+        "Sensor terpasang hampir vertikal dengan sumbu X searah gravitasi, ada sedikit offset kalibrasi",
+        "IMU rusak karena total akselerasi tidak tepat 1g",
+        "Robot sedang berputar"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa kabel motor DC sebaiknya dipilin (twisted pair) dan dijauhkan dari kabel sinyal sensor?",
+      "q": "Pada robot line follower dengan 5 sensor IR, pembacaan (0,1,1,0,0) menunjukkan apa dan bagaimana robot seharusnya bergerak?",
       "opts": [
-        "Agar lebih rapi",
-        "Motor menghasilkan EMI (Electromagnetic Interference) yang dapat menginduksi noise pada kabel sinyal sensor di dekatnya, menyebabkan pembacaan sensor error",
-        "Agar kabel lebih kuat",
-        "Agar motor berputar lebih cepat"
+        "Garis di kiri-tengah, robot belok kiri",
+        "Garis di kanan-tengah, robot belok kanan",
+        "Robot di atas garis sempurna, jalan lurus",
+        "Sensor error, berhenti"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa ESC (Electronic Speed Controller) untuk motor brushless memerlukan kalibrasi sebelum digunakan?",
+      "opts": [
+        "Agar bisa berkomunikasi dengan flight controller",
+        "Untuk mempelajari range sinyal PWM dari receiver/controller (throttle min-max) agar respons linear",
+        "Untuk memprogram jumlah pole motor",
+        "Agar tidak overheat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sebuah LiPo 3S 11.1V 2200mAh digunakan pada robot dengan konsumsi rata-rata 5A. Berapa estimasi runtime?",
+      "opts": [
+        "22 menit",
+        "26.4 menit",
+        "11 menit",
+        "44 menit"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa risiko discharge LiPo battery di bawah voltase cutoff (biasanya 3.0V/cell)?",
+      "opts": [
+        "Baterai hanya kehilangan sedikit kapasitas",
+        "Kerusakan irreversible pada sel, kapasitas turun drastis, dan risiko swelling/fire",
+        "Baterai otomatis mati tanpa kerusakan",
+        "Hanya memperpendek umur siklus sedikit"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Dalam desain PCB robot, mengapa decoupling capacitor (100nF) ditempatkan sedekat mungkin dengan pin VCC IC?",
+      "opts": [
+        "Untuk mempermudah routing kabel",
+        "Untuk meminimalkan inductance jalur PCB sehingga efektif meredam noise high-frequency pada supply IC",
+        "Karena aturan standar desain saja",
+        "Untuk melindungi IC dari ESD"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor MPU-6050 menggabungkan akselerometer dan giroskop 3-axis. Apa keunggulan penggunaan sensor fusion (complementary/Kalman filter) dibanding menggunakan salah satu sensor saja?",
+      "opts": [
+        "Menghemat pin I/O mikrokontroler",
+        "Menggabungkan keunggulan akselerometer (stabil jangka panjang) dan giroskop (respons cepat) untuk estimasi orientasi lebih akurat",
+        "Mengurangi konsumsi daya",
+        "Mempercepat komunikasi I2C"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Optical encoder menghasilkan 1000 pulsa per rotasi pada roda diameter 6.5cm. Robot bergerak sejauh 1 meter; berapa pulsa yang harus terhitung?",
+      "opts": [
+        "4,900 pulsa",
+        "490 pulsa",
+        "9,800 pulsa",
+        "245 pulsa"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Pada komunikasi SPI, apa perbedaan mode CPOL dan CPHA dan mengapa ini kritis saat menghubungkan sensor berbeda?",
+      "opts": [
+        "CPOL dan CPHA hanya mempengaruhi kecepatan transfer data",
+        "CPOL menentukan polaritas clock idle, CPHA menentukan edge sampling; mismatch menyebabkan data corrupt karena bit ter-sample pada waktu salah",
+        "Keduanya hanya pengaturan software tanpa efek nyata",
+        "CPOL untuk master, CPHA untuk slave"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Robot menggunakan sensor ToF (Time of Flight) VL53L1X dan HC-SR04 untuk deteksi jarak. Apa kelebihan ToF dibanding ultrasonik dalam aplikasi robotik?",
+      "opts": [
+        "ToF jauh lebih murah",
+        "ToF memiliki akurasi lebih tinggi, beam angle lebih sempit, tidak terpengaruh gema/multipath, dan update rate lebih cepat",
+        "Ultrasonik lebih akurat untuk jarak dekat",
+        "Keduanya identik dalam performa"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Pada robot dengan differential drive, jika roda kiri berputar 5 rad/s dan kanan 3 rad/s dengan wheelbase 20cm dan jari-jari roda 3cm, berapa radius belok robot?",
+      "opts": [
+        "30 cm",
+        "15 cm",
+        "20 cm",
+        "10 cm"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Mengapa motor brushless lebih disukai daripada motor brushed untuk drone/UAV?",
+      "opts": [
+        "Motor brushless lebih murah",
+        "Efisiensi lebih tinggi, umur lebih panjang (tidak ada brush yang aus), rasio power/weight lebih baik, dan penanganan panas lebih baik",
+        "Lebih mudah dikendalikan dengan PWM biasa",
+        "Torsi lebih rendah cocok untuk propeller"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Dalam implementasi PID controller untuk robot, integral windup adalah masalah di mana...",
+      "opts": [
+        "Nilai Kp terlalu besar menyebabkan overshoot",
+        "Term integral terus terakumulasi saat actuator saturasi sehingga saat error hilang, integral yang besar menyebabkan overshoot besar",
+        "Derivatif bereaksi terlalu cepat terhadap noise",
+        "Setpoint berubah terlalu cepat untuk sistem"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "LIDAR 2D pada robot menghasilkan point cloud 360° dengan resolusi sudut 0.33°. Berapa data points per scan?",
+      "opts": [
+        "360 points",
+        "1,091 points",
+        "720 points",
+        "3,600 points"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa robot SLAM (Simultaneous Localization and Mapping) membutuhkan dua proses sekaligus dan bukan berurutan?",
+      "opts": [
+        "Untuk menghemat memori",
+        "Karena lokalisasi membutuhkan peta sedangkan mapping membutuhkan posisi; keduanya saling bergantung sehingga harus dilakukan bersama secara iteratif",
+        "Karena sensor hanya bisa bekerja saat bergerak",
+        "Untuk mempercepat komputasi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Pada motor stepper dengan resolusi 1.8°/step, berapa langkah yang dibutuhkan untuk rotasi 270° dengan microstepping 1/16?",
+      "opts": [
+        "150 langkah",
+        "2,400 langkah",
+        "300 langkah",
+        "1,200 langkah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Komunikasi RS-485 dipilih untuk robot industri jarak jauh dibanding TTL UART karena...",
+      "opts": [
+        "RS-485 lebih mudah diimplementasikan",
+        "RS-485 menggunakan differential signaling yang tahan noise, mendukung multi-drop (32+ node), dan jangkauan hingga 1200m",
+        "RS-485 memiliki baud rate lebih tinggi",
+        "RS-485 tidak memerlukan terminasi"
       ],
       "ans": 1
     }
   ],
-  "pemrograman": [
+  "programmer": [
     {
-      "q": "Apa yang terjadi jika program Arduino menggunakan delay() panjang saat juga harus membaca tombol secara responsif?",
+      "q": "Dalam FreeRTOS pada ESP32, perbedaan antara vTaskDelay() dan vTaskDelayUntil() adalah...",
       "opts": [
-        "Tombol tetap terbaca normal",
-        "Penekanan tombol bisa terlewat karena delay() memblokir seluruh eksekusi program (blocking)",
-        "Arduino crash",
-        "Kecepatan loop bertambah"
+        "vTaskDelayUntil lebih presisi karena menghitung waktu berdasarkan tick absolut, bukan relatif dari selesainya eksekusi",
+        "vTaskDelay lebih presisi untuk timing kritis",
+        "Keduanya identik secara fungsional",
+        "vTaskDelayUntil hanya untuk task prioritas tinggi"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Mengapa penggunaan String class Arduino harus dihindari pada sistem real-time dengan memori terbatas?",
+      "opts": [
+        "String class terlalu lambat untuk operasi dasar",
+        "Dynamic memory allocation dari String menyebabkan heap fragmentation yang dapat menimbulkan crash tak terduga setelah berjalan lama",
+        "String tidak support karakter Unicode",
+        "Karena String tidak bisa dibandingkan dengan =="
       ],
       "ans": 1
     },
     {
-      "q": "Teknik non-blocking menggunakan millis() bekerja dengan prinsip?",
+      "q": "Pada implementasi PID di mikrokontroler, mengapa derivatif biasanya dihitung dari perubahan measurement (process variable) bukan dari perubahan error?",
       "opts": [
-        "Menghentikan semua proses lain",
-        "Menyimpan timestamp kapan aksi terakhir dilakukan, lalu membandingkan selisih waktu saat ini tanpa menghentikan loop",
-        "Menggunakan interrupt eksternal",
-        "Menggunakan timer hardware langsung"
+        "Karena lebih mudah dihitung",
+        "Untuk menghindari 'derivative kick' - lonjakan output besar saat setpoint berubah tiba-tiba",
+        "Karena pengukuran lebih akurat dari error",
+        "Untuk mengurangi integral windup"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu interrupt (ISR - Interrupt Service Routine) pada Arduino?",
+      "q": "Dalam protokol MAVLink untuk drone, heartbeat message dikirim setiap 1 detik. Apa yang terjadi jika ground station tidak menerima heartbeat selama 3 detik?",
       "opts": [
-        "Cara menghentikan program secara paksa",
-        "Fungsi yang otomatis dijalankan saat event tertentu terjadi (misal: sinyal pada pin), menghentikan sementara kode utama",
-        "Error yang terjadi saat loop berjalan",
-        "Cara reset Arduino dari jarak jauh"
+        "Drone otomatis landing",
+        "Flight controller mendeteksi connection loss dan mengeksekusi failsafe behavior (RTL/landing/hover sesuai konfigurasi)",
+        "Sistem hanya memunculkan peringatan",
+        "Drone terus terbang normal"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa variabel yang diubah di dalam ISR harus dideklarasikan sebagai 'volatile'?",
+      "q": "Volatile keyword pada variabel di Arduino/embedded C dibutuhkan ketika...",
       "opts": [
-        "Agar nilainya tidak bisa diubah dari luar ISR",
-        "Agar compiler tidak mengoptimasi/meng-cache variabel tersebut, sehingga nilai terbaru selalu dibaca dari RAM",
-        "Agar variabel tersimpan di EEPROM",
-        "Agar variabel bisa diakses dari semua fungsi"
+        "Variabel berukuran besar",
+        "Variabel diakses dari ISR (Interrupt Service Routine) dan main loop sehingga compiler tidak melakukan optimisasi cache register yang menyebabkan nilai stale",
+        "Variabel bertipe float",
+        "Variabel menyimpan string"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu PID controller dalam konteks robot?",
+      "q": "Pada ROS2, perbedaan antara topic dan service adalah...",
       "opts": [
-        "Program Interface Driver — cara menghubungkan sensor ke mikrokontroler",
-        "Proportional-Integral-Derivative — algoritma kontrol yang menghitung koreksi berdasarkan error, akumulasi error, dan laju perubahan error",
-        "Parallel Input Device — cara membaca banyak sensor sekaligus",
-        "Program Instruction Debugger"
+        "Topic lebih cepat dari service",
+        "Topic adalah publish-subscribe asinkron untuk data stream, service adalah request-response sinkron untuk operasi yang membutuhkan konfirmasi",
+        "Service untuk data sensor, topic untuk kontrol motor",
+        "Keduanya sama tapi service lebih secure"
       ],
       "ans": 1
     },
     {
-      "q": "Pada PID, komponen Proportional (P) berfungsi?",
+      "q": "State machine pada robot memiliki state: IDLE, NAVIGATE, OBSTACLE_AVOID, RETURN_HOME. Apa keunggulan pendekatan ini dibanding if-else bercabang?",
       "opts": [
-        "Memperbaiki error yang terakumulasi dari masa lalu",
-        "Memberikan koreksi sebanding langsung dengan besarnya error saat ini",
-        "Mengantisipasi perubahan error di masa depan",
-        "Mengatur kecepatan sampling sensor"
+        "State machine lebih cepat dieksekusi",
+        "State machine membuat behavior lebih terstruktur, deterministik, mudah di-debug, dan mencegah kondisi tak terduga akibat kombinasi flag yang salah",
+        "State machine menggunakan lebih sedikit memori",
+        "Tidak ada keunggulan signifikan"
       ],
       "ans": 1
     },
     {
-      "q": "Pada PID, komponen Integral (I) berguna untuk?",
+      "q": "Implementasi UART komunikasi tanpa interrupt pada loop utama berisiko kehilangan data. Mengapa interrupt-driven UART lebih baik?",
       "opts": [
-        "Mempercepat respons terhadap error besar",
-        "Menghilangkan steady-state error (error kecil yang persisten) dengan menjumlahkan error dari waktu ke waktu",
-        "Menstabilkan respons agar tidak overshoot",
-        "Mengukur kecepatan motor"
+        "Interrupt lebih mudah diimplementasikan",
+        "ISR memproses karakter masuk segera saat tersedia tanpa polling, sehingga main loop bebas untuk tugas lain tanpa ada karakter yang terlewat",
+        "Interrupt menggunakan lebih sedikit baud rate",
+        "Interrupt mengurangi jumlah byte yang dikirim"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang dimaksud dengan overshoot pada sistem kontrol PID?",
+      "q": "Pada implementasi DMA (Direct Memory Access) untuk ADC sampling di STM32, apa keunggulan dibanding software polling?",
       "opts": [
-        "Error yang tidak pernah hilang",
-        "Kondisi di mana nilai output melewati nilai target sebelum akhirnya stabil",
-        "Motor berputar terlalu lambat",
-        "Sinyal sensor yang terlalu besar"
+        "DMA menghasilkan nilai ADC lebih akurat",
+        "DMA mentransfer data ADC ke memori secara otomatis tanpa intervensi CPU, membebaskan CPU untuk komputasi kontrol sambil sampling berjalan secara paralel",
+        "DMA hanya bisa digunakan untuk kecepatan tinggi",
+        "DMA mengurangi noise pada ADC"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu state machine (mesin keadaan) dalam pemrograman robot?",
+      "q": "Checksums (CRC) digunakan pada protokol komunikasi robot. Jika byte data adalah [0x41, 0x42, 0x43] dan CRC8 = 0x7A, apa yang terjadi jika salah satu byte berubah menjadi 0x41, 0x43, 0x43?",
       "opts": [
-        "Cara mengatur tegangan motor",
-        "Pola desain program di mana robot memiliki sejumlah 'state' (kondisi) terdefinisi dan berpindah antar state berdasarkan event/kondisi tertentu",
-        "Cara menyimpan data ke EEPROM",
-        "Cara mengontrol banyak motor sekaligus"
+        "Data tetap valid karena hanya satu byte berubah",
+        "Receiver menghitung CRC dari data baru dan mendapat nilai berbeda dari 0x7A, mendeteksi error dan meminta retransmisi atau membuang paket",
+        "CRC hanya mendeteksi jika lebih dari 2 byte berubah",
+        "CRC tidak bisa mendeteksi perubahan pada byte tengah"
       ],
       "ans": 1
     },
     {
-      "q": "Keuntungan utama menggunakan state machine pada pemrograman robot adalah?",
+      "q": "Dalam robot vision, homogeneous coordinates digunakan untuk transformasi. Mengapa representasi 4x4 matrix lebih disukai daripada 3x3 rotation + translation terpisah?",
       "opts": [
-        "Kode menjadi lebih pendek",
-        "Perilaku robot menjadi lebih terstruktur, predictable, dan mudah di-debug karena setiap kondisi dan transisinya jelas",
-        "Robot menjadi lebih cepat",
-        "Mengurangi penggunaan memori"
+        "Karena matrix 4x4 lebih mudah diinvers",
+        "Karena matrix 4x4 memungkinkan komposisi transformasi (rotasi + translasi) dengan perkalian matrix tunggal, menyederhanakan rantai kinematik",
+        "Karena lebih hemat memori",
+        "Karena menghindari gimbal lock"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang disimpan di EEPROM Arduino dan mengapa berguna?",
+      "q": "Pada ROS navigation stack, costmap memiliki inflation_radius. Apa efek nilai inflation_radius yang terlalu besar?",
       "opts": [
-        "Program utama; agar bisa dijalankan tanpa USB",
-        "Data yang perlu bertahan saat Arduino dimatikan, seperti konfigurasi atau kalibrasi sensor — berbeda dengan RAM yang hilang saat power off",
-        "Library tambahan",
-        "Variabel lokal fungsi"
+        "Robot bergerak lebih cepat",
+        "Robot menganggap area lebih luas sebagai terhalang sehingga path lebih jauh dari obstacle tapi robot mungkin tidak bisa melewati celah sempit meski sebenarnya bisa",
+        "Robot lebih akurat menghindari rintangan",
+        "Navigation lebih cepat karena path lebih pendek"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu watchdog timer pada mikrokontroler?",
+      "q": "Watchdog timer pada embedded system robot berfungsi untuk...",
       "opts": [
-        "Timer untuk mengukur waktu eksekusi",
-        "Timer hardware yang mereset mikrokontroler secara otomatis jika program tidak me-reset timer ini dalam interval tertentu, mencegah program hang",
-        "Timer untuk PWM motor",
-        "Timer untuk delay()"
+        "Memantau level baterai",
+        "Mereset mikrokontroler otomatis jika program crash atau hang dengan tidak mereset timer tepat waktu, memastikan sistem selalu recoverable",
+        "Mengatur kecepatan clock CPU",
+        "Memonitor suhu prosesor"
       ],
       "ans": 1
     },
     {
-      "q": "Perbedaan microcontroller (seperti Arduino) dengan microprocessor (seperti Raspberry Pi) dalam konteks robotik?",
+      "q": "Extended Kalman Filter (EKF) untuk robot localization melakukan linearisasi fungsi non-linear. Kapan EKF bisa memberikan estimasi yang buruk?",
       "opts": [
-        "Microcontroller lebih mahal",
-        "Microcontroller memiliki flash, RAM, dan peripheral terintegrasi — cocok untuk real-time control. Microprocessor butuh OS, lebih powerful untuk komputasi berat seperti computer vision",
-        "Microprocessor tidak bisa mengendalikan motor",
-        "Microcontroller bisa menjalankan Linux"
+        "Saat sensor terlalu akurat",
+        "Saat sistem sangat non-linear dan linearisasi (Jacobian) tidak representatif, menyebabkan kovarians estimasi yang tidak akurat dan filter bisa diverge",
+        "Saat data terlalu banyak",
+        "Saat robot bergerak lambat"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu enkapsulasi dalam Object-Oriented Programming (OOP) dan manfaatnya untuk kode robot?",
+      "q": "Pada path planning, A* algorithm menjamin solusi optimal jika heuristic function h(n) bersifat...",
       "opts": [
-        "Cara menyembunyikan kabel di dalam rangka robot",
-        "Pengelompokan data dan fungsi yang berkaitan ke dalam satu objek/class, menyembunyikan detail internal — membuat kode lebih modular dan mudah dikelola",
-        "Cara mengenkripsi kode agar tidak bisa disalin",
-        "Cara mengkompresi ukuran file program"
+        "h(n) selalu sama dengan actual cost",
+        "h(n) admissible (tidak pernah overestimate biaya sebenarnya ke goal), memastikan A* tidak melewatkan path yang lebih pendek",
+        "h(n) selalu bernilai 0",
+        "h(n) selalu overestimate untuk efisiensi"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa komunikasi serial UART antara dua Arduino harus menggunakan baud rate yang sama?",
+      "q": "Dalam implementasi inverse kinematics robot arm, mengapa solusi numerik (iteratif/Jacobian pseudoinverse) lebih umum digunakan daripada solusi analitik untuk arm 7-DOF?",
       "opts": [
-        "Karena aturan pabrik",
-        "Karena UART asinkron — tidak ada clock bersama, sehingga kedua perangkat harus sepakat kecepatan sampling (baud rate) agar bit terbaca dengan benar",
-        "Karena salah satu Arduino akan rusak jika berbeda",
-        "Karena kabel tidak mendukung dua kecepatan"
+        "Karena numerik lebih akurat",
+        "Karena arm 7-DOF redundant memiliki infinite solusi analitik yang sulit dihitung closed-form; numerik bisa menemukan solusi dengan constraints tambahan seperti menghindari singularitas",
+        "Karena solusi analitik lebih lambat",
+        "Karena numerik tidak memerlukan model geometri"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu debouncing pada pembacaan tombol?",
+      "q": "Memory leak pada program robot C++ terjadi ketika... dan dampak jangka panjangnya adalah...",
       "opts": [
-        "Cara mempercepat respons tombol",
-        "Teknik (software atau hardware) untuk menghilangkan pembacaan ganda akibat pantulan sinyal mekanik saat tombol ditekan/dilepas",
-        "Cara mendeteksi tekanan ganda (double press)",
-        "Cara mengkalibrasi sensitivitas tombol"
+        "Stack overflow terjadi; program crash langsung",
+        "Heap memory dialokasikan dengan new/malloc tapi tidak dibebaskan dengan delete/free; heap habis secara bertahap menyebabkan alokasi gagal dan crash setelah runtime panjang",
+        "Variabel global terlalu banyak; memory penuh saat compile",
+        "Loop berjalan terlalu sering; CPU overload"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu pointer dalam bahasa C/C++?",
+      "q": "Pada sistem multi-robot dengan komunikasi WiFi, race condition bisa terjadi ketika dua robot menulis ke shared resource bersamaan. Mekanisme apa yang mencegah ini?",
       "opts": [
-        "Variabel yang menyimpan nilai integer",
-        "Variabel yang menyimpan alamat memori dari variabel lain, memungkinkan akses dan modifikasi data secara langsung di memori",
-        "Nama fungsi yang dipanggil dari ISR",
-        "Jenis array khusus"
+        "Menggunakan WiFi channel berbeda",
+        "Mutual exclusion (mutex/semaphore) memastikan hanya satu thread/proses yang mengakses critical section pada satu waktu",
+        "Menambah bandwidth WiFi",
+        "Menggunakan protokol UDP"
       ],
       "ans": 1
     },
     {
-      "q": "Pada pemrograman embedded, mengapa penggunaan dynamic memory allocation (malloc/new) harus dihindari atau diminimalkan?",
+      "q": "Dalam SLAM berbasis particle filter (FastSLAM), resampling dilakukan ketika effective particle count turun. Apa risiko resampling terlalu sering?",
       "opts": [
-        "Karena terlalu lambat",
-        "Karena RAM sangat terbatas pada mikrokontroler dan alokasi dinamis berisiko menyebabkan fragmentasi memori atau heap/stack collision",
-        "Karena malloc tidak tersedia di Arduino",
-        "Karena hasilnya tidak akurat"
+        "Terlalu banyak komputasi",
+        "Particle impoverishment - partikel dengan bobot rendah tereliminasi sehingga diversity representasi distribusi posterior berkurang dan filter tidak bisa recovery dari error estimasi",
+        "Peta menjadi tidak akurat",
+        "Robot bergerak lebih lambat"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu ROS (Robot Operating System)?",
+      "q": "ROS2 menggunakan DDS (Data Distribution Service) sebagai middleware dibanding ROS1 yang menggunakan roscore. Apa keunggulan arsitektur ini untuk robot?",
       "opts": [
-        "Sistem operasi khusus untuk komputer gaming",
-        "Framework open-source untuk pengembangan software robot yang menyediakan abstraksi hardware, komunikasi antar proses (nodes/topics), dan banyak library siap pakai",
-        "Nama mikrokontroler canggih",
-        "Bahasa pemrograman khusus robot"
+        "DDS lebih mudah dikonfigurasi",
+        "Tidak ada single point of failure (tidak ada roscore), mendukung real-time dengan QoS policies, peer-to-peer discovery, dan lebih scalable untuk multi-robot",
+        "DDS menggunakan bandwidth lebih sedikit",
+        "Kompatibel dengan semua OS secara otomatis"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam ROS, apa itu 'topic'?",
+      "q": "Pada computer vision untuk robot, mengapa ConvNet (CNN) lebih efektif untuk object recognition dibanding traditional feature engineering (SIFT/HOG)?",
       "opts": [
-        "Nama file konfigurasi",
-        "Saluran komunikasi publish-subscribe di mana node bisa mempublikasikan atau berlangganan pesan tanpa perlu saling mengetahui secara langsung",
-        "Jenis sensor yang didukung",
-        "Nama perintah terminal"
+        "CNN lebih cepat pada CPU",
+        "CNN secara otomatis mempelajari hierarki fitur dari data training, lebih robust terhadap variasi pencahayaan/pose/skala, dan performa meningkat seiring bertambahnya data",
+        "CNN tidak memerlukan GPU",
+        "CNN menggunakan memori lebih sedikit"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu SLAM (Simultaneous Localization and Mapping)?",
+      "q": "Implementasi PID pada robot, nilai derivative gain Kd terlalu tinggi menyebabkan...",
       "opts": [
-        "Teknik mengecat robot secara otomatis",
-        "Algoritma yang memungkinkan robot membangun peta lingkungannya sekaligus menentukan posisinya sendiri dalam peta tersebut secara bersamaan",
-        "Cara robot belajar dari internet",
-        "Sistem anti-tabrakan sederhana"
+        "Sistem menjadi lebih stabil",
+        "High-frequency noise pada sensor dikuatkan, menyebabkan aktuator bergetar atau berosilasi (chattering) meski error sudah kecil",
+        "Respons sistem menjadi lebih lambat",
+        "Integral windup meningkat"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang dimaksud dengan inverse kinematics pada robot arm?",
+      "q": "Pada firmware update OTA (Over-The-Air) untuk robot fleet, mengapa dual-bank flash memory penting?",
       "opts": [
-        "Menghitung posisi ujung lengan dari sudut-sudut sendi yang diketahui",
-        "Menghitung sudut-sudut yang harus dicapai setiap sendi agar ujung lengan mencapai posisi target tertentu dalam ruang",
-        "Cara membalik arah putaran motor servo",
-        "Cara mengkalibrasi encoder"
+        "Untuk mempercepat proses update",
+        "Satu bank menjalankan firmware aktif sementara bank lain menerima update baru; jika update gagal, robot bisa rollback ke firmware lama tanpa brick",
+        "Untuk menyimpan lebih banyak data log",
+        "Karena single bank tidak cukup kapasitas"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu odometry pada robot beroda?",
+      "q": "Dalam implementasi MQTT untuk IoT robot, QoS level 2 (exactly once delivery) lebih lambat dari QoS 0 karena...",
       "opts": [
-        "Pengukuran jarak dengan sensor ultrasonik",
-        "Estimasi posisi dan orientasi robot berdasarkan data putaran roda (encoder), dihitung secara kumulatif dari titik awal",
-        "Pemetaan lingkungan dengan kamera",
-        "Pengukuran kecepatan angin"
+        "QoS 2 menggunakan enkripsi tambahan",
+        "QoS 2 memerlukan 4-way handshake (PUBLISH, PUBREC, PUBREL, PUBCOMP) untuk menjamin pesan terkirim tepat satu kali tanpa duplikasi",
+        "QoS 2 membutuhkan bandwidth lebih besar",
+        "QoS 2 menunggu acknowledgment dari semua subscriber"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa odometry saja tidak cukup untuk navigasi jangka panjang robot?",
+      "q": "Robot menggunakan Behavior Trees (BT) dibanding FSM (Finite State Machine) untuk task planning. Keunggulan utama BT adalah...",
       "opts": [
-        "Karena encoder terlalu mahal",
-        "Karena error kecil pada setiap pengukuran terakumulasi seiring waktu (drift), menyebabkan estimasi posisi semakin tidak akurat",
-        "Karena odometry tidak bisa mengukur kecepatan",
-        "Karena odometry hanya bekerja di dalam ruangan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa itu fuzzy logic dalam kontrol robot dan keunggulannya?",
-      "opts": [
-        "Logika yang hasilnya tidak pasti karena bug",
-        "Sistem kontrol yang bekerja dengan nilai linguistik tidak pasti (seperti 'dekat', 'jauh', 'cepat') tanpa perlu model matematika presisi dari sistem",
-        "Cara debugging kode yang tidak jelas",
-        "Nama library khusus Arduino"
+        "BT lebih cepat dieksekusi",
+        "BT lebih modular dan reusable (subtree bisa digunakan kembali), lebih mudah di-debug secara visual, dan lebih scalable untuk behavior kompleks tanpa state explosion problem",
+        "BT menggunakan memori lebih sedikit",
+        "BT tidak memerlukan sensor input"
       ],
       "ans": 1
     }
   ],
-  "mekanika": [
+  "mechanic": [
     {
-      "q": "Apa itu gear ratio dan bagaimana cara menghitungnya?",
+      "q": "Pada robot arm dengan konfigurasi 6-DOF, kondisi singularitas kinematik terjadi ketika...",
       "opts": [
-        "Jumlah gigi dibagi kecepatan motor",
-        "Perbandingan jumlah gigi driven gear terhadap driver gear; menentukan trade-off antara kecepatan dan torsi output",
-        "Kecepatan output dibagi kecepatan input",
-        "Diameter roda dibagi diameter gear"
+        "Robot mencapai batas workspace",
+        "Dua atau lebih joint axis menjadi kolinear atau sejajar, menyebabkan Jacobian matrix singular, kehilangan satu atau lebih DOF, dan kecepatan joint menjadi infinite untuk kecepatan end-effector tertentu",
+        "Motor kelebihan beban",
+        "Sensor encoder tidak terbaca"
       ],
       "ans": 1
     },
     {
-      "q": "Motor dengan gear ratio 1:20 menghasilkan efek apa dibanding motor langsung (1:1)?",
+      "q": "Dalam desain gearbox planetary untuk robot, rasio gear 1:36 menggunakan dua stage. Jika stage pertama 1:6, berapa rasio stage kedua?",
       "opts": [
-        "20x lebih cepat, torsi sama",
-        "Kecepatan 1/20 lebih lambat, torsi 20x lebih besar (dikurangi efisiensi)",
-        "Kecepatan dan torsi sama, hanya arah berbeda",
-        "20x lebih cepat, torsi 20x lebih kecil"
+        "1:6 (total 1:36)",
+        "1:30",
+        "1:12",
+        "1:18"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Material CFRP (Carbon Fiber Reinforced Polymer) dipilih untuk lengan robot drone karena...",
+      "opts": [
+        "Harga paling murah",
+        "Specific strength (kekuatan/berat) dan specific stiffness sangat tinggi, konduktivitas termal rendah, dan tahan fatigue, sehingga frame ringan namun rigid",
+        "Mudah dilakukan machining",
+        "Konduktif listrik sehingga sekaligus sebagai ground"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang dimaksud dengan efisiensi mekanik suatu sistem transmisi?",
+      "q": "Pada desain chassis robot kompetisi, triangulated structure lebih disukai karena...",
       "opts": [
-        "Kecepatan maksimal yang bisa dicapai",
-        "Rasio daya output yang berguna terhadap daya input; energi yang hilang umumnya menjadi panas karena gesekan",
-        "Jumlah komponen dalam sistem",
-        "Ketahanan material rangka"
+        "Lebih mudah dibuat",
+        "Segitiga adalah struktur rigid secara geometri - tidak bisa berubah bentuk tanpa mengubah panjang sisi, memberikan kekakuan maksimal dengan material minimal",
+        "Lebih ringan dari struktur lain",
+        "Lebih mudah dimodifikasi"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu backlash pada sistem gear?",
+      "q": "Bearing angkat radial (deep groove ball bearing) vs bearing aksial (thrust bearing), kapan thrust bearing diperlukan pada robot?",
       "opts": [
-        "Keausan gigi gear yang parah",
-        "Celah kecil antara gigi yang berkaitan, menyebabkan 'kelonggaran' — output tidak langsung bergerak saat input berubah arah",
-        "Suara berisik dari gear yang aus",
-        "Kelebihan torsi yang merusak gear"
+        "Ketika kecepatan rotasi sangat tinggi",
+        "Ketika gaya yang dominan bekerja searah poros (aksial), seperti pada screw drive vertical robot atau turntable yang menopang beban di atas poros",
+        "Thrust bearing selalu lebih baik dari radial bearing",
+        "Ketika suhu operasi tinggi"
       ],
       "ans": 1
     },
     {
-      "q": "Differential drive (dua motor independen) menghasilkan radius putar nol (berputar di tempat) dengan cara?",
+      "q": "Fenomena backlash pada gearbox robot arm menyebabkan error posisi. Teknik apa yang paling efektif untuk meminimalkan dampaknya?",
       "opts": [
-        "Kedua motor berhenti",
-        "Satu motor maju, satu motor mundur dengan kecepatan yang sama",
-        "Hanya satu motor yang berputar",
-        "Kedua motor mundur bersamaan"
+        "Melumasi gear lebih banyak",
+        "Preloaded anti-backlash gears atau harmonic drive yang secara desain mengeliminasi backlash, dikombinasikan dengan control strategy yang memperhitungkan dead zone",
+        "Menggunakan motor lebih bertenaga",
+        "Menambah encoder resolusi"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa servo motor dipilih untuk kendali posisi dibanding motor DC biasa dengan encoder?",
+      "q": "Pada robot hexapod dengan gait tripod, tiga kaki bergerak bersamaan. Mengapa kestabilan statis terjamin pada gait ini?",
       "opts": [
-        "Servo lebih murah",
-        "Servo memiliki sistem kontrol posisi terintegrasi (closed-loop) di dalamnya, lebih sederhana untuk aplikasi sudut terbatas; motor DC + encoder butuh implementasi PID eksternal",
-        "Servo lebih kuat dari motor DC",
-        "Servo tidak butuh kalibrasi"
+        "Karena memiliki 6 kaki",
+        "Tiga kaki yang tersisa selalu membentuk segitiga penopang yang mencakup proyeksi pusat massa ke tanah, menjamin keseimbangan statis sepanjang gerak",
+        "Karena kaki bergerak lebih cepat",
+        "Karena berat robot terdistribusi merata"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu servo continuous rotation dan bedanya dengan servo biasa?",
+      "q": "Dalam desain manipulator robot paralel (seperti Delta robot), keunggulan utama dibanding manipulator serial adalah...",
       "opts": [
-        "Servo yang bisa berputar 360° dan dikontrol dengan sudut",
-        "Servo yang bisa berputar penuh (360°+) tanpa batas dan dikontrol kecepatannya, bukan posisinya — berbeda dengan servo standar yang dikontrol sudut 0-180°",
-        "Servo dengan torsi lebih besar",
-        "Servo yang tidak butuh sinyal PWM"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada robot berkaki (hexapod), apa keuntungan utama dibanding robot beroda di medan alami?",
-      "opts": [
-        "Lebih cepat di segala medan",
-        "Bisa melangkahi rintangan dan beradaptasi di medan yang sangat tidak teratur yang tidak bisa dilalui roda",
+        "Workspace lebih besar",
+        "Aktuator dipasang di base (tidak ikut bergerak), sehingga inersia bagian bergerak sangat rendah, memungkinkan akselerasi sangat tinggi untuk pick-and-place kecepatan tinggi",
         "Lebih mudah diprogram",
-        "Menggunakan lebih sedikit motor"
+        "Bisa mencapai posisi lebih jauh"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu static stability pada robot berkaki?",
+      "q": "Stress concentration factor pada lubang di pelat logam chassis robot meningkatkan stress lokal hingga 3x. Apa cara desain untuk memitigasi ini?",
       "opts": [
-        "Robot tidak bisa bergerak",
-        "Kondisi di mana proyeksi titik berat robot selalu berada di dalam polygon tumpuan yang dibentuk kaki-kaki yang menapak — robot tidak jatuh bahkan jika berhenti",
-        "Robot tidak bergetar saat berdiri",
-        "Kekuatan rangka robot saat diam"
+        "Membuat lubang lebih kecil",
+        "Menambahkan fillet (radius) di tepi lubang, menggunakan gusset/reinforcement plate di sekitar lubang, atau menggunakan material lebih tebal lokal",
+        "Menggunakan material lebih keras",
+        "Menghindari semua lubang pada chassis"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu dynamic stability pada robot bipedal (berkaki dua)?",
+      "q": "Pada robot dengan wheel odometry, accumulated error (drift) meningkat seiring waktu. Mengapa dan bagaimana cara mengatasinya?",
       "opts": [
-        "Robot bisa diam tanpa jatuh",
-        "Robot menjaga keseimbangan melalui gerakan aktif dan momentum — bisa jatuh jika dihentikan tiba-tiba karena titik berat tidak selalu di atas bidang tumpuan",
-        "Robot memiliki kaki yang sangat kuat",
-        "Robot menggunakan giroskop untuk keseimbangan"
+        "Karena encoder rusak; ganti encoder",
+        "Error integrasi kecepatan menumpuk dari slip roda, ketidakidealan encoder, dan ketidakrataan permukaan; diatasi dengan sensor fusion (IMU + odometry + GPS/SLAM) untuk koreksi periodik",
+        "Karena baterai lemah mempengaruhi encoder",
+        "Karena roda aus, ganti roda secara rutin"
       ],
       "ans": 1
     },
     {
-      "q": "Kenapa material komposit serat karbon (carbon fiber) digunakan pada drone racing dan robot kompetisi?",
+      "q": "Cable management pada robot arm 6-DOF menggunakan kabel routing melalui dalam poros joint. Apa keuntungan dibanding routing eksternal?",
       "opts": [
-        "Murah dan mudah dibentuk",
-        "Sangat ringan sekaligus sangat kuat dan kaku, rasio kekuatan-terhadap-berat jauh lebih tinggi dari aluminium atau baja",
-        "Mudah didapat",
-        "Bisa dicetak dengan printer 3D biasa"
+        "Lebih mudah diganti",
+        "Menghilangkan risiko kabel tersangkut atau terbatas gerakannya saat joint berotasi penuh, memungkinkan unlimited rotation dan workspace bersih tanpa snag hazard",
+        "Lebih murah",
+        "Pendinginan motor lebih baik"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu moment of inertia dalam konteks lengan robot?",
+      "q": "Harmonic drive (strain wave gear) digunakan pada robot arm presisi tinggi karena...",
       "opts": [
-        "Kekuatan sendi robot",
-        "Besaran yang menyatakan seberapa sulit mengubah kecepatan rotasi — lengan panjang dengan beban di ujung memiliki momen inersia tinggi, butuh torsi lebih besar",
-        "Waktu yang dibutuhkan untuk memulai gerakan",
-        "Berat total lengan robot"
+        "Torsi output rendah",
+        "Zero backlash, rasio gear tinggi (1:30 - 1:320) dalam satu stage yang kompak, efisiensi tinggi, dan torsional stiffness tinggi - ideal untuk posisi presisi",
+        "Lebih murah dari planetary gear",
+        "Lebih mudah diperbaiki di lapangan"
       ],
       "ans": 1
     },
     {
-      "q": "Apa fungsi lead screw pada robot atau CNC?",
+      "q": "Pada desain mekanik robot underwater (ROV), dynamic seal vs static seal digunakan di mana?",
       "opts": [
-        "Menyalurkan listrik ke motor",
-        "Mengubah gerak rotasi menjadi gerak linear presisi tinggi",
-        "Menghubungkan dua poros motor",
-        "Menyeimbangkan berat robot"
+        "Static seal untuk semua koneksi",
+        "Static seal untuk sambungan tidak bergerak (bulkhead penetrator, fixed housing); dynamic seal (lip seal, rotary seal) untuk poros yang berputar/translasi menembus housing bertekanan",
+        "Dynamic seal untuk semua sambungan",
+        "Tidak ada perbedaan keduanya"
       ],
       "ans": 1
     },
     {
-      "q": "Apa perbedaan mekanisme linkage 4-bar dengan crank-slider?",
+      "q": "Finite Element Analysis (FEA) digunakan pada desain robot sebelum fabrikasi. Apa yang bisa diprediksi yang tidak bisa dari perhitungan analitik sederhana?",
       "opts": [
-        "Keduanya menghasilkan gerakan yang sama",
-        "Linkage 4-bar menghasilkan gerakan osilasi (ayunan), sedangkan crank-slider menghasilkan gerak linier bolak-balik dari input rotasi",
-        "Crank-slider lebih kompleks",
-        "4-bar tidak bisa digunakan di robot"
+        "Berat total komponen",
+        "Distribusi stress kompleks pada geometri tidak beraturan, deformasi di bawah beban terdistribusi, titik kritis tegangan (hot spots), dan mode natural frequency untuk menghindari resonansi",
+        "Ukuran optimal komponen",
+        "Biaya material yang dibutuhkan"
       ],
       "ans": 1
     },
     {
-      "q": "Pada robot underwater (ROV), thruster biasanya dikonfigurasi bagaimana untuk kontrol 6 DOF?",
+      "q": "Pada desain sistem pneumatik untuk gripper robot, akumulator (pressure vessel) dipasang dekat aktuator. Apa fungsinya?",
       "opts": [
-        "4 thruster horizontal saja",
-        "Kombinasi thruster horizontal (untuk gerak XY dan yaw) dan thruster vertikal (untuk depth/heave dan pitch/roll), biasanya 6-8 thruster",
-        "2 thruster seperti kapal biasa",
-        "1 thruster dengan kemudi"
+        "Sebagai cadangan udara darurat",
+        "Menyediakan volume udara bertekanan lokal sehingga respons aktuasi lebih cepat dan stabil tanpa pressure drop panjang dari kompresor jauh",
+        "Untuk mengukur tekanan kerja",
+        "Sebagai filter kotoran"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu harmonic drive dan keunggulannya untuk robot arm?",
+      "q": "Toleransi fit H7/g6 pada pasangan poros-bearing. Apa artinya dalam konteks assembly robot?",
       "opts": [
-        "Sistem gear biasa yang dibuat dari logam harmonik",
-        "Sistem transmisi yang menggunakan deformasi elastis untuk menghasilkan gear ratio sangat tinggi dengan hampir nol backlash dan ukuran kompak",
-        "Cara menghaluskan gerakan motor dengan filter",
-        "Sistem suspensi khusus lengan robot"
+        "Keduanya harus press fit",
+        "H7 adalah hole tolerance (clearance fit), g6 adalah shaft tolerance; menghasilkan clearance fit dengan ruang bebas kecil - poros bisa dimasukkan tangan tapi tidak longgar, cocok untuk bearing yang berputar",
+        "Ini adalah toleransi untuk baut saja",
+        "H7/g6 berarti interference fit yang ketat"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa robot industri menggunakan strain wave gear (harmonic drive) meskipun harganya sangat mahal?",
+      "q": "Modal analysis pada struktur robot menunjukkan natural frequency 50Hz di lengan manipulator. Mengapa ini bermasalah jika control loop berjalan di 100Hz?",
       "opts": [
-        "Karena lebih ringan dari gear biasa",
-        "Karena memberikan posisi sangat akurat (hampir nol backlash), rasio transmisi tinggi dalam satu tahap, dan umur panjang — kritis untuk presisi industri",
-        "Karena mudah diproduksi",
-        "Karena bisa digunakan di air"
+        "Tidak ada masalah karena frekuensi control lebih tinggi",
+        "Jika bandwidth controller mendekati atau melebihi natural frequency struktur, controller bisa membuat struktur beresonansi (control-induced vibration), merusak akurasi dan berpotensi merusak mekanik",
+        "Control loop harus selalu lebih rendah dari natural frequency",
+        "Natural frequency harus sama dengan control frequency"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu parallel manipulator (seperti Delta robot)?",
+      "q": "Dalam manufaktur robot, proses anodizing pada aluminum alloy bertujuan untuk...",
       "opts": [
-        "Robot dengan dua lengan yang bekerja bersama",
-        "Robot di mana end-effector dihubungkan ke base melalui beberapa rantai kinematik paralel — menghasilkan kecepatan tinggi dan rigiditas tinggi",
-        "Robot yang bekerja di dua jalur paralel",
-        "Robot dengan dua kontroler"
+        "Membuat aluminum lebih ringan",
+        "Membentuk lapisan oksida keras (Al2O3) pada permukaan melalui proses elektrolitik, meningkatkan ketahanan korosi, ketahanan aus, dan bisa diwarnai untuk identifikasi",
+        "Meningkatkan konduktivitas listrik",
+        "Mengubah komposisi alloy untuk kekuatan lebih tinggi"
       ],
       "ans": 1
     },
     {
-      "q": "Keunggulan Delta robot untuk pick-and-place industri adalah?",
+      "q": "Pada robot pembawa beban berat, mengapa wheel dengan pneumatic tire dipilih dibanding solid rubber tire di area industri?",
       "opts": [
-        "Bisa membawa beban sangat berat",
-        "Kecepatan dan akselerasi sangat tinggi karena aktuator terpasang di base (tidak ikut bergerak bersama lengan), sehingga massa bergerak sangat rendah",
-        "Harga yang murah",
-        "Mudah diprogram oleh pemula"
+        "Pneumatic tire lebih murah dan tahan lama",
+        "Pneumatic tire menyerap impak dan getaran dari permukaan tidak rata, mengurangi beban dinamis pada frame dan menjaga muatan lebih stabil, serta traksi lebih baik",
+        "Pneumatic tire tidak bisa kempes di area industri",
+        "Solid tire tidak bisa menopang beban berat"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu soft robotics?",
+      "q": "Desain mekanik robot untuk clean room semiconductor memerlukan pertimbangan khusus. Mengapa material outgassing menjadi isu kritis?",
       "opts": [
-        "Robot yang diprogram dengan bahasa pemrograman yang mudah",
-        "Robot yang tubuhnya terbuat dari material lunak dan fleksibel (silikon, pneumatik, dll) — bergerak mirip makhluk hidup dan aman berinteraksi dengan manusia",
-        "Robot yang bergerak lambat dan lembut",
-        "Nama software desain robot"
+        "Karena outgassing membuat robot lebih berat",
+        "Volatile organic compounds dari pelumas, plastik, dan adhesive dapat mengkontaminasi wafer silikon sensitif; semua material harus low-outgassing dan tersertifikasi clean room",
+        "Outgassing menyebabkan korosi pada metal",
+        "Karena temperatur clean room sangat dingin"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa robot medis bedah (seperti da Vinci) menggunakan motor dengan presisi sangat tinggi dan sistem teleoperation?",
+      "q": "Pada robot climbing (wall-climbing robot), adhesion menggunakan vacuum suction cup. Pressure diferensial minimum untuk menopang robot 5kg pada area 100cm² adalah...",
       "opts": [
-        "Karena robot harus bisa berbicara dengan pasien",
-        "Karena gerakan tangan dokter diterjemahkan dan diskalakan menjadi gerakan instrumen yang lebih kecil dan presisi, meminimalkan tremor dan meningkatkan akurasi",
-        "Karena robot harus bergerak sangat cepat",
-        "Karena aturan rumah sakit mengharuskan"
+        "0.5 kPa",
+        "4.9 kPa (490 Pa minimum, dengan safety factor 2x menjadi ~10 kPa)",
+        "0.049 kPa",
+        "49 kPa"
       ],
       "ans": 1
     },
     {
-      "q": "Pada drone quadcopter, bagaimana cara mengontrol pitch (tilt maju-mundur)?",
+      "q": "Dalam seleksi material untuk rangka robot outdoor, mengapa stainless steel 316 lebih dipilih dari 304 di lingkungan coastal?",
       "opts": [
-        "Menambah kecepatan semua motor sekaligus",
-        "Menambah kecepatan motor depan dan mengurangi motor belakang (atau sebaliknya) sehingga terjadi perbedaan gaya angkat yang memiringkan drone",
-        "Menggerakkan sirip kendali di badan drone",
-        "Menggunakan servo di setiap motor"
+        "316 lebih ringan dari 304",
+        "Grade 316 mengandung 2-3% molybdenum yang secara signifikan meningkatkan ketahanan terhadap korosi chloride (garam laut/pitting corrosion) yang menjadi kelemahan utama 304",
+        "316 lebih murah dari 304",
+        "316 memiliki kekuatan tarik lebih tinggi"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa propeller quadcopter dipasang bersilangan (dua CW, dua CCW)?",
+      "q": "Pada sistem transmisi belt (timing belt) vs rantai (chain) untuk robot, timing belt dipilih ketika...",
       "opts": [
-        "Agar terlihat simetris",
-        "Untuk menghilangkan net torque reaksi — jika semua propeller berputar satu arah, drone akan berputar sendiri (yaw tidak terkontrol)",
-        "Untuk meningkatkan efisiensi baterai",
-        "Untuk mengurangi kebisingan"
+        "Beban torsi sangat tinggi",
+        "Presisi timing kritis, operasi bersih/tenang diperlukan, dan ruang terbatas; timing belt tidak memerlukan pelumasan, lebih ringan, dan tidak berisik dibanding chain",
+        "Lingkungan operasi berdebu atau kotor",
+        "Jarak antara sprocket sangat jauh"
       ],
       "ans": 1
     },
     {
-      "q": "Apa itu prehensile gripper vs non-prehensile manipulation?",
+      "q": "Pada robot bawah air (AUV), pressure housing untuk elektronik menggunakan O-ring double seal. Apa konfigurasi yang benar dan mengapa?",
       "opts": [
-        "Gripper besar vs gripper kecil",
-        "Prehensile: menggenggam objek dengan cara menyelimutinya (seperti tangan). Non-prehensile: memanipulasi tanpa menggenggam, seperti mendorong atau menggelindingkan",
-        "Gripper keras vs gripper lunak",
-        "Gripper untuk benda besar vs benda kecil"
+        "Dua O-ring berdempetan untuk tekanan ganda",
+        "Dua O-ring dengan vent hole di antara keduanya; jika O-ring dalam gagal, air masuk ke groove tengah terdeteksi sebelum mencapai elektronik (moisture sensor di vent hole untuk early warning)",
+        "O-ring ganda hanya untuk dekorasi",
+        "Keduanya dipasang di sisi luar housing"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa robot untuk penjelajahan Mars (rover) menggunakan rocker-bogie suspension?",
+      "q": "Implementasi series elastic actuator (SEA) pada robot kolaboratif (cobot) menggunakan spring antara gearbox dan joint. Keunggulan utamanya adalah...",
       "opts": [
-        "Karena lebih ringan dari roda biasa",
-        "Sistem suspensi pasif ini memungkinkan semua 6 roda tetap kontak tanah di medan berbatu ekstrem tanpa memerlukan aktuator aktif, menjaga stabilitas dan traksi",
-        "Karena mudah diproduksi di Mars",
-        "Karena lebih cepat dari sistem track"
+        "Meningkatkan kecepatan gerak robot",
+        "Spring mengukur torsi melalui defleksi (force sensing), menyediakan compliance/impedance yang aman untuk interaksi manusia-robot, dan melindungi gearbox dari shock load",
+        "Mengurangi jumlah sensor yang diperlukan",
+        "Meningkatkan payload capacity robot"
       ],
       "ans": 1
     }
