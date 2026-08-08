@@ -1,83 +1,3008 @@
 {
   "dasar": [
-    { "q": "Apa itu listrik?", "opts": ["Aliran air","Aliran muatan/energi yang bisa menyalakan perangkat","Jenis udara panas","Gelombang suara"], "ans": 1 },
-    { "q": "Apa yang dibutuhkan sebuah lampu agar bisa menyala?", "opts": ["Air","Angin","Listrik","Batu"], "ans": 2 },
-    { "q": "Benda apa yang menyimpan energi listrik dan bisa kita bawa-bawa?", "opts": ["Lampu","Baterai","Kabel","Saklar"], "ans": 1 },
-    { "q": "Apa fungsi saklar/switch?", "opts": ["Menyimpan listrik","Menghasilkan cahaya","Menyambung atau memutus aliran listrik","Mengukur suhu"], "ans": 2 },
-    { "q": "LED itu apa?", "opts": ["Jenis baterai","Lampu kecil yang hemat listrik","Alat pengukur","Jenis kabel"], "ans": 1 },
-    { "q": "Warna kabel merah pada rangkaian biasanya menandakan?", "opts": ["Kabel negatif / ground","Kabel positif / tegangan","Kabel antena","Kabel data"], "ans": 1 },
-    { "q": "Warna kabel hitam pada rangkaian biasanya menandakan?", "opts": ["Kabel positif","Kabel negatif / ground","Kabel panas","Kabel khusus"], "ans": 1 },
-    { "q": "Apa itu sensor?", "opts": ["Alat untuk memotong","Alat yang mendeteksi sesuatu dari lingkungan sekitar","Jenis baterai besar","Tombol on/off"], "ans": 1 },
-    { "q": "Sensor suhu digunakan untuk mendeteksi apa?", "opts": ["Jarak","Cahaya","Panas atau dingin","Suara"], "ans": 2 },
-    { "q": "Apa itu robot?", "opts": ["Mainan yang bergerak sendiri tanpa program","Mesin yang bisa melakukan tugas secara otomatis","Jenis komputer yang mahal","Nama aplikasi di HP"], "ans": 1 },
-    { "q": "Komponen mana yang bisa menghasilkan cahaya?", "opts": ["Resistor","Kapasitor","LED","Baterai"], "ans": 2 },
-    { "q": "Alat apa yang dipakai untuk mengukur tegangan listrik?", "opts": ["Penggaris","Multimeter","Termometer","Timbangan"], "ans": 1 },
-    { "q": "Apa itu motor listrik?", "opts": ["Alat untuk menyimpan listrik","Mesin yang mengubah listrik menjadi gerakan putar","Jenis sensor","Layar kecil"], "ans": 1 },
-    { "q": "Breadboard (papan percobaan) digunakan untuk apa?", "opts": ["Memotong kabel","Merangkai komponen elektronik tanpa solder","Mengisi daya baterai","Mengukur arus listrik"], "ans": 1 },
-    { "q": "Apa kepanjangan dari LED?", "opts": ["Light Emitting Diode","Long Electric Device","Large Energy Display","Light Energy Detector"], "ans": 0 },
-    { "q": "Resistor berfungsi untuk?", "opts": ["Menyalakan lampu","Menghambat/membatasi arus listrik","Menyimpan energi","Mendeteksi cahaya"], "ans": 1 },
-    { "q": "Apa yang dimaksud dengan arus listrik?", "opts": ["Tegangan baterai","Aliran elektron dalam suatu rangkaian","Cahaya dari LED","Panas dari motor"], "ans": 1 },
-    { "q": "Sensor jarak ultrasonik bekerja seperti apa?", "opts": ["Mengirim cahaya lalu menunggu pantulan","Mengirim gelombang suara lalu menghitung pantulannya","Mengukur berat benda","Melihat warna benda"], "ans": 1 },
-    { "q": "Baterai 9 Volt artinya?", "opts": ["Baterai yang beratnya 9 gram","Baterai yang memberikan tegangan 9 Volt","Baterai yang bertahan 9 jam","Baterai berukuran 9 cm"], "ans": 1 },
-    { "q": "Apa yang terjadi jika kabel positif dan negatif baterai disambung langsung tanpa komponen?", "opts": ["Lampu menyala terang","Terjadi korsleting / short circuit yang berbahaya","Baterai mengisi ulang sendiri","Tidak terjadi apa-apa"], "ans": 1 },
-    { "q": "Mikrokontroler itu seperti apa?", "opts": ["Baterai ukuran mini","Otak kecil yang bisa menjalankan program untuk mengontrol robot","Jenis motor listrik kecil","Lampu yang sangat kecil"], "ans": 1 },
-    { "q": "Apa fungsi kabel dalam rangkaian elektronik?", "opts": ["Menyimpan listrik","Menghubungkan komponen agar listrik bisa mengalir","Menghasilkan listrik","Memotong arus"], "ans": 1 },
-    { "q": "Mana yang bukan termasuk komponen elektronik?", "opts": ["LED","Resistor","Batu bata","Kapasitor"], "ans": 2 },
-    { "q": "Apa itu tegangan (voltage)?", "opts": ["Kecepatan aliran listrik","Dorongan yang membuat listrik bisa mengalir","Jumlah komponen dalam rangkaian","Berat sebuah baterai"], "ans": 1 },
-    { "q": "Robot membutuhkan apa agar bisa bergerak dan bekerja?", "opts": ["Hanya air","Listrik dan program","Hanya angin","Hanya panas matahari"], "ans": 1 }
+    {
+      "q": "Apa itu listrik?",
+      "opts": [
+        "Aliran air",
+        "Aliran muatan/energi yang bisa menyalakan perangkat",
+        "Jenis udara panas",
+        "Gelombang suara"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dibutuhkan sebuah lampu agar bisa menyala?",
+      "opts": [
+        "Air",
+        "Angin",
+        "Listrik",
+        "Batu"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Benda apa yang menyimpan energi listrik dan bisa kita bawa-bawa?",
+      "opts": [
+        "Lampu",
+        "Baterai",
+        "Kabel",
+        "Saklar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi saklar/switch?",
+      "opts": [
+        "Menyimpan listrik",
+        "Menghasilkan cahaya",
+        "Menyambung atau memutus aliran listrik",
+        "Mengukur suhu"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "LED itu apa?",
+      "opts": [
+        "Jenis baterai",
+        "Lampu kecil yang hemat listrik",
+        "Alat pengukur",
+        "Jenis kabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Warna kabel merah pada rangkaian biasanya menandakan?",
+      "opts": [
+        "Kabel negatif / ground",
+        "Kabel positif / tegangan",
+        "Kabel antena",
+        "Kabel data"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Warna kabel hitam pada rangkaian biasanya menandakan?",
+      "opts": [
+        "Kabel positif",
+        "Kabel negatif / ground",
+        "Kabel panas",
+        "Kabel khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu sensor?",
+      "opts": [
+        "Alat untuk memotong",
+        "Alat yang mendeteksi sesuatu dari lingkungan sekitar",
+        "Jenis baterai besar",
+        "Tombol on/off"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor suhu digunakan untuk mendeteksi apa?",
+      "opts": [
+        "Jarak",
+        "Cahaya",
+        "Panas atau dingin",
+        "Suara"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu robot?",
+      "opts": [
+        "Mainan yang bergerak sendiri tanpa program",
+        "Mesin yang bisa melakukan tugas secara otomatis",
+        "Jenis komputer yang mahal",
+        "Nama aplikasi di HP"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Komponen mana yang bisa menghasilkan cahaya?",
+      "opts": [
+        "Resistor",
+        "Kapasitor",
+        "LED",
+        "Baterai"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Alat apa yang dipakai untuk mengukur tegangan listrik?",
+      "opts": [
+        "Penggaris",
+        "Multimeter",
+        "Termometer",
+        "Timbangan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu motor listrik?",
+      "opts": [
+        "Alat untuk menyimpan listrik",
+        "Mesin yang mengubah listrik menjadi gerakan putar",
+        "Jenis sensor",
+        "Layar kecil"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Breadboard (papan percobaan) digunakan untuk apa?",
+      "opts": [
+        "Memotong kabel",
+        "Merangkai komponen elektronik tanpa solder",
+        "Mengisi daya baterai",
+        "Mengukur arus listrik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kepanjangan dari LED?",
+      "opts": [
+        "Light Emitting Diode",
+        "Long Electric Device",
+        "Large Energy Display",
+        "Light Energy Detector"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Resistor berfungsi untuk?",
+      "opts": [
+        "Menyalakan lampu",
+        "Menghambat/membatasi arus listrik",
+        "Menyimpan energi",
+        "Mendeteksi cahaya"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan arus listrik?",
+      "opts": [
+        "Tegangan baterai",
+        "Aliran elektron dalam suatu rangkaian",
+        "Cahaya dari LED",
+        "Panas dari motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor jarak ultrasonik bekerja seperti apa?",
+      "opts": [
+        "Mengirim cahaya lalu menunggu pantulan",
+        "Mengirim gelombang suara lalu menghitung pantulannya",
+        "Mengukur berat benda",
+        "Melihat warna benda"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Baterai 9 Volt artinya?",
+      "opts": [
+        "Baterai yang beratnya 9 gram",
+        "Baterai yang memberikan tegangan 9 Volt",
+        "Baterai yang bertahan 9 jam",
+        "Baterai berukuran 9 cm"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi jika kabel positif dan negatif baterai disambung langsung tanpa komponen?",
+      "opts": [
+        "Lampu menyala terang",
+        "Terjadi korsleting / short circuit yang berbahaya",
+        "Baterai mengisi ulang sendiri",
+        "Tidak terjadi apa-apa"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mikrokontroler itu seperti apa?",
+      "opts": [
+        "Baterai ukuran mini",
+        "Otak kecil yang bisa menjalankan program untuk mengontrol robot",
+        "Jenis motor listrik kecil",
+        "Lampu yang sangat kecil"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi kabel dalam rangkaian elektronik?",
+      "opts": [
+        "Menyimpan listrik",
+        "Menghubungkan komponen agar listrik bisa mengalir",
+        "Menghasilkan listrik",
+        "Memotong arus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mana yang bukan termasuk komponen elektronik?",
+      "opts": [
+        "LED",
+        "Resistor",
+        "Batu bata",
+        "Kapasitor"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu tegangan (voltage)?",
+      "opts": [
+        "Kecepatan aliran listrik",
+        "Dorongan yang membuat listrik bisa mengalir",
+        "Jumlah komponen dalam rangkaian",
+        "Berat sebuah baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Robot membutuhkan apa agar bisa bergerak dan bekerja?",
+      "opts": [
+        "Hanya air",
+        "Listrik dan program",
+        "Hanya angin",
+        "Hanya panas matahari"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Warna apa yang biasanya dimiliki LED hijau?",
+      "opts": [
+        "Merah",
+        "Biru",
+        "Hijau",
+        "Kuning"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang terjadi jika baterai habis?",
+      "opts": [
+        "Lampu makin terang",
+        "Perangkat tidak bisa menyala",
+        "Perangkat makin cepat",
+        "Listrik bertambah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Komponen mana yang bisa menyimpan energi listrik dalam jumlah besar?",
+      "opts": [
+        "Resistor",
+        "Kabel",
+        "Kapasitor",
+        "LED"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa nama alat yang bisa mengubah energi matahari menjadi listrik?",
+      "opts": [
+        "Baterai",
+        "Panel surya",
+        "Resistor",
+        "Motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu rangkaian listrik?",
+      "opts": [
+        "Gambar di kertas",
+        "Jalur tertutup yang dilalui arus listrik",
+        "Nama merek baterai",
+        "Jenis kabel khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Benda apa yang tidak bisa dialiri listrik?",
+      "opts": [
+        "Tembaga",
+        "Besi",
+        "Kayu kering",
+        "Aluminium"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Satuan tegangan listrik adalah?",
+      "opts": [
+        "Ampere",
+        "Watt",
+        "Volt",
+        "Ohm"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Satuan arus listrik adalah?",
+      "opts": [
+        "Volt",
+        "Ampere",
+        "Ohm",
+        "Watt"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Satuan hambatan listrik adalah?",
+      "opts": [
+        "Volt",
+        "Ampere",
+        "Ohm",
+        "Watt"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu konduktor?",
+      "opts": [
+        "Benda yang tidak bisa dialiri listrik",
+        "Benda yang bisa mengalirkan listrik dengan mudah",
+        "Jenis sensor",
+        "Nama baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mana yang termasuk konduktor listrik?",
+      "opts": [
+        "Plastik",
+        "Karet",
+        "Tembaga",
+        "Kayu"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Mana yang termasuk isolator listrik?",
+      "opts": [
+        "Besi",
+        "Tembaga",
+        "Aluminium",
+        "Plastik"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa fungsi isolasi pada kabel?",
+      "opts": [
+        "Membuat kabel lebih berat",
+        "Melindungi agar listrik tidak bocor dan aman disentuh",
+        "Membuat kabel berwarna",
+        "Menyimpan listrik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor cahaya mendeteksi apa?",
+      "opts": [
+        "Suhu",
+        "Jarak",
+        "Terang atau gelapnya cahaya",
+        "Berat benda"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Sensor api digunakan untuk mendeteksi?",
+      "opts": [
+        "Air",
+        "Api atau panas tinggi",
+        "Suara",
+        "Getaran"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu buzzer?",
+      "opts": [
+        "Jenis sensor",
+        "Komponen yang menghasilkan bunyi/suara",
+        "Jenis motor",
+        "Alat pengukur"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu power supply?",
+      "opts": [
+        "Kabel data",
+        "Sumber energi listrik untuk rangkaian",
+        "Jenis sensor",
+        "Nama motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Berapa kaki yang dimiliki LED?",
+      "opts": [
+        "1 kaki",
+        "2 kaki",
+        "3 kaki",
+        "4 kaki"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kaki LED yang lebih panjang disambung ke?",
+      "opts": [
+        "Negatif / ground",
+        "Positif / tegangan",
+        "Keduanya sama saja",
+        "Tidak perlu disambung"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu dioda?",
+      "opts": [
+        "Komponen yang memperbolehkan arus mengalir hanya satu arah",
+        "Jenis baterai",
+        "Alat pengukur tegangan",
+        "Jenis motor"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Robot bisa digunakan di mana saja, contohnya?",
+      "opts": [
+        "Hanya di sekolah",
+        "Di pabrik, rumah sakit, luar angkasa, dan banyak tempat lain",
+        "Hanya di luar ruangan",
+        "Hanya di dalam air"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu remote control?",
+      "opts": [
+        "Kabel penghubung",
+        "Alat untuk mengendalikan perangkat dari jarak jauh",
+        "Jenis sensor",
+        "Nama motor khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Jika sebuah lampu mati, kemungkinan penyebabnya adalah?",
+      "opts": [
+        "Lampunya terlalu terang",
+        "Tidak ada arus listrik yang mengalir",
+        "Kabelnya terlalu panjang",
+        "Baterainya terlalu besar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan sirkuit pendek (short circuit)?",
+      "opts": [
+        "Sirkuit yang ukurannya kecil",
+        "Arus yang langsung mengalir tanpa melewati komponen, sangat berbahaya",
+        "Sirkuit yang hanya punya satu lampu",
+        "Sirkuit dengan kabel pendek"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu transistor?",
+      "opts": [
+        "Jenis baterai mini",
+        "Komponen yang bisa memperkuat sinyal atau berfungsi sebagai saklar elektronik",
+        "Jenis kabel khusus",
+        "Alat ukur suhu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa kita tidak boleh menyentuh listrik tegangan tinggi?",
+      "opts": [
+        "Karena membuat tangan berwarna hitam",
+        "Karena sangat berbahaya dan bisa menyebabkan cedera serius",
+        "Karena membuat kuku rontok",
+        "Karena membuatnya kedinginan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa warna resistor digunakan untuk?",
+      "opts": [
+        "Menghias komponen",
+        "Menandakan nilai hambatan resistor tersebut",
+        "Menunjukkan merk pabrik",
+        "Menandakan tanggal pembuatan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu multitester / multimeter?",
+      "opts": [
+        "Alat yang bisa mengukur tegangan, arus, dan hambatan listrik",
+        "Jenis baterai canggih",
+        "Nama jenis kabel",
+        "Alat untuk memotong PCB"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "PCB adalah singkatan dari?",
+      "opts": [
+        "Power Control Board",
+        "Printed Circuit Board",
+        "Programmed Computer Board",
+        "Plastic Component Base"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi PCB dalam elektronik?",
+      "opts": [
+        "Tempat baterai disimpan",
+        "Papan tempat komponen elektronik dipasang dan dihubungkan",
+        "Alat untuk mengukur listrik",
+        "Jenis sensor canggih"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu soldering / menyolder?",
+      "opts": [
+        "Memotong kabel dengan panas",
+        "Cara menyambung komponen ke PCB dengan logam cair (timah)",
+        "Cara mengukur arus",
+        "Cara mengisi baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa kita harus berhati-hati dengan solder?",
+      "opts": [
+        "Karena solder berwarna perak",
+        "Karena ujung solder sangat panas dan bisa membakar",
+        "Karena solder berbau harum",
+        "Karena solder sangat berat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu Wi-Fi dalam konteks robot?",
+      "opts": [
+        "Jenis baterai nirkabel",
+        "Teknologi komunikasi nirkabel yang memungkinkan robot terhubung ke internet atau perangkat lain",
+        "Nama sensor jarak",
+        "Jenis motor khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Bluetooth pada robot digunakan untuk?",
+      "opts": [
+        "Menyimpan energi",
+        "Menghubungkan robot dengan perangkat lain secara nirkabel jarak dekat",
+        "Mengukur suhu",
+        "Mendeteksi warna"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu aktuator?",
+      "opts": [
+        "Sensor yang membaca data",
+        "Komponen yang menghasilkan gerakan atau aksi pada robot",
+        "Jenis baterai",
+        "Nama program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor sentuh (touch sensor) mendeteksi apa?",
+      "opts": [
+        "Cahaya",
+        "Suhu",
+        "Apakah ada sesuatu yang menyentuhnya",
+        "Berat"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu encoder pada motor?",
+      "opts": [
+        "Alat untuk mengisi baterai",
+        "Sensor yang menghitung putaran motor sehingga bisa diketahui jarak yang ditempuh",
+        "Jenis kabel motor",
+        "Nama merek motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu relay?",
+      "opts": [
+        "Jenis kabel",
+        "Saklar elektrik yang dikontrol oleh sinyal listrik kecil",
+        "Jenis sensor cahaya",
+        "Nama mikrokontroler"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Komponen apa yang mengubah listrik menjadi panas?",
+      "opts": [
+        "LED",
+        "Motor",
+        "Elemen pemanas (heating element)",
+        "Kapasitor"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu infrared (IR)?",
+      "opts": [
+        "Cahaya tampak berwarna merah",
+        "Cahaya tak tampak yang sering digunakan sensor jarak atau remote TV",
+        "Jenis baterai",
+        "Nama motor khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang membedakan robot dari mesin biasa?",
+      "opts": [
+        "Robot lebih mahal",
+        "Robot bisa diprogram dan bereaksi terhadap lingkungan sekitarnya",
+        "Robot lebih besar",
+        "Robot berwarna lebih cerah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu antena pada robot?",
+      "opts": [
+        "Kaki robot",
+        "Komponen untuk mengirim atau menerima sinyal nirkabel",
+        "Jenis sensor sentuh",
+        "Nama baterai khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu frekuensi dalam elektronik?",
+      "opts": [
+        "Jumlah komponen dalam rangkaian",
+        "Berapa kali sinyal berulang dalam satu detik",
+        "Ukuran baterai",
+        "Panjang kabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa robot industri sangat berguna di pabrik?",
+      "opts": [
+        "Karena robot tidak butuh makan",
+        "Karena robot bisa bekerja tanpa henti, konsisten, dan akurat",
+        "Karena robot lebih murah dari karyawan",
+        "Karena robot bisa berbicara"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu kamera pada robot?",
+      "opts": [
+        "Sensor suhu",
+        "Sensor yang menangkap gambar sehingga robot bisa 'melihat' lingkungannya",
+        "Jenis motor",
+        "Alat pengisi baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor kelembaban mendeteksi apa?",
+      "opts": [
+        "Cahaya",
+        "Seberapa lembab atau kering udara atau tanah",
+        "Jarak",
+        "Suara"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu ground (GND) dalam rangkaian listrik?",
+      "opts": [
+        "Tanah tempat robot berdiri",
+        "Titik referensi negatif dalam rangkaian yang melengkapi jalur arus",
+        "Nama baterai",
+        "Jenis sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa komponen elektronik bisa rusak jika tegangan terlalu tinggi?",
+      "opts": [
+        "Karena komponen takut cahaya",
+        "Karena arus berlebih bisa merusak atau membakar komponen",
+        "Karena komponen tidak suka panas",
+        "Karena kabel menjadi terlalu panjang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu voltase / tegangan?",
+      "opts": [
+        "Kecepatan putaran motor",
+        "Beda potensial yang mendorong arus listrik mengalir",
+        "Jumlah lampu dalam rangkaian",
+        "Berat baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Berapa volt baterai AA yang umum digunakan?",
+      "opts": [
+        "9 Volt",
+        "3 Volt",
+        "1.5 Volt",
+        "12 Volt"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu rangkaian seri?",
+      "opts": [
+        "Rangkaian dengan banyak baterai",
+        "Rangkaian di mana komponen disambung berurutan satu jalur",
+        "Rangkaian yang sangat panjang",
+        "Rangkaian dengan banyak saklar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu rangkaian paralel?",
+      "opts": [
+        "Rangkaian dengan satu jalur saja",
+        "Rangkaian di mana komponen disambung pada jalur yang berbeda secara bersamaan",
+        "Rangkaian dengan dua baterai",
+        "Rangkaian yang sangat pendek"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Jika satu lampu di rangkaian seri mati, apa yang terjadi pada lampu lain?",
+      "opts": [
+        "Lampu lain makin terang",
+        "Lampu lain juga ikut mati karena jalurnya terputus",
+        "Lampu lain tidak terpengaruh",
+        "Lampu lain berkedip"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Jika satu lampu di rangkaian paralel mati, apa yang terjadi?",
+      "opts": [
+        "Semua lampu ikut mati",
+        "Lampu lain tetap menyala karena punya jalurnya sendiri",
+        "Lampu lain jadi lebih redup",
+        "Baterai langsung habis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu daya listrik (power)?",
+      "opts": [
+        "Jumlah komponen",
+        "Energi yang digunakan per satuan waktu (Tegangan × Arus)",
+        "Panjang kabel",
+        "Ukuran baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Satuan daya listrik adalah?",
+      "opts": [
+        "Volt",
+        "Ampere",
+        "Watt",
+        "Ohm"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu energi listrik?",
+      "opts": [
+        "Cahaya dari lampu",
+        "Kemampuan listrik untuk melakukan kerja",
+        "Kecepatan arus",
+        "Ukuran baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu generator?",
+      "opts": [
+        "Alat untuk menyimpan listrik",
+        "Mesin yang menghasilkan listrik dari energi gerak atau mekanik",
+        "Jenis sensor",
+        "Nama motor kecil"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot penjinak bom sangat membantu manusia?",
+      "opts": [
+        "Karena robot lebih pintar",
+        "Karena robot bisa melakukan pekerjaan berbahaya tanpa membahayakan nyawa manusia",
+        "Karena robot lebih murah",
+        "Karena robot tidak takut"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu rangkaian terbuka (open circuit)?",
+      "opts": [
+        "Rangkaian yang tidak punya komponen",
+        "Rangkaian yang jalurnya terputus sehingga arus tidak bisa mengalir",
+        "Rangkaian dengan banyak kabel",
+        "Rangkaian yang sangat besar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu rangkaian tertutup (closed circuit)?",
+      "opts": [
+        "Rangkaian yang dikurung dalam kotak",
+        "Rangkaian yang jalurnya tersambung sempurna sehingga arus bisa mengalir",
+        "Rangkaian dengan satu komponen",
+        "Rangkaian tanpa baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kepanjangan dari DC?",
+      "opts": [
+        "Digital Current",
+        "Direct Current (arus searah)",
+        "Dual Circuit",
+        "Dynamic Charge"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kepanjangan dari AC?",
+      "opts": [
+        "Auto Current",
+        "Alternating Current (arus bolak-balik)",
+        "Advanced Circuit",
+        "Automatic Charge"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Listrik PLN di rumah termasuk jenis apa?",
+      "opts": [
+        "DC (arus searah)",
+        "AC (arus bolak-balik)",
+        "Listrik statis",
+        "Listrik baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Baterai menghasilkan jenis listrik apa?",
+      "opts": [
+        "AC (arus bolak-balik)",
+        "Listrik statis",
+        "DC (arus searah)",
+        "Listrik surya"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu komponen pasif dalam elektronik?",
+      "opts": [
+        "Komponen yang mahal",
+        "Komponen yang tidak memerlukan sumber daya aktif, seperti resistor dan kapasitor",
+        "Komponen yang bergerak",
+        "Komponen yang menghasilkan listrik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa kita harus mematikan daya sebelum merangkai komponen?",
+      "opts": [
+        "Agar komponen tidak bosen",
+        "Untuk keselamatan, mencegah korsleting atau komponen terbakar",
+        "Agar lebih cepat",
+        "Agar baterai tidak habis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu fuse (sekering)?",
+      "opts": [
+        "Jenis kabel khusus",
+        "Komponen pengaman yang akan putus jika arus terlalu besar untuk melindungi rangkaian",
+        "Jenis sensor",
+        "Nama baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu IC (Integrated Circuit)?",
+      "opts": [
+        "Nama perusahaan elektronik",
+        "Chip kecil yang berisi banyak komponen elektronik dalam satu kemasan",
+        "Jenis kabel data",
+        "Nama baterai canggih"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud digital dalam elektronik?",
+      "opts": [
+        "Elektronik yang mahal",
+        "Sinyal yang hanya memiliki dua nilai: 0 (mati) dan 1 (hidup)",
+        "Elektronik berwarna",
+        "Elektronik berukuran kecil"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud analog dalam elektronik?",
+      "opts": [
+        "Elektronik kuno",
+        "Sinyal yang nilainya bisa berubah secara kontinyu, bukan hanya 0 dan 1",
+        "Elektronik berwarna analog",
+        "Nama jenis baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor ultrasonik pada robot digunakan untuk menghindari apa?",
+      "opts": [
+        "Hujan",
+        "Rintangan atau benda-benda di depannya",
+        "Panas matahari",
+        "Suara keras"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu robot humanoid?",
+      "opts": [
+        "Robot yang sangat kecil",
+        "Robot yang bentuknya menyerupai manusia",
+        "Robot yang bisa berbicara",
+        "Robot yang sangat mahal"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan sensor garis (line sensor) pada robot?",
+      "opts": [
+        "Mendeteksi suhu lantai",
+        "Mendeteksi garis warna di lantai agar robot bisa mengikutinya",
+        "Mengukur kecepatan robot",
+        "Mendeteksi dinding"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu speaker dalam elektronik?",
+      "opts": [
+        "Jenis baterai",
+        "Komponen yang mengubah sinyal listrik menjadi suara",
+        "Jenis sensor cahaya",
+        "Alat pengukur arus"
+      ],
+      "ans": 1
+    }
   ],
   "programmer": [
-    { "q": "Apa itu program komputer?", "opts": ["Sebuah mesin fisik","Sekumpulan instruksi yang memberitahu komputer apa yang harus dilakukan","Jenis baterai khusus","Nama alat pengukur"], "ans": 1 },
-    { "q": "Arduino itu apa?", "opts": ["Nama makanan Italia","Papan mikrokontroler yang bisa diprogram untuk mengontrol elektronik","Jenis baterai","Nama aplikasi game"], "ans": 1 },
-    { "q": "Apa yang pertama kali dilakukan sebelum upload program ke Arduino?", "opts": ["Merendam Arduino di air","Menulis/membuat program di komputer terlebih dahulu","Mengisi baterai dulu","Membeli dulu di toko"], "ans": 1 },
-    { "q": "Apa itu variabel dalam pemrograman?", "opts": ["Nama file program","Tempat menyimpan data sementara dalam program","Tombol di keyboard","Jenis kabel khusus"], "ans": 1 },
-    { "q": "Perintah mana yang membuat Arduino menunggu 1 detik?", "opts": ["wait(1)","pause(1000)","delay(1000)","stop(1)"], "ans": 2 },
-    { "q": "Apa itu loop dalam program Arduino?", "opts": ["Program yang langsung berhenti","Bagian program yang terus dijalankan berulang-ulang","Cara menyimpan file","Nama papan Arduino"], "ans": 1 },
-    { "q": "Fungsi if dalam program adalah?", "opts": ["Mengulang perintah","Mengecek suatu kondisi, lalu memutuskan apa yang dilakukan","Mencetak teks","Menghitung angka"], "ans": 1 },
-    { "q": "Apa itu pin pada Arduino?", "opts": ["Jarum untuk menjahit","Lubang/kaki yang dipakai untuk menghubungkan komponen ke Arduino","Nama program khusus","Jenis baterai"], "ans": 1 },
-    { "q": "Perintah digitalWrite(13, HIGH) artinya?", "opts": ["Mengukur tegangan pin 13","Menghidupkan/menyalakan pin 13","Membaca nilai pin 13","Mematikan Arduino"], "ans": 1 },
-    { "q": "Apa itu Serial Monitor di Arduino IDE?", "opts": ["Layar untuk nonton film","Jendela untuk melihat pesan/teks yang dikirim Arduino ke komputer","Alat untuk mengukur listrik","Tempat menyimpan file"], "ans": 1 },
-    { "q": "Tanda // dalam kode Arduino digunakan untuk?", "opts": ["Membagi dua angka","Menulis komentar yang tidak dijalankan program","Menghubungkan dua kabel","Membuka file baru"], "ans": 1 },
-    { "q": "Apa itu upload program ke Arduino?", "opts": ["Memindahkan file ke internet","Mengirim program yang sudah ditulis dari komputer ke Arduino","Menghapus program lama","Mencetak kode program"], "ans": 1 },
-    { "q": "void setup() pada Arduino dijalankan kapan?", "opts": ["Setiap 1 detik sekali","Hanya sekali saat Arduino pertama kali menyala","Terus menerus","Hanya saat tombol ditekan"], "ans": 1 },
-    { "q": "void loop() pada Arduino dijalankan kapan?", "opts": ["Hanya sekali","Setiap 10 detik","Terus berulang selama Arduino menyala","Hanya saat disambung ke komputer"], "ans": 2 },
-    { "q": "Apa itu pinMode(13, OUTPUT)?", "opts": ["Membaca nilai dari pin 13","Memberitahu Arduino bahwa pin 13 akan dipakai sebagai keluaran/output","Mematikan pin 13","Mengukur arus pin 13"], "ans": 1 },
-    { "q": "Bahasa yang digunakan untuk memprogram Arduino adalah?", "opts": ["Bahasa Inggris biasa","Bahasa pemrograman berbasis C/C++","Bahasa HTML","Bahasa Python saja"], "ans": 1 },
-    { "q": "Apa arti OUTPUT pada pinMode?", "opts": ["Arduino akan membaca data dari komponen","Arduino akan mengirim sinyal ke komponen","Arduino akan tidur","Arduino akan restart"], "ans": 1 },
-    { "q": "Apa arti INPUT pada pinMode?", "opts": ["Arduino akan mengirim sinyal","Arduino akan membaca/menerima data dari komponen seperti sensor","Arduino akan mati","Arduino akan menampilkan gambar"], "ans": 1 },
-    { "q": "Apa yang terjadi kalau ada kesalahan dalam kode dan kita klik Verify di Arduino IDE?", "opts": ["Program langsung jalan di Arduino","Muncul pesan error yang menunjukkan letak kesalahan","Arduino langsung mati","Program dihapus"], "ans": 1 },
-    { "q": "Kenapa kita perlu menyambung Arduino ke komputer dengan kabel USB?", "opts": ["Agar Arduino bisa browsing internet","Untuk mengisi daya dan mengupload program dari komputer","Agar layar Arduino menyala","Untuk mencetak kode"], "ans": 1 },
-    { "q": "Apa itu kondisi TRUE dalam pemrograman?", "opts": ["Kondisi yang salah","Kondisi yang bernilai benar/terpenuhi","Kondisi yang error","Kondisi yang kosong"], "ans": 1 },
-    { "q": "Simbol = dalam pemrograman digunakan untuk?", "opts": ["Membandingkan dua nilai apakah sama","Mengisi nilai ke dalam variabel","Menambahkan dua angka","Menghapus variabel"], "ans": 1 },
-    { "q": "Apa itu fungsi/function dalam program?", "opts": ["Nama file program","Kumpulan perintah yang diberi nama dan bisa dipanggil berkali-kali","Jenis sensor","Nama pin Arduino"], "ans": 1 },
-    { "q": "Kenapa pemrograman penting dalam robotika?", "opts": ["Agar robot bisa makan sendiri","Agar robot tahu apa yang harus dilakukan dan kapan melakukannya","Agar robot bisa terbang","Agar robot bisa bicara bahasa Inggris"], "ans": 1 },
-    { "q": "Apa yang dimaksud dengan bug dalam pemrograman?", "opts": ["Serangga yang masuk ke komputer","Kesalahan dalam kode program yang membuat program tidak berjalan benar","Nama fitur baru","Jenis kabel data"], "ans": 1 }
+    {
+      "q": "Apa itu program komputer?",
+      "opts": [
+        "Sebuah mesin fisik",
+        "Sekumpulan instruksi yang memberitahu komputer apa yang harus dilakukan",
+        "Jenis baterai khusus",
+        "Nama alat pengukur"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Arduino itu apa?",
+      "opts": [
+        "Nama makanan Italia",
+        "Papan mikrokontroler yang bisa diprogram untuk mengontrol elektronik",
+        "Jenis baterai",
+        "Nama aplikasi game"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang pertama kali dilakukan sebelum upload program ke Arduino?",
+      "opts": [
+        "Merendam Arduino di air",
+        "Menulis/membuat program di komputer terlebih dahulu",
+        "Mengisi baterai dulu",
+        "Membeli dulu di toko"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu variabel dalam pemrograman?",
+      "opts": [
+        "Nama file program",
+        "Tempat menyimpan data sementara dalam program",
+        "Tombol di keyboard",
+        "Jenis kabel khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Perintah mana yang membuat Arduino menunggu 1 detik?",
+      "opts": [
+        "wait(1)",
+        "pause(1000)",
+        "delay(1000)",
+        "stop(1)"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu loop dalam program Arduino?",
+      "opts": [
+        "Program yang langsung berhenti",
+        "Bagian program yang terus dijalankan berulang-ulang",
+        "Cara menyimpan file",
+        "Nama papan Arduino"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Fungsi if dalam program adalah?",
+      "opts": [
+        "Mengulang perintah",
+        "Mengecek suatu kondisi, lalu memutuskan apa yang dilakukan",
+        "Mencetak teks",
+        "Menghitung angka"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu pin pada Arduino?",
+      "opts": [
+        "Jarum untuk menjahit",
+        "Lubang/kaki yang dipakai untuk menghubungkan komponen ke Arduino",
+        "Nama program khusus",
+        "Jenis baterai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Perintah digitalWrite(13, HIGH) artinya?",
+      "opts": [
+        "Mengukur tegangan pin 13",
+        "Menghidupkan/menyalakan pin 13",
+        "Membaca nilai pin 13",
+        "Mematikan Arduino"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu Serial Monitor di Arduino IDE?",
+      "opts": [
+        "Layar untuk nonton film",
+        "Jendela untuk melihat pesan/teks yang dikirim Arduino ke komputer",
+        "Alat untuk mengukur listrik",
+        "Tempat menyimpan file"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Tanda // dalam kode Arduino digunakan untuk?",
+      "opts": [
+        "Membagi dua angka",
+        "Menulis komentar yang tidak dijalankan program",
+        "Menghubungkan dua kabel",
+        "Membuka file baru"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu upload program ke Arduino?",
+      "opts": [
+        "Memindahkan file ke internet",
+        "Mengirim program yang sudah ditulis dari komputer ke Arduino",
+        "Menghapus program lama",
+        "Mencetak kode program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "void setup() pada Arduino dijalankan kapan?",
+      "opts": [
+        "Setiap 1 detik sekali",
+        "Hanya sekali saat Arduino pertama kali menyala",
+        "Terus menerus",
+        "Hanya saat tombol ditekan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "void loop() pada Arduino dijalankan kapan?",
+      "opts": [
+        "Hanya sekali",
+        "Setiap 10 detik",
+        "Terus berulang selama Arduino menyala",
+        "Hanya saat disambung ke komputer"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu pinMode(13, OUTPUT)?",
+      "opts": [
+        "Membaca nilai dari pin 13",
+        "Memberitahu Arduino bahwa pin 13 akan dipakai sebagai keluaran/output",
+        "Mematikan pin 13",
+        "Mengukur arus pin 13"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Bahasa yang digunakan untuk memprogram Arduino adalah?",
+      "opts": [
+        "Bahasa Inggris biasa",
+        "Bahasa pemrograman berbasis C/C++",
+        "Bahasa HTML",
+        "Bahasa Python saja"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa arti OUTPUT pada pinMode?",
+      "opts": [
+        "Arduino akan membaca data dari komponen",
+        "Arduino akan mengirim sinyal ke komponen",
+        "Arduino akan tidur",
+        "Arduino akan restart"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa arti INPUT pada pinMode?",
+      "opts": [
+        "Arduino akan mengirim sinyal",
+        "Arduino akan membaca/menerima data dari komponen seperti sensor",
+        "Arduino akan mati",
+        "Arduino akan menampilkan gambar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi kalau ada kesalahan dalam kode dan kita klik Verify di Arduino IDE?",
+      "opts": [
+        "Program langsung jalan di Arduino",
+        "Muncul pesan error yang menunjukkan letak kesalahan",
+        "Arduino langsung mati",
+        "Program dihapus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita perlu menyambung Arduino ke komputer dengan kabel USB?",
+      "opts": [
+        "Agar Arduino bisa browsing internet",
+        "Untuk mengisi daya dan mengupload program dari komputer",
+        "Agar layar Arduino menyala",
+        "Untuk mencetak kode"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu kondisi TRUE dalam pemrograman?",
+      "opts": [
+        "Kondisi yang salah",
+        "Kondisi yang bernilai benar/terpenuhi",
+        "Kondisi yang error",
+        "Kondisi yang kosong"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Simbol = dalam pemrograman digunakan untuk?",
+      "opts": [
+        "Membandingkan dua nilai apakah sama",
+        "Mengisi nilai ke dalam variabel",
+        "Menambahkan dua angka",
+        "Menghapus variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu fungsi/function dalam program?",
+      "opts": [
+        "Nama file program",
+        "Kumpulan perintah yang diberi nama dan bisa dipanggil berkali-kali",
+        "Jenis sensor",
+        "Nama pin Arduino"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa pemrograman penting dalam robotika?",
+      "opts": [
+        "Agar robot bisa makan sendiri",
+        "Agar robot tahu apa yang harus dilakukan dan kapan melakukannya",
+        "Agar robot bisa terbang",
+        "Agar robot bisa bicara bahasa Inggris"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan bug dalam pemrograman?",
+      "opts": [
+        "Serangga yang masuk ke komputer",
+        "Kesalahan dalam kode program yang membuat program tidak berjalan benar",
+        "Nama fitur baru",
+        "Jenis kabel data"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu algoritma?",
+      "opts": [
+        "Nama bahasa pemrograman",
+        "Langkah-langkah urutan yang jelas untuk memecahkan suatu masalah",
+        "Jenis komputer",
+        "Nama software"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu debugging?",
+      "opts": [
+        "Menambahkan fitur baru",
+        "Proses menemukan dan memperbaiki kesalahan/bug dalam kode",
+        "Menghapus program",
+        "Menulis program baru"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu compile?",
+      "opts": [
+        "Menyimpan file",
+        "Proses mengubah kode yang ditulis manusia menjadi bahasa yang dimengerti komputer",
+        "Menghapus kode",
+        "Menjalankan program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu integer dalam pemrograman?",
+      "opts": [
+        "Teks/huruf",
+        "Bilangan desimal",
+        "Bilangan bulat seperti 1, 2, 3, -5",
+        "Nilai benar/salah"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu string dalam pemrograman?",
+      "opts": [
+        "Bilangan bulat",
+        "Kumpulan karakter / teks seperti 'Halo' atau 'Robot'",
+        "Bilangan desimal",
+        "Nilai benar/salah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu boolean?",
+      "opts": [
+        "Bilangan bulat besar",
+        "Tipe data yang hanya punya dua nilai: true atau false",
+        "Kumpulan teks",
+        "Bilangan desimal"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu array / list?",
+      "opts": [
+        "Nama fungsi khusus",
+        "Kumpulan beberapa nilai yang disimpan dalam satu variabel",
+        "Jenis loop",
+        "Nama variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Simbol == dalam pemrograman digunakan untuk?",
+      "opts": [
+        "Mengisi nilai ke variabel",
+        "Membandingkan apakah dua nilai sama atau tidak",
+        "Menambah angka",
+        "Menghapus variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Simbol != dalam pemrograman artinya?",
+      "opts": [
+        "Sama dengan",
+        "Tidak sama dengan",
+        "Lebih besar dari",
+        "Lebih kecil dari"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu while loop?",
+      "opts": [
+        "Loop yang hanya berjalan sekali",
+        "Loop yang terus berjalan selama kondisinya bernilai true",
+        "Loop yang berjalan mundur",
+        "Nama fungsi khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu for loop?",
+      "opts": [
+        "Loop yang berjalan selamanya",
+        "Loop yang berjalan sebanyak jumlah yang ditentukan",
+        "Nama variabel",
+        "Jenis kondisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu kondisi if-else?",
+      "opts": [
+        "Cara membuat loop",
+        "Cara membuat program memilih antara dua jalur berdasarkan kondisi",
+        "Cara menyimpan data",
+        "Cara memanggil fungsi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Perintah Serial.print() di Arduino digunakan untuk?",
+      "opts": [
+        "Mencetak dokumen",
+        "Mengirim teks ke Serial Monitor agar bisa dibaca di komputer",
+        "Memprint program",
+        "Menghapus teks"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu analogRead() di Arduino?",
+      "opts": [
+        "Membaca nilai digital 0 atau 1",
+        "Membaca nilai analog dari sensor (0-1023)",
+        "Menulis nilai ke pin",
+        "Mengatur kecepatan loop"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu analogWrite() di Arduino?",
+      "opts": [
+        "Membaca sensor analog",
+        "Mengirim sinyal PWM ke pin untuk mengatur kecerahan atau kecepatan",
+        "Menulis teks ke layar",
+        "Membaca nilai digital"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu PWM?",
+      "opts": [
+        "Power With Motor",
+        "Pulse Width Modulation - cara mengatur daya dengan mengubah lebar pulsa sinyal",
+        "Program Write Mode",
+        "Pin Wire Method"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Pin mana di Arduino Uno yang mendukung PWM?",
+      "opts": [
+        "Semua pin",
+        "Hanya pin 13",
+        "Pin dengan tanda ~ (tilde) seperti 3, 5, 6, 9, 10, 11",
+        "Hanya pin A0-A5"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu digitalRead() di Arduino?",
+      "opts": [
+        "Membaca nilai analog sensor",
+        "Membaca nilai digital sebuah pin, hasilnya HIGH atau LOW",
+        "Menulis nilai ke pin",
+        "Mengatur waktu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "HIGH pada Arduino berarti?",
+      "opts": [
+        "Nilai 0, pin mati",
+        "Nilai 1 / tegangan penuh, pin aktif",
+        "Setengah tegangan",
+        "Tidak ada tegangan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "LOW pada Arduino berarti?",
+      "opts": [
+        "Tegangan penuh",
+        "Nilai 0 / tidak ada tegangan, pin tidak aktif",
+        "Setengah tegangan",
+        "Tegangan berlebih"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi millis() di Arduino?",
+      "opts": [
+        "Mengukur jarak",
+        "Mengembalikan jumlah milidetik sejak Arduino menyala",
+        "Mengatur kecepatan motor",
+        "Membaca sensor suhu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa millis() lebih baik dari delay() untuk multitasking?",
+      "opts": [
+        "Karena millis() lebih cepat",
+        "Karena millis() tidak menghentikan program, jadi Arduino bisa melakukan hal lain sambil menunggu",
+        "Karena millis() lebih mudah ditulis",
+        "Karena millis() tidak butuh daya"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu library/pustaka dalam Arduino?",
+      "opts": [
+        "Tempat menyimpan Arduino",
+        "Kumpulan kode siap pakai yang bisa kita tambahkan agar tidak perlu menulis dari nol",
+        "Nama file program",
+        "Jenis sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Bagaimana cara menambahkan library di Arduino IDE?",
+      "opts": [
+        "Tulis kode sendiri",
+        "Melalui menu Sketch > Include Library > Add .ZIP Library atau Library Manager",
+        "Download dari internet lalu restart",
+        "Ketik nama library di kode"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu konstanta dalam pemrograman?",
+      "opts": [
+        "Variabel yang bisa berubah",
+        "Nilai yang ditetapkan dan tidak berubah sepanjang program berjalan",
+        "Nama fungsi",
+        "Jenis loop"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kata kunci const di Arduino digunakan untuk?",
+      "opts": [
+        "Membuat loop",
+        "Mendeklarasikan variabel yang nilainya tidak bisa diubah (konstanta)",
+        "Memanggil fungsi",
+        "Membaca sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu tipe data float?",
+      "opts": [
+        "Bilangan bulat",
+        "Bilangan desimal seperti 3.14 atau 1.5",
+        "Nilai true/false",
+        "Karakter tunggal"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Operator + dalam pemrograman digunakan untuk?",
+      "opts": [
+        "Membandingkan nilai",
+        "Menjumlahkan dua angka",
+        "Mengurangi angka",
+        "Membagi angka"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Operator > dalam pemrograman artinya?",
+      "opts": [
+        "Sama dengan",
+        "Tidak sama dengan",
+        "Lebih besar dari",
+        "Lebih kecil dari"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu parameter/argumen fungsi?",
+      "opts": [
+        "Nama fungsi",
+        "Nilai yang diberikan ke fungsi saat dipanggil",
+        "Hasil dari fungsi",
+        "Jenis fungsi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu return value?",
+      "opts": [
+        "Nama variabel",
+        "Nilai yang dikembalikan oleh fungsi setelah selesai dijalankan",
+        "Jenis loop",
+        "Nama kondisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan tanda {} (kurung kurawal) dalam kode Arduino?",
+      "opts": [
+        "Untuk menulis komentar",
+        "Untuk mengelompokkan serangkaian perintah dalam satu blok",
+        "Untuk menulis teks",
+        "Untuk menghitung nilai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan tanda ; (titik koma) di akhir perintah Arduino?",
+      "opts": [
+        "Menulis komentar",
+        "Menandai akhir dari satu perintah/statement",
+        "Memisahkan dua program",
+        "Mengakhiri loop"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu IDE?",
+      "opts": [
+        "Integrated Data Engine",
+        "Integrated Development Environment - software tempat menulis dan mengupload kode",
+        "Intelligent Device Editor",
+        "Internal Device Environment"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Arduino IDE bisa diunduh dari mana?",
+      "opts": [
+        "Toko online",
+        "Situs resmi Arduino di arduino.cc",
+        "Dari dalam Arduino itu sendiri",
+        "Dari toko fisik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang harus dipilih di Arduino IDE sebelum upload program?",
+      "opts": [
+        "Warna tema editor",
+        "Jenis board dan port yang benar",
+        "Bahasa pemrograman",
+        "Ukuran font"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu port COM di Arduino?",
+      "opts": [
+        "Nama program",
+        "Port komunikasi di komputer tempat Arduino terhubung",
+        "Jenis kabel",
+        "Nama sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita harus deklarasikan variabel sebelum menggunakannya?",
+      "opts": [
+        "Karena itu aturan yang bagus saja",
+        "Agar komputer tahu tipe data dan tempat di memori yang perlu disiapkan",
+        "Karena variabel perlu waktu untuk 'siap'",
+        "Karena tanpa deklarasi program lebih lambat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu scope variabel?",
+      "opts": [
+        "Ukuran variabel",
+        "Area dalam program di mana variabel tersebut bisa diakses",
+        "Nama variabel",
+        "Tipe data variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Variabel yang dideklarasikan di dalam fungsi disebut?",
+      "opts": [
+        "Variabel global",
+        "Variabel lokal",
+        "Variabel tetap",
+        "Variabel besar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Variabel yang dideklarasikan di luar semua fungsi disebut?",
+      "opts": [
+        "Variabel lokal",
+        "Variabel kecil",
+        "Variabel global",
+        "Variabel sementara"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu inkrement (++) dalam pemrograman?",
+      "opts": [
+        "Mengurangi nilai variabel sebesar 1",
+        "Menambahkan nilai variabel sebesar 1",
+        "Mengalikan nilai variabel",
+        "Membagi nilai variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu dekrement (--) dalam pemrograman?",
+      "opts": [
+        "Menambah nilai variabel sebesar 1",
+        "Mengurangi nilai variabel sebesar 1",
+        "Mengalikan nilai variabel",
+        "Membagi nilai variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Logika AND (&&) dalam pemrograman artinya?",
+      "opts": [
+        "Salah satu kondisi terpenuhi sudah cukup",
+        "Kedua kondisi harus terpenuhi agar hasilnya true",
+        "Tidak ada kondisi yang terpenuhi",
+        "Salah satu kondisi harus salah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Logika OR (||) dalam pemrograman artinya?",
+      "opts": [
+        "Kedua kondisi harus terpenuhi",
+        "Cukup salah satu kondisi terpenuhi agar hasilnya true",
+        "Semua kondisi harus salah",
+        "Tidak ada yang terpenuhi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Logika NOT (!) dalam pemrograman artinya?",
+      "opts": [
+        "Menguatkan kondisi",
+        "Membalik nilai kondisi: true menjadi false dan sebaliknya",
+        "Menggabungkan kondisi",
+        "Mengulang kondisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi jika kita lupa titik koma (;) di akhir perintah?",
+      "opts": [
+        "Program berjalan lebih cepat",
+        "Akan muncul error saat dikompilasi",
+        "Program berjalan normal",
+        "Program berhenti tiba-tiba"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu nested loop (loop bersarang)?",
+      "opts": [
+        "Loop yang sangat cepat",
+        "Loop yang ada di dalam loop lain",
+        "Loop yang berjalan mundur",
+        "Loop tanpa kondisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Keyword break dalam loop digunakan untuk?",
+      "opts": [
+        "Melanjutkan ke iterasi berikutnya",
+        "Menghentikan loop sebelum waktunya selesai",
+        "Memulai loop baru",
+        "Menambah kecepatan loop"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Keyword continue dalam loop digunakan untuk?",
+      "opts": [
+        "Menghentikan loop",
+        "Melewati sisa kode di iterasi ini dan langsung ke iterasi berikutnya",
+        "Memulai ulang loop dari awal",
+        "Menambah counter loop"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu rekursi dalam pemrograman?",
+      "opts": [
+        "Loop yang sangat cepat",
+        "Fungsi yang memanggil dirinya sendiri",
+        "Cara menyimpan data",
+        "Nama variabel khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu pseudocode?",
+      "opts": [
+        "Kode dalam bahasa asing",
+        "Penulisan algoritma menggunakan bahasa manusia yang mirip kode, sebelum ditulis ke bahasa pemrograman sesungguhnya",
+        "Nama program khusus",
+        "Kode yang salah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu flowchart?",
+      "opts": [
+        "Diagram aliran air",
+        "Diagram visual yang menggambarkan langkah-langkah algoritma atau program",
+        "Nama software",
+        "Jenis loop"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Simbol mana dalam flowchart yang menunjukkan keputusan/kondisi?",
+      "opts": [
+        "Kotak persegi",
+        "Belah ketupat (diamond)",
+        "Oval",
+        "Panah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Dalam pemrograman, 0 (nol) sering dianggap sebagai?",
+      "opts": [
+        "Nilai positif",
+        "False / tidak aktif",
+        "Nilai terbesar",
+        "Error"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Dalam pemrograman, 1 sering dianggap sebagai?",
+      "opts": [
+        "Nilai terkecil",
+        "False / tidak aktif",
+        "True / aktif",
+        "Error"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu syntax dalam pemrograman?",
+      "opts": [
+        "Nama program",
+        "Aturan penulisan kode yang benar dalam bahasa pemrograman tertentu",
+        "Jenis error",
+        "Nama variabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu syntax error?",
+      "opts": [
+        "Error karena logika salah",
+        "Error karena penulisan kode tidak sesuai aturan bahasa pemrograman",
+        "Error karena koneksi internet",
+        "Error karena baterai habis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu logic error?",
+      "opts": [
+        "Error penulisan kode",
+        "Program berjalan tapi hasilnya tidak sesuai harapan karena logikanya salah",
+        "Error karena file hilang",
+        "Error karena daya habis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa penting memberikan nama variabel yang deskriptif?",
+      "opts": [
+        "Agar program berjalan lebih cepat",
+        "Agar kode mudah dibaca dan dipahami oleh siapa pun, termasuk diri sendiri di masa depan",
+        "Agar file lebih kecil",
+        "Agar komputer lebih pintar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu komentar dalam kode program?",
+      "opts": [
+        "Perintah yang dijalankan komputer",
+        "Catatan/penjelasan yang ditulis programmer untuk manusia, tidak dijalankan komputer",
+        "Nama variabel khusus",
+        "Jenis fungsi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu version control (misal: Git)?",
+      "opts": [
+        "Program untuk menggambar",
+        "Sistem untuk melacak perubahan kode sehingga bisa kembali ke versi sebelumnya",
+        "Cara mengupload ke Arduino",
+        "Jenis IDE"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu open source?",
+      "opts": [
+        "Program yang sangat mahal",
+        "Program yang kode sumbernya bisa dilihat, digunakan, dan dimodifikasi bebas oleh siapa saja",
+        "Program yang hanya bisa dipakai satu orang",
+        "Program yang tidak bisa diubah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Arduino adalah proyek yang bersifat?",
+      "opts": [
+        "Tertutup dan berbayar",
+        "Open source - papan dan softwarenya bisa dipelajari semua orang",
+        "Milik perusahaan besar yang rahasia",
+        "Hanya untuk profesional"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu finite loop (loop terbatas)?",
+      "opts": [
+        "Loop yang berjalan selamanya",
+        "Loop yang berjalan sebanyak jumlah tertentu lalu berhenti",
+        "Loop yang sangat lambat",
+        "Loop yang mengulang ke belakang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu infinite loop (loop tak terbatas)?",
+      "opts": [
+        "Loop yang berjalan sangat cepat",
+        "Loop yang berjalan terus menerus tanpa berhenti",
+        "Loop yang lambat",
+        "Loop dengan satu iterasi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "void loop() di Arduino secara alami adalah?",
+      "opts": [
+        "Finite loop",
+        "Infinite loop - terus berulang selama Arduino menyala",
+        "Loop 10 kali",
+        "Loop sekali saja"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu map() di Arduino?",
+      "opts": [
+        "Fungsi untuk membuat peta",
+        "Fungsi yang mengubah rentang nilai ke rentang nilai lain (misal 0-1023 menjadi 0-255)",
+        "Fungsi untuk membaca sensor",
+        "Fungsi untuk menulis ke pin"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu constrain() di Arduino?",
+      "opts": [
+        "Fungsi untuk menghitung waktu",
+        "Fungsi yang membatasi nilai agar tidak melebihi batas minimum dan maksimum",
+        "Fungsi membaca sensor",
+        "Fungsi mengatur kecepatan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu random() di Arduino?",
+      "opts": [
+        "Fungsi untuk mengacak urutan pin",
+        "Fungsi yang menghasilkan bilangan acak",
+        "Fungsi untuk membaca data acak",
+        "Fungsi untuk mengulang program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa belajar pemrograman penting untuk masa depan?",
+      "opts": [
+        "Karena semua pekerjaan nanti butuh coding",
+        "Karena kemampuan berpikir logis dan memecahkan masalah dari coding berguna di banyak bidang kehidupan",
+        "Karena komputer makin murah",
+        "Karena internet makin cepat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dilakukan seorang programmer saat menghadapi masalah besar?",
+      "opts": [
+        "Langsung menyerah",
+        "Memecah masalah besar menjadi bagian-bagian kecil yang lebih mudah diselesaikan",
+        "Menunggu bantuan",
+        "Membeli program baru"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu operator modulo (%) dalam pemrograman?",
+      "opts": [
+        "Persentase dari nilai",
+        "Sisa hasil bagi dari pembagian dua angka",
+        "Mengalikan dua nilai",
+        "Membagi nilai dengan 100"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu type casting dalam pemrograman?",
+      "opts": [
+        "Cara memilih aktor program",
+        "Mengubah tipe data suatu nilai ke tipe data lain",
+        "Cara menyimpan file",
+        "Cara memanggil fungsi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud 'clean code'?",
+      "opts": [
+        "Kode yang dihapus semua komentar",
+        "Kode yang mudah dibaca, dipahami, dan dikelola oleh programmer lain",
+        "Kode yang sangat pendek",
+        "Kode yang tidak punya variabel"
+      ],
+      "ans": 1
+    }
   ],
   "mechanic": [
-    { "q": "Apa fungsi rangka/chasis pada robot?", "opts": ["Menyimpan program robot","Sebagai tubuh/kerangka yang menopang semua bagian robot","Sumber energi listrik robot","Sensor utama robot"], "ans": 1 },
-    { "q": "Alat apa yang dipakai untuk mengencangkan baut?", "opts": ["Palu","Obeng","Penggaris","Gunting"], "ans": 1 },
-    { "q": "Baut dan mur digunakan untuk apa?", "opts": ["Menghias robot","Menyambung dan mengencangkan dua bagian agar tidak lepas","Mengalirkan listrik","Mendeteksi jarak"], "ans": 1 },
-    { "q": "Apa itu motor DC?", "opts": ["Baterai yang bisa diisi ulang","Motor yang berputar saat dialiri listrik","Sensor yang mendeteksi gerakan","Jenis roda khusus"], "ans": 1 },
-    { "q": "Apa kegunaan roda pada robot?", "opts": ["Tempat menyimpan baterai","Agar robot bisa bergerak berpindah tempat","Tempat meletakkan sensor","Sebagai antena"], "ans": 1 },
-    { "q": "Apa itu servo motor?", "opts": ["Motor yang berputar terus menerus tanpa henti","Motor yang bisa dikontrol untuk berhenti di posisi/sudut tertentu","Jenis baterai khusus","Sensor gerak"], "ans": 1 },
-    { "q": "Kenapa robot perlu roda gigi (gear)?", "opts": ["Untuk menyimpan listrik","Untuk mengubah kecepatan atau kekuatan putaran motor","Untuk mendeteksi cahaya","Untuk menyambung kabel"], "ans": 1 },
-    { "q": "Lem tembak (hot glue gun) digunakan untuk?", "opts": ["Mengelas besi tebal","Merekatkan komponen yang ringan dan tidak butuh las","Memotong plastik","Mengukur jarak"], "ans": 1 },
-    { "q": "Material plastik sering dipakai untuk rangka robot karena?", "opts": ["Sangat berat dan kuat","Ringan dan mudah dibentuk","Bisa mengalirkan listrik","Sangat mahal"], "ans": 1 },
-    { "q": "Apa itu 3D printing?", "opts": ["Cara mencetak foto 3 dimensi di kertas","Cara membuat benda padat dari model digital lapis demi lapis","Cara mengukur ketebalan bahan","Cara membuat kabel"], "ans": 1 },
-    { "q": "Obeng plus (+) dipakai untuk baut dengan kepala berbentuk?", "opts": ["Segi enam (hexagon)","Lurus (-)","Tanda plus (+)","Bulat"], "ans": 2 },
-    { "q": "Kenapa kita perlu mengukur panjang bahan sebelum memotong?", "opts": ["Agar bahan lebih berat","Agar potongan tepat dan tidak boros bahan","Agar bahan berubah warna","Agar lebih cepat habis"], "ans": 1 },
-    { "q": "Apa itu prototipe dalam membuat robot?", "opts": ["Robot yang sudah jadi dan dijual","Model awal/percobaan robot yang dibuat untuk diuji coba","Nama merek robot terkenal","Jenis program komputer"], "ans": 1 },
-    { "q": "Fungsi bearing (bantalan) pada poros roda adalah?", "opts": ["Mewarnai roda","Mengurangi gesekan agar roda berputar lebih lancar","Menyimpan listrik","Mendeteksi kecepatan"], "ans": 1 },
-    { "q": "Kenapa kita harus berhati-hati saat menggunakan lem tembak?", "opts": ["Karena lem berbau harum","Karena ujungnya sangat panas dan bisa membakar kulit","Karena lem berwarna hitam","Karena lem sangat mahal"], "ans": 1 },
-    { "q": "Apa yang harus dilakukan setelah selesai memotong bahan dengan cutter?", "opts": ["Melempar cutter ke tempat sampah","Menutup/menyimpan cutter dengan aman","Membiarkan cutter terbuka di meja","Mencuci cutter dengan air"], "ans": 1 },
-    { "q": "Perbedaan motor DC biasa dengan servo adalah?", "opts": ["Motor DC lebih mahal","Servo bisa dikontrol posisinya, motor DC hanya berputar terus","Motor DC lebih besar","Servo tidak butuh listrik"], "ans": 1 },
-    { "q": "Apa fungsi velcro/perekat pada robot pemula?", "opts": ["Menghias robot","Memasang komponen sementara agar mudah dipindah","Mengalirkan listrik","Sebagai roda cadangan"], "ans": 1 },
-    { "q": "Mengapa rangka robot tidak boleh terlalu berat?", "opts": ["Agar terlihat kecil","Agar motor tidak terbebani dan robot bisa bergerak lebih efisien","Agar murah harganya","Agar mudah dilempar"], "ans": 1 },
-    { "q": "Apa yang dimaksud dengan merakit robot?", "opts": ["Membeli robot jadi","Menyusun dan menyambung semua bagian robot hingga menjadi satu kesatuan yang berfungsi","Menggambar robot di kertas","Memprogram robot"], "ans": 1 },
-    { "q": "Penggaris digunakan saat membuat robot untuk?", "opts": ["Memukul baut","Mengukur panjang dan membantu membuat garis lurus","Mengencangkan sekrup","Memotong kabel"], "ans": 1 },
-    { "q": "Apa itu desain/blueprint sebelum membuat robot?", "opts": ["Warna cat yang akan digunakan","Gambar rencana/rancangan robot sebelum mulai dirakit","Nama program yang dipakai","Jenis baterai yang digunakan"], "ans": 1 },
-    { "q": "Kenapa kita mencoba robot di lantai datar terlebih dahulu?", "opts": ["Karena lantai lebih murah","Untuk menguji apakah robot bergerak dengan benar sebelum di medan yang susah","Karena robot takut jatuh","Karena program hanya bekerja di lantai"], "ans": 1 },
-    { "q": "Apa yang harus dilakukan jika roda robot tidak mau berputar?", "opts": ["Langsung dibuang","Dicek apakah motor mendapat listrik, apakah ada yang tersangkut, atau koneksi longgar","Disiram air","Dibiarkan saja"], "ans": 1 },
-    { "q": "Apa arti kata 'mekanik' dalam robotika?", "opts": ["Bagian yang berhubungan dengan program","Bagian fisik robot — rangka, roda, motor, dan cara robot bergerak secara fisik","Bagian sensor robot","Bagian layar robot"], "ans": 1 }
+    {
+      "q": "Apa fungsi rangka/chasis pada robot?",
+      "opts": [
+        "Menyimpan program robot",
+        "Sebagai tubuh/kerangka yang menopang semua bagian robot",
+        "Sumber energi listrik robot",
+        "Sensor utama robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Alat apa yang dipakai untuk mengencangkan baut?",
+      "opts": [
+        "Palu",
+        "Obeng",
+        "Penggaris",
+        "Gunting"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Baut dan mur digunakan untuk apa?",
+      "opts": [
+        "Menghias robot",
+        "Menyambung dan mengencangkan dua bagian agar tidak lepas",
+        "Mengalirkan listrik",
+        "Mendeteksi jarak"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu motor DC?",
+      "opts": [
+        "Baterai yang bisa diisi ulang",
+        "Motor yang berputar saat dialiri listrik",
+        "Sensor yang mendeteksi gerakan",
+        "Jenis roda khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan roda pada robot?",
+      "opts": [
+        "Tempat menyimpan baterai",
+        "Agar robot bisa bergerak berpindah tempat",
+        "Tempat meletakkan sensor",
+        "Sebagai antena"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu servo motor?",
+      "opts": [
+        "Motor yang berputar terus menerus tanpa henti",
+        "Motor yang bisa dikontrol untuk berhenti di posisi/sudut tertentu",
+        "Jenis baterai khusus",
+        "Sensor gerak"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot perlu roda gigi (gear)?",
+      "opts": [
+        "Untuk menyimpan listrik",
+        "Untuk mengubah kecepatan atau kekuatan putaran motor",
+        "Untuk mendeteksi cahaya",
+        "Untuk menyambung kabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Lem tembak (hot glue gun) digunakan untuk?",
+      "opts": [
+        "Mengelas besi tebal",
+        "Merekatkan komponen yang ringan dan tidak butuh las",
+        "Memotong plastik",
+        "Mengukur jarak"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Material plastik sering dipakai untuk rangka robot karena?",
+      "opts": [
+        "Sangat berat dan kuat",
+        "Ringan dan mudah dibentuk",
+        "Bisa mengalirkan listrik",
+        "Sangat mahal"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu 3D printing?",
+      "opts": [
+        "Cara mencetak foto 3 dimensi di kertas",
+        "Cara membuat benda padat dari model digital lapis demi lapis",
+        "Cara mengukur ketebalan bahan",
+        "Cara membuat kabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Obeng plus (+) dipakai untuk baut dengan kepala berbentuk?",
+      "opts": [
+        "Segi enam (hexagon)",
+        "Lurus (-)",
+        "Tanda plus (+)",
+        "Bulat"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Kenapa kita perlu mengukur panjang bahan sebelum memotong?",
+      "opts": [
+        "Agar bahan lebih berat",
+        "Agar potongan tepat dan tidak boros bahan",
+        "Agar bahan berubah warna",
+        "Agar lebih cepat habis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu prototipe dalam membuat robot?",
+      "opts": [
+        "Robot yang sudah jadi dan dijual",
+        "Model awal/percobaan robot yang dibuat untuk diuji coba",
+        "Nama merek robot terkenal",
+        "Jenis program komputer"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Fungsi bearing (bantalan) pada poros roda adalah?",
+      "opts": [
+        "Mewarnai roda",
+        "Mengurangi gesekan agar roda berputar lebih lancar",
+        "Menyimpan listrik",
+        "Mendeteksi kecepatan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita harus berhati-hati saat menggunakan lem tembak?",
+      "opts": [
+        "Karena lem berbau harum",
+        "Karena ujungnya sangat panas dan bisa membakar kulit",
+        "Karena lem berwarna hitam",
+        "Karena lem sangat mahal"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang harus dilakukan setelah selesai memotong bahan dengan cutter?",
+      "opts": [
+        "Melempar cutter ke tempat sampah",
+        "Menutup/menyimpan cutter dengan aman",
+        "Membiarkan cutter terbuka di meja",
+        "Mencuci cutter dengan air"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Perbedaan motor DC biasa dengan servo adalah?",
+      "opts": [
+        "Motor DC lebih mahal",
+        "Servo bisa dikontrol posisinya, motor DC hanya berputar terus",
+        "Motor DC lebih besar",
+        "Servo tidak butuh listrik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi velcro/perekat pada robot pemula?",
+      "opts": [
+        "Menghias robot",
+        "Memasang komponen sementara agar mudah dipindah",
+        "Mengalirkan listrik",
+        "Sebagai roda cadangan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa rangka robot tidak boleh terlalu berat?",
+      "opts": [
+        "Agar terlihat kecil",
+        "Agar motor tidak terbebani dan robot bisa bergerak lebih efisien",
+        "Agar murah harganya",
+        "Agar mudah dilempar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan merakit robot?",
+      "opts": [
+        "Membeli robot jadi",
+        "Menyusun dan menyambung semua bagian robot hingga menjadi satu kesatuan yang berfungsi",
+        "Menggambar robot di kertas",
+        "Memprogram robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Penggaris digunakan saat membuat robot untuk?",
+      "opts": [
+        "Memukul baut",
+        "Mengukur panjang dan membantu membuat garis lurus",
+        "Mengencangkan sekrup",
+        "Memotong kabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu desain/blueprint sebelum membuat robot?",
+      "opts": [
+        "Warna cat yang akan digunakan",
+        "Gambar rencana/rancangan robot sebelum mulai dirakit",
+        "Nama program yang dipakai",
+        "Jenis baterai yang digunakan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita mencoba robot di lantai datar terlebih dahulu?",
+      "opts": [
+        "Karena lantai lebih murah",
+        "Untuk menguji apakah robot bergerak dengan benar sebelum di medan yang susah",
+        "Karena robot takut jatuh",
+        "Karena program hanya bekerja di lantai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang harus dilakukan jika roda robot tidak mau berputar?",
+      "opts": [
+        "Langsung dibuang",
+        "Dicek apakah motor mendapat listrik, apakah ada yang tersangkut, atau koneksi longgar",
+        "Disiram air",
+        "Dibiarkan saja"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa arti kata 'mekanik' dalam robotika?",
+      "opts": [
+        "Bagian yang berhubungan dengan program",
+        "Bagian fisik robot — rangka, roda, motor, dan cara robot bergerak secara fisik",
+        "Bagian sensor robot",
+        "Bagian layar robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu torsi pada motor?",
+      "opts": [
+        "Kecepatan putaran motor",
+        "Kekuatan putar yang dihasilkan motor",
+        "Ukuran motor",
+        "Warna motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa semakin besar gear ratio, semakin lambat tapi semakin kuat?",
+      "opts": [
+        "Karena gear lebih berat",
+        "Karena kecepatan diubah menjadi kekuatan/torsi yang lebih besar",
+        "Karena motor lebih besar",
+        "Karena roda lebih besar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi as/poros (shaft) pada robot?",
+      "opts": [
+        "Menyimpan listrik",
+        "Batang yang mentransmisikan putaran dari motor ke roda atau komponen lain",
+        "Mendeteksi gerakan",
+        "Menyambungkan kabel"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu cotter pin?",
+      "opts": [
+        "Jenis obeng",
+        "Pin kecil yang dikunci agar komponen tidak lepas dari porosnya",
+        "Jenis baut",
+        "Nama motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Material mana yang paling ringan untuk rangka robot sederhana?",
+      "opts": [
+        "Besi tebal",
+        "Kayu keras",
+        "Busa/foam",
+        "Kardus atau plastik ringan"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa kegunaan kunci pas (wrench)?",
+      "opts": [
+        "Memotong kabel",
+        "Mengencangkan atau mengendorkan baut dan mur",
+        "Mengukur panjang",
+        "Membuat lubang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu tang (pliers)?",
+      "opts": [
+        "Alat pengukur",
+        "Alat untuk mencengkeram, menekuk, atau memotong kabel/kawat",
+        "Jenis obeng",
+        "Alat las"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi penggaris siku (square)?",
+      "opts": [
+        "Mengukur berat",
+        "Memastikan sudut benar-benar 90 derajat saat merakit",
+        "Memotong bahan",
+        "Mengukur suhu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu bor (drill)?",
+      "opts": [
+        "Alat pengukur ketebalan",
+        "Alat untuk membuat lubang pada bahan",
+        "Jenis obeng listrik",
+        "Alat mengelas"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita perlu membuat lubang di rangka robot?",
+      "opts": [
+        "Agar rangka lebih ringan",
+        "Untuk tempat memasukkan baut, kabel, atau poros yang menghubungkan bagian-bagian robot",
+        "Agar terlihat bagus",
+        "Agar udara bisa masuk"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu amplas (sandpaper)?",
+      "opts": [
+        "Kertas untuk menulis",
+        "Kertas kasar untuk menghaluskan permukaan bahan",
+        "Jenis isolasi kabel",
+        "Alat pengukur"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa tepi hasil potongan perlu diamplas?",
+      "opts": [
+        "Agar lebih berat",
+        "Agar tepinya tidak tajam dan tidak melukai tangan, juga agar komponen lebih pas saat dipasang",
+        "Agar berwarna lebih terang",
+        "Agar lebih cepat kering"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu chassis robot?",
+      "opts": [
+        "Roda robot",
+        "Badan utama / kerangka yang menjadi fondasi tempat semua komponen robot dipasang",
+        "Baterai robot",
+        "Program robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa chassis robot biasanya berbentuk persegi panjang?",
+      "opts": [
+        "Karena paling bagus",
+        "Bentuk yang stabil, mudah dibuat, dan efisien untuk memasang komponen",
+        "Karena robot suka bentuk itu",
+        "Karena bahan hanya tersedia berbentuk itu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu ground clearance pada robot beroda?",
+      "opts": [
+        "Warna cat bawah robot",
+        "Jarak antara bagian bawah bodi robot dengan permukaan lantai",
+        "Berat robot",
+        "Kecepatan maksimal robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa ground clearance penting?",
+      "opts": [
+        "Agar robot terlihat tinggi",
+        "Agar robot tidak tersangkut ketika melewati rintangan kecil di lantai",
+        "Agar motor lebih kuat",
+        "Agar baterai lebih tahan lama"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu omni wheel?",
+      "opts": [
+        "Roda biasa yang besar",
+        "Roda khusus yang bisa bergerak ke segala arah, termasuk menyamping",
+        "Roda untuk medan berlumpur",
+        "Roda tanpa ban"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu track/rantai pada robot?",
+      "opts": [
+        "Kabel data robot",
+        "Sabuk bergerigi yang mengelilingi dua roda seperti pada tank, memberi traksi lebih baik di medan kasar",
+        "Nama program robot",
+        "Jenis sensor robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Robot beroda lebih baik untuk medan apa?",
+      "opts": [
+        "Medan berbatu kasar",
+        "Tangga",
+        "Permukaan datar dan mulus",
+        "Medan berair dalam"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Robot bertrack/rantai lebih baik untuk medan apa?",
+      "opts": [
+        "Permukaan datar sempurna",
+        "Hanya aspal",
+        "Medan kasar, bergelombang, berbatu, atau berlumpur",
+        "Hanya dalam air"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa itu mekanisme crank pada robot?",
+      "opts": [
+        "Jenis sensor",
+        "Mekanisme yang mengubah gerak putar menjadi gerak maju-mundur (linier)",
+        "Jenis gear",
+        "Nama motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu rack and pinion?",
+      "opts": [
+        "Nama makanan",
+        "Mekanisme yang mengubah gerak putar menjadi gerak lurus menggunakan gear dan batang bergerigi",
+        "Jenis baut",
+        "Nama sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita perlu menyeimbangkan berat robot?",
+      "opts": [
+        "Agar robot lebih berat",
+        "Agar robot tidak miring/tipping dan bisa bergerak stabil",
+        "Agar robot lebih cepat",
+        "Agar baterai lebih awet"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Di mana sebaiknya baterai ditempatkan pada robot?",
+      "opts": [
+        "Di bagian paling atas",
+        "Di bagian tengah atau rendah agar titik berat robot stabil",
+        "Di bagian depan saja",
+        "Di bagian belakang saja"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu titik berat (center of gravity)?",
+      "opts": [
+        "Berat total robot",
+        "Titik di mana berat robot terdistribusi secara merata ke semua arah",
+        "Titik paling berat robot",
+        "Posisi motor robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot dengan titik berat rendah lebih stabil?",
+      "opts": [
+        "Karena lebih mudah dibuat",
+        "Karena lebih sulit terbalik saat bergerak atau di permukaan miring",
+        "Karena lebih ringan",
+        "Karena lebih cepat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu link pada mekanika robot?",
+      "opts": [
+        "Kabel data",
+        "Batang atau komponen yang menghubungkan dua sendi/joint",
+        "Jenis roda",
+        "Nama program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu joint/sendi pada robot?",
+      "opts": [
+        "Bagian yang diam",
+        "Titik di mana dua link bertemu dan bisa bergerak relatif satu sama lain",
+        "Jenis motor",
+        "Nama sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Robot dengan 2 motor penggerak (differential drive) berbelok dengan cara?",
+      "opts": [
+        "Memutar setir seperti mobil",
+        "Membuat satu motor lebih cepat dari yang lain atau membalik arah satu motor",
+        "Mengerem satu roda saja",
+        "Mengubah sudut roda depan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu solder (benda fisiknya)?",
+      "opts": [
+        "Lem khusus logam",
+        "Logam campuran (timah) titik lebur rendah yang digunakan untuk menyambung komponen elektronik",
+        "Jenis kabel",
+        "Nama obeng"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu heatshrink/shrink tube?",
+      "opts": [
+        "Jenis lem",
+        "Selongsong plastik yang mengecil saat dipanaskan, digunakan untuk menutupi sambungan kabel",
+        "Jenis isolasi untuk baut",
+        "Nama komponen sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa kita perlu menggunakan heatshrink pada sambungan kabel?",
+      "opts": [
+        "Agar kabel lebih berwarna",
+        "Untuk melindungi sambungan dari korsleting dan kerusakan mekanis",
+        "Agar kabel lebih kuat menarik beban",
+        "Agar arus listrik lebih besar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu tie wrap/cable tie?",
+      "opts": [
+        "Jenis tali khusus",
+        "Pengikat plastik yang digunakan untuk merapikan kumpulan kabel",
+        "Jenis baut nylon",
+        "Nama sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa manajemen kabel penting dalam robot?",
+      "opts": [
+        "Agar terlihat indah saja",
+        "Agar kabel tidak tersangkut pada bagian yang bergerak dan mudah diperiksa jika ada masalah",
+        "Agar robot lebih berat",
+        "Agar kabel lebih panjang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu spacer/standoff?",
+      "opts": [
+        "Nama baut khusus",
+        "Pemisah berbentuk tabung yang digunakan untuk memberi jarak antara dua komponen",
+        "Jenis roda gigi",
+        "Nama motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan standoff dalam robot?",
+      "opts": [
+        "Menjadi kaki robot",
+        "Memberi ruang antar papan elektronik atau antara PCB dan rangka agar tidak short dan sirkulasi udara bagus",
+        "Sebagai antenna",
+        "Sebagai sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu toleransi dalam mekanik?",
+      "opts": [
+        "Kesabaran seorang mekanik",
+        "Batas perbedaan ukuran yang masih bisa diterima agar komponen tetap bisa dipasang dengan baik",
+        "Nama alat ukur",
+        "Jenis baut"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa toleransi penting dalam merakit robot?",
+      "opts": [
+        "Agar lebih hemat bahan",
+        "Agar komponen bisa dipasang dengan pas, tidak terlalu longgar atau terlalu ketat",
+        "Agar robot lebih berat",
+        "Agar warnanya cocok"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu friction/gesekan pada mekanik robot?",
+      "opts": [
+        "Nama lubrikasi",
+        "Gaya hambat antara dua permukaan yang bersentuhan yang melawan gerakan",
+        "Jenis motor",
+        "Nama bearing"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Bagaimana cara mengurangi gesekan pada bagian yang berputar?",
+      "opts": [
+        "Menambah berat",
+        "Menggunakan bearing, pelumas, atau bahan yang licin",
+        "Menambah kecepatan motor",
+        "Menambah tegangan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu pelumas/lubrikant?",
+      "opts": [
+        "Jenis lem",
+        "Cairan atau gemuk yang diaplikasikan pada bagian bergerak untuk mengurangi gesekan",
+        "Jenis cat",
+        "Nama bahan plastik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu mold/cetakan dalam pembuatan robot?",
+      "opts": [
+        "Jamur yang tumbuh di robot",
+        "Bentuk negatif yang digunakan untuk membuat banyak salinan benda yang sama",
+        "Jenis plastik",
+        "Nama alat potong"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu akrilik/acrylic?",
+      "opts": [
+        "Jenis cat",
+        "Material plastik bening yang kuat dan ringan, sering digunakan untuk rangka robot",
+        "Nama bahan logam",
+        "Jenis lem"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kelebihan akrilik untuk rangka robot?",
+      "opts": [
+        "Sangat murah",
+        "Transparan (bisa melihat komponen di dalamnya), ringan, dan bisa dipotong dengan laser",
+        "Lebih kuat dari baja",
+        "Bisa mengalirkan listrik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu laser cutting?",
+      "opts": [
+        "Cara mengelas dengan laser",
+        "Cara memotong material dengan sinar laser yang presisi dan akurat",
+        "Cara mengukur dengan laser",
+        "Cara mengecat dengan laser"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu filament dalam 3D printing?",
+      "opts": [
+        "Benang untuk menjahit",
+        "Bahan berbentuk kawat yang digunakan sebagai 'tinta' dalam printer 3D",
+        "Jenis laser cutter",
+        "Nama program 3D"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Material filament paling umum untuk 3D printing robot pemula adalah?",
+      "opts": [
+        "Logam",
+        "PLA (Polylactic Acid) - plastik yang mudah dicetak dan ramah lingkungan",
+        "Karet",
+        "Kayu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu infill dalam 3D printing?",
+      "opts": [
+        "Warna cetakan",
+        "Persentase isian padat di dalam objek yang dicetak, mempengaruhi kekuatan dan berat",
+        "Nama software 3D",
+        "Jenis filamen"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Infill 100% pada 3D printing artinya?",
+      "opts": [
+        "Objek sangat ringan dan berongga",
+        "Objek sepenuhnya padat dan kuat tapi lebih berat dan butuh lebih banyak bahan",
+        "Objek setengah padat",
+        "Objek tidak jadi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu slicer software dalam 3D printing?",
+      "opts": [
+        "Program untuk mendesain bentuk 3D",
+        "Program yang mengubah model 3D menjadi instruksi lapis-per-lapis untuk printer 3D",
+        "Program untuk mengontrol robot",
+        "Program untuk menggambar 2D"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa kita perlu mendesain robot di komputer (CAD) sebelum membuatnya?",
+      "opts": [
+        "Karena aturan kompetisi",
+        "Agar bisa mengecek ukuran, kemungkinan masalah, dan menghemat bahan sebelum benar-benar dibuat",
+        "Karena komputer lebih cepat",
+        "Karena tidak ada cara lain"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu CAD?",
+      "opts": [
+        "Computer Automated Design",
+        "Computer-Aided Design - software untuk membuat desain teknik 2D atau 3D di komputer",
+        "Creative Art Drawing",
+        "Computer Assembly Drawing"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa lebih baik membuat baut kendor sedikit terlebih dahulu lalu dikencangkan?",
+      "opts": [
+        "Agar baut lebih awet",
+        "Untuk memastikan semua bagian terpasang di posisi yang benar sebelum dikunci total",
+        "Agar lebih cepat",
+        "Karena baut tidak kuat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan iterasi dalam proses membuat robot?",
+      "opts": [
+        "Membuat robot dalam sekali proses sempurna",
+        "Proses membuat, menguji, menemukan masalah, memperbaiki, dan menguji lagi berulang kali",
+        "Menyalin desain robot orang lain",
+        "Menambahkan warna pada robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa penting mendokumentasikan proses pembuatan robot?",
+      "opts": [
+        "Untuk mengisi waktu luang",
+        "Agar bisa dipelajari kembali, diperbaiki, atau dikembangkan di masa depan",
+        "Agar terlihat profesional",
+        "Agar bisa dijual"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu uji coba (testing) pada robot?",
+      "opts": [
+        "Menggambar robot",
+        "Menjalankan robot untuk melihat apakah ia berfungsi sesuai yang diharapkan dan menemukan masalah",
+        "Menampilkan robot di pameran",
+        "Mewarnai robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang harus dilakukan jika robot bergerak tidak lurus?",
+      "opts": [
+        "Dibuang dan dibuat baru",
+        "Periksa apakah kedua motor berputar sama cepat dan rodanya terpasang lurus",
+        "Disiram air",
+        "Tambahkan cat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu maintenance/perawatan robot?",
+      "opts": [
+        "Mengganti warna robot",
+        "Pemeriksaan dan perawatan rutin agar robot tetap berfungsi baik dan komponen tidak aus",
+        "Menambahkan sensor baru",
+        "Memprogram ulang robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang perlu diperiksa saat maintenance robot beroda?",
+      "opts": [
+        "Warna cat",
+        "Kondisi roda (tidak aus), kencangnya baut, koneksi kabel, dan kondisi baterai",
+        "Nama robot",
+        "Ukuran kotak robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu robot arm (lengan robot)?",
+      "opts": [
+        "Kabel di samping robot",
+        "Mekanisme robot yang menyerupai lengan dan bisa mengambil, memindahkan, atau memanipulasi benda",
+        "Jenis motor khusus",
+        "Nama sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Gripper pada robot arm digunakan untuk?",
+      "opts": [
+        "Mendeteksi benda",
+        "Mencengkeram dan mengambil benda",
+        "Mengelas benda",
+        "Mengukur benda"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu derajat kebebasan (degrees of freedom) pada robot?",
+      "opts": [
+        "Kebebasan robot bergerak ke mana saja",
+        "Jumlah arah gerakan independent yang bisa dilakukan robot",
+        "Kecepatan maksimal robot",
+        "Berat total robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Robot dengan lebih banyak derajat kebebasan (DoF) bisa?",
+      "opts": [
+        "Bergerak lebih cepat",
+        "Melakukan gerakan yang lebih kompleks dan fleksibel",
+        "Menjadi lebih ringan",
+        "Menggunakan lebih sedikit daya"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu suspension (suspensi) pada robot beroda?",
+      "opts": [
+        "Jenis motor",
+        "Sistem yang menyerap guncangan agar robot bisa melewati medan tidak rata dengan stabil",
+        "Nama sensor guncangan",
+        "Jenis roda"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot untuk kompetisi biasanya dibuat seringan mungkin?",
+      "opts": [
+        "Karena bahan ringan lebih murah",
+        "Agar motor tidak terbebani berat sendiri dan bisa bergerak lebih cepat dan efisien",
+        "Karena aturan kompetisi selalu mengharuskan",
+        "Karena warnanya lebih bagus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu waterproofing pada robot?",
+      "opts": [
+        "Membuat robot bisa berenang",
+        "Perlindungan pada robot agar komponen elektroniknya tidak rusak jika terkena air",
+        "Jenis cat khusus",
+        "Nama material khusus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan baut (bolt) dan sekrup (screw)?",
+      "opts": [
+        "Ukurannya berbeda",
+        "Baut biasanya dipasangkan dengan mur, sedangkan sekrup bisa langsung masuk ke bahan tanpa mur",
+        "Fungsinya sama persis",
+        "Sekrup terbuat dari plastik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu mur (nut)?",
+      "opts": [
+        "Jenis baut khusus",
+        "Komponen berlubang berulir yang dipasangkan dengan baut untuk mengencangkan sambungan",
+        "Jenis kunci",
+        "Nama material"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu ring/washer?",
+      "opts": [
+        "Gelang dekorasi robot",
+        "Lingkaran tipis yang dipasang antara kepala baut/mur dengan permukaan bahan untuk mendistribusikan tekanan",
+        "Jenis bearing",
+        "Nama gear"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kita menggunakan washer?",
+      "opts": [
+        "Agar terlihat lebih rapi",
+        "Agar tekanan baut/mur tersebar merata dan tidak merusak permukaan bahan",
+        "Agar baut tidak lepas",
+        "Agar baut lebih panjang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang harus dilakukan setelah selesai menggunakan alat?",
+      "opts": [
+        "Dibiarkan di meja",
+        "Dibersihkan dan disimpan kembali di tempat semula agar aman dan mudah dicari lagi",
+        "Diletakkan di lantai",
+        "Diberikan ke orang lain"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu K'NEX, LEGO Technic, atau VEX dalam konteks robotik pemula?",
+      "opts": [
+        "Nama program komputer",
+        "Set mekanik/kit yang menyediakan komponen siap pakai untuk belajar merakit robot atau mesin",
+        "Nama baterai khusus",
+        "Jenis sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kelebihan menggunakan kit robotik seperti LEGO dalam belajar mekanik?",
+      "opts": [
+        "Lebih murah dari bahan biasa",
+        "Komponen terstandarisasi dan mudah dipasang-pasang sehingga pemula bisa fokus belajar prinsip mekanik",
+        "Menghasilkan robot yang lebih kuat",
+        "Tidak perlu tools sama sekali"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu keselamatan kerja saat merakit robot?",
+      "opts": [
+        "Bekerja secepat mungkin",
+        "Mengikuti prosedur yang benar, menggunakan alat dengan tepat, dan menjaga keselamatan diri dan orang sekitar",
+        "Bekerja sendirian",
+        "Mengabaikan aturan agar lebih cepat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang harus dipakai untuk melindungi mata saat memotong bahan?",
+      "opts": [
+        "Kacamata hitam biasa",
+        "Kacamata pelindung (safety glasses)",
+        "Helm",
+        "Tidak perlu perlindungan"
+      ],
+      "ans": 1
+    }
   ]
 }

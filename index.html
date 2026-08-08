@@ -4,482 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mansa Robotics Quiz</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-    .logo { font-size: 1.8rem; font-weight: 800; color: #38bdf8; letter-spacing: -1px; }
-    .logo span { color: #f97316; }
-    .subtitle { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
-
-    .card {
-      background: #1e293b;
-      border-radius: 16px;
-      padding: 32px;
-      width: 100%;
-      max-width: 420px;
-      margin-top: 24px;
-      border: 1px solid #334155;
-    }
-    .card h2 { font-size: 1.2rem; margin-bottom: 20px; color: #f1f5f9; }
-
-    input {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid #334155;
-      background: #0f172a;
-      color: #e2e8f0;
-      font-size: 1rem;
-      margin-bottom: 14px;
-      outline: none;
-      transition: border 0.2s;
-    }
-    input:focus { border-color: #38bdf8; }
-
-    .btn {
-      width: 100%;
-      padding: 13px;
-      border-radius: 10px;
-      border: none;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s;
-    }
-    .btn:active { transform: scale(0.98); }
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .btn-primary { background: #38bdf8; color: #0f172a; }
-    .btn-google { background: #fff; color: #1e293b; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 14px; }
-    .btn-orange { background: #f97316; color: #fff; }
-    .btn-outline { background: transparent; border: 1px solid #334155; color: #94a3b8; margin-top: 10px; }
-
-    .divider { text-align: center; color: #475569; font-size: 0.8rem; margin: 10px 0; }
-
-    .screen { display: none; }
-    .screen.active { display: block; }
-
-    /* WAITING ROOM */
-    .room-code {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #38bdf8;
-      letter-spacing: 6px;
-      text-align: center;
-      padding: 20px;
-      background: #0f172a;
-      border-radius: 12px;
-      margin: 16px 0;
-    }
-    .player-list { list-style: none; max-height: 220px; overflow-y: auto; }
-    .player-list li {
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: #0f172a;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .player-list li::before { content: '🤖'; }
-    .waiting-msg { text-align: center; color: #64748b; font-size: 0.9rem; margin-top: 14px; }
-    .pulse { animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-
-    /* THEME SELECT */
-    .theme-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
-    .theme-card {
-      padding: 18px 10px;
-      border-radius: 12px;
-      border: 2px solid #334155;
-      background: #0f172a;
-      text-align: center;
-      cursor: pointer;
-      transition: border 0.2s, transform 0.15s;
-    }
-    .theme-card:hover { border-color: #38bdf8; transform: translateY(-2px); }
-    .theme-card.selected { border-color: #f97316; background: #1c1917; }
-    .theme-card .icon { font-size: 2rem; margin-bottom: 6px; }
-    .theme-card .name { font-size: 0.8rem; font-weight: 600; color: #cbd5e1; }
-
-    /* QUIZ */
-    .quiz-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .q-number { font-size: 0.8rem; color: #64748b; }
-    .timer {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #f97316;
-      min-width: 40px;
-      text-align: right;
-    }
-    .timer.urgent { color: #ef4444; animation: pulse 0.5s infinite; }
-    .progress-bar { height: 6px; background: #334155; border-radius: 99px; margin-bottom: 20px; }
-    .progress-fill { height: 100%; background: #38bdf8; border-radius: 99px; transition: width 0.4s; }
-    .question-text { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; line-height: 1.5; }
-    .options { display: flex; flex-direction: column; gap: 10px; }
-    .option-btn {
-      padding: 14px 16px;
-      border-radius: 10px;
-      border: 2px solid #334155;
-      background: #0f172a;
-      color: #e2e8f0;
-      font-size: 0.95rem;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .option-btn:hover:not(:disabled) { border-color: #38bdf8; background: #172033; }
-    .option-btn.correct { border-color: #22c55e; background: #052e16; color: #86efac; }
-    .option-btn.wrong { border-color: #ef4444; background: #2d0a0a; color: #fca5a5; }
-    .option-btn.reveal { border-color: #22c55e; background: #052e16; color: #86efac; }
-    .option-btn:disabled { cursor: default; }
-
-    /* SCOREBOARD */
-    .score-display {
-      text-align: center;
-      padding: 24px;
-      background: #0f172a;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .score-display .big { font-size: 3rem; font-weight: 800; color: #f97316; }
-    .score-display .label { color: #64748b; font-size: 0.85rem; margin-top: 4px; }
-    .leaderboard { list-style: none; }
-    .leaderboard li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: #0f172a;
-      margin-bottom: 8px;
-    }
-    .leaderboard li.me { border: 1px solid #38bdf8; }
-    .rank { font-weight: 700; color: #64748b; min-width: 28px; }
-    .rank-1 { color: #fbbf24; }
-    .rank-2 { color: #94a3b8; }
-    .rank-3 { color: #c2874a; }
-    .player-name { flex: 1; padding: 0 10px; }
-    .player-score { font-weight: 700; color: #38bdf8; }
-
-    .error-msg { color: #f87171; font-size: 0.85rem; margin-top: -8px; margin-bottom: 10px; }
-    .badge { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; margin-left: 8px; }
-    .badge-admin { background: #f97316; color: #fff; }
-    .info-text { color: #64748b; font-size: 0.85rem; margin-bottom: 16px; }
-
-    /* ANSWER FEEDBACK */
-    .feedback-overlay {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 100;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .feedback-box {
-      padding: 32px 48px;
-      border-radius: 20px;
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-    .feedback-box.correct { background: #052e16; border: 2px solid #22c55e; color: #86efac; }
-    .feedback-box.wrong { background: #2d0a0a; border: 2px solid #ef4444; color: #fca5a5; }
-    .feedback-box .pts { font-size: 2rem; }
-
-    @media (max-width: 400px) {
-      .theme-grid { grid-template-columns: 1fr; }
-      .card { padding: 20px; }
-    }
-
-    /* ===== QUIT BUTTON ===== */
-    .quit-btn {
-      position: fixed;
-      top: 14px; right: 14px;
-      z-index: 500;
-      background: #1e293b;
-      border: 1px solid #334155;
-      color: #64748b;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 7px 13px;
-      border-radius: 99px;
-      cursor: pointer;
-      transition: all 0.15s;
-      display: none;
-    }
-    .quit-btn:hover { background: #2d1a1a; border-color: #ef4444; color: #f87171; }
-
-    /* ===== QUIT CONFIRM MODAL ===== */
-    .quit-modal {
-      position: fixed; top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.8);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 800;
-    }
-    .quit-modal-box {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      padding: 28px 24px;
-      width: 90%; max-width: 320px;
-      text-align: center;
-    }
-    .quit-modal-box .icon { font-size: 2.5rem; margin-bottom: 10px; }
-    .quit-modal-box h3 { font-size: 1rem; color: #f1f5f9; margin-bottom: 8px; }
-    .quit-modal-box p { font-size: 0.82rem; color: #64748b; margin-bottom: 20px; line-height: 1.5; }
-    .quit-modal-actions { display: flex; gap: 10px; }
-    .quit-modal-actions button { flex: 1; padding: 11px; border-radius: 10px; border: none; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: opacity 0.15s; }
-    .quit-modal-actions button:active { opacity: 0.8; }
-    .btn-cancel-quit { background: #334155; color: #e2e8f0; }
-    .btn-confirm-quit { background: #ef4444; color: #fff; }
-
-    /* ===== COUNTDOWN OVERLAY ===== */
-    .countdown-overlay {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.92);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      z-index: 999;
-      gap: 16px;
-    }
-    .countdown-number {
-      font-size: 9rem;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -4px;
-      animation: countPop 0.85s ease forwards;
-      color: #f97316;
-      text-shadow: 0 0 60px #f9731688;
-    }
-    .countdown-number.go {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      color: #22c55e;
-      text-shadow: 0 0 60px #22c55e88;
-      text-align: center;
-      line-height: 1.3;
-    }
-    .countdown-label {
-      font-size: 0.9rem;
-      color: #475569;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    @keyframes countPop {
-      0%   { transform: scale(1.6); opacity: 0; }
-      30%  { transform: scale(0.95); opacity: 1; }
-      70%  { transform: scale(1); opacity: 1; }
-      100% { transform: scale(0.7); opacity: 0; }
-    }
-    @keyframes goAnim {
-      0%   { transform: scale(0.5); opacity: 0; }
-      40%  { transform: scale(1.08); opacity: 1; }
-      70%  { transform: scale(0.97); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .countdown-number.go { animation: goAnim 0.5s ease forwards; }
-
-    /* ===== ITEM SYSTEM ===== */
-    .item-bar {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-      justify-content: center;
-      align-items: center;
-    }
-    .item-slot {
-      position: relative;
-      width: 52px;
-      height: 52px;
-      border-radius: 10px;
-      border: 2px solid #334155;
-      background: #0f172a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.15s;
-      user-select: none;
-    }
-    .item-slot:hover:not(.empty):not(.disabled) { border-color: #38bdf8; transform: translateY(-2px); }
-    .item-slot.empty { opacity: 0.3; cursor: default; }
-    .item-slot.disabled { opacity: 0.5; cursor: default; }
-    .item-slot .item-icon { font-size: 1.4rem; line-height: 1; }
-    .item-slot .item-count {
-      position: absolute;
-      top: -6px; right: -6px;
-      background: #f97316;
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      border-radius: 99px;
-      width: 18px; height: 18px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .item-slot .item-label { font-size: 0.55rem; color: #64748b; font-weight: 600; margin-top: 2px; }
-    .item-slot.shield-active { border-color: #38bdf8; background: #0c1f35; box-shadow: 0 0 8px #38bdf855; }
-    .streak-bar {
-      display: flex;
-      gap: 6px;
-      justify-content: center;
-      align-items: center;
-      margin-top: 8px;
-    }
-    .streak-dot {
-      width: 10px; height: 10px;
-      border-radius: 99px;
-      background: #334155;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .streak-dot.filled { background: #f97316; transform: scale(1.2); }
-    .streak-label { font-size: 0.75rem; color: #64748b; margin-right: 4px; }
-
-    /* ITEM PICK MODAL */
-    .item-pick-modal {
-      position: fixed; top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.85);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 250;
-    }
-    .item-pick-box {
-      background: #1e293b;
-      border-radius: 20px;
-      padding: 28px 24px;
-      width: 90%; max-width: 360px;
-      border: 2px solid #f97316;
-      text-align: center;
-    }
-    .item-pick-box h3 { font-size: 1rem; color: #f97316; margin-bottom: 6px; }
-    .item-pick-box p { font-size: 0.8rem; color: #64748b; margin-bottom: 18px; }
-    .item-pick-grid { display: flex; gap: 12px; justify-content: center; }
-    .item-pick-btn {
-      flex: 1;
-      padding: 16px 8px;
-      border-radius: 14px;
-      border: 2px solid #334155;
-      background: #0f172a;
-      cursor: pointer;
-      transition: all 0.15s;
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-    }
-    .item-pick-btn:hover { border-color: #f97316; transform: translateY(-3px); background: #1c1917; }
-    .item-pick-btn .pick-icon { font-size: 2rem; }
-    .item-pick-btn .pick-name { font-size: 0.75rem; font-weight: 700; color: #cbd5e1; }
-    .item-pick-btn .pick-desc { font-size: 0.65rem; color: #64748b; line-height: 1.3; }
-
-    /* ATTACK MODAL */
-    .modal-overlay {
-      position: fixed; top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.8);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 200;
-    }
-    .modal-box {
-      background: #1e293b;
-      border-radius: 16px;
-      padding: 28px 24px;
-      width: 90%;
-      max-width: 360px;
-      border: 1px solid #334155;
-    }
-    .modal-box h3 { font-size: 1rem; margin-bottom: 16px; color: #f1f5f9; }
-    .target-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-    .target-list li {
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: #0f172a;
-      border: 2px solid #334155;
-      cursor: pointer;
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: border 0.15s;
-    }
-    .target-list li:hover { border-color: #ef4444; }
-    .target-list li .shield-icon { font-size: 0.8rem; color: #38bdf8; }
-    .modal-cancel { background: transparent; border: 1px solid #334155; color: #94a3b8; padding: 10px; border-radius: 8px; width: 100%; font-size: 0.9rem; cursor: pointer; }
-
-    /* ATTACK NOTIFICATION */
-    .attack-notif {
-      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-      background: #2d0a0a;
-      border: 2px solid #ef4444;
-      color: #fca5a5;
-      padding: 12px 20px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      z-index: 300;
-      text-align: center;
-      animation: slideDown 0.3s ease;
-      max-width: 320px;
-    }
-    .attack-notif.shielded {
-      background: #0c1f35;
-      border-color: #38bdf8;
-      color: #93c5fd;
-    }
-    @keyframes slideDown { from { opacity:0; top:-20px; } to { opacity:1; top:20px; } }
-
-    /* ITEM GOT NOTIF */
-    .item-got-notif {
-      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-      background: #052e16;
-      border: 2px solid #22c55e;
-      color: #86efac;
-      padding: 12px 20px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      z-index: 300;
-      text-align: center;
-      animation: slideUp 0.3s ease;
-      max-width: 320px;
-    }
-    @keyframes slideUp { from { opacity:0; bottom:10px; } to { opacity:1; bottom:30px; } }
-
-    /* POINT DROP ANIMATION */
-    .score-drop {
-      position: fixed;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #ef4444;
-      z-index: 400;
-      pointer-events: none;
-      animation: scoreDrop 1.5s ease forwards;
-    }
-    @keyframes scoreDrop { 0%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-60px)} }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <div style="text-align:center">
-  <div class="logo">Mansa<span>Robotics</span> Quiz 🤖</div>
+  <div class="logo">Mansa<span>Robotics</span> Quiz <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg></div>
   <div class="subtitle">Ekstrakurikuler Robotika</div>
 </div>
 
 <!-- SCREEN: LOGIN -->
 <div class="card screen active" id="screen-login">
-  <h2>Masuk dulu ya! 👋</h2>
+  <h2>Masuk dulu ya! <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></h2>
   <p class="info-text">Login pakai akun Google kamu</p>
   <button class="btn btn-google" onclick="loginGoogle()">
     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20"/>
@@ -490,7 +26,7 @@
 
 <!-- SCREEN: FILL NAME -->
 <div class="card screen" id="screen-name">
-  <h2>Siapa namamu? ✏️</h2>
+  <h2>Siapa namamu? <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></h2>
   <p class="info-text">Masukkan nama panggilan kamu</p>
   <input type="text" id="input-name" placeholder="Nama panggilan..." maxlength="20" />
   <div id="name-error" class="error-msg" style="display:none"></div>
@@ -499,7 +35,7 @@
 
 <!-- SCREEN: JOIN ROOM -->
 <div class="card screen" id="screen-join">
-  <h2>Gabung Room 🎮</h2>
+  <h2>Gabung Room <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/><path d="M4 6h16l2 12H2z"/></svg></h2>
   <p class="info-text">Minta kode room ke adminmu!</p>
   <input type="text" id="input-room-code" placeholder="Kode Room (4 huruf)..." maxlength="4" style="text-transform:uppercase;letter-spacing:4px;font-size:1.3rem;text-align:center" />
   <div id="join-error" class="error-msg" style="display:none"></div>
@@ -509,7 +45,7 @@
 
 <!-- SCREEN: WAITING ROOM -->
 <div class="card screen" id="screen-waiting">
-  <h2>Ruang Tunggu ⏳</h2>
+  <h2>Ruang Tunggu <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></h2>
   <p class="info-text">Kode Room:</p>
   <div class="room-code" id="display-room-code">????</div>
   <p class="info-text" style="margin-top:8px">Yang sudah join:</p>
@@ -519,7 +55,7 @@
 
 <!-- SCREEN: BREAK / MID-LEADERBOARD -->
 <div class="card screen" id="screen-break">
-  <h2>⏸ Jeda Sebentar!</h2>
+  <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Jeda Sebentar!</h2>
   <div class="score-display" style="margin-bottom:12px">
     <div class="big" id="break-my-score">0</div>
     <div class="label">Poin kamu sekarang</div>
@@ -527,7 +63,7 @@
   <p style="font-size:0.85rem;color:#64748b;margin-bottom:10px">Peringkat sementara:</p>
   <ul class="leaderboard" id="break-leaderboard"></ul>
   <div style="text-align:center;margin-top:16px">
-    <div id="break-countdown" style="font-size:0.9rem;color:#64748b">⏳ Menunggu admin lanjutkan sesi berikutnya...</div>
+    <div id="break-countdown" style="font-size:0.9rem;color:#64748b">Menunggu admin lanjutkan sesi berikutnya...</div>
   </div>
 </div>
 
@@ -552,47 +88,47 @@
     </div>
     <div class="item-bar">
       <div class="item-slot empty" id="item-shield" onclick="useItem('shield')" title="Shield: Tahan 1 serangan">
-        <div class="item-icon">🛡️</div>
+        <div class="item-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="item-label">SHIELD</div>
         <div class="item-count" id="shield-count" style="display:none">0</div>
       </div>
       <div class="item-slot empty" id="item-gun" onclick="useItem('gun')" title="Gun: Serang -50 poin player lain">
-        <div class="item-icon">🔫</div>
+        <div class="item-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V9H9l-2 3H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h3l2 2h8v-4z"/><line x1="9" y1="12" x2="9" y2="12" stroke-width="3" stroke-linecap="round"/></svg></div>
         <div class="item-label">GUN</div>
         <div class="item-count" id="gun-count" style="display:none">0</div>
       </div>
       <div class="item-slot empty" id="item-hint" onclick="useItem('hint')" title="Hint: Hapus 1 jawaban salah">
-        <div class="item-icon">💡</div>
+        <div class="item-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg></div>
         <div class="item-label">HINT</div>
         <div class="item-count" id="hint-count" style="display:none">0</div>
       </div>
     </div>
   </div>
 
-  <button id="btn-user-next" class="btn btn-primary" style="margin-top:12px;display:none" onclick="userNextQuestion()">Soal Berikutnya ▶</button>
+  <button id="btn-user-next" class="btn btn-primary" style="margin-top:12px;display:none" onclick="userNextQuestion()">Soal Berikutnya <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <div id="waiting-break-msg" style="display:none;margin-top:14px;text-align:center;color:#64748b;font-size:0.85rem">
-    ⏳ Menunggu peserta lain selesai...
+    <svg class="ico" style="opacity:0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Menunggu peserta lain selesai...
   </div>
 </div>
 
 <!-- ITEM PICK MODAL -->
 <div class="item-pick-modal" id="item-pick-modal" style="display:none">
   <div class="item-pick-box">
-    <h3>🔥 STREAK! Pilih Item Kamu!</h3>
+    <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> STREAK! Pilih Item Kamu!</h3>
     <p>3 jawaban benar berturut-turut — kamu berhak dapat 1 item!</p>
     <div class="item-pick-grid">
       <div class="item-pick-btn" onclick="pickItem('shield')">
-        <div class="pick-icon">🛡️</div>
+        <div class="pick-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="pick-name">SHIELD</div>
         <div class="pick-desc">Tahan 1 serangan dari player lain</div>
       </div>
       <div class="item-pick-btn" onclick="pickItem('gun')">
-        <div class="pick-icon">🔫</div>
+        <div class="pick-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V9H9l-2 3H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h3l2 2h8v-4z"/><line x1="9" y1="12" x2="9" y2="12" stroke-width="3" stroke-linecap="round"/></svg></div>
         <div class="pick-name">GUN</div>
         <div class="pick-desc">Serang player lain, -50 poin</div>
       </div>
       <div class="item-pick-btn" onclick="pickItem('hint')">
-        <div class="pick-icon">💡</div>
+        <div class="pick-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg></div>
         <div class="pick-name">HINT</div>
         <div class="pick-desc">Hapus 1 jawaban salah (1 soal)</div>
       </div>
@@ -603,7 +139,7 @@
 <!-- ATTACK TARGET MODAL -->
 <div class="modal-overlay" id="attack-modal" style="display:none">
   <div class="modal-box">
-    <h3>🔫 Pilih target serangan:</h3>
+    <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V9H9l-2 3H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h3l2 2h8v-4z"/><line x1="9" y1="12" x2="9" y2="12" stroke-width="3" stroke-linecap="round"/></svg> Pilih target serangan:</h3>
     <ul class="target-list" id="target-list"></ul>
     <button class="modal-cancel" onclick="closeAttackModal()">Batal</button>
   </div>
@@ -611,7 +147,7 @@
 
 <!-- SCREEN: RESULT -->
 <div class="card screen" id="screen-result">
-  <h2>Hasil Quiz 🏆</h2>
+  <h2>Hasil Quiz <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M7 4h10l-1 7a5 5 0 0 1-8 0z"/><path d="M4 7h3M17 7h3"/></svg></h2>
   <div class="score-display">
     <div class="big" id="my-score">0</div>
     <div class="label">Poin kamu</div>
@@ -629,7 +165,7 @@
   <p style="font-size:0.85rem;color:#64748b;margin-bottom:12px">Peringkat semua peserta:</p>
   <ul class="leaderboard" id="leaderboard"></ul>
   <div style="margin-top:16px;padding:12px;background:#0f172a;border-radius:10px;text-align:center">
-    <div class="pulse" style="color:#64748b;font-size:0.85rem">⏳ Menunggu admin untuk mulai ulang atau selesai...</div>
+    <div class="pulse" style="color:#64748b;font-size:0.85rem"><svg class="ico" style="opacity:0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Menunggu admin untuk mulai ulang atau selesai...</div>
   </div>
   <button class="btn btn-outline" style="margin-top:12px" onclick="backToLobby()">Keluar Room</button>
 </div>
@@ -637,19 +173,19 @@
 <!-- FEEDBACK OVERLAY -->
 <div class="feedback-overlay" id="feedback-overlay" style="display:none">
   <div class="feedback-box" id="feedback-box">
-    <div id="feedback-icon">✅</div>
+    <div id="feedback-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
     <div id="feedback-text">Benar!</div>
     <div class="pts" id="feedback-pts">+100</div>
   </div>
 </div>
 
 <!-- QUIT BUTTON (fixed, muncul di waiting/quiz/break) -->
-<button class="quit-btn" id="quit-btn" onclick="showQuitModal()">✕ Keluar Room</button>
+<button class="quit-btn" id="quit-btn" onclick="showQuitModal()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Keluar Room</button>
 
 <!-- QUIT CONFIRM MODAL -->
 <div class="quit-modal" id="quit-modal" style="display:none">
   <div class="quit-modal-box">
-    <div class="icon">🚪</div>
+    <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M13 4L6 6v14l7 2V4z"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
     <h3>Keluar dari Room?</h3>
     <p>Kamu akan keluar dari quiz ini.<br>Progress & poin kamu akan hilang.</p>
     <div class="quit-modal-actions">
@@ -802,6 +338,16 @@ let hintUsedThisQuestion = false; // hint only works once per question
 let attackListener = null;
 let streakThreshold = 3;   // diambil dari Firebase (setting admin)
 
+// ===== ACTIVITY LOG WRITER =====
+async function writeLog(code, data) {
+  if (!code) return;
+  try {
+    const logsRef = ref(db, `rooms/${code}/logs`);
+    const key = `${Date.now()}_${Math.random().toString(36).slice(2,6)}`;
+    await set(ref(db, `rooms/${code}/logs/${key}`), { ...data, ts: Date.now() });
+  } catch(e) {}
+}
+
 // ===== HELPERS =====
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -953,7 +499,7 @@ function enterWaitingRoom(code) {
     if (waitMsg) {
       const isReplay = snap.exists() && snap.val() === 0;
       waitMsg.textContent = isReplay
-        ? '🔄 Ronde baru! Menunggu admin memulai quiz...'
+        ? 'Ronde baru! Menunggu admin memulai quiz...'
         : 'Menunggu admin memulai quiz...';
     }
   });
@@ -1038,7 +584,7 @@ function showCountdown(callback) {
     } else {
       // GO!
       numEl.className = 'countdown-number go';
-      numEl.textContent = "LET'S GO!\nMANSA ROBOTICS 🤖";
+      numEl.textContent = "LET'S GO! — MANSA ROBOTICS";
       numEl.style.whiteSpace = 'pre';
       lblEl.textContent = '';
       SFX.countdownGo();
@@ -1126,6 +672,7 @@ function startTimer(seconds, q, code) {
         revealAnswer(q.ans);
         SFX.timeout();
         showFeedback(false, 0, 15);
+        writeLog(code, { type: 'answer_timeout', name: myName, q: currentQ });
         // Update myQuestion progress to Firebase so player isn't stuck
         const nextQ = currentQ + 1;
         update(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
@@ -1193,6 +740,12 @@ async function answer(chosen, correct, btn, code, qIndex) {
   showFeedback(isCorrect, pts, elapsed);
   updateRankBadge(code);
 
+  // Log ke admin
+  writeLog(code, isCorrect
+    ? { type: 'answer_correct', name: myName, q: qIndex, pts }
+    : { type: 'answer_wrong',   name: myName, q: qIndex }
+  );
+
   if (pendingItemPick) {
     // Show pick modal after short delay (let feedback show first)
     setTimeout(() => { SFX.streak(); showItemPickModal(code); }, 600);
@@ -1244,7 +797,7 @@ function showFeedback(isCorrect, pts, elapsed) {
   const overlay = document.getElementById('feedback-overlay');
   const box = document.getElementById('feedback-box');
   box.className = 'feedback-box ' + (isCorrect ? 'correct' : 'wrong');
-  document.getElementById('feedback-icon').textContent = isCorrect ? '✅' : '❌';
+  document.getElementById('feedback-icon').innerHTML = isCorrect ? `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>` : `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
   document.getElementById('feedback-text').textContent = isCorrect ? 'Benar!' : 'Salah!';
   document.getElementById('feedback-pts').textContent = isCorrect
     ? `+${pts} poin · ${elapsed.toFixed(1)}s`
@@ -1264,8 +817,8 @@ async function updateRankBadge(code) {
     const myRank = players.findIndex(p => p.uid === currentUser.uid) + 1;
     const el = document.getElementById('rank-badge');
     if (el && myRank > 0) {
-      const emoji = myRank === 1 ? '🥇' : myRank === 2 ? '🥈' : myRank === 3 ? '🥉' : '📍';
-      el.innerHTML = `${emoji} Peringkat kamu: <b style="color:#f1f5f9">#${myRank}</b> dari ${total} peserta`;
+      const emoji = myRank === 1 ? '#1' : myRank === 2 ? '#2' : myRank === 3 ? '#3' : `#${myRank}`;
+      el.innerHTML = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V17z"/></svg> Peringkat kamu: <b style="color:#f1f5f9">#${myRank}</b> dari ${total} peserta`;
     }
   } catch(e) { /* silent */ }
 }
@@ -1290,8 +843,8 @@ async function showBreakScreen(code) {
     const li = document.createElement('li');
     if (p.uid === currentUser.uid) li.classList.add('me');
     const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank';
-    const shieldBadge = (p.shields || 0) > 0 ? ` <span style="font-size:0.7rem">🛡️×${p.shields}</span>` : '';
-    li.innerHTML = `<span class="rank ${rankClass}">${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i+1}`}</span>
+    const shieldBadge = (p.shields || 0) > 0 ? ` <span style="font-size:0.7rem"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>×${p.shields}</span>` : '';
+    li.innerHTML = `<span class="rank ${rankClass}">${i === 0 ? '1st' : i === 1 ? '2nd' : i === 2 ? '3rd' : `#${i+1}`}</span>
       <span class="player-name">${p.name}${p.uid === currentUser.uid ? ' <b style="color:#38bdf8">(Kamu)</b>' : ''}${shieldBadge}</span>
       <span class="player-score">${p.score}</span>`;
     lb.appendChild(li);
@@ -1300,7 +853,7 @@ async function showBreakScreen(code) {
   // Ganti countdown dengan pesan nunggu admin
   const countdownEl = document.getElementById('break-countdown');
   if (countdownEl) countdownEl.parentElement.innerHTML =
-    '<div style="font-size:0.9rem;color:#64748b;margin-top:8px">⏳ Menunggu admin lanjutkan sesi berikutnya...</div>';
+    '<div style="font-size:0.9rem;color:#64748b;margin-top:8px">Menunggu admin lanjutkan sesi berikutnya...</div>';
 
   showScreen('break');
 }
@@ -1337,7 +890,7 @@ async function showResult(code) {
     const li = document.createElement('li');
     if (p.uid === currentUser.uid) li.classList.add('me');
     const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank';
-    li.innerHTML = `<span class="rank ${rankClass}">${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i+1}`}</span>
+    li.innerHTML = `<span class="rank ${rankClass}">${i === 0 ? '1st' : i === 1 ? '2nd' : i === 2 ? '3rd' : `#${i+1}`}</span>
       <span class="player-name">${p.name}${p.uid === currentUser.uid ? ' (Kamu)' : ''}</span>
       <span class="player-score">${p.score}</span>`;
     lb.appendChild(li);
@@ -1491,9 +1044,10 @@ window.pickItem = async function(type) {
   const code = _itemPickCode || currentRoom;
   if (code) {
     await update(ref(db, `rooms/${code}/players/${currentUser.uid}/items`), myItems);
+    writeLog(code, { type: 'item_picked', name: myName, item: type, streak: streakThreshold });
   }
   // Show notif
-  const labels = { shield: '🛡️ Shield didapat! Tahan 1 serangan.', gun: '🔫 Gun didapat! Serang player lain.', hint: '💡 Hint didapat! Hapus 1 jawaban salah.' };
+  const labels = { shield: 'Shield didapat! Tahan 1 serangan.', gun: 'Gun didapat! Serang player lain.', hint: 'Hint didapat! Hapus 1 jawaban salah.' };
   const el = document.createElement('div');
   el.className = 'item-got-notif';
   el.textContent = labels[type] || 'Dapat item!';
@@ -1507,7 +1061,7 @@ window.useItem = function(type) {
   if (!myItems[type] || myItems[type] <= 0) return;
   if (type === 'shield') {
     // Shield is passive — just show info, no action needed
-    showAttackNotif('🛡️ Shield sudah aktif! Akan otomatis menahan serangan.', false, true);
+    showAttackNotif('Shield sudah aktif! Akan otomatis menahan serangan.', false, true);
     return;
   }
   if (type === 'gun') {
@@ -1522,11 +1076,11 @@ window.useItem = function(type) {
 
 function useHint() {
   if (hintUsedThisQuestion) {
-    showAttackNotif('💡 Hint sudah dipakai untuk soal ini!', false, true);
+    showAttackNotif('Hint sudah dipakai untuk soal ini!', false, true);
     return;
   }
   if (answered) {
-    showAttackNotif('💡 Soal sudah dijawab!', false, true);
+    showAttackNotif('Soal sudah dijawab!', false, true);
     return;
   }
   const btns = document.querySelectorAll('.option-btn:not(:disabled)');
@@ -1555,8 +1109,9 @@ function useHint() {
   // Sync to Firebase
   if (currentRoom) {
     update(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}/items`), myItems);
+    writeLog(currentRoom, { type: 'item_used_hint', name: myName, q: currentQ });
   }
-  showAttackNotif('💡 Hint dipakai! 1 jawaban salah dihapus.', false, true);
+  showAttackNotif('Hint dipakai! 1 jawaban salah dihapus.', false, true);
 }
 
 // ATTACK MODAL
@@ -1575,7 +1130,7 @@ async function openAttackModal() {
   });
 
   if (players.length === 0) {
-    showAttackNotif('🔫 Tidak ada player lain untuk diserang!', false, true);
+    showAttackNotif('Tidak ada player lain untuk diserang!', false, true);
     return;
   }
 
@@ -1583,8 +1138,8 @@ async function openAttackModal() {
   players.forEach(p => {
     const li = document.createElement('li');
     const shieldCount = p.items?.shield || 0;
-    const shieldText = shieldCount > 0 ? `<span class="shield-icon">🛡️×${shieldCount}</span>` : '';
-    li.innerHTML = `<span>🤖 ${p.name}</span><span style="display:flex;gap:6px;align-items:center">${shieldText}<span style="color:#38bdf8;font-size:0.82rem">${p.score||0} poin</span></span>`;
+    const shieldText = shieldCount > 0 ? `<span class="shield-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>×${shieldCount}</span>` : '';
+    li.innerHTML = `<span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> ${p.name}</span><span style="display:flex;gap:6px;align-items:center">${shieldText}<span style="color:#38bdf8;font-size:0.82rem">${p.score||0} poin</span></span>`;
     li.onclick = () => fireGun(p.uid, p.name, shieldCount > 0);
     list.appendChild(li);
   });
@@ -1617,7 +1172,8 @@ async function fireGun(targetUid, targetName, targetHasShield) {
   // Sync gun count
   await update(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}/items`), myItems);
 
-  showAttackNotif(`🔫 Serangan dikirim ke ${targetName}!`, false, true);
+  writeLog(currentRoom, { type: 'item_used_gun', from: myName, to: targetName });
+  showAttackNotif(`Serangan dikirim ke ${targetName}!`, false, true);
 }
 
 // LISTEN TO INCOMING ATTACKS
@@ -1641,14 +1197,16 @@ function listenToAttacks(code) {
         update(ref(db, `rooms/${code}/players/${currentUser.uid}/items`), myItems);
         remove(child.ref);
         SFX.shield();
-        showAttackNotif(`🛡️ Serangan dari ${attack.fromName} ditahan oleh Shield kamu!`, false, false);
+        writeLog(code, { type: 'shield_block', name: myName, from: attack.fromName });
+        showAttackNotif(`Serangan dari ${attack.fromName} ditahan oleh Shield kamu!`, false, false);
       } else {
         // Take damage
         myScore = Math.max(0, myScore - attack.damage);
         update(ref(db, `rooms/${code}/players/${currentUser.uid}`), { score: myScore });
         remove(child.ref);
         SFX.attack();
-        showAttackNotif(`💥 Diserang oleh ${attack.fromName}! -${attack.damage} poin`, true, false);
+        writeLog(code, { type: 'attack_hit', from: attack.fromName, to: myName, dmg: attack.damage });
+        showAttackNotif(`Diserang oleh ${attack.fromName}! -${attack.damage} poin`, true, false);
         showScoreDrop(-attack.damage);
       }
     });
