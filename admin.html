@@ -230,7 +230,7 @@
   </div>
 
   <div style="margin-top:16px">
-    <button class="btn btn-outline" onclick="exportCSV()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export Hasil ke CSV</button>
+    <button class="btn btn-outline" onclick="exportCSV()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export Hasil ke Excel (.xlsx)</button>
   </div>
 
   <div style="margin-top:20px;border-top:1px solid #334155;padding-top:16px">
@@ -510,41 +510,121 @@ window.exportCSV = async function() {
   if (logSnap.exists()) {
     logSnap.forEach(child => {
       const e = child.val();
-      if (e.type === 'item_used_gun') {
-        sentMap[e.from] = (sentMap[e.from] || 0) + 1;
-      }
-      if (e.type === 'attack_hit') {
-        receivedMap[e.to] = (receivedMap[e.to] || 0) + 1;
-      }
+      if (e.type === 'item_used_gun') sentMap[e.from] = (sentMap[e.from] || 0) + 1;
+      if (e.type === 'attack_hit') receivedMap[e.to] = (receivedMap[e.to] || 0) + 1;
     });
   }
 
-  const headers = ['Peringkat','Nama','Skor Akhir','Akurasi (%)','Jawaban Benar','Jawaban Salah','Serangan Dikirim','Serangan Diterima'];
-  const rows = players.map((p, i) => {
+  // Load SheetJS
+  if (!window.XLSX) {
+    await new Promise((res, rej) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+      s.onload = res; s.onerror = rej;
+      document.head.appendChild(s);
+    });
+  }
+
+  const XLSX = window.XLSX;
+  const wb = XLSX.utils.book_new();
+
+  // ===== SHEET 1: RINGKASAN =====
+  const now = new Date();
+  const nowStr = now.toLocaleString('id-ID');
+  const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
+
+  const summaryData = [
+    ['HASIL QUIZ - MANSA ROBOTICS'],
+    [],
+    ['Room Code', currentRoom],
+    ['Tema', themeLabels[activeTheme] || activeTheme || '-'],
+    ['Total Soal', totalQ],
+    ['Total Peserta', players.length],
+    ['Tanggal Export', nowStr],
+  ];
+  const wsSummary = XLSX.utils.aoa_to_sheet(summaryData);
+  wsSummary['!cols'] = [{ wch: 20 }, { wch: 30 }];
+  XLSX.utils.book_append_sheet(wb, wsSummary, 'Info');
+
+  // ===== SHEET 2: PERINGKAT =====
+  const rankHeaders = ['Peringkat', 'Nama', 'Skor Akhir', 'Akurasi (%)', 'Jawaban Benar', 'Jawaban Salah', 'Serangan Dikirim', 'Serangan Diterima'];
+  const rankRows = players.map((p, i) => {
     const correct = p.correct || 0;
-    const wrong = totalQ - correct;
+    const wrong = Math.max(0, totalQ - correct);
     const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
     return [
       i + 1,
-      `"${p.name}"`,
+      p.name || '-',
       p.score || 0,
       acc,
       correct,
-      Math.max(0, wrong),
+      wrong,
       sentMap[p.name] || 0,
       receivedMap[p.name] || 0
-    ].join(',');
+    ];
   });
 
-  const csv = [headers.join(','), ...rows].join('\n');
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  const now = new Date().toLocaleDateString('id-ID').replace(/\//g, '-');
-  a.href = url;
-  a.download = `hasil-quiz-${currentRoom}-${now}.csv`;
-  a.click();
-  URL.revokeObjectURL(url);
+  const wsRank = XLSX.utils.aoa_to_sheet([rankHeaders, ...rankRows]);
+  wsRank['!cols'] = [
+    { wch: 10 }, { wch: 22 }, { wch: 12 }, { wch: 13 },
+    { wch: 15 }, { wch: 14 }, { wch: 18 }, { wch: 18 }
+  ];
+
+  // Style header row (bold + background kuning)
+  rankHeaders.forEach((_, ci) => {
+    const cellAddr = XLSX.utils.encode_cell({ r: 0, c: ci });
+    if (!wsRank[cellAddr]) return;
+    wsRank[cellAddr].s = {
+      font: { bold: true, sz: 12, color: { rgb: '1E293B' } },
+      fill: { fgColor: { rgb: 'FCD34D' } },
+      alignment: { horizontal: 'center', vertical: 'center' },
+      border: {
+        bottom: { style: 'medium', color: { rgb: 'F59E0B' } }
+      }
+    };
+  });
+
+  // Style baris data
+  rankRows.forEach((row, ri) => {
+    row.forEach((_, ci) => {
+      const cellAddr = XLSX.utils.encode_cell({ r: ri + 1, c: ci });
+      if (!wsRank[cellAddr]) return;
+      const isEven = ri % 2 === 0;
+      wsRank[cellAddr].s = {
+        fill: { fgColor: { rgb: isEven ? 'F8FAFC' : 'FFFFFF' } },
+        alignment: { horizontal: ci === 1 ? 'left' : 'center', vertical: 'center' },
+        border: { bottom: { style: 'thin', color: { rgb: 'E2E8F0' } } }
+      };
+      // Highlight juara 1,2,3
+      if (ci === 0 && ri < 3) {
+        const medal = ['🥇', '🥈', '🥉'][ri];
+        wsRank[cellAddr].v = `${medal} ${ri + 1}`;
+      }
+    });
+  });
+
+  XLSX.utils.book_append_sheet(wb, wsRank, 'Peringkat');
+
+  // ===== SHEET 3: DETAIL JAWABAN PER SOAL =====
+  const ansHeaders = ['Nama', ...Array.from({ length: totalQ }, (_, i) => `Soal ${i + 1}`), 'Total Benar', 'Total Salah'];
+  const ansRows = players.map(p => {
+    const answers = p.answers || {};
+    const correctArr = activeQuestions?.map((q, qi) => {
+      const ans = answers[`q${qi}`];
+      if (ans === undefined || ans === null) return '-';
+      return ans === q.ans ? '✓' : '✗';
+    }) || Array(totalQ).fill('-');
+    const correct = p.correct || 0;
+    return [p.name || '-', ...correctArr, correct, Math.max(0, totalQ - correct)];
+  });
+
+  const wsAns = XLSX.utils.aoa_to_sheet([ansHeaders, ...ansRows]);
+  wsAns['!cols'] = [{ wch: 22 }, ...Array(totalQ).fill({ wch: 8 }), { wch: 13 }, { wch: 12 }];
+  XLSX.utils.book_append_sheet(wb, wsAns, 'Detail Jawaban');
+
+  // Export
+  const dateStr = now.toLocaleDateString('id-ID').replace(/\//g, '-');
+  XLSX.writeFile(wb, `hasil-quiz-${currentRoom}-${dateStr}.xlsx`, { cellStyles: true });
 };
 
 // ===== THEME =====
