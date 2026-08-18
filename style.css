@@ -515,6 +515,13 @@ input[type=number]::-webkit-inner-spin-button { opacity: 1; }
   text-align: center;
   line-height: 1.3;
   animation: goAnim 0.5s ease forwards;
+  white-space: normal !important;
+  padding: 0 16px;
+  word-break: break-word;
+}
+@media (max-width: 480px) {
+  .countdown-number { font-size: 5rem; }
+  .countdown-number.go { font-size: 1.6rem; letter-spacing: 0.04em; }
 }
 .countdown-label {
   font-size: 0.75rem;
