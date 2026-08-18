@@ -388,6 +388,7 @@ let myCorrect = 0;         // total jawaban benar (untuk accuracy)
 let myStreak = 0;          // consecutive correct answers
 let myItems = { shield: 0, gun: 0, hint: 0 };
 let hintUsedThisQuestion = false; // hint only works once per question
+let currentShuffledAns = 0;       // index jawaban benar setelah opsi di-shuffle
 let attackListener = null;
 let streakThreshold = 3;   // diambil dari Firebase (setting admin)
 
@@ -706,11 +707,19 @@ function loadQuestion(index, code) {
 
   const container = document.getElementById('options-container');
   container.innerHTML = '';
-  q.opts.forEach((opt, i) => {
+  // Acak posisi opsi jawaban, tapi lacak index jawaban benar yang baru
+  const optIndexes = q.opts.map((_, i) => i);
+  for (let i = optIndexes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [optIndexes[i], optIndexes[j]] = [optIndexes[j], optIndexes[i]];
+  }
+  const shuffledCorrect = optIndexes.indexOf(q.ans);
+  currentShuffledAns = shuffledCorrect;
+  optIndexes.forEach((origIdx, newIdx) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
-    btn.textContent = opt;
-    btn.onclick = () => answer(i, q.ans, btn, code, index);
+    btn.textContent = q.opts[origIdx];
+    btn.onclick = () => answer(newIdx, shuffledCorrect, btn, code, index);
     container.appendChild(btn);
   });
 
@@ -735,7 +744,7 @@ function startTimer(seconds, q, code) {
       clearInterval(timerInterval);
       if (!answered) {
         answered = true;
-        revealAnswer(q.ans);
+        revealAnswer(currentShuffledAns);
         SFX.timeout();
         showFeedback(false, 0, 15);
         writeLog(code, { type: 'answer_timeout', name: myName, q: currentQ });
@@ -1180,7 +1189,7 @@ function useHint() {
   const allBtns = document.querySelectorAll('.option-btn');
   const wrongIndexes = [];
   allBtns.forEach((btn, i) => {
-    if (i !== q.ans) wrongIndexes.push(i);
+    if (i !== currentShuffledAns) wrongIndexes.push(i);
   });
   // Pick one wrong to remove
   const toRemove = wrongIndexes[Math.floor(Math.random() * wrongIndexes.length)];
