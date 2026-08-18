@@ -93,6 +93,16 @@
   </div>
   <ul class="player-list" id="player-list"></ul>
   <p class="waiting-msg pulse" id="waiting-status">Menunggu admin memulai quiz...</p>
+
+  <!-- EMOT BAR WAITING -->
+  <div class="emot-bar" id="emot-bar-waiting">
+    <span onclick="sendEmot('🔥')">🔥</span>
+    <span onclick="sendEmot('😂')">😂</span>
+    <span onclick="sendEmot('👍')">👍</span>
+    <span onclick="sendEmot('😱')">😱</span>
+    <span onclick="sendEmot('💀')">💀</span>
+    <span onclick="sendEmot('🎉')">🎉</span>
+  </div>
 </div>
 
 <!-- SCREEN: BREAK / MID-LEADERBOARD -->
@@ -150,6 +160,16 @@
   <button id="btn-user-next" class="btn btn-primary" style="margin-top:12px;display:none" onclick="userNextQuestion()">Soal Berikutnya <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <div id="waiting-break-msg" style="display:none;margin-top:14px;text-align:center;color:#64748b;font-size:0.85rem">
     <svg class="ico" style="opacity:0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Menunggu peserta lain selesai...
+  </div>
+
+  <!-- EMOT BAR QUIZ -->
+  <div class="emot-bar" id="emot-bar-quiz">
+    <span onclick="sendEmot('🔥')">🔥</span>
+    <span onclick="sendEmot('😂')">😂</span>
+    <span onclick="sendEmot('👍')">👍</span>
+    <span onclick="sendEmot('😱')">😱</span>
+    <span onclick="sendEmot('💀')">💀</span>
+    <span onclick="sendEmot('🎉')">🎉</span>
   </div>
 </div>
 
@@ -526,6 +546,7 @@ function enterWaitingRoom(code) {
   showScreen('waiting');
   setQuitBtn(true);
   clearListeners();
+  listenEmots(code);
 
   // Listen to players
   const playersRef = ref(db, `rooms/${code}/players`);
@@ -617,6 +638,7 @@ async function startQuiz(code) {
 
   listenToAdminSignal(code);
   listenToAttacks(code);
+  listenEmots(code);
 
   // Countdown hanya untuk soal pertama (bukan resume/refresh di tengah)
   if (currentQ === 0) {
@@ -1386,6 +1408,52 @@ document.getElementById('input-room-code').addEventListener('input', function() 
 // ===== ENTER KEY =====
 document.getElementById('input-name').addEventListener('keydown', e => { if(e.key==='Enter') window.saveName(); });
 document.getElementById('input-room-code').addEventListener('keydown', e => { if(e.key==='Enter') window.joinRoom(); });
+
+// ===== EMOT SYSTEM =====
+let emotListener = null;
+let lastEmotKey = null; // hindari re-trigger emot sendiri
+
+window.sendEmot = async function(emot) {
+  if (!currentRoom || !myName) return;
+  // Cooldown sederhana: 1 emot per 800ms
+  if (window._emotCooldown) return;
+  window._emotCooldown = true;
+  setTimeout(() => { window._emotCooldown = false; }, 800);
+
+  const emotRef = ref(db, `rooms/${currentRoom}/emots`);
+  const key = push(emotRef).key;
+  await set(ref(db, `rooms/${currentRoom}/emots/${key}`), {
+    emot, name: myName, ts: Date.now()
+  });
+  // Auto hapus setelah 4 detik supaya Firebase tidak numpuk
+  setTimeout(() => remove(ref(db, `rooms/${currentRoom}/emots/${key}`)), 4000);
+};
+
+function spawnFloatingEmot(emot, name) {
+  const el = document.createElement('div');
+  el.className = 'floating-emot';
+  // Posisi horizontal random agar tidak tumpuk
+  el.style.left = (10 + Math.random() * 75) + '%';
+  el.innerHTML = `<div class="emot-icon">${emot}</div><div class="emot-name">${name}</div>`;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3100);
+}
+
+function listenEmots(code) {
+  if (emotListener) emotListener();
+  const emotRef = ref(db, `rooms/${code}/emots`);
+  emotListener = onValue(emotRef, snap => {
+    if (!snap.exists()) return;
+    snap.forEach(child => {
+      const key = child.key;
+      if (key === lastEmotKey) return;
+      lastEmotKey = key;
+      const { emot, name } = child.val();
+      spawnFloatingEmot(emot, name);
+    });
+  });
+  roomListeners.push(emotListener);
+}
 </script>
 </body>
 </html>
