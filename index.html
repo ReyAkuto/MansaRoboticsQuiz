@@ -1411,7 +1411,7 @@ document.getElementById('input-room-code').addEventListener('keydown', e => { if
 
 // ===== EMOT SYSTEM =====
 let emotListener = null;
-let lastEmotKey = null; // hindari re-trigger emot sendiri
+const seenEmotKeys = new Set(); // track semua key yang sudah di-spawn
 
 window.sendEmot = async function(emot) {
   if (!currentRoom || !myName) return;
@@ -1422,9 +1422,13 @@ window.sendEmot = async function(emot) {
 
   const emotRef = ref(db, `rooms/${currentRoom}/emots`);
   const key = push(emotRef).key;
+  // Langsung tandai sebagai seen sebelum set, supaya listener tidak spawn dua kali untuk pengirimnya sendiri
+  seenEmotKeys.add(key);
   await set(ref(db, `rooms/${currentRoom}/emots/${key}`), {
     emot, name: myName, ts: Date.now()
   });
+  // Spawn langsung di sisi pengirim tanpa nunggu listener
+  spawnFloatingEmot(emot, myName);
   // Auto hapus setelah 4 detik supaya Firebase tidak numpuk
   setTimeout(() => remove(ref(db, `rooms/${currentRoom}/emots/${key}`)), 4000);
 };
@@ -1441,18 +1445,26 @@ function spawnFloatingEmot(emot, name) {
 
 function listenEmots(code) {
   if (emotListener) emotListener();
+  seenEmotKeys.clear();
   const emotRef = ref(db, `rooms/${code}/emots`);
-  emotListener = onValue(emotRef, snap => {
-    if (!snap.exists()) return;
-    snap.forEach(child => {
-      const key = child.key;
-      if (key === lastEmotKey) return;
-      lastEmotKey = key;
-      const { emot, name } = child.val();
-      spawnFloatingEmot(emot, name);
+  // Snapshot awal: tandai semua emot yang sudah ada sebagai seen tanpa spawn
+  get(emotRef).then(initSnap => {
+    if (initSnap.exists()) {
+      initSnap.forEach(child => seenEmotKeys.add(child.key));
+    }
+    // Baru pasang listener setelah snapshot awal selesai
+    emotListener = onValue(emotRef, snap => {
+      if (!snap.exists()) return;
+      snap.forEach(child => {
+        const key = child.key;
+        if (seenEmotKeys.has(key)) return;
+        seenEmotKeys.add(key);
+        const { emot, name } = child.val();
+        spawnFloatingEmot(emot, name);
+      });
     });
+    roomListeners.push(emotListener);
   });
-  roomListeners.push(emotListener);
 }
 </script>
 </body>
