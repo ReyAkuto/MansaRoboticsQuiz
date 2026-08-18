@@ -5,10 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin - Mansa Robotics Quiz</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+  <style>
+    /* ===== LIGHT MODE (Admin) ===== */
+    body.light-mode { background:#f1f5f9 !important; color:#1e293b !important; }
+    body.light-mode .card, body.light-mode .card-admin { background:#ffffff !important; border-color:#e2e8f0 !important; }
+    body.light-mode .card h2, body.light-mode .card-admin h2 { color:#1e293b !important; }
+    body.light-mode .info-text { color:#475569 !important; }
+    body.light-mode input[type="text"], body.light-mode input[type="number"] { background:#f8fafc !important; border-color:#cbd5e1 !important; color:#1e293b !important; }
+    body.light-mode .player-list li { background:#f8fafc !important; border-color:#e2e8f0 !important; color:#1e293b !important; }
+    body.light-mode .room-code-big { color:#0f172a !important; }
+    body.light-mode .logo { color:#0f172a !important; }
+    body.light-mode .logo span { color:#f97316 !important; }
+    body.light-mode .theme-card { background:#f8fafc !important; border-color:#cbd5e1 !important; color:#1e293b !important; }
+    body.light-mode .theme-card.selected { background:#e0f2fe !important; border-color:#38bdf8 !important; }
+    body.light-mode .live-scores li { background:#f8fafc !important; border-color:#e2e8f0 !important; color:#1e293b !important; }
+    body.light-mode .q-display { background:#f8fafc !important; border-color:#e2e8f0 !important; }
+    body.light-mode .q-text, body.light-mode .q-label { color:#1e293b !important; }
+    body.light-mode #activity-log { background:#f8fafc !important; border-color:#e2e8f0 !important; }
+    body.light-mode .uid-box { background:#f8fafc !important; border-color:#cbd5e1 !important; }
+    body.light-mode .uid-value { color:#1e293b !important; }
+    body.light-mode #theme-toggle { border-color:#cbd5e1 !important; color:#475569 !important; }
+    body.light-mode .hard-q-card { background:#f8fafc !important; border-color:#e2e8f0 !important; }
+    body.light-mode .hard-q-text { color:#1e293b !important; }
+  </style>
 <body>
 
-<div style="text-align:center">
+<div style="text-align:center;position:relative">
+  <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode" style="position:absolute;right:0;top:4px;background:transparent;border:1px solid #334155;border-radius:8px;padding:5px 8px;cursor:pointer;color:#94a3b8;font-size:0.75rem;display:flex;align-items:center;gap:4px">
+    <svg id="theme-icon-dark" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg id="theme-icon-light" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <span id="theme-label">Light</span>
+  </button>
   <div class="logo">Mansa<span>Robotics</span> Quiz <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> <span class="badge-admin">ADMIN</span></div>
 </div>
 
@@ -107,6 +134,34 @@
   </div>
   <p style="font-size:0.75rem;color:#64748b;margin-bottom:12px;text-align:center" id="streak-desc">Tiap 3 jawaban benar berturut-turut → player pilih item</p>
 
+  <!-- TIMER DURASI -->
+  <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Durasi timer per soal:</p>
+  <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr; margin-bottom:8px">
+    <div class="theme-card" id="timer-10" onclick="selectTimer(10, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">10</span></div><div class="name">10 dtk</div></div>
+    <div class="theme-card selected" id="timer-15" onclick="selectTimer(15, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">15</span></div><div class="name">15 dtk</div></div>
+    <div class="theme-card" id="timer-20" onclick="selectTimer(20, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">20</span></div><div class="name">20 dtk</div></div>
+    <div class="theme-card" id="timer-30" onclick="selectTimer(30, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">30</span></div><div class="name">30 dtk</div></div>
+    <div class="theme-card" id="timer-custom" onclick="selectTimer('custom', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div><div class="name">Custom</div></div>
+  </div>
+  <div id="custom-timer-input" style="display:none;margin-bottom:8px">
+    <input type="number" id="input-timer-custom" min="5" max="120" value="15" placeholder="Detik (5–120)..."
+      style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none"/>
+    <p style="font-size:0.78rem;color:#64748b;margin-top:4px">Masukkan durasi dalam detik (5–120)</p>
+  </div>
+
+  <!-- MODE SOAL -->
+  <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg> Urutan soal:</p>
+  <div class="theme-grid" style="grid-template-columns:1fr 1fr; margin-bottom:14px">
+    <div class="theme-card" id="shuffle-on" onclick="selectShuffle(true, this)">
+      <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div>
+      <div class="name">Acak</div>
+    </div>
+    <div class="theme-card selected" id="shuffle-off" onclick="selectShuffle(false, this)">
+      <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+      <div class="name">Urut</div>
+    </div>
+  </div>
+
   <!-- JUMLAH SOAL -->
   <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Jumlah soal yang dimainkan:</p>
   <input type="number" id="input-question-count" min="1" max="999" value="25"
@@ -124,6 +179,7 @@
   <div class="room-code-big" id="admin-room-code">????</div>
   <div class="player-count" id="player-count">0 peserta bergabung</div>
   <ul class="player-list" id="admin-player-list"></ul>
+  <p style="font-size:0.72rem;color:#475569;margin:2px 0 4px;text-align:center">Klik nama player untuk kick dari room</p>
   <button class="btn btn-green" onclick="startQuiz()" id="btn-start"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Mulai Quiz!</button>
   <button class="btn btn-red" onclick="deleteRoom()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus Room</button>
 </div>
@@ -171,6 +227,10 @@
     <div id="hardest-questions-list">
       <div style="font-size:0.8rem;color:#475569;text-align:center;padding:8px">Memuat data...</div>
     </div>
+  </div>
+
+  <div style="margin-top:16px">
+    <button class="btn btn-outline" onclick="exportCSV()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export Hasil ke CSV</button>
   </div>
 
   <div style="margin-top:20px;border-top:1px solid #334155;padding-top:16px">
@@ -224,6 +284,27 @@
     <div class="theme-card selected" id="streak-32" onclick="selectStreak2(3, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div><div class="name">3 Streak</div></div>
     <div class="theme-card" id="streak-42" onclick="selectStreak2(4, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">4</span></div><div class="name">4 Streak</div></div>
     <div class="theme-card" id="streak-52" onclick="selectStreak2(5, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M7 4h10l-1 7a5 5 0 0 1-8 0z"/><path d="M4 7h3M17 7h3"/></svg></div><div class="name">5 Streak</div></div>
+  </div>
+
+  <!-- TIMER REPLAY -->
+  <p class="info-text" style="margin-top:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Timer per soal:</p>
+  <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr; margin-bottom:8px">
+    <div class="theme-card" id="timer2-10" onclick="selectTimer2(10, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">10</span></div><div class="name">10 dtk</div></div>
+    <div class="theme-card selected" id="timer2-15" onclick="selectTimer2(15, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">15</span></div><div class="name">15 dtk</div></div>
+    <div class="theme-card" id="timer2-20" onclick="selectTimer2(20, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">20</span></div><div class="name">20 dtk</div></div>
+    <div class="theme-card" id="timer2-30" onclick="selectTimer2(30, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">30</span></div><div class="name">30 dtk</div></div>
+    <div class="theme-card" id="timer2-custom" onclick="selectTimer2('custom', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div><div class="name">Custom</div></div>
+  </div>
+  <div id="custom-timer-input2" style="display:none;margin-bottom:8px">
+    <input type="number" id="input-timer-custom2" min="5" max="120" value="15"
+      style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none"/>
+  </div>
+
+  <!-- URUTAN SOAL REPLAY -->
+  <p class="info-text" style="margin-top:8px">Urutan soal:</p>
+  <div class="theme-grid" style="grid-template-columns:1fr 1fr; margin-bottom:8px">
+    <div class="theme-card" id="shuffle2-on" onclick="selectShuffle2(true, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div><div class="name">Acak</div></div>
+    <div class="theme-card selected" id="shuffle2-off" onclick="selectShuffle2(false, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><div class="name">Urut</div></div>
   </div>
 
   <p class="info-text" style="margin-top:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Jumlah soal:</p>
@@ -288,6 +369,12 @@ let breakEvery = 5;        // used when mode is 'custom' or '5'
 let streakThreshold = 3;   // berapa streak untuk dapat item
 let questionCount = 25;    // jumlah soal yang dimainkan
 let activeQuestions = [];  // soal yang sudah di-slice
+let timerDuration = 15;    // durasi timer per soal (detik)
+let timerMode = '15';      // preset atau 'custom'
+let shuffleQuestions = false; // urutan soal diacak atau urut
+let playerUidMap = {};     // name -> uid map for kick
+let attackSentMap = {};    // uid -> count serangan keluar
+let attackReceivedMap = {}; // uid -> count serangan masuk
 
 // ===== HELPERS =====
 function showScreen(id) {
@@ -369,6 +456,97 @@ onAuthStateChanged(auth, user => {
   }
 });
 
+// ===== DARK / LIGHT MODE TOGGLE =====
+let isLightMode = false;
+window.toggleTheme = function() {
+  isLightMode = !isLightMode;
+  document.body.classList.toggle('light-mode', isLightMode);
+  document.getElementById('theme-icon-dark').style.display = isLightMode ? 'none' : '';
+  document.getElementById('theme-icon-light').style.display = isLightMode ? '' : 'none';
+  document.getElementById('theme-label').textContent = isLightMode ? 'Dark' : 'Light';
+  localStorage.setItem('quizTheme', isLightMode ? 'light' : 'dark');
+};
+if (localStorage.getItem('quizTheme') === 'light') { isLightMode = false; window.toggleTheme(); }
+
+// ===== TIMER SETTING =====
+window.selectTimer = function(val, el) {
+  timerMode = String(val);
+  document.querySelectorAll('#timer-10,#timer-15,#timer-20,#timer-30,#timer-custom').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const customInput = document.getElementById('custom-timer-input');
+  if (customInput) customInput.style.display = val === 'custom' ? 'block' : 'none';
+  if (val !== 'custom') timerDuration = val;
+};
+
+// ===== SHUFFLE MODE =====
+window.selectShuffle = function(val, el) {
+  shuffleQuestions = val;
+  document.querySelectorAll('#shuffle-on,#shuffle-off').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+};
+
+// ===== KICK PLAYER =====
+window.kickPlayer = async function(uid, name) {
+  if (!confirm(`Kick ${name} dari room?`)) return;
+  await remove(ref(db, `rooms/${currentRoom}/players/${uid}`));
+};
+
+// ===== EXPORT CSV =====
+window.exportCSV = async function() {
+  const snap = await get(ref(db, `rooms/${currentRoom}/players`));
+  if (!snap.exists()) return alert('Tidak ada data player!');
+
+  const players = [];
+  snap.forEach(child => {
+    players.push({ uid: child.key, ...child.val() });
+  });
+  players.sort((a, b) => (b.score || 0) - (a.score || 0));
+
+  const totalQ = activeQuestions?.length || questionCount || 10;
+
+  // Hitung serangan dari log
+  const logSnap = await get(ref(db, `rooms/${currentRoom}/logs`));
+  const sentMap = {}, receivedMap = {};
+  if (logSnap.exists()) {
+    logSnap.forEach(child => {
+      const e = child.val();
+      if (e.type === 'item_used_gun') {
+        sentMap[e.from] = (sentMap[e.from] || 0) + 1;
+      }
+      if (e.type === 'attack_hit') {
+        receivedMap[e.to] = (receivedMap[e.to] || 0) + 1;
+      }
+    });
+  }
+
+  const headers = ['Peringkat','Nama','Skor Akhir','Akurasi (%)','Jawaban Benar','Jawaban Salah','Serangan Dikirim','Serangan Diterima'];
+  const rows = players.map((p, i) => {
+    const correct = p.correct || 0;
+    const wrong = totalQ - correct;
+    const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+    return [
+      i + 1,
+      `"${p.name}"`,
+      p.score || 0,
+      acc,
+      correct,
+      Math.max(0, wrong),
+      sentMap[p.name] || 0,
+      receivedMap[p.name] || 0
+    ].join(',');
+  });
+
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const now = new Date().toLocaleDateString('id-ID').replace(/\//g, '-');
+  a.href = url;
+  a.download = `hasil-quiz-${currentRoom}-${now}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
 // ===== THEME =====
 window.selectTheme = function(theme, el) {
   selectedTheme = theme;
@@ -382,6 +560,21 @@ window.selectStreak = function(val, el) {
   document.querySelectorAll('#streak-2, #streak-3, #streak-4, #streak-5').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
   document.getElementById('streak-desc').textContent = `Tiap ${val} jawaban benar berturut-turut → player pilih item`;
+};
+
+window.selectTimer2 = function(val, el) {
+  timerMode = String(val);
+  document.querySelectorAll('#timer2-10,#timer2-15,#timer2-20,#timer2-30,#timer2-custom').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const ci = document.getElementById('custom-timer-input2');
+  if (ci) ci.style.display = val === 'custom' ? 'block' : 'none';
+  if (val !== 'custom') timerDuration = val;
+};
+
+window.selectShuffle2 = function(val, el) {
+  shuffleQuestions = val;
+  document.querySelectorAll('#shuffle2-on,#shuffle2-off').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
 };
 
 window.selectStreak2 = function(val, el) {
@@ -430,6 +623,14 @@ window.createRoom = async function() {
   const qCountVal = parseInt(document.getElementById('input-question-count').value);
   questionCount = (!qCountVal || qCountVal < 1) ? 25 : qCountVal;
 
+  // Resolve timer duration
+  if (timerMode === 'custom') {
+    const tVal = parseInt(document.getElementById('input-timer-custom').value);
+    timerDuration = (!tVal || tVal < 5) ? 15 : Math.min(tVal, 120);
+  } else {
+    timerDuration = parseInt(timerMode) || 15;
+  }
+
   const code = generateCode();
   await set(ref(db, `rooms/${code}`), {
     theme: selectedTheme,
@@ -438,6 +639,8 @@ window.createRoom = async function() {
     breakEvery: resolvedBreakEvery,
     streakThreshold: streakThreshold,
     questionCount: questionCount,
+    timerDuration: timerDuration,
+    shuffleQuestions: shuffleQuestions,
     createdBy: currentUser.uid,
     createdAt: serverTimestamp()
   });
@@ -455,32 +658,42 @@ function listenToPlayers(code) {
     const list = document.getElementById('admin-player-list');
     list.innerHTML = '';
     let count = 0;
+    playerUidMap = {};
     if (snap.exists()) {
       count = Object.keys(snap.val()).length;
-      Object.values(snap.val()).forEach(p => {
+      Object.entries(snap.val()).forEach(([uid, p]) => {
+        playerUidMap[p.name] = uid;
         const li = document.createElement('li');
-        li.innerHTML = `<span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> ${p.name}</span><span style="color:#64748b;font-size:0.8rem">Siap</span>`;
+        li.style.cursor = 'pointer';
+        li.title = 'Klik untuk kick';
+        li.innerHTML = `<span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> ${p.name}</span><button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:#2d0a0a;border:1px solid #ef4444;border-radius:6px;padding:2px 8px;font-size:0.7rem;color:#ef4444;cursor:pointer">Kick</button>`;
+        li.onclick = () => kickPlayer(uid, p.name);
         list.appendChild(li);
       });
     }
     document.getElementById('player-count').textContent = `${count} peserta bergabung`;
     document.getElementById('btn-start').disabled = count === 0;
   });
-  // FIX #3: Simpan unsubscribe function dari onValue
   roomListeners.push(unsub);
 }
 
 window.startQuiz = async function() {
   await loadQuestions();
-  // Baca questionCount dari Firebase room data
-  const roomSnap = await get(ref(db, `rooms/${currentRoom}/questionCount`));
-  if (roomSnap.exists()) questionCount = roomSnap.val() || 25;
+  // Baca settings dari Firebase room data
+  const roomSnap = await get(ref(db, `rooms/${currentRoom}`));
+  if (roomSnap.exists()) {
+    const d = roomSnap.val();
+    questionCount = d.questionCount || 25;
+    timerDuration = d.timerDuration || 15;
+    shuffleQuestions = d.shuffleQuestions || false;
+  }
   const now = Date.now();
   await update(ref(db, `rooms/${currentRoom}`), {
     status: 'playing',
     currentQuestion: 0,
     questionStartedAt: now,
     breakEvery: breakEvery,
+    timerDuration: timerDuration,
     adminBatchStart: 1    // batch pertama dibuka
   });
   currentQIndex = 0;
@@ -500,17 +713,28 @@ window.deleteRoom = async function() {
 };
 
 // ===== LIVE QUIZ =====
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 async function showLiveScreen() {
   await loadQuestions();
   clearListeners();
   showScreen('live');
-  // Slice soal sesuai questionCount
-  const allQ = QUESTIONS[activeTheme] || [];
+  // Slice soal sesuai questionCount (dan shuffle jika diaktifkan)
+  let allQ = QUESTIONS[activeTheme] || [];
+  if (shuffleQuestions) allQ = shuffleArray(allQ);
   activeQuestions = allQ.slice(0, questionCount);
   const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
   const breakLabel = breakEvery === 0 ? 'Langsung' : `Jeda tiap ${breakEvery} soal`;
+  const shuffleLabel = shuffleQuestions ? ' · Acak' : ' · Urut';
   document.getElementById('live-theme-label').textContent =
-    'Tema: ' + (themeLabels[activeTheme] || '-') + ' · ' + breakLabel + ` · Streak ${streakThreshold}x · ${activeQuestions.length} soal`;
+    'Tema: ' + (themeLabels[activeTheme] || '-') + ' · ' + breakLabel + ` · Streak ${streakThreshold}x · ${timerDuration}dtk · ${activeQuestions.length} soal` + shuffleLabel;
   seenLogKeys.clear();
   displayCurrentQ();
   listenToScores();
@@ -542,7 +766,7 @@ function displayCurrentQ() {
     btn.onclick = () => nextQuestion();
   }
   btn.disabled = false;
-  startAdminTimer(15);
+  startAdminTimer(timerDuration || 15);
 }
 
 function startAdminTimer(sec) {
@@ -862,7 +1086,7 @@ window.replayQuiz = async function(changeSetting) {
   if (changeSetting) {
     showScreen('replay-config');
   } else {
-    await doResetToWaiting(activeTheme, breakEvery, streakThreshold, questionCount);
+    await doResetToWaiting(activeTheme, breakEvery, streakThreshold, questionCount, timerDuration, shuffleQuestions);
   }
 };
 
@@ -879,11 +1103,20 @@ window.confirmReplaySetting = async function() {
   activeTheme = selectedTheme;
   const qc2 = parseInt(document.getElementById('input-question-count2').value);
   questionCount = (!qc2 || qc2 < 1) ? 25 : qc2;
-  await doResetToWaiting(activeTheme, breakEvery, streakThreshold, questionCount);
+  // Resolve timer for replay
+  if (timerMode === 'custom') {
+    const tVal = parseInt(document.getElementById('input-timer-custom2')?.value);
+    timerDuration = (!tVal || tVal < 5) ? 15 : Math.min(tVal, 120);
+  } else {
+    timerDuration = parseInt(timerMode) || 15;
+  }
+  await doResetToWaiting(activeTheme, breakEvery, streakThreshold, questionCount, timerDuration, shuffleQuestions);
 };
 
-async function doResetToWaiting(theme, bEvery, sThreshold, qCount) {
+async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, shuffle) {
   qCount = qCount || questionCount || 25;
+  tDuration = tDuration || timerDuration || 15;
+  shuffle = shuffle !== undefined ? shuffle : shuffleQuestions;
   // Reset semua player yang ada
   const snap = await get(ref(db, `rooms/${currentRoom}/players`));
   if (snap.exists()) {
@@ -911,6 +1144,8 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount) {
     breakEvery: bEvery,
     streakThreshold: sThreshold,
     questionCount: qCount,
+    timerDuration: tDuration,
+    shuffleQuestions: shuffle,
     adminBatchStart: 0,
     questionStartedAt: 0
   });
