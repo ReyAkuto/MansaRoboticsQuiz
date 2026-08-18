@@ -1,756 +1,1506 @@
 {
   "dasar": [
     {
-      "q": "Pada sensor ultrasonik HC-SR04, jika waktu echo yang terdeteksi adalah 2.9 ms, berapa estimasi jarak objek (kecepatan suara 343 m/s)?",
+      "q": "Apa fungsi utama sensor pada robot?",
       "opts": [
-        "49.7 cm",
-        "99.5 cm",
-        "24.8 cm",
-        "199 cm"
+        "Menggerakkan bagian tubuh robot",
+        "Mendeteksi kondisi di sekitar robot",
+        "Menyimpan program robot",
+        "Mengatur kecepatan motor robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Komponen mana yang termasuk aktuator pada robot?",
+      "opts": [
+        "Sensor cahaya",
+        "Papan Arduino",
+        "Motor DC",
+        "Sensor suhu"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa tugas controller pada sebuah robot?",
+      "opts": [
+        "Mendeteksi halangan di depan robot",
+        "Menggerakkan roda robot secara langsung",
+        "Memproses data dan memberi perintah ke aktuator",
+        "Menyimpan daya untuk robot"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Manakah yang merupakan contoh sensor jarak?",
+      "opts": [
+        "Motor servo",
+        "Sensor ultrasonik",
+        "Baterai Li-ion",
+        "Driver motor L298N"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Pada robot sederhana, urutan kerja yang benar adalah...",
+      "opts": [
+        "Controller → Sensor → Aktuator",
+        "Aktuator → Controller → Sensor",
+        "Sensor → Aktuator → Controller",
+        "Sensor → Controller → Aktuator"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Sensor LDR digunakan untuk mendeteksi...",
+      "opts": [
+        "Getaran di sekitar robot",
+        "Intensitas cahaya di lingkungan",
+        "Jarak benda di depan robot",
+        "Kecepatan putaran roda robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan robot otonom?",
+      "opts": [
+        "Robot yang dikendalikan penuh oleh manusia",
+        "Robot yang hanya bisa bergerak lurus",
+        "Robot yang bisa bergerak dan mengambil keputusan sendiri",
+        "Robot yang tidak memiliki sensor sama sekali"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Baterai pada robot berfungsi sebagai...",
+      "opts": [
+        "Pengatur kecepatan semua motor",
+        "Penyimpan data dari sensor",
+        "Sumber energi listrik untuk semua komponen",
+        "Penghubung antara sensor dan controller"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Sensor suhu digunakan pada robot untuk...",
+      "opts": [
+        "Menggerakkan kipas secara manual",
+        "Mengetahui seberapa panas lingkungan atau komponen",
+        "Mengukur kecepatan angin di sekitar robot",
+        "Menyimpan nilai suhu ke dalam memori permanen"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Manakah yang bukan termasuk aktuator?",
+      "opts": [
+        "Motor stepper",
+        "Servo motor",
+        "Sensor infrared",
+        "Pompa air mini"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "LED pada robot biasanya digunakan sebagai...",
+      "opts": [
+        "Sensor pendeteksi cahaya",
+        "Indikator status atau lampu peringatan",
+        "Sumber daya cadangan robot",
+        "Pengganti layar LCD"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan input pada sistem robot?",
+      "opts": [
+        "Perintah yang dikirim ke motor",
+        "Data yang diterima controller dari sensor",
+        "Energi yang dihasilkan oleh baterai",
+        "Gerakan yang dihasilkan oleh aktuator"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor PIR digunakan untuk mendeteksi...",
+      "opts": [
+        "Perubahan tekanan udara",
+        "Gerakan manusia atau makhluk hidup",
+        "Warna benda di depan robot",
+        "Kelembaban udara sekitar robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Robot line follower menggunakan sensor apa untuk mengikuti garis?",
+      "opts": [
+        "Sensor ultrasonik",
+        "Sensor infrared",
+        "Sensor suhu",
+        "Sensor tekanan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi driver motor seperti L298N?",
+      "opts": [
+        "Membaca kecepatan putaran motor secara otomatis",
+        "Menyimpan program untuk menggerakkan motor",
+        "Mengontrol arah dan kecepatan motor dari sinyal controller",
+        "Mendeteksi apakah motor sedang panas atau tidak"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan output pada sistem robot?",
+      "opts": [
+        "Data yang dibaca oleh sensor",
+        "Sinyal yang diterima oleh controller",
+        "Gerakan atau aksi yang dihasilkan aktuator",
+        "Program yang ditulis oleh pengguna"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Sensor ultrasonik bekerja dengan cara...",
+      "opts": [
+        "Mengirim cahaya dan mengukur pantulannya",
+        "Mengirim gelombang suara dan mengukur waktu pantulannya",
+        "Mengukur perubahan medan magnet di sekitar benda",
+        "Mendeteksi panas yang dipancarkan benda"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu PWM dalam konteks kendali motor robot?",
+      "opts": [
+        "Jenis baterai yang digunakan pada robot",
+        "Teknik mengatur kecepatan motor dengan mengubah lebar pulsa sinyal",
+        "Protokol komunikasi antara dua robot",
+        "Metode mengukur jarak menggunakan gelombang radio"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot membutuhkan lebih dari satu sensor?",
+      "opts": [
+        "Karena satu sensor terlalu berat untuk robot kecil",
+        "Agar robot bisa mendapat informasi yang lebih lengkap tentang lingkungannya",
+        "Karena controller tidak bisa membaca hanya dari satu sensor",
+        "Supaya baterai tidak cepat habis saat robot bergerak"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi jika robot tidak memiliki controller?",
+      "opts": [
+        "Robot tetap bisa bergerak menggunakan sensor",
+        "Robot tidak bisa memproses data dan memberi perintah ke aktuator",
+        "Aktuator akan bekerja sendiri tanpa perintah",
+        "Sensor akan langsung menggerakkan motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor kelembaban digunakan pada robot untuk...",
+      "opts": [
+        "Mengukur seberapa berat benda di depannya",
+        "Mendeteksi kadar air di udara atau permukaan",
+        "Menghitung jarak tempuh robot",
+        "Mengontrol kecepatan kipas pendingin robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Relay pada robot berfungsi sebagai...",
+      "opts": [
+        "Sensor untuk mendeteksi pergerakan",
+        "Saklar elektronik yang dikendalikan sinyal kecil",
+        "Komponen penyimpan daya cadangan",
+        "Penguat sinyal dari sensor ke controller"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan sensor aktif dan sensor pasif?",
+      "opts": [
+        "Sensor aktif lebih mahal dari sensor pasif",
+        "Sensor aktif mengirimkan sinyal sendiri, sensor pasif hanya menerima",
+        "Sensor pasif butuh baterai, sensor aktif tidak",
+        "Sensor aktif lebih kecil ukurannya dari sensor pasif"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Manakah yang termasuk contoh controller pada robot?",
+      "opts": [
+        "Motor DC brushless",
+        "Sensor infrared",
+        "Arduino Uno",
+        "Baterai LiPo"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa fungsi buzzer pada robot?",
+      "opts": [
+        "Mendeteksi suara di sekitar robot",
+        "Menghasilkan bunyi sebagai notifikasi atau peringatan",
+        "Mengukur frekuensi getaran robot",
+        "Mengirim sinyal ke sensor lainnya"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor flex (lentur) pada robot digunakan untuk mendeteksi...",
+      "opts": [
+        "Suhu pada sambungan robot",
+        "Seberapa besar tekukan atau lenturan pada bagian robot",
+        "Kecepatan putaran sendi robot",
+        "Jarak antar komponen dalam robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan feedback pada sistem kendali robot?",
+      "opts": [
+        "Perintah awal yang diberikan pengguna ke robot",
+        "Informasi dari output yang dikirim kembali ke controller untuk koreksi",
+        "Data yang disimpan permanen di memori robot",
+        "Sinyal dari baterai ke semua komponen"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa robot membutuhkan sumber daya listrik?",
+      "opts": [
+        "Agar sensor bisa mendeteksi lebih jauh",
+        "Karena semua komponen elektronik membutuhkan energi untuk bekerja",
+        "Supaya controller bisa menyimpan lebih banyak program",
+        "Agar motor bisa berputar tanpa perintah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor gyroscope pada robot berfungsi untuk...",
+      "opts": [
+        "Mengukur jarak tempuh robot di lapangan",
+        "Mendeteksi kemiringan dan rotasi robot",
+        "Mengukur kecepatan linier robot saat bergerak",
+        "Membaca medan magnet di sekitar robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang membedakan robot dari mesin biasa?",
+      "opts": [
+        "Robot pasti memiliki kaki dan bisa berjalan",
+        "Robot memiliki sensor, controller, dan aktuator yang bekerja bersama",
+        "Robot selalu terhubung ke internet secara permanen",
+        "Robot hanya bisa digunakan di pabrik besar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Tombol push button pada robot biasanya digunakan sebagai...",
+      "opts": [
+        "Aktuator untuk menggerakkan lengan robot",
+        "Sensor input manual dari pengguna",
+        "Komponen untuk menyimpan posisi robot",
+        "Pengatur tegangan yang masuk ke motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu encoder pada robot?",
+      "opts": [
+        "Sensor untuk membaca kecepatan atau posisi putaran motor",
+        "Komponen yang mengubah sinyal analog menjadi audio",
+        "Alat untuk menyimpan program ke dalam memori",
+        "Driver yang mengontrol arah putaran motor"
       ],
       "ans": 0
     },
     {
-      "q": "Sebuah motor DC 12V menarik arus 2A saat berbeban. Berapa daya yang dikonsumsi dan panas yang dihasilkan jika efisiensi motor 75%?",
+      "q": "Mengapa robot sumo menggunakan sensor jarak di bagian depan?",
       "opts": [
-        "Daya 24W, panas 6W",
-        "Daya 24W, panas 18W",
-        "Daya 12W, panas 3W",
-        "Daya 24W, panas 12W"
+        "Untuk mengukur berat lawan yang dihadapi",
+        "Agar robot tahu ada lawan di depan dan bisa mendorongnya",
+        "Untuk menghitung kecepatan lawan yang mendekat",
+        "Supaya robot bisa menyesuaikan warna dengan arena"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor akselerometer pada robot digunakan untuk...",
+      "opts": [
+        "Mengukur percepatan dan perubahan gerak robot",
+        "Mendeteksi warna permukaan yang dilalui robot",
+        "Mengukur suhu motor saat bekerja keras",
+        "Membaca data dari sensor lain secara bersamaan"
       ],
       "ans": 0
     },
     {
-      "q": "Mengapa sinyal output dari sensor analog (0-5V) tidak boleh langsung disambungkan ke pin digital Arduino 3.3V tanpa proteksi?",
+      "q": "Apa yang dimaksud dengan robot mobile?",
       "opts": [
-        "Karena perbedaan frekuensi sinyal",
-        "Karena tegangan 5V dapat merusak GPIO 3.3V yang toleransinya lebih rendah",
-        "Karena resistance input tidak match",
-        "Karena Arduino tidak bisa baca sinyal analog"
+        "Robot yang hanya bisa dikendalikan lewat smartphone",
+        "Robot yang dapat berpindah tempat menggunakan roda atau kaki",
+        "Robot yang berukuran sangat kecil dan ringan",
+        "Robot yang terhubung ke jaringan wifi secara terus menerus"
       ],
       "ans": 1
     },
     {
-      "q": "Kapasitor 100µF dipasang paralel dengan supply motor DC pada robot. Apa fungsi utamanya?",
+      "q": "Kenapa sensor infrared sering digunakan pada robot line follower?",
       "opts": [
-        "Meningkatkan torsi motor",
-        "Menstabilkan tegangan supply dengan menyerap voltage spike saat motor start/stop",
-        "Menyimpan cadangan energi jangka panjang",
-        "Memfilter sinyal PWM dari motor driver"
+        "Karena bisa mendeteksi warna garis dengan sangat akurat",
+        "Karena bisa membedakan permukaan gelap dan terang dengan cepat",
+        "Karena tidak membutuhkan daya listrik sama sekali",
+        "Karena bisa mendeteksi garis dari jarak yang sangat jauh"
       ],
       "ans": 1
     },
     {
-      "q": "Pada L298N motor driver, jika IN1=HIGH, IN2=LOW dan EN=PWM 50%, apa yang terjadi?",
+      "q": "Apa fungsi kapasitor yang sering dipasang dekat motor pada robot?",
       "opts": [
-        "Motor berhenti",
-        "Motor berputar maju dengan setengah kecepatan",
-        "Motor berputar mundur penuh",
-        "Motor brake/pengereman"
+        "Menyimpan program darurat jika baterai habis",
+        "Meredam gangguan listrik yang ditimbulkan motor saat berputar",
+        "Meningkatkan kecepatan putaran motor secara otomatis",
+        "Mendeteksi apakah motor sedang berputar atau tidak"
       ],
       "ans": 1
     },
     {
-      "q": "Resistor pull-up 10kΩ dipasang pada pin input digital yang terhubung ke tombol. Ketika tombol tidak ditekan, berapa arus yang mengalir?",
+      "q": "Apa yang dimaksud dengan sistem kendali terbuka (open loop) pada robot?",
       "opts": [
-        "0 mA (tidak ada arus)",
-        "0.5 mA dari VCC ke GND melalui resistor",
-        "1 mA dari resistor ke pin",
-        "Arus tak terbatas"
+        "Sistem yang menggunakan banyak sensor sekaligus",
+        "Sistem yang tidak menggunakan feedback dari output",
+        "Sistem yang terhubung ke internet untuk menerima perintah",
+        "Sistem yang bisa memperbaiki dirinya sendiri secara otomatis"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam komunikasi I2C, jika dua slave memiliki alamat yang sama pada bus yang sama, apa yang terjadi?",
+      "q": "Apa perbedaan robot analog dan robot digital?",
       "opts": [
-        "Keduanya merespons serentak menyebabkan bus collision dan data corrupt",
-        "Slave pertama akan otomatis dimatikan",
-        "Master akan memilih salah satu secara acak",
-        "Komunikasi masih berjalan normal dengan prioritas ke salah satu"
+        "Robot analog lebih cepat bergerak dari robot digital",
+        "Robot analog menggunakan sinyal kontinu, robot digital menggunakan sinyal diskrit 0 dan 1",
+        "Robot digital tidak membutuhkan baterai untuk beroperasi",
+        "Robot analog memiliki lebih banyak sensor dari robot digital"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Sensor magnetik (Hall effect) pada robot digunakan untuk...",
+      "opts": [
+        "Mendeteksi keberadaan medan magnet atau benda logam",
+        "Mengukur suhu komponen yang mengandung logam",
+        "Membaca kecepatan aliran udara di sekitar robot",
+        "Mendeteksi perubahan warna pada permukaan"
       ],
       "ans": 0
     },
     {
-      "q": "Tegangan drop pada dioda Schottky adalah ~0.2V sedangkan dioda biasa ~0.7V. Mengapa Schottky sering dipilih untuk flyback diode pada motor DC?",
+      "q": "Apa itu duty cycle dalam kendali motor robot?",
       "opts": [
-        "Karena lebih murah dan mudah didapat",
-        "Karena tegangan drop kecil dan switching lebih cepat meminimalkan disipasi daya dari back-EMF",
-        "Karena tahan arus lebih tinggi",
-        "Karena lebih kecil ukurannya"
+        "Jumlah putaran motor per menit saat berbeban",
+        "Persentase waktu sinyal aktif dalam satu periode PWM",
+        "Tegangan maksimum yang bisa diterima motor",
+        "Waktu jeda antara dua perintah dari controller"
       ],
       "ans": 1
     },
     {
-      "q": "Sebuah IMU mengembalikan nilai akselerometer (1.02g, -0.05g, 0.08g) dalam kondisi diam. Apa yang bisa disimpulkan?",
+      "q": "Mengapa robot membutuhkan regulator tegangan?",
       "opts": [
-        "Robot sedang bergerak maju",
-        "Sensor terpasang hampir vertikal dengan sumbu X searah gravitasi, ada sedikit offset kalibrasi",
-        "IMU rusak karena total akselerasi tidak tepat 1g",
-        "Robot sedang berputar"
+        "Agar motor bisa berputar lebih cepat dari biasanya",
+        "Agar tegangan dari baterai disesuaikan dengan kebutuhan tiap komponen",
+        "Supaya sensor bisa membaca data lebih akurat",
+        "Agar baterai tidak cepat kehabisan daya"
       ],
       "ans": 1
     },
     {
-      "q": "Pada robot line follower dengan 5 sensor IR, pembacaan (0,1,1,0,0) menunjukkan apa dan bagaimana robot seharusnya bergerak?",
+      "q": "Apa fungsi sensor tekanan (pressure sensor) pada robot?",
       "opts": [
-        "Garis di kiri-tengah, robot belok kiri",
-        "Garis di kanan-tengah, robot belok kanan",
-        "Robot di atas garis sempurna, jalan lurus",
-        "Sensor error, berhenti"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Mengapa ESC (Electronic Speed Controller) untuk motor brushless memerlukan kalibrasi sebelum digunakan?",
-      "opts": [
-        "Agar bisa berkomunikasi dengan flight controller",
-        "Untuk mempelajari range sinyal PWM dari receiver/controller (throttle min-max) agar respons linear",
-        "Untuk memprogram jumlah pole motor",
-        "Agar tidak overheat"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Sebuah LiPo 3S 11.1V 2200mAh digunakan pada robot dengan konsumsi rata-rata 5A. Berapa estimasi runtime?",
-      "opts": [
-        "22 menit",
-        "26.4 menit",
-        "11 menit",
-        "44 menit"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa risiko discharge LiPo battery di bawah voltase cutoff (biasanya 3.0V/cell)?",
-      "opts": [
-        "Baterai hanya kehilangan sedikit kapasitas",
-        "Kerusakan irreversible pada sel, kapasitas turun drastis, dan risiko swelling/fire",
-        "Baterai otomatis mati tanpa kerusakan",
-        "Hanya memperpendek umur siklus sedikit"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Dalam desain PCB robot, mengapa decoupling capacitor (100nF) ditempatkan sedekat mungkin dengan pin VCC IC?",
-      "opts": [
-        "Untuk mempermudah routing kabel",
-        "Untuk meminimalkan inductance jalur PCB sehingga efektif meredam noise high-frequency pada supply IC",
-        "Karena aturan standar desain saja",
-        "Untuk melindungi IC dari ESD"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Sensor MPU-6050 menggabungkan akselerometer dan giroskop 3-axis. Apa keunggulan penggunaan sensor fusion (complementary/Kalman filter) dibanding menggunakan salah satu sensor saja?",
-      "opts": [
-        "Menghemat pin I/O mikrokontroler",
-        "Menggabungkan keunggulan akselerometer (stabil jangka panjang) dan giroskop (respons cepat) untuk estimasi orientasi lebih akurat",
-        "Mengurangi konsumsi daya",
-        "Mempercepat komunikasi I2C"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Optical encoder menghasilkan 1000 pulsa per rotasi pada roda diameter 6.5cm. Robot bergerak sejauh 1 meter; berapa pulsa yang harus terhitung?",
-      "opts": [
-        "4,900 pulsa",
-        "490 pulsa",
-        "9,800 pulsa",
-        "245 pulsa"
+        "Mengukur seberapa keras robot mendorong atau menekan sesuatu",
+        "Mendeteksi perubahan suhu saat robot bekerja",
+        "Membaca kecepatan pergerakan robot di udara",
+        "Mengukur jarak robot dari permukaan tanah"
       ],
       "ans": 0
     },
     {
-      "q": "Pada komunikasi SPI, apa perbedaan mode CPOL dan CPHA dan mengapa ini kritis saat menghubungkan sensor berbeda?",
+      "q": "Kenapa robot perlu dikalibrasi sebelum digunakan?",
       "opts": [
-        "CPOL dan CPHA hanya mempengaruhi kecepatan transfer data",
-        "CPOL menentukan polaritas clock idle, CPHA menentukan edge sampling; mismatch menyebabkan data corrupt karena bit ter-sample pada waktu salah",
-        "Keduanya hanya pengaturan software tanpa efek nyata",
-        "CPOL untuk master, CPHA untuk slave"
+        "Agar baterai robot terisi penuh sebelum beroperasi",
+        "Agar pembacaan sensor dan gerakan aktuator sesuai dengan nilai yang diharapkan",
+        "Supaya controller bisa mengenali semua jenis sensor",
+        "Agar program tidak mengalami error saat dijalankan"
       ],
       "ans": 1
     },
     {
-      "q": "Robot menggunakan sensor ToF (Time of Flight) VL53L1X dan HC-SR04 untuk deteksi jarak. Apa kelebihan ToF dibanding ultrasonik dalam aplikasi robotik?",
+      "q": "Apa yang dimaksud dengan workspace pada robot arm?",
       "opts": [
-        "ToF jauh lebih murah",
-        "ToF memiliki akurasi lebih tinggi, beam angle lebih sempit, tidak terpengaruh gema/multipath, dan update rate lebih cepat",
-        "Ultrasonik lebih akurat untuk jarak dekat",
-        "Keduanya identik dalam performa"
+        "Ruang tempat menyimpan robot saat tidak digunakan",
+        "Area yang bisa dijangkau oleh lengan robot",
+        "Program yang menentukan gerakan lengan robot",
+        "Nama lain untuk controller pada robot arm"
       ],
       "ans": 1
     },
     {
-      "q": "Pada robot dengan differential drive, jika roda kiri berputar 5 rad/s dan kanan 3 rad/s dengan wheelbase 20cm dan jari-jari roda 3cm, berapa radius belok robot?",
+      "q": "Sensor color (warna) pada robot digunakan untuk...",
       "opts": [
-        "30 cm",
-        "15 cm",
-        "20 cm",
-        "10 cm"
-      ],
-      "ans": 0
-    },
-    {
-      "q": "Mengapa motor brushless lebih disukai daripada motor brushed untuk drone/UAV?",
-      "opts": [
-        "Motor brushless lebih murah",
-        "Efisiensi lebih tinggi, umur lebih panjang (tidak ada brush yang aus), rasio power/weight lebih baik, dan penanganan panas lebih baik",
-        "Lebih mudah dikendalikan dengan PWM biasa",
-        "Torsi lebih rendah cocok untuk propeller"
+        "Mengubah warna LED sesuai perintah controller",
+        "Mendeteksi dan membedakan warna objek di depannya",
+        "Mengukur intensitas cahaya secara keseluruhan",
+        "Mengidentifikasi kecepatan perubahan cahaya"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam implementasi PID controller untuk robot, integral windup adalah masalah di mana...",
+      "q": "Apa yang terjadi jika tegangan yang diberikan ke sensor melebihi spesifikasi maksimalnya?",
       "opts": [
-        "Nilai Kp terlalu besar menyebabkan overshoot",
-        "Term integral terus terakumulasi saat actuator saturasi sehingga saat error hilang, integral yang besar menyebabkan overshoot besar",
-        "Derivatif bereaksi terlalu cepat terhadap noise",
-        "Setpoint berubah terlalu cepat untuk sistem"
+        "Sensor akan bekerja lebih cepat dan akurat",
+        "Sensor bisa rusak secara permanen",
+        "Sensor otomatis menurunkan tegangannya sendiri",
+        "Data dari sensor akan lebih stabil"
       ],
       "ans": 1
     },
     {
-      "q": "LIDAR 2D pada robot menghasilkan point cloud 360° dengan resolusi sudut 0.33°. Berapa data points per scan?",
+      "q": "Apa fungsi resistor pada rangkaian robot?",
       "opts": [
-        "360 points",
-        "1,091 points",
-        "720 points",
-        "3,600 points"
+        "Menyimpan energi listrik sementara dalam rangkaian",
+        "Membatasi arus yang mengalir agar komponen tidak rusak",
+        "Mengubah arus bolak-balik menjadi arus searah",
+        "Memperkuat sinyal yang lemah dari sensor"
       ],
       "ans": 1
     },
     {
-      "q": "Mengapa robot SLAM (Simultaneous Localization and Mapping) membutuhkan dua proses sekaligus dan bukan berurutan?",
+      "q": "Apa yang dimaksud dengan GND pada rangkaian robot?",
       "opts": [
-        "Untuk menghemat memori",
-        "Karena lokalisasi membutuhkan peta sedangkan mapping membutuhkan posisi; keduanya saling bergantung sehingga harus dilakukan bersama secara iteratif",
-        "Karena sensor hanya bisa bekerja saat bergerak",
-        "Untuk mempercepat komputasi"
+        "Tegangan tertinggi dalam rangkaian robot",
+        "Titik referensi nol atau negatif dalam rangkaian listrik",
+        "Pin khusus untuk menghubungkan sensor ke motor",
+        "Nama pin untuk menerima sinyal analog"
       ],
       "ans": 1
     },
     {
-      "q": "Pada motor stepper dengan resolusi 1.8°/step, berapa langkah yang dibutuhkan untuk rotasi 270° dengan microstepping 1/16?",
+      "q": "Sensor gas pada robot digunakan untuk...",
       "opts": [
-        "150 langkah",
-        "2,400 langkah",
-        "300 langkah",
-        "1,200 langkah"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Komunikasi RS-485 dipilih untuk robot industri jarak jauh dibanding TTL UART karena...",
-      "opts": [
-        "RS-485 lebih mudah diimplementasikan",
-        "RS-485 menggunakan differential signaling yang tahan noise, mendukung multi-drop (32+ node), dan jangkauan hingga 1200m",
-        "RS-485 memiliki baud rate lebih tinggi",
-        "RS-485 tidak memerlukan terminasi"
+        "Mengukur tekanan udara di sekitar robot",
+        "Mendeteksi keberadaan gas tertentu di lingkungan",
+        "Mengatur aliran udara yang masuk ke motor",
+        "Membaca suhu pembakaran bahan bakar"
       ],
       "ans": 1
     }
   ],
   "programmer": [
     {
-      "q": "Dalam FreeRTOS pada ESP32, perbedaan antara vTaskDelay() dan vTaskDelayUntil() adalah...",
+      "q": "Apa yang terjadi jika kondisi if (jarak < 10) terpenuhi pada kode if (jarak < 10) { motorStop(); }?",
       "opts": [
-        "vTaskDelayUntil lebih presisi karena menghitung waktu berdasarkan tick absolut, bukan relatif dari selesainya eksekusi",
-        "vTaskDelay lebih presisi untuk timing kritis",
-        "Keduanya identik secara fungsional",
-        "vTaskDelayUntil hanya untuk task prioritas tinggi"
+        "Sensor mulai mengukur jarak",
+        "Motor berputar lebih cepat",
+        "Motor berhenti bergerak",
+        "Controller mereset program"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Pada Arduino, pinMode(13, OUTPUT) digunakan untuk...",
+      "opts": [
+        "Membaca sinyal dari pin 13",
+        "Mengatur pin 13 sebagai keluaran",
+        "Menghubungkan pin 13 ke sensor",
+        "Menyalakan semua pin sekaligus"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dilakukan delay(1000) pada program Arduino?",
+      "opts": [
+        "Mengulang perintah sebanyak 1000 kali",
+        "Menunggu selama 1 detik sebelum lanjut",
+        "Membaca sensor setiap 1000 milidetik sekali",
+        "Menyimpan data sebanyak 1000 byte"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Perintah digitalWrite(pin, HIGH) berfungsi untuk...",
+      "opts": [
+        "Membaca nilai tegangan pada pin",
+        "Mematikan pin agar tidak aktif",
+        "Mengukur arus yang masuk ke pin",
+        "Memberi sinyal aktif ke pin tersebut"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Kenapa fungsi loop() pada Arduino penting untuk robot?",
+      "opts": [
+        "Agar program tersimpan ke memori permanen",
+        "Supaya robot bisa terus membaca sensor dan merespons",
+        "Untuk menghubungkan Arduino ke komputer",
+        "Agar motor tidak berputar terlalu cepat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan fungsi setup() dan loop() pada Arduino?",
+      "opts": [
+        "setup() dijalankan berulang, loop() hanya sekali",
+        "setup() untuk sensor, loop() untuk motor saja",
+        "setup() dijalankan sekali di awal, loop() berjalan terus menerus",
+        "Keduanya berjalan bersamaan secara paralel"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan variabel pada program robot?",
+      "opts": [
+        "Perintah untuk menggerakkan motor robot",
+        "Tempat menyimpan data sementara dalam program",
+        "Nama lain untuk fungsi dalam program",
+        "Koneksi antara sensor dan controller"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi Serial.println() pada program Arduino?",
+      "opts": [
+        "Mengirim perintah ke motor melalui kabel serial",
+        "Menampilkan data atau teks ke Serial Monitor",
+        "Membaca data yang dikirim dari sensor serial",
+        "Menyimpan data ke EEPROM Arduino"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan kondisi if-else pada program?",
+      "opts": [
+        "Perintah untuk mengulang program dari awal",
+        "Struktur untuk menjalankan kode berbeda tergantung kondisi benar atau salah",
+        "Cara menyimpan lebih dari satu nilai sekaligus",
+        "Perintah untuk menghentikan program sementara"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Perulangan for (int i = 0; i < 5; i++) akan berjalan sebanyak...",
+      "opts": [
+        "4 kali",
+        "5 kali",
+        "6 kali",
+        "Terus menerus tanpa henti"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa tipe data yang tepat untuk menyimpan nilai suhu 36.5 pada program Arduino?",
+      "opts": [
+        "int",
+        "boolean",
+        "float",
+        "char"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa fungsi analogRead() pada Arduino?",
+      "opts": [
+        "Mengirim sinyal analog ke aktuator",
+        "Membaca nilai tegangan analog dari pin dan mengubahnya ke angka 0-1023",
+        "Mengatur kecepatan motor dengan nilai analog",
+        "Menyimpan data analog ke dalam memori flash"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan fungsi (function) dalam pemrograman robot?",
+      "opts": [
+        "Nama lain dari variabel dalam program",
+        "Blok kode yang bisa dipanggil berulang kali dengan satu perintah",
+        "Cara menghubungkan dua program sekaligus",
+        "Perintah khusus untuk menggerakkan motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa penting memberi nama variabel yang jelas seperti 'jarakDepan' bukan 'x'?",
+      "opts": [
+        "Karena Arduino tidak menerima nama variabel satu huruf",
+        "Agar program lebih mudah dibaca dan dipahami orang lain",
+        "Karena nama panjang membuat program lebih cepat",
+        "Supaya sensor bisa mengenali variabel tersebut"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa output dari kode: int x = 5; x = x + 3; Serial.println(x);",
+      "opts": [
+        "5",
+        "3",
+        "8",
+        "53"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan library pada Arduino?",
+      "opts": [
+        "Tempat menyimpan program cadangan robot",
+        "Kumpulan kode siap pakai untuk mempermudah penggunaan sensor atau modul tertentu",
+        "File konfigurasi untuk mengatur pin Arduino",
+        "Nama lain untuk sketsa atau program Arduino"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan tanda // pada program Arduino?",
+      "opts": [
+        "Membagi nilai variabel dengan dua",
+        "Menandai komentar yang tidak dieksekusi program",
+        "Menghubungkan dua perintah sekaligus",
+        "Menandai akhir dari sebuah fungsi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi jika tanda titik koma (;) terlupa di akhir perintah Arduino?",
+      "opts": [
+        "Program tetap berjalan tapi lebih lambat",
+        "Program akan error dan tidak bisa di-upload",
+        "Arduino otomatis menambahkannya sendiri",
+        "Hanya perintah itu yang dilewati program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi analogWrite() pada Arduino?",
+      "opts": [
+        "Membaca nilai sensor analog secara terus menerus",
+        "Mengirim sinyal PWM untuk mengatur kecepatan atau kecerahan",
+        "Menyimpan nilai analog ke dalam variabel",
+        "Menampilkan nilai analog di Serial Monitor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan pin digital dan pin analog pada Arduino?",
+      "opts": [
+        "Pin digital lebih banyak jumlahnya dari pin analog",
+        "Pin digital hanya mengenal HIGH/LOW, pin analog bisa membaca nilai 0 sampai 1023",
+        "Pin analog hanya bisa digunakan untuk LED",
+        "Pin digital bisa membaca nilai lebih akurat dari pin analog"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan boolean dalam program?",
+      "opts": [
+        "Tipe data yang menyimpan angka desimal",
+        "Tipe data yang hanya bernilai true atau false",
+        "Tipe data untuk menyimpan karakter huruf",
+        "Tipe data untuk menyimpan teks panjang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Pada program robot, apa fungsi while(true)?",
+      "opts": [
+        "Menjalankan kode hanya jika kondisi sensor benar",
+        "Membuat kode di dalamnya terus berjalan tanpa berhenti",
+        "Menunggu input dari pengguna sebelum melanjutkan",
+        "Mengulang program dari fungsi setup()"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan upload program pada Arduino?",
+      "opts": [
+        "Mengirim program dari komputer ke memori Arduino",
+        "Mengambil program dari Arduino ke komputer",
+        "Menghapus semua program yang ada di Arduino",
+        "Menjalankan program Arduino di komputer"
       ],
       "ans": 0
     },
     {
-      "q": "Mengapa penggunaan String class Arduino harus dihindari pada sistem real-time dengan memori terbatas?",
+      "q": "Apa fungsi map(nilai, 0, 1023, 0, 255) pada Arduino?",
       "opts": [
-        "String class terlalu lambat untuk operasi dasar",
-        "Dynamic memory allocation dari String menyebabkan heap fragmentation yang dapat menimbulkan crash tak terduga setelah berjalan lama",
-        "String tidak support karakter Unicode",
-        "Karena String tidak bisa dibandingkan dengan =="
+        "Menggandakan nilai sensor sebanyak dua kali",
+        "Mengubah skala nilai dari rentang 0-1023 ke rentang 0-255",
+        "Membatasi nilai agar tidak melebihi 255",
+        "Mengkonversi nilai analog menjadi teks"
       ],
       "ans": 1
     },
     {
-      "q": "Pada implementasi PID di mikrokontroler, mengapa derivatif biasanya dihitung dari perubahan measurement (process variable) bukan dari perubahan error?",
+      "q": "Apa yang dimaksud dengan kondisi AND (&&) pada program robot?",
       "opts": [
-        "Karena lebih mudah dihitung",
-        "Untuk menghindari 'derivative kick' - lonjakan output besar saat setpoint berubah tiba-tiba",
-        "Karena pengukuran lebih akurat dari error",
-        "Untuk mengurangi integral windup"
+        "Salah satu dari dua kondisi harus terpenuhi",
+        "Kedua kondisi harus terpenuhi agar blok kode dijalankan",
+        "Kondisi dibalik dari yang seharusnya",
+        "Hanya kondisi pertama yang diperiksa"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam protokol MAVLink untuk drone, heartbeat message dikirim setiap 1 detik. Apa yang terjadi jika ground station tidak menerima heartbeat selama 3 detik?",
+      "q": "Apa kegunaan EEPROM pada Arduino untuk robot?",
       "opts": [
-        "Drone otomatis landing",
-        "Flight controller mendeteksi connection loss dan mengeksekusi failsafe behavior (RTL/landing/hover sesuai konfigurasi)",
-        "Sistem hanya memunculkan peringatan",
-        "Drone terus terbang normal"
+        "Menyimpan data sementara saat program berjalan",
+        "Menyimpan data yang tetap ada meski Arduino dimatikan",
+        "Mempercepat eksekusi program robot",
+        "Tempat menyimpan library sensor"
       ],
       "ans": 1
     },
     {
-      "q": "Volatile keyword pada variabel di Arduino/embedded C dibutuhkan ketika...",
+      "q": "Apa yang terjadi jika robot menggunakan delay() terlalu besar dalam loop utama?",
       "opts": [
-        "Variabel berukuran besar",
-        "Variabel diakses dari ISR (Interrupt Service Routine) dan main loop sehingga compiler tidak melakukan optimisasi cache register yang menyebabkan nilai stale",
-        "Variabel bertipe float",
-        "Variabel menyimpan string"
+        "Motor akan berputar lebih kencang",
+        "Robot tidak responsif karena tidak membaca sensor selama delay berlangsung",
+        "Sensor akan membaca lebih akurat",
+        "Program akan otomatis berhenti"
       ],
       "ans": 1
     },
     {
-      "q": "Pada ROS2, perbedaan antara topic dan service adalah...",
+      "q": "Apa perbedaan == dan = pada program Arduino?",
       "opts": [
-        "Topic lebih cepat dari service",
-        "Topic adalah publish-subscribe asinkron untuk data stream, service adalah request-response sinkron untuk operasi yang membutuhkan konfirmasi",
-        "Service untuk data sensor, topic untuk kontrol motor",
-        "Keduanya sama tapi service lebih secure"
+        "Keduanya sama, hanya penulisan berbeda",
+        "= untuk membandingkan nilai, == untuk mengisi nilai",
+        "== untuk membandingkan nilai, = untuk mengisi nilai ke variabel",
+        "== hanya digunakan untuk tipe data float"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa fungsi Serial.begin(9600) pada program Arduino?",
+      "opts": [
+        "Mengatur kecepatan motor sebesar 9600 RPM",
+        "Memulai komunikasi serial dengan kecepatan 9600 baud",
+        "Menginisialisasi pin 9600 sebagai output",
+        "Mengatur frekuensi PWM menjadi 9600 Hz"
       ],
       "ans": 1
     },
     {
-      "q": "State machine pada robot memiliki state: IDLE, NAVIGATE, OBSTACLE_AVOID, RETURN_HOME. Apa keunggulan pendekatan ini dibanding if-else bercabang?",
+      "q": "Apa yang dimaksud dengan array pada program robot?",
       "opts": [
-        "State machine lebih cepat dieksekusi",
-        "State machine membuat behavior lebih terstruktur, deterministik, mudah di-debug, dan mencegah kondisi tak terduga akibat kombinasi flag yang salah",
-        "State machine menggunakan lebih sedikit memori",
-        "Tidak ada keunggulan signifikan"
+        "Nama lain untuk fungsi berulang dalam program",
+        "Kumpulan variabel sejenis yang disimpan dalam satu nama",
+        "Perintah untuk menggerakkan banyak motor sekaligus",
+        "Cara mengirim data ke beberapa sensor bersamaan"
       ],
       "ans": 1
     },
     {
-      "q": "Implementasi UART komunikasi tanpa interrupt pada loop utama berisiko kehilangan data. Mengapa interrupt-driven UART lebih baik?",
+      "q": "Kenapa kita perlu mendeklarasikan tipe data variabel di Arduino?",
       "opts": [
-        "Interrupt lebih mudah diimplementasikan",
-        "ISR memproses karakter masuk segera saat tersedia tanpa polling, sehingga main loop bebas untuk tugas lain tanpa ada karakter yang terlewat",
-        "Interrupt menggunakan lebih sedikit baud rate",
-        "Interrupt mengurangi jumlah byte yang dikirim"
+        "Agar Arduino tahu berapa besar memori yang dibutuhkan variabel tersebut",
+        "Supaya variabel bisa digunakan di semua fungsi sekaligus",
+        "Karena Arduino tidak bisa membaca angka tanpa tipe data",
+        "Agar program bisa dijalankan tanpa koneksi ke komputer"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Apa fungsi kondisi OR (||) pada program robot?",
+      "opts": [
+        "Kedua kondisi harus terpenuhi sekaligus",
+        "Salah satu kondisi sudah cukup untuk menjalankan kode",
+        "Kondisi dibalik dari nilai aslinya",
+        "Hanya kondisi terakhir yang diperiksa"
       ],
       "ans": 1
     },
     {
-      "q": "Pada implementasi DMA (Direct Memory Access) untuk ADC sampling di STM32, apa keunggulan dibanding software polling?",
+      "q": "Apa yang dimaksud dengan debugging pada pemrograman robot?",
       "opts": [
-        "DMA menghasilkan nilai ADC lebih akurat",
-        "DMA mentransfer data ADC ke memori secara otomatis tanpa intervensi CPU, membebaskan CPU untuk komputasi kontrol sambil sampling berjalan secara paralel",
-        "DMA hanya bisa digunakan untuk kecepatan tinggi",
-        "DMA mengurangi noise pada ADC"
+        "Proses menambah fitur baru ke program robot",
+        "Proses mencari dan memperbaiki kesalahan dalam program",
+        "Cara mengoptimalkan kecepatan program robot",
+        "Proses menghapus kode yang tidak diperlukan"
       ],
       "ans": 1
     },
     {
-      "q": "Checksums (CRC) digunakan pada protokol komunikasi robot. Jika byte data adalah [0x41, 0x42, 0x43] dan CRC8 = 0x7A, apa yang terjadi jika salah satu byte berubah menjadi 0x41, 0x43, 0x43?",
+      "q": "Apa kegunaan millis() pada Arduino?",
       "opts": [
-        "Data tetap valid karena hanya satu byte berubah",
-        "Receiver menghitung CRC dari data baru dan mendapat nilai berbeda dari 0x7A, mendeteksi error dan meminta retransmisi atau membuang paket",
-        "CRC hanya mendeteksi jika lebih dari 2 byte berubah",
-        "CRC tidak bisa mendeteksi perubahan pada byte tengah"
+        "Mengukur jarak dalam satuan milimeter",
+        "Mengembalikan waktu dalam milidetik sejak Arduino dinyalakan",
+        "Mengatur delay dalam satuan milidetik",
+        "Membaca nilai sensor setiap milidetik"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam robot vision, homogeneous coordinates digunakan untuk transformasi. Mengapa representasi 4x4 matrix lebih disukai daripada 3x3 rotation + translation terpisah?",
+      "q": "Apa yang dimaksud dengan pin PWM pada Arduino?",
       "opts": [
-        "Karena matrix 4x4 lebih mudah diinvers",
-        "Karena matrix 4x4 memungkinkan komposisi transformasi (rotasi + translasi) dengan perkalian matrix tunggal, menyederhanakan rantai kinematik",
-        "Karena lebih hemat memori",
-        "Karena menghindari gimbal lock"
+        "Pin yang hanya bisa membaca sinyal digital",
+        "Pin yang bisa mengeluarkan sinyal analog simulasi dengan switching cepat",
+        "Pin khusus untuk komunikasi dengan sensor I2C",
+        "Pin yang digunakan sebagai sumber tegangan 5V"
       ],
       "ans": 1
     },
     {
-      "q": "Pada ROS navigation stack, costmap memiliki inflation_radius. Apa efek nilai inflation_radius yang terlalu besar?",
+      "q": "Apa yang dimaksud dengan kondisi NOT (!) pada program?",
       "opts": [
-        "Robot bergerak lebih cepat",
-        "Robot menganggap area lebih luas sebagai terhalang sehingga path lebih jauh dari obstacle tapi robot mungkin tidak bisa melewati celah sempit meski sebenarnya bisa",
-        "Robot lebih akurat menghindari rintangan",
-        "Navigation lebih cepat karena path lebih pendek"
+        "Menambahkan nilai satu ke variabel",
+        "Membalik nilai kondisi dari true menjadi false atau sebaliknya",
+        "Menghentikan program saat kondisi terpenuhi",
+        "Membandingkan dua variabel sekaligus"
       ],
       "ans": 1
     },
     {
-      "q": "Watchdog timer pada embedded system robot berfungsi untuk...",
+      "q": "Apa perbedaan int dan long pada Arduino?",
       "opts": [
-        "Memantau level baterai",
-        "Mereset mikrokontroler otomatis jika program crash atau hang dengan tidak mereset timer tepat waktu, memastikan sistem selalu recoverable",
-        "Mengatur kecepatan clock CPU",
-        "Memonitor suhu prosesor"
+        "int untuk desimal, long untuk bilangan bulat",
+        "int menyimpan angka hingga 32.767, long hingga 2.147.483.647",
+        "long lebih cepat diproses daripada int",
+        "Tidak ada perbedaan keduanya pada Arduino"
       ],
       "ans": 1
     },
     {
-      "q": "Extended Kalman Filter (EKF) untuk robot localization melakukan linearisasi fungsi non-linear. Kapan EKF bisa memberikan estimasi yang buruk?",
+      "q": "Apa yang dimaksud dengan parameter pada fungsi program robot?",
       "opts": [
-        "Saat sensor terlalu akurat",
-        "Saat sistem sangat non-linear dan linearisasi (Jacobian) tidak representatif, menyebabkan kovarians estimasi yang tidak akurat dan filter bisa diverge",
-        "Saat data terlalu banyak",
-        "Saat robot bergerak lambat"
+        "Nama lain dari variabel global dalam program",
+        "Nilai yang dikirim ke fungsi untuk diproses di dalamnya",
+        "Perintah yang dijalankan setelah fungsi selesai",
+        "Kondisi yang harus terpenuhi agar fungsi berjalan"
       ],
       "ans": 1
     },
     {
-      "q": "Pada path planning, A* algorithm menjamin solusi optimal jika heuristic function h(n) bersifat...",
+      "q": "Kenapa menggunakan fungsi (function) membuat program robot lebih baik?",
       "opts": [
-        "h(n) selalu sama dengan actual cost",
-        "h(n) admissible (tidak pernah overestimate biaya sebenarnya ke goal), memastikan A* tidak melewatkan path yang lebih pendek",
-        "h(n) selalu bernilai 0",
-        "h(n) selalu overestimate untuk efisiensi"
+        "Karena fungsi membuat program lebih cepat dieksekusi",
+        "Karena kode bisa digunakan ulang dan program lebih terorganisir",
+        "Karena Arduino hanya bisa membaca program berbasis fungsi",
+        "Karena fungsi mengurangi jumlah variabel yang dibutuhkan"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam implementasi inverse kinematics robot arm, mengapa solusi numerik (iteratif/Jacobian pseudoinverse) lebih umum digunakan daripada solusi analitik untuk arm 7-DOF?",
+      "q": "Apa yang dimaksud dengan HIGH dan LOW pada Arduino?",
       "opts": [
-        "Karena numerik lebih akurat",
-        "Karena arm 7-DOF redundant memiliki infinite solusi analitik yang sulit dihitung closed-form; numerik bisa menemukan solusi dengan constraints tambahan seperti menghindari singularitas",
-        "Karena solusi analitik lebih lambat",
-        "Karena numerik tidak memerlukan model geometri"
+        "HIGH berarti motor cepat, LOW berarti motor lambat",
+        "HIGH berarti tegangan 5V aktif, LOW berarti 0V atau tidak aktif",
+        "HIGH untuk sensor analog, LOW untuk sensor digital",
+        "HIGH berarti data dikirim, LOW berarti data diterima"
       ],
       "ans": 1
     },
     {
-      "q": "Memory leak pada program robot C++ terjadi ketika... dan dampak jangka panjangnya adalah...",
+      "q": "Apa itu sketch pada Arduino?",
       "opts": [
-        "Stack overflow terjadi; program crash langsung",
-        "Heap memory dialokasikan dengan new/malloc tapi tidak dibebaskan dengan delete/free; heap habis secara bertahap menyebabkan alokasi gagal dan crash setelah runtime panjang",
-        "Variabel global terlalu banyak; memory penuh saat compile",
-        "Loop berjalan terlalu sering; CPU overload"
+        "Nama lain untuk kabel penghubung Arduino",
+        "Program atau kode yang ditulis dan diupload ke Arduino",
+        "Diagram rangkaian elektronik untuk Arduino",
+        "File konfigurasi pin pada papan Arduino"
       ],
       "ans": 1
     },
     {
-      "q": "Pada sistem multi-robot dengan komunikasi WiFi, race condition bisa terjadi ketika dua robot menulis ke shared resource bersamaan. Mekanisme apa yang mencegah ini?",
+      "q": "Apa yang dimaksud dengan compile pada Arduino IDE?",
       "opts": [
-        "Menggunakan WiFi channel berbeda",
-        "Mutual exclusion (mutex/semaphore) memastikan hanya satu thread/proses yang mengakses critical section pada satu waktu",
-        "Menambah bandwidth WiFi",
-        "Menggunakan protokol UDP"
+        "Proses mengirim program ke papan Arduino",
+        "Proses mengubah kode menjadi bahasa mesin yang dimengerti Arduino",
+        "Proses menyimpan program ke komputer",
+        "Proses menguji program tanpa papan Arduino"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam SLAM berbasis particle filter (FastSLAM), resampling dilakukan ketika effective particle count turun. Apa risiko resampling terlalu sering?",
+      "q": "Apa fungsi tanda kurung kurawal {} pada program Arduino?",
       "opts": [
-        "Terlalu banyak komputasi",
-        "Particle impoverishment - partikel dengan bobot rendah tereliminasi sehingga diversity representasi distribusi posterior berkurang dan filter tidak bisa recovery dari error estimasi",
-        "Peta menjadi tidak akurat",
-        "Robot bergerak lebih lambat"
+        "Menandai nilai yang akan dicetak ke Serial Monitor",
+        "Mengelompokkan perintah yang termasuk dalam satu blok kode",
+        "Mengakses elemen array pada posisi tertentu",
+        "Menandai komentar panjang dalam program"
       ],
       "ans": 1
     },
     {
-      "q": "ROS2 menggunakan DDS (Data Distribution Service) sebagai middleware dibanding ROS1 yang menggunakan roscore. Apa keunggulan arsitektur ini untuk robot?",
+      "q": "Apa yang terjadi jika dua sensor memberikan data berbeda ke controller secara bersamaan?",
       "opts": [
-        "DDS lebih mudah dikonfigurasi",
-        "Tidak ada single point of failure (tidak ada roscore), mendukung real-time dengan QoS policies, peer-to-peer discovery, dan lebih scalable untuk multi-robot",
-        "DDS menggunakan bandwidth lebih sedikit",
-        "Kompatibel dengan semua OS secara otomatis"
+        "Controller akan memilih data dari sensor yang lebih mahal",
+        "Controller memproses kedua data sesuai program untuk menentukan aksi",
+        "Hanya sensor pertama yang terbaca oleh controller",
+        "Program otomatis berhenti karena konflik data"
       ],
       "ans": 1
     },
     {
-      "q": "Pada computer vision untuk robot, mengapa ConvNet (CNN) lebih efektif untuk object recognition dibanding traditional feature engineering (SIFT/HOG)?",
+      "q": "Apa fungsi pinMode(pin, INPUT_PULLUP) pada Arduino?",
       "opts": [
-        "CNN lebih cepat pada CPU",
-        "CNN secara otomatis mempelajari hierarki fitur dari data training, lebih robust terhadap variasi pencahayaan/pose/skala, dan performa meningkat seiring bertambahnya data",
-        "CNN tidak memerlukan GPU",
-        "CNN menggunakan memori lebih sedikit"
+        "Mengatur pin sebagai output dengan tegangan tinggi",
+        "Mengaktifkan resistor internal agar pin membaca HIGH saat tidak terhubung",
+        "Menghubungkan pin ke sensor secara otomatis",
+        "Mengatur pin agar hanya menerima sinyal analog"
       ],
       "ans": 1
     },
     {
-      "q": "Implementasi PID pada robot, nilai derivative gain Kd terlalu tinggi menyebabkan...",
+      "q": "Apa yang dimaksud dengan konstanta pada program robot?",
       "opts": [
-        "Sistem menjadi lebih stabil",
-        "High-frequency noise pada sensor dikuatkan, menyebabkan aktuator bergetar atau berosilasi (chattering) meski error sudah kecil",
-        "Respons sistem menjadi lebih lambat",
-        "Integral windup meningkat"
+        "Variabel yang nilainya bisa berubah setiap saat",
+        "Nilai tetap yang tidak berubah selama program berjalan",
+        "Nama lain untuk tipe data float",
+        "Fungsi khusus untuk menyimpan data sensor"
       ],
       "ans": 1
     },
     {
-      "q": "Pada firmware update OTA (Over-The-Air) untuk robot fleet, mengapa dual-bank flash memory penting?",
+      "q": "Kenapa penting menambahkan komentar dalam program robot?",
       "opts": [
-        "Untuk mempercepat proses update",
-        "Satu bank menjalankan firmware aktif sementara bank lain menerima update baru; jika update gagal, robot bisa rollback ke firmware lama tanpa brick",
-        "Untuk menyimpan lebih banyak data log",
-        "Karena single bank tidak cukup kapasitas"
+        "Karena komentar mempercepat proses kompilasi",
+        "Agar orang lain atau diri sendiri bisa memahami tujuan kode dengan mudah",
+        "Karena Arduino membutuhkan komentar untuk menjalankan program",
+        "Supaya program tidak mengalami error saat diupload"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam implementasi MQTT untuk IoT robot, QoS level 2 (exactly once delivery) lebih lambat dari QoS 0 karena...",
+      "q": "Apa itu IDE pada konteks pemrograman Arduino?",
       "opts": [
-        "QoS 2 menggunakan enkripsi tambahan",
-        "QoS 2 memerlukan 4-way handshake (PUBLISH, PUBREC, PUBREL, PUBCOMP) untuk menjamin pesan terkirim tepat satu kali tanpa duplikasi",
-        "QoS 2 membutuhkan bandwidth lebih besar",
-        "QoS 2 menunggu acknowledgment dari semua subscriber"
+        "Nama papan mikrokontroler buatan Arduino",
+        "Aplikasi untuk menulis, mengcompile, dan mengupload program ke Arduino",
+        "Protokol komunikasi antara Arduino dan sensor",
+        "Nama library bawaan untuk mengontrol motor"
       ],
       "ans": 1
     },
     {
-      "q": "Robot menggunakan Behavior Trees (BT) dibanding FSM (Finite State Machine) untuk task planning. Keunggulan utama BT adalah...",
+      "q": "Apa yang dimaksud dengan nilai return pada fungsi program?",
       "opts": [
-        "BT lebih cepat dieksekusi",
-        "BT lebih modular dan reusable (subtree bisa digunakan kembali), lebih mudah di-debug secara visual, dan lebih scalable untuk behavior kompleks tanpa state explosion problem",
-        "BT menggunakan memori lebih sedikit",
-        "BT tidak memerlukan sensor input"
+        "Perintah untuk mengulang fungsi dari awal",
+        "Nilai yang dikirim kembali oleh fungsi ke tempat ia dipanggil",
+        "Cara fungsi menerima data dari sensor",
+        "Perintah untuk menghentikan seluruh program"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi jika variabel integer menyimpan nilai 300 pada Arduino Uno?",
+      "opts": [
+        "Program langsung error karena terlalu besar",
+        "Nilai tersimpan normal karena int bisa menampung hingga 32.767",
+        "Nilai otomatis dibulatkan menjadi 255",
+        "Arduino akan restart secara otomatis"
       ],
       "ans": 1
     }
   ],
   "mechanic": [
     {
-      "q": "Pada robot arm dengan konfigurasi 6-DOF, kondisi singularitas kinematik terjadi ketika...",
+      "q": "Apa fungsi roda pada robot bergerak?",
       "opts": [
-        "Robot mencapai batas workspace",
-        "Dua atau lebih joint axis menjadi kolinear atau sejajar, menyebabkan Jacobian matrix singular, kehilangan satu atau lebih DOF, dan kecepatan joint menjadi infinite untuk kecepatan end-effector tertentu",
-        "Motor kelebihan beban",
-        "Sensor encoder tidak terbaca"
+        "Mendeteksi permukaan di bawah robot",
+        "Mengubah putaran motor menjadi gerak robot",
+        "Menstabilkan sinyal dari sensor",
+        "Menyerap getaran agar sensor akurat"
       ],
       "ans": 1
     },
     {
-      "q": "Dalam desain gearbox planetary untuk robot, rasio gear 1:36 menggunakan dua stage. Jika stage pertama 1:6, berapa rasio stage kedua?",
+      "q": "Mengapa robot perlu rangka (chassis)?",
       "opts": [
-        "1:6 (total 1:36)",
-        "1:30",
-        "1:12",
-        "1:18"
+        "Agar sensor bisa membaca data lebih cepat",
+        "Sebagai tempat menyimpan program robot",
+        "Untuk menopang dan menyatukan semua komponen robot",
+        "Agar motor mendapat arus listrik lebih stabil"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Motor servo biasanya digunakan untuk...",
+      "opts": [
+        "Memutar roda robot dengan kecepatan tinggi",
+        "Menggerakkan bagian robot ke sudut tertentu",
+        "Menghasilkan listrik dari gerakan robot",
+        "Membaca posisi roda secara otomatis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan utama motor DC dan motor servo?",
+      "opts": [
+        "Motor DC lebih kecil dan ringan dari servo",
+        "Servo lebih cepat berputar dibanding motor DC",
+        "Motor DC berputar terus, servo bisa dikontrol sudutnya",
+        "Motor DC butuh program khusus, servo tidak"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Baterai pada robot berfungsi sebagai...",
+      "opts": [
+        "Pengatur kecepatan semua motor",
+        "Penyimpan data dari sensor",
+        "Sumber energi listrik untuk semua komponen",
+        "Penghubung antara sensor dan controller"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa fungsi gear (roda gigi) pada robot?",
+      "opts": [
+        "Mendeteksi posisi roda secara presisi",
+        "Mengubah kecepatan dan torsi yang dihasilkan motor",
+        "Menstabilkan tegangan yang masuk ke motor",
+        "Menghubungkan motor dengan controller"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa robot yang berat membutuhkan motor dengan torsi lebih besar?",
+      "opts": [
+        "Karena motor besar lebih efisien dalam menggunakan daya",
+        "Karena torsi yang besar dibutuhkan untuk menggerakkan beban yang berat",
+        "Karena motor torsi besar lebih tahan terhadap panas",
+        "Karena berat robot mempengaruhi kecepatan sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa keuntungan menggunakan material aluminium untuk rangka robot?",
+      "opts": [
+        "Aluminium sangat murah dibanding material lainnya",
+        "Aluminium ringan namun cukup kuat untuk menopang komponen robot",
+        "Aluminium tidak bisa berkarat meski terkena air terus menerus",
+        "Aluminium mudah diprogram untuk mengikuti bentuk robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan torsi pada motor robot?",
+      "opts": [
+        "Kecepatan putaran motor dalam satu menit",
+        "Gaya putar yang dihasilkan motor untuk menggerakkan beban",
+        "Tegangan minimum yang dibutuhkan motor untuk berputar",
+        "Jarak yang bisa ditempuh motor dalam satu putaran"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot dengan empat roda lebih stabil dari robot dua roda?",
+      "opts": [
+        "Karena empat roda bisa berputar lebih cepat",
+        "Karena distribusi berat lebih merata dan titik tumpuan lebih banyak",
+        "Karena dua roda tidak cukup untuk menopang sensor",
+        "Karena empat roda menghasilkan traksi yang sama"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi bearing (bantalan) pada robot?",
+      "opts": [
+        "Menyerap energi listrik berlebih dari motor",
+        "Mengurangi gesekan pada bagian yang berputar agar lebih lancar",
+        "Menghubungkan dua motor yang berputar berlawanan",
+        "Mengukur kecepatan putaran poros motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa keuntungan menggunakan roda omni pada robot?",
+      "opts": [
+        "Roda omni bisa bergerak lebih cepat dari roda biasa",
+        "Robot bisa bergerak ke segala arah tanpa perlu berputar terlebih dahulu",
+        "Roda omni tidak membutuhkan motor untuk bergerak",
+        "Robot bisa melewati rintangan lebih tinggi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa motor stepper sering digunakan pada robot yang membutuhkan gerakan presisi?",
+      "opts": [
+        "Karena motor stepper tidak membutuhkan driver khusus",
+        "Karena bisa bergerak dalam langkah sudut tertentu secara akurat tanpa sensor tambahan",
+        "Karena motor stepper lebih ringan dari motor DC biasa",
+        "Karena kecepatan motor stepper selalu konstan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan RPM pada motor robot?",
+      "opts": [
+        "Rasio daya motor terhadap beban yang dibawa",
+        "Jumlah putaran yang dilakukan motor dalam satu menit",
+        "Jarak tempuh robot untuk setiap putaran roda",
+        "Tegangan yang dibutuhkan motor per menit"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa sambungan baut dan mur lebih disukai dari lem pada robot kompetisi?",
+      "opts": [
+        "Karena baut lebih ringan dari lem struktural",
+        "Karena sambungan baut bisa dibuka dan dipasang ulang saat perbaikan",
+        "Karena lem tidak bisa menahan beban berat sama sekali",
+        "Karena baut tidak membutuhkan alat khusus untuk dipasang"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan motor brushed dan motor brushless?",
+      "opts": [
+        "Motor brushed lebih mahal dari brushless",
+        "Motor brushed menggunakan sikat karbon, brushless tidak dan lebih efisien",
+        "Motor brushless membutuhkan lebih banyak kabel dari brushed",
+        "Motor brushed berputar lebih cepat dari brushless"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi shock absorber pada robot yang bergerak di medan tidak rata?",
+      "opts": [
+        "Mengukur seberapa keras guncangan yang dialami robot",
+        "Meredam getaran dan benturan agar komponen tidak rusak",
+        "Menambah kecepatan robot di medan bergelombang",
+        "Menghubungkan roda ke motor secara lebih kuat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa penting menjaga keseimbangan berat (center of gravity) pada robot?",
+      "opts": [
+        "Agar sensor yang dipasang di atas bekerja lebih akurat",
+        "Agar robot tidak mudah terjatuh dan bergerak lebih stabil",
+        "Supaya motor bekerja pada kecepatan yang sama",
+        "Agar program controller lebih mudah ditulis"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan timing belt pada robot dibanding rantai biasa?",
+      "opts": [
+        "Timing belt lebih kuat menahan beban berat dari rantai",
+        "Timing belt tidak memerlukan pelumasan dan lebih halus gerakannya",
+        "Timing belt bisa digunakan di suhu yang lebih tinggi",
+        "Timing belt lebih mudah dipasang tanpa alat apapun"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan payload pada robot arm?",
+      "opts": [
+        "Berat total robot termasuk semua komponen",
+        "Beban maksimum yang bisa diangkat atau dipindahkan oleh robot",
+        "Daya listrik yang dibutuhkan robot untuk bergerak",
+        "Kecepatan maksimum lengan robot saat bergerak"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa kabel pada robot perlu diatur rapi dan diikat?",
+      "opts": [
+        "Agar kabel tidak mempengaruhi pembacaan sensor magnet",
+        "Agar kabel tidak tersangkut pada bagian yang bergerak dan merusak sistem",
+        "Supaya arus listrik mengalir lebih cepat ke motor",
+        "Agar robot terlihat lebih profesional saat kompetisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi propeller pada robot terbang (drone)?",
+      "opts": [
+        "Mengukur ketinggian drone dari permukaan tanah",
+        "Menghasilkan gaya angkat dan dorong agar drone bisa terbang",
+        "Menstabilkan sinyal GPS pada drone",
+        "Menyeimbangkan berat baterai di dalam drone"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa robot bawah air menggunakan sealed housing untuk elektroniknya?",
+      "opts": [
+        "Agar sinyal WiFi bisa menembus air lebih jauh",
+        "Agar komponen elektronik terlindungi dari air dan tekanan air",
+        "Supaya robot bisa bergerak lebih cepat di dalam air",
+        "Agar sensor bisa membaca data lebih akurat di dalam air"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan gripper pneumatik dan gripper elektrik pada robot?",
+      "opts": [
+        "Gripper pneumatik menggunakan listrik, elektrik menggunakan udara",
+        "Gripper pneumatik menggunakan tekanan udara, elektrik menggunakan motor atau solenoid",
+        "Gripper elektrik lebih kuat dari gripper pneumatik",
+        "Keduanya bekerja dengan cara yang sama"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi poros (shaft) pada sistem gerak robot?",
+      "opts": [
+        "Mengukur kecepatan putaran motor secara langsung",
+        "Menghubungkan motor ke roda atau komponen berputar lainnya",
+        "Menyerap energi berlebih dari motor saat berhenti",
+        "Mengubah gerakan putar menjadi gerakan naik turun"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa material plastik ABS sering digunakan untuk body robot kecil?",
+      "opts": [
+        "ABS adalah material terkuat yang tersedia untuk robot",
+        "ABS ringan, mudah dibentuk dengan 3D printer, dan cukup kuat untuk robot kecil",
+        "ABS bisa menghantarkan listrik dengan sangat baik",
+        "ABS lebih murah dari semua material lainnya"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan DOF (Degree of Freedom) pada robot arm?",
+      "opts": [
+        "Kecepatan maksimum yang bisa dicapai lengan robot",
+        "Jumlah sumbu gerak independen yang dimiliki robot arm",
+        "Berat maksimum yang bisa diangkat oleh robot arm",
+        "Jarak jangkauan lengan robot dalam satu arah"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa kegunaan roda caster pada robot bergerak?",
+      "opts": [
+        "Menambah kecepatan robot saat berbelok",
+        "Memberikan titik tumpuan tambahan tanpa mengganggu kemudi robot",
+        "Mendeteksi permukaan yang dilalui robot",
+        "Menggerakkan robot ke arah yang berlawanan"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa motor DC yang digunakan pada robot perlu dilindungi dengan flyback diode?",
+      "opts": [
+        "Agar motor berputar lebih halus dan tanpa getaran",
+        "Untuk melindungi driver motor dari lonjakan tegangan balik saat motor berhenti",
+        "Supaya motor bisa menerima sinyal PWM dengan lebih baik",
+        "Agar kecepatan motor bisa diatur lebih presisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan kinematik pada robot?",
+      "opts": [
+        "Studi tentang daya dan energi yang digunakan robot",
+        "Studi tentang gerak robot tanpa mempertimbangkan gaya yang menyebabkannya",
+        "Cara mengontrol motor robot dari jarak jauh",
+        "Sistem sensor untuk mendeteksi posisi robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa keuntungan robot beroda dibanding robot berkaki di permukaan rata?",
+      "opts": [
+        "Robot beroda bisa melewati rintangan lebih tinggi",
+        "Robot beroda lebih efisien energi dan lebih cepat di permukaan rata",
+        "Robot beroda lebih stabil di semua jenis medan",
+        "Robot beroda lebih mudah diprogram dari robot berkaki"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa mur pengunci (lock nut) digunakan pada sambungan robot yang bergetar?",
+      "opts": [
+        "Untuk mempermudah pembukaan baut saat perbaikan",
+        "Agar baut tidak longgar akibat getaran yang terjadi saat robot beroperasi",
+        "Supaya sambungan lebih ringan dari baut biasa",
+        "Karena mur pengunci lebih kuat dari mur biasa"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan antara motor DC gearbox dan motor DC biasa?",
+      "opts": [
+        "Motor DC gearbox lebih cepat dari motor DC biasa",
+        "Motor DC gearbox memiliki rasio gigi yang menurunkan kecepatan tapi meningkatkan torsi",
+        "Motor DC biasa memiliki torsi lebih besar dari gearbox",
+        "Motor DC gearbox tidak membutuhkan controller"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan traksi pada roda robot?",
+      "opts": [
+        "Kecepatan maksimum yang bisa dicapai roda robot",
+        "Kemampuan roda untuk mencengkeram permukaan tanpa slip",
+        "Gaya yang dibutuhkan untuk menghentikan roda berputar",
+        "Jarak yang ditempuh roda dalam satu putaran penuh"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa robot arm membutuhkan counterbalance (penyeimbang)?",
+      "opts": [
+        "Agar lengan bisa bergerak lebih cepat saat mengangkat beban",
+        "Untuk mengurangi beban motor dengan menyeimbangkan berat lengan itu sendiri",
+        "Supaya sensor pada lengan bisa membaca lebih akurat",
+        "Agar lengan tidak membutuhkan program kontrol yang rumit"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi coupler (kopling) pada sistem transmisi robot?",
+      "opts": [
+        "Meningkatkan kecepatan putaran antara dua poros",
+        "Menghubungkan dua poros dan meneruskan torsi dengan meredam misalignment",
+        "Mengukur torsi yang ditransfer antara dua motor",
+        "Memutuskan koneksi motor saat robot berhenti"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot kompetisi sering menggunakan baterai LiPo dibanding baterai AA?",
+      "opts": [
+        "Baterai AA lebih mudah ditemukan di pasaran",
+        "LiPo memiliki energi lebih padat, lebih ringan, dan bisa memberikan arus tinggi",
+        "LiPo lebih aman dari baterai AA untuk robot",
+        "Baterai AA tidak bisa digunakan untuk motor DC"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan end-effector pada robot arm?",
+      "opts": [
+        "Controller yang mengatur gerakan lengan robot",
+        "Bagian ujung lengan robot yang berinteraksi langsung dengan objek",
+        "Sensor yang membaca posisi akhir lengan robot",
+        "Motor yang menggerakkan sendi terakhir robot arm"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa perlu melakukan perawatan berkala pada roda gigi robot?",
+      "opts": [
+        "Agar roda gigi bisa berputar dengan kecepatan lebih tinggi",
+        "Untuk mencegah keausan berlebih dan menjaga performanya tetap optimal",
+        "Supaya robot bisa mendeteksi posisi gigi dengan akurat",
+        "Agar program controller bisa mengontrol gigi dengan lebih baik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa perbedaan antara sendi revolute dan sendi prismatik pada robot arm?",
+      "opts": [
+        "Sendi revolute bergerak lurus, prismatik berputar",
+        "Sendi revolute bergerak memutar, prismatik bergerak translasi (maju-mundur)",
+        "Keduanya bergerak dengan cara yang sama",
+        "Sendi revolute lebih kuat dari sendi prismatik"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan footprint pada desain robot?",
+      "opts": [
+        "Jejak yang ditinggalkan roda robot di permukaan",
+        "Luas area yang ditempati robot dilihat dari atas",
+        "Beban yang diterima setiap roda robot",
+        "Nama lain untuk center of gravity robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot bawah air membutuhkan thruster yang bisa berputar dua arah?",
+      "opts": [
+        "Agar robot bisa menghasilkan lebih banyak daya dorong",
+        "Agar robot bisa maju dan mundur tanpa perlu memutar badannya",
+        "Supaya sinyal kontrol thruster lebih sederhana",
+        "Agar konsumsi daya thruster lebih hemat"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan mekanisme rack and pinion pada robot?",
+      "opts": [
+        "Sistem pendingin yang menggunakan roda gigi",
+        "Mekanisme yang mengubah putaran motor menjadi gerakan linier",
+        "Cara menghubungkan dua motor secara bersamaan",
+        "Sistem transmisi yang meningkatkan torsi motor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa keuntungan robot dengan kaki dibanding robot beroda di medan berbatu?",
+      "opts": [
+        "Robot berkaki lebih cepat di semua jenis medan",
+        "Robot berkaki bisa melangkahi rintangan dan beradaptasi dengan medan tidak rata",
+        "Robot berkaki lebih mudah dikontrol dari jarak jauh",
+        "Robot berkaki lebih hemat energi di medan berbatu"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Mengapa penting memeriksa keselarasan (alignment) roda pada robot beroda?",
+      "opts": [
+        "Agar sensor roda bisa membaca kecepatan dengan akurat",
+        "Agar robot bisa bergerak lurus tanpa membuang energi karena gesekan berlebih",
+        "Supaya roda tidak berputar lebih cepat dari yang diprogramkan",
+        "Agar baterai tidak cepat habis karena beban roda"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi worm gear pada sistem transmisi robot?",
+      "opts": [
+        "Meningkatkan kecepatan putaran dengan efisiensi tinggi",
+        "Memberikan rasio gear tinggi dan self-locking agar posisi terjaga tanpa daya motor",
+        "Menghubungkan motor ke roda secara langsung",
+        "Mengukur kecepatan rotasi motor secara presisi"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Kenapa robot medis membutuhkan material food-grade atau medical-grade?",
+      "opts": [
+        "Karena material tersebut lebih ringan dari material biasa",
+        "Karena material tersebut aman bersentuhan dengan tubuh manusia dan mudah disterilkan",
+        "Karena material tersebut lebih kuat dari baja biasa",
+        "Karena material tersebut tidak membutuhkan perawatan apapun"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan mekanisme slider-crank pada robot?",
+      "opts": [
+        "Sistem yang mengubah gerakan putar menjadi gerakan maju-mundur linier",
+        "Cara menghubungkan dua sendi robot secara bersamaan",
+        "Mekanisme pengunci untuk mencegah robot bergerak sendiri",
+        "Sistem roda gigi untuk meningkatkan torsi motor"
       ],
       "ans": 0
     },
     {
-      "q": "Material CFRP (Carbon Fiber Reinforced Polymer) dipilih untuk lengan robot drone karena...",
+      "q": "Mengapa penting memperhatikan IP rating (Ingress Protection) pada robot outdoor?",
       "opts": [
-        "Harga paling murah",
-        "Specific strength (kekuatan/berat) dan specific stiffness sangat tinggi, konduktivitas termal rendah, dan tahan fatigue, sehingga frame ringan namun rigid",
-        "Mudah dilakukan machining",
-        "Konduktif listrik sehingga sekaligus sebagai ground"
+        "IP rating menentukan kecepatan maksimum robot di luar ruangan",
+        "IP rating menunjukkan seberapa tahan robot terhadap debu dan air",
+        "IP rating menentukan daya baterai yang bisa digunakan robot",
+        "IP rating mengatur program controller untuk medan luar ruangan"
       ],
       "ans": 1
     },
     {
-      "q": "Pada desain chassis robot kompetisi, triangulated structure lebih disukai karena...",
+      "q": "Apa yang dimaksud dengan backlash pada sistem roda gigi robot?",
       "opts": [
-        "Lebih mudah dibuat",
-        "Segitiga adalah struktur rigid secara geometri - tidak bisa berubah bentuk tanpa mengubah panjang sisi, memberikan kekakuan maksimal dengan material minimal",
-        "Lebih ringan dari struktur lain",
-        "Lebih mudah dimodifikasi"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Bearing angkat radial (deep groove ball bearing) vs bearing aksial (thrust bearing), kapan thrust bearing diperlukan pada robot?",
-      "opts": [
-        "Ketika kecepatan rotasi sangat tinggi",
-        "Ketika gaya yang dominan bekerja searah poros (aksial), seperti pada screw drive vertical robot atau turntable yang menopang beban di atas poros",
-        "Thrust bearing selalu lebih baik dari radial bearing",
-        "Ketika suhu operasi tinggi"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Fenomena backlash pada gearbox robot arm menyebabkan error posisi. Teknik apa yang paling efektif untuk meminimalkan dampaknya?",
-      "opts": [
-        "Melumasi gear lebih banyak",
-        "Preloaded anti-backlash gears atau harmonic drive yang secara desain mengeliminasi backlash, dikombinasikan dengan control strategy yang memperhitungkan dead zone",
-        "Menggunakan motor lebih bertenaga",
-        "Menambah encoder resolusi"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada robot hexapod dengan gait tripod, tiga kaki bergerak bersamaan. Mengapa kestabilan statis terjamin pada gait ini?",
-      "opts": [
-        "Karena memiliki 6 kaki",
-        "Tiga kaki yang tersisa selalu membentuk segitiga penopang yang mencakup proyeksi pusat massa ke tanah, menjamin keseimbangan statis sepanjang gerak",
-        "Karena kaki bergerak lebih cepat",
-        "Karena berat robot terdistribusi merata"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Dalam desain manipulator robot paralel (seperti Delta robot), keunggulan utama dibanding manipulator serial adalah...",
-      "opts": [
-        "Workspace lebih besar",
-        "Aktuator dipasang di base (tidak ikut bergerak), sehingga inersia bagian bergerak sangat rendah, memungkinkan akselerasi sangat tinggi untuk pick-and-place kecepatan tinggi",
-        "Lebih mudah diprogram",
-        "Bisa mencapai posisi lebih jauh"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Stress concentration factor pada lubang di pelat logam chassis robot meningkatkan stress lokal hingga 3x. Apa cara desain untuk memitigasi ini?",
-      "opts": [
-        "Membuat lubang lebih kecil",
-        "Menambahkan fillet (radius) di tepi lubang, menggunakan gusset/reinforcement plate di sekitar lubang, atau menggunakan material lebih tebal lokal",
-        "Menggunakan material lebih keras",
-        "Menghindari semua lubang pada chassis"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada robot dengan wheel odometry, accumulated error (drift) meningkat seiring waktu. Mengapa dan bagaimana cara mengatasinya?",
-      "opts": [
-        "Karena encoder rusak; ganti encoder",
-        "Error integrasi kecepatan menumpuk dari slip roda, ketidakidealan encoder, dan ketidakrataan permukaan; diatasi dengan sensor fusion (IMU + odometry + GPS/SLAM) untuk koreksi periodik",
-        "Karena baterai lemah mempengaruhi encoder",
-        "Karena roda aus, ganti roda secara rutin"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Cable management pada robot arm 6-DOF menggunakan kabel routing melalui dalam poros joint. Apa keuntungan dibanding routing eksternal?",
-      "opts": [
-        "Lebih mudah diganti",
-        "Menghilangkan risiko kabel tersangkut atau terbatas gerakannya saat joint berotasi penuh, memungkinkan unlimited rotation dan workspace bersih tanpa snag hazard",
-        "Lebih murah",
-        "Pendinginan motor lebih baik"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Harmonic drive (strain wave gear) digunakan pada robot arm presisi tinggi karena...",
-      "opts": [
-        "Torsi output rendah",
-        "Zero backlash, rasio gear tinggi (1:30 - 1:320) dalam satu stage yang kompak, efisiensi tinggi, dan torsional stiffness tinggi - ideal untuk posisi presisi",
-        "Lebih murah dari planetary gear",
-        "Lebih mudah diperbaiki di lapangan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada desain mekanik robot underwater (ROV), dynamic seal vs static seal digunakan di mana?",
-      "opts": [
-        "Static seal untuk semua koneksi",
-        "Static seal untuk sambungan tidak bergerak (bulkhead penetrator, fixed housing); dynamic seal (lip seal, rotary seal) untuk poros yang berputar/translasi menembus housing bertekanan",
-        "Dynamic seal untuk semua sambungan",
-        "Tidak ada perbedaan keduanya"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Finite Element Analysis (FEA) digunakan pada desain robot sebelum fabrikasi. Apa yang bisa diprediksi yang tidak bisa dari perhitungan analitik sederhana?",
-      "opts": [
-        "Berat total komponen",
-        "Distribusi stress kompleks pada geometri tidak beraturan, deformasi di bawah beban terdistribusi, titik kritis tegangan (hot spots), dan mode natural frequency untuk menghindari resonansi",
-        "Ukuran optimal komponen",
-        "Biaya material yang dibutuhkan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada desain sistem pneumatik untuk gripper robot, akumulator (pressure vessel) dipasang dekat aktuator. Apa fungsinya?",
-      "opts": [
-        "Sebagai cadangan udara darurat",
-        "Menyediakan volume udara bertekanan lokal sehingga respons aktuasi lebih cepat dan stabil tanpa pressure drop panjang dari kompresor jauh",
-        "Untuk mengukur tekanan kerja",
-        "Sebagai filter kotoran"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Toleransi fit H7/g6 pada pasangan poros-bearing. Apa artinya dalam konteks assembly robot?",
-      "opts": [
-        "Keduanya harus press fit",
-        "H7 adalah hole tolerance (clearance fit), g6 adalah shaft tolerance; menghasilkan clearance fit dengan ruang bebas kecil - poros bisa dimasukkan tangan tapi tidak longgar, cocok untuk bearing yang berputar",
-        "Ini adalah toleransi untuk baut saja",
-        "H7/g6 berarti interference fit yang ketat"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Modal analysis pada struktur robot menunjukkan natural frequency 50Hz di lengan manipulator. Mengapa ini bermasalah jika control loop berjalan di 100Hz?",
-      "opts": [
-        "Tidak ada masalah karena frekuensi control lebih tinggi",
-        "Jika bandwidth controller mendekati atau melebihi natural frequency struktur, controller bisa membuat struktur beresonansi (control-induced vibration), merusak akurasi dan berpotensi merusak mekanik",
-        "Control loop harus selalu lebih rendah dari natural frequency",
-        "Natural frequency harus sama dengan control frequency"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Dalam manufaktur robot, proses anodizing pada aluminum alloy bertujuan untuk...",
-      "opts": [
-        "Membuat aluminum lebih ringan",
-        "Membentuk lapisan oksida keras (Al2O3) pada permukaan melalui proses elektrolitik, meningkatkan ketahanan korosi, ketahanan aus, dan bisa diwarnai untuk identifikasi",
-        "Meningkatkan konduktivitas listrik",
-        "Mengubah komposisi alloy untuk kekuatan lebih tinggi"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada robot pembawa beban berat, mengapa wheel dengan pneumatic tire dipilih dibanding solid rubber tire di area industri?",
-      "opts": [
-        "Pneumatic tire lebih murah dan tahan lama",
-        "Pneumatic tire menyerap impak dan getaran dari permukaan tidak rata, mengurangi beban dinamis pada frame dan menjaga muatan lebih stabil, serta traksi lebih baik",
-        "Pneumatic tire tidak bisa kempes di area industri",
-        "Solid tire tidak bisa menopang beban berat"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Desain mekanik robot untuk clean room semiconductor memerlukan pertimbangan khusus. Mengapa material outgassing menjadi isu kritis?",
-      "opts": [
-        "Karena outgassing membuat robot lebih berat",
-        "Volatile organic compounds dari pelumas, plastik, dan adhesive dapat mengkontaminasi wafer silikon sensitif; semua material harus low-outgassing dan tersertifikasi clean room",
-        "Outgassing menyebabkan korosi pada metal",
-        "Karena temperatur clean room sangat dingin"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada robot climbing (wall-climbing robot), adhesion menggunakan vacuum suction cup. Pressure diferensial minimum untuk menopang robot 5kg pada area 100cm² adalah...",
-      "opts": [
-        "0.5 kPa",
-        "4.9 kPa (490 Pa minimum, dengan safety factor 2x menjadi ~10 kPa)",
-        "0.049 kPa",
-        "49 kPa"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Dalam seleksi material untuk rangka robot outdoor, mengapa stainless steel 316 lebih dipilih dari 304 di lingkungan coastal?",
-      "opts": [
-        "316 lebih ringan dari 304",
-        "Grade 316 mengandung 2-3% molybdenum yang secara signifikan meningkatkan ketahanan terhadap korosi chloride (garam laut/pitting corrosion) yang menjadi kelemahan utama 304",
-        "316 lebih murah dari 304",
-        "316 memiliki kekuatan tarik lebih tinggi"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada sistem transmisi belt (timing belt) vs rantai (chain) untuk robot, timing belt dipilih ketika...",
-      "opts": [
-        "Beban torsi sangat tinggi",
-        "Presisi timing kritis, operasi bersih/tenang diperlukan, dan ruang terbatas; timing belt tidak memerlukan pelumasan, lebih ringan, dan tidak berisik dibanding chain",
-        "Lingkungan operasi berdebu atau kotor",
-        "Jarak antara sprocket sangat jauh"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada robot bawah air (AUV), pressure housing untuk elektronik menggunakan O-ring double seal. Apa konfigurasi yang benar dan mengapa?",
-      "opts": [
-        "Dua O-ring berdempetan untuk tekanan ganda",
-        "Dua O-ring dengan vent hole di antara keduanya; jika O-ring dalam gagal, air masuk ke groove tengah terdeteksi sebelum mencapai elektronik (moisture sensor di vent hole untuk early warning)",
-        "O-ring ganda hanya untuk dekorasi",
-        "Keduanya dipasang di sisi luar housing"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Implementasi series elastic actuator (SEA) pada robot kolaboratif (cobot) menggunakan spring antara gearbox dan joint. Keunggulan utamanya adalah...",
-      "opts": [
-        "Meningkatkan kecepatan gerak robot",
-        "Spring mengukur torsi melalui defleksi (force sensing), menyediakan compliance/impedance yang aman untuk interaksi manusia-robot, dan melindungi gearbox dari shock load",
-        "Mengurangi jumlah sensor yang diperlukan",
-        "Meningkatkan payload capacity robot"
+        "Kecepatan balik motor saat berhenti mendadak",
+        "Celah kecil antara gigi yang menyebabkan sedikit kelonggaran saat arah gerak berbalik",
+        "Bunyi berisik yang dihasilkan gigi saat berputar cepat",
+        "Gesekan berlebih pada gigi yang sudah aus"
       ],
       "ans": 1
     }
