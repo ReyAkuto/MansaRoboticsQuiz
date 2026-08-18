@@ -5,10 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mansa Robotics Quiz</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+  <style>
+    /* ===== LIGHT MODE ===== */
+    body.light-mode { background:#f1f5f9 !important; color:#1e293b !important; }
+    body.light-mode .card { background:#ffffff !important; border-color:#e2e8f0 !important; }
+    body.light-mode .card h2, body.light-mode .card p { color:#1e293b !important; }
+    body.light-mode .info-text { color:#475569 !important; }
+    body.light-mode input[type="text"] { background:#f8fafc !important; border-color:#cbd5e1 !important; color:#1e293b !important; }
+    body.light-mode .player-list li { background:#f8fafc !important; border-color:#e2e8f0 !important; color:#1e293b !important; }
+    body.light-mode .room-code { color:#0f172a !important; background:#e0f2fe !important; }
+    body.light-mode .logo { color:#0f172a !important; }
+    body.light-mode .logo span { color:#f97316 !important; }
+    body.light-mode .subtitle { color:#64748b !important; }
+    body.light-mode .option-btn { background:#f8fafc !important; border-color:#cbd5e1 !important; color:#1e293b !important; }
+    body.light-mode .option-btn:hover { background:#e0f2fe !important; border-color:#38bdf8 !important; }
+    body.light-mode .item-slot { background:#f1f5f9 !important; border-color:#cbd5e1 !important; }
+    body.light-mode .item-label { color:#475569 !important; }
+    body.light-mode .streak-bar { background:#e2e8f0 !important; }
+    body.light-mode .quiz-header { background:#f8fafc !important; }
+    body.light-mode .progress-bar { background:#e2e8f0 !important; }
+    body.light-mode .leaderboard li { background:#f8fafc !important; border-color:#e2e8f0 !important; }
+    body.light-mode .modal-box, body.light-mode .item-pick-box, body.light-mode .quit-modal-box { background:#ffffff !important; border-color:#e2e8f0 !important; color:#1e293b !important; }
+    body.light-mode .target-list li { background:#f8fafc !important; color:#1e293b !important; }
+    body.light-mode #theme-toggle { border-color:#cbd5e1 !important; color:#475569 !important; }
+    body.light-mode .error-msg { background:#fef2f2 !important; color:#dc2626 !important; }
+    body.light-mode .feedback-overlay { background:rgba(241,245,249,0.85) !important; }
+    body.light-mode .score-display { background:#f8fafc !important; }
+    /* Multiplier badge */
+    .feedback-pts { transition: color 0.2s; }
+  </style>
 <body>
 
-<div style="text-align:center">
+<div style="text-align:center;position:relative">
+  <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode" style="position:absolute;right:0;top:4px;background:transparent;border:1px solid #334155;border-radius:8px;padding:5px 8px;cursor:pointer;color:#94a3b8;font-size:0.75rem;display:flex;align-items:center;gap:4px">
+    <svg id="theme-icon-dark" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg id="theme-icon-light" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <span id="theme-label">Light</span>
+  </button>
   <div class="logo">Mansa<span>Robotics</span> Quiz <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg></div>
   <div class="subtitle">Ekstrakurikuler Robotika</div>
 </div>
@@ -36,6 +69,10 @@
 <!-- SCREEN: JOIN ROOM -->
 <div class="card screen" id="screen-join">
   <h2>Gabung Room <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/><path d="M4 6h16l2 12H2z"/></svg></h2>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <p class="info-text" style="margin:0">Halo, <b id="join-display-name" style="color:#38bdf8"></b>!</p>
+    <button onclick="openEditNameModal()" style="background:transparent;border:1px solid #334155;border-radius:7px;padding:3px 10px;font-size:0.75rem;color:#94a3b8;cursor:pointer;display:flex;align-items:center;gap:4px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Nama</button>
+  </div>
   <p class="info-text">Minta kode room ke adminmu!</p>
   <input type="text" id="input-room-code" placeholder="Kode Room (4 huruf)..." maxlength="4" style="text-transform:uppercase;letter-spacing:4px;font-size:1.3rem;text-align:center" />
   <div id="join-error" class="error-msg" style="display:none"></div>
@@ -48,7 +85,10 @@
   <h2>Ruang Tunggu <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></h2>
   <p class="info-text">Kode Room:</p>
   <div class="room-code" id="display-room-code">????</div>
-  <p class="info-text" style="margin-top:8px">Yang sudah join:</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin:8px 0 2px">
+    <p class="info-text" style="margin:0">Yang sudah join:</p>
+    <button onclick="openEditNameModal()" style="background:transparent;border:1px solid #334155;border-radius:7px;padding:3px 10px;font-size:0.75rem;color:#94a3b8;cursor:pointer;display:flex;align-items:center;gap:4px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Nama</button>
+  </div>
   <ul class="player-list" id="player-list"></ul>
   <p class="waiting-msg pulse" id="waiting-status">Menunggu admin memulai quiz...</p>
 </div>
@@ -108,6 +148,19 @@
   <button id="btn-user-next" class="btn btn-primary" style="margin-top:12px;display:none" onclick="userNextQuestion()">Soal Berikutnya <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <div id="waiting-break-msg" style="display:none;margin-top:14px;text-align:center;color:#64748b;font-size:0.85rem">
     <svg class="ico" style="opacity:0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Menunggu peserta lain selesai...
+  </div>
+</div>
+
+<!-- EDIT NAME MODAL -->
+<div class="modal-overlay" id="edit-name-modal" style="display:none">
+  <div class="modal-box">
+    <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Nama</h3>
+    <input type="text" id="edit-name-input" placeholder="Nama panggilan baru..." maxlength="20" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none;box-sizing:border-box;margin:10px 0" />
+    <div id="edit-name-error" class="error-msg" style="display:none"></div>
+    <div style="display:flex;gap:8px;margin-top:4px">
+      <button class="modal-cancel" onclick="closeEditNameModal()" style="flex:1">Batal</button>
+      <button class="btn btn-primary" onclick="saveEditName()" style="flex:1;margin:0">Simpan</button>
+    </div>
   </div>
 </div>
 
@@ -416,6 +469,8 @@ onAuthStateChanged(auth, async user => {
         }
       }
       showScreen('join');
+      const nd = document.getElementById('join-display-name');
+      if (nd) nd.textContent = myName;
     } else {
       showScreen('name');
     }
@@ -432,6 +487,8 @@ window.saveName = async function() {
   myName = val;
   await set(ref(db, `users/${currentUser.uid}/name`), val);
   showScreen('join');
+  const nd = document.getElementById('join-display-name');
+  if (nd) nd.textContent = myName;
 };
 
 // ===== JOIN ROOM =====
@@ -513,10 +570,19 @@ async function startQuiz(code) {
   const roomData = roomSnap.val();
   const theme = roomData.theme || 'dasar';
   const qCount = roomData.questionCount || 25;
-  const allQ = QUESTIONS[theme] || [];
+  const shouldShuffle = roomData.shuffleQuestions || false;
+  let allQ = QUESTIONS[theme] || [];
+  if (shouldShuffle) {
+    allQ = [...allQ];
+    for (let i = allQ.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [allQ[i], allQ[j]] = [allQ[j], allQ[i]];
+    }
+  }
   questions = allQ.slice(0, qCount);
   myBreakEvery = roomData.breakEvery ?? 5;
   streakThreshold = roomData.streakThreshold ?? 3;
+  window._quizTimerDuration = roomData.timerDuration || 15;
 
   // Ambil skor dari Firebase (aman saat refresh)
   const scoreSnap = await get(ref(db, `rooms/${code}/players/${currentUser.uid}/score`));
@@ -648,7 +714,7 @@ function loadQuestion(index, code) {
     container.appendChild(btn);
   });
 
-  startTimer(15, q, code);
+  startTimer(window._quizTimerDuration || 15, q, code);
 }
 
 let questionStartTime = 0;  // timestamp saat soal tampil
@@ -711,19 +777,29 @@ async function answer(chosen, correct, btn, code, qIndex) {
     else if (elapsed <= 13)  pts = 65;
     else                     pts = 60;
   }
-  myScore += pts;
 
-  // Update streak
+  // Update streak BEFORE scoring so multiplier reflects current streak
   let pendingItemPick = false;
+  let comboMultiplier = 1.0;
   if (isCorrect) {
     myStreak++;
-    if (myStreak >= streakThreshold) {
-      myStreak = 0;
+    // Combo multiplier: tiap streak step di atas threshold → +25%
+    // misal streak 3=1.25x, 6=1.5x, 9=1.75x (capped 2x)
+    const comboLevel = Math.floor(myStreak / streakThreshold);
+    comboMultiplier = Math.min(1 + comboLevel * 0.25, 2.0);
+    if (myStreak >= streakThreshold && myStreak % streakThreshold === 0) {
       pendingItemPick = true;
     }
   } else {
     myStreak = 0;
   }
+
+  // Apply multiplier
+  const rawPts = pts;
+  if (isCorrect && comboMultiplier > 1.0) {
+    pts = Math.round(pts * comboMultiplier);
+  }
+  myScore += pts;
   updateStreakUI();
 
   // Simpan jawaban + skor + progres soal user ke Firebase
@@ -737,7 +813,7 @@ async function answer(chosen, correct, btn, code, qIndex) {
 
   revealAnswer(correct, chosen);
   if (isCorrect) SFX.correct(); else SFX.wrong();
-  showFeedback(isCorrect, pts, elapsed);
+  showFeedback(isCorrect, pts, elapsed, rawPts, comboMultiplier);
   updateRankBadge(code);
 
   // Log ke admin
@@ -793,15 +869,24 @@ function revealAnswer(correct, chosen = -1) {
   });
 }
 
-function showFeedback(isCorrect, pts, elapsed) {
+function showFeedback(isCorrect, pts, elapsed, rawPts = pts, multiplier = 1.0) {
   const overlay = document.getElementById('feedback-overlay');
   const box = document.getElementById('feedback-box');
   box.className = 'feedback-box ' + (isCorrect ? 'correct' : 'wrong');
   document.getElementById('feedback-icon').innerHTML = isCorrect ? `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>` : `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
   document.getElementById('feedback-text').textContent = isCorrect ? 'Benar!' : 'Salah!';
-  document.getElementById('feedback-pts').textContent = isCorrect
-    ? `+${pts} poin · ${elapsed.toFixed(1)}s`
-    : '0 poin';
+  if (isCorrect) {
+    const comboText = multiplier > 1.0 ? ` 🔥 ${multiplier.toFixed(2)}x COMBO!` : '';
+    document.getElementById('feedback-pts').textContent = `+${pts} poin · ${elapsed.toFixed(1)}s${comboText}`;
+    if (multiplier > 1.0) {
+      document.getElementById('feedback-pts').style.color = '#f97316';
+    } else {
+      document.getElementById('feedback-pts').style.color = '';
+    }
+  } else {
+    document.getElementById('feedback-pts').textContent = '0 poin';
+    document.getElementById('feedback-pts').style.color = '';
+  }
   overlay.style.display = 'flex';
   setTimeout(() => { overlay.style.display = 'none'; }, 1800);
 }
@@ -1235,6 +1320,54 @@ function showScoreDrop(delta) {
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 1500);
 }
+
+// ===== DARK / LIGHT MODE TOGGLE =====
+let isLightMode = false;
+window.toggleTheme = function() {
+  isLightMode = !isLightMode;
+  document.body.classList.toggle('light-mode', isLightMode);
+  document.getElementById('theme-icon-dark').style.display = isLightMode ? 'none' : '';
+  document.getElementById('theme-icon-light').style.display = isLightMode ? '' : 'none';
+  document.getElementById('theme-label').textContent = isLightMode ? 'Dark' : 'Light';
+  localStorage.setItem('quizTheme', isLightMode ? 'light' : 'dark');
+};
+// Restore saved theme
+if (localStorage.getItem('quizTheme') === 'light') { isLightMode = false; window.toggleTheme(); }
+
+// ===== EDIT NAME MODAL =====
+window.openEditNameModal = function() {
+  const input = document.getElementById('edit-name-input');
+  input.value = myName || '';
+  document.getElementById('edit-name-error').style.display = 'none';
+  document.getElementById('edit-name-modal').style.display = 'flex';
+  setTimeout(() => input.focus(), 100);
+};
+window.closeEditNameModal = function() {
+  document.getElementById('edit-name-modal').style.display = 'none';
+};
+window.saveEditName = async function() {
+  const input = document.getElementById('edit-name-input');
+  const newName = input.value.trim();
+  if (!newName || newName.length < 2) {
+    const err = document.getElementById('edit-name-error');
+    err.textContent = 'Nama minimal 2 karakter!';
+    err.style.display = 'block';
+    return;
+  }
+  myName = newName;
+  // Update Firebase: user record + player in room (if already joined)
+  if (currentUser) {
+    await update(ref(db, `users/${currentUser.uid}`), { name: newName });
+    if (currentRoom) {
+      await update(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}`), { name: newName });
+    }
+  }
+  // Update join screen display
+  const displayEl = document.getElementById('join-display-name');
+  if (displayEl) displayEl.textContent = newName;
+  closeEditNameModal();
+};
+document.getElementById('edit-name-input').addEventListener('keydown', e => { if (e.key === 'Enter') window.saveEditName(); });
 
 // ===== INPUT UPPERCASE =====
 document.getElementById('input-room-code').addEventListener('input', function() {
