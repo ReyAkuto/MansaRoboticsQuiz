@@ -503,502 +503,502 @@
   ],
   "programmer": [
     {
-      "q": "Apa yang terjadi jika kondisi if (jarak < 10) terpenuhi pada kode if (jarak < 10) { motorStop(); }?",
+      "q": "Apa itu program komputer?",
       "opts": [
-        "Sensor mulai mengukur jarak",
-        "Motor berputar lebih cepat",
-        "Motor berhenti bergerak",
-        "Controller mereset program"
+        "Kumpulan perintah yang diberikan ke komputer agar melakukan sesuatu",
+        "Alat untuk mengukur jarak pada robot",
+        "Kabel penghubung antara sensor dan motor",
+        "Nama lain dari baterai pada robot"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Apa itu algoritma?",
+      "opts": [
+        "Alat untuk menggerakkan motor robot",
+        "Langkah-langkah urut untuk menyelesaikan suatu masalah",
+        "Jenis sensor yang dipakai pada robot",
+        "Nama lain dari baterai lithium"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Manakah contoh algoritma dalam kehidupan sehari-hari?",
+      "opts": [
+        "Makan dulu sebelum lapar",
+        "Duduk, ambil sendok, ambil makanan, lalu makan",
+        "Tidur sambil makan supaya hemat waktu",
+        "Makan, ambil sendok, baru duduk"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa fungsi variabel dalam program?",
+      "opts": [
+        "Menghubungkan sensor ke motor robot",
+        "Mengatur kecepatan putaran roda",
+        "Menyimpan data atau nilai yang dibutuhkan program",
+        "Menggerakkan lengan robot secara otomatis"
       ],
       "ans": 2
     },
     {
-      "q": "Pada Arduino, pinMode(13, OUTPUT) digunakan untuk...",
+      "q": "Manakah contoh penulisan variabel yang benar?",
       "opts": [
-        "Membaca sinyal dari pin 13",
-        "Mengatur pin 13 sebagai keluaran",
-        "Menghubungkan pin 13 ke sensor",
-        "Menyalakan semua pin sekaligus"
+        "while (true) {}",
+        "motor.stop()",
+        "int umur = 10",
+        "if (x > 5) {}"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang dilakukan perintah if dalam program?",
+      "opts": [
+        "Mengulang program dari awal terus menerus",
+        "Memeriksa kondisi dan menjalankan perintah jika kondisi benar",
+        "Menghentikan semua motor yang sedang berputar",
+        "Menyimpan nilai ke dalam memori robot"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang dilakukan delay(1000) pada program Arduino?",
+      "q": "Kapan bagian else dalam if-else dijalankan?",
       "opts": [
-        "Mengulang perintah sebanyak 1000 kali",
-        "Menunggu selama 1 detik sebelum lanjut",
-        "Membaca sensor setiap 1000 milidetik sekali",
-        "Menyimpan data sebanyak 1000 byte"
+        "Saat program pertama kali dinyalakan",
+        "Saat motor robot berhenti berputar",
+        "Saat kondisi if ternyata salah",
+        "Saat variabel belum diberi nilai"
       ],
-      "ans": 1
+      "ans": 2
     },
     {
-      "q": "Perintah digitalWrite(pin, HIGH) berfungsi untuk...",
+      "q": "Jika nilai = 50, apa yang terjadi pada kode: if (nilai > 60) { lulus } else { ulang }?",
       "opts": [
-        "Membaca nilai tegangan pada pin",
-        "Mematikan pin agar tidak aktif",
-        "Mengukur arus yang masuk ke pin",
-        "Memberi sinyal aktif ke pin tersebut"
+        "Perintah lulus dijalankan karena 50 cukup besar",
+        "Program berhenti karena terjadi error",
+        "Nilai berubah otomatis menjadi 60",
+        "Perintah ulang dijalankan karena 50 tidak lebih dari 60"
       ],
       "ans": 3
     },
     {
-      "q": "Kenapa fungsi loop() pada Arduino penting untuk robot?",
+      "q": "Tipe data apa yang tepat untuk menyimpan angka bulat seperti 5 atau 100?",
       "opts": [
-        "Agar program tersimpan ke memori permanen",
-        "Supaya robot bisa terus membaca sensor dan merespons",
-        "Untuk menghubungkan Arduino ke komputer",
-        "Agar motor tidak berputar terlalu cepat"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa perbedaan fungsi setup() dan loop() pada Arduino?",
-      "opts": [
-        "setup() dijalankan berulang, loop() hanya sekali",
-        "setup() untuk sensor, loop() untuk motor saja",
-        "setup() dijalankan sekali di awal, loop() berjalan terus menerus",
-        "Keduanya berjalan bersamaan secara paralel"
+        "float untuk angka bulat positif",
+        "boolean untuk nilai numerik",
+        "int untuk bilangan bulat",
+        "char untuk karakter angka"
       ],
       "ans": 2
     },
     {
-      "q": "Apa yang dimaksud dengan variabel pada program robot?",
+      "q": "Tipe data apa yang digunakan untuk menyimpan nilai benar atau salah?",
       "opts": [
-        "Perintah untuk menggerakkan motor robot",
-        "Tempat menyimpan data sementara dalam program",
-        "Nama lain untuk fungsi dalam program",
-        "Koneksi antara sensor dan controller"
+        "int karena bisa bernilai 0 atau 1",
+        "float karena nilainya bisa desimal",
+        "char karena hanya satu karakter",
+        "boolean karena hanya bernilai true atau false"
       ],
-      "ans": 1
+      "ans": 3
     },
     {
-      "q": "Apa fungsi Serial.println() pada program Arduino?",
+      "q": "Apa yang dimaksud dengan input dalam sebuah program?",
       "opts": [
-        "Mengirim perintah ke motor melalui kabel serial",
-        "Menampilkan data atau teks ke Serial Monitor",
-        "Membaca data yang dikirim dari sensor serial",
-        "Menyimpan data ke EEPROM Arduino"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan kondisi if-else pada program?",
-      "opts": [
-        "Perintah untuk mengulang program dari awal",
-        "Struktur untuk menjalankan kode berbeda tergantung kondisi benar atau salah",
-        "Cara menyimpan lebih dari satu nilai sekaligus",
-        "Perintah untuk menghentikan program sementara"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Perulangan for (int i = 0; i < 5; i++) akan berjalan sebanyak...",
-      "opts": [
-        "4 kali",
-        "5 kali",
-        "6 kali",
-        "Terus menerus tanpa henti"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa tipe data yang tepat untuk menyimpan nilai suhu 36.5 pada program Arduino?",
-      "opts": [
-        "int",
-        "boolean",
-        "float",
-        "char"
+        "Hasil akhir yang ditampilkan oleh program",
+        "Perintah untuk menghentikan program",
+        "Data atau nilai yang dimasukkan ke dalam program",
+        "Nama dari variabel yang dipakai"
       ],
       "ans": 2
     },
     {
-      "q": "Apa fungsi analogRead() pada Arduino?",
+      "q": "Apa yang dimaksud dengan output dalam sebuah program?",
       "opts": [
-        "Mengirim sinyal analog ke aktuator",
-        "Membaca nilai tegangan analog dari pin dan mengubahnya ke angka 0-1023",
-        "Mengatur kecepatan motor dengan nilai analog",
-        "Menyimpan data analog ke dalam memori flash"
+        "Hasil yang dikeluarkan atau ditampilkan oleh program",
+        "Data awal yang dimasukkan pengguna",
+        "Variabel yang belum memiliki nilai",
+        "Nama fungsi yang sedang dipakai"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Dalam program robot sederhana, urutan yang benar adalah...",
+      "opts": [
+        "Output dulu, baru proses, baru input",
+        "Proses dulu, baru input, baru output",
+        "Input dulu, lalu diproses, lalu menghasilkan output",
+        "Output dulu, baru input, baru proses"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Simbol apa yang digunakan untuk memeriksa apakah dua nilai sama?",
+      "opts": [
+        "= untuk membandingkan dua nilai",
+        "!= untuk mengecek kesamaan",
+        "=> untuk kondisi sama",
+        "== untuk memeriksa apakah dua nilai sama"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa arti tanda != dalam program?",
+      "opts": [
+        "Lebih besar dari nilai lain",
+        "Sama persis dengan nilai lain",
+        "Tidak sama dengan nilai lain",
+        "Lebih kecil dari nilai lain"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa arti tanda > dalam kondisi program?",
+      "opts": [
+        "Nilainya sama dengan yang lain",
+        "Nilainya lebih besar dari yang lain",
+        "Nilainya tidak sama dengan lain",
+        "Nilainya lebih kecil dari yang lain"
       ],
       "ans": 1
     },
     {
-      "q": "Apa yang dimaksud dengan fungsi (function) dalam pemrograman robot?",
+      "q": "Apa arti tanda < dalam kondisi program?",
+      "opts": [
+        "Nilainya lebih besar dari yang lain",
+        "Nilainya sama dengan yang lain",
+        "Nilainya tidak sama dengan lain",
+        "Nilainya lebih kecil dari yang lain"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan percabangan dalam algoritma?",
+      "opts": [
+        "Cara menyimpan banyak nilai sekaligus",
+        "Pengulangan perintah yang sama berkali-kali",
+        "Pilihan jalan yang berbeda tergantung kondisi",
+        "Langkah terakhir untuk menghentikan program"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "int a = 10, int b = 3, int c = a - b. Berapa nilai c?",
+      "opts": [
+        "13",
+        "30",
+        "7",
+        "103"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "int x = 4, lalu x = x + 1. Berapa nilai x sekarang?",
+      "opts": [
+        "4 karena nilai awal tidak berubah",
+        "1 karena hanya ditambah satu",
+        "41 karena digabung jadi string",
+        "5 karena 4 ditambah 1"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Mengapa urutan langkah dalam algoritma itu penting?",
+      "opts": [
+        "Agar program terlihat panjang dan rapi",
+        "Urutan yang salah bisa membuat hasil tidak sesuai harapan",
+        "Karena komputer tidak bisa membaca urutan acak",
+        "Agar variabel bisa menyimpan lebih banyak nilai"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan kondisi dalam if-else?",
+      "opts": [
+        "Pertanyaan benar atau salah yang menentukan jalannya program",
+        "Jenis data yang disimpan dalam robot",
+        "Nama variabel yang dipakai dalam program",
+        "Kecepatan eksekusi program per detik"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Jika dua kondisi harus benar semua, operator apa yang dipakai?",
+      "opts": [
+        "|| karena memeriksa dua kondisi",
+        "! karena membalik kondisi",
+        "== karena membandingkan nilai",
+        "&& karena kedua kondisi harus benar"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Jika cukup salah satu kondisi saja yang benar, operator apa yang dipakai?",
+      "opts": [
+        "|| karena salah satu sudah cukup",
+        "&& karena memeriksa dua kondisi",
+        "! karena membalik nilainya",
+        "!= karena kondisinya berbeda"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Apa yang dimaksud dengan komentar dalam program?",
+      "opts": [
+        "Perintah penting yang wajib dijalankan program",
+        "Nama variabel yang sangat panjang",
+        "Teks penjelasan yang tidak dijalankan program",
+        "Fungsi khusus untuk menampilkan teks"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan bug dalam program?",
+      "opts": [
+        "Fitur tambahan yang ditambah belakangan",
+        "Nama lain dari tipe data variabel",
+        "Kesalahan dalam program yang membuat hasil tidak sesuai",
+        "Jenis perulangan yang sangat cepat"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Manakah yang merupakan contoh output sebuah program robot?",
+      "opts": [
+        "Tombol yang ditekan oleh pengguna",
+        "Nilai jarak yang dibaca sensor",
+        "Lampu LED yang menyala karena perintah program",
+        "Baterai yang sedang mengisi daya"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Manakah yang merupakan contoh input dalam program robot?",
+      "opts": [
+        "Motor yang berputar menggerakkan roda",
+        "LED yang menyala sebagai indikator",
+        "Bunyi buzzer sebagai peringatan",
+        "Nilai jarak yang dibaca dari sensor"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa yang terjadi jika kondisi if salah dan tidak ada else?",
+      "opts": [
+        "Program error dan langsung berhenti",
+        "Kode di dalam if tetap dijalankan",
+        "Program lanjut ke perintah berikutnya",
+        "Semua variabel direset otomatis"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Manakah penulisan variabel yang benar?",
+      "opts": [
+        "int 1angka = 5",
+        "5 = int angka",
+        "angka int = 5",
+        "int angka = 5"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan mendeklarasikan variabel?",
+      "opts": [
+        "Memberitahu program bahwa variabel ada beserta tipe datanya",
+        "Menghapus variabel yang sudah tidak dipakai",
+        "Menyalin nilai dari satu variabel ke variabel lain",
+        "Menampilkan nilai variabel ke layar monitor"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Algoritma yang baik harus...",
+      "opts": [
+        "Langkahnya tidak perlu berurutan",
+        "Memiliki langkah jelas dan menghasilkan output",
+        "Hanya boleh memiliki satu langkah saja",
+        "Tidak perlu memiliki titik akhir"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Contoh algoritma menyalakan lampu yang benar adalah...",
+      "opts": [
+        "Lampu nyala, tekan saklar, cari saklar",
+        "Cari saklar, tekan saklar, lampu menyala",
+        "Tekan saklar, lampu nyala, cari saklar",
+        "Lampu nyala, cari saklar, tekan saklar"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan nilai awal variabel?",
+      "opts": [
+        "Mengubah tipe data variabel saat program berjalan",
+        "Menghapus nilai variabel setelah selesai dipakai",
+        "Nilai pertama yang diberikan ke variabel saat dibuat",
+        "Menyalin variabel ke dalam fungsi lain"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Tipe data float digunakan untuk menyimpan...",
+      "opts": [
+        "Nilai true atau false saja",
+        "Angka bulat seperti 1, 2, 3",
+        "Satu karakter huruf saja",
+        "Angka desimal seperti 3.14 atau 1.5"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Contoh penggunaan if-else dalam kehidupan nyata adalah...",
+      "opts": [
+        "Jika hujan maka bawa payung, jika tidak maka tidak perlu",
+        "Bawa payung setiap hari tanpa melihat cuaca",
+        "Jika hujan maka tetap jalan tanpa payung",
+        "Bawa payung hanya saat cuaca sangat cerah"
+      ],
+      "ans": 0
+    },
+    {
+      "q": "Apa yang dimaksud dengan program yang benar?",
+      "opts": [
+        "Program yang sangat panjang dan kompleks",
+        "Program yang memakai banyak variabel berbeda",
+        "Program yang menghasilkan output sesuai yang diharapkan",
+        "Program yang ditulis dengan huruf kapital semua"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Jika robot mendeteksi halangan, contoh if-else yang tepat adalah...",
+      "opts": [
+        "Jika ada halangan maka terus maju saja",
+        "Jika ada halangan maka belok, jika tidak maka maju",
+        "Jika tidak ada halangan maka berhenti total",
+        "Jika ada halangan maka matikan semua sensor"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan logika dalam program?",
+      "opts": [
+        "Cara menyimpan banyak variabel sekaligus",
+        "Nama lain dari tipe data integer",
+        "Aturan berpikir yang menentukan keputusan program",
+        "Cara menghubungkan dua sensor berbeda"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Manakah contoh kondisi if yang benar penulisannya?",
+      "opts": [
+        "if x > 5 { }",
+        "if [x > 5] { }",
+        "if (x > 5) { }",
+        "if x = 5 { }"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Mengapa nama variabel harus jelas dan deskriptif?",
+      "opts": [
+        "Karena nama panjang membuat program lebih cepat",
+        "Agar mudah dipahami saat membaca program kembali",
+        "Karena komputer hanya bisa membaca nama panjang",
+        "Agar sensor dapat mengenali variabel tersebut"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa itu pseudocode?",
+      "opts": [
+        "Bahasa pemrograman khusus untuk robot",
+        "Cara menulis algoritma dengan bahasa sehari-hari sebelum jadi kode",
+        "Nama lain dari variabel boolean",
+        "Kode rahasia untuk mengunci program robot"
+      ],
+      "ans": 1
+    },
+    {
+      "q": "Apa yang terjadi jika urutan algoritma salah?",
+      "opts": [
+        "Program tetap berjalan dengan hasil benar",
+        "Variabel otomatis memperbaiki urutannya",
+        "Hasilnya bisa tidak sesuai atau terjadi error",
+        "Komputer otomatis mengurutkan ulang langkahnya"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa hubungan algoritma dengan program?",
+      "opts": [
+        "Algoritma adalah hasil akhir dari program",
+        "Algoritma tidak ada hubungannya dengan program",
+        "Program adalah cara lain menyebut algoritma",
+        "Algoritma adalah rencana langkah yang kemudian ditulis jadi program"
+      ],
+      "ans": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan proses dalam program?",
+      "opts": [
+        "Data awal yang dimasukkan pengguna ke program",
+        "Hasil akhir yang ditampilkan oleh program",
+        "Pengolahan data input menjadi output yang diinginkan",
+        "Nama lain dari variabel dalam program"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Contoh proses dalam program robot adalah...",
+      "opts": [
+        "Menekan tombol on pada robot",
+        "Lampu LED menyala sebagai tanda aktif",
+        "Menghitung jarak lalu memutuskan belok atau lurus",
+        "Baterai yang terisi penuh sebelum dipakai"
+      ],
+      "ans": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan instruksi dalam program?",
       "opts": [
         "Nama lain dari variabel dalam program",
-        "Blok kode yang bisa dipanggil berulang kali dengan satu perintah",
-        "Cara menghubungkan dua program sekaligus",
-        "Perintah khusus untuk menggerakkan motor"
+        "Perintah spesifik yang diberikan ke komputer untuk dilakukan",
+        "Hasil akhir dari sebuah algoritma",
+        "Cara menghubungkan dua program berbeda"
       ],
       "ans": 1
     },
     {
-      "q": "Kenapa penting memberi nama variabel yang jelas seperti 'jarakDepan' bukan 'x'?",
+      "q": "Manakah yang bukan termasuk tipe data dasar dalam program?",
       "opts": [
-        "Karena Arduino tidak menerima nama variabel satu huruf",
-        "Agar program lebih mudah dibaca dan dipahami orang lain",
-        "Karena nama panjang membuat program lebih cepat",
-        "Supaya sensor bisa mengenali variabel tersebut"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa output dari kode: int x = 5; x = x + 3; Serial.println(x);",
-      "opts": [
-        "5",
-        "3",
-        "8",
-        "53"
+        "int untuk bilangan bulat",
+        "boolean untuk benar atau salah",
+        "motor untuk menggerakkan roda",
+        "float untuk bilangan desimal"
       ],
       "ans": 2
     },
     {
-      "q": "Apa yang dimaksud dengan library pada Arduino?",
+      "q": "Apa yang dimaksud dengan program sederhana?",
       "opts": [
-        "Tempat menyimpan program cadangan robot",
-        "Kumpulan kode siap pakai untuk mempermudah penggunaan sensor atau modul tertentu",
-        "File konfigurasi untuk mengatur pin Arduino",
-        "Nama lain untuk sketsa atau program Arduino"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa kegunaan tanda // pada program Arduino?",
-      "opts": [
-        "Membagi nilai variabel dengan dua",
-        "Menandai komentar yang tidak dieksekusi program",
-        "Menghubungkan dua perintah sekaligus",
-        "Menandai akhir dari sebuah fungsi"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang terjadi jika tanda titik koma (;) terlupa di akhir perintah Arduino?",
-      "opts": [
-        "Program tetap berjalan tapi lebih lambat",
-        "Program akan error dan tidak bisa di-upload",
-        "Arduino otomatis menambahkannya sendiri",
-        "Hanya perintah itu yang dilewati program"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa fungsi analogWrite() pada Arduino?",
-      "opts": [
-        "Membaca nilai sensor analog secara terus menerus",
-        "Mengirim sinyal PWM untuk mengatur kecepatan atau kecerahan",
-        "Menyimpan nilai analog ke dalam variabel",
-        "Menampilkan nilai analog di Serial Monitor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa perbedaan pin digital dan pin analog pada Arduino?",
-      "opts": [
-        "Pin digital lebih banyak jumlahnya dari pin analog",
-        "Pin digital hanya mengenal HIGH/LOW, pin analog bisa membaca nilai 0 sampai 1023",
-        "Pin analog hanya bisa digunakan untuk LED",
-        "Pin digital bisa membaca nilai lebih akurat dari pin analog"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan boolean dalam program?",
-      "opts": [
-        "Tipe data yang menyimpan angka desimal",
-        "Tipe data yang hanya bernilai true atau false",
-        "Tipe data untuk menyimpan karakter huruf",
-        "Tipe data untuk menyimpan teks panjang"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Pada program robot, apa fungsi while(true)?",
-      "opts": [
-        "Menjalankan kode hanya jika kondisi sensor benar",
-        "Membuat kode di dalamnya terus berjalan tanpa berhenti",
-        "Menunggu input dari pengguna sebelum melanjutkan",
-        "Mengulang program dari fungsi setup()"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan upload program pada Arduino?",
-      "opts": [
-        "Mengirim program dari komputer ke memori Arduino",
-        "Mengambil program dari Arduino ke komputer",
-        "Menghapus semua program yang ada di Arduino",
-        "Menjalankan program Arduino di komputer"
-      ],
-      "ans": 0
-    },
-    {
-      "q": "Apa fungsi map(nilai, 0, 1023, 0, 255) pada Arduino?",
-      "opts": [
-        "Menggandakan nilai sensor sebanyak dua kali",
-        "Mengubah skala nilai dari rentang 0-1023 ke rentang 0-255",
-        "Membatasi nilai agar tidak melebihi 255",
-        "Mengkonversi nilai analog menjadi teks"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan kondisi AND (&&) pada program robot?",
-      "opts": [
-        "Salah satu dari dua kondisi harus terpenuhi",
-        "Kedua kondisi harus terpenuhi agar blok kode dijalankan",
-        "Kondisi dibalik dari yang seharusnya",
-        "Hanya kondisi pertama yang diperiksa"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa kegunaan EEPROM pada Arduino untuk robot?",
-      "opts": [
-        "Menyimpan data sementara saat program berjalan",
-        "Menyimpan data yang tetap ada meski Arduino dimatikan",
-        "Mempercepat eksekusi program robot",
-        "Tempat menyimpan library sensor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang terjadi jika robot menggunakan delay() terlalu besar dalam loop utama?",
-      "opts": [
-        "Motor akan berputar lebih kencang",
-        "Robot tidak responsif karena tidak membaca sensor selama delay berlangsung",
-        "Sensor akan membaca lebih akurat",
-        "Program akan otomatis berhenti"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa perbedaan == dan = pada program Arduino?",
-      "opts": [
-        "Keduanya sama, hanya penulisan berbeda",
-        "= untuk membandingkan nilai, == untuk mengisi nilai",
-        "== untuk membandingkan nilai, = untuk mengisi nilai ke variabel",
-        "== hanya digunakan untuk tipe data float"
+        "Program yang hanya bisa dijalankan satu kali",
+        "Program yang tidak membutuhkan variabel apapun",
+        "Program dengan langkah sedikit yang mudah dipahami",
+        "Program yang ditulis tanpa menggunakan if-else"
       ],
       "ans": 2
     },
     {
-      "q": "Apa fungsi Serial.begin(9600) pada program Arduino?",
+      "q": "Apa yang dimaksud dengan debugging?",
       "opts": [
-        "Mengatur kecepatan motor sebesar 9600 RPM",
-        "Memulai komunikasi serial dengan kecepatan 9600 baud",
-        "Menginisialisasi pin 9600 sebagai output",
-        "Mengatur frekuensi PWM menjadi 9600 Hz"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan array pada program robot?",
-      "opts": [
-        "Nama lain untuk fungsi berulang dalam program",
-        "Kumpulan variabel sejenis yang disimpan dalam satu nama",
-        "Perintah untuk menggerakkan banyak motor sekaligus",
-        "Cara mengirim data ke beberapa sensor bersamaan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Kenapa kita perlu mendeklarasikan tipe data variabel di Arduino?",
-      "opts": [
-        "Agar Arduino tahu berapa besar memori yang dibutuhkan variabel tersebut",
-        "Supaya variabel bisa digunakan di semua fungsi sekaligus",
-        "Karena Arduino tidak bisa membaca angka tanpa tipe data",
-        "Agar program bisa dijalankan tanpa koneksi ke komputer"
-      ],
-      "ans": 0
-    },
-    {
-      "q": "Apa fungsi kondisi OR (||) pada program robot?",
-      "opts": [
-        "Kedua kondisi harus terpenuhi sekaligus",
-        "Salah satu kondisi sudah cukup untuk menjalankan kode",
-        "Kondisi dibalik dari nilai aslinya",
-        "Hanya kondisi terakhir yang diperiksa"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan debugging pada pemrograman robot?",
-      "opts": [
-        "Proses menambah fitur baru ke program robot",
+        "Menambah fitur baru ke dalam program",
         "Proses mencari dan memperbaiki kesalahan dalam program",
-        "Cara mengoptimalkan kecepatan program robot",
-        "Proses menghapus kode yang tidak diperlukan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa kegunaan millis() pada Arduino?",
-      "opts": [
-        "Mengukur jarak dalam satuan milimeter",
-        "Mengembalikan waktu dalam milidetik sejak Arduino dinyalakan",
-        "Mengatur delay dalam satuan milidetik",
-        "Membaca nilai sensor setiap milidetik"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan pin PWM pada Arduino?",
-      "opts": [
-        "Pin yang hanya bisa membaca sinyal digital",
-        "Pin yang bisa mengeluarkan sinyal analog simulasi dengan switching cepat",
-        "Pin khusus untuk komunikasi dengan sensor I2C",
-        "Pin yang digunakan sebagai sumber tegangan 5V"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan kondisi NOT (!) pada program?",
-      "opts": [
-        "Menambahkan nilai satu ke variabel",
-        "Membalik nilai kondisi dari true menjadi false atau sebaliknya",
-        "Menghentikan program saat kondisi terpenuhi",
-        "Membandingkan dua variabel sekaligus"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa perbedaan int dan long pada Arduino?",
-      "opts": [
-        "int untuk desimal, long untuk bilangan bulat",
-        "int menyimpan angka hingga 32.767, long hingga 2.147.483.647",
-        "long lebih cepat diproses daripada int",
-        "Tidak ada perbedaan keduanya pada Arduino"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan parameter pada fungsi program robot?",
-      "opts": [
-        "Nama lain dari variabel global dalam program",
-        "Nilai yang dikirim ke fungsi untuk diproses di dalamnya",
-        "Perintah yang dijalankan setelah fungsi selesai",
-        "Kondisi yang harus terpenuhi agar fungsi berjalan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Kenapa menggunakan fungsi (function) membuat program robot lebih baik?",
-      "opts": [
-        "Karena fungsi membuat program lebih cepat dieksekusi",
-        "Karena kode bisa digunakan ulang dan program lebih terorganisir",
-        "Karena Arduino hanya bisa membaca program berbasis fungsi",
-        "Karena fungsi mengurangi jumlah variabel yang dibutuhkan"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan HIGH dan LOW pada Arduino?",
-      "opts": [
-        "HIGH berarti motor cepat, LOW berarti motor lambat",
-        "HIGH berarti tegangan 5V aktif, LOW berarti 0V atau tidak aktif",
-        "HIGH untuk sensor analog, LOW untuk sensor digital",
-        "HIGH berarti data dikirim, LOW berarti data diterima"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa itu sketch pada Arduino?",
-      "opts": [
-        "Nama lain untuk kabel penghubung Arduino",
-        "Program atau kode yang ditulis dan diupload ke Arduino",
-        "Diagram rangkaian elektronik untuk Arduino",
-        "File konfigurasi pin pada papan Arduino"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan compile pada Arduino IDE?",
-      "opts": [
-        "Proses mengirim program ke papan Arduino",
-        "Proses mengubah kode menjadi bahasa mesin yang dimengerti Arduino",
-        "Proses menyimpan program ke komputer",
-        "Proses menguji program tanpa papan Arduino"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa fungsi tanda kurung kurawal {} pada program Arduino?",
-      "opts": [
-        "Menandai nilai yang akan dicetak ke Serial Monitor",
-        "Mengelompokkan perintah yang termasuk dalam satu blok kode",
-        "Mengakses elemen array pada posisi tertentu",
-        "Menandai komentar panjang dalam program"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang terjadi jika dua sensor memberikan data berbeda ke controller secara bersamaan?",
-      "opts": [
-        "Controller akan memilih data dari sensor yang lebih mahal",
-        "Controller memproses kedua data sesuai program untuk menentukan aksi",
-        "Hanya sensor pertama yang terbaca oleh controller",
-        "Program otomatis berhenti karena konflik data"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa fungsi pinMode(pin, INPUT_PULLUP) pada Arduino?",
-      "opts": [
-        "Mengatur pin sebagai output dengan tegangan tinggi",
-        "Mengaktifkan resistor internal agar pin membaca HIGH saat tidak terhubung",
-        "Menghubungkan pin ke sensor secara otomatis",
-        "Mengatur pin agar hanya menerima sinyal analog"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan konstanta pada program robot?",
-      "opts": [
-        "Variabel yang nilainya bisa berubah setiap saat",
-        "Nilai tetap yang tidak berubah selama program berjalan",
-        "Nama lain untuk tipe data float",
-        "Fungsi khusus untuk menyimpan data sensor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Kenapa penting menambahkan komentar dalam program robot?",
-      "opts": [
-        "Karena komentar mempercepat proses kompilasi",
-        "Agar orang lain atau diri sendiri bisa memahami tujuan kode dengan mudah",
-        "Karena Arduino membutuhkan komentar untuk menjalankan program",
-        "Supaya program tidak mengalami error saat diupload"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa itu IDE pada konteks pemrograman Arduino?",
-      "opts": [
-        "Nama papan mikrokontroler buatan Arduino",
-        "Aplikasi untuk menulis, mengcompile, dan mengupload program ke Arduino",
-        "Protokol komunikasi antara Arduino dan sensor",
-        "Nama library bawaan untuk mengontrol motor"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan nilai return pada fungsi program?",
-      "opts": [
-        "Perintah untuk mengulang fungsi dari awal",
-        "Nilai yang dikirim kembali oleh fungsi ke tempat ia dipanggil",
-        "Cara fungsi menerima data dari sensor",
-        "Perintah untuk menghentikan seluruh program"
-      ],
-      "ans": 1
-    },
-    {
-      "q": "Apa yang terjadi jika variabel integer menyimpan nilai 300 pada Arduino Uno?",
-      "opts": [
-        "Program langsung error karena terlalu besar",
-        "Nilai tersimpan normal karena int bisa menampung hingga 32.767",
-        "Nilai otomatis dibulatkan menjadi 255",
-        "Arduino akan restart secara otomatis"
+        "Cara mempercepat jalannya program",
+        "Cara menghapus variabel yang tidak dipakai"
       ],
       "ans": 1
     }
