@@ -36,6 +36,13 @@
   </style>
 <body>
 
+<!-- MUSIC TOGGLE BUTTON -->
+<button id="music-toggle" onclick="toggleBGM()" title="Toggle Background Music" style="position:fixed;left:120px;top:12px;z-index:9999;background:transparent;border:1px solid #334155;border-radius:8px;padding:5px 8px;cursor:pointer;color:#94a3b8;font-size:0.75rem;display:flex;align-items:center;gap:4px">
+  <svg id="music-icon-on" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  <svg id="music-icon-off" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="1" y1="1" x2="23" y2="23" stroke="#ef4444"/></svg>
+  <span id="music-label">Musik</span>
+</button>
+
 <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode" style="position:fixed;left:12px;top:12px;z-index:9999;background:transparent;border:1px solid #334155;border-radius:8px;padding:5px 8px;cursor:pointer;color:#94a3b8;font-size:0.75rem;display:flex;align-items:center;gap:4px">
   <svg id="theme-icon-dark" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   <svg id="theme-icon-light" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -77,6 +84,12 @@
   <p class="info-text">Minta kode room ke adminmu!</p>
   <input type="text" id="input-room-code" placeholder="Kode Room (4 huruf)..." maxlength="4" style="text-transform:uppercase;letter-spacing:4px;font-size:1.3rem;text-align:center" />
   <div id="join-error" class="error-msg" style="display:none"></div>
+  <!-- REJOIN BANNER: muncul jika ada sesi aktif dalam grace period -->
+  <div id="rejoin-banner" style="display:none;background:#0c1f35;border:1px solid #38bdf8;border-radius:12px;padding:12px 16px;margin-bottom:8px;text-align:center">
+    <div style="color:#38bdf8;font-weight:700;font-size:0.9rem;margin-bottom:4px">⚡ Sesi Aktif Ditemukan!</div>
+    <div style="color:#94a3b8;font-size:0.78rem;margin-bottom:10px">Room <b id="rejoin-room-code-display" style="color:#f97316"></b> — sisa waktu rejoin: <b id="rejoin-countdown-display" style="color:#22c55e">60</b>s</div>
+    <button class="btn btn-primary" style="margin:0;padding:8px 20px;font-size:0.85rem" onclick="doRejoin()">⚡ Lanjutkan Quiz</button>
+  </div>
   <button class="btn btn-primary" onclick="joinRoom()">Masuk Room</button>
   <button class="btn btn-outline" onclick="logout()">Ganti Akun</button>
   <p style="margin-top:18px;font-size:0.72rem;color:#475569;text-align:center;letter-spacing:0.03em">made by <span style="color:#38bdf8;font-weight:600">mas rahullll</span> &amp; <span style="color:#f97316;font-weight:600">rv</span></p>
@@ -154,6 +167,16 @@
         <div class="item-label">HINT</div>
         <div class="item-count" id="hint-count" style="display:none">0</div>
       </div>
+      <div class="item-slot empty" id="item-doublePoints" onclick="useItem('doublePoints')" title="2× Poin: Poin soal berikutnya ×2">
+        <div class="item-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="item-label">2×</div>
+        <div class="item-count" id="doublePoints-count" style="display:none">0</div>
+      </div>
+      <div class="item-slot empty" id="item-freezeTimer" onclick="useItem('freezeTimer')" title="Freeze: Bekukan timer soal berikutnya">
+        <div class="item-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="item-label">FREEZE</div>
+        <div class="item-count" id="freezeTimer-count" style="display:none">0</div>
+      </div>
     </div>
   </div>
 
@@ -206,6 +229,16 @@
         <div class="pick-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg></div>
         <div class="pick-name">HINT</div>
         <div class="pick-desc">Hapus 1 jawaban salah (1 soal)</div>
+      </div>
+      <div class="item-pick-btn" onclick="pickItem('doublePoints')">
+        <div class="pick-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="pick-name">2× POIN</div>
+        <div class="pick-desc">Poin soal berikutnya dikalikan 2×</div>
+      </div>
+      <div class="item-pick-btn" onclick="pickItem('freezeTimer')">
+        <div class="pick-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><line x1="2" y1="2" x2="22" y2="22" stroke="#38bdf8"/></svg></div>
+        <div class="pick-name">FREEZE</div>
+        <div class="pick-desc">Bekukan timer soal berikutnya</div>
       </div>
     </div>
   </div>
@@ -262,7 +295,7 @@
   <div class="quit-modal-box">
     <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M13 4L6 6v14l7 2V4z"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
     <h3>Keluar dari Room?</h3>
-    <p>Kamu akan keluar dari quiz ini.<br>Progress & poin kamu akan hilang.</p>
+    <p>Kamu akan keluar dari quiz ini.<br>Kamu punya <b style="color:#38bdf8">60 detik</b> untuk rejoin dengan kode yang sama dan melanjutkan sesi.</p>
     <div class="quit-modal-actions">
       <button class="btn-cancel-quit" onclick="hideQuitModal()">Batal</button>
       <button class="btn-confirm-quit" onclick="confirmQuit()">Keluar</button>
@@ -408,7 +441,9 @@ let waitingAtBreak = false; // user sudah selesai batch, nunggu admin lanjut
 // ===== ITEM STATE =====
 let myCorrect = 0;         // total jawaban benar (untuk accuracy)
 let myStreak = 0;          // consecutive correct answers
-let myItems = { shield: 0, gun: 0, hint: 0 };
+let myItems = { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 };
+let doublePointsActive = false;   // aktif untuk soal berikutnya
+let freezeTimerActive = false;    // aktif untuk soal berikutnya
 let hintUsedThisQuestion = false; // hint only works once per question
 let currentShuffledAns = 0;       // index jawaban benar setelah opsi di-shuffle
 let attackListener = null;
@@ -457,7 +492,8 @@ window.logout = async function() {
   await signOut(auth);
   currentRoom = null;
   myName = "";
-  sessionStorage.removeItem('quizRoom');
+  localStorage.removeItem('quizRoom');
+  localStorage.removeItem('quizRoomQuitAt');
   showScreen('login');
 };
 
@@ -468,8 +504,8 @@ onAuthStateChanged(auth, async user => {
     const snap = await get(ref(db, `users/${user.uid}/name`));
     if (snap.exists()) {
       myName = snap.val();
-      // Try to reconnect to saved room on refresh
-      const savedRoom = sessionStorage.getItem('quizRoom');
+      // Try to reconnect to saved room on refresh (using localStorage now)
+      const savedRoom = localStorage.getItem('quizRoom');
       if (savedRoom) {
         const roomSnap = await get(ref(db, `rooms/${savedRoom}`));
         if (roomSnap.exists()) {
@@ -483,17 +519,21 @@ onAuthStateChanged(auth, async user => {
           } else if (status === 'finished') {
             await showResult(savedRoom);
           } else {
-            sessionStorage.removeItem('quizRoom');
+            localStorage.removeItem('quizRoom');
+            localStorage.removeItem('quizRoomQuitAt');
             showScreen('join');
           }
           return;
         } else {
-          sessionStorage.removeItem('quizRoom');
+          localStorage.removeItem('quizRoom');
+          localStorage.removeItem('quizRoomQuitAt');
         }
       }
       showScreen('join');
       const nd = document.getElementById('join-display-name');
       if (nd) nd.textContent = myName;
+      // Check if there's a grace-period rejoin available
+      checkRejoinGrace();
     } else {
       showScreen('name');
     }
@@ -527,12 +567,13 @@ window.joinRoom = async function() {
   if (roomData.status === 'finished') return showError('join-error', 'Quiz sudah selesai!');
 
   currentRoom = code;
-  sessionStorage.setItem('quizRoom', code);
+  localStorage.setItem('quizRoom', code);
+  localStorage.removeItem('quizRoomQuitAt');
   // Add player to room
   await set(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
     name: myName,
     score: 0,
-    items: { shield: 0, gun: 0, hint: 0 },
+    items: { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 },
     streak: 0,
     joinedAt: serverTimestamp()
   });
@@ -625,9 +666,9 @@ async function startQuiz(code) {
   // Load item state from Firebase (aman saat refresh)
   const itemsSnap = await get(ref(db, `rooms/${code}/players/${currentUser.uid}/items`));
   if (itemsSnap.exists()) {
-    myItems = Object.assign({ shield: 0, gun: 0, hint: 0 }, itemsSnap.val());
+    myItems = Object.assign({ shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 }, itemsSnap.val());
   } else {
-    myItems = { shield: 0, gun: 0, hint: 0 };
+    myItems = { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 };
   }
   const streakSnap = await get(ref(db, `rooms/${code}/players/${currentUser.uid}/streak`));
   myStreak = streakSnap.exists() ? (streakSnap.val() || 0) : 0;
@@ -753,9 +794,24 @@ let questionStartTime = 0;  // timestamp saat soal tampil
 function startTimer(seconds, q, code) {
   questionStartTime = Date.now();
   clearInterval(timerInterval);
+  // Freeze Timer: skip countdown if active
+  if (freezeTimerActive) {
+    freezeTimerActive = false;
+    updateItemUI();
+    const timerEl = document.getElementById('timer');
+    timerEl.textContent = '❄';
+    timerEl.classList.remove('urgent');
+    timerEl.style.color = '#38bdf8';
+    // Timer stays frozen — no interval, player must answer manually or wait for auto-advance at end
+    // We'll set a very long effective timer (timer still ticks but very slowly visible via UI)
+    // Actually: just keep timer showing ❄ and don't auto-advance (player answers at their own pace)
+    // We'll reset color when they answer
+    return;
+  }
   let t = seconds;
   const timerEl = document.getElementById('timer');
   timerEl.textContent = t;
+  timerEl.style.color = '';
   timerEl.classList.remove('urgent');
 
   timerInterval = setInterval(() => {
@@ -830,7 +886,17 @@ async function answer(chosen, correct, btn, code, qIndex) {
   if (isCorrect && comboMultiplier > 1.0) {
     pts = Math.round(pts * comboMultiplier);
   }
+  // Double Points item
+  let doubleApplied = false;
+  if (isCorrect && doublePointsActive) {
+    pts = pts * 2;
+    doublePointsActive = false;
+    doubleApplied = true;
+    updateItemUI();
+  }
   myScore += pts;
+  // Reset freeze timer UI color
+  document.getElementById('timer').style.color = '';
   updateStreakUI();
 
   // Simpan jawaban + skor + progres soal user ke Firebase
@@ -844,7 +910,7 @@ async function answer(chosen, correct, btn, code, qIndex) {
 
   revealAnswer(correct, chosen);
   if (isCorrect) SFX.correct(); else SFX.wrong();
-  showFeedback(isCorrect, pts, elapsed, rawPts, comboMultiplier);
+  showFeedback(isCorrect, pts, elapsed, rawPts, comboMultiplier, doubleApplied);
   updateRankBadge(code);
 
   // Log ke admin
@@ -900,16 +966,20 @@ function revealAnswer(correct, chosen = -1) {
   });
 }
 
-function showFeedback(isCorrect, pts, elapsed, rawPts = pts, multiplier = 1.0) {
+function showFeedback(isCorrect, pts, elapsed, rawPts = pts, multiplier = 1.0, doubleApplied = false) {
   const overlay = document.getElementById('feedback-overlay');
   const box = document.getElementById('feedback-box');
   box.className = 'feedback-box ' + (isCorrect ? 'correct' : 'wrong');
   document.getElementById('feedback-icon').innerHTML = isCorrect ? `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>` : `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
   document.getElementById('feedback-text').textContent = isCorrect ? 'Benar!' : 'Salah!';
   if (isCorrect) {
-    const comboText = multiplier > 1.0 ? ` 🔥 ${multiplier.toFixed(2)}x COMBO!` : '';
-    document.getElementById('feedback-pts').textContent = `+${pts} poin · ${elapsed.toFixed(1)}s${comboText}`;
-    if (multiplier > 1.0) {
+    let extras = '';
+    if (multiplier > 1.0) extras += ` 🔥 ${multiplier.toFixed(2)}x COMBO!`;
+    if (doubleApplied) extras += ' ⭐ 2× DOUBLE!';
+    document.getElementById('feedback-pts').textContent = `+${pts} poin · ${elapsed.toFixed(1)}s${extras}`;
+    if (doubleApplied) {
+      document.getElementById('feedback-pts').style.color = '#facc15';
+    } else if (multiplier > 1.0) {
       document.getElementById('feedback-pts').style.color = '#f97316';
     } else {
       document.getElementById('feedback-pts').style.color = '';
@@ -1029,7 +1099,9 @@ async function showResult(code) {
       myScore = 0;
       myCorrect = 0;
       myStreak = 0;
-      myItems = { shield: 0, gun: 0, hint: 0 };
+      myItems = { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 };
+      doublePointsActive = false;
+      freezeTimerActive = false;
       currentQ = 0;
       waitingAtBreak = false;
       updateItemUI();
@@ -1046,7 +1118,9 @@ async function showResult(code) {
       myScore = 0;
       myCorrect = 0;
       myStreak = 0;
-      myItems = { shield: 0, gun: 0, hint: 0 };
+      myItems = { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 };
+      doublePointsActive = false;
+      freezeTimerActive = false;
       currentQ = 0;
       waitingAtBreak = false;
       updateItemUI();
@@ -1062,7 +1136,8 @@ window.backToLobby = function() {
     remove(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}`));
     currentRoom = null;
   }
-  sessionStorage.removeItem('quizRoom');
+  localStorage.removeItem('quizRoom');
+  localStorage.removeItem('quizRoomQuitAt');
   setQuitBtn(false);
   showScreen('join');
 };
@@ -1085,19 +1160,45 @@ window.confirmQuit = async function() {
   clearListeners();
   clearInterval(timerInterval);
   clearInterval(breakCountdownInterval);
-  if (currentRoom && currentUser) {
-    await remove(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}`));
+  // EMERGENCY REJOIN: Simpan timestamp keluar, jangan hapus player dari Firebase dulu
+  // Player punya 60 detik untuk rejoin
+  if (currentRoom) {
+    localStorage.setItem('quizRoomQuitAt', Date.now().toString());
+    // Simpan room code TETAP di localStorage supaya bisa rejoin
   }
+  const quitRoom = currentRoom;
   currentRoom = null;
   myScore = 0;
   myCorrect = 0;
   myStreak = 0;
-  myItems = { shield: 0, gun: 0, hint: 0 };
+  myItems = { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 };
+  doublePointsActive = false;
+  freezeTimerActive = false;
   currentQ = 0;
   waitingAtBreak = false;
-  sessionStorage.removeItem('quizRoom');
   setQuitBtn(false);
   showScreen('join');
+  const nd = document.getElementById('join-display-name');
+  if (nd) nd.textContent = myName;
+  // Cek grace period
+  checkRejoinGrace();
+  // Hapus player dari Firebase setelah 60 detik kalau tidak rejoin
+  if (quitRoom && currentUser) {
+    setTimeout(async () => {
+      const quitAt = parseInt(localStorage.getItem('quizRoomQuitAt') || '0');
+      const elapsed = Date.now() - quitAt;
+      // Jika lebih dari 55 detik berlalu dan room masih sama (belum rejoin)
+      if (elapsed >= 55000 && !currentRoom) {
+        const storedRoom = localStorage.getItem('quizRoom');
+        if (storedRoom === quitRoom) {
+          await remove(ref(db, `rooms/${quitRoom}/players/${currentUser.uid}`));
+          localStorage.removeItem('quizRoom');
+          localStorage.removeItem('quizRoomQuitAt');
+          hidRejoinBanner();
+        }
+      }
+    }, 60000);
+  }
 };
 
 // ===== ITEM SYSTEM =====
@@ -1122,24 +1223,32 @@ function updateStreakUI() {
 }
 
 function updateItemUI() {
-  ['shield', 'gun', 'hint'].forEach(type => {
+  ['shield', 'gun', 'hint', 'doublePoints', 'freezeTimer'].forEach(type => {
     const slot = document.getElementById(`item-${type}`);
     const countEl = document.getElementById(`${type}-count`);
     const count = myItems[type] || 0;
     if (!slot) return;
     if (count > 0) {
       slot.classList.remove('empty');
-      countEl.style.display = 'flex';
-      countEl.textContent = count;
+      if (countEl) { countEl.style.display = 'flex'; countEl.textContent = count; }
     } else {
       slot.classList.add('empty');
-      countEl.style.display = 'none';
+      if (countEl) countEl.style.display = 'none';
     }
     // Visual for active shield
     if (type === 'shield' && count > 0) {
       slot.classList.add('shield-active');
     } else if (type === 'shield') {
       slot.classList.remove('shield-active');
+    }
+    // Visual indicator if doublePoints/freezeTimer is queued for next question
+    if (type === 'doublePoints') {
+      if (doublePointsActive) slot.style.boxShadow = '0 0 10px #f97316';
+      else slot.style.boxShadow = '';
+    }
+    if (type === 'freezeTimer') {
+      if (freezeTimerActive) slot.style.boxShadow = '0 0 10px #38bdf8';
+      else slot.style.boxShadow = '';
     }
   });
 }
@@ -1163,7 +1272,7 @@ window.pickItem = async function(type) {
     writeLog(code, { type: 'item_picked', name: myName, item: type, streak: streakThreshold });
   }
   // Show notif
-  const labels = { shield: 'Shield didapat! Tahan 1 serangan.', gun: 'Gun didapat! Serang player lain.', hint: 'Hint didapat! Hapus 1 jawaban salah.' };
+  const labels = { shield: 'Shield didapat! Tahan 1 serangan.', gun: 'Gun didapat! Serang player lain.', hint: 'Hint didapat! Hapus 1 jawaban salah.', doublePoints: '⭐ 2× Poin didapat! Poin soal berikutnya dobel.', freezeTimer: '🧊 Freeze Timer didapat! Timer soal berikutnya beku.' };
   const el = document.createElement('div');
   el.className = 'item-got-notif';
   el.textContent = labels[type] || 'Dapat item!';
@@ -1186,6 +1295,26 @@ window.useItem = function(type) {
   }
   if (type === 'hint') {
     useHint();
+    return;
+  }
+  if (type === 'doublePoints') {
+    if (doublePointsActive) { showAttackNotif('2× Poin sudah antri untuk soal berikutnya!', false, true); return; }
+    if (answered) { showAttackNotif('Akan aktif mulai soal berikutnya!', false, true); }
+    doublePointsActive = true;
+    myItems.doublePoints--;
+    updateItemUI();
+    if (currentRoom) update(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}/items`), myItems);
+    showAttackNotif('⭐ 2× Poin aktif untuk soal berikutnya!', false, true);
+    return;
+  }
+  if (type === 'freezeTimer') {
+    if (freezeTimerActive) { showAttackNotif('Freeze Timer sudah antri untuk soal berikutnya!', false, true); return; }
+    if (answered) { showAttackNotif('Akan aktif mulai soal berikutnya!', false, true); }
+    freezeTimerActive = true;
+    myItems.freezeTimer--;
+    updateItemUI();
+    if (currentRoom) update(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}/items`), myItems);
+    showAttackNotif('🧊 Freeze Timer aktif untuk soal berikutnya!', false, true);
     return;
   }
 };
@@ -1351,6 +1480,259 @@ function showScoreDrop(delta) {
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 1500);
 }
+
+// ===== EMERGENCY REJOIN =====
+let _rejoinCountdownInterval = null;
+
+function checkRejoinGrace() {
+  const savedRoom = localStorage.getItem('quizRoom');
+  const quitAt = parseInt(localStorage.getItem('quizRoomQuitAt') || '0');
+  if (!savedRoom || !quitAt) { hideRejoinBanner(); return; }
+
+  const elapsed = Date.now() - quitAt;
+  const GRACE = 60000; // 60 detik
+  if (elapsed >= GRACE) {
+    // Grace period expired — clean up
+    localStorage.removeItem('quizRoomQuitAt');
+    hideRejoinBanner();
+    return;
+  }
+
+  // Grace period masih aktif — tampilkan banner
+  showRejoinBanner(savedRoom, Math.ceil((GRACE - elapsed) / 1000));
+}
+
+function showRejoinBanner(roomCode, secondsLeft) {
+  const banner = document.getElementById('rejoin-banner');
+  const codeDisplay = document.getElementById('rejoin-room-code-display');
+  const countdownDisplay = document.getElementById('rejoin-countdown-display');
+  if (!banner) return;
+  codeDisplay.textContent = roomCode;
+  countdownDisplay.textContent = secondsLeft;
+  banner.style.display = 'block';
+
+  clearInterval(_rejoinCountdownInterval);
+  let remaining = secondsLeft;
+  _rejoinCountdownInterval = setInterval(() => {
+    remaining--;
+    if (countdownDisplay) countdownDisplay.textContent = remaining;
+    if (remaining <= 0) {
+      clearInterval(_rejoinCountdownInterval);
+      hideRejoinBanner();
+      localStorage.removeItem('quizRoomQuitAt');
+    }
+  }, 1000);
+}
+
+function hideRejoinBanner() {
+  clearInterval(_rejoinCountdownInterval);
+  const banner = document.getElementById('rejoin-banner');
+  if (banner) banner.style.display = 'none';
+}
+// typo fix alias
+function hidRejoinBanner() { hideRejoinBanner(); }
+
+// DOUBLE CHECK: Konfirmasi sebelum rejoin
+window.doRejoin = async function() {
+  const savedRoom = localStorage.getItem('quizRoom');
+  const quitAt = parseInt(localStorage.getItem('quizRoomQuitAt') || '0');
+  if (!savedRoom) { hideRejoinBanner(); return; }
+
+  // Double check: pastikan grace period belum habis
+  if (quitAt && (Date.now() - quitAt) >= 60000) {
+    hideRejoinBanner();
+    localStorage.removeItem('quizRoomQuitAt');
+    showError('join-error', 'Waktu rejoin sudah habis (60 detik). Silakan join manual.');
+    return;
+  }
+
+  // Double check: pastikan room masih ada & user masih terdaftar sebagai player
+  if (!currentUser) { showError('join-error', 'Kamu belum login!'); return; }
+  const roomSnap = await get(ref(db, `rooms/${savedRoom}`));
+  if (!roomSnap.exists()) {
+    hideRejoinBanner();
+    localStorage.removeItem('quizRoom');
+    localStorage.removeItem('quizRoomQuitAt');
+    showError('join-error', 'Room tidak ditemukan lagi.');
+    return;
+  }
+  const playerSnap = await get(ref(db, `rooms/${savedRoom}/players/${currentUser.uid}`));
+  if (!playerSnap.exists()) {
+    // Player sudah dihapus — coba rejoin ulang sebagai player baru
+    hideRejoinBanner();
+    localStorage.removeItem('quizRoomQuitAt');
+    showError('join-error', 'Sesi kamu sudah berakhir. Silakan join manual dengan kode ' + savedRoom);
+    document.getElementById('input-room-code').value = savedRoom;
+    return;
+  }
+
+  // Semua check lewat — lakukan rejoin
+  clearInterval(_rejoinCountdownInterval);
+  hideRejoinBanner();
+  localStorage.removeItem('quizRoomQuitAt');
+  currentRoom = savedRoom;
+
+  const roomData = roomSnap.val();
+  const status = roomData.status;
+  if (status === 'waiting') {
+    enterWaitingRoom(savedRoom);
+  } else if (status === 'playing' || status === 'break') {
+    await startQuiz(savedRoom);
+  } else if (status === 'finished') {
+    await showResult(savedRoom);
+  } else {
+    showError('join-error', 'Status room tidak dikenali.');
+  }
+};
+
+// ===== BACKGROUND MUSIC (Web Audio API ambient loop) =====
+let _bgmCtx = null;
+let _bgmNodes = [];
+let _bgmPlaying = false;
+let _bgmEnabled = localStorage.getItem('quizBGM') !== 'off'; // default ON
+
+function buildAmbientLoop() {
+  // Buat ulang karena AudioContext bisa saja di-close
+  if (_bgmCtx && _bgmCtx.state !== 'closed') {
+    _bgmCtx.close().catch(()=>{});
+  }
+  _bgmNodes = [];
+  _bgmCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const ctx = _bgmCtx;
+  const master = ctx.createGain();
+  master.gain.value = 0.08;
+  master.connect(ctx.destination);
+
+  // Layer 1: sub bass pulse (80 Hz, sangat pelan)
+  function makePulse(freq, period, vol) {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    osc.connect(g);
+    g.connect(master);
+    g.gain.value = 0;
+    osc.start();
+    let up = true;
+    const id = setInterval(() => {
+      if (!_bgmPlaying) return;
+      const now = ctx.currentTime;
+      if (up) {
+        g.gain.cancelScheduledValues(now);
+        g.gain.setValueAtTime(0, now);
+        g.gain.linearRampToValueAtTime(vol, now + period * 0.4);
+        g.gain.linearRampToValueAtTime(0, now + period);
+      }
+      up = !up;
+    }, period * 500);
+    _bgmNodes.push({ osc, g, id });
+  }
+
+  // Layer 2: gentle pad chord (two oscillators slightly detuned for warmth)
+  function makePad(freq, detune, vol) {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = freq;
+    osc.detune.value = detune;
+    osc.connect(g);
+    g.connect(master);
+    g.gain.value = vol;
+    osc.start();
+    _bgmNodes.push({ osc, g });
+  }
+
+  // Layer 3: slow hi-freq shimmer
+  function makeShimmer(freq, rate, vol) {
+    const osc = ctx.createOscillator();
+    const lfo = ctx.createOscillator();
+    const lfoGain = ctx.createGain();
+    const g = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    lfo.type = 'sine';
+    lfo.frequency.value = rate;
+    lfoGain.gain.value = freq * 0.015;
+    lfo.connect(lfoGain);
+    lfoGain.connect(osc.frequency);
+    osc.connect(g);
+    g.connect(master);
+    g.gain.value = vol;
+    lfo.start();
+    osc.start();
+    _bgmNodes.push({ osc, g, extra: [lfo, lfoGain] });
+  }
+
+  makePulse(80, 4, 0.6);
+  makePad(220, 0,   0.25);
+  makePad(220, 7,   0.2);
+  makePad(330, -5,  0.15);
+  makePad(440, 3,   0.1);
+  makeShimmer(880, 0.3, 0.06);
+  makeShimmer(1320, 0.2, 0.04);
+
+  _bgmPlaying = true;
+}
+
+function stopBGM() {
+  _bgmPlaying = false;
+  _bgmNodes.forEach(n => {
+    try { if (n.id) clearInterval(n.id); } catch(e) {}
+    try { n.osc.stop(); } catch(e) {}
+    try { if (n.extra) n.extra.forEach(x => x.disconnect && x.disconnect()); } catch(e) {}
+  });
+  _bgmNodes = [];
+  if (_bgmCtx) { _bgmCtx.close().catch(()=>{}); _bgmCtx = null; }
+}
+
+function startBGM() {
+  if (_bgmPlaying) return;
+  buildAmbientLoop();
+}
+
+window.toggleBGM = function() {
+  _bgmEnabled = !_bgmEnabled;
+  localStorage.setItem('quizBGM', _bgmEnabled ? 'on' : 'off');
+  const iconOn  = document.getElementById('music-icon-on');
+  const iconOff = document.getElementById('music-icon-off');
+  const label   = document.getElementById('music-label');
+  if (_bgmEnabled) {
+    startBGM();
+    if (iconOn)  iconOn.style.display  = '';
+    if (iconOff) iconOff.style.display = 'none';
+    if (label)   label.textContent     = 'Musik On';
+  } else {
+    stopBGM();
+    if (iconOn)  iconOn.style.display  = 'none';
+    if (iconOff) iconOff.style.display = '';
+    if (label)   label.textContent     = 'Musik';
+  }
+};
+
+// Init BGM state icon on load
+(function initBGMUI() {
+  const iconOn  = document.getElementById('music-icon-on');
+  const iconOff = document.getElementById('music-icon-off');
+  const label   = document.getElementById('music-label');
+  if (_bgmEnabled) {
+    if (iconOn)  iconOn.style.display  = '';
+    if (iconOff) iconOff.style.display = 'none';
+    if (label)   label.textContent     = 'Musik On';
+  } else {
+    if (iconOn)  iconOn.style.display  = 'none';
+    if (iconOff) iconOff.style.display = '';
+    if (label)   label.textContent     = 'Musik';
+  }
+})();
+
+// Auto-start BGM on first user interaction (browser policy requires gesture)
+let _bgmStarted = false;
+document.addEventListener('click', () => {
+  if (!_bgmStarted && _bgmEnabled) {
+    _bgmStarted = true;
+    startBGM();
+  }
+}, { once: false });
 
 // ===== DARK / LIGHT MODE TOGGLE =====
 let isLightMode = false;
