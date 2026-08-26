@@ -573,8 +573,11 @@ window.exportCSV = async function() {
   const rankHeaders = ['Peringkat', 'Nama', 'Skor Akhir', 'Akurasi (%)', 'Jawaban Benar', 'Jawaban Salah', 'Serangan Dikirim', 'Serangan Diterima'];
   const rankRows = players.map((p, i) => {
     const correct = p.correct || 0;
-    const wrong = Math.max(0, totalQ - correct);
-    const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+    // Bug C fix: totalQ per level player untuk accuracy yang akurat
+    const pLvl = p.level || 1;
+    const pTotalQ = (activeQuestionsByLevel[pLvl] || activeQuestions || []).length || totalQ;
+    const wrong = Math.max(0, pTotalQ - correct);
+    const acc = pTotalQ > 0 ? Math.round((correct / pTotalQ) * 100) : 0;
     return [
       i + 1,
       p.name || '-',
@@ -629,16 +632,21 @@ window.exportCSV = async function() {
   XLSX.utils.book_append_sheet(wb, wsRank, 'Peringkat');
 
   // ===== SHEET 3: DETAIL JAWABAN PER SOAL =====
-  const ansHeaders = ['Nama', ...Array.from({ length: totalQ }, (_, i) => `Soal ${i + 1}`), 'Total Benar', 'Total Salah'];
+  // Bug #7 fix: pakai soal sesuai level masing-masing player
+  const ansHeaders = ['Nama', 'Level', ...Array.from({ length: totalQ }, (_, i) => `Soal ${i + 1}`), 'Total Benar', 'Total Salah'];
   const ansRows = players.map(p => {
     const answers = p.answers || {};
-    const correctArr = activeQuestions?.map((q, qi) => {
+    const playerLevel = p.level || 1;
+    const playerQs = activeQuestionsByLevel[playerLevel] || activeQuestions || [];
+    const correctArr = playerQs.map((q, qi) => {
       const ans = answers[`q${qi}`];
       if (ans === undefined || ans === null) return '-';
       return ans === q.ans ? '✓' : '✗';
-    }) || Array(totalQ).fill('-');
+    });
+    // Pad sisanya jika jumlah soal player lebih sedikit dari totalQ
+    while (correctArr.length < totalQ) correctArr.push('-');
     const correct = p.correct || 0;
-    return [p.name || '-', ...correctArr, correct, Math.max(0, totalQ - correct)];
+    return [p.name || '-', `Level ${playerLevel}`, ...correctArr, correct, Math.max(0, playerQs.length - correct)];
   });
 
   const wsAns = XLSX.utils.aoa_to_sheet([ansHeaders, ...ansRows]);
@@ -651,9 +659,17 @@ window.exportCSV = async function() {
 };
 
 // ===== THEME =====
+// Bug #11 fix: hanya deselect theme-card di dalam .theme-grid parent yang sama,
+// bukan semua .theme-card di seluruh halaman (agar pilihan break/streak/timer tidak ikut reset)
 window.selectTheme = function(theme, el) {
   selectedTheme = theme;
-  document.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
+  const parentGrid = el.closest('.theme-grid');
+  if (parentGrid) {
+    parentGrid.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
+  } else {
+    // fallback: hanya deselect saudara langsung
+    el.parentElement.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
+  }
   el.classList.add('selected');
 };
 
@@ -769,7 +785,7 @@ function listenToPlayers(code) {
         const li = document.createElement('li');
         li.style.cursor = 'pointer';
         li.title = 'Klik untuk kick';
-        li.innerHTML = `<span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> ${p.name}</span><button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:#2d0a0a;border:1px solid #ef4444;border-radius:6px;padding:2px 8px;font-size:0.7rem;color:#ef4444;cursor:pointer">Kick</button>`;
+        li.innerHTML = `<span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> ${p.name} ${levelBadgeAdmin(p.level || 1)}</span><button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:#2d0a0a;border:1px solid #ef4444;border-radius:6px;padding:2px 8px;font-size:0.7rem;color:#ef4444;cursor:pointer">Kick</button>`;
         li.onclick = () => kickPlayer(uid, p.name);
         list.appendChild(li);
       });
@@ -825,19 +841,36 @@ function shuffleArray(arr) {
   return a;
 }
 
+// Bug #7 fix: activeQuestions per level — karena tiap player dapat soal sesuai levelnya
+// activeQuestions tetap ada untuk referensi admin (pakai level 1 sebagai default preview)
+// activeQuestionsByLevel menyimpan soal per level untuk export CSV & analisis yang akurat
+let activeQuestionsByLevel = {}; // { 1: [...], 2: [...], 3: [...] }
+
 async function showLiveScreen() {
   await loadQuestions();
   clearListeners();
   showScreen('live');
-  // Slice soal sesuai questionCount (dan shuffle jika diaktifkan)
-  let allQ = QUESTIONS[activeTheme] || [];
-  if (shuffleQuestions) allQ = shuffleArray(allQ);
-  activeQuestions = allQ.slice(0, questionCount);
+  // Susun soal per level, masing-masing di-shuffle dan di-slice sesuai questionCount
+  const allQ = QUESTIONS[activeTheme] || [];
+  activeQuestionsByLevel = {};
+  const levels = [1, 2, 3];
+  levels.forEach(lv => {
+    let lvQ = allQ.filter(q => (q.level || 1) === lv);
+    if (shuffleQuestions) lvQ = shuffleArray(lvQ);
+    // Fallback: kalau level kosong, pakai semua soal (sama dengan fix Bug #1 di player)
+    if (lvQ.length === 0) lvQ = shuffleQuestions ? shuffleArray([...allQ]) : [...allQ];
+    activeQuestionsByLevel[lv] = lvQ.slice(0, questionCount);
+  });
+  // activeQuestions = soal level 1 sebagai referensi preview admin
+  activeQuestions = activeQuestionsByLevel[1] || [];
+
   const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
   const breakLabel = breakEvery === 0 ? 'Langsung' : `Jeda tiap ${breakEvery} soal`;
   const shuffleLabel = shuffleQuestions ? ' · Acak' : ' · Urut';
+  const perLevelCount = Object.values(activeQuestionsByLevel).map((q, i) => `L${i+1}:${q.length}`).join(' ');
   document.getElementById('live-theme-label').textContent =
-    'Tema: ' + (themeLabels[activeTheme] || '-') + ' · ' + breakLabel + ` · Streak ${streakThreshold}x · ${timerDuration}dtk · ${activeQuestions.length} soal` + shuffleLabel;
+    'Tema: ' + (themeLabels[activeTheme] || '-') + ' · ' + breakLabel +
+    ` · Streak ${streakThreshold}x · ${timerDuration}dtk · ${perLevelCount} soal` + shuffleLabel;
   seenLogKeys.clear();
   displayCurrentQ();
   listenToScores();
@@ -1047,33 +1080,48 @@ function listenToScores() {
     players.sort((a, b) => (b.score || 0) - (a.score || 0));
     const list = document.getElementById('live-scores');
     list.innerHTML = '';
-    const totalQ = activeQuestions?.length || questionCount || 10;
-    const batchEnd = breakEvery > 0
-      ? Math.min(Math.ceil((currentQIndex + 1) / breakEvery) * breakEvery, totalQ)
-      : totalQ;
+    // Bug C fix: batchEnd dan totalQ per player sesuai level — dihitung di dalam loop
+    // Untuk summary global, pakai level 1 sebagai referensi (atau rata-rata)
+    const refTotalQ = activeQuestions?.length || questionCount || 10;
+    const refBatchEnd = breakEvery > 0
+      ? Math.min(Math.ceil((currentQIndex + 1) / breakEvery) * breakEvery, refTotalQ)
+      : refTotalQ;
 
-    // Summary: berapa peserta sudah selesai batch ini
-    const doneBatch = players.filter(p => (p.myQuestion || 0) >= batchEnd).length;
+    // Summary: berapa peserta sudah selesai batch ini (cek per level masing-masing)
+    const doneBatch = players.filter(p => {
+      const pLevel = p.level || 1;
+      const pTotalQ = (activeQuestionsByLevel[pLevel] || activeQuestions || []).length || questionCount || 10;
+      const pBatchEnd = breakEvery > 0
+        ? Math.min(Math.ceil((currentQIndex + 1) / breakEvery) * breakEvery, pTotalQ)
+        : pTotalQ;
+      return (p.myQuestion || 0) >= pBatchEnd;
+    }).length;
     const summaryEl = document.getElementById('batch-progress-summary');
     if (summaryEl) {
       summaryEl.textContent = breakEvery > 0
-        ? `${doneBatch}/${players.length} peserta selesai batch ini (soal ${batchEnd})`
+        ? `${doneBatch}/${players.length} peserta selesai batch ini (soal ${refBatchEnd})`
         : `${doneBatch}/${players.length} peserta selesai`;
       summaryEl.style.color = doneBatch === players.length ? '#22c55e' : '#f97316';
     }
 
     players.forEach((p, i) => {
       const li = document.createElement('li');
-      const progress = Math.min(p.myQuestion || 0, totalQ);
-      const isDone = progress >= batchEnd;
+      // Bug C fix: totalQ per player sesuai levelnya, bukan selalu level 1
+      const pLevel = p.level || 1;
+      const pTotalQ = (activeQuestionsByLevel[pLevel] || activeQuestions || []).length || questionCount || 10;
+      const pBatchEnd = breakEvery > 0
+        ? Math.min(Math.ceil((currentQIndex + 1) / breakEvery) * breakEvery, pTotalQ)
+        : pTotalQ;
+      const progress = Math.min(p.myQuestion || 0, pTotalQ);
+      const isDone = progress >= pBatchEnd;
       const progressBar = `<div style="width:80px;height:5px;background:#1e293b;border-radius:99px;overflow:hidden">
-        <div style="height:100%;width:${(progress/totalQ)*100}%;background:${isDone ? '#22c55e' : '#38bdf8'};border-radius:99px;transition:width 0.3s"></div>
+        <div style="height:100%;width:${(progress/pTotalQ)*100}%;background:${isDone ? '#22c55e' : '#38bdf8'};border-radius:99px;transition:width 0.3s"></div>
       </div>`;
       li.innerHTML = `
-        <span style="flex:1">${i+1}. ${p.name}${levelBadgeAdmin(p.level || 1)}</span>
+        <span style="flex:1">${i+1}. ${p.name}${levelBadgeAdmin(pLevel)}</span>
         <span style="display:flex;gap:8px;align-items:center">
           ${progressBar}
-          <span style="font-size:0.78rem;color:${isDone ? '#22c55e' : '#94a3b8'};min-width:32px;text-align:right">${progress}/${totalQ}</span>
+          <span style="font-size:0.78rem;color:${isDone ? '#22c55e' : '#94a3b8'};min-width:32px;text-align:right">${progress}/${pTotalQ}</span>
           <span class="score-val" style="min-width:36px;text-align:right">${p.score || 0}</span>
         </span>`;
       list.appendChild(li);
@@ -1096,9 +1144,10 @@ async function showFinalScores() {
   const medals = ['1st','2nd','3rd'];
   players.forEach((p, i) => {
     const li = document.createElement('li');
-    // Tambah accuracy info kalau ada
+    // Tambah accuracy info — Bug C fix: totalQ per level player
     const correct = p.correct || 0;
-    const totalQ = activeQuestions?.length || questionCount || 10;
+    const pLv = p.level || 1;
+    const totalQ = (activeQuestionsByLevel[pLv] || activeQuestions || []).length || questionCount || 10;
     const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
     const accText = `<span style="font-size:0.75rem;color:#64748b;margin-left:4px">${acc}%</span>`;
     li.innerHTML = `<span>${medals[i] || `#${i+1}`} ${p.name}${levelBadgeAdmin(p.level || 1)}${accText}</span><span class="score-val">${p.score || 0} poin</span>`;
@@ -1109,46 +1158,46 @@ async function showFinalScores() {
 }
 
 function analyzeHardestQuestions(playersSnap) {
+  // Bug #4 & #7 fix: analisis per level agar tidak tercampur
   const container = document.getElementById('hardest-questions-list');
   if (!playersSnap || !playersSnap.exists() || !activeTheme) {
     container.innerHTML = '<div style="font-size:0.8rem;color:#475569;text-align:center;padding:8px">Tidak ada data jawaban.</div>';
     return;
   }
 
-  const qs = QUESTIONS[activeTheme];
-  const totalPlayers = playersSnap.size || Object.keys(playersSnap.val()).length;
-
-  // Hitung berapa player yang salah tiap soal
-  // wrongCount[i] = jumlah player yang menjawab salah soal ke-i
-  const wrongCount = new Array(qs.length).fill(0);
-  const answeredCount = new Array(qs.length).fill(0);
-
-  playersSnap.forEach(child => {
-    const p = child.val();
-    if (!p.answers) return;
+  // Kumpulkan semua scored soal dari semua level, masing-masing dengan soal yang tepat
+  const allScored = [];
+  [1, 2, 3].forEach(lv => {
+    const qs = activeQuestionsByLevel[lv] || [];
+    if (!qs.length) return;
+    const wrongCount = new Array(qs.length).fill(0);
+    const answeredCount = new Array(qs.length).fill(0);
+    playersSnap.forEach(child => {
+      const p = child.val();
+      if (!p.answers || (p.level || 1) !== lv) return;
+      qs.forEach((q, i) => {
+        const given = p.answers[`q${i}`];
+        if (given === undefined || given === null) return;
+        answeredCount[i]++;
+        if (given === -1 || given !== q.ans) wrongCount[i]++;
+      });
+    });
     qs.forEach((q, i) => {
-      const given = p.answers[`q${i}`];
-      if (given === undefined || given === null) return;
-      answeredCount[i]++;
-      // -1 = timeout (tidak dijawab = salah), selain jawaban benar = salah
-      if (given === -1 || given !== q.ans) wrongCount[i]++;
+      if (answeredCount[i] === 0) return;
+      allScored.push({
+        level: lv,
+        index: i,
+        q: q.q,
+        ansText: q.opts[q.ans],
+        wrong: wrongCount[i],
+        answered: answeredCount[i],
+        pct: Math.round((wrongCount[i] / answeredCount[i]) * 100)
+      });
     });
   });
 
-  // Buat array soal dengan % salah, filter yg ada jawaban
-  const scored = qs.map((q, i) => ({
-    index: i,
-    q: q.q,
-    ansText: q.opts[q.ans],
-    wrong: wrongCount[i],
-    answered: answeredCount[i],
-    pct: answeredCount[i] > 0 ? Math.round((wrongCount[i] / answeredCount[i]) * 100) : 0
-  })).filter(s => s.answered > 0);
-
-  // Sort dari % salah tertinggi
-  scored.sort((a, b) => b.pct - a.pct);
-
-  const top3 = scored.slice(0, 3);
+  allScored.sort((a, b) => b.pct - a.pct);
+  const top3 = allScored.slice(0, 3);
   if (top3.length === 0) {
     container.innerHTML = '<div style="font-size:0.8rem;color:#475569;text-align:center;padding:8px">Belum ada data jawaban peserta.</div>';
     return;
@@ -1156,10 +1205,9 @@ function analyzeHardestQuestions(playersSnap) {
 
   const rankClass = ['', 'rank-2', 'rank-3'];
   const rankLabel = ['#1 Paling Susah', '#2 Susah', '#3 Cukup Susah'];
-
   container.innerHTML = top3.map((s, ri) => `
     <div class="hard-q-card ${rankClass[ri]}">
-      <div class="hard-q-rank">${rankLabel[ri]} · Soal ${s.index + 1}</div>
+      <div class="hard-q-rank">${rankLabel[ri]} · L${s.level} Soal ${s.index + 1}</div>
       <div class="hard-q-text">${s.q}</div>
       <div class="hard-q-ans">${s.ansText}</div>
       <div class="hard-q-bar-wrap">
@@ -1175,7 +1223,10 @@ window.newRoom = function() {
   currentRoom = null;
   selectedTheme = null;
   activeTheme = null;
-  document.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
+  activeQuestionsByLevel = {};
+  // Hanya reset card di create screen
+  const createScreen = document.getElementById('screen-create');
+  if (createScreen) createScreen.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
   // Reset streak selection to default 3
   streakThreshold = 3;
   document.querySelectorAll('#streak-2,#streak-3,#streak-4,#streak-5').forEach(c => c.classList.remove('selected'));
@@ -1228,7 +1279,7 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, sh
       const uid = child.key;
       updates[`rooms/${currentRoom}/players/${uid}/score`] = 0;
       updates[`rooms/${currentRoom}/players/${uid}/correct`] = 0;
-      updates[`rooms/${currentRoom}/players/${uid}/items`] = { shield: 0, gun: 0, hint: 0 };
+      updates[`rooms/${currentRoom}/players/${uid}/items`] = { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 };
       updates[`rooms/${currentRoom}/players/${uid}/streak`] = 0;
       updates[`rooms/${currentRoom}/players/${uid}/myQuestion`] = 0;
       updates[`rooms/${currentRoom}/players/${uid}/answers`] = null;
@@ -1258,7 +1309,10 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, sh
   streakThreshold = sThreshold;
   currentQIndex = 0;
   selectedTheme = null;
-  document.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
+  activeQuestionsByLevel = {};
+  // Bug E fix: hanya reset theme-card di replay-config screen, bukan seluruh halaman
+  const replayScreen = document.getElementById('screen-replay-config');
+  if (replayScreen) replayScreen.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
 
   // Admin balik ke manage/waiting room screen
   document.getElementById('admin-room-code').textContent = currentRoom;

@@ -667,6 +667,11 @@ async function startQuiz(code) {
 
   // Filter soal sesuai level pemain
   let allQ = (QUESTIONS[theme] || []).filter(q => (q.level || 1) === myLevel);
+  // Bug #1 fix: fallback ke semua soal jika tidak ada soal untuk level ini
+  if (allQ.length === 0) {
+    console.warn(`[Quiz] Tidak ada soal untuk level ${myLevel} di tema "${theme}". Memakai semua soal.`);
+    allQ = QUESTIONS[theme] || [];
+  }
   if (shouldShuffle) {
     allQ = [...allQ];
     for (let i = allQ.length - 1; i > 0; i--) {
@@ -687,7 +692,12 @@ async function startQuiz(code) {
   const progressSnap = await get(ref(db, `rooms/${code}/players/${currentUser.uid}/myQuestion`));
   currentQ = progressSnap.exists() ? (progressSnap.val() || 0) : 0;
 
-  waitingAtBreak = false;
+  // Bug D fix: cek apakah player seharusnya masih menunggu admin di breakpoint
+  // (bisa terjadi jika player refresh tepat setelah selesai batch)
+  const adminBatchNow = roomData.adminBatchStart ?? 1;
+  const myBatchNow = myBreakEvery > 0 && currentQ > 0 ? Math.ceil(currentQ / myBreakEvery) : 0;
+  const isAtBreakPoint = myBreakEvery > 0 && currentQ > 0 && (currentQ % myBreakEvery === 0);
+  waitingAtBreak = isAtBreakPoint && (adminBatchNow <= myBatchNow);
 
   // Ambil jumlah jawaban benar dari Firebase (aman saat refresh)
   const correctSnap = await get(ref(db, `rooms/${code}/players/${currentUser.uid}/correct`));
@@ -711,12 +721,15 @@ async function startQuiz(code) {
   listenToAttacks(code);
   listenEmots(code);
 
-  // Countdown hanya untuk soal pertama (bukan resume/refresh di tengah)
-  if (currentQ === 0) {
-    showScreen('quiz');
+  showScreen('quiz');
+
+  if (waitingAtBreak) {
+    // Player sedang di breakpoint — tampilkan break screen dan tunggu sinyal admin
+    showBreakScreen(code);
+  } else if (currentQ === 0) {
+    // Countdown hanya untuk soal pertama
     showCountdown(() => loadQuestion(currentQ, code));
   } else {
-    showScreen('quiz');
     loadQuestion(currentQ, code);
   }
 }
@@ -930,10 +943,12 @@ async function answer(chosen, correct, btn, code, qIndex) {
   updateStreakUI();
 
   // Simpan jawaban + skor + progres soal user ke Firebase
+  // Bug A fix: streak juga disimpan agar tidak hilang saat refresh
   const nextQ = qIndex + 1;
   await update(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
     score: myScore,
     correct: myCorrect,
+    streak: myStreak,
     myQuestion: nextQ,
     [`answers/q${qIndex}`]: chosen
   });
@@ -1224,7 +1239,7 @@ window.confirmQuit = async function() {
           await remove(ref(db, `rooms/${quitRoom}/players/${currentUser.uid}`));
           localStorage.removeItem('quizRoom');
           localStorage.removeItem('quizRoomQuitAt');
-          hidRejoinBanner();
+          hideRejoinBanner();
         }
       }
     }, 60000);
@@ -1358,14 +1373,6 @@ function useHint() {
     showAttackNotif('Soal sudah dijawab!', false, true);
     return;
   }
-  const btns = document.querySelectorAll('.option-btn:not(:disabled)');
-  // Find current question correct answer
-  const q = questions[currentQ];
-  const wrongBtns = [];
-  btns.forEach((btn, i) => {
-    // Check all 4 buttons; find index matching wrong answers
-  });
-
   // Get all option buttons (all 4)
   const allBtns = document.querySelectorAll('.option-btn');
   const wrongIndexes = [];
@@ -1440,7 +1447,7 @@ async function fireGun(targetUid, targetName, targetHasShield) {
     fromName: myName,
     to: targetUid,
     toName: targetName,
-    damage: 100,
+    damage: 50,
     ts: Date.now()
   });
 
@@ -1452,18 +1459,25 @@ async function fireGun(targetUid, targetName, targetHasShield) {
 }
 
 // LISTEN TO INCOMING ATTACKS
+// Bug B fix: gunakan Set lokal untuk track serangan yang sudah diproses
+// attack._processed di .val() adalah objek baru tiap onValue dipanggil — tidak persist
+const _processedAttackKeys = new Set();
+
 function listenToAttacks(code) {
   if (attackListener) attackListener();
+  _processedAttackKeys.clear();
   const attacksRef = ref(db, `rooms/${code}/attacks`);
+  // Bug #10 fix: attackListener dihandle terpisah di clearListeners(),
+  // jangan push ke roomListeners agar tidak di-unsubscribe dua kali
   attackListener = onValue(attacksRef, snap => {
     if (!snap.exists()) return;
     snap.forEach(child => {
       const attack = child.val();
       if (attack.to !== currentUser.uid) return;
-      if (attack._processed) return;
+      if (_processedAttackKeys.has(child.key)) return;
 
-      // Mark as processed locally
-      attack._processed = true;
+      // Mark as processed — pakai Set lokal, bukan mutasi objek Firebase
+      _processedAttackKeys.add(child.key);
 
       if (myItems.shield > 0) {
         // Shield blocks!
@@ -1486,7 +1500,6 @@ function listenToAttacks(code) {
       }
     });
   });
-  roomListeners.push(attackListener);
 }
 
 function showAttackNotif(msg, isAttack = false, isInfo = false) {
@@ -1762,7 +1775,7 @@ document.addEventListener('click', () => {
     _bgmStarted = true;
     startBGM();
   }
-}, { once: false });
+}, { once: true });
 
 // ===== DARK / LIGHT MODE TOGGLE =====
 let isLightMode = false;
