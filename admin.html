@@ -169,6 +169,10 @@
   <p style="font-size:0.78rem;color:#64748b;margin-bottom:14px">Jika lebih dari jumlah soal di bank soal, semua soal akan dipakai.</p>
 
   <button class="btn btn-orange" onclick="createRoom()" style="margin-top:4px">Buat Room</button>
+  <button class="btn btn-primary" onclick="openUserManagement()" style="background:#1e3a5f;border-color:#38bdf8;color:#38bdf8">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Atur Level Pemain
+  </button>
   <button class="btn btn-outline" onclick="logoutAdmin()">Logout</button>
 </div>
 
@@ -213,6 +217,25 @@
       <div style="color:#334155;font-size:0.78rem;text-align:center;padding:16px 0">Belum ada aktivitas...</div>
     </div>
   </div>
+</div>
+
+<!-- USER MANAGEMENT -->
+<div class="card card-admin screen" id="screen-users">
+  <h2>Manajemen Pemain <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></h2>
+  <p class="info-text" style="margin-bottom:4px">Semua akun yang pernah login. Kamu bisa atur levelnya di sini.</p>
+  <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+    <input type="text" id="user-search" placeholder="Cari nama / email..." oninput="filterUserList()" style="flex:1;min-width:160px;padding:8px 12px;border-radius:9px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:0.85rem;outline:none"/>
+    <select id="user-filter-level" onchange="filterUserList()" style="padding:8px 12px;border-radius:9px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:0.85rem;outline:none;cursor:pointer">
+      <option value="all">Semua Level</option>
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+    </select>
+  </div>
+  <div id="user-list-container" style="display:flex;flex-direction:column;gap:8px;max-height:480px;overflow-y:auto">
+    <div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Memuat data pengguna...</div>
+  </div>
+  <button class="btn btn-outline" style="margin-top:16px" onclick="showScreen('create')">← Kembali ke Room</button>
 </div>
 
 <!-- RESULT -->
@@ -1047,7 +1070,7 @@ function listenToScores() {
         <div style="height:100%;width:${(progress/totalQ)*100}%;background:${isDone ? '#22c55e' : '#38bdf8'};border-radius:99px;transition:width 0.3s"></div>
       </div>`;
       li.innerHTML = `
-        <span style="flex:1">${i+1}. ${p.name}</span>
+        <span style="flex:1">${i+1}. ${p.name}${levelBadgeAdmin(p.level || 1)}</span>
         <span style="display:flex;gap:8px;align-items:center">
           ${progressBar}
           <span style="font-size:0.78rem;color:${isDone ? '#22c55e' : '#94a3b8'};min-width:32px;text-align:right">${progress}/${totalQ}</span>
@@ -1078,7 +1101,7 @@ async function showFinalScores() {
     const totalQ = activeQuestions?.length || questionCount || 10;
     const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
     const accText = `<span style="font-size:0.75rem;color:#64748b;margin-left:4px">${acc}%</span>`;
-    li.innerHTML = `<span>${medals[i] || `#${i+1}`} ${p.name}${accText}</span><span class="score-val">${p.score || 0} poin</span>`;
+    li.innerHTML = `<span>${medals[i] || `#${i+1}`} ${p.name}${levelBadgeAdmin(p.level || 1)}${accText}</span><span class="score-val">${p.score || 0} poin</span>`;
     list.appendChild(li);
   });
   showScreen('admin-result');
@@ -1242,6 +1265,100 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, sh
   showScreen('manage');
   listenToPlayers(currentRoom);
 }
+
+// ===== USER MANAGEMENT (LEVEL) =====
+let _allUsers = []; // cache semua user
+
+function levelBadgeAdmin(level) {
+  const colors = { 1: '#22c55e', 2: '#f97316', 3: '#ef4444' };
+  const labels = { 1: 'Level 1', 2: 'Level 2', 3: 'Level 3' };
+  const c = colors[level] || '#64748b';
+  const l = labels[level] || `Level ${level}`;
+  return `<span style="font-size:0.72rem;font-weight:700;background:${c}22;color:${c};border:1px solid ${c}55;border-radius:6px;padding:2px 8px">${l}</span>`;
+}
+
+window.openUserManagement = async function() {
+  showScreen('users');
+  await loadAllUsers();
+};
+
+async function loadAllUsers() {
+  const container = document.getElementById('user-list-container');
+  container.innerHTML = '<div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Memuat data pengguna...</div>';
+  try {
+    const snap = await get(ref(db, 'users'));
+    if (!snap.exists()) {
+      container.innerHTML = '<div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Belum ada pengguna yang pernah login.</div>';
+      return;
+    }
+    _allUsers = [];
+    snap.forEach(child => {
+      const u = child.val();
+      _allUsers.push({ uid: child.key, name: u.name || '(no name)', email: u.email || '', level: u.level || 1 });
+    });
+    _allUsers.sort((a, b) => a.name.localeCompare(b.name));
+    renderUserList(_allUsers);
+  } catch(e) {
+    container.innerHTML = `<div style="text-align:center;color:#ef4444;padding:24px;font-size:0.85rem">Gagal memuat: ${e.message}</div>`;
+  }
+}
+
+function renderUserList(users) {
+  const container = document.getElementById('user-list-container');
+  if (!users.length) {
+    container.innerHTML = '<div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Tidak ada pengguna yang cocok.</div>';
+    return;
+  }
+  container.innerHTML = '';
+  users.forEach(u => {
+    const card = document.createElement('div');
+    card.style.cssText = 'background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap';
+    card.innerHTML = `
+      <div style="flex:1;min-width:120px">
+        <div style="font-weight:700;font-size:0.9rem;color:#e2e8f0">${u.name}</div>
+        <div style="font-size:0.72rem;color:#64748b;margin-top:2px">${u.email || 'No email'}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+        ${levelBadgeAdmin(u.level)}
+        <div style="display:flex;gap:4px">
+          <button onclick="setUserLevel('${u.uid}', ${u.level - 1}, this)" ${u.level <= 1 ? 'disabled' : ''} title="Turunkan level"
+            style="width:28px;height:28px;border-radius:7px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;${u.level <= 1 ? 'opacity:0.3;cursor:not-allowed' : ''}">▼</button>
+          <button onclick="setUserLevel('${u.uid}', ${u.level + 1}, this)" ${u.level >= 3 ? 'disabled' : ''} title="Naikkan level"
+            style="width:28px;height:28px;border-radius:7px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;${u.level >= 3 ? 'opacity:0.3;cursor:not-allowed' : ''}">▲</button>
+        </div>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+window.filterUserList = function() {
+  const query = (document.getElementById('user-search').value || '').toLowerCase();
+  const levelFilter = document.getElementById('user-filter-level').value;
+  const filtered = _allUsers.filter(u => {
+    const matchText = u.name.toLowerCase().includes(query) || u.email.toLowerCase().includes(query);
+    const matchLevel = levelFilter === 'all' || String(u.level) === levelFilter;
+    return matchText && matchLevel;
+  });
+  renderUserList(filtered);
+};
+
+window.setUserLevel = async function(uid, newLevel, btn) {
+  if (newLevel < 1 || newLevel > 3) return;
+  btn.disabled = true;
+  btn.style.opacity = '0.4';
+  try {
+    await update(ref(db, `users/${uid}`), { level: newLevel });
+    // Update local cache
+    const u = _allUsers.find(x => x.uid === uid);
+    if (u) u.level = newLevel;
+    // Re-render dengan filter saat ini
+    window.filterUserList();
+  } catch(e) {
+    alert('Gagal update level: ' + e.message);
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+};
 </script>
 </body>
 </html>
