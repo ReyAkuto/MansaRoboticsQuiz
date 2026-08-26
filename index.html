@@ -428,6 +428,7 @@ async function loadQuestions() {
 let currentUser = null;
 let currentRoom = null;
 let myName = "";
+let myLevel = 1;   // level pemain: 1, 2, atau 3 (diambil dari Firebase)
 let myScore = 0;
 let currentQ = 0;          // soal yang sedang dikerjakan USER INI (bukan global)
 let answered = false;
@@ -460,6 +461,14 @@ async function writeLog(code, data) {
 }
 
 // ===== HELPERS =====
+function levelBadge(level) {
+  const colors = { 1: '#22c55e', 2: '#f97316', 3: '#ef4444' };
+  const labels = { 1: 'L1', 2: 'L2', 3: 'L3' };
+  const c = colors[level] || '#64748b';
+  const l = labels[level] || `L${level}`;
+  return `<span style="font-size:0.65rem;font-weight:700;background:${c}22;color:${c};border:1px solid ${c}55;border-radius:5px;padding:1px 5px;margin-left:4px;vertical-align:middle">${l}</span>`;
+}
+
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + id).classList.add('active');
@@ -504,6 +513,13 @@ onAuthStateChanged(auth, async user => {
     const snap = await get(ref(db, `users/${user.uid}/name`));
     if (snap.exists()) {
       myName = snap.val();
+      // Load level from Firebase
+      const levelSnap = await get(ref(db, `users/${user.uid}/level`));
+      myLevel = levelSnap.exists() ? (levelSnap.val() || 1) : 1;
+      // Ensure email is stored (in case it wasn't saved before)
+      if (user.email) {
+        await update(ref(db, `users/${user.uid}`), { email: user.email });
+      }
       // Try to reconnect to saved room on refresh (using localStorage now)
       const savedRoom = localStorage.getItem('quizRoom');
       if (savedRoom) {
@@ -548,7 +564,13 @@ window.saveName = async function() {
   const val = document.getElementById('input-name').value.trim();
   if (!val || val.length < 2) return showError('name-error', 'Nama minimal 2 karakter!');
   myName = val;
-  await set(ref(db, `users/${currentUser.uid}/name`), val);
+  myLevel = 1; // default level
+  await set(ref(db, `users/${currentUser.uid}`), {
+    name: val,
+    email: currentUser.email || '',
+    level: 1,
+    firstLogin: Date.now()
+  });
   showScreen('join');
   const nd = document.getElementById('join-display-name');
   if (nd) nd.textContent = myName;
@@ -569,9 +591,10 @@ window.joinRoom = async function() {
   currentRoom = code;
   localStorage.setItem('quizRoom', code);
   localStorage.removeItem('quizRoomQuitAt');
-  // Add player to room
+  // Add player to room (include level for leaderboard display)
   await set(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
     name: myName,
+    level: myLevel,
     score: 0,
     items: { shield: 0, gun: 0, hint: 0, doublePoints: 0, freezeTimer: 0 },
     streak: 0,
@@ -597,7 +620,7 @@ function enterWaitingRoom(code) {
     if (snap.exists()) {
       Object.values(snap.val()).forEach(p => {
         const li = document.createElement('li');
-        li.textContent = p.name;
+        li.innerHTML = `${p.name}${levelBadge(p.level || 1)}`;
         list.appendChild(li);
       });
     }
@@ -636,7 +659,14 @@ async function startQuiz(code) {
   const theme = roomData.theme || 'dasar';
   const qCount = roomData.questionCount || 25;
   const shouldShuffle = roomData.shuffleQuestions || false;
-  let allQ = QUESTIONS[theme] || [];
+  // Refresh level dari Firebase (bisa berubah kapan saja oleh admin)
+  const freshLevelSnap = await get(ref(db, `users/${currentUser.uid}/level`));
+  myLevel = freshLevelSnap.exists() ? (freshLevelSnap.val() || 1) : 1;
+  // Simpan level terbaru ke data player di room
+  await update(ref(db, `rooms/${code}/players/${currentUser.uid}`), { level: myLevel });
+
+  // Filter soal sesuai level pemain
+  let allQ = (QUESTIONS[theme] || []).filter(q => (q.level || 1) === myLevel);
   if (shouldShuffle) {
     allQ = [...allQ];
     for (let i = allQ.length - 1; i > 0; i--) {
@@ -1018,7 +1048,7 @@ async function showBreakScreen(code) {
   const snap = await get(ref(db, `rooms/${code}/players`));
   const players = [];
   if (snap.exists()) {
-    Object.entries(snap.val()).forEach(([uid, p]) => players.push({ uid, name: p.name, score: p.score || 0, shields: p.items?.shield || 0 }));
+    Object.entries(snap.val()).forEach(([uid, p]) => players.push({ uid, name: p.name, level: p.level || 1, score: p.score || 0, shields: p.items?.shield || 0 }));
   }
   players.sort((a, b) => b.score - a.score);
 
@@ -1031,7 +1061,7 @@ async function showBreakScreen(code) {
     const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank';
     const shieldBadge = (p.shields || 0) > 0 ? ` <span style="font-size:0.7rem"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>×${p.shields}</span>` : '';
     li.innerHTML = `<span class="rank ${rankClass}">${i === 0 ? '1st' : i === 1 ? '2nd' : i === 2 ? '3rd' : `#${i+1}`}</span>
-      <span class="player-name">${p.name}${p.uid === currentUser.uid ? ' <b style="color:#38bdf8">(Kamu)</b>' : ''}${shieldBadge}</span>
+      <span class="player-name">${p.name}${levelBadge(p.level)}${p.uid === currentUser.uid ? ' <b style="color:#38bdf8">(Kamu)</b>' : ''}${shieldBadge}</span>
       <span class="player-score">${p.score}</span>`;
     lb.appendChild(li);
   });
@@ -1054,7 +1084,7 @@ async function showResult(code) {
   const players = [];
   if (playersSnap.exists()) {
     Object.entries(playersSnap.val()).forEach(([uid, p]) => {
-      players.push({ uid, name: p.name, score: p.score || 0 });
+      players.push({ uid, name: p.name, level: p.level || 1, score: p.score || 0 });
     });
   }
   players.sort((a, b) => b.score - a.score);
@@ -1077,7 +1107,7 @@ async function showResult(code) {
     if (p.uid === currentUser.uid) li.classList.add('me');
     const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank';
     li.innerHTML = `<span class="rank ${rankClass}">${i === 0 ? '1st' : i === 1 ? '2nd' : i === 2 ? '3rd' : `#${i+1}`}</span>
-      <span class="player-name">${p.name}${p.uid === currentUser.uid ? ' (Kamu)' : ''}</span>
+      <span class="player-name">${p.name}${levelBadge(p.level)}${p.uid === currentUser.uid ? ' (Kamu)' : ''}</span>
       <span class="player-score">${p.score}</span>`;
     lb.appendChild(li);
   });
