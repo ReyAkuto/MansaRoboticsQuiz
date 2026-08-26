@@ -8,7 +8,8 @@
         "Menyimpan program robot",
         "Mengatur kecepatan motor robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Komponen mana yang termasuk aktuator pada robot?",
@@ -18,7 +19,8 @@
         "Motor DC",
         "Sensor suhu"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Apa tugas controller pada sebuah robot?",
@@ -28,7 +30,8 @@
         "Memproses data dan memberi perintah ke aktuator",
         "Menyimpan daya untuk robot"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Manakah yang merupakan contoh sensor jarak?",
@@ -38,7 +41,8 @@
         "Baterai Li-ion",
         "Driver motor L298N"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Pada robot sederhana, urutan kerja yang benar adalah...",
@@ -48,7 +52,8 @@
         "Sensor → Aktuator → Controller",
         "Sensor → Controller → Aktuator"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 1
     },
     {
       "q": "Sensor LDR digunakan untuk mendeteksi...",
@@ -58,7 +63,8 @@
         "Jarak benda di depan robot",
         "Kecepatan putaran roda robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan robot otonom?",
@@ -68,7 +74,8 @@
         "Robot yang bisa bergerak dan mengambil keputusan sendiri",
         "Robot yang tidak memiliki sensor sama sekali"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Baterai pada robot berfungsi sebagai...",
@@ -78,7 +85,8 @@
         "Sumber energi listrik untuk semua komponen",
         "Penghubung antara sensor dan controller"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Sensor suhu digunakan pada robot untuk...",
@@ -88,7 +96,8 @@
         "Mengukur kecepatan angin di sekitar robot",
         "Menyimpan nilai suhu ke dalam memori permanen"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Manakah yang bukan termasuk aktuator?",
@@ -98,7 +107,8 @@
         "Sensor infrared",
         "Pompa air mini"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "LED pada robot biasanya digunakan sebagai...",
@@ -108,7 +118,8 @@
         "Sumber daya cadangan robot",
         "Pengganti layar LCD"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan input pada sistem robot?",
@@ -118,7 +129,8 @@
         "Energi yang dihasilkan oleh baterai",
         "Gerakan yang dihasilkan oleh aktuator"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Sensor PIR digunakan untuk mendeteksi...",
@@ -128,7 +140,8 @@
         "Warna benda di depan robot",
         "Kelembaban udara sekitar robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Robot line follower menggunakan sensor apa untuk mengikuti garis?",
@@ -138,7 +151,8 @@
         "Sensor suhu",
         "Sensor tekanan"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa fungsi driver motor seperti L298N?",
@@ -148,7 +162,8 @@
         "Mengontrol arah dan kecepatan motor dari sinyal controller",
         "Mendeteksi apakah motor sedang panas atau tidak"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan output pada sistem robot?",
@@ -158,7 +173,8 @@
         "Gerakan atau aksi yang dihasilkan aktuator",
         "Program yang ditulis oleh pengguna"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Sensor ultrasonik bekerja dengan cara...",
@@ -168,7 +184,8 @@
         "Mengukur perubahan medan magnet di sekitar benda",
         "Mendeteksi panas yang dipancarkan benda"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa itu PWM dalam konteks kendali motor robot?",
@@ -178,7 +195,8 @@
         "Protokol komunikasi antara dua robot",
         "Metode mengukur jarak menggunakan gelombang radio"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Kenapa robot membutuhkan lebih dari satu sensor?",
@@ -188,7 +206,8 @@
         "Karena controller tidak bisa membaca hanya dari satu sensor",
         "Supaya baterai tidak cepat habis saat robot bergerak"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang terjadi jika robot tidak memiliki controller?",
@@ -198,7 +217,8 @@
         "Aktuator akan bekerja sendiri tanpa perintah",
         "Sensor akan langsung menggerakkan motor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Sensor kelembaban digunakan pada robot untuk...",
@@ -208,7 +228,8 @@
         "Menghitung jarak tempuh robot",
         "Mengontrol kecepatan kipas pendingin robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Relay pada robot berfungsi sebagai...",
@@ -218,7 +239,8 @@
         "Komponen penyimpan daya cadangan",
         "Penguat sinyal dari sensor ke controller"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa perbedaan sensor aktif dan sensor pasif?",
@@ -228,7 +250,8 @@
         "Sensor pasif butuh baterai, sensor aktif tidak",
         "Sensor aktif lebih kecil ukurannya dari sensor pasif"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Manakah yang termasuk contoh controller pada robot?",
@@ -238,7 +261,8 @@
         "Arduino Uno",
         "Baterai LiPo"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "Apa fungsi buzzer pada robot?",
@@ -248,7 +272,8 @@
         "Mengukur frekuensi getaran robot",
         "Mengirim sinyal ke sensor lainnya"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Sensor flex (lentur) pada robot digunakan untuk mendeteksi...",
@@ -258,7 +283,8 @@
         "Kecepatan putaran sendi robot",
         "Jarak antar komponen dalam robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan feedback pada sistem kendali robot?",
@@ -268,7 +294,8 @@
         "Data yang disimpan permanen di memori robot",
         "Sinyal dari baterai ke semua komponen"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Mengapa robot membutuhkan sumber daya listrik?",
@@ -278,7 +305,8 @@
         "Supaya controller bisa menyimpan lebih banyak program",
         "Agar motor bisa berputar tanpa perintah"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Sensor gyroscope pada robot berfungsi untuk...",
@@ -288,7 +316,8 @@
         "Mengukur kecepatan linier robot saat bergerak",
         "Membaca medan magnet di sekitar robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang membedakan robot dari mesin biasa?",
@@ -298,7 +327,8 @@
         "Robot selalu terhubung ke internet secara permanen",
         "Robot hanya bisa digunakan di pabrik besar"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Tombol push button pada robot biasanya digunakan sebagai...",
@@ -308,7 +338,8 @@
         "Komponen untuk menyimpan posisi robot",
         "Pengatur tegangan yang masuk ke motor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa itu encoder pada robot?",
@@ -318,7 +349,8 @@
         "Alat untuk menyimpan program ke dalam memori",
         "Driver yang mengontrol arah putaran motor"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 2
     },
     {
       "q": "Mengapa robot sumo menggunakan sensor jarak di bagian depan?",
@@ -328,7 +360,8 @@
         "Untuk menghitung kecepatan lawan yang mendekat",
         "Supaya robot bisa menyesuaikan warna dengan arena"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Sensor akselerometer pada robot digunakan untuk...",
@@ -338,7 +371,8 @@
         "Mengukur suhu motor saat bekerja keras",
         "Membaca data dari sensor lain secara bersamaan"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan robot mobile?",
@@ -348,7 +382,8 @@
         "Robot yang berukuran sangat kecil dan ringan",
         "Robot yang terhubung ke jaringan wifi secara terus menerus"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Kenapa sensor infrared sering digunakan pada robot line follower?",
@@ -358,7 +393,8 @@
         "Karena tidak membutuhkan daya listrik sama sekali",
         "Karena bisa mendeteksi garis dari jarak yang sangat jauh"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa fungsi kapasitor yang sering dipasang dekat motor pada robot?",
@@ -368,7 +404,8 @@
         "Meningkatkan kecepatan putaran motor secara otomatis",
         "Mendeteksi apakah motor sedang berputar atau tidak"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan sistem kendali terbuka (open loop) pada robot?",
@@ -378,7 +415,8 @@
         "Sistem yang terhubung ke internet untuk menerima perintah",
         "Sistem yang bisa memperbaiki dirinya sendiri secara otomatis"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa perbedaan robot analog dan robot digital?",
@@ -388,7 +426,8 @@
         "Robot digital tidak membutuhkan baterai untuk beroperasi",
         "Robot analog memiliki lebih banyak sensor dari robot digital"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Sensor magnetik (Hall effect) pada robot digunakan untuk...",
@@ -398,7 +437,8 @@
         "Membaca kecepatan aliran udara di sekitar robot",
         "Mendeteksi perubahan warna pada permukaan"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 3
     },
     {
       "q": "Apa itu duty cycle dalam kendali motor robot?",
@@ -408,7 +448,8 @@
         "Tegangan maksimum yang bisa diterima motor",
         "Waktu jeda antara dua perintah dari controller"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Mengapa robot membutuhkan regulator tegangan?",
@@ -418,7 +459,8 @@
         "Supaya sensor bisa membaca data lebih akurat",
         "Agar baterai tidak cepat kehabisan daya"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa fungsi sensor tekanan (pressure sensor) pada robot?",
@@ -428,7 +470,8 @@
         "Membaca kecepatan pergerakan robot di udara",
         "Mengukur jarak robot dari permukaan tanah"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 3
     },
     {
       "q": "Kenapa robot perlu dikalibrasi sebelum digunakan?",
@@ -438,7 +481,8 @@
         "Supaya controller bisa mengenali semua jenis sensor",
         "Agar program tidak mengalami error saat dijalankan"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan workspace pada robot arm?",
@@ -448,7 +492,8 @@
         "Program yang menentukan gerakan lengan robot",
         "Nama lain untuk controller pada robot arm"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Sensor color (warna) pada robot digunakan untuk...",
@@ -458,7 +503,8 @@
         "Mengukur intensitas cahaya secara keseluruhan",
         "Mengidentifikasi kecepatan perubahan cahaya"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang terjadi jika tegangan yang diberikan ke sensor melebihi spesifikasi maksimalnya?",
@@ -468,7 +514,8 @@
         "Sensor otomatis menurunkan tegangannya sendiri",
         "Data dari sensor akan lebih stabil"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa fungsi resistor pada rangkaian robot?",
@@ -478,7 +525,8 @@
         "Mengubah arus bolak-balik menjadi arus searah",
         "Memperkuat sinyal yang lemah dari sensor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan GND pada rangkaian robot?",
@@ -488,7 +536,8 @@
         "Pin khusus untuk menghubungkan sensor ke motor",
         "Nama pin untuk menerima sinyal analog"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Sensor gas pada robot digunakan untuk...",
@@ -498,7 +547,8 @@
         "Mengatur aliran udara yang masuk ke motor",
         "Membaca suhu pembakaran bahan bakar"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     }
   ],
   "programmer": [
@@ -510,7 +560,8 @@
         "Kabel penghubung antara sensor dan motor",
         "Nama lain dari baterai pada robot"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 1
     },
     {
       "q": "Apa itu algoritma?",
@@ -520,7 +571,8 @@
         "Jenis sensor yang dipakai pada robot",
         "Nama lain dari baterai lithium"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Manakah contoh algoritma dalam kehidupan sehari-hari?",
@@ -530,7 +582,8 @@
         "Tidur sambil makan supaya hemat waktu",
         "Makan, ambil sendok, baru duduk"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa fungsi variabel dalam program?",
@@ -540,7 +593,8 @@
         "Menyimpan data atau nilai yang dibutuhkan program",
         "Menggerakkan lengan robot secara otomatis"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Manakah contoh penulisan variabel yang benar?",
@@ -550,7 +604,8 @@
         "int umur = 10",
         "if (x > 5) {}"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Apa yang dilakukan perintah if dalam program?",
@@ -560,7 +615,8 @@
         "Menghentikan semua motor yang sedang berputar",
         "Menyimpan nilai ke dalam memori robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Kapan bagian else dalam if-else dijalankan?",
@@ -570,7 +626,8 @@
         "Saat kondisi if ternyata salah",
         "Saat variabel belum diberi nilai"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Jika nilai = 50, apa yang terjadi pada kode: if (nilai > 60) { lulus } else { ulang }?",
@@ -580,7 +637,8 @@
         "Nilai berubah otomatis menjadi 60",
         "Perintah ulang dijalankan karena 50 tidak lebih dari 60"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 1
     },
     {
       "q": "Tipe data apa yang tepat untuk menyimpan angka bulat seperti 5 atau 100?",
@@ -590,7 +648,8 @@
         "int untuk bilangan bulat",
         "char untuk karakter angka"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Tipe data apa yang digunakan untuk menyimpan nilai benar atau salah?",
@@ -600,7 +659,8 @@
         "char karena hanya satu karakter",
         "boolean karena hanya bernilai true atau false"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan input dalam sebuah program?",
@@ -610,7 +670,8 @@
         "Data atau nilai yang dimasukkan ke dalam program",
         "Nama dari variabel yang dipakai"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan output dalam sebuah program?",
@@ -620,7 +681,8 @@
         "Variabel yang belum memiliki nilai",
         "Nama fungsi yang sedang dipakai"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 1
     },
     {
       "q": "Dalam program robot sederhana, urutan yang benar adalah...",
@@ -630,7 +692,8 @@
         "Input dulu, lalu diproses, lalu menghasilkan output",
         "Output dulu, baru input, baru proses"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Simbol apa yang digunakan untuk memeriksa apakah dua nilai sama?",
@@ -640,7 +703,8 @@
         "=> untuk kondisi sama",
         "== untuk memeriksa apakah dua nilai sama"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 1
     },
     {
       "q": "Apa arti tanda != dalam program?",
@@ -650,7 +714,8 @@
         "Tidak sama dengan nilai lain",
         "Lebih kecil dari nilai lain"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Apa arti tanda > dalam kondisi program?",
@@ -660,7 +725,8 @@
         "Nilainya tidak sama dengan lain",
         "Nilainya lebih kecil dari yang lain"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa arti tanda < dalam kondisi program?",
@@ -670,7 +736,8 @@
         "Nilainya tidak sama dengan lain",
         "Nilainya lebih kecil dari yang lain"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan percabangan dalam algoritma?",
@@ -680,7 +747,8 @@
         "Pilihan jalan yang berbeda tergantung kondisi",
         "Langkah terakhir untuk menghentikan program"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "int a = 10, int b = 3, int c = a - b. Berapa nilai c?",
@@ -690,7 +758,8 @@
         "7",
         "103"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "int x = 4, lalu x = x + 1. Berapa nilai x sekarang?",
@@ -700,7 +769,8 @@
         "41 karena digabung jadi string",
         "5 karena 4 ditambah 1"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 2
     },
     {
       "q": "Mengapa urutan langkah dalam algoritma itu penting?",
@@ -710,7 +780,8 @@
         "Karena komputer tidak bisa membaca urutan acak",
         "Agar variabel bisa menyimpan lebih banyak nilai"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan kondisi dalam if-else?",
@@ -720,7 +791,8 @@
         "Nama variabel yang dipakai dalam program",
         "Kecepatan eksekusi program per detik"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 2
     },
     {
       "q": "Jika dua kondisi harus benar semua, operator apa yang dipakai?",
@@ -730,7 +802,8 @@
         "== karena membandingkan nilai",
         "&& karena kedua kondisi harus benar"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 2
     },
     {
       "q": "Jika cukup salah satu kondisi saja yang benar, operator apa yang dipakai?",
@@ -740,7 +813,8 @@
         "! karena membalik nilainya",
         "!= karena kondisinya berbeda"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan komentar dalam program?",
@@ -750,7 +824,8 @@
         "Teks penjelasan yang tidak dijalankan program",
         "Fungsi khusus untuk menampilkan teks"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan bug dalam program?",
@@ -760,7 +835,8 @@
         "Kesalahan dalam program yang membuat hasil tidak sesuai",
         "Jenis perulangan yang sangat cepat"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "Manakah yang merupakan contoh output sebuah program robot?",
@@ -770,7 +846,8 @@
         "Lampu LED yang menyala karena perintah program",
         "Baterai yang sedang mengisi daya"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "Manakah yang merupakan contoh input dalam program robot?",
@@ -780,7 +857,8 @@
         "Bunyi buzzer sebagai peringatan",
         "Nilai jarak yang dibaca dari sensor"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 2
     },
     {
       "q": "Apa yang terjadi jika kondisi if salah dan tidak ada else?",
@@ -790,7 +868,8 @@
         "Program lanjut ke perintah berikutnya",
         "Semua variabel direset otomatis"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 2
     },
     {
       "q": "Manakah penulisan variabel yang benar?",
@@ -800,7 +879,8 @@
         "angka int = 5",
         "int angka = 5"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan mendeklarasikan variabel?",
@@ -810,7 +890,8 @@
         "Menyalin nilai dari satu variabel ke variabel lain",
         "Menampilkan nilai variabel ke layar monitor"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 2
     },
     {
       "q": "Algoritma yang baik harus...",
@@ -820,7 +901,8 @@
         "Hanya boleh memiliki satu langkah saja",
         "Tidak perlu memiliki titik akhir"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Contoh algoritma menyalakan lampu yang benar adalah...",
@@ -830,7 +912,8 @@
         "Tekan saklar, lampu nyala, cari saklar",
         "Lampu nyala, cari saklar, tekan saklar"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan nilai awal variabel?",
@@ -840,7 +923,8 @@
         "Nilai pertama yang diberikan ke variabel saat dibuat",
         "Menyalin variabel ke dalam fungsi lain"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Tipe data float digunakan untuk menyimpan...",
@@ -850,7 +934,8 @@
         "Satu karakter huruf saja",
         "Angka desimal seperti 3.14 atau 1.5"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 3
     },
     {
       "q": "Contoh penggunaan if-else dalam kehidupan nyata adalah...",
@@ -860,7 +945,8 @@
         "Jika hujan maka tetap jalan tanpa payung",
         "Bawa payung hanya saat cuaca sangat cerah"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan program yang benar?",
@@ -870,7 +956,8 @@
         "Program yang menghasilkan output sesuai yang diharapkan",
         "Program yang ditulis dengan huruf kapital semua"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Jika robot mendeteksi halangan, contoh if-else yang tepat adalah...",
@@ -880,7 +967,8 @@
         "Jika tidak ada halangan maka berhenti total",
         "Jika ada halangan maka matikan semua sensor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan logika dalam program?",
@@ -890,7 +978,8 @@
         "Aturan berpikir yang menentukan keputusan program",
         "Cara menghubungkan dua sensor berbeda"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Manakah contoh kondisi if yang benar penulisannya?",
@@ -900,7 +989,8 @@
         "if (x > 5) { }",
         "if x = 5 { }"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Mengapa nama variabel harus jelas dan deskriptif?",
@@ -910,7 +1000,8 @@
         "Karena komputer hanya bisa membaca nama panjang",
         "Agar sensor dapat mengenali variabel tersebut"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa itu pseudocode?",
@@ -920,7 +1011,8 @@
         "Nama lain dari variabel boolean",
         "Kode rahasia untuk mengunci program robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang terjadi jika urutan algoritma salah?",
@@ -930,7 +1022,8 @@
         "Hasilnya bisa tidak sesuai atau terjadi error",
         "Komputer otomatis mengurutkan ulang langkahnya"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Apa hubungan algoritma dengan program?",
@@ -940,7 +1033,8 @@
         "Program adalah cara lain menyebut algoritma",
         "Algoritma adalah rencana langkah yang kemudian ditulis jadi program"
       ],
-      "ans": 3
+      "ans": 3,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan proses dalam program?",
@@ -950,7 +1044,8 @@
         "Pengolahan data input menjadi output yang diinginkan",
         "Nama lain dari variabel dalam program"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Contoh proses dalam program robot adalah...",
@@ -960,7 +1055,8 @@
         "Menghitung jarak lalu memutuskan belok atau lurus",
         "Baterai yang terisi penuh sebelum dipakai"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan instruksi dalam program?",
@@ -970,7 +1066,8 @@
         "Hasil akhir dari sebuah algoritma",
         "Cara menghubungkan dua program berbeda"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Manakah yang bukan termasuk tipe data dasar dalam program?",
@@ -980,7 +1077,8 @@
         "motor untuk menggerakkan roda",
         "float untuk bilangan desimal"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan program sederhana?",
@@ -990,7 +1088,8 @@
         "Program dengan langkah sedikit yang mudah dipahami",
         "Program yang ditulis tanpa menggunakan if-else"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan debugging?",
@@ -1000,7 +1099,8 @@
         "Cara mempercepat jalannya program",
         "Cara menghapus variabel yang tidak dipakai"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     }
   ],
   "mechanic": [
@@ -1012,7 +1112,8 @@
         "Menstabilkan sinyal dari sensor",
         "Menyerap getaran agar sensor akurat"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Mengapa robot perlu rangka (chassis)?",
@@ -1022,7 +1123,8 @@
         "Untuk menopang dan menyatukan semua komponen robot",
         "Agar motor mendapat arus listrik lebih stabil"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Motor servo biasanya digunakan untuk...",
@@ -1032,7 +1134,8 @@
         "Menghasilkan listrik dari gerakan robot",
         "Membaca posisi roda secara otomatis"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa perbedaan utama motor DC dan motor servo?",
@@ -1042,7 +1145,8 @@
         "Motor DC berputar terus, servo bisa dikontrol sudutnya",
         "Motor DC butuh program khusus, servo tidak"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Baterai pada robot berfungsi sebagai...",
@@ -1052,7 +1156,8 @@
         "Sumber energi listrik untuk semua komponen",
         "Penghubung antara sensor dan controller"
       ],
-      "ans": 2
+      "ans": 2,
+      "level": 1
     },
     {
       "q": "Apa fungsi gear (roda gigi) pada robot?",
@@ -1062,7 +1167,8 @@
         "Menstabilkan tegangan yang masuk ke motor",
         "Menghubungkan motor dengan controller"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Mengapa robot yang berat membutuhkan motor dengan torsi lebih besar?",
@@ -1072,7 +1178,8 @@
         "Karena motor torsi besar lebih tahan terhadap panas",
         "Karena berat robot mempengaruhi kecepatan sensor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa keuntungan menggunakan material aluminium untuk rangka robot?",
@@ -1082,7 +1189,8 @@
         "Aluminium tidak bisa berkarat meski terkena air terus menerus",
         "Aluminium mudah diprogram untuk mengikuti bentuk robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan torsi pada motor robot?",
@@ -1092,7 +1200,8 @@
         "Tegangan minimum yang dibutuhkan motor untuk berputar",
         "Jarak yang bisa ditempuh motor dalam satu putaran"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Kenapa robot dengan empat roda lebih stabil dari robot dua roda?",
@@ -1102,7 +1211,8 @@
         "Karena dua roda tidak cukup untuk menopang sensor",
         "Karena empat roda menghasilkan traksi yang sama"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa fungsi bearing (bantalan) pada robot?",
@@ -1112,7 +1222,8 @@
         "Menghubungkan dua motor yang berputar berlawanan",
         "Mengukur kecepatan putaran poros motor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa keuntungan menggunakan roda omni pada robot?",
@@ -1122,7 +1233,8 @@
         "Roda omni tidak membutuhkan motor untuk bergerak",
         "Robot bisa melewati rintangan lebih tinggi"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Mengapa motor stepper sering digunakan pada robot yang membutuhkan gerakan presisi?",
@@ -1132,7 +1244,8 @@
         "Karena motor stepper lebih ringan dari motor DC biasa",
         "Karena kecepatan motor stepper selalu konstan"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa yang dimaksud dengan RPM pada motor robot?",
@@ -1142,7 +1255,8 @@
         "Jarak tempuh robot untuk setiap putaran roda",
         "Tegangan yang dibutuhkan motor per menit"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Kenapa sambungan baut dan mur lebih disukai dari lem pada robot kompetisi?",
@@ -1152,7 +1266,8 @@
         "Karena lem tidak bisa menahan beban berat sama sekali",
         "Karena baut tidak membutuhkan alat khusus untuk dipasang"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa perbedaan motor brushed dan motor brushless?",
@@ -1162,7 +1277,8 @@
         "Motor brushless membutuhkan lebih banyak kabel dari brushed",
         "Motor brushed berputar lebih cepat dari brushless"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 1
     },
     {
       "q": "Apa fungsi shock absorber pada robot yang bergerak di medan tidak rata?",
@@ -1172,7 +1288,8 @@
         "Menambah kecepatan robot di medan bergelombang",
         "Menghubungkan roda ke motor secara lebih kuat"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Mengapa penting menjaga keseimbangan berat (center of gravity) pada robot?",
@@ -1182,7 +1299,8 @@
         "Supaya motor bekerja pada kecepatan yang sama",
         "Agar program controller lebih mudah ditulis"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa kegunaan timing belt pada robot dibanding rantai biasa?",
@@ -1192,7 +1310,8 @@
         "Timing belt bisa digunakan di suhu yang lebih tinggi",
         "Timing belt lebih mudah dipasang tanpa alat apapun"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan payload pada robot arm?",
@@ -1202,7 +1321,8 @@
         "Daya listrik yang dibutuhkan robot untuk bergerak",
         "Kecepatan maksimum lengan robot saat bergerak"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Kenapa kabel pada robot perlu diatur rapi dan diikat?",
@@ -1212,7 +1332,8 @@
         "Supaya arus listrik mengalir lebih cepat ke motor",
         "Agar robot terlihat lebih profesional saat kompetisi"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa fungsi propeller pada robot terbang (drone)?",
@@ -1222,7 +1343,8 @@
         "Menstabilkan sinyal GPS pada drone",
         "Menyeimbangkan berat baterai di dalam drone"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Mengapa robot bawah air menggunakan sealed housing untuk elektroniknya?",
@@ -1232,7 +1354,8 @@
         "Supaya robot bisa bergerak lebih cepat di dalam air",
         "Agar sensor bisa membaca data lebih akurat di dalam air"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa perbedaan gripper pneumatik dan gripper elektrik pada robot?",
@@ -1242,7 +1365,8 @@
         "Gripper elektrik lebih kuat dari gripper pneumatik",
         "Keduanya bekerja dengan cara yang sama"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa fungsi poros (shaft) pada sistem gerak robot?",
@@ -1252,7 +1376,8 @@
         "Menyerap energi berlebih dari motor saat berhenti",
         "Mengubah gerakan putar menjadi gerakan naik turun"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Kenapa material plastik ABS sering digunakan untuk body robot kecil?",
@@ -1262,7 +1387,8 @@
         "ABS bisa menghantarkan listrik dengan sangat baik",
         "ABS lebih murah dari semua material lainnya"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan DOF (Degree of Freedom) pada robot arm?",
@@ -1272,7 +1398,8 @@
         "Berat maksimum yang bisa diangkat oleh robot arm",
         "Jarak jangkauan lengan robot dalam satu arah"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa kegunaan roda caster pada robot bergerak?",
@@ -1282,7 +1409,8 @@
         "Mendeteksi permukaan yang dilalui robot",
         "Menggerakkan robot ke arah yang berlawanan"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Mengapa motor DC yang digunakan pada robot perlu dilindungi dengan flyback diode?",
@@ -1292,7 +1420,8 @@
         "Supaya motor bisa menerima sinyal PWM dengan lebih baik",
         "Agar kecepatan motor bisa diatur lebih presisi"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan kinematik pada robot?",
@@ -1302,7 +1431,8 @@
         "Cara mengontrol motor robot dari jarak jauh",
         "Sistem sensor untuk mendeteksi posisi robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa keuntungan robot beroda dibanding robot berkaki di permukaan rata?",
@@ -1312,7 +1442,8 @@
         "Robot beroda lebih stabil di semua jenis medan",
         "Robot beroda lebih mudah diprogram dari robot berkaki"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Kenapa mur pengunci (lock nut) digunakan pada sambungan robot yang bergetar?",
@@ -1322,7 +1453,8 @@
         "Supaya sambungan lebih ringan dari baut biasa",
         "Karena mur pengunci lebih kuat dari mur biasa"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa perbedaan antara motor DC gearbox dan motor DC biasa?",
@@ -1332,7 +1464,8 @@
         "Motor DC biasa memiliki torsi lebih besar dari gearbox",
         "Motor DC gearbox tidak membutuhkan controller"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 2
     },
     {
       "q": "Apa yang dimaksud dengan traksi pada roda robot?",
@@ -1342,7 +1475,8 @@
         "Gaya yang dibutuhkan untuk menghentikan roda berputar",
         "Jarak yang ditempuh roda dalam satu putaran penuh"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Mengapa robot arm membutuhkan counterbalance (penyeimbang)?",
@@ -1352,7 +1486,8 @@
         "Supaya sensor pada lengan bisa membaca lebih akurat",
         "Agar lengan tidak membutuhkan program kontrol yang rumit"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa fungsi coupler (kopling) pada sistem transmisi robot?",
@@ -1362,7 +1497,8 @@
         "Mengukur torsi yang ditransfer antara dua motor",
         "Memutuskan koneksi motor saat robot berhenti"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Kenapa robot kompetisi sering menggunakan baterai LiPo dibanding baterai AA?",
@@ -1372,7 +1508,8 @@
         "LiPo lebih aman dari baterai AA untuk robot",
         "Baterai AA tidak bisa digunakan untuk motor DC"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan end-effector pada robot arm?",
@@ -1382,7 +1519,8 @@
         "Sensor yang membaca posisi akhir lengan robot",
         "Motor yang menggerakkan sendi terakhir robot arm"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Mengapa perlu melakukan perawatan berkala pada roda gigi robot?",
@@ -1392,7 +1530,8 @@
         "Supaya robot bisa mendeteksi posisi gigi dengan akurat",
         "Agar program controller bisa mengontrol gigi dengan lebih baik"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa perbedaan antara sendi revolute dan sendi prismatik pada robot arm?",
@@ -1402,7 +1541,8 @@
         "Keduanya bergerak dengan cara yang sama",
         "Sendi revolute lebih kuat dari sendi prismatik"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan footprint pada desain robot?",
@@ -1412,7 +1552,8 @@
         "Beban yang diterima setiap roda robot",
         "Nama lain untuk center of gravity robot"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Kenapa robot bawah air membutuhkan thruster yang bisa berputar dua arah?",
@@ -1422,7 +1563,8 @@
         "Supaya sinyal kontrol thruster lebih sederhana",
         "Agar konsumsi daya thruster lebih hemat"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan mekanisme rack and pinion pada robot?",
@@ -1432,7 +1574,8 @@
         "Cara menghubungkan dua motor secara bersamaan",
         "Sistem transmisi yang meningkatkan torsi motor"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa keuntungan robot dengan kaki dibanding robot beroda di medan berbatu?",
@@ -1442,7 +1585,8 @@
         "Robot berkaki lebih mudah dikontrol dari jarak jauh",
         "Robot berkaki lebih hemat energi di medan berbatu"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Mengapa penting memeriksa keselarasan (alignment) roda pada robot beroda?",
@@ -1452,7 +1596,8 @@
         "Supaya roda tidak berputar lebih cepat dari yang diprogramkan",
         "Agar baterai tidak cepat habis karena beban roda"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa fungsi worm gear pada sistem transmisi robot?",
@@ -1462,7 +1607,8 @@
         "Menghubungkan motor ke roda secara langsung",
         "Mengukur kecepatan rotasi motor secara presisi"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Kenapa robot medis membutuhkan material food-grade atau medical-grade?",
@@ -1472,7 +1618,8 @@
         "Karena material tersebut lebih kuat dari baja biasa",
         "Karena material tersebut tidak membutuhkan perawatan apapun"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan mekanisme slider-crank pada robot?",
@@ -1482,7 +1629,8 @@
         "Mekanisme pengunci untuk mencegah robot bergerak sendiri",
         "Sistem roda gigi untuk meningkatkan torsi motor"
       ],
-      "ans": 0
+      "ans": 0,
+      "level": 3
     },
     {
       "q": "Mengapa penting memperhatikan IP rating (Ingress Protection) pada robot outdoor?",
@@ -1492,7 +1640,8 @@
         "IP rating menentukan daya baterai yang bisa digunakan robot",
         "IP rating mengatur program controller untuk medan luar ruangan"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     },
     {
       "q": "Apa yang dimaksud dengan backlash pada sistem roda gigi robot?",
@@ -1502,7 +1651,8 @@
         "Bunyi berisik yang dihasilkan gigi saat berputar cepat",
         "Gesekan berlebih pada gigi yang sudah aus"
       ],
-      "ans": 1
+      "ans": 1,
+      "level": 3
     }
   ]
 }
