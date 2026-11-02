@@ -3141,9 +3141,218 @@ body.admin-active {
   .game-finish-splash,
   .finish-splash-content,
   .result-tier-badge,
-  .leaderboard-item-enter {
+  .leaderboard-item-enter,
+  .shield-break-overlay,
+  .shield-break-container,
+  .screen-shudder,
+  .item-slot.shattering {
     animation: none !important;
     transition: opacity 0.15s linear !important;
   }
+}
+
+/* ===================================================
+   SHIELD SHATTER & BREAK ANIMATION
+   GPU-Accelerated (transform & opacity only)
+   =================================================== */
+.shield-break-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  background: radial-gradient(circle at center, rgba(14, 22, 38, 0.88), rgba(7, 9, 14, 0.96));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.shield-break-overlay.hiding {
+  opacity: 0;
+  transform: scale(1.06);
+}
+.shield-break-container {
+  text-align: center;
+  max-width: 480px;
+  position: relative;
+  animation: shieldBoxPop 0.38s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform, opacity;
+}
+@keyframes shieldBoxPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.72) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.shield-hex-cracks {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shield-hex-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 16px rgba(0, 240, 255, 0.6)) drop-shadow(0 0 24px rgba(244, 63, 94, 0.5));
+}
+.shield-hex-outer {
+  fill: rgba(0, 240, 255, 0.12);
+  stroke: var(--cyan);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  animation: hexShatterPulse 0.5s ease-in-out infinite alternate;
+}
+.shield-hex-inner-lines {
+  stroke: rgba(0, 240, 255, 0.4);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 2;
+}
+.shield-crack-fractures {
+  stroke: #FF3B30;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  animation: crackSpread 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes crackSpread {
+  0% { stroke-dasharray: 0 100; opacity: 0; }
+  100% { stroke-dasharray: 100 0; opacity: 1; }
+}
+@keyframes hexShatterPulse {
+  0% { transform: scale(0.98); }
+  100% { transform: scale(1.05); }
+}
+.shield-break-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1.5px solid var(--red);
+  box-shadow: 0 0 18px rgba(244, 63, 94, 0.35);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.shield-break-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+  animation: pulseDot 0.6s infinite alternate;
+}
+.shield-break-title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 25px rgba(244, 63, 94, 0.8), 0 0 50px rgba(244, 63, 94, 0.4);
+}
+.shield-break-desc {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--t2);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.attacker-highlight {
+  color: var(--accent);
+  font-weight: 800;
+}
+.shield-break-status {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--t3);
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+.screen-shudder {
+  animation: screenShake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes screenShake {
+  10%, 90% { transform: translate3d(-3px, 1px, 0); }
+  20%, 80% { transform: translate3d(4px, -2px, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 2px, 0); }
+  40%, 60% { transform: translate3d(4px, -1px, 0); }
+}
+.item-slot.shattering {
+  animation: slotShatterVibe 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes slotShatterVibe {
+  0% { transform: scale(1); border-color: var(--cyan); }
+  30% { transform: scale(1.18); border-color: var(--red); box-shadow: 0 0 24px var(--red); background: var(--red-dim); }
+  70% { transform: scale(0.92); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===================================================
+   ADMIN ROOM LEVEL SWITCHER TOOLBAR & MINI PILLS
+   =================================================== */
+.room-level-toolbar {
+  background: var(--card2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.level-batch-btn {
+  padding: 5px 12px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--card-solid);
+  color: var(--t2);
+  transition: all 0.15s ease;
+}
+.level-batch-btn:hover {
+  transform: translateY(-1px);
+}
+.level-batch-btn.lvl-1:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-dim);
+}
+.level-batch-btn.lvl-2:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+.level-batch-btn.lvl-3:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--red-dim);
+}
+.level-pill-btn.mini {
+  min-width: 26px;
+  height: 22px;
+  padding: 0 4px;
+  font-size: 0.68rem;
+  border-radius: 4px;
 }
 

@@ -343,6 +343,24 @@
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           Kode room disalin ke clipboard!
         </div>
+
+        <!-- LEVEL MANAGEMENT TOOLBAR IN ROOM -->
+        <div class="room-level-toolbar">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px">
+            <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;color:var(--cyan);letter-spacing:0.08em;display:flex;align-items:center;gap:6px">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              KONTROL LEVEL PESERTA ROOM
+            </span>
+            <span style="font-size:0.72rem;color:var(--t3)">Pilih level per siswa atau serentak:</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:0.76rem;color:var(--t2);font-family:var(--font-mono);margin-right:2px">Set Semua:</span>
+            <button class="level-batch-btn lvl-1" onclick="setAllRoomPlayersLevel(1)" title="Set semua peserta di room ini ke Level 1 (Pemula)">⚡ Semua L1 (Pemula)</button>
+            <button class="level-batch-btn lvl-2" onclick="setAllRoomPlayersLevel(2)" title="Set semua peserta di room ini ke Level 2 (Menengah)">⚡ Semua L2 (Menengah)</button>
+            <button class="level-batch-btn lvl-3" onclick="setAllRoomPlayersLevel(3)" title="Set semua peserta di room ini ke Level 3 (Lanjutan)">⚡ Semua L3 (Lanjutan)</button>
+          </div>
+        </div>
+
         <div class="player-count" id="player-count">0 peserta bergabung</div>
         <ul class="player-list" id="admin-player-list" style="margin-bottom:16px"></ul>
         <p style="font-size:0.75rem;color:var(--t3);margin:2px 0 16px;text-align:center">Klik tombol kick jika ada peserta yang salah bergabung.</p>
@@ -1276,12 +1294,20 @@ function listenToPlayers(code) {
         playerUidMap[p.name] = uid;
         const li = document.createElement('li');
         li.style.cursor = 'default';
+        const pLevel = p.level || 1;
         li.innerHTML = `
-          <div class="player-info" style="display:flex;align-items:center;gap:8px">
+          <div class="player-info" style="display:flex;align-items:center;gap:8px;flex:1">
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--cyan)"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
-            <span><b>${p.name}</b> ${levelBadgeAdmin(p.level || 1)}</span>
+            <span style="font-weight:700">${p.name}</span>
           </div>
-          <button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:var(--red-dim);border:1px solid var(--red);border-radius:6px;padding:3px 10px;font-size:0.74rem;color:var(--red);cursor:pointer;font-weight:700">Kick</button>
+          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+            <div style="display:inline-flex;gap:3px">
+              <button class="level-pill-btn lvl-1 ${pLevel === 1 ? 'active' : ''}" onclick="setRoomPlayerLevel('${uid}', 1, this)" title="Set ke Level 1 (Pemula)">L1</button>
+              <button class="level-pill-btn lvl-2 ${pLevel === 2 ? 'active' : ''}" onclick="setRoomPlayerLevel('${uid}', 2, this)" title="Set ke Level 2 (Menengah)">L2</button>
+              <button class="level-pill-btn lvl-3 ${pLevel === 3 ? 'active' : ''}" onclick="setRoomPlayerLevel('${uid}', 3, this)" title="Set ke Level 3 (Lanjutan)">L3</button>
+            </div>
+            <button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:var(--red-dim);border:1px solid var(--red);border-radius:6px;padding:3px 9px;font-size:0.72rem;color:var(--red);cursor:pointer;font-weight:700">Kick</button>
+          </div>
         `;
         list.appendChild(li);
       });
@@ -1712,10 +1738,21 @@ function listenToActivityLog(code) {
           bg = 'var(--green-dim)';
           text = `<span style="color:var(--green)"><b>${entry.name}</b> mengaktifkan Hint di soal ${entry.q + 1}</span>`;
           break;
+        case 'shield_shatter':
         case 'shield_block':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
+          bg = 'rgba(244, 63, 94, 0.16)';
+          text = `<span style="color:var(--red)">💥 <b>SHIELD HANCUR:</b> Serangan laser dari <b>${entry.from}</b> menembus &amp; menghancurkan Shield <b>${entry.name}</b>!</span>`;
+          break;
+        case 'admin_level_change':
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+          bg = 'var(--accent-dim)';
+          text = `<span style="color:var(--accent)">🎖️ <b>Level Peserta Diubah:</b> Instruktur mengatur <b>${entry.name}</b> ke Level <b>${entry.level}</b></span>`;
+          break;
+        case 'admin_level_all':
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--cyan)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
           bg = 'var(--cyan-dim)';
-          text = `<span style="color:var(--cyan)"><b>${entry.name}</b> menangkis serangan <b>${entry.from}</b> dengan Shield!</span>`;
+          text = `<span style="color:var(--cyan)">⚡ <b>Level Massal:</b> Seluruh peserta room diatur ke Level <b>${entry.level}</b></span>`;
           break;
         case 'attack_hit':
           icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
@@ -1760,7 +1797,7 @@ function listenToScores() {
   const unsub = onValue(pRef, snap => {
     const players = [];
     if (snap.exists()) {
-      Object.values(snap.val()).forEach(p => players.push(p));
+      Object.entries(snap.val()).forEach(([uid, p]) => players.push({ ...p, uid }));
     }
     players.sort((a, b) => (b.score || 0) - (a.score || 0));
 
@@ -1808,10 +1845,14 @@ function listenToScores() {
       `;
 
       li.innerHTML = `
-        <span style="flex:1;display:flex;align-items:center;gap:6px">
+        <span style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
           <b style="color:var(--t3);font-family:var(--font-mono);min-width:20px">#${i+1}</b>
-          <span>${p.name}</span>
-          ${levelBadgeAdmin(pLevel)}
+          <span style="font-weight:700">${p.name}</span>
+          <div style="display:inline-flex;gap:2px;margin-left:4px">
+            <button class="level-pill-btn mini lvl-1 ${pLevel === 1 ? 'active' : ''}" onclick="setRoomPlayerLevel('${p.uid}', 1, this)" title="Set ke Level 1 (Pemula)">L1</button>
+            <button class="level-pill-btn mini lvl-2 ${pLevel === 2 ? 'active' : ''}" onclick="setRoomPlayerLevel('${p.uid}', 2, this)" title="Set ke Level 2 (Menengah)">L2</button>
+            <button class="level-pill-btn mini lvl-3 ${pLevel === 3 ? 'active' : ''}" onclick="setRoomPlayerLevel('${p.uid}', 3, this)" title="Set ke Level 3 (Lanjutan)">L3</button>
+          </div>
         </span>
         <span style="display:flex;gap:10px;align-items:center">
           ${progressBar}
@@ -2249,10 +2290,73 @@ window.setUserLevel = async function(uid, newLevel, btn) {
     window.filterUserList();
   } catch(e) {
     alert('Gagal update level pengguna: ' + e.message);
+  } finally {
     if (btn) {
       btn.disabled = false;
       btn.style.opacity = '1';
     }
+  }
+};
+
+window.setRoomPlayerLevel = async function(uid, newLevel, btn) {
+  if (newLevel < 1 || newLevel > 3) return;
+  if (!currentRoom) return;
+  if (btn) {
+    btn.disabled = true;
+    btn.style.opacity = '0.35';
+  }
+  try {
+    // 1. Update di player node room
+    await update(ref(db, `rooms/${currentRoom}/players/${uid}`), { level: newLevel });
+    // 2. Update di profil user agar sinkron permanen
+    await update(ref(db, `users/${uid}`), { level: newLevel });
+
+    const u = _allUsers.find(x => x.uid === uid);
+    if (u) u.level = newLevel;
+
+    // 3. Catat di telemetry log
+    let pName = 'Peserta';
+    try {
+      const pSnap = await get(ref(db, `rooms/${currentRoom}/players/${uid}/name`));
+      if (pSnap.exists()) pName = pSnap.val();
+    } catch(e) {}
+    writeLog(currentRoom, { type: 'admin_level_change', name: pName, level: newLevel });
+  } catch(e) {
+    alert('Gagal mengubah level peserta: ' + e.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  }
+};
+
+window.setAllRoomPlayersLevel = async function(newLevel) {
+  if (newLevel < 1 || newLevel > 3) return;
+  if (!currentRoom) return;
+  const levelNames = { 1: 'Level 1 (Pemula)', 2: 'Level 2 (Menengah)', 3: 'Level 3 (Lanjutan)' };
+  if (!confirm(`Ubah level SEMUA peserta di room ${currentRoom} menjadi ${levelNames[newLevel]}?`)) return;
+
+  try {
+    const snap = await get(ref(db, `rooms/${currentRoom}/players`));
+    if (!snap.exists()) {
+      alert('Belum ada peserta yang bergabung di dalam room.');
+      return;
+    }
+    const players = snap.val();
+    const updates = {};
+    updates[`rooms/${currentRoom}/defaultLevel`] = newLevel;
+
+    for (const uid of Object.keys(players)) {
+      updates[`rooms/${currentRoom}/players/${uid}/level`] = newLevel;
+      updates[`users/${uid}/level`] = newLevel;
+      const u = _allUsers.find(x => x.uid === uid);
+      if (u) u.level = newLevel;
+    }
+    await update(ref(db), updates);
+    writeLog(currentRoom, { type: 'admin_level_all', level: newLevel });
+  } catch(e) {
+    alert('Gagal mengatur level semua peserta: ' + e.message);
   }
 };
 </script>

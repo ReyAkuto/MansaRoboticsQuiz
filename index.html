@@ -384,6 +384,31 @@
   </div>
 </div>
 
+<!-- SHIELD BREAK & SHATTER OVERLAY -->
+<div id="shield-break-overlay" class="shield-break-overlay" style="display:none">
+  <div class="shield-break-container">
+    <div class="shield-hex-cracks">
+      <svg viewBox="0 0 100 100" class="shield-hex-svg">
+        <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" class="shield-hex-outer" />
+        <path d="M50 5 L50 95 M10 27 L90 73 M90 27 L10 73" class="shield-hex-inner-lines" />
+        <path d="M50 50 L35 30 M50 50 L65 32 M50 50 L50 75 M50 50 L25 55 M50 50 L75 60" class="shield-crack-fractures" />
+      </svg>
+    </div>
+    <div class="shield-break-badge">
+      <span class="shield-break-beacon"></span>
+      PERTAHANAN DITEMBUS // DEFENSE SHATTERED
+    </div>
+    <h2 class="shield-break-title">SHIELD DESTROYED!</h2>
+    <div class="shield-break-desc">
+      Serangan laser dari <span class="attacker-highlight" id="shield-break-attacker">-</span> berhasil menembus perisai energi!
+    </div>
+    <div class="shield-break-status">
+      <span>DAMAGE: <b style="color:var(--green)">0 PTS (DITAHAN)</b></span>
+      <span style="color:var(--red)">SHIELD: <b>HANCUR</b></span>
+    </div>
+  </div>
+</div>
+
 <!-- FEEDBACK OVERLAY -->
 <div class="feedback-overlay" id="feedback-overlay" style="display:none">
   <div class="feedback-box" id="feedback-box">
@@ -575,6 +600,16 @@ const SFX = {
   shield() {
     playTone({ freq: 1200, type: 'triangle', duration: 0.08, volume: 0.35 });
     playTone({ freq: 900,  type: 'triangle', duration: 0.15, volume: 0.25, delay: 0.07 });
+  },
+  shieldBreak() {
+    // Energetic laser impact blast
+    playTone({ freq: 960, type: 'sawtooth', duration: 0.12, volume: 0.45 });
+    playTone({ freq: 440, type: 'square',   duration: 0.16, volume: 0.38, delay: 0.04 });
+    // Resonant crystal fracture & shatter cascade
+    playTone({ freq: 1760, type: 'triangle', duration: 0.09, volume: 0.36, delay: 0.09 });
+    playTone({ freq: 1280, type: 'sawtooth', duration: 0.12, volume: 0.32, delay: 0.14 });
+    playTone({ freq: 720,  type: 'square',   duration: 0.2,  volume: 0.26, delay: 0.20 });
+    playTone({ freq: 320,  type: 'triangle', duration: 0.35, volume: 0.22, delay: 0.28 });
   },
   countdownTick() {
     playTone({ freq: 880, type: 'sine', duration: 0.08, volume: 0.3 });
@@ -811,6 +846,11 @@ window.joinRoom = async function() {
   if (roomData.status === 'playing') return showError('join-error', 'Kuis sedang berlangsung, tunggu ronde berikutnya!');
   if (roomData.status === 'finished') return showError('join-error', 'Kuis pada room ini telah selesai.');
 
+  // Jika room memiliki default level yang ditentukan instruktur
+  if (roomData.defaultLevel) {
+    myLevel = roomData.defaultLevel;
+  }
+
   currentRoom = code;
   localStorage.setItem('quizRoom', code);
   localStorage.removeItem('quizRoomQuitAt');
@@ -849,6 +889,16 @@ function enterWaitingRoom(code) {
         showError('join-error', 'Kamu telah dikeluarkan dari room oleh instruktur.');
         return;
       }
+
+      // Deteksi jika instruktur mengubah level pemain saat di waiting room
+      const meInRoom = players[currentUser.uid];
+      if (meInRoom && meInRoom.level && meInRoom.level !== myLevel) {
+        myLevel = meInRoom.level;
+        const levelNames = { 1: 'Level 1 (Pemula)', 2: 'Level 2 (Menengah)', 3: 'Level 3 (Lanjutan)' };
+        showAttackNotif(`🎖️ Level kamu diubah instruktur ke: ${levelNames[myLevel] || ('Level ' + myLevel)}`, false, true);
+        if (window._robot3d) window._robot3d.triggerStreak();
+      }
+
       Object.values(players).forEach(p => {
         const li = document.createElement('li');
         li.innerHTML = `
@@ -1044,6 +1094,42 @@ function animateFraction(elementId, startVal, endVal, total, duration) {
   requestAnimationFrame(step);
 }
 
+// ===== SHIELD BREAK ANIMATION & SOUND =====
+function playShieldBreakEffect(attackerName) {
+  SFX.shieldBreak();
+  if (window._robot3d) window._robot3d.triggerShieldBreak();
+
+  // Screen shudder effect
+  document.body.classList.remove('screen-shudder');
+  void document.body.offsetWidth;
+  document.body.classList.add('screen-shudder');
+  setTimeout(() => document.body.classList.remove('screen-shudder'), 500);
+
+  // Item slot shatter vibration
+  const shieldSlot = document.getElementById('item-shield');
+  if (shieldSlot) {
+    shieldSlot.classList.remove('shield-active');
+    shieldSlot.classList.add('shattering');
+    setTimeout(() => shieldSlot.classList.remove('shattering'), 650);
+  }
+
+  // Display shield break overlay
+  const overlay = document.getElementById('shield-break-overlay');
+  const attackerEl = document.getElementById('shield-break-attacker');
+  if (attackerEl) attackerEl.textContent = attackerName || 'Lawan';
+  if (overlay) {
+    overlay.classList.remove('hiding');
+    overlay.style.display = 'flex';
+    setTimeout(() => {
+      overlay.classList.add('hiding');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        overlay.classList.remove('hiding');
+      }, 350);
+    }, 2200);
+  }
+}
+
 // ===== START QUIZ =====
 async function startQuiz(code) {
   await loadQuestions();
@@ -1052,9 +1138,17 @@ async function startQuiz(code) {
   const roomData = roomSnap.val();
   const theme = roomData.theme || 'dasar';
   const qCount = roomData.questionCount || 25;
-  const freshLevelSnap = await get(ref(db, `users/${currentUser.uid}/level`));
-  myLevel = freshLevelSnap.exists() ? (freshLevelSnap.val() || 1) : 1;
+
+  // Prioritaskan level pemain di dalam room (jika telah diubah/diatur instruktur)
+  const roomPlayerSnap = await get(ref(db, `rooms/${code}/players/${currentUser.uid}/level`));
+  if (roomPlayerSnap.exists() && roomPlayerSnap.val()) {
+    myLevel = roomPlayerSnap.val();
+  } else {
+    const freshLevelSnap = await get(ref(db, `users/${currentUser.uid}/level`));
+    myLevel = freshLevelSnap.exists() ? (freshLevelSnap.val() || 1) : 1;
+  }
   await update(ref(db, `rooms/${code}/players/${currentUser.uid}`), { level: myLevel });
+  await update(ref(db, `users/${currentUser.uid}`), { level: myLevel });
 
   // 1. Soal Acak untuk Tiap Levelnya (Randomized Questions per Level)
   const themeQuestions = QUESTIONS[theme] || [];
@@ -1112,6 +1206,26 @@ async function startQuiz(code) {
   listenToAdminSignal(code);
   listenToAttacks(code);
   listenEmots(code);
+
+  // Sinkronisasi dinamis jika instruktur mengubah level peserta saat live
+  const myLevelRef = ref(db, `rooms/${code}/players/${currentUser.uid}/level`);
+  const unsubMyLevel = onValue(myLevelRef, snap => {
+    if (!snap.exists()) return;
+    const newLv = snap.val();
+    if (newLv && newLv !== myLevel) {
+      myLevel = newLv;
+      const levelNames = { 1: 'Level 1 (Pemula)', 2: 'Level 2 (Menengah)', 3: 'Level 3 (Lanjutan)' };
+      showAttackNotif(`🎖️ Level materi dialihkan ke: ${levelNames[myLevel] || ('Level ' + myLevel)}`, false, true);
+      if (roomData.activeQuestionIndexes && roomData.activeQuestionIndexes[myLevel]) {
+        const indices = roomData.activeQuestionIndexes[myLevel];
+        questions = indices.map(idx => themeQuestions[idx]).filter(Boolean);
+        if (!answered && currentQ < questions.length) {
+          showQuestion(currentQ, code);
+        }
+      }
+    }
+  });
+  roomListeners.push(unsubMyLevel);
 
   // Sinkronisasi status room jika instruktur mengakhiri kuis
   const statusRef = ref(db, `rooms/${code}/status`);
@@ -1921,7 +2035,12 @@ async function fireGun(targetUid, targetName, targetHasShield) {
   });
   await update(ref(db, `rooms/${currentRoom}/players/${currentUser.uid}/items`), myItems);
   writeLog(currentRoom, { type: 'item_used_gun', from: myName, to: targetName });
-  showAttackNotif(`Laser ditembakkan ke ${targetName}!`, false, true);
+  if (targetHasShield) {
+    SFX.shieldBreak();
+    showAttackNotif(`🎯 Tembakan mengenai Shield ${targetName}! Perisai musuh hancur!`, false, false);
+  } else {
+    showAttackNotif(`Laser ditembakkan ke ${targetName}!`, false, true);
+  }
 }
 
 const _processedAttackKeys = new Set();
@@ -1943,9 +2062,9 @@ function listenToAttacks(code) {
         updateItemUI();
         update(ref(db, `rooms/${code}/players/${currentUser.uid}/items`), myItems);
         remove(child.ref);
-        SFX.shield();
-        writeLog(code, { type: 'shield_block', name: myName, from: attack.fromName });
-        showAttackNotif(`Serangan dari ${attack.fromName} ditahan oleh Shield kamu!`, false, false);
+        playShieldBreakEffect(attack.fromName);
+        writeLog(code, { type: 'shield_shatter', name: myName, from: attack.fromName });
+        showAttackNotif(`💥 Shield kamu menahan tembakan laser dari ${attack.fromName} lalu hancur!`, false, false);
       } else {
         myScore = Math.max(0, myScore - attack.damage);
         update(ref(db, `rooms/${code}/players/${currentUser.uid}`), { score: myScore });

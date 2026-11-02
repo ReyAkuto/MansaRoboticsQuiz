@@ -535,6 +535,42 @@
       }
     }
 
+    triggerShieldBreak() {
+      if (!this.shieldMesh) return;
+      this.state = 'shield_break';
+      this.stateTimer = 1.8;
+      this.targetCoreColor.setHex(0xf43f5e); // Red alert core on shield shatter
+
+      // 1. Initial bright flash and expansion
+      this.shieldMesh.material.opacity = 1.0;
+      this.shieldMesh.material.color.setHex(0xffffff);
+      this.shieldMesh.scale.set(1.15, 1.15, 1.15);
+
+      // 2. High-speed radiant explosion of sparks & shards
+      this.emitSparks(0x38bdf8, true, false); // Cyan shield energy shards
+      setTimeout(() => {
+        this.emitSparks(0xf59e0b, true, false); // Amber secondary clash sparks
+      }, 120);
+
+      // 3. Shudder & shattering dissolution of the icosahedron mesh
+      let step = 0;
+      const dissolveTimer = setInterval(() => {
+        step++;
+        if (!this.shieldMesh) { clearInterval(dissolveTimer); return; }
+        this.shieldMesh.scale.multiplyScalar(1.05);
+        this.shieldMesh.rotation.y += 0.08;
+        this.shieldMesh.rotation.x += 0.05;
+        this.shieldMesh.material.opacity = Math.max(0, 1.0 - (step * 0.12));
+        this.shieldMesh.material.color.setHex(step % 2 === 0 ? 0x38bdf8 : 0xff3b30);
+        if (step >= 9) {
+          clearInterval(dissolveTimer);
+          this.shieldMesh.material.opacity = 0;
+          this.shieldMesh.scale.set(1, 1, 1);
+          this.shieldMesh.material.color.setHex(0x38bdf8);
+        }
+      }, 40);
+    }
+
     triggerAttack() {
       this.state = 'attack';
       this.stateTimer = 1.2;
@@ -630,6 +666,13 @@
         this.robotGroup.position.x = Math.sin(time * 42) * 0.16;
         this.robotGroup.position.y = -0.18;
         this.headGroup.rotation.x = 0.25 + Math.sin(time * 30) * 0.12;
+      } else if (this.state === 'shield_break') {
+        // Impact Shockwave Recoil & Tremor
+        const decay = Math.max(0, this.stateTimer / 1.8);
+        this.robotGroup.position.z = THREE.MathUtils.lerp(this.robotGroup.position.z, -0.45 * decay, 0.18);
+        this.robotGroup.position.x = Math.sin(time * 48) * 0.18 * decay;
+        this.headGroup.rotation.z = Math.sin(time * 32) * 0.12 * decay;
+        this.headGroup.rotation.x = Math.sin(time * 36) * 0.1 * decay;
       } else if (this.state === 'streak') {
         // High Speed Levitation & Pulse
         this.robotGroup.rotation.y += 0.08;
