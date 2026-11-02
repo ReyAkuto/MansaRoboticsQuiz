@@ -245,10 +245,61 @@
       });
       this.shieldMesh = new THREE.Mesh(shieldGeo, shieldMat);
       this.robotGroup.add(this.shieldMesh);
+
+      // 5. Holographic Kinetic Projector Base Platform
+      const baseGroup = new THREE.Group();
+      baseGroup.position.y = -1.65;
+      this.robotGroup.add(baseGroup);
+
+      const holoRingGeo = new THREE.TorusGeometry(1.28, 0.025, 16, 48);
+      const holoMat = new THREE.MeshBasicMaterial({
+        color: 0x00f0ff,
+        transparent: true,
+        opacity: 0.65
+      });
+      this.holoRing = new THREE.Mesh(holoRingGeo, holoMat);
+      this.holoRing.rotation.x = Math.PI / 2;
+      baseGroup.add(this.holoRing);
+
+      const holoDiscGeo = new THREE.RingGeometry(0.2, 1.25, 32);
+      const holoDiscMat = new THREE.MeshBasicMaterial({
+        color: 0x00f0ff,
+        transparent: true,
+        opacity: 0.14,
+        side: THREE.DoubleSide
+      });
+      this.holoDisc = new THREE.Mesh(holoDiscGeo, holoDiscMat);
+      this.holoDisc.rotation.x = -Math.PI / 2;
+      baseGroup.add(this.holoDisc);
+      this.holoBase = baseGroup;
+
+      // 6. 3D Dynamic Alarm & Victory Holographic Shockwaves
+      const waveGeo = new THREE.TorusGeometry(1.35, 0.04, 16, 48);
+      const alarmRingMat = new THREE.MeshBasicMaterial({
+        color: 0xff2a55,
+        transparent: true,
+        opacity: 0,
+        blending: THREE.AdditiveBlending
+      });
+      this.alarmRing = new THREE.Mesh(waveGeo, alarmRingMat);
+      this.alarmRing.rotation.x = Math.PI / 2;
+      this.alarmRing.position.y = -0.3;
+      this.robotGroup.add(this.alarmRing);
+
+      const vicRingMat = new THREE.MeshBasicMaterial({
+        color: 0x00f59b,
+        transparent: true,
+        opacity: 0,
+        blending: THREE.AdditiveBlending
+      });
+      this.victoryRing = new THREE.Mesh(waveGeo, vicRingMat);
+      this.victoryRing.rotation.x = Math.PI / 2;
+      this.victoryRing.position.y = -0.3;
+      this.robotGroup.add(this.victoryRing);
     }
 
     buildParticles() {
-      const particleCount = 45;
+      const particleCount = 50;
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(particleCount * 3);
 
@@ -270,6 +321,70 @@
 
       this.particles = new THREE.Points(geometry, material);
       this.scene.add(this.particles);
+
+      // Dynamic reactive spark particles (for correct/wrong/victory)
+      this.sparkCount = 36;
+      this.sparkGeo = new THREE.BufferGeometry();
+      this.sparkPositions = new Float32Array(this.sparkCount * 3);
+      this.sparkVelocities = [];
+      for (let i = 0; i < this.sparkCount; i++) {
+        this.sparkPositions[i * 3] = 0;
+        this.sparkPositions[i * 3 + 1] = -100;
+        this.sparkPositions[i * 3 + 2] = 0;
+        this.sparkVelocities.push({ x: 0, y: 0, z: 0 });
+      }
+      this.sparkGeo.setAttribute('position', new THREE.BufferAttribute(this.sparkPositions, 3));
+      this.sparkMat = new THREE.PointsMaterial({
+        color: 0x00f0ff,
+        size: 0.075,
+        transparent: true,
+        opacity: 0,
+        blending: THREE.AdditiveBlending
+      });
+      this.sparks = new THREE.Points(this.sparkGeo, this.sparkMat);
+      this.scene.add(this.sparks);
+    }
+
+    emitSparks(hexColor = 0x00f59b, isExplosion = false, isFalling = false) {
+      if (!this.sparkPositions || !this.sparkMat) return;
+      this.sparkMat.color.setHex(hexColor);
+      this.sparkMat.opacity = 0.95;
+
+      for (let i = 0; i < this.sparkCount; i++) {
+        this.sparkPositions[i * 3] = (Math.random() - 0.5) * 0.3;
+        this.sparkPositions[i * 3 + 1] = (Math.random() - 0.5) * 0.3;
+        this.sparkPositions[i * 3 + 2] = 0.4 + (Math.random() - 0.5) * 0.2;
+
+        if (isFalling) {
+          // Wrong answer: sparks burst out then drop downwards
+          this.sparkVelocities[i] = {
+            x: (Math.random() - 0.5) * 0.08,
+            y: 0.03 + Math.random() * 0.06,
+            z: (Math.random() - 0.5) * 0.08,
+            gravity: -0.007
+          };
+        } else if (isExplosion) {
+          // Victory explosion: radiant sphere burst
+          const theta = Math.random() * Math.PI * 2;
+          const phi = Math.acos(2 * Math.random() - 1);
+          const spd = 0.05 + Math.random() * 0.08;
+          this.sparkVelocities[i] = {
+            x: Math.sin(phi) * Math.cos(theta) * spd,
+            y: Math.sin(phi) * Math.sin(theta) * spd,
+            z: Math.cos(phi) * spd,
+            gravity: 0
+          };
+        } else {
+          // Standard celebration
+          this.sparkVelocities[i] = {
+            x: (Math.random() - 0.5) * 0.05,
+            y: 0.04 + Math.random() * 0.05,
+            z: (Math.random() - 0.5) * 0.05,
+            gravity: -0.002
+          };
+        }
+      }
+      this.sparkGeo.attributes.position.needsUpdate = true;
     }
 
     bindEvents() {
@@ -339,16 +454,32 @@
         this.triggerSalute();
       });
 
-      // Resize Listener
-      window.addEventListener('resize', () => {
+      // Mobile-aware Resize Listener
+      const handleResize = () => {
         if (!this.container || !this.renderer || !this.camera) return;
         const w = this.container.clientWidth;
         const h = this.container.clientHeight;
         if (w === 0 || h === 0) return;
-        this.camera.aspect = w / h;
+        const aspect = w / h;
+        this.camera.aspect = aspect;
+        // Keep robot perfectly framed in mobile portrait & compact headers
+        if (aspect < 1.0) {
+          this.camera.position.z = 4.85;
+          this.camera.position.y = 0;
+        } else if (h <= 180) {
+          // Compact mobile banner framing
+          this.camera.position.z = 4.5;
+          this.camera.position.y = -0.12;
+        } else {
+          this.camera.position.z = 5.2;
+          this.camera.position.y = 0;
+        }
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(w, h);
-      });
+      };
+
+      window.addEventListener('resize', handleResize);
+      setTimeout(handleResize, 100);
     }
 
     triggerSalute() {
@@ -361,19 +492,37 @@
     triggerCorrect() {
       this.state = 'correct';
       this.stateTimer = 1.6;
-      this.targetCoreColor.setHex(0x10b981); // Bright Green
+      this.targetCoreColor.setHex(0x00f59b); // Vibrant Emerald
+      this.emitSparks(0x00f59b, false, false);
     }
 
     triggerWrong() {
       this.state = 'wrong';
-      this.stateTimer = 1.4;
-      this.targetCoreColor.setHex(0xef4444); // Red Warning
+      this.stateTimer = 1.6;
+      this.targetCoreColor.setHex(0xff2a55); // Crimson Alarm
+      if (this.alarmRing) {
+        this.alarmRing.material.opacity = 0.95;
+        this.alarmRing.scale.set(0.25, 0.25, 0.25);
+      }
+      this.emitSparks(0xff2a55, false, true);
+    }
+
+    triggerVictory() {
+      this.state = 'victory';
+      this.stateTimer = 5.0;
+      this.targetCoreColor.setHex(0x00f59b); // Vibrant Emerald Core
+      if (this.victoryRing) {
+        this.victoryRing.material.opacity = 0.95;
+        this.victoryRing.scale.set(0.25, 0.25, 0.25);
+      }
+      this.emitSparks(0x00f59b, true, false);
     }
 
     triggerStreak(count = 3) {
       this.state = 'streak';
       this.stateTimer = 2.0;
       this.targetCoreColor.setHex(0xf59e0b); // Gold Overdrive
+      this.emitSparks(0xf59e0b, true, false);
     }
 
     triggerShield(active = true) {
@@ -416,12 +565,42 @@
 
       // Gyro Rings Rotation
       if (this.gyroRing1) {
-        this.gyroRing1.rotation.z += (this.state === 'streak' ? 0.05 : 0.015);
+        const speed1 = (this.state === 'victory' ? 0.07 : this.state === 'streak' ? 0.05 : 0.015);
+        this.gyroRing1.rotation.z += speed1;
         this.gyroRing1.rotation.y += 0.008;
       }
       if (this.gyroRing2) {
-        this.gyroRing2.rotation.z -= (this.state === 'streak' ? 0.06 : 0.02);
+        const speed2 = (this.state === 'victory' ? 0.08 : this.state === 'streak' ? 0.06 : 0.02);
+        this.gyroRing2.rotation.z -= speed2;
         this.gyroRing2.rotation.x += 0.006;
+      }
+
+      // Holographic Base Disc Rotation
+      if (this.holoDisc) {
+        this.holoDisc.rotation.z += 0.008;
+      }
+
+      // Holographic Shockwave Rings Update
+      if (this.alarmRing && this.alarmRing.material.opacity > 0) {
+        this.alarmRing.scale.addScalar(delta * 4.2);
+        this.alarmRing.material.opacity -= delta * 1.4;
+      }
+      if (this.victoryRing && this.victoryRing.material.opacity > 0) {
+        this.victoryRing.scale.addScalar(delta * 3.8);
+        this.victoryRing.material.opacity -= delta * 1.2;
+      }
+
+      // Dynamic reactive spark particles update
+      if (this.sparkMat && this.sparkMat.opacity > 0) {
+        this.sparkMat.opacity -= delta * 0.8;
+        for (let i = 0; i < this.sparkCount; i++) {
+          const v = this.sparkVelocities[i];
+          this.sparkPositions[i * 3] += v.x;
+          this.sparkPositions[i * 3 + 1] += v.y;
+          this.sparkPositions[i * 3 + 2] += v.z;
+          if (v.gravity) v.y += v.gravity;
+        }
+        this.sparkGeo.attributes.position.needsUpdate = true;
       }
 
       // Shield pulse
@@ -431,15 +610,26 @@
       }
 
       // Head / Robot Movement based on State
-      if (this.state === 'correct') {
+      if (this.state === 'victory') {
+        // Grand Triumphant Victory Dance
+        this.robotGroup.rotation.y += 0.08;
+        this.robotGroup.position.y = Math.sin(time * 5) * 0.22 + 0.12;
+        this.headGroup.rotation.z = Math.sin(time * 4) * 0.12;
+        this.headGroup.rotation.x = Math.sin(time * 6) * 0.1;
+        if (this.coreOrb) {
+          const vScale = 1.0 + Math.sin(time * 8) * 0.22;
+          this.coreOrb.scale.set(vScale, vScale, vScale);
+        }
+      } else if (this.state === 'correct') {
         // Happy Celebration Spin
-        this.robotGroup.rotation.y += 0.25;
+        this.robotGroup.rotation.y += 0.22;
         this.robotGroup.position.y = Math.sin(time * 8) * 0.25 + 0.15;
       } else if (this.state === 'wrong') {
-        // Recoil + Shake head
-        this.robotGroup.position.z = -0.4;
-        this.robotGroup.position.x = Math.sin(time * 30) * 0.12;
-        this.robotGroup.position.y = -0.15;
+        // Dramatic Alarm Recoil + Tremor Spasm
+        this.robotGroup.position.z = THREE.MathUtils.lerp(this.robotGroup.position.z, -0.65, 0.2);
+        this.robotGroup.position.x = Math.sin(time * 42) * 0.16;
+        this.robotGroup.position.y = -0.18;
+        this.headGroup.rotation.x = 0.25 + Math.sin(time * 30) * 0.12;
       } else if (this.state === 'streak') {
         // High Speed Levitation & Pulse
         this.robotGroup.rotation.y += 0.08;

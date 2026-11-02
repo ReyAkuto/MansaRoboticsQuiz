@@ -36,12 +36,24 @@
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
       <span id="robot-toggle-label">3D On</span>
     </button>
-    <!-- MUSIC TOGGLE -->
-    <button class="nav-icon-btn" id="music-toggle" onclick="toggleBGM()" title="Toggle Ambient Synthesizer Music">
-      <svg id="music-icon-on" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-      <svg id="music-icon-off" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="1" y1="1" x2="23" y2="23" stroke="var(--red)"/></svg>
-      <span id="music-label">Musik</span>
-    </button>
+    <!-- MUSIC TOGGLE & VOLUME SLIDER -->
+    <div class="music-control-group" id="music-control-group">
+      <button class="nav-icon-btn music-btn" id="music-toggle" onclick="toggleBGM()" title="Toggle Cyber Audio Synthesizer">
+        <div class="eq-icon muted" id="eq-icon">
+          <span class="eq-bar bar-1"></span>
+          <span class="eq-bar bar-2"></span>
+          <span class="eq-bar bar-3"></span>
+        </div>
+        <span id="music-label">Musik</span>
+      </button>
+      <div class="bgm-volume-wrap" id="bgm-volume-wrap" title="Geser untuk mengatur volume musik">
+        <svg class="ico volume-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <input type="range" class="bgm-slider" id="bgm-volume-slider" min="0" max="100" value="32" oninput="setBGMVolume(this.value)">
+      </div>
+    </div>
     <!-- THEME TOGGLE -->
     <button class="nav-icon-btn" id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
       <svg id="theme-icon-moon" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -317,6 +329,11 @@
   </div><!-- end .stage-deck -->
 </div><!-- end .page-wrapper -->
 
+<!-- FULLSCREEN TACTICAL ALARM & VICTORY AURORA VIGNETTES -->
+<div class="alarm-vignette" id="alarm-vignette"></div>
+<div class="victory-vignette" id="victory-vignette"></div>
+<canvas id="victory-confetti-canvas" class="victory-confetti-canvas"></canvas>
+
 <!-- FEEDBACK OVERLAY -->
 <div class="feedback-overlay" id="feedback-overlay" style="display:none">
   <div class="feedback-box" id="feedback-box">
@@ -578,10 +595,49 @@ function levelBadge(level) {
 }
 
 function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const currentActive = document.querySelector('.screen.active');
   const target = document.getElementById('screen-' + id);
-  if (target) target.classList.add('active');
+  if (!target) return;
+  if (currentActive === target) return;
+
+  // Adaptive Dynamic Synthesizer BGM track switching
+  if (window.BGM_ENGINE) {
+    if (id === 'quiz') {
+      window.BGM_ENGINE.setTrack('gameplay');
+    } else if (id === 'result') {
+      window.BGM_ENGINE.setTrack('victory');
+    } else {
+      window.BGM_ENGINE.setTrack('idle');
+    }
+  }
+
+  // 3D Companion reaction on key screens
+  if (window._robot3d) {
+    if (id === 'result') {
+      window._robot3d.triggerVictory();
+    } else if (id === 'waiting') {
+      window._robot3d.triggerSalute();
+    }
+  }
+
+  // Ultra-Smooth Screen Transition
+  if (currentActive) {
+    currentActive.classList.add('screen-exiting');
+    currentActive.classList.remove('active');
+    setTimeout(() => {
+      currentActive.classList.remove('screen-exiting');
+    }, 220);
+  }
+
+  target.classList.add('active', 'screen-entering');
+  setTimeout(() => {
+    target.classList.remove('screen-entering');
+  }, 340);
+
+  // Smooth scroll to top of console
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+window.showScreen = showScreen;
 
 function showError(id, msg) {
   const el = document.getElementById(id);
@@ -875,6 +931,8 @@ function loadQuestion(index, code) {
   document.getElementById('btn-user-next').style.display = 'none';
   document.getElementById('waiting-break-msg').style.display = 'none';
 
+  if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(false);
+
   const rankEl = document.getElementById('rank-badge');
   if (rankEl) rankEl.innerHTML = '';
   updateRankBadge(code);
@@ -885,6 +943,7 @@ function loadQuestion(index, code) {
   document.getElementById('question-text').textContent = q.q;
 
   const container = document.getElementById('options-container');
+  container.className = 'options'; // Clears tumble-falling and any previous effects
   container.innerHTML = '';
 
   const optIndexes = q.opts.map((_, i) => i);
@@ -898,7 +957,8 @@ function loadQuestion(index, code) {
   const keyLabels = ['A', 'B', 'C', 'D'];
   optIndexes.forEach((origIdx, newIdx) => {
     const btn = document.createElement('button');
-    btn.className = 'option-btn';
+    btn.className = 'option-btn option-enter';
+    btn.style.animationDelay = `${newIdx * 50}ms`;
     btn.innerHTML = `
       <div class="opt-key">${keyLabels[newIdx]}</div>
       <div class="opt-label">${q.opts[origIdx]}</div>
@@ -922,6 +982,7 @@ function startTimer(seconds, q, code) {
     timerEl.textContent = '❄️';
     timerEl.classList.remove('urgent');
     timerEl.style.color = 'var(--cyan)';
+    if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(false);
     return;
   }
   let t = seconds;
@@ -929,18 +990,25 @@ function startTimer(seconds, q, code) {
   timerEl.textContent = t;
   timerEl.style.color = '';
   timerEl.classList.remove('urgent');
+  if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(false);
 
   timerInterval = setInterval(() => {
     t--;
     timerEl.textContent = t;
-    if (t <= 5) timerEl.classList.add('urgent');
+    if (t <= 5) {
+      timerEl.classList.add('urgent');
+      if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(true);
+    } else {
+      if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(false);
+    }
     if (t <= 0) {
       clearInterval(timerInterval);
+      if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(false);
       if (!answered) {
         answered = true;
         revealAnswer(currentShuffledAns);
         SFX.timeout();
-        if (window._robot3d) window._robot3d.triggerWrong();
+        triggerWrongVibes(-1);
         showFeedback(false, 0, 15);
         writeLog(code, { type: 'answer_timeout', name: myName, q: currentQ });
         const nextQ = currentQ + 1;
@@ -954,18 +1022,65 @@ function startTimer(seconds, q, code) {
   }, 1000);
 }
 
+// ===== WRONG & CORRECT VIBES INTERACTION =====
+function triggerWrongVibes(chosenIdx) {
+  // 1. Fullscreen Tactical Red Alarm Vignette Pulse
+  const alertEl = document.getElementById('alarm-vignette');
+  if (alertEl) {
+    alertEl.classList.remove('active');
+    void alertEl.offsetWidth; // force reflow
+    alertEl.classList.add('active');
+  }
+
+  // 2. 3D Companion Recoil Shock & Ejection of red sparks + 3D warning shockwave
+  if (window._robot3d) {
+    window._robot3d.triggerWrong();
+  }
+
+  // 3. Staggered 3D Button Tumble / Gravity Fall Physics
+  const container = document.getElementById('options-container');
+  if (container) {
+    const btns = container.querySelectorAll('.option-btn');
+    if (chosenIdx >= 0 && btns[chosenIdx]) {
+      btns[chosenIdx].classList.add('picked-wrong');
+    }
+    // Give 250ms for the error shock glitch to register visually, then dramatic 3D collapse
+    setTimeout(() => {
+      container.classList.add('tumble-falling');
+      btns.forEach((btn, idx) => {
+        btn.classList.add(`tumble-${idx % 4}`);
+      });
+    }, 240);
+  }
+}
+
+function triggerCorrectVibes(btn) {
+  // 1. Fullscreen Emerald Victory Glow Pulse
+  const vicEl = document.getElementById('victory-vignette');
+  if (vicEl) {
+    vicEl.classList.remove('active');
+    void vicEl.offsetWidth; // force reflow
+    vicEl.classList.add('active');
+  }
+
+  // 2. Button 3D Elevation Pop
+  if (btn) {
+    btn.classList.add('picked-correct');
+  }
+
+  // 3. 3D Companion Celebration Spin
+  if (window._robot3d) {
+    window._robot3d.triggerCorrect();
+  }
+}
+window.triggerWrongVibes = triggerWrongVibes;
+window.triggerCorrectVibes = triggerCorrectVibes;
+
 async function answer(chosen, correct, btn, code, qIndex) {
   if (answered) return;
   answered = true;
   clearInterval(timerInterval);
-
-  const answerRef = ref(db, `rooms/${code}/players/${currentUser.uid}/answers/q${qIndex}`);
-  const alreadyAnswered = await get(answerRef);
-  if (alreadyAnswered.exists()) {
-    revealAnswer(correct, chosen);
-    afterAnswer(code);
-    return;
-  }
+  if (window.BGM_ENGINE) window.BGM_ENGINE.setTimerUrgent(false);
 
   const isCorrect = chosen === correct;
   if (isCorrect) myCorrect++;
@@ -990,12 +1105,8 @@ async function answer(chosen, correct, btn, code, qIndex) {
     if (myStreak >= streakThreshold && myStreak % streakThreshold === 0) {
       pendingItemPick = true;
     }
-    // 3D Robot Reaction
-    if (window._robot3d) window._robot3d.triggerCorrect();
   } else {
     myStreak = 0;
-    // 3D Robot Recoil
-    if (window._robot3d) window._robot3d.triggerWrong();
   }
 
   const rawPts = pts;
@@ -1013,24 +1124,32 @@ async function answer(chosen, correct, btn, code, qIndex) {
   document.getElementById('timer').style.color = '';
   updateStreakUI();
 
+  // INSTANT OPTIMISTIC ZERO-LATENCY FEEDBACK FOR MOBILE
+  revealAnswer(correct, chosen);
+  if (isCorrect) {
+    SFX.correct();
+    triggerCorrectVibes(btn);
+  } else {
+    SFX.wrong();
+    triggerWrongVibes(chosen);
+  }
+  showFeedback(isCorrect, pts, elapsed, rawPts, comboMultiplier, doubleApplied);
+
+  // Background Database Sync (Runs asynchronously without blocking UI animations)
   const nextQ = qIndex + 1;
-  await update(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
+  update(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
     score: myScore,
     correct: myCorrect,
     streak: myStreak,
     myQuestion: nextQ,
     [`answers/q${qIndex}`]: chosen
-  });
-
-  revealAnswer(correct, chosen);
-  if (isCorrect) SFX.correct(); else SFX.wrong();
-  showFeedback(isCorrect, pts, elapsed, rawPts, comboMultiplier, doubleApplied);
-  updateRankBadge(code);
+  }).catch(e => console.warn('Sync answer failed:', e));
 
   writeLog(code, isCorrect
     ? { type: 'answer_correct', name: myName, q: qIndex, pts }
     : { type: 'answer_wrong',   name: myName, q: qIndex }
   );
+  updateRankBadge(code);
 
   if (pendingItemPick) {
     setTimeout(() => {
@@ -1191,6 +1310,18 @@ async function showResult(code) {
 
   showScreen('result');
   setTimeout(() => SFX.victory(), 300);
+  if (window.ConfettiManager) {
+    setTimeout(() => window.ConfettiManager.burst(90), 200);
+  }
+  const vicEl = document.getElementById('victory-vignette');
+  if (vicEl) {
+    vicEl.classList.remove('active');
+    void vicEl.offsetWidth;
+    vicEl.classList.add('active');
+  }
+  if (window._robot3d) {
+    window._robot3d.triggerVictory();
+  }
 
   const resultShownAt = Date.now();
   const roomRef = ref(db, `rooms/${code}`);
@@ -1617,142 +1748,644 @@ window.doRejoin = async function() {
   }
 };
 
-// ===== AMBIENT SYNTHESIZER MUSIC =====
-let _bgmCtx = null;
-let _bgmNodes = [];
-let _bgmPlaying = false;
-let _bgmEnabled = localStorage.getItem('quizBGM') !== 'off';
+// ===== ADAPTIVE DYNAMIC SYNTHESIZER BGM ENGINE (3 STATES) =====
+// Pure Web Audio API: Zero external audio files, zero 404s, mobile battery friendly.
+// States: 'idle' (Lobby / Hangar), 'gameplay' (124 BPM Cyber Beat), 'victory' (128 BPM Fanfare)
+const BGM_ENGINE = (function() {
+  let ctx = null;
+  let masterGain = null;
+  let currentTrack = null;
+  let activeTrackObj = null;
+  let isPlaying = false;
+  let isMuted = localStorage.getItem('quizBGM') === 'off';
+  const savedVol = localStorage.getItem('quizBGMVol');
+  let masterVolume = savedVol !== null ? parseFloat(savedVol) / 100 : 0.32;
+  if (isNaN(masterVolume) || masterVolume < 0 || masterVolume > 1) masterVolume = 0.32;
 
-function buildAmbientLoop() {
-  if (_bgmCtx && _bgmCtx.state !== 'closed') {
-    _bgmCtx.close().catch(()=>{});
+  function getCtx() {
+    if (!ctx) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      ctx = new AudioCtx();
+      masterGain = ctx.createGain();
+      masterGain.gain.setValueAtTime(isMuted ? 0.0001 : masterVolume, ctx.currentTime);
+      masterGain.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') {
+      ctx.resume().catch(() => {});
+    }
+    return ctx;
   }
-  _bgmNodes = [];
-  _bgmCtx = new (window.AudioContext || window.webkitAudioContext)();
-  const ctx = _bgmCtx;
-  const master = ctx.createGain();
-  master.gain.value = 0.08;
-  master.connect(ctx.destination);
 
-  function makePulse(freq, period, vol) {
-    const osc = ctx.createOscillator();
-    const g = ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.value = freq;
-    osc.connect(g);
-    g.connect(master);
-    g.gain.value = 0;
-    osc.start();
-    let up = true;
-    const id = setInterval(() => {
-      if (!_bgmPlaying) return;
-      const now = ctx.currentTime;
-      if (up) {
-        g.gain.cancelScheduledValues(now);
-        g.gain.setValueAtTime(0, now);
-        g.gain.linearRampToValueAtTime(vol, now + period * 0.4);
-        g.gain.linearRampToValueAtTime(0, now + period);
+  // --- TRACK 1: IDLE / LOBBY (Warm Ambient Cyber Lounge) ---
+  function createIdleTrack(audioCtx, outGain) {
+    const nodes = [];
+    const intervals = [];
+    const trackGain = audioCtx.createGain();
+    trackGain.gain.value = 0.0001;
+    trackGain.connect(outGain);
+
+    // Warm sub-bass drone (A1 / 55Hz)
+    try {
+      const subOsc = audioCtx.createOscillator();
+      const subGain = audioCtx.createGain();
+      const subFilter = audioCtx.createBiquadFilter();
+      subOsc.type = 'triangle';
+      subOsc.frequency.value = 55;
+      subFilter.type = 'lowpass';
+      subFilter.frequency.value = 130;
+      subGain.gain.value = 0.28;
+      subOsc.connect(subFilter);
+      subFilter.connect(subGain);
+      subGain.connect(trackGain);
+      subOsc.start();
+      nodes.push(subOsc);
+    } catch(e) {}
+
+    // Ambient Cyber Pad (Progression: Dm9, Bbmaj7, Fsus2, C/E)
+    const chordFreqs = [
+      [146.83, 220.00, 261.63, 329.63], // Dm9
+      [116.54, 233.08, 293.66, 349.23], // Bbmaj7
+      [174.61, 261.63, 349.23, 392.00], // Fsus2
+      [130.81, 196.00, 261.63, 329.63]  // C/E
+    ];
+    let chordIdx = 0;
+
+    const padVoices = chordFreqs[0].map(freq => {
+      try {
+        const osc = audioCtx.createOscillator();
+        const vGain = audioCtx.createGain();
+        const filter = audioCtx.createBiquadFilter();
+        osc.type = 'sawtooth';
+        osc.frequency.value = freq;
+        osc.detune.value = (Math.random() - 0.5) * 10;
+        filter.type = 'lowpass';
+        filter.frequency.value = 460;
+        vGain.gain.value = 0.042;
+        osc.connect(filter);
+        filter.connect(vGain);
+        vGain.connect(trackGain);
+        osc.start();
+        nodes.push(osc);
+        return { osc, vGain, filter };
+      } catch(e) { return null; }
+    }).filter(Boolean);
+
+    const chordTimer = setInterval(() => {
+      chordIdx = (chordIdx + 1) % chordFreqs.length;
+      const targetChord = chordFreqs[chordIdx];
+      const now = audioCtx.currentTime;
+      padVoices.forEach((voice, i) => {
+        try {
+          voice.osc.frequency.exponentialRampToValueAtTime(targetChord[i] || 220, now + 1.2);
+        } catch(e) {}
+      });
+    }, 4000);
+    intervals.push(chordTimer);
+
+    // Shimmering High Star Pings
+    const pentatonic = [587.33, 659.25, 880.00, 1046.50, 1174.66];
+    const shimmerTimer = setInterval(() => {
+      try {
+        const now = audioCtx.currentTime;
+        const note = pentatonic[Math.floor(Math.random() * pentatonic.length)];
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = note;
+        g.gain.setValueAtTime(0.001, now);
+        g.gain.exponentialRampToValueAtTime(0.035, now + 0.06);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
+        osc.connect(g);
+        g.connect(trackGain);
+        osc.start(now);
+        osc.stop(now + 0.75);
+      } catch(e) {}
+    }, 950);
+    intervals.push(shimmerTimer);
+
+    return {
+      trackGain,
+      nodes,
+      intervals,
+      stop() {
+        this.intervals.forEach(clearInterval);
+        this.nodes.forEach(n => { try { n.stop(); n.disconnect(); } catch(e) {} });
+        try { this.trackGain.disconnect(); } catch(e) {}
       }
-      up = !up;
-    }, period * 500);
-    _bgmNodes.push({ osc, g, id });
+    };
   }
 
-  function makePad(freq, detune, vol) {
-    const osc = ctx.createOscillator();
-    const g = ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.value = freq;
-    osc.detune.value = detune;
-    osc.connect(g);
-    g.connect(master);
-    g.gain.value = vol;
-    osc.start();
-    _bgmNodes.push({ osc, g });
+  // --- TRACK 2: GAMEPLAY (124 BPM Driving Cyber Battle Groove with Sample-Accurate Lookahead) ---
+  function createGameplayTrack(audioCtx, outGain) {
+    const nodes = [];
+    const intervals = [];
+    const trackGain = audioCtx.createGain();
+    trackGain.gain.value = 0.0001;
+    trackGain.connect(outGain);
+
+    const bpm = 124;
+    const stepTime = (60 / bpm) / 4; // 16th note step (~0.1209s)
+
+    // Dynamic Bass Filter (opens up on countdown urgency)
+    const bassFilter = audioCtx.createBiquadFilter();
+    bassFilter.type = 'lowpass';
+    bassFilter.frequency.value = 750;
+    bassFilter.Q.value = 4.2;
+    bassFilter.connect(trackGain);
+
+    // Rolling Synth Bass Notes in D minor
+    const bassNotes = [
+      73.42, 73.42, 87.31, 73.42,  98.00, 73.42, 110.00, 87.31,
+      73.42, 73.42, 130.81, 73.42, 110.00, 98.00, 87.31, 73.42
+    ];
+
+    // Cyber Arpeggio Ostinato
+    const arpNotes = [
+      293.66, 349.23, 440.00, 587.33, 523.25, 440.00, 392.00, 440.00,
+      349.23, 392.00, 440.00, 523.25, 587.33, 523.25, 440.00, 349.23
+    ];
+
+    // White noise buffer for cyber hi-hat
+    const bufferSize = Math.floor(audioCtx.sampleRate * 0.06);
+    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+
+    let nextNoteTime = audioCtx.currentTime + 0.05;
+    let step = 0;
+
+    const scheduleStep = (stepIdx, time) => {
+      // 1. Electronic Kick Drum (Quarter beats 0, 4, 8, 12)
+      if (stepIdx % 4 === 0) {
+        try {
+          const kickOsc = audioCtx.createOscillator();
+          const kickGain = audioCtx.createGain();
+          kickOsc.type = 'sine';
+          kickOsc.frequency.setValueAtTime(145, time);
+          kickOsc.frequency.exponentialRampToValueAtTime(42, time + 0.09);
+          kickGain.gain.setValueAtTime(0.35, time);
+          kickGain.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+          kickOsc.connect(kickGain);
+          kickGain.connect(trackGain);
+          kickOsc.start(time);
+          kickOsc.stop(time + 0.13);
+        } catch(e) {}
+      }
+
+      // 2. Offbeat Metallic Hi-Hat (Accented on off-beats)
+      if (stepIdx % 2 === 0) {
+        try {
+          const noise = audioCtx.createBufferSource();
+          noise.buffer = noiseBuffer;
+          const hFilter = audioCtx.createBiquadFilter();
+          hFilter.type = 'highpass';
+          hFilter.frequency.value = 7200;
+          const hGain = audioCtx.createGain();
+          const isAccent = (stepIdx % 4 === 2);
+          hGain.gain.setValueAtTime(isAccent ? 0.08 : 0.038, time);
+          hGain.gain.exponentialRampToValueAtTime(0.0001, time + (isAccent ? 0.06 : 0.035));
+          noise.connect(hFilter);
+          hFilter.connect(hGain);
+          hGain.connect(trackGain);
+          noise.start(time);
+          noise.stop(time + 0.07);
+        } catch(e) {}
+      }
+
+      // 3. Driving Synth Bass (16th notes)
+      try {
+        const bFreq = bassNotes[stepIdx % bassNotes.length];
+        const bOsc = audioCtx.createOscillator();
+        const bGain = audioCtx.createGain();
+        bOsc.type = 'sawtooth';
+        bOsc.frequency.setValueAtTime(bFreq, time);
+        bGain.gain.setValueAtTime(0.12, time);
+        bGain.gain.exponentialRampToValueAtTime(0.001, time + 0.10);
+        bOsc.connect(bGain);
+        bGain.connect(bassFilter);
+        bOsc.start(time);
+        bOsc.stop(time + 0.11);
+      } catch(e) {}
+
+      // 4. Arpeggio Tension Melodic Lead
+      if (stepIdx % 2 === 1) {
+        try {
+          const aFreq = arpNotes[stepIdx % arpNotes.length];
+          const aOsc = audioCtx.createOscillator();
+          const aGain = audioCtx.createGain();
+          aOsc.type = 'triangle';
+          aOsc.frequency.setValueAtTime(aFreq, time);
+          aGain.gain.setValueAtTime(0.048, time);
+          aGain.gain.exponentialRampToValueAtTime(0.0001, time + 0.13);
+          aOsc.connect(aGain);
+          aGain.connect(trackGain);
+          aOsc.start(time);
+          aOsc.stop(time + 0.14);
+        } catch(e) {}
+      }
+    };
+
+    const ticker = setInterval(() => {
+      while (nextNoteTime < audioCtx.currentTime + 0.12) {
+        scheduleStep(step, nextNoteTime);
+        nextNoteTime += stepTime;
+        step = (step + 1) % 16;
+      }
+    }, 25);
+    intervals.push(ticker);
+
+    return {
+      trackGain,
+      nodes,
+      intervals,
+      setUrgent(urgent) {
+        if (!audioCtx) return;
+        try {
+          const targetCutoff = urgent ? 1800 : 750;
+          bassFilter.frequency.setTargetAtTime(targetCutoff, audioCtx.currentTime, 0.25);
+        } catch(e) {}
+      },
+      stop() {
+        this.intervals.forEach(clearInterval);
+        this.nodes.forEach(n => { try { n.stop(); n.disconnect(); } catch(e) {} });
+        try { this.trackGain.disconnect(); } catch(e) {}
+      }
+    };
   }
 
-  function makeShimmer(freq, rate, vol) {
-    const osc = ctx.createOscillator();
-    const lfo = ctx.createOscillator();
-    const lfoGain = ctx.createGain();
-    const g = ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.value = freq;
-    lfo.type = 'sine';
-    lfo.frequency.value = rate;
-    lfoGain.gain.value = freq * 0.015;
-    lfo.connect(lfoGain);
-    lfoGain.connect(osc.frequency);
-    osc.connect(g);
-    g.connect(master);
-    g.gain.value = vol;
-    lfo.start();
-    osc.start();
-    _bgmNodes.push({ osc, g, extra: [lfo, lfoGain] });
+  // --- TRACK 3: VICTORY / PODIUM (128 BPM Triumphant Fanfare with Lookahead) ---
+  function createVictoryTrack(audioCtx, outGain) {
+    const nodes = [];
+    const intervals = [];
+    const trackGain = audioCtx.createGain();
+    trackGain.gain.value = 0.0001;
+    trackGain.connect(outGain);
+
+    const bpm = 128;
+    const beatTime = 60 / bpm; // ~0.4687s
+
+    // Major celebratory chords: Cmaj7 -> G -> Am7 -> Fmaj7
+    const chords = [
+      [261.63, 329.63, 392.00, 523.25], // C major
+      [196.00, 246.94, 293.66, 392.00], // G major
+      [220.00, 261.63, 329.63, 440.00], // Am
+      [174.61, 220.00, 261.63, 349.23]  // F major
+    ];
+    const fanfareMelody = [
+      523.25, 659.25, 783.99, 1046.50,
+      783.99, 880.00, 1046.50, 1318.51
+    ];
+
+    let nextBeatTime = audioCtx.currentTime + 0.05;
+    let beat = 0;
+
+    const scheduleBeat = (beatIdx, time) => {
+      const chordIndex = Math.floor(beatIdx / 4) % chords.length;
+      const currentChord = chords[chordIndex];
+
+      // 1. Triumphant Brass Chord Hit
+      if (beatIdx % 2 === 0) {
+        currentChord.forEach(freq => {
+          try {
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            const filt = audioCtx.createBiquadFilter();
+            osc.type = 'sawtooth';
+            osc.frequency.value = freq;
+            filt.type = 'lowpass';
+            filt.frequency.setValueAtTime(1400, time);
+            filt.frequency.exponentialRampToValueAtTime(700, time + 0.6);
+            g.gain.setValueAtTime(0.04, time);
+            g.gain.exponentialRampToValueAtTime(0.0001, time + 0.65);
+            osc.connect(filt);
+            filt.connect(g);
+            g.connect(trackGain);
+            osc.start(time);
+            osc.stop(time + 0.7);
+          } catch(e) {}
+        });
+      }
+
+      // 2. Celebratory Kick & Snare
+      try {
+        if (beatIdx % 2 === 0) {
+          const k = audioCtx.createOscillator();
+          const kg = audioCtx.createGain();
+          k.type = 'sine';
+          k.frequency.setValueAtTime(150, time);
+          k.frequency.exponentialRampToValueAtTime(50, time + 0.1);
+          kg.gain.setValueAtTime(0.3, time);
+          kg.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+          k.connect(kg);
+          kg.connect(trackGain);
+          k.start(time);
+          k.stop(time + 0.13);
+        } else {
+          const s = audioCtx.createOscillator();
+          const sg = audioCtx.createGain();
+          s.type = 'triangle';
+          s.frequency.setValueAtTime(220, time);
+          sg.gain.setValueAtTime(0.12, time);
+          sg.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+          s.connect(sg);
+          sg.connect(trackGain);
+          s.start(time);
+          s.stop(time + 0.13);
+        }
+      } catch(e) {}
+
+      // 3. Bright Fanfare Lead Chimes
+      try {
+        const mFreq = fanfareMelody[beatIdx % fanfareMelody.length];
+        const mOsc = audioCtx.createOscillator();
+        const mGain = audioCtx.createGain();
+        mOsc.type = 'triangle';
+        mOsc.frequency.setValueAtTime(mFreq, time);
+        mGain.gain.setValueAtTime(0.065, time);
+        mGain.gain.exponentialRampToValueAtTime(0.0001, time + 0.35);
+        mOsc.connect(mGain);
+        mGain.connect(trackGain);
+        mOsc.start(time);
+        mOsc.stop(time + 0.38);
+      } catch(e) {}
+    };
+
+    const ticker = setInterval(() => {
+      while (nextBeatTime < audioCtx.currentTime + 0.25) {
+        scheduleBeat(beat, nextBeatTime);
+        nextBeatTime += beatTime;
+        beat = (beat + 1) % 16;
+      }
+    }, 40);
+    intervals.push(ticker);
+
+    return {
+      trackGain,
+      nodes,
+      intervals,
+      stop() {
+        this.intervals.forEach(clearInterval);
+        this.nodes.forEach(n => { try { n.stop(); n.disconnect(); } catch(e) {} });
+        try { this.trackGain.disconnect(); } catch(e) {}
+      }
+    };
   }
 
-  makePulse(80, 4, 0.6);
-  makePad(220, 0,   0.25);
-  makePad(220, 7,   0.2);
-  makePad(330, -5,  0.15);
-  makePad(440, 3,   0.1);
-  makeShimmer(880, 0.3, 0.06);
-  makeShimmer(1320, 0.2, 0.04);
+  return {
+    init() {
+      this.updateUI();
+    },
 
-  _bgmPlaying = true;
-}
+    unlock() {
+      const audioCtx = getCtx();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+      }
+      if (!isMuted) {
+        isPlaying = true;
+        if (!activeTrackObj) {
+          this.setTrack(currentTrack || 'idle');
+        }
+      }
+      this.updateUI();
+    },
 
-function startBGM() {
-  if (!_bgmEnabled) return;
-  try {
-    buildAmbientLoop();
-    updateBGMLabel();
-  } catch(e) {}
-}
+    setVolume(percent) {
+      const val = Math.max(0, Math.min(100, parseFloat(percent) || 0)) / 100;
+      masterVolume = val;
+      localStorage.setItem('quizBGMVol', Math.round(val * 100));
+      const audioCtx = getCtx();
+      const now = audioCtx.currentTime;
+      if (!isMuted && masterGain) {
+        masterGain.gain.cancelScheduledValues(now);
+        masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+        masterGain.gain.linearRampToValueAtTime(masterVolume, now + 0.08);
+      }
+      this.updateUI();
+    },
 
-function stopBGM() {
-  _bgmPlaying = false;
-  _bgmNodes.forEach(n => {
-    if (n.id) clearInterval(n.id);
-    if (n.osc) { try { n.osc.stop(); n.osc.disconnect(); } catch(e) {} }
-    if (n.extra) n.extra.forEach(x => { try { x.stop(); x.disconnect(); } catch(e) {} });
-  });
-  _bgmNodes = [];
-  if (_bgmCtx && _bgmCtx.state !== 'closed') {
-    _bgmCtx.close().catch(()=>{});
-    _bgmCtx = null;
+    setTrack(trackName) {
+      if (!isMuted) {
+        isPlaying = true;
+      }
+      if (currentTrack === trackName && activeTrackObj) {
+        return;
+      }
+
+      const audioCtx = getCtx();
+      const now = audioCtx.currentTime;
+      const prevTrackObj = activeTrackObj;
+
+      // Smoothly cross-fade out previous track
+      if (prevTrackObj) {
+        try {
+          prevTrackObj.trackGain.gain.cancelScheduledValues(now);
+          prevTrackObj.trackGain.gain.setValueAtTime(prevTrackObj.trackGain.gain.value, now);
+          prevTrackObj.trackGain.gain.linearRampToValueAtTime(0.0001, now + 0.65);
+          setTimeout(() => {
+            prevTrackObj.stop();
+          }, 700);
+        } catch(e) {
+          prevTrackObj.stop();
+        }
+      }
+
+      // Smoothly cross-fade in new track
+      currentTrack = trackName;
+      let newTrackObj = null;
+      if (trackName === 'gameplay') {
+        newTrackObj = createGameplayTrack(audioCtx, masterGain);
+      } else if (trackName === 'victory') {
+        newTrackObj = createVictoryTrack(audioCtx, masterGain);
+      } else {
+        newTrackObj = createIdleTrack(audioCtx, masterGain);
+      }
+
+      activeTrackObj = newTrackObj;
+      newTrackObj.trackGain.gain.setValueAtTime(0.0001, now);
+      newTrackObj.trackGain.gain.linearRampToValueAtTime(1.0, now + 0.7);
+
+      this.updateUI();
+    },
+
+    setTimerUrgent(urgent) {
+      if (activeTrackObj && activeTrackObj.setUrgent) {
+        activeTrackObj.setUrgent(urgent);
+      }
+    },
+
+    toggle() {
+      isMuted = !isMuted;
+      localStorage.setItem('quizBGM', isMuted ? 'off' : 'on');
+      const audioCtx = getCtx();
+      const now = audioCtx.currentTime;
+      masterGain.gain.cancelScheduledValues(now);
+      if (isMuted) {
+        masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.25);
+      } else {
+        isPlaying = true;
+        masterGain.gain.linearRampToValueAtTime(masterVolume, now + 0.25);
+        if (!currentTrack) {
+          this.setTrack('idle');
+        }
+      }
+      this.updateUI();
+    },
+
+    updateUI() {
+      const eq = document.getElementById('eq-icon');
+      const label = document.getElementById('music-label');
+      const slider = document.getElementById('bgm-volume-slider');
+      if (eq) {
+        if (!isMuted && isPlaying) {
+          eq.classList.add('playing');
+          eq.classList.remove('muted');
+        } else {
+          eq.classList.remove('playing');
+          eq.classList.add('muted');
+        }
+      }
+      if (label) {
+        label.textContent = isMuted ? 'Musik Off' : 'Musik On';
+      }
+      if (slider) {
+        slider.value = Math.round(masterVolume * 100);
+      }
+    }
+  };
+})();
+window.BGM_ENGINE = BGM_ENGINE;
+
+// ===== VICTORY CELEBRATION CONFETTI ENGINE =====
+const ConfettiManager = (function() {
+  let canvas = null;
+  let ctx = null;
+  let particles = [];
+  let animId = null;
+  let isActive = false;
+
+  function init() {
+    canvas = document.getElementById('victory-confetti-canvas');
+    if (!canvas) return;
+    ctx = canvas.getContext('2d');
+    resize();
+    window.addEventListener('resize', resize);
   }
-  updateBGMLabel();
-}
 
+  function resize() {
+    if (!canvas) return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function burst(count = 90) {
+    if (!canvas) init();
+    if (!canvas || !ctx) return;
+    resize();
+    canvas.style.display = 'block';
+    isActive = true;
+
+    particles = [];
+    // Left cannon
+    for (let i = 0; i < count / 2; i++) {
+      particles.push(createParticle(0, canvas.height * 0.7, 1));
+    }
+    // Right cannon
+    for (let i = 0; i < count / 2; i++) {
+      particles.push(createParticle(canvas.width, canvas.height * 0.7, -1));
+    }
+
+    if (!animId) loop();
+
+    // Auto-stop after 4 seconds to conserve CPU/battery
+    setTimeout(() => {
+      isActive = false;
+    }, 4000);
+  }
+
+  function createParticle(x, y, dir) {
+    const angle = dir === 1
+      ? (-Math.PI / 4 + (Math.random() - 0.5) * 0.55)
+      : (-3 * Math.PI / 4 + (Math.random() - 0.5) * 0.55);
+    const speed = 11 + Math.random() * 15;
+    const colors = ['#00F59B', '#10B981', '#00F0FF', '#38BDF8', '#FFB800', '#F59E0B', '#FFFFFF'];
+    return {
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      w: 8 + Math.random() * 8,
+      h: 5 + Math.random() * 6,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.25,
+      gravity: 0.36,
+      drag: 0.982,
+      opacity: 1
+    };
+  }
+
+  function loop() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= p.drag;
+      p.vy += p.gravity;
+      p.rotation += p.rotSpeed;
+
+      if (!isActive) {
+        p.opacity -= 0.025;
+      }
+
+      if (p.opacity <= 0 || p.y > canvas.height + 50) {
+        particles.splice(i, 1);
+        continue;
+      }
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.globalAlpha = Math.max(0, p.opacity);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    }
+
+    if (particles.length > 0) {
+      animId = requestAnimationFrame(loop);
+    } else {
+      animId = null;
+      if (canvas) canvas.style.display = 'none';
+    }
+  }
+
+  return { init, burst };
+})();
+window.ConfettiManager = ConfettiManager;
+
+// Global BGM wrappers
 window.toggleBGM = function() {
-  _bgmEnabled = !_bgmEnabled;
-  localStorage.setItem('quizBGM', _bgmEnabled ? 'on' : 'off');
-  if (_bgmEnabled) startBGM(); else stopBGM();
+  BGM_ENGINE.toggle();
+};
+window.setBGMVolume = function(val) {
+  BGM_ENGINE.setVolume(val);
 };
 
-function updateBGMLabel() {
-  const onIcon  = document.getElementById('music-icon-on');
-  const offIcon = document.getElementById('music-icon-off');
-  const label   = document.getElementById('music-label');
-  if (_bgmEnabled && _bgmPlaying) {
-    if (onIcon)  onIcon.style.display  = '';
-    if (offIcon) offIcon.style.display = 'none';
-    if (label)   label.textContent     = 'Musik';
-  } else {
-    if (onIcon)  onIcon.style.display  = 'none';
-    if (offIcon) offIcon.style.display = '';
-    if (label)   label.textContent     = 'Musik Off';
-  }
+// Autoplay unlock listener on first user touch/click/gesture
+let _audioUnlocked = false;
+function unlockAudio() {
+  if (_audioUnlocked) return;
+  _audioUnlocked = true;
+  BGM_ENGINE.unlock();
 }
-
-let _bgmStarted = false;
-document.addEventListener('click', () => {
-  if (!_bgmStarted && _bgmEnabled) {
-    _bgmStarted = true;
-    startBGM();
-  }
-}, { once: true });
+['click', 'touchstart', 'keydown', 'pointerdown'].forEach(evt => {
+  document.addEventListener(evt, unlockAudio, { once: true });
+});
 
 // ===== DARK / LIGHT MODE TOGGLE =====
 let isLightMode = false;
