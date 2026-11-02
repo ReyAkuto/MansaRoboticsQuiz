@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" width="100%" height="100%">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="320" height="140" rx="10" fill="#0b111e" stroke="rgba(0,240,255,0.25)" stroke-width="1.5" />
+  <style>
+    .wire { stroke: #00f0ff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .gate { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; stroke-linejoin: round; }
+    .bubble { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; }
+    .label { fill: #00f0ff; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .out-label { fill: #f59e0b; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .gate-text { fill: #94a3b8; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 11px; text-anchor: middle; dominant-baseline: central; letter-spacing: 1px; }
+    .truth-th { fill: #00f0ff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; text-anchor: middle; }
+    .truth-td { fill: #f8fafc; font-family: 'Space Grotesk', monospace; font-size: 13px; text-anchor: middle; }
+  </style>
+  
+  <text x="45" y="70" class="label">A</text>
+  <line x1="60" y1="70" x2="115" y2="70" class="wire" />
+  <path d="M 115,35 L 115,105 L 175,70 Z" class="gate" />
+  <circle cx="183" cy="70" r="8" class="bubble" />
+  <text x="135" y="70" class="gate-text">NOT</text>
+  <line x1="191" y1="70" x2="250" y2="70" class="wire" />
+  <text x="268" y="70" class="out-label">Y</text>
+
+</svg>

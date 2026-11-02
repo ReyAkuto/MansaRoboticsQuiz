@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 140" width="100%" height="100%">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="340" height="140" rx="10" fill="#0b111e" stroke="rgba(0,240,255,0.25)" stroke-width="1.5" />
+  <style>
+    .wire { stroke: #00f0ff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .gate { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; stroke-linejoin: round; }
+    .bubble { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; }
+    .label { fill: #00f0ff; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .out-label { fill: #f59e0b; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .gate-text { fill: #94a3b8; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 11px; text-anchor: middle; dominant-baseline: central; letter-spacing: 1px; }
+    .truth-th { fill: #00f0ff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; text-anchor: middle; }
+    .truth-td { fill: #f8fafc; font-family: 'Space Grotesk', monospace; font-size: 13px; text-anchor: middle; }
+  </style>
+  
+  <text x="20" y="40" class="label">A</text>
+  <line x1="35" y1="40" x2="65" y2="40" class="wire" />
+  <!-- NOT Gate for A -->
+  <path d="M 65,22 L 65,58 L 105,40 Z" class="gate" />
+  <circle cx="110" cy="40" r="5" class="bubble" />
+  <line x1="115" y1="40" x2="170" y2="40" class="wire" />
+  <text x="140" y="30" style="fill:#38bdf8;font-size:11px;font-family:sans-serif;text-anchor:middle;">X = NOT A</text>
+
+  <text x="20" y="90" class="label">B</text>
+  <line x1="35" y1="90" x2="170" y2="90" class="wire" />
+
+  <!-- AND Gate -->
+  <path d="M 170,25 L 195,25 A 40,40 0 0,1 195,105 L 170,105 Z" class="gate" />
+  <text x="195" y="65" class="gate-text">AND</text>
+  <line x1="235" y1="65" x2="280" y2="65" class="wire" />
+  <text x="298" y="65" class="out-label">Y</text>
+
+</svg>

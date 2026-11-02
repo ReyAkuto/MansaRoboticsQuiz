@@ -1,1379 +1,1629 @@
 {
   "dasar": [
     {
-      "q": "Apa fungsi utama sensor pada robot?",
+      "q": "Sistem bilangan biner merupakan sistem bilangan yang menggunakan basis...",
       "opts": [
-        "Menggerakkan bagian tubuh robot",
-        "Mendeteksi kondisi di sekitar robot",
-        "Menyimpan program robot",
-        "Mengatur kecepatan motor robot"
+        "Basis 2 (hanya angka 0 dan 1)",
+        "Basis 8 (angka 0 sampai 7)",
+        "Basis 10 (angka 0 sampai 9)",
+        "Basis 16 (angka 0 sampai F)"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Setiap satu digit angka pada sistem bilangan biner disebut dengan istilah...",
+      "opts": [
+        "Byte",
+        "Bit (Binary Digit)",
+        "Nibble",
+        "Word"
       ],
       "ans": 1,
-      "level": 1
+      "level": 1,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Komponen mana yang termasuk aktuator pada robot?",
+      "q": "Berapakah nilai desimal dari bilangan biner 0001?",
       "opts": [
-        "Sensor cahaya",
-        "Papan Arduino",
-        "Motor DC",
-        "Sensor suhu"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Apa tugas controller pada sebuah robot?",
-      "opts": [
-        "Mendeteksi halangan di depan robot",
-        "Menggerakkan roda robot secara langsung",
-        "Memproses data dan memberi perintah ke aktuator",
-        "Menyimpan daya untuk robot"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Manakah yang merupakan contoh sensor jarak?",
-      "opts": [
-        "Motor servo",
-        "Sensor ultrasonik",
-        "Baterai Li-ion",
-        "Driver motor L298N"
+        "0",
+        "1",
+        "2",
+        "4"
       ],
       "ans": 1,
-      "level": 1
+      "level": 1,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Pada robot sederhana, urutan kerja yang benar adalah...",
+      "q": "Berapakah nilai desimal dari bilangan biner 0010?",
       "opts": [
-        "Controller → Sensor → Aktuator",
-        "Aktuator → Controller → Sensor",
-        "Sensor → Aktuator → Controller",
-        "Sensor → Controller → Aktuator"
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 0011?",
+      "opts": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 0100?",
+      "opts": [
+        "2",
+        "3",
+        "4",
+        "8"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 0101?",
+      "opts": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 0110?",
+      "opts": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 0111?",
+      "opts": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1000?",
+      "opts": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1001?",
+      "opts": [
+        "7",
+        "8",
+        "9",
+        "11"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1010?",
+      "opts": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1011?",
+      "opts": [
+        "9",
+        "10",
+        "11",
+        "13"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1100?",
+      "opts": [
+        "10",
+        "11",
+        "12",
+        "14"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1101?",
+      "opts": [
+        "11",
+        "12",
+        "13",
+        "15"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1110?",
+      "opts": [
+        "12",
+        "13",
+        "14",
+        "16"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1111?",
+      "opts": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan angka desimal 5 ke dalam bentuk bilangan biner 4-bit!",
+      "opts": [
+        "0100",
+        "0101",
+        "0110",
+        "0111"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan angka desimal 9 ke dalam bentuk bilangan biner 4-bit!",
+      "opts": [
+        "1000",
+        "1001",
+        "1010",
+        "1100"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan angka desimal 14 ke dalam bentuk bilangan biner 4-bit!",
+      "opts": [
+        "1100",
+        "1101",
+        "1110",
+        "1111"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol diagram ini merupakan gerbang logika dasar apa?",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang AND",
+        "Gerbang NOT",
+        "Gerbang NAND"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/and_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol diagram ini merupakan gerbang logika dasar apa?",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang AND",
+        "Gerbang NOT",
+        "Gerbang NOR"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/or_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol diagram segitiga dengan bulatan kecil di ujungnya ini adalah gerbang...",
+      "opts": [
+        "Gerbang AND",
+        "Gerbang OR",
+        "Gerbang NOT (Inverter)",
+        "Gerbang Buffer"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": "assets/images/not_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+    },
+    {
+      "q": "Gerbang logika yang berfungsi membalikkan nilai sinyal input (dari 1 menjadi 0 atau sebaliknya) adalah gerbang...",
+      "opts": [
+        "AND",
+        "OR",
+        "NOT",
+        "NAND"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": "assets/images/not_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+    },
+    {
+      "q": "Jika input gerbang NOT diberikan sinyal 1 (HIGH), maka output yang dihasilkan adalah...",
+      "opts": [
+        "0 (LOW)",
+        "1 (HIGH)",
+        "2",
+        "Tetap 1"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/not_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+    },
+    {
+      "q": "Jika input gerbang NOT diberikan sinyal 0 (LOW), maka output yang dihasilkan adalah...",
+      "opts": [
+        "0 (LOW)",
+        "1 (HIGH)",
+        "-1",
+        "Tidak ada sinyal"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/not_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+    },
+    {
+      "q": "Rumus aljabar Boolean untuk gerbang NOT dengan input A dituliskan sebagai...",
+      "opts": [
+        "Y = A . B",
+        "Y = A + B",
+        "Y = A' (atau NOT A)",
+        "Y = A ⊕ B"
+      ],
+      "ans": 2,
+      "level": 1,
+      "image": "assets/images/table_not.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+    },
+    {
+      "q": "Gerbang logika yang menghasilkan output 1 HANYA JIKA semua inputnya bernilai 1 adalah...",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang AND",
+        "Gerbang NOT",
+        "Gerbang NOR"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/and_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Rumus aljabar Boolean untuk gerbang AND dengan input A dan B adalah...",
+      "opts": [
+        "Y = A + B",
+        "Y = A . B",
+        "Y = A'",
+        "Y = A / B"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/and_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang AND, jika input A = 1 dan B = 1, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "Error"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/table_and.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang AND, jika input A = 1 dan B = 0, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "Tidak tentu"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/table_and.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang AND, jika input A = 0 dan B = 1, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Tergantung frekuensi"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/table_and.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang AND, jika kedua input A = 0 dan B = 0, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Bisa 0 atau 1"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/table_and.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Gerbang logika yang menghasilkan output 1 jika SALAH SATU atau KEDUA inputnya bernilai 1 adalah...",
+      "opts": [
+        "Gerbang AND",
+        "Gerbang OR",
+        "Gerbang NOT",
+        "Gerbang NAND"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/or_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Rumus aljabar Boolean untuk gerbang OR dengan input A dan B adalah...",
+      "opts": [
+        "Y = A . B",
+        "Y = A + B",
+        "Y = A'",
+        "Y = A / B"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/or_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang OR, jika input A = 1 dan B = 0, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "LOW"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/table_or.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang OR, jika input A = 0 dan B = 0, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "10"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/table_or.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang OR, jika kedua input A = 1 dan B = 1, maka nilai output Y adalah...",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "Off"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/table_or.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Tabel yang menampilkan semua kemungkinan kombinasi nilai input beserta outputnya dinamakan...",
+      "opts": [
+        "Tabel Logaritma",
+        "Tabel Kebenaran (Truth Table)",
+        "Tabel Frekuensi",
+        "Tabel Periodik"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/table_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Simbol operasi titik (.) pada persamaan Boolean Y = A . B melambangkan operasi logika...",
+      "opts": [
+        "Penjumlahan (OR)",
+        "Perkalian Logika (AND)",
+        "Pembalikan (NOT)",
+        "Eksklusif (XOR)"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/and_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Simbol operasi tambah (+) pada persamaan Boolean Y = A + B melambangkan operasi logika...",
+      "opts": [
+        "Penjumlahan Logika (OR)",
+        "Perkalian Logika (AND)",
+        "Pembalikan (NOT)",
+        "Pembagian Logika"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": "assets/images/or_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+    },
+    {
+      "q": "Jika dua saklar listrik disusun secara SERI (harus keduanya terhubung agar lampu menyala), ini identik dengan prinsip gerbang...",
+      "opts": [
+        "OR",
+        "AND",
+        "NOT",
+        "NOR"
+      ],
+      "ans": 1,
+      "level": 1,
+      "image": "assets/images/and_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 16?",
+      "opts": [
+        "10000",
+        "10001",
+        "10010",
+        "11000"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 17?",
+      "opts": [
+        "10000",
+        "10001",
+        "10011",
+        "10101"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 18?",
+      "opts": [
+        "10001",
+        "10010",
+        "10100",
+        "11000"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 19?",
+      "opts": [
+        "10010",
+        "10011",
+        "10101",
+        "10111"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 20?",
+      "opts": [
+        "10011",
+        "10100",
+        "10101",
+        "11010"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 21?",
+      "opts": [
+        "10100",
+        "10101",
+        "10110",
+        "11001"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 22?",
+      "opts": [
+        "10101",
+        "10110",
+        "10111",
+        "11010"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 24?",
+      "opts": [
+        "10100",
+        "11000",
+        "11001",
+        "11010"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 25?",
+      "opts": [
+        "11000",
+        "11001",
+        "11010",
+        "11011"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 26?",
+      "opts": [
+        "11001",
+        "11010",
+        "11011",
+        "11100"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 27?",
+      "opts": [
+        "11010",
+        "11011",
+        "11100",
+        "11101"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 28?",
+      "opts": [
+        "11011",
+        "11100",
+        "11101",
+        "11110"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 30?",
+      "opts": [
+        "11100",
+        "11101",
+        "11110",
+        "11111"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah bentuk biner 5-bit dari angka desimal 31?",
+      "opts": [
+        "11110",
+        "11111",
+        "100000",
+        "100001"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan bilangan biner 10001 ke bentuk nilai desimal!",
+      "opts": [
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan bilangan biner 10011 ke bentuk nilai desimal!",
+      "opts": [
+        "17",
+        "18",
+        "19",
+        "21"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan bilangan biner 10101 ke bentuk nilai desimal!",
+      "opts": [
+        "19",
+        "20",
+        "21",
+        "23"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan bilangan biner 11001 ke bentuk nilai desimal!",
+      "opts": [
+        "23",
+        "24",
+        "25",
+        "27"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan bilangan biner 11010 ke bentuk nilai desimal!",
+      "opts": [
+        "24",
+        "25",
+        "26",
+        "28"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Konversikan bilangan biner 11110 ke bentuk nilai desimal!",
+      "opts": [
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol gerbang logika dengan bulatan inversi pada output AND ini adalah...",
+      "opts": [
+        "Gerbang NOR",
+        "Gerbang NAND",
+        "Gerbang XOR",
+        "Gerbang XNOR"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Gerbang kombinasi NAND merupakan singkatan dari istilah...",
+      "opts": [
+        "Negative AND",
+        "NOT-AND",
+        "Non-AND",
+        "Next-AND"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Rumus aljabar Boolean untuk gerbang NAND dengan input A dan B adalah...",
+      "opts": [
+        "Y = A . B",
+        "Y = (A . B)'",
+        "Y = A + B",
+        "Y = (A + B)'"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang NAND, jika kedua input A = 1 dan B = 1, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang NAND, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "Tidak ada",
+        "Error"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang NAND, jika input A = 0 dan B = 0, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "-1"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol gerbang logika dengan bulatan inversi pada output OR ini adalah...",
+      "opts": [
+        "Gerbang NAND",
+        "Gerbang NOR",
+        "Gerbang XOR",
+        "Gerbang XNOR"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Gerbang kombinasi NOR merupakan singkatan dari istilah...",
+      "opts": [
+        "Negative OR",
+        "NOT-OR",
+        "Non-OR",
+        "Next-OR"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Rumus aljabar Boolean untuk gerbang NOR dengan input A dan B adalah...",
+      "opts": [
+        "Y = A + B",
+        "Y = (A + B)'",
+        "Y = A . B",
+        "Y = (A . B)'"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang NOR, jika kedua input A = 0 dan B = 0, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tidak aktif"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang NOR, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Tergantung VCC"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang NOR, jika kedua input A = 1 dan B = 1, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol gerbang dengan garis lengkung ganda di bagian inputnya ini adalah...",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang XOR",
+        "Gerbang XNOR",
+        "Gerbang NOR"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/xor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
+    },
+    {
+      "q": "Ciri utama gerbang XOR 2-input adalah outputnya bernilai 1 HANYA JIKA...",
+      "opts": [
+        "Kedua input bernilai sama",
+        "Kedua input bernilai berbeda (satu bernilai 1 dan satu bernilai 0)",
+        "Kedua input bernilai 0",
+        "Kedua input bernilai 1"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/table_xor.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
+    },
+    {
+      "q": "Simbol operasi aljabar Boolean untuk gerbang XOR dituliskan menggunakan lambang...",
+      "opts": [
+        "Titik (.)",
+        "Tambah (+)",
+        "Tambah dilingkari (⊕)",
+        "Petik (')"
+      ],
+      "ans": 2,
+      "level": 2,
+      "image": "assets/images/xor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang XOR, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tak tentu"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/table_xor.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang XOR, jika kedua input bernilai sama yaitu A = 1 dan B = 1, maka outputnya adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": "assets/images/table_xor.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan gambar berikut. Simbol gerbang XOR yang diberi bulatan inversi pada outputnya ini dinamakan...",
+      "opts": [
+        "Gerbang XOR",
+        "Gerbang XNOR",
+        "Gerbang NOR",
+        "Gerbang NAND"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/xnor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
+    },
+    {
+      "q": "Ciri utama gerbang XNOR 2-input adalah outputnya bernilai 1 HANYA JIKA...",
+      "opts": [
+        "Kedua input bernilai sama (keduanya 0 atau keduanya 1)",
+        "Kedua input bernilai beda",
+        "Hanya jika A lebih besar dari B",
+        "Hanya jika A = 1 dan B = 0"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": "assets/images/xnor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang XNOR, jika input A = 1 dan B = 1, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tidak aktif"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/xnor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
+    },
+    {
+      "q": "Pada gerbang XNOR, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Tetap 1"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": "assets/images/xnor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
+    },
+    {
+      "q": "Dua gerbang logika yang sering dijuluki sebagai 'Gerbang Universal' (dapat membentuk semua jenis gerbang logika lain) adalah...",
+      "opts": [
+        "AND dan OR",
+        "NAND dan NOR",
+        "XOR dan XNOR",
+        "NOT dan AND"
+      ],
+      "ans": 1,
+      "level": 2,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Output gerbang AND dihubungkan langsung ke input gerbang NOT. Rangkaian gabungan ini setara dengan gerbang...",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang NOR",
+        "Gerbang NAND",
+        "Gerbang XOR"
+      ],
+      "ans": 2,
+      "level": 3,
+      "image": "assets/images/circuit_and_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Output gerbang OR dihubungkan langsung ke input gerbang NOT. Rangkaian gabungan ini setara dengan gerbang...",
+      "opts": [
+        "Gerbang AND",
+        "Gerbang NOR",
+        "Gerbang NAND",
+        "Gerbang XNOR"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_or_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Output gerbang XOR dihubungkan langsung ke input gerbang NOT. Rangkaian gabungan ini setara dengan gerbang...",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang AND",
+        "Gerbang XNOR",
+        "Gerbang NOR"
+      ],
+      "ans": 2,
+      "level": 3,
+      "image": "assets/images/circuit_xor_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Jika output dari sebuah gerbang NAND dipasangi gerbang NOT (inverter), maka fungsi keseluruhannya kembali menjadi gerbang...",
+      "opts": [
+        "Gerbang AND",
+        "Gerbang OR",
+        "Gerbang NOR",
+        "Gerbang XOR"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/nand_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
+    },
+    {
+      "q": "Jika output dari sebuah gerbang NOR dipasangi gerbang NOT (inverter), maka fungsi keseluruhannya kembali menjadi gerbang...",
+      "opts": [
+        "Gerbang AND",
+        "Gerbang OR",
+        "Gerbang NAND",
+        "Gerbang XNOR"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/nor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
+    },
+    {
+      "q": "Perhatikan diagram berikut. Sebuah gerbang NAND yang kedua pin inputnya disambung menjadi satu jalur input A akan berfungsi sebagai...",
+      "opts": [
+        "Gerbang OR",
+        "Gerbang NOT (Inverter)",
+        "Gerbang XOR",
+        "Buffer sinyal"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_nand_tied.svg",
+      "img_url": null
+    },
+    {
+      "q": "Gerbang logika apa yang paling tepat dipakai sebagai 'komparator kesamaan bit' (output 1 jika kedua bit bernilai sama)?",
+      "opts": [
+        "Gerbang AND",
+        "Gerbang OR",
+        "Gerbang XOR",
+        "Gerbang XNOR"
       ],
       "ans": 3,
-      "level": 1
+      "level": 3,
+      "image": "assets/images/xnor_gate.svg",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
     },
     {
-      "q": "Sensor LDR digunakan untuk mendeteksi...",
+      "q": "Perhatikan rangkaian diagram. Jika input A = 1 dan B = 1, berapakah output akhir Y?",
       "opts": [
-        "Getaran di sekitar robot",
-        "Intensitas cahaya di lingkungan",
-        "Jarak benda di depan robot",
-        "Kecepatan putaran roda robot"
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_and_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian diagram. Jika input A = 1 dan B = 0, berapakah output akhir Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "-1"
       ],
       "ans": 1,
-      "level": 1
+      "level": 3,
+      "image": "assets/images/circuit_and_not.svg",
+      "img_url": null
     },
     {
-      "q": "Apa yang dimaksud dengan robot otonom?",
+      "q": "Perhatikan rangkaian diagram OR + NOT. Jika input A = 0 dan B = 0, berapakah output akhir Y?",
       "opts": [
-        "Robot yang dikendalikan penuh oleh manusia",
-        "Robot yang hanya bisa bergerak lurus",
-        "Robot yang bisa bergerak dan mengambil keputusan sendiri",
-        "Robot yang tidak memiliki sensor sama sekali"
+        "0",
+        "1",
+        "LOW",
+        "Tidak aktif"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_or_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian diagram OR + NOT. Jika input A = 1 dan B = 0, berapakah output akhir Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Bisa 0 atau 1"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_or_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Input A = 0 masuk ke NOT menghasilkan X, lalu X bersama B = 1 masuk ke AND. Berapakah nilai Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Error"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_not_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Input A = 1 masuk ke NOT menghasilkan X, lalu X bersama B = 1 masuk ke AND. Berapakah nilai Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_not_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Input A = 0 masuk ke NOT menghasilkan X, lalu X bersama B = 0 masuk ke OR. Berapakah nilai Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tidak berubah"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_not_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rangkaian berikut. Input A = 1 masuk ke NOT menghasilkan X, lalu X bersama B = 0 masuk ke OR. Berapakah nilai Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "10"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_not_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A OR B) AND C. Jika input A = 1, B = 0, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tidak stabil"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_or_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A OR B) AND C. Jika input A = 0, B = 0, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_or_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A OR B) AND C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Error"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_or_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A AND B) OR C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tidak terdefinisi"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_and_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A AND B) OR C. Jika input A = 1, B = 0, dan C = 0, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Error"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_and_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A AND B) OR C. Jika input A = 0, B = 0, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Off"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_and_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram XOR + NOT. Jika input A = 1 dan B = 0, berapakah output akhir Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_xor_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram XOR + NOT. Jika input A = 1 dan B = 1, berapakah output akhir Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "-1"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_xor_not.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A NAND B) OR C. Jika input A = 1, B = 1, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Off"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_nand_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A NAND B) OR C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_nand_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A NAND B) AND C. Jika input A = 1, B = 1, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_nand_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A NAND B) AND C. Jika input A = 1, B = 0, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Off"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_nand_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A NOR B) AND C. Jika input A = 0, B = 0, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Error"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_nor_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan diagram (A NOR B) AND C. Jika input A = 1, B = 0, dan C = 1, berapakah nilai output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "10"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_nor_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Diberikan persamaan Boolean Y = (A . B) + C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai Y?",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "LOW"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_and_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Diberikan persamaan Boolean Y = (A + B) . C. Jika input A = 0, B = 1, dan C = 1, berapakah nilai Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "Tidak terdefinisi"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_or_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan gambar berikut. Sebuah gerbang AND memiliki 3 input: A = 1, B = 1, dan C = 0. Berapakah output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "2"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_3input_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan gambar berikut. Sebuah gerbang AND memiliki 3 input: A = 1, B = 1, dan C = 1. Berapakah output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "3"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_3input_and.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan gambar berikut. Sebuah gerbang OR memiliki 3 input: A = 0, B = 0, dan C = 1. Berapakah output Y?",
+      "opts": [
+        "0",
+        "1",
+        "LOW",
+        "01"
+      ],
+      "ans": 1,
+      "level": 3,
+      "image": "assets/images/circuit_3input_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan gambar berikut. Sebuah gerbang OR memiliki 3 input: A = 0, B = 0, dan C = 0. Berapakah output Y?",
+      "opts": [
+        "0",
+        "1",
+        "HIGH",
+        "Tidak tentu"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": "assets/images/circuit_3input_or.svg",
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 100000 (6-bit)?",
+      "opts": [
+        "30",
+        "31",
+        "32",
+        "64"
       ],
       "ans": 2,
-      "level": 1
+      "level": 3,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Baterai pada robot berfungsi sebagai...",
+      "q": "Berapakah nilai desimal dari bilangan biner 1000000 (7-bit)?",
       "opts": [
-        "Pengatur kecepatan semua motor",
-        "Penyimpan data dari sensor",
-        "Sumber energi listrik untuk semua komponen",
-        "Penghubung antara sensor dan controller"
+        "32",
+        "60",
+        "64",
+        "128"
       ],
       "ans": 2,
-      "level": 1
+      "level": 3,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Sensor suhu digunakan pada robot untuk...",
+      "q": "Lakukan operasi logika AND bit demi bit (bitwise AND) antara biner 1010 dan 1100. Hasilnya adalah...",
       "opts": [
-        "Menggerakkan kipas secara manual",
-        "Mengetahui seberapa panas lingkungan atau komponen",
-        "Mengukur kecepatan angin di sekitar robot",
-        "Menyimpan nilai suhu ke dalam memori permanen"
+        "1000",
+        "1110",
+        "1100",
+        "0110"
       ],
-      "ans": 1,
-      "level": 1
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Manakah yang bukan termasuk aktuator?",
+      "q": "Lakukan operasi logika OR bit demi bit (bitwise OR) antara biner 1010 dan 0101. Hasilnya adalah...",
       "opts": [
-        "Motor stepper",
-        "Servo motor",
-        "Sensor infrared",
-        "Pompa air mini"
+        "0000",
+        "1010",
+        "1111",
+        "1001"
       ],
       "ans": 2,
-      "level": 1
+      "level": 3,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "LED pada robot biasanya digunakan sebagai...",
+      "q": "Lakukan operasi logika NOT bit demi bit (inversi) pada bilangan biner 4-bit 1010. Hasilnya adalah...",
       "opts": [
-        "Sensor pendeteksi cahaya",
-        "Indikator status atau lampu peringatan",
-        "Sumber daya cadangan robot",
-        "Pengganti layar LCD"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan input pada sistem robot?",
-      "opts": [
-        "Perintah yang dikirim ke motor",
-        "Data yang diterima controller dari sensor",
-        "Energi yang dihasilkan oleh baterai",
-        "Gerakan yang dihasilkan oleh aktuator"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Sensor PIR digunakan untuk mendeteksi...",
-      "opts": [
-        "Perubahan tekanan udara",
-        "Gerakan manusia atau makhluk hidup",
-        "Warna benda di depan robot",
-        "Kelembaban udara sekitar robot"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Robot line follower menggunakan sensor apa untuk mengikuti garis?",
-      "opts": [
-        "Sensor ultrasonik",
-        "Sensor infrared",
-        "Sensor suhu",
-        "Sensor tekanan"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Apa fungsi driver motor seperti L298N?",
-      "opts": [
-        "Membaca kecepatan putaran motor secara otomatis",
-        "Menyimpan program untuk menggerakkan motor",
-        "Mengontrol arah dan kecepatan motor dari sinyal controller",
-        "Mendeteksi apakah motor sedang panas atau tidak"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Apa yang dimaksud dengan output pada sistem robot?",
-      "opts": [
-        "Data yang dibaca oleh sensor",
-        "Sinyal yang diterima oleh controller",
-        "Gerakan atau aksi yang dihasilkan aktuator",
-        "Program yang ditulis oleh pengguna"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Sensor ultrasonik bekerja dengan cara...",
-      "opts": [
-        "Mengirim cahaya dan mengukur pantulannya",
-        "Mengirim gelombang suara dan mengukur waktu pantulannya",
-        "Mengukur perubahan medan magnet di sekitar benda",
-        "Mendeteksi panas yang dipancarkan benda"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa itu PWM dalam konteks kendali motor robot?",
-      "opts": [
-        "Jenis baterai yang digunakan pada robot",
-        "Teknik mengatur kecepatan motor dengan mengubah lebar pulsa sinyal",
-        "Protokol komunikasi antara dua robot",
-        "Metode mengukur jarak menggunakan gelombang radio"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Kenapa robot membutuhkan lebih dari satu sensor?",
-      "opts": [
-        "Karena satu sensor terlalu berat untuk robot kecil",
-        "Agar robot bisa mendapat informasi yang lebih lengkap tentang lingkungannya",
-        "Karena controller tidak bisa membaca hanya dari satu sensor",
-        "Supaya baterai tidak cepat habis saat robot bergerak"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa yang terjadi jika robot tidak memiliki controller?",
-      "opts": [
-        "Robot tetap bisa bergerak menggunakan sensor",
-        "Robot tidak bisa memproses data dan memberi perintah ke aktuator",
-        "Aktuator akan bekerja sendiri tanpa perintah",
-        "Sensor akan langsung menggerakkan motor"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Sensor kelembaban digunakan pada robot untuk...",
-      "opts": [
-        "Mengukur seberapa berat benda di depannya",
-        "Mendeteksi kadar air di udara atau permukaan",
-        "Menghitung jarak tempuh robot",
-        "Mengontrol kecepatan kipas pendingin robot"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Relay pada robot berfungsi sebagai...",
-      "opts": [
-        "Sensor untuk mendeteksi pergerakan",
-        "Saklar elektronik yang dikendalikan sinyal kecil",
-        "Komponen penyimpan daya cadangan",
-        "Penguat sinyal dari sensor ke controller"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa perbedaan sensor aktif dan sensor pasif?",
-      "opts": [
-        "Sensor aktif lebih mahal dari sensor pasif",
-        "Sensor aktif mengirimkan sinyal sendiri, sensor pasif hanya menerima",
-        "Sensor pasif butuh baterai, sensor aktif tidak",
-        "Sensor aktif lebih kecil ukurannya dari sensor pasif"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Manakah yang termasuk contoh controller pada robot?",
-      "opts": [
-        "Motor DC brushless",
-        "Sensor infrared",
-        "Arduino Uno",
-        "Baterai LiPo"
-      ],
-      "ans": 2,
-      "level": 2
-    },
-    {
-      "q": "Apa fungsi buzzer pada robot?",
-      "opts": [
-        "Mendeteksi suara di sekitar robot",
-        "Menghasilkan bunyi sebagai notifikasi atau peringatan",
-        "Mengukur frekuensi getaran robot",
-        "Mengirim sinyal ke sensor lainnya"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Sensor flex (lentur) pada robot digunakan untuk mendeteksi...",
-      "opts": [
-        "Suhu pada sambungan robot",
-        "Seberapa besar tekukan atau lenturan pada bagian robot",
-        "Kecepatan putaran sendi robot",
-        "Jarak antar komponen dalam robot"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa yang dimaksud dengan feedback pada sistem kendali robot?",
-      "opts": [
-        "Perintah awal yang diberikan pengguna ke robot",
-        "Informasi dari output yang dikirim kembali ke controller untuk koreksi",
-        "Data yang disimpan permanen di memori robot",
-        "Sinyal dari baterai ke semua komponen"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Mengapa robot membutuhkan sumber daya listrik?",
-      "opts": [
-        "Agar sensor bisa mendeteksi lebih jauh",
-        "Karena semua komponen elektronik membutuhkan energi untuk bekerja",
-        "Supaya controller bisa menyimpan lebih banyak program",
-        "Agar motor bisa berputar tanpa perintah"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Sensor gyroscope pada robot berfungsi untuk...",
-      "opts": [
-        "Mengukur jarak tempuh robot di lapangan",
-        "Mendeteksi kemiringan dan rotasi robot",
-        "Mengukur kecepatan linier robot saat bergerak",
-        "Membaca medan magnet di sekitar robot"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa yang membedakan robot dari mesin biasa?",
-      "opts": [
-        "Robot pasti memiliki kaki dan bisa berjalan",
-        "Robot memiliki sensor, controller, dan aktuator yang bekerja bersama",
-        "Robot selalu terhubung ke internet secara permanen",
-        "Robot hanya bisa digunakan di pabrik besar"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Tombol push button pada robot biasanya digunakan sebagai...",
-      "opts": [
-        "Aktuator untuk menggerakkan lengan robot",
-        "Sensor input manual dari pengguna",
-        "Komponen untuk menyimpan posisi robot",
-        "Pengatur tegangan yang masuk ke motor"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa itu encoder pada robot?",
-      "opts": [
-        "Sensor untuk membaca kecepatan atau posisi putaran motor",
-        "Komponen yang mengubah sinyal analog menjadi audio",
-        "Alat untuk menyimpan program ke dalam memori",
-        "Driver yang mengontrol arah putaran motor"
+        "0101",
+        "0011",
+        "1100",
+        "1111"
       ],
       "ans": 0,
-      "level": 2
+      "level": 3,
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Mengapa robot sumo menggunakan sensor jarak di bagian depan?",
+      "q": "Berapakah hasil operasi logika XOR bit demi bit antara biner 1100 dan 1010?",
       "opts": [
-        "Untuk mengukur berat lawan yang dihadapi",
-        "Agar robot tahu ada lawan di depan dan bisa mendorongnya",
-        "Untuk menghitung kecepatan lawan yang mendekat",
-        "Supaya robot bisa menyesuaikan warna dengan arena"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Sensor akselerometer pada robot digunakan untuk...",
-      "opts": [
-        "Mengukur percepatan dan perubahan gerak robot",
-        "Mendeteksi warna permukaan yang dilalui robot",
-        "Mengukur suhu motor saat bekerja keras",
-        "Membaca data dari sensor lain secara bersamaan"
+        "0110",
+        "1110",
+        "1000",
+        "0000"
       ],
       "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Apa yang dimaksud dengan robot mobile?",
-      "opts": [
-        "Robot yang hanya bisa dikendalikan lewat smartphone",
-        "Robot yang dapat berpindah tempat menggunakan roda atau kaki",
-        "Robot yang berukuran sangat kecil dan ringan",
-        "Robot yang terhubung ke jaringan wifi secara terus menerus"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Kenapa sensor infrared sering digunakan pada robot line follower?",
-      "opts": [
-        "Karena bisa mendeteksi warna garis dengan sangat akurat",
-        "Karena bisa membedakan permukaan gelap dan terang dengan cepat",
-        "Karena tidak membutuhkan daya listrik sama sekali",
-        "Karena bisa mendeteksi garis dari jarak yang sangat jauh"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa fungsi kapasitor yang sering dipasang dekat motor pada robot?",
-      "opts": [
-        "Menyimpan program darurat jika baterai habis",
-        "Meredam gangguan listrik yang ditimbulkan motor saat berputar",
-        "Meningkatkan kecepatan putaran motor secara otomatis",
-        "Mendeteksi apakah motor sedang berputar atau tidak"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa yang dimaksud dengan sistem kendali terbuka (open loop) pada robot?",
-      "opts": [
-        "Sistem yang menggunakan banyak sensor sekaligus",
-        "Sistem yang tidak menggunakan feedback dari output",
-        "Sistem yang terhubung ke internet untuk menerima perintah",
-        "Sistem yang bisa memperbaiki dirinya sendiri secara otomatis"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa perbedaan robot analog dan robot digital?",
-      "opts": [
-        "Robot analog lebih cepat bergerak dari robot digital",
-        "Robot analog menggunakan sinyal kontinu, robot digital menggunakan sinyal diskrit 0 dan 1",
-        "Robot digital tidak membutuhkan baterai untuk beroperasi",
-        "Robot analog memiliki lebih banyak sensor dari robot digital"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Sensor magnetik (Hall effect) pada robot digunakan untuk...",
-      "opts": [
-        "Mendeteksi keberadaan medan magnet atau benda logam",
-        "Mengukur suhu komponen yang mengandung logam",
-        "Membaca kecepatan aliran udara di sekitar robot",
-        "Mendeteksi perubahan warna pada permukaan"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Apa itu duty cycle dalam kendali motor robot?",
-      "opts": [
-        "Jumlah putaran motor per menit saat berbeban",
-        "Persentase waktu sinyal aktif dalam satu periode PWM",
-        "Tegangan maksimum yang bisa diterima motor",
-        "Waktu jeda antara dua perintah dari controller"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Mengapa robot membutuhkan regulator tegangan?",
-      "opts": [
-        "Agar motor bisa berputar lebih cepat dari biasanya",
-        "Agar tegangan dari baterai disesuaikan dengan kebutuhan tiap komponen",
-        "Supaya sensor bisa membaca data lebih akurat",
-        "Agar baterai tidak cepat kehabisan daya"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa fungsi sensor tekanan (pressure sensor) pada robot?",
-      "opts": [
-        "Mengukur seberapa keras robot mendorong atau menekan sesuatu",
-        "Mendeteksi perubahan suhu saat robot bekerja",
-        "Membaca kecepatan pergerakan robot di udara",
-        "Mengukur jarak robot dari permukaan tanah"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Kenapa robot perlu dikalibrasi sebelum digunakan?",
-      "opts": [
-        "Agar baterai robot terisi penuh sebelum beroperasi",
-        "Agar pembacaan sensor dan gerakan aktuator sesuai dengan nilai yang diharapkan",
-        "Supaya controller bisa mengenali semua jenis sensor",
-        "Agar program tidak mengalami error saat dijalankan"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa yang dimaksud dengan workspace pada robot arm?",
-      "opts": [
-        "Ruang tempat menyimpan robot saat tidak digunakan",
-        "Area yang bisa dijangkau oleh lengan robot",
-        "Program yang menentukan gerakan lengan robot",
-        "Nama lain untuk controller pada robot arm"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Sensor color (warna) pada robot digunakan untuk...",
-      "opts": [
-        "Mengubah warna LED sesuai perintah controller",
-        "Mendeteksi dan membedakan warna objek di depannya",
-        "Mengukur intensitas cahaya secara keseluruhan",
-        "Mengidentifikasi kecepatan perubahan cahaya"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa yang terjadi jika tegangan yang diberikan ke sensor melebihi spesifikasi maksimalnya?",
-      "opts": [
-        "Sensor akan bekerja lebih cepat dan akurat",
-        "Sensor bisa rusak secara permanen",
-        "Sensor otomatis menurunkan tegangannya sendiri",
-        "Data dari sensor akan lebih stabil"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa fungsi resistor pada rangkaian robot?",
-      "opts": [
-        "Menyimpan energi listrik sementara dalam rangkaian",
-        "Membatasi arus yang mengalir agar komponen tidak rusak",
-        "Mengubah arus bolak-balik menjadi arus searah",
-        "Memperkuat sinyal yang lemah dari sensor"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Apa yang dimaksud dengan GND pada rangkaian robot?",
-      "opts": [
-        "Tegangan tertinggi dalam rangkaian robot",
-        "Titik referensi nol atau negatif dalam rangkaian listrik",
-        "Pin khusus untuk menghubungkan sensor ke motor",
-        "Nama pin untuk menerima sinyal analog"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Sensor gas pada robot digunakan untuk...",
-      "opts": [
-        "Mengukur tekanan udara di sekitar robot",
-        "Mendeteksi keberadaan gas tertentu di lingkungan",
-        "Mengatur aliran udara yang masuk ke motor",
-        "Membaca suhu pembakaran bahan bakar"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Komponen yang menghasilkan bunyi pada robot adalah...",
-      "opts": [
-        "Relay",
-        "Buzzer",
-        "Resistor",
-        "Kapasitor"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Fungsi resistor dalam rangkaian elektronik adalah...",
-      "opts": [
-        "Membatasi arus",
-        "Menyimpan data",
-        "Menggerakkan motor",
-        "Membaca cahaya"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Breadboard biasa digunakan untuk...",
-      "opts": [
-        "Memotong kabel",
-        "Membuat roda",
-        "Merangkai komponen",
-        "Mengisi baterai"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Kabel jumper berfungsi untuk...",
-      "opts": [
-        "Mengukur jarak",
-        "Menghubungkan komponen",
-        "Mengatur putaran",
-        "Menyimpan program"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Alat yang digunakan untuk mengukur tegangan listrik disebut...",
-      "opts": [
-        "Tang",
-        "Obeng",
-        "Multimeter",
-        "Jangka sorong"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Satuan tegangan listrik adalah...",
-      "opts": [
-        "Ampere",
-        "Ohm",
-        "Watt",
-        "Volt"
-      ],
-      "ans": 3,
-      "level": 1
-    },
-    {
-      "q": "Satuan arus listrik adalah...",
-      "opts": [
-        "Ampere",
-        "Volt",
-        "Ohm",
-        "Hertz"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Komponen yang dapat menyimpan muatan listrik adalah...",
-      "opts": [
-        "Resistor",
-        "Kapasitor",
-        "Buzzer",
-        "Switch"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Sakelar pada robot digunakan untuk...",
-      "opts": [
-        "Membaca sensor",
-        "Mengubah program",
-        "Memutus rangkaian",
-        "Mengukur tegangan"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Jika kabel terputus, arus listrik biasanya akan...",
-      "opts": [
-        "Tetap mengalir",
-        "Mengalir lebih cepat",
-        "Berubah warna",
-        "Tidak mengalir"
-      ],
-      "ans": 3,
-      "level": 1
-    },
-    {
-      "q": "Bagian robot yang menjadi tempat pemasangan komponen disebut...",
-      "opts": [
-        "Rangka",
-        "Sensor",
-        "Program",
-        "Terminal"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Fungsi konektor pada rangkaian adalah...",
-      "opts": [
-        "Mengukur arus",
-        "Menghubungkan bagian",
-        "Menambah tegangan",
-        "Menyimpan energi"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "LED termasuk komponen yang dapat menghasilkan...",
-      "opts": [
-        "Gerakan",
-        "Tekanan",
-        "Cahaya",
-        "Suara"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Jika LED tidak menyala, salah satu hal pertama yang perlu diperiksa adalah...",
-      "opts": [
-        "Warna chassis",
-        "Ukuran roda",
-        "Kondisi kabel",
-        "Bentuk robot"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Sumber listrik yang umum digunakan pada robot adalah...",
-      "opts": [
-        "Baterai",
-        "Baut",
-        "Gear",
-        "Kabel"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Komponen yang digunakan untuk menghubungkan dan memutus arus disebut...",
-      "opts": [
-        "Switch",
-        "Sensor",
-        "Motor",
-        "Buzzer"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Jika dua kabel positif dan negatif dihubungkan secara langsung, kondisi tersebut dapat menyebabkan...",
-      "opts": [
-        "Robot lebih cepat",
-        "Hubung singkat",
-        "Sensor aktif",
-        "Program berhenti"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Warna kabel pada rangkaian biasanya membantu pengguna untuk...",
-      "opts": [
-        "Menentukan fungsi kabel",
-        "Mengubah tegangan",
-        "Mengatur sensor",
-        "Menambah arus"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Alat yang digunakan untuk mengupas lapisan kabel adalah...",
-      "opts": [
-        "Tang kupas",
-        "Palu",
-        "Penggaris",
-        "Cutter roda"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Komponen yang digunakan untuk melindungi rangkaian dari arus berlebih adalah...",
-      "opts": [
-        "LED",
-        "Sekring",
-        "Buzzer",
-        "Switch"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Dalam rangkaian elektronik, simbol V biasanya berkaitan dengan...",
-      "opts": [
-        "Arus",
-        "Tegangan",
-        "Hambatan",
-        "Daya"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Jika baterai dipasang terbalik pada rangkaian, hal yang perlu diperhatikan adalah...",
-      "opts": [
-        "Polaritas",
-        "Warna roda",
-        "Ukuran chassis",
-        "Bentuk sensor"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Apa fungsi utama koneksi ground pada rangkaian elektronik?",
-      "opts": [
-        "Menambah kecepatan",
-        "Menjadi referensi tegangan",
-        "Menggerakkan motor",
-        "Membaca jarak"
-      ],
-      "ans": 1,
-      "level": 1
-    },
-    {
-      "q": "Saat membuat rangkaian robot, kabel yang longgar dapat menyebabkan...",
-      "opts": [
-        "Koneksi terganggu",
-        "Motor bertambah kuat",
-        "Sensor membesar",
-        "Program bertambah cepat"
-      ],
-      "ans": 0,
-      "level": 1
-    },
-    {
-      "q": "Sebelum robot digunakan, pemeriksaan kabel dan konektor dilakukan untuk...",
-      "opts": [
-        "Mengubah desain",
-        "Menambah berat",
-        "Memastikan koneksi",
-        "Mengurangi ukuran"
-      ],
-      "ans": 2,
-      "level": 1
-    },
-    {
-      "q": "Jika pembacaan sensor robot tiba-tiba berubah-ubah padahal kondisi lingkungan tetap, kemungkinan masalahnya adalah...",
-      "opts": [
-        "Noise",
-        "Torsi",
-        "Gear",
-        "Chassis"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Mengapa pembacaan sensor biasanya perlu dikalibrasi?",
-      "opts": [
-        "Agar kabel lebih panjang",
-        "Agar hasil pembacaan lebih sesuai kondisi nyata",
-        "Agar motor lebih kuat",
-        "Agar baterai lebih besar"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Jika dua sensor membaca kondisi yang berbeda untuk situasi yang sama, langkah awal yang tepat adalah...",
-      "opts": [
-        "Mengganti semua motor",
-        "Memeriksa pemasangan dan pembacaan sensor",
-        "Mengubah ukuran roda",
-        "Mengganti chassis"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa fungsi pull-up resistor pada input digital?",
-      "opts": [
-        "Menjaga level logika tetap jelas",
-        "Menambah torsi motor",
-        "Mengurangi ukuran kabel",
-        "Mengubah sinyal menjadi suara"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Sinyal digital pada kondisi HIGH dan LOW digunakan untuk menunjukkan...",
-      "opts": [
-        "Dua kondisi logika",
-        "Dua jenis motor",
-        "Dua ukuran baterai",
-        "Dua arah chassis"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika sebuah tombol kadang terbaca ditekan dan kadang tidak saat ditekan sekali, salah satu penyebabnya adalah...",
-      "opts": [
-        "Debounce",
-        "Gear ratio",
-        "Overcurrent",
-        "Alignment"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Mengapa debounce diperlukan pada tombol mekanik?",
-      "opts": [
-        "Menghindari pembacaan berulang akibat kontak tombol",
-        "Mengurangi berat tombol",
-        "Menambah tegangan baterai",
-        "Mengatur arah motor"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika sensor dipasang terlalu dekat dengan sumber gangguan, hasil pembacaannya bisa...",
-      "opts": [
-        "Lebih stabil",
-        "Lebih mudah terganggu",
-        "Selalu nol",
-        "Tidak membutuhkan kalibrasi"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Dalam sistem robot, komunikasi antar komponen digunakan untuk...",
-      "opts": [
-        "Bertukar data",
-        "Mengubah ukuran motor",
-        "Menambah berat robot",
-        "Mengurangi jumlah roda"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika robot menggunakan beberapa sensor, keuntungan utamanya adalah...",
-      "opts": [
-        "Data yang diperoleh lebih beragam",
-        "Motor menjadi lebih besar",
-        "Baterai selalu lebih awet",
-        "Program otomatis lebih pendek"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Apa yang mungkin terjadi jika tegangan sumber tidak sesuai dengan kebutuhan komponen?",
-      "opts": [
-        "Komponen dapat bekerja tidak normal",
-        "Robot pasti lebih cepat",
-        "Sensor selalu lebih akurat",
-        "Program otomatis berubah"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika satu komponen membutuhkan tegangan lebih rendah dari baterai, komponen tersebut dapat membutuhkan...",
-      "opts": [
-        "Regulator",
-        "Gear",
-        "Bearing",
-        "Encoder"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Fungsi regulator tegangan adalah...",
-      "opts": [
-        "Menjaga tegangan pada nilai tertentu",
-        "Mengatur arah roda",
-        "Mengukur jarak",
-        "Menambah jumlah sensor"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika robot tiba-tiba restart saat beberapa motor bekerja bersamaan, salah satu hal yang perlu dicurigai adalah...",
-      "opts": [
-        "Catu daya",
-        "Warna kabel",
-        "Ukuran roda",
-        "Bentuk chassis"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Mengapa ground antar perangkat elektronik kadang perlu disatukan?",
-      "opts": [
-        "Agar memiliki referensi tegangan yang sama",
-        "Agar motor menjadi lebih besar",
-        "Agar sensor tidak perlu program",
-        "Agar baterai bertambah kapasitas"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika sensor menghasilkan nilai yang sangat besar ketika objek semakin dekat, hubungan tersebut dapat disebut...",
-      "opts": [
-        "Berbanding langsung",
-        "Berbanding terbalik",
-        "Tidak berkaitan",
-        "Selalu konstan"
-      ],
-      "ans": 1,
-      "level": 2
-    },
-    {
-      "q": "Apa tujuan utama membaca datasheet sebuah komponen?",
-      "opts": [
-        "Mengetahui spesifikasi dan batas penggunaannya",
-        "Menentukan warna chassis",
-        "Menambah kapasitas baterai",
-        "Mengubah program menjadi otomatis"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika sebuah sensor memiliki batas jarak tertentu, objek di luar batas tersebut kemungkinan...",
-      "opts": [
-        "Tidak terbaca dengan baik",
-        "Selalu terbaca nol",
-        "Membuat motor berhenti",
-        "Mengubah tegangan baterai"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Apa yang dimaksud dengan resolusi sensor?",
-      "opts": [
-        "Kemampuan membedakan perubahan nilai",
-        "Kecepatan motor maksimum",
-        "Berat maksimum robot",
-        "Jarak antar roda"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika sensor memiliki resolusi lebih tinggi, sensor tersebut umumnya dapat...",
-      "opts": [
-        "Mendeteksi perubahan lebih kecil",
-        "Menghasilkan daya lebih besar",
-        "Menggerakkan robot lebih cepat",
-        "Mengurangi ukuran controller"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Mengapa kabel sinyal yang terlalu panjang dapat menjadi masalah pada rangkaian tertentu?",
-      "opts": [
-        "Dapat lebih mudah terkena gangguan",
-        "Membuat baterai bertambah besar",
-        "Membuat motor berubah bentuk",
-        "Mengurangi berat robot"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika robot membaca sensor secara berkala setiap 100 ms, maka pembacaan dilakukan setiap...",
-      "opts": [
-        "10 ms",
-        "50 ms",
-        "100 ms",
-        "1000 ms"
-      ],
-      "ans": 2,
-      "level": 2
-    },
-    {
-      "q": "Apa tujuan menggunakan beberapa pembacaan sensor lalu mengambil nilai rata-rata?",
-      "opts": [
-        "Mengurangi pengaruh perubahan kecil",
-        "Menambah tegangan sensor",
-        "Mengubah sensor menjadi aktuator",
-        "Mempercepat motor"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Jika indikator baterai menunjukkan tegangan turun ketika motor mulai bekerja, kemungkinan penyebabnya adalah...",
-      "opts": [
-        "Beban meningkat",
-        "Sensor terlalu jauh",
-        "Program terlalu pendek",
-        "Chassis terlalu kecil"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Sebelum mengganti sensor yang dianggap rusak, langkah yang lebih baik adalah...",
-      "opts": [
-        "Memeriksa koneksi dan pembacaan terlebih dahulu",
-        "Mengganti semua komponen",
-        "Menghapus program",
-        "Mengubah ukuran roda"
-      ],
-      "ans": 0,
-      "level": 2
-    },
-    {
-      "q": "Robot menggunakan sensor yang menghasilkan pembacaan 100, 102, 99, 101 saat kondisi sebenarnya hampir tetap. Kesimpulan paling tepat adalah...",
-      "opts": [
-        "Sensor pasti rusak",
-        "Ada variasi kecil pada pembacaan",
-        "Controller tidak bekerja",
-        "Motor terlalu kuat"
-      ],
-      "ans": 1,
-      "level": 3
-    },
-    {
-      "q": "Jika pembacaan sensor memiliki noise yang cukup besar, salah satu cara sederhana untuk membuat keputusan lebih stabil adalah...",
-      "opts": [
-        "Mengambil beberapa sampel",
-        "Mengganti semua motor",
-        "Menambah ukuran roda",
-        "Mengurangi kabel"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Robot membaca sensor jarak setiap 10 ms, tetapi perubahan lingkungan hanya terjadi beberapa kali per detik. Masalah yang mungkin muncul adalah...",
-      "opts": [
-        "Data berlebihan",
-        "Torsi berkurang",
-        "Gear bertambah",
-        "Baterai berubah"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika dua sensor digunakan untuk mendeteksi garis dan salah satunya selalu memberikan nilai terbalik, langkah yang tepat adalah...",
-      "opts": [
-        "Memeriksa konfigurasi pembacaan",
-        "Mengganti chassis",
-        "Menambah motor",
-        "Mengurangi roda"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Sebuah robot berhenti setiap kali dua motor dinyalakan bersamaan. Jika sensor dan program sudah diuji, bagian yang patut dicurigai berikutnya adalah...",
-      "opts": [
-        "Catu daya",
-        "Warna kabel",
-        "Bentuk chassis",
-        "Jenis sensor"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Mengapa tegangan baterai dapat turun ketika motor diberi beban besar?",
-      "opts": [
-        "Arus meningkat",
-        "Sensor mati",
-        "Program bertambah",
-        "Gear berubah"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika robot bergerak normal tanpa beban tetapi mati ketika membawa beban, kemungkinan masalahnya berkaitan dengan...",
-      "opts": [
-        "Beban dan daya",
-        "Warna roda",
-        "Nama variabel",
-        "Resolusi layar"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Sebuah sensor menghasilkan nilai yang berbeda untuk objek yang sama ketika jaraknya diukur dari sudut berbeda. Hal ini menunjukkan bahwa...",
-      "opts": [
-        "Posisi pemasangan berpengaruh",
-        "Motor terlalu cepat",
-        "Baterai terlalu besar",
-        "Program pasti salah"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika dua sensor identik menghasilkan pembacaan berbeda pada kondisi yang sama, sebelum mengganti sensor sebaiknya...",
-      "opts": [
-        "Bandingkan kalibrasinya",
-        "Ganti baterai",
-        "Tambah motor",
-        "Potong kabel"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Apa tujuan melakukan filtering pada data sensor?",
-      "opts": [
-        "Mengurangi gangguan",
-        "Menambah tegangan",
-        "Mengubah motor",
-        "Mengurangi berat"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika filtering terlalu kuat, respons robot terhadap perubahan kondisi dapat menjadi...",
-      "opts": [
-        "Lambat",
-        "Lebih cepat",
-        "Tidak berubah",
-        "Selalu nol"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Robot menggunakan dua sumber daya berbeda untuk motor dan controller. Hal yang sangat penting diperhatikan adalah...",
-      "opts": [
-        "Referensi ground",
-        "Warna chassis",
-        "Diameter roda",
-        "Panjang program"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika sensor bekerja baik ketika motor mati tetapi kacau ketika motor hidup, kemungkinan sumber gangguannya berasal dari...",
-      "opts": [
-        "Sistem motor",
-        "Ukuran sensor",
-        "Nama variabel",
-        "Bentuk roda"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Salah satu cara mengurangi gangguan listrik dari motor pada rangkaian adalah...",
-      "opts": [
-        "Memisahkan jalur daya",
-        "Menambah berat chassis",
-        "Mengurangi sensor",
-        "Mengubah nama program"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika robot mengambil keputusan berdasarkan satu pembacaan sensor yang berubah-ubah, robot dapat...",
-      "opts": [
-        "Bertindak tidak stabil",
-        "Selalu bergerak lurus",
-        "Menghemat daya",
-        "Mengurangi noise"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Robot memiliki sensor kiri dan kanan. Ketika keduanya membaca kondisi berbeda, robot sebaiknya menentukan tindakan berdasarkan...",
-      "opts": [
-        "Aturan kontrol",
-        "Warna robot",
-        "Ukuran baterai",
-        "Jenis baut"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika nilai sensor digunakan langsung untuk menentukan kecepatan motor, perubahan kecil pada sensor dapat menyebabkan...",
-      "opts": [
-        "Perubahan gerak",
-        "Perubahan chassis",
-        "Perubahan baterai",
-        "Perubahan program"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Mengapa sensor sebaiknya ditempatkan pada posisi yang konsisten?",
-      "opts": [
-        "Agar pembacaan dapat dibandingkan",
-        "Agar motor lebih kuat",
-        "Agar baterai lebih awet",
-        "Agar robot lebih berat"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika robot bekerja baik di meja tetapi gagal di arena, salah satu hal yang perlu diperiksa adalah...",
-      "opts": [
-        "Kondisi lingkungan",
-        "Nama variabel",
-        "Warna kabel",
-        "Ukuran controller"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Robot yang berhasil mendeteksi objek tetapi salah mengambil keputusan menunjukkan masalah kemungkinan berada pada...",
-      "opts": [
-        "Logika kontrol",
-        "Bentuk roda",
-        "Warna sensor",
-        "Baut chassis"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika sensor memberikan nilai 50, 51, 50, 200, 49, nilai 200 kemungkinan merupakan...",
-      "opts": [
-        "Outlier",
-        "Setpoint",
-        "Output motor",
-        "Konstanta"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika satu sensor gagal tetapi robot masih dapat mengambil keputusan menggunakan sensor lain, sistem tersebut memiliki...",
-      "opts": [
-        "Redundansi",
-        "Resonansi",
-        "Friksi",
-        "Kalibrasi"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Apa keuntungan utama redundansi sensor?",
-      "opts": [
-        "Meningkatkan toleransi kegagalan",
-        "Mengurangi ukuran robot",
-        "Menambah torsi motor",
-        "Mengurangi jumlah data"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Jika robot semakin panas setelah digunakan lama, pemeriksaan yang paling relevan adalah...",
-      "opts": [
-        "Beban dan arus",
-        "Warna chassis",
-        "Nama fungsi",
-        "Ukuran sensor"
-      ],
-      "ans": 0,
-      "level": 3
-    },
-    {
-      "q": "Ketika mencari penyebab robot gagal bekerja, pendekatan paling baik adalah...",
-      "opts": [
-        "Menguji bagian secara bertahap",
-        "Mengganti semuanya",
-        "Menebak komponen",
-        "Menghapus program"
-      ],
-      "ans": 0,
-      "level": 3
+      "level": 3,
+      "image": null,
+      "img_url": null
     }
   ],
   "programmer": [

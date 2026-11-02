@@ -204,6 +204,9 @@
         </div>
         <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:10%"></div></div>
         <div class="question-text" id="question-text">Memuat pertanyaan...</div>
+        <div class="question-image-box" id="question-image-box" style="display:none">
+          <img id="question-image" src="" alt="Diagram Sirkuit Logika" loading="lazy" />
+        </div>
         <div class="options" id="options-container"></div>
         <div id="rank-badge" style="margin-top:14px;text-align:center;font-size:0.84rem;color:var(--t2);min-height:22px"></div>
 
@@ -564,6 +567,7 @@ let questions = [];
 let breakCountdownInterval = null;
 let myBreakEvery = 5;
 let waitingAtBreak = false;
+let currentAdminBatch = 1;
 
 // ===== ITEM STATE =====
 let myCorrect = 0;
@@ -761,6 +765,7 @@ window.joinRoom = async function() {
     streak: 0,
     joinedAt: serverTimestamp()
   });
+  writeLog(code, { type: 'player_joined', name: myName });
 
   enterWaitingRoom(code);
 };
@@ -778,7 +783,16 @@ function enterWaitingRoom(code) {
     const list = document.getElementById('player-list');
     list.innerHTML = '';
     if (snap.exists()) {
-      Object.values(snap.val()).forEach(p => {
+      const players = snap.val();
+      if (!players[currentUser.uid]) {
+        clearListeners();
+        localStorage.removeItem('quizRoom');
+        localStorage.removeItem('quizRoomQuitAt');
+        showScreen('join');
+        showError('join-error', 'Kamu telah dikeluarkan dari room oleh instruktur.');
+        return;
+      }
+      Object.values(players).forEach(p => {
         const li = document.createElement('li');
         li.innerHTML = `
           <div class="player-info">
@@ -850,6 +864,7 @@ async function startQuiz(code) {
   currentQ = progressSnap.exists() ? (progressSnap.val() || 0) : 0;
 
   const adminBatchNow = roomData.adminBatchStart ?? 1;
+  currentAdminBatch = adminBatchNow;
   const myBatchNow = myBreakEvery > 0 && currentQ > 0 ? Math.ceil(currentQ / myBreakEvery) : 0;
   const isAtBreakPoint = myBreakEvery > 0 && currentQ > 0 && (currentQ % myBreakEvery === 0);
   waitingAtBreak = isAtBreakPoint && (adminBatchNow <= myBatchNow);
@@ -889,6 +904,7 @@ function listenToAdminSignal(code) {
   const unsub = onValue(adminBatchRef, snap => {
     if (!snap.exists()) return;
     const batchStart = snap.val();
+    currentAdminBatch = batchStart;
     if (batchStart === 0) return;
     const myBatch = myBreakEvery > 0 ? Math.ceil(currentQ / myBreakEvery) : 1;
     if (batchStart > myBatch && waitingAtBreak) {
@@ -942,6 +958,26 @@ function loadQuestion(index, code) {
   document.getElementById('progress-fill').style.width = `${((index + 1) / questions.length) * 100}%`;
   document.getElementById('question-text').textContent = q.q;
 
+  // Render Question Diagram / Image
+  const imgBox = document.getElementById('question-image-box');
+  const imgEl = document.getElementById('question-image');
+  if (imgBox && imgEl) {
+    if (q.image || q.img_url) {
+      imgEl.onerror = () => {
+        if (q.img_url && imgEl.src !== q.img_url) {
+          imgEl.src = q.img_url;
+        } else {
+          imgBox.style.display = 'none';
+        }
+      };
+      imgEl.src = q.image || q.img_url;
+      imgBox.style.display = 'flex';
+    } else {
+      imgBox.style.display = 'none';
+      imgEl.src = '';
+    }
+  }
+
   const container = document.getElementById('options-container');
   container.className = 'options'; // Clears tumble-falling and any previous effects
   container.innerHTML = '';
@@ -963,7 +999,7 @@ function loadQuestion(index, code) {
       <div class="opt-key">${keyLabels[newIdx]}</div>
       <div class="opt-label">${q.opts[origIdx]}</div>
     `;
-    btn.onclick = () => answer(newIdx, shuffledCorrect, btn, code, index);
+    btn.onclick = () => answer(newIdx, shuffledCorrect, btn, code, index, origIdx);
     container.appendChild(btn);
   });
 
@@ -1076,7 +1112,7 @@ function triggerCorrectVibes(btn) {
 window.triggerWrongVibes = triggerWrongVibes;
 window.triggerCorrectVibes = triggerCorrectVibes;
 
-async function answer(chosen, correct, btn, code, qIndex) {
+async function answer(chosen, correct, btn, code, qIndex, origChosen = chosen) {
   if (answered) return;
   answered = true;
   clearInterval(timerInterval);
@@ -1137,12 +1173,17 @@ async function answer(chosen, correct, btn, code, qIndex) {
 
   // Background Database Sync (Runs asynchronously without blocking UI animations)
   const nextQ = qIndex + 1;
+  const currentQObj = questions[qIndex];
+  const storedAns = isCorrect
+    ? (currentQObj ? currentQObj.ans : chosen)
+    : (origChosen !== undefined ? origChosen : chosen);
+
   update(ref(db, `rooms/${code}/players/${currentUser.uid}`), {
     score: myScore,
     correct: myCorrect,
     streak: myStreak,
     myQuestion: nextQ,
-    [`answers/q${qIndex}`]: chosen
+    [`answers/q${qIndex}`]: storedAns
   }).catch(e => console.warn('Sync answer failed:', e));
 
   writeLog(code, isCorrect
@@ -1171,6 +1212,12 @@ function afterAnswer(code) {
   const isBreakPoint = myBreakEvery > 0 && (nextQ % myBreakEvery === 0);
   if (isBreakPoint) {
     currentQ = nextQ;
+    const myBatch = myBreakEvery > 0 ? Math.ceil(currentQ / myBreakEvery) : 1;
+    if (currentAdminBatch > myBatch) {
+      waitingAtBreak = false;
+      loadQuestion(currentQ, code);
+      return;
+    }
     waitingAtBreak = true;
     showBreakScreen(code);
     return;
@@ -1379,6 +1426,7 @@ window.confirmQuit = async function() {
   clearInterval(timerInterval);
   clearInterval(breakCountdownInterval);
   if (currentRoom) {
+    writeLog(currentRoom, { type: 'player_quit', name: myName });
     localStorage.setItem('quizRoomQuitAt', Date.now().toString());
   }
   const quitRoom = currentRoom;

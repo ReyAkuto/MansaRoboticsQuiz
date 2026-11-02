@@ -6,335 +6,142 @@
   <title>Admin - Mansa Robotics Quiz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ===== LIGHT MODE (Admin) ===== */
-    body.light-mode { background:#f1f5f9 !important; color:#1e293b !important; }
-    body.light-mode .card, body.light-mode .card-admin { background:#ffffff !important; border-color:#e2e8f0 !important; }
-    body.light-mode .card h2, body.light-mode .card-admin h2 { color:#1e293b !important; }
-    body.light-mode .info-text { color:#475569 !important; }
-    body.light-mode input[type="text"], body.light-mode input[type="number"] { background:#f8fafc !important; border-color:#cbd5e1 !important; color:#1e293b !important; }
-    body.light-mode .player-list li { background:#f8fafc !important; border-color:#e2e8f0 !important; color:#1e293b !important; }
-    body.light-mode .room-code-big { color:#0f172a !important; }
-    body.light-mode .logo { color:#0f172a !important; }
-    body.light-mode .logo span { color:#f97316 !important; }
-    body.light-mode .theme-card { background:#f8fafc !important; border-color:#cbd5e1 !important; color:#1e293b !important; }
-    body.light-mode .theme-card.selected { background:#e0f2fe !important; border-color:#38bdf8 !important; }
-    body.light-mode .live-scores li { background:#f8fafc !important; border-color:#e2e8f0 !important; color:#1e293b !important; }
-    body.light-mode .q-display { background:#f8fafc !important; border-color:#e2e8f0 !important; }
-    body.light-mode .q-text, body.light-mode .q-label { color:#1e293b !important; }
-    body.light-mode #activity-log { background:#f8fafc !important; border-color:#e2e8f0 !important; }
-    body.light-mode .uid-box { background:#f8fafc !important; border-color:#cbd5e1 !important; }
-    body.light-mode .uid-value { color:#1e293b !important; }
-    body.light-mode #theme-toggle { border-color:#cbd5e1 !important; color:#475569 !important; }
-    body.light-mode .hard-q-card { background:#f8fafc !important; border-color:#e2e8f0 !important; }
-    body.light-mode .hard-q-text { color:#1e293b !important; }
-    body.light-mode .admin-sidebar { background:#ffffff !important; border-color:#e2e8f0 !important; }
-    body.light-mode .sidebar-nav-item { color:#475569 !important; }
-    body.light-mode .sidebar-nav-item:hover { background:#f1f5f9 !important; color:#1e293b !important; }
-    body.light-mode .sidebar-nav-item.active { background:#e0f2fe !important; color:#0284c7 !important; }
-    body.light-mode .admin-layout { background:#f1f5f9 !important; }
-    body.light-mode .dash-stat-card { background:#f8fafc !important; border-color:#e2e8f0 !important; }
-    body.light-mode .dash-stat-val { color:#0f172a !important; }
-    body.light-mode .dash-stat-label { color:#475569 !important; }
-
-    /* ===== ADMIN LAYOUT WITH SIDEBAR ===== */
-    body.admin-active {
-      display: block !important;
-      align-items: unset !important;
-      justify-content: unset !important;
-      padding: 0 !important;
+    @keyframes logFadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .admin-layout {
-      display: flex;
-      min-height: 100vh;
-      background: #080c14;
-    }
-
-    /* ===== SIDEBAR ===== */
-    .admin-sidebar {
-      width: 220px;
-      min-width: 220px;
-      background: #0d1117;
-      border-right: 1px solid #1e293b;
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      z-index: 100;
-      overflow-y: auto;
-    }
-    .sidebar-header {
-      padding: 20px 18px 16px;
-      border-bottom: 1px solid #1e293b;
-    }
-    .sidebar-logo {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #e2e8f0;
-      letter-spacing: -0.02em;
-    }
-    .sidebar-logo span { color: #f97316; }
-    .sidebar-badge {
-      display: inline-block;
-      font-size: 0.6rem;
-      font-weight: 700;
-      background: #f9731622;
-      color: #f97316;
-      border: 1px solid #f9731644;
-      border-radius: 5px;
-      padding: 1px 7px;
-      margin-left: 6px;
-      letter-spacing: 0.08em;
-    }
-    .sidebar-nav {
-      flex: 1;
-      padding: 12px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .sidebar-section-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      color: #334155;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 8px 8px 4px;
-      margin-top: 6px;
-    }
-    .sidebar-nav-item {
+    .user-card {
+      background: var(--card2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 14px 16px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 10px;
-      border-radius: 8px;
-      color: #64748b;
-      font-size: 0.84rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s, color 0.15s;
-      border: none;
-      background: transparent;
-      width: 100%;
-      text-align: left;
-      position: relative;
-    }
-    .sidebar-nav-item:hover { background: #111827; color: #94a3b8; }
-    .sidebar-nav-item.active { background: #1e3a5f; color: #38bdf8; }
-    .sidebar-nav-item .ico { width: 15px; height: 15px; flex-shrink: 0; }
-    .sidebar-nav-item .nav-badge {
-      margin-left: auto;
-      font-size: 0.62rem;
-      background: #22c55e22;
-      color: #22c55e;
-      border: 1px solid #22c55e44;
-      border-radius: 99px;
-      padding: 1px 7px;
-      font-weight: 700;
-    }
-    .sidebar-nav-item .nav-badge.orange { background: #f9731622; color: #f97316; border-color: #f9731644; }
-    .sidebar-footer {
-      padding: 12px 10px;
-      border-top: 1px solid #1e293b;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    /* ===== MAIN CONTENT ===== */
-    .admin-main {
-      margin-left: 220px;
-      flex: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .admin-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 28px;
-      border-bottom: 1px solid #1e293b;
-      background: #0d1117;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .admin-topbar-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #e2e8f0;
-    }
-    .admin-topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .admin-content {
-      padding: 28px;
-      flex: 1;
-      max-width: 860px;
-    }
-
-    /* ===== SCREENS ===== */
-    .screen { display: none; }
-    .screen.active { display: block; }
-
-    /* ===== LOGIN SCREEN (full center) ===== */
-    #screen-login {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: #080c14;
-      z-index: 200;
-    }
-    #screen-login.active {
-      display: flex !important;
-    }
-    #screen-login .card-admin {
-      width: 100%;
-      max-width: 380px;
-    }
-    #screen-setup {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: #080c14;
-      z-index: 200;
-    }
-    #screen-setup.active {
-      display: flex !important;
-    }
-    #screen-setup .card-admin {
-      width: 100%;
-      max-width: 420px;
-    }
-
-    /* ===== DASHBOARD STATS ===== */
-    .dash-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 14px;
-      margin-bottom: 24px;
-    }
-    .dash-stat-card {
-      background: #0d1117;
-      border: 1px solid #1e293b;
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
-    .dash-stat-val {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #e2e8f0;
-      font-family: 'Sora', sans-serif;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .dash-stat-label {
-      font-size: 0.74rem;
-      color: #64748b;
-      font-weight: 500;
-    }
-    .dash-stat-card.accent .dash-stat-val { color: #f97316; }
-    .dash-stat-card.green .dash-stat-val { color: #22c55e; }
-    .dash-stat-card.blue .dash-stat-val { color: #38bdf8; }
-
-    .dash-quick-actions {
-      display: flex;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      transition: border-color 0.18s, background-color 0.18s;
     }
-    .dash-section-title {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #475569;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    .user-card:hover {
+      border-color: var(--border2);
+      background: var(--card-hover);
     }
-    .dash-room-status {
-      background: #0d1117;
-      border: 1px solid #1e293b;
-      border-radius: 12px;
-      padding: 16px 18px;
-      margin-bottom: 16px;
-    }
-    .dash-no-room {
-      text-align: center;
-      padding: 32px 16px;
-      color: #334155;
-      font-size: 0.85rem;
-    }
-
-    /* page title in content area */
-    .page-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #e2e8f0;
-      font-family: 'Sora', sans-serif;
-      margin-bottom: 20px;
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--card-solid);
+      border: 1.5px solid var(--border2);
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--cyan);
+      font-size: 0.95rem;
+      flex-shrink: 0;
     }
-    .page-title .ico { width: 20px; height: 20px; }
+    .level-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--r-sm);
+      border: 1.5px solid var(--border);
+      background: var(--card-solid);
+      color: var(--t1);
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .level-btn:hover:not(:disabled) {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: var(--cyan-dim);
+    }
+    .level-btn:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+    }
   </style>
+</head>
 <body>
 
 <!-- LOGIN (full-screen overlay) -->
-<div class="card card-admin screen" id="screen-login" style="flex-direction:column;padding:36px 28px">
-  <div class="logo" style="margin-bottom:4px">Mansa<span>Robotics</span> Quiz</div>
-  <div style="font-size:0.72rem;color:#475569;margin-bottom:28px;letter-spacing:0.06em;text-transform:uppercase">Admin Panel</div>
-  <h2 style="margin-bottom:8px">Login Admin</h2>
-  <p class="info-text">Hanya admin yang bisa akses halaman ini</p>
-  <button class="btn btn-google" onclick="loginAdmin()">
-    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20"/>
-    Login dengan Google
-  </button>
-  <div id="login-error" class="error-msg" style="display:none"></div>
-</div>
-
-<!-- SETUP MODE -->
-<div class="screen" id="screen-setup" style="flex-direction:column">
-  <div class="card card-admin" style="width:100%;max-width:420px">
-    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Setup Admin UID</h2>
-    <p class="info-text">Kamu login pertama kali. Copy UID kamu di bawah, lalu ikuti instruksinya:</p>
-    <div class="uid-box">
-      <div class="uid-value" id="setup-uid-display">-</div>
-      <button class="btn btn-copy" onclick="copyUID()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy UID</button>
-      <div id="copy-success" class="success-msg" style="display:none"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> UID berhasil di-copy!</div>
+<div class="card card-admin screen" id="screen-login" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:var(--bg);z-index:2000;padding:20px">
+  <div style="width:100%;max-width:400px;background:var(--card);border:1.5px solid var(--border);border-radius:var(--r-xl);padding:36px 28px;text-align:center;box-shadow:var(--glass-shadow);backdrop-filter:blur(20px)">
+    <div class="navbar-brand" style="justify-content:center;margin-bottom:6px">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);width:26px;height:26px">
+        <rect x="3" y="11" width="18" height="10" rx="2"/>
+        <rect x="9" y="7" width="6" height="4" rx="1"/>
+        <line x1="12" y1="7" x2="12" y2="4"/>
+        <circle cx="12" cy="3" r="1"/>
+        <line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/>
+        <line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/>
+        <line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/>
+      </svg>
+      Mansa<span style="color:var(--cyan)">Robotics</span>
     </div>
-    <div class="uid-steps">
-      <b>Cara set Admin:</b><br>
-      1. Copy UID di atas<br>
-      2. Buka file <code>admin.html</code><br>
-      3. Cari baris <code>FILL_YOUR_ADMIN_UID_HERE</code><br>
-      4. Ganti dengan UID kamu (dalam tanda kutip)<br>
-      5. Save &amp; upload ulang ke hosting
-    </div>
-    <button class="btn btn-outline" style="margin-top:20px" onclick="logoutAdmin()">Logout</button>
+    <div style="font-family:var(--font-mono);font-size:0.68rem;font-weight:700;color:var(--t3);margin-bottom:24px;letter-spacing:0.12em;text-transform:uppercase">Central Mission Control &bull; Admin Hub</div>
+    <h2 style="font-size:1.4rem;margin-bottom:8px">Login Administrator</h2>
+    <p class="info-text" style="margin-bottom:22px;font-size:0.86rem">Akses instruktur untuk kontrol room, live leaderboard, dan manajemen level peserta.</p>
+    <button class="btn btn-google" onclick="loginAdmin()" style="width:100%">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="Google"/>
+      Login dengan Google
+    </button>
+    <div id="login-error" class="error-msg" style="display:none;margin-top:14px"></div>
   </div>
 </div>
 
-<!-- ADMIN LAYOUT WITH SIDEBAR -->
+<!-- SETUP MODE (UID CONFIG) -->
+<div class="screen" id="screen-setup" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:var(--bg);z-index:2000;padding:20px">
+  <div class="card card-admin" style="width:100%;max-width:440px;background:var(--card);border:1.5px solid var(--border);border-radius:var(--r-xl);padding:30px 24px;box-shadow:var(--glass-shadow)">
+    <h2 style="font-size:1.25rem;display:flex;align-items:center;gap:8px">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Setup Admin UID
+    </h2>
+    <p class="info-text" style="font-size:0.84rem;margin:8px 0 14px">UID akun Google kamu terdeteksi. Daftarkan UID ini ke array <code>ADMIN_UIDS</code>:</p>
+    <div class="uid-box">
+      <div class="uid-value" id="setup-uid-display">-</div>
+      <button class="btn btn-outline" style="width:100%;margin-bottom:8px" onclick="copyUID()">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Salin UID
+      </button>
+      <div id="copy-success" class="success-msg" style="display:none;text-align:center">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        UID berhasil disalin!
+      </div>
+    </div>
+    <div class="uid-steps">
+      <b>Langkah Konfigurasi:</b><br>
+      1. Salin UID di atas.<br>
+      2. Buka file <code>admin.html</code> pada baris <code>ADMIN_UIDS</code>.<br>
+      3. Masukkan UID kamu ke dalam daftar.<br>
+      4. Simpan file dan refresh halaman ini.
+    </div>
+    <button class="btn btn-outline" style="margin-top:18px;width:100%" onclick="logoutAdmin()">Logout</button>
+  </div>
+</div>
+
+<!-- SIDEBAR BACKDROP (Mobile Drawer) -->
+<div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleSidebarDrawer(false)"></div>
+
+<!-- ADMIN LAYOUT -->
 <div class="admin-layout" id="admin-layout" style="display:none">
 
   <!-- SIDEBAR -->
-  <aside class="admin-sidebar">
+  <aside class="admin-sidebar" id="admin-sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">Mansa<span>Robotics</span><span class="sidebar-badge">ADMIN</span></div>
+      <div class="sidebar-logo">
+        Mansa<span class="highlight">Robotics</span>
+        <span class="sidebar-badge">ADMIN</span>
+      </div>
+      <button class="sidebar-close-btn" onclick="toggleSidebarDrawer(false)" title="Tutup Menu">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
     <nav class="sidebar-nav">
-      <div class="sidebar-section-label">Menu</div>
+      <div class="sidebar-section-label">Navigasi Utama</div>
       <button class="sidebar-nav-item active" id="nav-dashboard" onclick="navTo('dashboard')">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         Dashboard
@@ -348,7 +155,7 @@
         Room Aktif
         <span class="nav-badge orange" id="nav-room-badge" style="display:none">LIVE</span>
       </button>
-      <div class="sidebar-section-label">Pemain</div>
+      <div class="sidebar-section-label">Manajemen</div>
       <button class="sidebar-nav-item" id="nav-users" onclick="openUserManagement()">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Atur Level Pemain
@@ -363,54 +170,64 @@
       </button>
       <button class="sidebar-nav-item" onclick="logoutAdmin()">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-        Logout
+        Keluar (Logout)
       </button>
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN AREA -->
   <main class="admin-main">
-    <div class="admin-topbar">
-      <div class="admin-topbar-title" id="topbar-title">Dashboard</div>
-      <div class="admin-topbar-right">
-        <div style="font-size:0.78rem;color:#475569" id="topbar-room-info" style="display:none"></div>
+    <header class="admin-topbar">
+      <div class="admin-topbar-left">
+        <button class="topbar-menu-btn" id="sidebar-toggle-btn" onclick="toggleSidebarDrawer(true)" title="Menu Navigasi">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="admin-topbar-title" id="topbar-title">Dashboard</div>
       </div>
-    </div>
+      <div class="admin-topbar-right">
+        <div class="topbar-room-badge" id="topbar-room-info" style="display:none" onclick="copyRoomCodeTop()" title="Salin kode room"></div>
+        <button class="nav-icon-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+          <svg id="theme-icon-top-dark" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="theme-icon-top-light" class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+        </button>
+      </div>
+    </header>
+
     <div class="admin-content">
 
-      <!-- DASHBOARD -->
-      <div class="screen active" id="screen-dashboard">
+      <!-- SCREEN: DASHBOARD -->
+      <section class="screen active" id="screen-dashboard">
         <div class="page-title">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Dashboard
+          Dashboard Kontrol
         </div>
 
         <div class="dash-grid">
           <div class="dash-stat-card accent">
             <div class="dash-stat-val" id="dash-total-users">—</div>
-            <div class="dash-stat-label">Total Pemain Terdaftar</div>
+            <div class="dash-stat-label">Total Pemain</div>
           </div>
           <div class="dash-stat-card green">
             <div class="dash-stat-val" id="dash-room-status">Tidak Ada</div>
-            <div class="dash-stat-label">Status Room Aktif</div>
+            <div class="dash-stat-label">Status Room</div>
           </div>
-          <div class="dash-stat-card blue">
+          <div class="dash-stat-card cyan">
             <div class="dash-stat-val" id="dash-room-players">—</div>
             <div class="dash-stat-label">Peserta di Room</div>
           </div>
-          <div class="dash-stat-card">
+          <div class="dash-stat-card blue">
             <div class="dash-stat-val" id="dash-room-code">—</div>
             <div class="dash-stat-label">Kode Room</div>
           </div>
         </div>
 
-        <div class="dash-section-title">Aksi Cepat</div>
+        <div class="dash-section-title">Aksi Cepat Instruktur</div>
         <div class="dash-quick-actions">
-          <button class="btn btn-orange" onclick="navTo('create')" style="width:auto">
+          <button class="btn btn-primary" onclick="navTo('create')" style="width:auto">
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             Buat Room Baru
           </button>
-          <button class="btn btn-primary" onclick="navToRoom()" id="btn-goto-room" style="width:auto;background:#1e3a5f;border-color:#38bdf8;color:#38bdf8" disabled>
+          <button class="btn btn-accent" onclick="navToRoom()" id="btn-goto-room" style="width:auto" disabled>
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
             Buka Room Aktif
           </button>
@@ -420,22 +237,22 @@
           </button>
         </div>
 
-        <div class="dash-section-title">Status Room</div>
+        <div class="dash-section-title">Status Room Realtime</div>
         <div class="dash-room-status" id="dash-room-detail">
           <div class="dash-no-room">
-            <svg style="width:32px;height:32px;color:#1e293b;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/></svg>
-            <div>Belum ada room aktif.<br>Buat room baru untuk memulai quiz.</div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/></svg>
+            <div>Belum ada room aktif.<br>Buat room baru untuk memulai sesi kuis robotika.</div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- CREATE ROOM -->
-      <div class="screen" id="screen-create">
+      <!-- SCREEN: CREATE ROOM -->
+      <section class="screen" id="screen-create">
         <div class="page-title">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Buat Room Baru
+          Inisialisasi Room Baru
         </div>
-        <p class="info-text">Pilih tema quiz dulu:</p>
+        <p class="info-text">1. Pilih Tema Arena Robotika:</p>
         <div class="theme-grid">
           <div class="theme-card" onclick="selectTheme('dasar', this)">
             <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8H6a4 4 0 0 0 0 8h.5"/><path d="M12 22a5 5 0 0 0 5-5v-1H7v1a5 5 0 0 0 5 5z"/></svg></div>
@@ -452,8 +269,8 @@
         </div>
         <div id="theme-error" class="error-msg" style="display:none"></div>
 
-        <p class="info-text" style="margin-top:16px">Pengaturan jeda antar soal:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr; margin-bottom:8px">
+        <p class="info-text" style="margin-top:16px">2. Pengaturan Jeda Antar Soal (Batch):</p>
+        <div class="theme-grid" style="grid-template-columns:repeat(3, 1fr);margin-bottom:8px">
           <div class="theme-card" id="break-off" onclick="selectBreakMode('off', this)">
             <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
             <div class="name">Langsung</div>
@@ -467,181 +284,230 @@
             <div class="name">Custom</div>
           </div>
         </div>
-        <div id="custom-break-input" style="display:none; margin-bottom:12px">
-          <input type="number" id="input-break-every" min="1" max="9" value="3"
-            placeholder="Jeda tiap berapa soal?"
-            style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none"/>
-          <p style="font-size:0.78rem;color:#64748b;margin-top:4px">Jeda akan muncul tiap N soal (contoh: 3 = soal 3,6,9,...)</p>
+        <div id="custom-break-input" style="display:none;margin-bottom:12px">
+          <input type="number" id="input-break-every" min="1" max="9" value="3" placeholder="Jeda tiap berapa soal?" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:1rem;outline:none"/>
+          <p style="font-size:0.78rem;color:var(--t3);margin-top:4px">Jeda muncul tiap N soal (contoh: 3 = jeda di soal 3, 6, 9,...)</p>
         </div>
 
-        <!-- STREAK THRESHOLD SETTING -->
-        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Item didapat setelah berapa jawaban benar berturut-turut?</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr 1fr; margin-bottom:8px">
-          <div class="theme-card" id="streak-2" onclick="selectStreak(2, this)">
-            <div class="icon"><span style="font-size:1.1rem;font-weight:700">2</span></div>
-            <div class="name">2 Streak</div>
-          </div>
-          <div class="theme-card selected" id="streak-3" onclick="selectStreak(3, this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
-            <div class="name">3 Streak</div>
-          </div>
-          <div class="theme-card" id="streak-4" onclick="selectStreak(4, this)">
-            <div class="icon"><span style="font-size:1.1rem;font-weight:700">4</span></div>
-            <div class="name">4 Streak</div>
-          </div>
-          <div class="theme-card" id="streak-5" onclick="selectStreak(5, this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M7 4h10l-1 7a5 5 0 0 1-8 0z"/><path d="M4 7h3M17 7h3"/></svg></div>
-            <div class="name">5 Streak</div>
-          </div>
+        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> 3. Streak Threshold Pembagian Item Tempur:</p>
+        <div class="theme-grid" style="grid-template-columns:repeat(4, 1fr);margin-bottom:8px">
+          <div class="theme-card" id="streak-2" onclick="selectStreak(2, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.15rem;font-weight:700">2</span></div><div class="name">2 Streak</div></div>
+          <div class="theme-card selected" id="streak-3" onclick="selectStreak(3, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div><div class="name">3 Streak</div></div>
+          <div class="theme-card" id="streak-4" onclick="selectStreak(4, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.15rem;font-weight:700">4</span></div><div class="name">4 Streak</div></div>
+          <div class="theme-card" id="streak-5" onclick="selectStreak(5, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M7 4h10l-1 7a5 5 0 0 1-8 0z"/><path d="M4 7h3M17 7h3"/></svg></div><div class="name">5 Streak</div></div>
         </div>
-        <p style="font-size:0.75rem;color:#64748b;margin-bottom:12px;text-align:center" id="streak-desc">Tiap 3 jawaban benar berturut-turut → player pilih item</p>
+        <p style="font-size:0.75rem;color:var(--t3);margin-bottom:12px;text-align:center" id="streak-desc">Tiap 3 jawaban benar berturut-turut &rarr; peserta dapat memilih item (Shield, Gun, Hint)</p>
 
-        <!-- TIMER DURASI -->
-        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Durasi timer per soal:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr; margin-bottom:8px">
-          <div class="theme-card" id="timer-10" onclick="selectTimer(10, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">10</span></div><div class="name">10 dtk</div></div>
-          <div class="theme-card selected" id="timer-15" onclick="selectTimer(15, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">15</span></div><div class="name">15 dtk</div></div>
-          <div class="theme-card" id="timer-20" onclick="selectTimer(20, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">20</span></div><div class="name">20 dtk</div></div>
-          <div class="theme-card" id="timer-30" onclick="selectTimer(30, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">30</span></div><div class="name">30 dtk</div></div>
+        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4. Durasi Timer Per Soal:</p>
+        <div class="theme-grid" style="grid-template-columns:repeat(5, 1fr);margin-bottom:8px">
+          <div class="theme-card" id="timer-10" onclick="selectTimer(10, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">10</span></div><div class="name">10 dtk</div></div>
+          <div class="theme-card selected" id="timer-15" onclick="selectTimer(15, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">15</span></div><div class="name">15 dtk</div></div>
+          <div class="theme-card" id="timer-20" onclick="selectTimer(20, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">20</span></div><div class="name">20 dtk</div></div>
+          <div class="theme-card" id="timer-30" onclick="selectTimer(30, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">30</span></div><div class="name">30 dtk</div></div>
           <div class="theme-card" id="timer-custom" onclick="selectTimer('custom', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div><div class="name">Custom</div></div>
         </div>
         <div id="custom-timer-input" style="display:none;margin-bottom:8px">
-          <input type="number" id="input-timer-custom" min="5" max="120" value="15" placeholder="Detik (5–120)..."
-            style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none"/>
-          <p style="font-size:0.78rem;color:#64748b;margin-top:4px">Masukkan durasi dalam detik (5–120)</p>
+          <input type="number" id="input-timer-custom" min="5" max="120" value="15" placeholder="Detik (5–120)..." style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:1rem;outline:none"/>
+          <p style="font-size:0.78rem;color:var(--t3);margin-top:4px">Durasi waktu pengerjaan setiap pertanyaan (5–120 detik)</p>
         </div>
 
-        <!-- MODE SOAL -->
-        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg> Urutan soal:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr; margin-bottom:14px">
-          <div class="theme-card" id="shuffle-on" onclick="selectShuffle(true, this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div>
-            <div class="name">Acak</div>
-          </div>
-          <div class="theme-card selected" id="shuffle-off" onclick="selectShuffle(false, this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
-            <div class="name">Urut</div>
-          </div>
+        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg> 5. Urutan Pertanyaan:</p>
+        <div class="theme-grid" style="grid-template-columns:1fr 1fr;margin-bottom:14px">
+          <div class="theme-card" id="shuffle-on" onclick="selectShuffle(true, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div><div class="name">Acak Pertanyaan</div></div>
+          <div class="theme-card selected" id="shuffle-off" onclick="selectShuffle(false, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><div class="name">Urutan Standar</div></div>
         </div>
 
-        <!-- JUMLAH SOAL -->
-        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Jumlah soal yang dimainkan:</p>
-        <input type="number" id="input-question-count" min="1" max="999" value="25"
-          style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none;margin-bottom:4px"/>
-        <p style="font-size:0.78rem;color:#64748b;margin-bottom:14px">Jika lebih dari jumlah soal di bank soal, semua soal akan dipakai.</p>
+        <p class="info-text" style="margin-top:16px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> 6. Jumlah Soal yang Dimainkan:</p>
+        <input type="number" id="input-question-count" min="1" max="999" value="25" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:1rem;outline:none;margin-bottom:4px"/>
+        <p style="font-size:0.78rem;color:var(--t3);margin-bottom:18px">Jika melebihi jumlah soal di bank soal, semua soal level tersebut akan dimainkan.</p>
 
-        <button class="btn btn-orange" onclick="createRoom()" style="margin-top:4px">Buat Room</button>
-      </div>
+        <button class="btn btn-primary" onclick="createRoom()" style="margin-top:4px">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Inisialisasi &amp; Buat Room
+        </button>
+      </section>
 
-      <!-- MANAGE ROOM / WAITING -->
-      <div class="screen" id="screen-manage">
+      <!-- SCREEN: MANAGE ROOM / WAITING -->
+      <section class="screen" id="screen-manage">
         <div class="page-title">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          Room Aktif
-          <svg class="ico" viewBox="0 0 24 24" fill="#22c55e" stroke="#22c55e" stroke-width="2"><circle cx="12" cy="12" r="6"/></svg>
+          Lobi Menunggu Peserta
+          <span style="display:inline-flex;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);margin-left:4px"></span>
         </div>
-        <p class="info-text">Bagikan kode ini ke peserta:</p>
-        <div class="room-code-big" id="admin-room-code">????</div>
+        <p class="info-text">Bagikan kode room ini kepada para peserta di kelas / arena:</p>
+        <div class="room-code-big" id="admin-room-code" onclick="copyRoomCode()" title="Klik untuk menyalin kode room">
+          <span>????</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;opacity:0.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </div>
+        <div id="copy-room-toast" class="success-msg" style="display:none;text-align:center;margin:-8px 0 14px">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Kode room disalin ke clipboard!
+        </div>
         <div class="player-count" id="player-count">0 peserta bergabung</div>
-        <ul class="player-list" id="admin-player-list"></ul>
-        <p style="font-size:0.72rem;color:#475569;margin:2px 0 4px;text-align:center">Klik nama player untuk kick dari room</p>
-        <button class="btn btn-green" onclick="startQuiz()" id="btn-start"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Mulai Quiz!</button>
-        <button class="btn btn-red" onclick="deleteRoom()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus Room</button>
-      </div>
+        <ul class="player-list" id="admin-player-list" style="margin-bottom:16px"></ul>
+        <p style="font-size:0.75rem;color:var(--t3);margin:2px 0 16px;text-align:center">Klik tombol kick jika ada peserta yang salah bergabung.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-green" onclick="startQuiz()" id="btn-start" style="flex:1">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Mulai Kuis Sekarang!
+          </button>
+          <button class="btn btn-red" onclick="deleteRoom()" style="width:auto">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+            Hapus Room
+          </button>
+        </div>
+      </section>
 
-      <!-- LIVE QUIZ CONTROL -->
-      <div class="screen" id="screen-live">
+      <!-- SCREEN: LIVE QUIZ CONTROL -->
+      <section class="screen" id="screen-live">
         <div class="page-title">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          Live Quiz Control
+          Live Quiz Telemetry
         </div>
         <div class="progress-info">
           <span id="live-q-num">Soal 1/10</span>
           <span id="live-theme-label">Tema: -</span>
         </div>
-        <div class="q-display">
-          <div class="q-label">Pertanyaan:</div>
+
+        <!-- Question Inspector with Level Switcher, Batch Pills, Diagram & Choices -->
+        <div class="q-display" id="admin-q-inspector">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div class="q-label" style="margin-bottom:0;display:flex;align-items:center;gap:6px">
+                <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)"></span>
+                INSPEKSI SOAL LIVE
+              </div>
+              <span class="q-sub-badge" id="live-q-badge">Soal 1</span>
+            </div>
+            <div class="q-level-tabs" id="live-level-tabs">
+              <button class="q-level-tab active" id="tab-lvl-1" onclick="switchLiveQuestionLevel(1)">Level 1</button>
+              <button class="q-level-tab" id="tab-lvl-2" onclick="switchLiveQuestionLevel(2)">Level 2</button>
+              <button class="q-level-tab" id="tab-lvl-3" onclick="switchLiveQuestionLevel(3)">Level 3</button>
+            </div>
+          </div>
+
+          <!-- Batch Question Sub-pills -->
+          <div class="admin-q-pills" id="admin-batch-pills"></div>
+
+          <!-- Question Diagram Image (Circuit / Logic Gate) -->
+          <div class="question-image-box" id="admin-question-image-box" style="display:none;margin-bottom:12px">
+            <img id="admin-question-image" src="" alt="Diagram Soal Robotika" loading="lazy" />
+          </div>
+
           <div class="q-text" id="live-q-text">-</div>
-          <div class="q-ans" id="live-q-ans"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Jawaban: -</div>
+
+          <!-- Multiple Choice Options Preview Grid -->
+          <div class="admin-q-opts" id="admin-q-opts"></div>
+
+          <div class="q-ans" id="live-q-ans" style="margin-top:10px"></div>
         </div>
+
         <div class="timer-display" id="admin-timer">15</div>
-        <button class="btn btn-primary" onclick="nextQuestion()" id="btn-next">Soal Berikutnya <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-        <p class="info-text" style="margin-top:8px">Skor Live:</p>
-        <div id="batch-progress-summary" style="font-size:0.8rem;font-weight:600;margin-bottom:8px;min-height:16px"></div>
+        <button class="btn btn-primary" onclick="nextQuestion()" id="btn-next">
+          Buka Batch Berikutnya
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <p class="info-text" style="margin-top:16px">Papan Skor &amp; Progres Peserta:</p>
+        <div id="batch-progress-summary" style="font-size:0.82rem;font-weight:700;margin-bottom:8px;min-height:18px;font-family:var(--font-mono)"></div>
         <ul class="live-scores" id="live-scores"></ul>
-        <button class="btn btn-red" style="margin-top:12px" onclick="endQuizNow()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Akhiri Quiz Sekarang</button>
 
         <!-- ACTIVITY LOG -->
-        <div style="margin-top:16px">
+        <div style="margin-top:20px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-            <div style="font-size:0.82rem;font-weight:700;color:#94a3b8;letter-spacing:0.05em"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> ACTIVITY LOG</div>
-            <button onclick="clearAdminLog()" style="font-size:0.7rem;padding:3px 10px;border-radius:6px;border:1px solid #334155;background:transparent;color:#64748b;cursor:pointer">Bersihkan</button>
+            <div style="font-family:var(--font-mono);font-size:0.78rem;font-weight:700;color:var(--t2);letter-spacing:0.08em;display:flex;align-items:center;gap:6px">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              TELEMETRY &amp; ACTIVITY LOG
+            </div>
+            <button onclick="clearAdminLog()" class="nav-icon-btn" style="padding:3px 10px;font-size:0.72rem">Bersihkan</button>
           </div>
-          <div id="activity-log" style="background:#0a0f1a;border:1px solid #1e293b;border-radius:10px;max-height:240px;overflow-y:auto;padding:8px;display:flex;flex-direction:column;gap:4px">
-            <div style="color:#334155;font-size:0.78rem;text-align:center;padding:16px 0">Belum ada aktivitas...</div>
+          <div id="activity-log">
+            <div style="color:var(--t3);font-size:0.78rem;text-align:center;padding:16px 0">Menunggu transmisi aktivitas...</div>
           </div>
         </div>
-      </div>
 
-      <!-- USER MANAGEMENT -->
-      <div class="screen" id="screen-users">
+        <button class="btn btn-red" style="margin-top:16px" onclick="endQuizNow()">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          Akhiri Kuis Sekarang
+        </button>
+      </section>
+
+      <!-- SCREEN: USER MANAGEMENT -->
+      <section class="screen" id="screen-users">
         <div class="page-title">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Manajemen Pemain
+          Manajemen Level Pemain
         </div>
-        <p class="info-text" style="margin-bottom:4px">Semua akun yang pernah login. Kamu bisa atur levelnya di sini.</p>
-        <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-          <input type="text" id="user-search" placeholder="Cari nama / email..." oninput="filterUserList()" style="flex:1;min-width:160px;padding:8px 12px;border-radius:9px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:0.85rem;outline:none"/>
-          <select id="user-filter-level" onchange="filterUserList()" style="padding:8px 12px;border-radius:9px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:0.85rem;outline:none;cursor:pointer">
+        <p class="info-text" style="margin-bottom:12px">Atur tingkatan materi kuis untuk setiap siswa (Level 1: Pemula, Level 2: Menengah, Level 3: Lanjutan).</p>
+        <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+          <input type="text" id="user-search" placeholder="Cari nama atau email..." oninput="filterUserList()" style="flex:1;min-width:180px;padding:9px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:0.88rem;outline:none"/>
+          <select id="user-filter-level" onchange="filterUserList()" style="padding:9px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:0.88rem;outline:none;cursor:pointer">
             <option value="all">Semua Level</option>
-            <option value="1">Level 1</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
+            <option value="1">Level 1 (Pemula)</option>
+            <option value="2">Level 2 (Menengah)</option>
+            <option value="3">Level 3 (Lanjutan)</option>
           </select>
         </div>
-        <div id="user-list-container" style="display:flex;flex-direction:column;gap:8px;max-height:520px;overflow-y:auto">
-          <div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Memuat data pengguna...</div>
+        <div id="user-list-container" style="display:flex;flex-direction:column;gap:10px;max-height:540px;overflow-y:auto;padding-right:4px">
+          <div style="text-align:center;color:var(--t3);padding:28px;font-size:0.88rem">Memuat data pengguna...</div>
         </div>
-        <!-- Bug fix: tombol kembali pakai navBack() agar bisa balik ke room atau dashboard -->
-        <button class="btn btn-outline" style="margin-top:16px" onclick="navBack()">← Kembali</button>
-      </div>
+        <button class="btn btn-outline" style="margin-top:18px" onclick="navBack()">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Kembali
+        </button>
+      </section>
 
-      <!-- RESULT -->
-      <div class="screen" id="screen-admin-result">
+      <!-- SCREEN: RESULTS -->
+      <section class="screen" id="screen-admin-result">
         <div class="page-title">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M7 4h10l-1 7a5 5 0 0 1-8 0z"/><path d="M4 7h3M17 7h3"/></svg>
-          Quiz Selesai!
+          Sesi Kuis Selesai!
         </div>
-        <p class="info-text">Peringkat akhir peserta:</p>
-        <ul class="live-scores" id="final-scores"></ul>
+        <p class="info-text">Peringkat &amp; Skor Akhir Peserta:</p>
+        <ul class="live-scores" id="final-scores" style="max-height:300px"></ul>
 
-        <!-- TOP 3 SOAL TERSUSAH -->
-        <div style="margin-top:20px;background:#0f172a;border-radius:12px;padding:16px" id="hardest-questions-section">
-          <div style="font-size:0.85rem;font-weight:700;color:#f97316;margin-bottom:12px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.88A2.5 2.5 0 0 1 9.5 2"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.88A2.5 2.5 0 0 0 14.5 2"/></svg> Top 3 Soal Tersusah (untuk diskusi)</div>
+        <!-- HARDEST QUESTIONS DISCUSSION -->
+        <div style="margin-top:24px;background:var(--card2);border:1.5px solid var(--border);border-radius:var(--r-md);padding:18px" id="hardest-questions-section">
+          <div style="font-family:var(--font-mono);font-size:0.82rem;font-weight:700;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.88A2.5 2.5 0 0 1 9.5 2"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.88A2.5 2.5 0 0 0 14.5 2"/></svg>
+            Top 3 Soal Tersusah (Bahan Evaluasi Guru)
+          </div>
           <div id="hardest-questions-list">
-            <div style="font-size:0.8rem;color:#475569;text-align:center;padding:8px">Memuat data...</div>
+            <div style="font-size:0.82rem;color:var(--t3);text-align:center;padding:12px">Memuat data analisis soal...</div>
           </div>
         </div>
 
-        <div style="margin-top:16px">
-          <button class="btn btn-outline" onclick="exportCSV()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export Hasil ke Excel (.xlsx)</button>
+        <div style="margin-top:18px">
+          <button class="btn btn-outline" onclick="exportCSV()" style="width:100%">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export Laporan ke Excel (.xlsx)
+          </button>
         </div>
 
-        <div style="margin-top:20px;border-top:1px solid #334155;padding-top:16px">
-          <p class="info-text" style="margin-bottom:12px">Mau main lagi?</p>
-          <button class="btn btn-green" onclick="replayQuiz(false)" id="btn-replay-same"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg> Ulangi (tema & setting sama)</button>
-          <button class="btn btn-primary" onclick="replayQuiz(true)" id="btn-replay-new"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l-.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Ulangi dengan Setting Baru</button>
-          <button class="btn btn-outline" onclick="newRoom()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M13 4L6 6v14l7 2V4z"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/></svg> Buat Room Baru</button>
+        <div style="margin-top:22px;border-top:1.5px solid var(--border);padding-top:18px;display:flex;flex-direction:column;gap:10px">
+          <p class="info-text" style="margin-bottom:4px">Opsi Ronde Selanjutnya:</p>
+          <button class="btn btn-green" onclick="replayQuiz(false)" id="btn-replay-same">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            Ulangi Kuis (Setting &amp; Tema Sama)
+          </button>
+          <button class="btn btn-primary" onclick="replayQuiz(true)" id="btn-replay-new">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06-.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Ulangi dengan Setting &amp; Tema Baru
+          </button>
+          <button class="btn btn-outline" onclick="newRoom()">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M13 4L6 6v14l7 2V4z"/></svg>
+            Inisialisasi Room Baru (Reset Total)
+          </button>
         </div>
-      </div>
+      </section>
 
-      <!-- REPLAY CONFIG SCREEN -->
-      <div class="screen" id="screen-replay-config">
+      <!-- SCREEN: REPLAY CONFIG -->
+      <section class="screen" id="screen-replay-config">
         <div class="page-title">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l-.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          Setting Ulang Quiz
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06-.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Konfigurasi Ulang Ronde
         </div>
-        <p class="info-text">Pilih tema baru:</p>
+        <p class="info-text">Pilih Tema Baru:</p>
         <div class="theme-grid">
           <div class="theme-card" onclick="selectTheme('dasar', this)">
             <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8H6a4 4 0 0 0 0 8h.5"/><path d="M12 22a5 5 0 0 0 5-5v-1H7v1a5 5 0 0 0 5 5z"/></svg></div>
@@ -658,62 +524,78 @@
         </div>
         <div id="theme-error2" class="error-msg" style="display:none"></div>
 
-        <p class="info-text" style="margin-top:16px">Pengaturan jeda:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr; margin-bottom:8px">
-          <div class="theme-card" id="break-off2" onclick="selectBreakMode2('off', this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="name">Langsung</div>
-          </div>
-          <div class="theme-card selected" id="break-52" onclick="selectBreakMode2('5', this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></div><div class="name">Tiap 5 Soal</div>
-          </div>
-          <div class="theme-card" id="break-custom2" onclick="selectBreakMode2('custom', this)">
-            <div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div><div class="name">Custom</div>
-          </div>
+        <p class="info-text" style="margin-top:16px">Pengaturan Jeda:</p>
+        <div class="theme-grid" style="grid-template-columns:repeat(3, 1fr);margin-bottom:8px">
+          <div class="theme-card" id="break-off2" onclick="selectBreakMode2('off', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="name">Langsung</div></div>
+          <div class="theme-card selected" id="break-52" onclick="selectBreakMode2('5', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></div><div class="name">Tiap 5 Soal</div></div>
+          <div class="theme-card" id="break-custom2" onclick="selectBreakMode2('custom', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div><div class="name">Custom</div></div>
         </div>
-        <div id="custom-break-input2" style="display:none; margin-bottom:12px">
-          <input type="number" id="input-break-every2" min="1" max="9" value="3"
-            style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none"/>
+        <div id="custom-break-input2" style="display:none;margin-bottom:12px">
+          <input type="number" id="input-break-every2" min="1" max="9" value="3" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:1rem;outline:none"/>
         </div>
 
-        <p class="info-text" style="margin-top:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Streak untuk dapat item:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr 1fr; margin-bottom:12px">
-          <div class="theme-card" id="streak-22" onclick="selectStreak2(2, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">2</span></div><div class="name">2 Streak</div></div>
+        <p class="info-text" style="margin-top:16px">Streak untuk dapat item:</p>
+        <div class="theme-grid" style="grid-template-columns:repeat(4, 1fr);margin-bottom:12px">
+          <div class="theme-card" id="streak-22" onclick="selectStreak2(2, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.15rem;font-weight:700">2</span></div><div class="name">2 Streak</div></div>
           <div class="theme-card selected" id="streak-32" onclick="selectStreak2(3, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div><div class="name">3 Streak</div></div>
-          <div class="theme-card" id="streak-42" onclick="selectStreak2(4, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">4</span></div><div class="name">4 Streak</div></div>
+          <div class="theme-card" id="streak-42" onclick="selectStreak2(4, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.15rem;font-weight:700">4</span></div><div class="name">4 Streak</div></div>
           <div class="theme-card" id="streak-52" onclick="selectStreak2(5, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M7 4h10l-1 7a5 5 0 0 1-8 0z"/><path d="M4 7h3M17 7h3"/></svg></div><div class="name">5 Streak</div></div>
         </div>
 
-        <!-- TIMER REPLAY -->
-        <p class="info-text" style="margin-top:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Timer per soal:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr; margin-bottom:8px">
-          <div class="theme-card" id="timer2-10" onclick="selectTimer2(10, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">10</span></div><div class="name">10 dtk</div></div>
-          <div class="theme-card selected" id="timer2-15" onclick="selectTimer2(15, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">15</span></div><div class="name">15 dtk</div></div>
-          <div class="theme-card" id="timer2-20" onclick="selectTimer2(20, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">20</span></div><div class="name">20 dtk</div></div>
-          <div class="theme-card" id="timer2-30" onclick="selectTimer2(30, this)"><div class="icon"><span style="font-size:1.1rem;font-weight:700">30</span></div><div class="name">30 dtk</div></div>
+        <p class="info-text" style="margin-top:16px">Timer per soal:</p>
+        <div class="theme-grid" style="grid-template-columns:repeat(5, 1fr);margin-bottom:8px">
+          <div class="theme-card" id="timer2-10" onclick="selectTimer2(10, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">10</span></div><div class="name">10 dtk</div></div>
+          <div class="theme-card selected" id="timer2-15" onclick="selectTimer2(15, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">15</span></div><div class="name">15 dtk</div></div>
+          <div class="theme-card" id="timer2-20" onclick="selectTimer2(20, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">20</span></div><div class="name">20 dtk</div></div>
+          <div class="theme-card" id="timer2-30" onclick="selectTimer2(30, this)"><div class="icon"><span style="font-family:var(--font-mono);font-size:1.1rem;font-weight:700">30</span></div><div class="name">30 dtk</div></div>
           <div class="theme-card" id="timer2-custom" onclick="selectTimer2('custom', this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div><div class="name">Custom</div></div>
         </div>
         <div id="custom-timer-input2" style="display:none;margin-bottom:8px">
-          <input type="number" id="input-timer-custom2" min="5" max="120" value="15"
-            style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none"/>
+          <input type="number" id="input-timer-custom2" min="5" max="120" value="15" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:1rem;outline:none"/>
         </div>
 
-        <!-- URUTAN SOAL REPLAY -->
-        <p class="info-text" style="margin-top:8px">Urutan soal:</p>
-        <div class="theme-grid" style="grid-template-columns:1fr 1fr; margin-bottom:8px">
+        <p class="info-text" style="margin-top:16px">Urutan Pertanyaan:</p>
+        <div class="theme-grid" style="grid-template-columns:1fr 1fr;margin-bottom:8px">
           <div class="theme-card" id="shuffle2-on" onclick="selectShuffle2(true, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div><div class="name">Acak</div></div>
-          <div class="theme-card selected" id="shuffle2-off" onclick="selectShuffle2(false, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><div class="name">Urut</div></div>
+          <div class="theme-card selected" id="shuffle2-off" onclick="selectShuffle2(false, this)"><div class="icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><div class="name">Urutan Standar</div></div>
         </div>
 
-        <p class="info-text" style="margin-top:8px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Jumlah soal:</p>
-        <input type="number" id="input-question-count2" min="1" max="999" value="25"
-          style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;outline:none;margin-bottom:14px"/>
+        <p class="info-text" style="margin-top:16px">Jumlah Soal:</p>
+        <input type="number" id="input-question-count2" min="1" max="999" value="25" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--card2);color:var(--t1);font-size:1rem;outline:none;margin-bottom:16px"/>
 
-        <button class="btn btn-green" onclick="confirmReplaySetting()"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Mulai Ulang Quiz!</button>
-        <button class="btn btn-outline" onclick="showScreen('admin-result')"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> Kembali</button>
-      </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-green" onclick="confirmReplaySetting()" style="flex:1">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Terapkan &amp; Mulai Ulang Kuis
+          </button>
+          <button class="btn btn-outline" onclick="showScreen('admin-result')">Batal</button>
+        </div>
+      </section>
 
     </div><!-- /admin-content -->
   </main>
+
+  <!-- MOBILE BOTTOM NAVIGATION BAR -->
+  <nav class="admin-bottom-nav" id="admin-bottom-nav">
+    <button class="bottom-nav-item active" id="bnav-dashboard" onclick="navTo('dashboard')">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Dashboard</span>
+    </button>
+    <button class="bottom-nav-item" id="bnav-create" onclick="navTo('create')">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>Buat Room</span>
+    </button>
+    <button class="bottom-nav-item" id="bnav-manage" onclick="navToRoom()">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      <span>Room Aktif</span>
+      <span class="live-dot" id="bnav-live-dot" style="display:none"></span>
+    </button>
+    <button class="bottom-nav-item" id="bnav-users" onclick="openUserManagement()">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+      <span>Level</span>
+    </button>
+  </nav>
+
 </div><!-- /admin-layout -->
 
 <script type="module">
@@ -762,6 +644,7 @@ let currentRoom = null;
 let selectedTheme = null;
 let adminTimerInterval = null;
 let currentQIndex = 0;
+let inspectedQIndex = 0;
 let activeTheme = null;
 let roomListeners = [];
 let breakMode = '5';
@@ -769,21 +652,41 @@ let breakEvery = 5;
 let streakThreshold = 3;
 let questionCount = 25;
 let activeQuestions = [];
+let activeQuestionsByLevel = {};
+let inspectedLevel = 1;
 let timerDuration = 15;
 let timerMode = '15';
 let shuffleQuestions = false;
 let playerUidMap = {};
-let attackSentMap = {};
-let attackReceivedMap = {};
+let seenLogKeys = new Set();
+let _currentRoomScreen = null;
 
-// Track screen history for navBack
-let _prevScreen = 'dashboard';
+// ===== MOBILE DRAWER CONTROLS =====
+window.toggleSidebarDrawer = function(force) {
+  const sidebar = document.getElementById('admin-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  if (!sidebar) return;
+
+  const isOpen = typeof force === 'boolean' ? force : !sidebar.classList.contains('open');
+  if (isOpen) {
+    sidebar.classList.add('open');
+    if (backdrop) backdrop.classList.add('active');
+  } else {
+    sidebar.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('active');
+  }
+};
 
 // ===== HELPERS =====
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const target = document.getElementById('screen-' + id);
   if (target) target.classList.add('active');
+
+  // Close mobile drawer on navigation
+  if (window.innerWidth <= 900) {
+    window.toggleSidebarDrawer(false);
+  }
 
   // Update sidebar active state
   const navMap = {
@@ -802,34 +705,59 @@ function showScreen(id) {
     if (navEl) navEl.classList.add('active');
   }
 
+  // Update mobile bottom navigation active state
+  const bnavMap = {
+    'dashboard': 'bnav-dashboard',
+    'create': 'bnav-create',
+    'manage': 'bnav-manage',
+    'live': 'bnav-manage',
+    'users': 'bnav-users',
+    'admin-result': 'bnav-manage',
+    'replay-config': 'bnav-manage'
+  };
+  document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
+  const bnavId = bnavMap[id];
+  if (bnavId) {
+    const bnavEl = document.getElementById(bnavId);
+    if (bnavEl) bnavEl.classList.add('active');
+  }
+
   // Update topbar title
   const titles = {
-    'dashboard': 'Dashboard',
-    'create': 'Buat Room Baru',
-    'manage': 'Room Aktif',
-    'live': 'Live Quiz Control',
-    'users': 'Manajemen Pemain',
-    'admin-result': 'Hasil Quiz',
-    'replay-config': 'Setting Ulang Quiz',
+    'dashboard': 'Dashboard Kontrol',
+    'create': 'Inisialisasi Room Baru',
+    'manage': 'Lobi Menunggu Peserta',
+    'live': 'Live Quiz Telemetry',
+    'users': 'Manajemen Level Pemain',
+    'admin-result': 'Hasil & Evaluasi Kuis',
+    'replay-config': 'Konfigurasi Ulang Ronde',
   };
   const topbar = document.getElementById('topbar-title');
-  if (topbar) topbar.textContent = titles[id] || '';
+  if (topbar) topbar.textContent = titles[id] || 'Dashboard';
 
-  // Update room badge in sidebar
+  // Update room badges
   updateRoomBadge();
 }
 
 function updateRoomBadge() {
   const badge = document.getElementById('nav-room-badge');
   const btnGotoRoom = document.getElementById('btn-goto-room');
+  const topbarInfo = document.getElementById('topbar-room-info');
+  const bnavLiveDot = document.getElementById('bnav-live-dot');
+
   if (currentRoom) {
     if (badge) badge.style.display = '';
     if (btnGotoRoom) btnGotoRoom.disabled = false;
-    document.getElementById('topbar-room-info').textContent = currentRoom ? `Room: ${currentRoom}` : '';
+    if (topbarInfo) {
+      topbarInfo.style.display = 'inline-flex';
+      topbarInfo.innerHTML = `<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)"></span> Room: <b>${currentRoom}</b>`;
+    }
+    if (bnavLiveDot) bnavLiveDot.style.display = 'block';
   } else {
     if (badge) badge.style.display = 'none';
     if (btnGotoRoom) btnGotoRoom.disabled = true;
-    document.getElementById('topbar-room-info').textContent = '';
+    if (topbarInfo) topbarInfo.style.display = 'none';
+    if (bnavLiveDot) bnavLiveDot.style.display = 'none';
   }
 }
 
@@ -839,20 +767,28 @@ window.navTo = function(id) {
 };
 
 // Navigate to the correct room screen (manage, live, or result)
-window.navToRoom = function() {
+window.navToRoom = async function() {
   if (!currentRoom) { showScreen('create'); return; }
-  // Detect which room screen to show based on activeTheme / context
-  const activeScr = document.querySelector('.screen.active');
-  const liveScreenActive = activeScr && activeScr.id === 'screen-live';
-  // Show most recent room screen
   if (_currentRoomScreen) {
     showScreen(_currentRoomScreen);
-  } else {
-    showScreen('manage');
+    return;
+  }
+  try {
+    const snap = await get(ref(db, `rooms/${currentRoom}/status`));
+    if (snap.exists()) {
+      const status = snap.val();
+      if (status === 'playing') showRoomScreen('live');
+      else if (status === 'finished') showRoomScreen('admin-result');
+      else showRoomScreen('manage');
+    } else {
+      showRoomScreen('manage');
+    }
+  } catch(e) {
+    showRoomScreen('manage');
   }
 };
 
-// Smart back navigation from users screen
+// Smart back navigation
 window.navBack = function() {
   if (currentRoom) {
     if (_currentRoomScreen) showScreen(_currentRoomScreen);
@@ -862,9 +798,6 @@ window.navBack = function() {
   }
 };
 
-// Track the current room screen so navToRoom works correctly
-let _currentRoomScreen = null;
-
 function showRoomScreen(id) {
   _currentRoomScreen = id;
   showScreen(id);
@@ -872,42 +805,56 @@ function showRoomScreen(id) {
 
 function showError(id, msg) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.textContent = msg;
   el.style.display = 'block';
-  setTimeout(() => el.style.display = 'none', 4000);
+  setTimeout(() => { el.style.display = 'none'; }, 4000);
 }
+
 function clearListeners() {
   roomListeners.forEach(unsub => typeof unsub === 'function' && unsub());
   roomListeners = [];
 }
+
 function isSetupMode() {
   return ADMIN_UIDS.length === 0 || ADMIN_UIDS[0] === "FILL_YOUR_ADMIN_UID_HERE";
 }
-function isAdmin(uid) {
-  return ADMIN_UIDS.includes(uid);
+
+async function isAdmin(uid) {
+  if (ADMIN_UIDS.includes(uid)) return true;
+  try {
+    const snap = await get(ref(db, `users/${uid}/isAdmin`));
+    if (snap.exists() && snap.val() === true) return true;
+    const rSnap = await get(ref(db, `users/${uid}/role`));
+    if (rSnap.exists() && rSnap.val() === 'admin') return true;
+  } catch(e) {}
+  return false;
 }
 
-// ===== SHOW ADMIN LAYOUT =====
 function showAdminLayout() {
   document.body.classList.add('admin-active');
-  document.getElementById('admin-layout').style.display = 'flex';
-  // Hide login overlay
-  document.getElementById('screen-login').classList.remove('active');
-  document.getElementById('screen-setup').classList.remove('active');
+  const layout = document.getElementById('admin-layout');
+  if (layout) layout.style.display = 'flex';
+  const loginOverlay = document.getElementById('screen-login');
+  if (loginOverlay) loginOverlay.style.display = 'none';
+  const setupOverlay = document.getElementById('screen-setup');
+  if (setupOverlay) setupOverlay.style.display = 'none';
 }
 
 // ===== DASHBOARD DATA =====
 async function refreshDashboard() {
-  // User count
   try {
     const snap = await get(ref(db, 'users'));
     const count = snap.exists() ? Object.keys(snap.val()).length : 0;
-    document.getElementById('dash-total-users').textContent = count;
+    const usersCountEl = document.getElementById('dash-total-users');
+    if (usersCountEl) usersCountEl.textContent = count;
     const badge = document.getElementById('nav-users-count');
-    if (count > 0) { badge.textContent = count; badge.style.display = ''; }
+    if (badge) {
+      if (count > 0) { badge.textContent = count; badge.style.display = ''; }
+      else { badge.style.display = 'none'; }
+    }
   } catch(e) {}
 
-  // Room status
   updateDashboardRoom();
 }
 
@@ -919,13 +866,14 @@ function updateDashboardRoom() {
   const btnGotoRoom = document.getElementById('btn-goto-room');
 
   if (!currentRoom) {
-    if (statusEl) statusEl.textContent = 'Tidak Ada';
+    if (statusEl) { statusEl.textContent = 'Tidak Ada'; statusEl.style.color = 'var(--t3)'; }
     if (playersEl) playersEl.textContent = '—';
     if (codeEl) codeEl.textContent = '—';
-    if (detailEl) detailEl.innerHTML = `<div class="dash-no-room">
-      <svg style="width:32px;height:32px;color:#1e293b;margin-bottom:10px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/></svg>
-      <div>Belum ada room aktif.<br>Buat room baru untuk memulai quiz.</div>
-    </div>`;
+    if (detailEl) detailEl.innerHTML = `
+      <div class="dash-no-room">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/></svg>
+        <div>Belum ada room aktif.<br>Buat room baru untuk memulai sesi kuis robotika.</div>
+      </div>`;
     if (btnGotoRoom) btnGotoRoom.disabled = true;
     return;
   }
@@ -933,50 +881,79 @@ function updateDashboardRoom() {
   if (codeEl) codeEl.textContent = currentRoom;
   if (btnGotoRoom) btnGotoRoom.disabled = false;
 
-  // Listen to room for dashboard
   get(ref(db, `rooms/${currentRoom}`)).then(snap => {
-    if (!snap.exists()) return;
+    if (!snap.exists()) {
+      currentRoom = null;
+      localStorage.removeItem('adminRoom');
+      updateDashboardRoom();
+      updateRoomBadge();
+      return;
+    }
     const d = snap.val();
     const status = d.status || 'waiting';
     const statusLabel = { waiting: 'Menunggu', playing: 'Live!', finished: 'Selesai' };
-    const statusColor = { waiting: '#f97316', playing: '#22c55e', finished: '#64748b' };
+    const statusColor = { waiting: 'var(--accent)', playing: 'var(--green)', finished: 'var(--t3)' };
+
     if (statusEl) {
       statusEl.textContent = statusLabel[status] || status;
-      statusEl.style.color = statusColor[status] || '#e2e8f0';
+      statusEl.style.color = statusColor[status] || 'var(--t1)';
     }
+
     const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
     const theme = themeLabels[d.theme] || d.theme || '-';
+    activeTheme = d.theme;
+
+    const playersCount = d.players ? Object.keys(d.players).length : 0;
+    if (playersEl) playersEl.textContent = playersCount;
+
     if (detailEl) detailEl.innerHTML = `
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between">
         <div>
-          <div style="font-weight:700;color:#e2e8f0;font-size:1rem">Room <span style="color:#f97316;font-family:Sora,sans-serif">${currentRoom}</span></div>
-          <div style="font-size:0.78rem;color:#475569;margin-top:2px">Tema: ${theme} · Timer: ${d.timerDuration || 15}dtk · Streak: ${d.streakThreshold || 3}x</div>
+          <div style="font-weight:700;color:var(--t1);font-size:1.05rem;display:flex;align-items:center;gap:8px">
+            Room <span style="color:var(--cyan);font-family:var(--font-mono);letter-spacing:1px">${currentRoom}</span>
+          </div>
+          <div style="font-size:0.8rem;color:var(--t2);margin-top:3px">
+            Tema: <b>${theme}</b> &bull; Timer: ${d.timerDuration || 15}s &bull; Streak: ${d.streakThreshold || 3}x &bull; Peserta: ${playersCount}
+          </div>
         </div>
-        <div style="display:flex;gap:8px">
-          <span style="font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:99px;background:${(statusColor[status] || '#64748b') + '22'};color:${statusColor[status] || '#64748b'};border:1px solid ${(statusColor[status] || '#64748b') + '44'}">${statusLabel[status] || status}</span>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(0,0,0,0.2);color:${statusColor[status]};border:1.5px solid ${statusColor[status]}">${statusLabel[status] || status}</span>
+          <button class="btn btn-primary" onclick="navToRoom()" style="padding:6px 14px;font-size:0.8rem">Buka Room</button>
         </div>
       </div>
     `;
   });
-
-  // Player count for dashboard
-  get(ref(db, `rooms/${currentRoom}/players`)).then(snap => {
-    const cnt = snap.exists() ? Object.keys(snap.val()).length : 0;
-    if (playersEl) playersEl.textContent = cnt;
-  });
 }
 
-// ===== COPY UID =====
+// ===== COPY UID & ROOM CODES =====
 window.copyUID = function() {
   const uid = document.getElementById('setup-uid-display').textContent;
+  if (!uid || uid === '-') return;
   navigator.clipboard.writeText(uid).then(() => {
     const el = document.getElementById('copy-success');
-    el.style.display = 'block';
-    setTimeout(() => el.style.display = 'none', 2000);
+    if (el) {
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 2500);
+    }
   });
 };
 
-// ===== AUTH =====
+window.copyRoomCode = function() {
+  if (!currentRoom) return;
+  navigator.clipboard.writeText(currentRoom).then(() => {
+    const toast = document.getElementById('copy-room-toast');
+    if (toast) {
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    }
+  });
+};
+
+window.copyRoomCodeTop = function() {
+  window.copyRoomCode();
+};
+
+// ===== AUTHENTICATION =====
 window.loginAdmin = async function() {
   try {
     const provider = new GoogleAuthProvider();
@@ -984,17 +961,19 @@ window.loginAdmin = async function() {
     const uid = result.user.uid;
     currentUser = result.user;
 
+    const authorized = await isAdmin(uid);
     if (isSetupMode()) {
       document.getElementById('setup-uid-display').textContent = uid;
-      document.getElementById('screen-login').classList.remove('active');
-      document.getElementById('screen-setup').classList.add('active');
-    } else if (isAdmin(uid)) {
+      document.getElementById('screen-login').style.display = 'none';
+      document.getElementById('screen-setup').style.display = 'flex';
+    } else if (authorized) {
       showAdminLayout();
       showScreen('dashboard');
       refreshDashboard();
+      checkRestorableRoom();
     } else {
       await signOut(auth);
-      showError('login-error', 'Akun ini bukan admin!');
+      showError('login-error', 'Akun Google ini bukan administrator terdaftar!');
     }
   } catch(e) {
     showError('login-error', 'Gagal login: ' + e.message);
@@ -1004,35 +983,88 @@ window.loginAdmin = async function() {
 window.logoutAdmin = async function() {
   await signOut(auth);
   currentUser = null;
+  currentRoom = null;
+  localStorage.removeItem('adminRoom');
   document.body.classList.remove('admin-active');
-  document.getElementById('admin-layout').style.display = 'none';
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen-login').classList.add('active');
+  const layout = document.getElementById('admin-layout');
+  if (layout) layout.style.display = 'none';
+  const loginOverlay = document.getElementById('screen-login');
+  if (loginOverlay) loginOverlay.style.display = 'flex';
 };
 
-onAuthStateChanged(auth, user => {
+// Restore saved admin room on startup or page refresh
+async function checkRestorableRoom() {
+  const savedCode = localStorage.getItem('adminRoom');
+  if (savedCode) {
+    try {
+      const snap = await get(ref(db, `rooms/${savedCode}`));
+      if (snap.exists()) {
+        const d = snap.val();
+        currentRoom = savedCode;
+        activeTheme = d.theme;
+        breakEvery = d.breakEvery ?? 5;
+        streakThreshold = d.streakThreshold ?? 3;
+        questionCount = d.questionCount || 25;
+        timerDuration = d.timerDuration || 15;
+        shuffleQuestions = d.shuffleQuestions || false;
+
+        updateRoomBadge();
+        updateDashboardRoom();
+
+        if (d.status === 'playing') {
+          if (d.currentQuestion !== undefined && d.currentQuestion > 0) {
+            currentQIndex = d.currentQuestion;
+          } else if (d.adminBatchStart && d.adminBatchStart > 1 && breakEvery > 0) {
+            currentQIndex = (d.adminBatchStart - 1) * breakEvery;
+          } else {
+            currentQIndex = 0;
+          }
+          inspectedQIndex = currentQIndex;
+          showRoomScreen('live');
+          showLiveScreen(d.questionStartedAt);
+        } else if (d.status === 'finished') {
+          showRoomScreen('admin-result');
+          showFinalScores();
+        } else {
+          showRoomScreen('manage');
+          document.getElementById('admin-room-code').textContent = savedCode;
+          listenToPlayers(savedCode);
+        }
+        return;
+      } else {
+        localStorage.removeItem('adminRoom');
+      }
+    } catch(e) {
+      localStorage.removeItem('adminRoom');
+    }
+  }
+}
+
+onAuthStateChanged(auth, async user => {
   if (user) {
     currentUser = user;
+    const authorized = await isAdmin(user.uid);
     if (isSetupMode()) {
       document.getElementById('setup-uid-display').textContent = user.uid;
-      document.getElementById('screen-login').classList.remove('active');
-      document.getElementById('screen-setup').classList.add('active');
-    } else if (isAdmin(user.uid)) {
+      document.getElementById('screen-login').style.display = 'none';
+      document.getElementById('screen-setup').style.display = 'flex';
+    } else if (authorized) {
       showAdminLayout();
       const activeScr = document.querySelector('#admin-layout .screen.active');
       if (!activeScr) {
         showScreen('dashboard');
-        refreshDashboard();
       }
+      refreshDashboard();
+      checkRestorableRoom();
     } else {
-      signOut(auth);
+      await signOut(auth);
     }
   } else {
-    // Not logged in — show login
     document.body.classList.remove('admin-active');
-    document.getElementById('admin-layout').style.display = 'none';
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-login').classList.add('active');
+    const layout = document.getElementById('admin-layout');
+    if (layout) layout.style.display = 'none';
+    const loginOverlay = document.getElementById('screen-login');
+    if (loginOverlay) loginOverlay.style.display = 'flex';
   }
 });
 
@@ -1041,14 +1073,28 @@ let isLightMode = false;
 window.toggleTheme = function() {
   isLightMode = !isLightMode;
   document.body.classList.toggle('light-mode', isLightMode);
-  document.getElementById('theme-icon-dark2').style.display = isLightMode ? 'none' : '';
-  document.getElementById('theme-icon-light2').style.display = isLightMode ? '' : 'none';
-  document.getElementById('theme-label2').textContent = isLightMode ? 'Mode Gelap' : 'Mode Terang';
+
+  const darkIcon2 = document.getElementById('theme-icon-dark2');
+  const lightIcon2 = document.getElementById('theme-icon-light2');
+  const label2 = document.getElementById('theme-label2');
+  const topDark = document.getElementById('theme-icon-top-dark');
+  const topLight = document.getElementById('theme-icon-top-light');
+
+  if (darkIcon2) darkIcon2.style.display = isLightMode ? 'none' : '';
+  if (lightIcon2) lightIcon2.style.display = isLightMode ? '' : 'none';
+  if (label2) label2.textContent = isLightMode ? 'Mode Gelap' : 'Mode Terang';
+  if (topDark) topDark.style.display = isLightMode ? 'none' : '';
+  if (topLight) topLight.style.display = isLightMode ? '' : 'none';
+
   localStorage.setItem('quizTheme', isLightMode ? 'light' : 'dark');
 };
-if (localStorage.getItem('quizTheme') === 'light') { isLightMode = false; window.toggleTheme(); }
 
-// ===== TIMER SETTING =====
+if (localStorage.getItem('quizTheme') === 'light') {
+  isLightMode = false;
+  window.toggleTheme();
+}
+
+// ===== TIMER DURATION SELECTION =====
 window.selectTimer = function(val, el) {
   timerMode = String(val);
   document.querySelectorAll('#timer-10,#timer-15,#timer-20,#timer-30,#timer-custom').forEach(c => c.classList.remove('selected'));
@@ -1056,142 +1102,6 @@ window.selectTimer = function(val, el) {
   const customInput = document.getElementById('custom-timer-input');
   if (customInput) customInput.style.display = val === 'custom' ? 'block' : 'none';
   if (val !== 'custom') timerDuration = val;
-};
-
-// ===== SHUFFLE MODE =====
-window.selectShuffle = function(val, el) {
-  shuffleQuestions = val;
-  document.querySelectorAll('#shuffle-on,#shuffle-off').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-};
-
-// ===== KICK PLAYER =====
-window.kickPlayer = async function(uid, name) {
-  if (!confirm(`Kick ${name} dari room?`)) return;
-  await remove(ref(db, `rooms/${currentRoom}/players/${uid}`));
-};
-
-// ===== EXPORT CSV =====
-window.exportCSV = async function() {
-  const snap = await get(ref(db, `rooms/${currentRoom}/players`));
-  if (!snap.exists()) return alert('Tidak ada data player!');
-
-  const players = [];
-  snap.forEach(child => {
-    players.push({ uid: child.key, ...child.val() });
-  });
-  players.sort((a, b) => (b.score || 0) - (a.score || 0));
-
-  const totalQ = activeQuestions?.length || questionCount || 10;
-
-  const logSnap = await get(ref(db, `rooms/${currentRoom}/logs`));
-  const sentMap = {}, receivedMap = {};
-  if (logSnap.exists()) {
-    logSnap.forEach(child => {
-      const e = child.val();
-      if (e.type === 'item_used_gun') sentMap[e.from] = (sentMap[e.from] || 0) + 1;
-      if (e.type === 'attack_hit') receivedMap[e.to] = (receivedMap[e.to] || 0) + 1;
-    });
-  }
-
-  if (!window.XLSX) {
-    await new Promise((res, rej) => {
-      const s = document.createElement('script');
-      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
-      s.onload = res; s.onerror = rej;
-      document.head.appendChild(s);
-    });
-  }
-
-  const XLSX = window.XLSX;
-  const wb = XLSX.utils.book_new();
-
-  const now = new Date();
-  const nowStr = now.toLocaleString('id-ID');
-  const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
-
-  const summaryData = [
-    ['HASIL QUIZ - MANSA ROBOTICS'],
-    [],
-    ['Room Code', currentRoom],
-    ['Tema', themeLabels[activeTheme] || activeTheme || '-'],
-    ['Total Soal', totalQ],
-    ['Total Peserta', players.length],
-    ['Tanggal Export', nowStr],
-  ];
-  const wsSummary = XLSX.utils.aoa_to_sheet(summaryData);
-  wsSummary['!cols'] = [{ wch: 20 }, { wch: 30 }];
-  XLSX.utils.book_append_sheet(wb, wsSummary, 'Info');
-
-  const rankHeaders = ['Peringkat', 'Nama', 'Skor Akhir', 'Akurasi (%)', 'Jawaban Benar', 'Jawaban Salah', 'Serangan Dikirim', 'Serangan Diterima'];
-  const rankRows = players.map((p, i) => {
-    const correct = p.correct || 0;
-    const pLvl = p.level || 1;
-    const pTotalQ = (activeQuestionsByLevel[pLvl] || activeQuestions || []).length || totalQ;
-    const wrong = Math.max(0, pTotalQ - correct);
-    const acc = pTotalQ > 0 ? Math.round((correct / pTotalQ) * 100) : 0;
-    return [i + 1, p.name || '-', p.score || 0, acc, correct, wrong, sentMap[p.name] || 0, receivedMap[p.name] || 0];
-  });
-
-  const wsRank = XLSX.utils.aoa_to_sheet([rankHeaders, ...rankRows]);
-  wsRank['!cols'] = [{ wch: 10 }, { wch: 22 }, { wch: 12 }, { wch: 13 }, { wch: 15 }, { wch: 14 }, { wch: 18 }, { wch: 18 }];
-  rankHeaders.forEach((_, ci) => {
-    const cellAddr = XLSX.utils.encode_cell({ r: 0, c: ci });
-    if (!wsRank[cellAddr]) return;
-    wsRank[cellAddr].s = { font: { bold: true, sz: 12, color: { rgb: '1E293B' } }, fill: { fgColor: { rgb: 'FCD34D' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: { bottom: { style: 'medium', color: { rgb: 'F59E0B' } } } };
-  });
-  rankRows.forEach((row, ri) => {
-    row.forEach((_, ci) => {
-      const cellAddr = XLSX.utils.encode_cell({ r: ri + 1, c: ci });
-      if (!wsRank[cellAddr]) return;
-      const isEven = ri % 2 === 0;
-      wsRank[cellAddr].s = { fill: { fgColor: { rgb: isEven ? 'F8FAFC' : 'FFFFFF' } }, alignment: { horizontal: ci === 1 ? 'left' : 'center', vertical: 'center' }, border: { bottom: { style: 'thin', color: { rgb: 'E2E8F0' } } } };
-      if (ci === 0 && ri < 3) { const medal = ['🥇', '🥈', '🥉'][ri]; wsRank[cellAddr].v = `${medal} ${ri + 1}`; }
-    });
-  });
-  XLSX.utils.book_append_sheet(wb, wsRank, 'Peringkat');
-
-  const ansHeaders = ['Nama', 'Level', ...Array.from({ length: totalQ }, (_, i) => `Soal ${i + 1}`), 'Total Benar', 'Total Salah'];
-  const ansRows = players.map(p => {
-    const answers = p.answers || {};
-    const playerLevel = p.level || 1;
-    const playerQs = activeQuestionsByLevel[playerLevel] || activeQuestions || [];
-    const correctArr = playerQs.map((q, qi) => {
-      const ans = answers[`q${qi}`];
-      if (ans === undefined || ans === null) return '-';
-      return ans === q.ans ? '✓' : '✗';
-    });
-    while (correctArr.length < totalQ) correctArr.push('-');
-    const correct = p.correct || 0;
-    return [p.name || '-', `Level ${playerLevel}`, ...correctArr, correct, Math.max(0, playerQs.length - correct)];
-  });
-
-  const wsAns = XLSX.utils.aoa_to_sheet([ansHeaders, ...ansRows]);
-  wsAns['!cols'] = [{ wch: 22 }, ...Array(totalQ).fill({ wch: 8 }), { wch: 13 }, { wch: 12 }];
-  XLSX.utils.book_append_sheet(wb, wsAns, 'Detail Jawaban');
-
-  const dateStr = now.toLocaleDateString('id-ID').replace(/\//g, '-');
-  XLSX.writeFile(wb, `hasil-quiz-${currentRoom}-${dateStr}.xlsx`, { cellStyles: true });
-};
-
-// ===== THEME =====
-window.selectTheme = function(theme, el) {
-  selectedTheme = theme;
-  const parentGrid = el.closest('.theme-grid');
-  if (parentGrid) {
-    parentGrid.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
-  } else {
-    el.parentElement.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
-  }
-  el.classList.add('selected');
-};
-
-// ===== STREAK THRESHOLD =====
-window.selectStreak = function(val, el) {
-  streakThreshold = val;
-  document.querySelectorAll('#streak-2, #streak-3, #streak-4, #streak-5').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  document.getElementById('streak-desc').textContent = `Tiap ${val} jawaban benar berturut-turut → player pilih item`;
 };
 
 window.selectTimer2 = function(val, el) {
@@ -1203,10 +1113,36 @@ window.selectTimer2 = function(val, el) {
   if (val !== 'custom') timerDuration = val;
 };
 
+// ===== SHUFFLE MODE =====
+window.selectShuffle = function(val, el) {
+  shuffleQuestions = val;
+  document.querySelectorAll('#shuffle-on,#shuffle-off').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+};
+
 window.selectShuffle2 = function(val, el) {
   shuffleQuestions = val;
   document.querySelectorAll('#shuffle2-on,#shuffle2-off').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
+};
+
+// ===== THEME SELECTION =====
+window.selectTheme = function(theme, el) {
+  selectedTheme = theme;
+  const parentGrid = el.closest('.theme-grid');
+  if (parentGrid) {
+    parentGrid.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
+  }
+  el.classList.add('selected');
+};
+
+// ===== STREAK THRESHOLD =====
+window.selectStreak = function(val, el) {
+  streakThreshold = val;
+  document.querySelectorAll('#streak-2, #streak-3, #streak-4, #streak-5').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const desc = document.getElementById('streak-desc');
+  if (desc) desc.textContent = `Tiap ${val} jawaban benar berturut-turut \u2192 peserta dapat memilih item (Shield, Gun, Hint)`;
 };
 
 window.selectStreak2 = function(val, el) {
@@ -1215,22 +1151,30 @@ window.selectStreak2 = function(val, el) {
   el.classList.add('selected');
 };
 
-// ===== BREAK MODE =====
+// ===== BREAK INTERVAL SELECTION =====
 window.selectBreakMode = function(mode, el) {
   breakMode = mode;
   document.querySelectorAll('#break-off, #break-5, #break-custom').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
-  document.getElementById('custom-break-input').style.display = mode === 'custom' ? 'block' : 'none';
+  const ci = document.getElementById('custom-break-input');
+  if (ci) ci.style.display = mode === 'custom' ? 'block' : 'none';
 };
 
 window.selectBreakMode2 = function(mode, el) {
   breakMode = mode;
   document.querySelectorAll('#break-off2, #break-52, #break-custom2').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
-  document.getElementById('custom-break-input2').style.display = mode === 'custom' ? 'block' : 'none';
+  const ci = document.getElementById('custom-break-input2');
+  if (ci) ci.style.display = mode === 'custom' ? 'block' : 'none';
 };
 
-// ===== ROOM =====
+// ===== KICK PLAYER =====
+window.kickPlayer = async function(uid, name) {
+  if (!confirm(`Keluarkan ${name} dari room kuis?`)) return;
+  await remove(ref(db, `rooms/${currentRoom}/players/${uid}`));
+};
+
+// ===== ROOM GENERATION & CREATION =====
 function generateCode() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   let code = '';
@@ -1239,14 +1183,14 @@ function generateCode() {
 }
 
 window.createRoom = async function() {
-  if (!selectedTheme) return showError('theme-error', 'Pilih tema dulu!');
+  if (!selectedTheme) return showError('theme-error', 'Silakan pilih tema kuis terlebih dahulu!');
 
   let resolvedBreakEvery = 0;
   if (breakMode === '5') {
     resolvedBreakEvery = 5;
   } else if (breakMode === 'custom') {
     const val = parseInt(document.getElementById('input-break-every').value);
-    if (!val || val < 1 || val > 9) return showError('theme-error', 'Custom jeda harus angka 1–9!');
+    if (!val || val < 1 || val > 9) return showError('theme-error', 'Custom jeda harus angka antara 1–9!');
     resolvedBreakEvery = val;
   }
   breakEvery = resolvedBreakEvery;
@@ -1274,14 +1218,25 @@ window.createRoom = async function() {
     createdBy: currentUser.uid,
     createdAt: serverTimestamp()
   });
+
   currentRoom = code;
   activeTheme = selectedTheme;
+  localStorage.setItem('adminRoom', code);
+
   document.getElementById('admin-room-code').textContent = code;
   showRoomScreen('manage');
   listenToPlayers(code);
   updateDashboardRoom();
   updateRoomBadge();
 };
+
+function levelBadgeAdmin(level) {
+  const colors = { 1: 'var(--green)', 2: 'var(--accent)', 3: 'var(--red)' };
+  const labels = { 1: 'Level 1', 2: 'Level 2', 3: 'Level 3' };
+  const c = colors[level] || 'var(--t3)';
+  const l = labels[level] || `L${level}`;
+  return `<span style="font-family:var(--font-mono);font-size:0.68rem;font-weight:700;background:rgba(255,255,255,0.06);color:${c};border:1px solid ${c};border-radius:4px;padding:1px 6px;margin-left:6px">${l}</span>`;
+}
 
 function listenToPlayers(code) {
   clearListeners();
@@ -1296,19 +1251,26 @@ function listenToPlayers(code) {
       Object.entries(snap.val()).forEach(([uid, p]) => {
         playerUidMap[p.name] = uid;
         const li = document.createElement('li');
-        li.style.cursor = 'pointer';
-        li.title = 'Klik untuk kick';
-        li.innerHTML = `<span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><rect x="9" y="7" width="6" height="4" rx="1"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3"/><line x1="12" y1="16" x2="12" y2="16" stroke-width="3"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3"/></svg> ${p.name} ${levelBadgeAdmin(p.level || 1)}</span><button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:#2d0a0a;border:1px solid #ef4444;border-radius:6px;padding:2px 8px;font-size:0.7rem;color:#ef4444;cursor:pointer">Kick</button>`;
-        li.onclick = () => kickPlayer(uid, p.name);
+        li.style.cursor = 'default';
+        li.innerHTML = `
+          <div class="player-info" style="display:flex;align-items:center;gap:8px">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--cyan)"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+            <span><b>${p.name}</b> ${levelBadgeAdmin(p.level || 1)}</span>
+          </div>
+          <button onclick="kickPlayer('${uid}','${p.name.replace(/'/g,"\\'")}'); event.stopPropagation();" style="background:var(--red-dim);border:1px solid var(--red);border-radius:6px;padding:3px 10px;font-size:0.74rem;color:var(--red);cursor:pointer;font-weight:700">Kick</button>
+        `;
         list.appendChild(li);
       });
     }
-    document.getElementById('player-count').textContent = `${count} peserta bergabung`;
-    document.getElementById('btn-start').disabled = count === 0;
+    const countEl = document.getElementById('player-count');
+    if (countEl) countEl.textContent = `${count} peserta bergabung`;
+    const startBtn = document.getElementById('btn-start');
+    if (startBtn) startBtn.disabled = (count === 0);
   });
   roomListeners.push(unsub);
 }
 
+// ===== START QUIZ =====
 window.startQuiz = async function() {
   await loadQuestions();
   const roomSnap = await get(ref(db, `rooms/${currentRoom}`));
@@ -1317,6 +1279,9 @@ window.startQuiz = async function() {
     questionCount = d.questionCount || 25;
     timerDuration = d.timerDuration || 15;
     shuffleQuestions = d.shuffleQuestions || false;
+    if (d.breakEvery !== undefined) breakEvery = d.breakEvery;
+    if (d.streakThreshold !== undefined) streakThreshold = d.streakThreshold;
+    if (d.theme) activeTheme = d.theme;
   }
   const now = Date.now();
   await update(ref(db, `rooms/${currentRoom}`), {
@@ -1328,25 +1293,29 @@ window.startQuiz = async function() {
     adminBatchStart: 1
   });
   currentQIndex = 0;
+  inspectedQIndex = 0;
   showLiveScreen();
 };
 
 window.deleteRoom = async function() {
-  if (!confirm('Yakin hapus room ini?')) return;
+  if (!confirm('Yakin ingin menghapus room ini? Peserta akan terputus.')) return;
   clearInterval(adminTimerInterval);
   clearListeners();
-  await remove(ref(db, `rooms/${currentRoom}`));
+  if (currentRoom) {
+    await remove(ref(db, `rooms/${currentRoom}`));
+  }
   currentRoom = null;
   selectedTheme = null;
   activeTheme = null;
   _currentRoomScreen = null;
+  localStorage.removeItem('adminRoom');
   document.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
   updateRoomBadge();
   updateDashboardRoom();
   showScreen('dashboard');
 };
 
-// ===== LIVE QUIZ =====
+// ===== LIVE QUIZ SCREEN & CONTROLS =====
 function shuffleArray(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -1356,16 +1325,27 @@ function shuffleArray(arr) {
   return a;
 }
 
-let activeQuestionsByLevel = {};
+window.switchLiveQuestionLevel = function(lvl) {
+  inspectedLevel = lvl;
+  document.querySelectorAll('.q-level-tab').forEach(t => t.classList.remove('active'));
+  const targetTab = document.getElementById(`tab-lvl-${lvl}`);
+  if (targetTab) targetTab.classList.add('active');
+  renderInspectorQuestion();
+};
 
-async function showLiveScreen() {
+window.inspectBatchQuestion = function(idx) {
+  inspectedQIndex = idx;
+  renderInspectorQuestion();
+};
+
+async function showLiveScreen(startedAt = null) {
   await loadQuestions();
   clearListeners();
   showRoomScreen('live');
+
   const allQ = QUESTIONS[activeTheme] || [];
   activeQuestionsByLevel = {};
-  const levels = [1, 2, 3];
-  levels.forEach(lv => {
+  [1, 2, 3].forEach(lv => {
     let lvQ = allQ.filter(q => (q.level || 1) === lv);
     if (shuffleQuestions) lvQ = shuffleArray(lvQ);
     if (lvQ.length === 0) lvQ = shuffleQuestions ? shuffleArray([...allQ]) : [...allQ];
@@ -1375,48 +1355,152 @@ async function showLiveScreen() {
 
   const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
   const breakLabel = breakEvery === 0 ? 'Langsung' : `Jeda tiap ${breakEvery} soal`;
-  const shuffleLabel = shuffleQuestions ? ' · Acak' : ' · Urut';
-  const perLevelCount = Object.values(activeQuestionsByLevel).map((q, i) => `L${i+1}:${q.length}`).join(' ');
-  document.getElementById('live-theme-label').textContent =
-    'Tema: ' + (themeLabels[activeTheme] || '-') + ' · ' + breakLabel +
-    ` · Streak ${streakThreshold}x · ${timerDuration}dtk · ${perLevelCount} soal` + shuffleLabel;
+  const shuffleLabel = shuffleQuestions ? ' \u2022 Acak' : ' \u2022 Urut';
+  const perLevelCount = Object.entries(activeQuestionsByLevel).map(([k, q]) => `L${k}:${q.length}`).join(' ');
+
+  const labelEl = document.getElementById('live-theme-label');
+  if (labelEl) {
+    labelEl.textContent = `${themeLabels[activeTheme] || '-'} \u2022 ${breakLabel} \u2022 Streak ${streakThreshold}x \u2022 ${timerDuration}s (${perLevelCount})${shuffleLabel}`;
+  }
+
   seenLogKeys.clear();
-  displayCurrentQ();
+  inspectedLevel = 1;
+  inspectedQIndex = currentQIndex;
+  displayCurrentQ(true); // true = initialize timer for batch
+
+  if (startedAt) {
+    const elapsed = Math.floor((Date.now() - startedAt) / 1000);
+    const rem = Math.max(0, (timerDuration || 15) - elapsed);
+    startAdminTimer(rem);
+  }
+
   listenToScores();
   listenToActivityLog(currentRoom);
 }
 
-function displayCurrentQ() {
-  const qs = activeQuestions;
+function displayCurrentQ(startTimer = false) {
+  const qs = activeQuestionsByLevel[inspectedLevel] || activeQuestions || [];
   const totalBatches = breakEvery > 0 ? Math.ceil(qs.length / breakEvery) : 1;
   const currentBatch = breakEvery > 0 ? Math.ceil((currentQIndex + 1) / breakEvery) : 1;
 
-  document.getElementById('live-q-num').textContent =
-    breakEvery > 0
-      ? `Batch ${currentBatch}/${totalBatches} · Soal ${currentQIndex+1}–${Math.min(currentQIndex + breakEvery, qs.length)}/${qs.length}`
-      : `${qs.length} soal · mode langsung`;
+  const qNumEl = document.getElementById('live-q-num');
+  if (qNumEl) {
+    qNumEl.textContent = breakEvery > 0
+      ? `Batch ${currentBatch}/${totalBatches} \u2022 Soal ${currentQIndex+1}\u2013${Math.min(currentQIndex + breakEvery, qs.length)}/${qs.length}`
+      : `${qs.length} soal \u2022 mode langsung`;
+  }
 
-  const q = qs[currentQIndex];
-  document.getElementById('live-q-text').textContent = q ? q.q : '-';
-  document.getElementById('live-q-ans').textContent = q ? `Jawaban: ${q.opts[q.ans]}` : '';
+  // Update pills for the current batch
+  const pillsContainer = document.getElementById('admin-batch-pills');
+  if (pillsContainer) {
+    pillsContainer.innerHTML = '';
+    const batchStart = currentQIndex;
+    const batchEnd = breakEvery > 0 ? Math.min(currentQIndex + breakEvery, qs.length) : qs.length;
+    for (let i = batchStart; i < batchEnd; i++) {
+      const pill = document.createElement('button');
+      pill.className = 'admin-q-pill' + (i === inspectedQIndex ? ' active' : '');
+      pill.textContent = `Soal ${i + 1}`;
+      pill.onclick = () => window.inspectBatchQuestion(i);
+      pillsContainer.appendChild(pill);
+    }
+  }
 
   const btn = document.getElementById('btn-next');
   const isLastBatch = breakEvery > 0 && currentBatch >= totalBatches;
-  if (isLastBatch || breakEvery === 0) {
-    btn.textContent = 'Akhiri Quiz';
-    btn.onclick = () => endQuizNow();
-  } else {
-    btn.textContent = `Buka Batch ${currentBatch + 1}`;
-    btn.onclick = () => nextQuestion();
+  if (btn) {
+    if (isLastBatch || breakEvery === 0) {
+      btn.innerHTML = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Akhiri Kuis`;
+      btn.className = 'btn btn-red';
+      btn.onclick = () => endQuizNow();
+    } else {
+      btn.innerHTML = `Buka Batch ${currentBatch + 1} <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
+      btn.className = 'btn btn-primary';
+      btn.onclick = () => nextQuestion();
+    }
+    btn.disabled = false;
   }
-  btn.disabled = false;
-  startAdminTimer(timerDuration || 15);
+
+  renderInspectorQuestion();
+
+  if (startTimer) {
+    startAdminTimer(timerDuration || 15);
+  }
+}
+
+function renderInspectorQuestion() {
+  const qs = activeQuestionsByLevel[inspectedLevel] || activeQuestions || [];
+  const q = qs[inspectedQIndex] || qs[currentQIndex];
+
+  // Update batch pills active class
+  const pillsContainer = document.getElementById('admin-batch-pills');
+  if (pillsContainer) {
+    pillsContainer.querySelectorAll('.admin-q-pill').forEach((p, idx) => {
+      const qIdx = currentQIndex + idx;
+      p.classList.toggle('active', qIdx === inspectedQIndex);
+    });
+  }
+
+  const badgeEl = document.getElementById('live-q-badge');
+  if (badgeEl) {
+    badgeEl.textContent = `Soal ${inspectedQIndex + 1} \u2022 Level ${inspectedLevel}`;
+  }
+
+  const qTextEl = document.getElementById('live-q-text');
+  if (qTextEl) qTextEl.textContent = q ? q.q : '-';
+
+  // Render Image Diagram (Circuit / Logic Gate)
+  const imgBox = document.getElementById('admin-question-image-box');
+  const imgEl = document.getElementById('admin-question-image');
+  if (imgBox && imgEl) {
+    if (q && (q.image || q.img_url)) {
+      imgEl.onerror = () => {
+        if (q.img_url && imgEl.src !== q.img_url) {
+          imgEl.src = q.img_url;
+        } else {
+          imgBox.style.display = 'none';
+        }
+      };
+      imgEl.src = q.image || q.img_url;
+      imgBox.style.display = 'flex';
+    } else {
+      imgBox.style.display = 'none';
+      imgEl.src = '';
+    }
+  }
+
+  // Render Multiple Choice Options Preview Grid
+  const optsContainer = document.getElementById('admin-q-opts');
+  const keyLabels = ['A', 'B', 'C', 'D'];
+  if (optsContainer) {
+    optsContainer.innerHTML = '';
+    if (q && Array.isArray(q.opts)) {
+      q.opts.forEach((optText, oIdx) => {
+        const isCorrectOpt = (oIdx === q.ans);
+        const optEl = document.createElement('div');
+        optEl.className = 'admin-q-opt' + (isCorrectOpt ? ' correct' : '');
+        optEl.innerHTML = `
+          <div class="opt-key">${keyLabels[oIdx]}</div>
+          <div style="flex:1">${optText}</div>
+          ${isCorrectOpt ? '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="color:var(--green);width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>' : ''}
+        `;
+        optsContainer.appendChild(optEl);
+      });
+    }
+  }
+
+  const qAnsEl = document.getElementById('live-q-ans');
+  if (qAnsEl) {
+    qAnsEl.innerHTML = q
+      ? `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)"><polyline points="20 6 9 17 4 12"/></svg> Kunci Jawaban: <b>[${keyLabels[q.ans] || ''}] ${q.opts[q.ans]}</b>`
+      : '';
+  }
 }
 
 function startAdminTimer(sec) {
   clearInterval(adminTimerInterval);
   let t = sec;
   const el = document.getElementById('admin-timer');
+  if (!el) return;
   el.textContent = t;
   el.classList.remove('urgent');
   adminTimerInterval = setInterval(() => {
@@ -1425,7 +1509,7 @@ function startAdminTimer(sec) {
     if (t <= 5) el.classList.add('urgent');
     if (t <= 0) {
       clearInterval(adminTimerInterval);
-      el.textContent = '⏱';
+      el.textContent = '\u23F1';
       el.classList.remove('urgent');
     }
   }, 1000);
@@ -1433,32 +1517,39 @@ function startAdminTimer(sec) {
 
 window.nextQuestion = async function() {
   const btn = document.getElementById('btn-next');
-  btn.disabled = true;
-  btn.textContent = 'Memuat...';
-
-  const qs = activeQuestions;
-  if (breakEvery > 0) {
-    currentQIndex = Math.min(currentQIndex + breakEvery, qs.length - 1);
-    currentQIndex = Math.floor(currentQIndex / breakEvery) * breakEvery;
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Memuat batch...';
   }
 
-  const currentBatch = breakEvery > 0 ? Math.ceil((currentQIndex + 1) / breakEvery) : 1;
+  const qs = activeQuestions;
+  const advanceBy = breakEvery > 0 ? breakEvery : 1;
+  const nextIdx = currentQIndex + advanceBy;
 
-  if (currentQIndex >= qs.length) { endQuiz(); return; }
+  if (nextIdx >= qs.length) {
+    endQuiz();
+    return;
+  }
+
+  currentQIndex = nextIdx;
+  inspectedQIndex = currentQIndex;
+  const currentBatch = breakEvery > 0 ? Math.ceil((currentQIndex + 1) / breakEvery) : 1;
 
   try {
     await update(ref(db, `rooms/${currentRoom}`), {
       status: 'playing',
+      currentQuestion: currentQIndex,
       adminBatchStart: currentBatch,
+      questionStartedAt: Date.now()
     });
-    displayCurrentQ();
+    displayCurrentQ(true);
   } catch(e) {
-    btn.disabled = false;
+    if (btn) btn.disabled = false;
   }
 };
 
 window.endQuizNow = async function() {
-  if (!confirm('Akhiri quiz sekarang?')) return;
+  if (!confirm('Yakin ingin mengakhiri sesi kuis ini sekarang?')) return;
   endQuiz();
 };
 
@@ -1472,9 +1563,7 @@ async function endQuiz() {
   showFinalScores();
 }
 
-// ===== ACTIVITY LOG =====
-let seenLogKeys = new Set();
-
+// ===== REALTIME ACTIVITY LOG =====
 function listenToActivityLog(code) {
   const logsRef = ref(db, `rooms/${code}/logs`);
   const unsub = onValue(logsRef, snap => {
@@ -1491,69 +1580,78 @@ function listenToActivityLog(code) {
     });
     if (entries.length === 0) return;
 
-    if (logEl.children.length === 1 && logEl.children[0].style.color === 'rgb(51, 65, 85)') {
+    if (logEl.children.length === 1 && logEl.children[0].textContent.includes('Menunggu')) {
       logEl.innerHTML = '';
     }
 
     entries.forEach(entry => {
       const item = document.createElement('div');
-      item.style.cssText = 'display:flex;align-items:flex-start;gap:6px;padding:5px 6px;border-radius:7px;font-size:0.76rem;line-height:1.4;animation:logFadeIn 0.3s ease';
+      item.style.cssText = 'display:flex;align-items:flex-start;gap:8px;padding:6px 8px;border-radius:6px;font-size:0.78rem;line-height:1.4;animation:logFadeIn 0.3s ease;border:1px solid var(--border);margin-bottom:4px';
 
-      const time = new Date(entry.ts).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const timeSpan = `<span style="color:#334155;min-width:54px;font-size:0.7rem;padding-top:1px">${time}</span>`;
+      const time = new Date(entry.ts || Date.now()).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const timeSpan = `<span style="font-family:var(--font-mono);color:var(--t3);min-width:54px;font-size:0.7rem">${time}</span>`;
 
-      let icon = '', text = '', bg = '#0f172a';
+      let icon = '', text = '', bg = 'var(--card2)';
 
       switch (entry.type) {
         case 'answer_correct':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`; bg = '#052e16';
-          text = `<span style="color:#86efac"><b>${entry.name}</b> jawab benar soal ${entry.q + 1}</span><span style="color:#22c55e;margin-left:4px">+${entry.pts} poin</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)"><polyline points="20 6 9 17 4 12"/></svg>`;
+          bg = 'var(--green-dim)';
+          text = `<span><b>${entry.name}</b> menjawab benar soal ${entry.q + 1} <b style="color:var(--green);margin-left:4px">+${entry.pts} pts</b></span>`;
           break;
         case 'answer_wrong':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`; bg = '#2d0a0a';
-          text = `<span style="color:#fca5a5"><b>${entry.name}</b> jawab salah soal ${entry.q + 1}</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+          bg = 'var(--red-dim)';
+          text = `<span style="color:var(--red)"><b>${entry.name}</b> salah menjawab soal ${entry.q + 1}</span>`;
           break;
         case 'answer_timeout':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`; bg = '#1c1000';
-          text = `<span style="color:#fcd34d"><b>${entry.name}</b> kehabisan waktu soal ${entry.q + 1}</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
+          bg = 'var(--accent-dim)';
+          text = `<span style="color:var(--accent)"><b>${entry.name}</b> kehabisan waktu di soal ${entry.q + 1}</span>`;
           break;
         case 'item_picked':
-          const itemEmoji = { shield: `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, gun: `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V9H9l-2 3H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h3l2 2h8v-4z"/><line x1="9" y1="12" x2="9" y2="12" stroke-width="3" stroke-linecap="round"/></svg>`, hint: `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg>` };
-          const itemName = { shield: 'Shield', gun: 'Gun', hint: 'Hint' };
-          icon = itemEmoji[entry.item] || '?'; bg = '#1a0a2e';
-          text = `<span style="color:#c4b5fd"><b>${entry.name}</b> dapat item <b>${itemName[entry.item] || entry.item}</b> (streak ${entry.streak}x)</span>`;
+          const itemNames = { shield: 'Shield Pertahanan', gun: 'Gun Serangan', hint: 'Bocoran Hint', doublePoints: '2x Points', freezeTimer: 'Freeze Timer' };
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+          bg = 'var(--cyan-dim)';
+          text = `<span><b>${entry.name}</b> meraih item <b>${itemNames[entry.item] || entry.item}</b> (${entry.streak}x streak)</span>`;
           break;
         case 'item_used_gun':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V9H9l-2 3H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h3l2 2h8v-4z"/><line x1="9" y1="12" x2="9" y2="12" stroke-width="3" stroke-linecap="round"/></svg>`; bg = '#2d0a0a';
-          text = `<span style="color:#fca5a5"><b>${entry.from}</b> menyerang <b>${entry.to}</b> dengan Gun!</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><path d="M21 15V9H9l-2 3H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h3l2 2h8v-4z"/><line x1="9" y1="12" x2="9" y2="12" stroke-width="3" stroke-linecap="round"/></svg>`;
+          bg = 'var(--red-dim)';
+          text = `<span style="color:var(--red)"><b>${entry.from}</b> menembakkan Gun ke <b>${entry.to}</b>!</span>`;
           break;
         case 'item_used_hint':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg>`; bg = '#0c1a10';
-          text = `<span style="color:#86efac"><b>${entry.name}</b> pakai Hint di soal ${entry.q + 1}</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg>`;
+          bg = 'var(--green-dim)';
+          text = `<span style="color:var(--green)"><b>${entry.name}</b> mengaktifkan Hint di soal ${entry.q + 1}</span>`;
           break;
         case 'shield_block':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`; bg = '#0c1f35';
-          text = `<span style="color:#93c5fd"><b>${entry.name}</b> menahan serangan dari <b>${entry.from}</b> dengan Shield!</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
+          bg = 'var(--cyan-dim)';
+          text = `<span style="color:var(--cyan)"><b>${entry.name}</b> menangkis serangan <b>${entry.from}</b> dengan Shield!</span>`;
           break;
         case 'attack_hit':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`; bg = '#2d0a0a';
-          text = `<span style="color:#fca5a5"><b>${entry.to}</b> kena serangan <b>${entry.from}</b>! -${entry.dmg} poin</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+          bg = 'var(--red-dim)';
+          text = `<span style="color:var(--red)"><b>${entry.to}</b> terkena serangan <b>${entry.from}</b> (-${entry.dmg} pts)</span>`;
           break;
         case 'player_joined':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`; bg = '#0a1628';
-          text = `<span style="color:#7dd3fc"><b>${entry.name}</b> bergabung ke room</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>`;
+          bg = 'var(--cyan-dim)';
+          text = `<span><b>${entry.name}</b> bergabung ke room</span>`;
           break;
         case 'player_quit':
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>`; bg = '#1a1a1a';
-          text = `<span style="color:#94a3b8"><b>${entry.name}</b> keluar dari room</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--t3)"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>`;
+          bg = 'var(--card2)';
+          text = `<span style="color:var(--t3)"><b>${entry.name}</b> keluar dari room</span>`;
           break;
         default:
-          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg>`;
-          text = `<span style="color:#94a3b8">${entry.msg || JSON.stringify(entry)}</span>`;
+          icon = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>`;
+          text = `<span>${entry.msg || JSON.stringify(entry)}</span>`;
       }
 
       item.style.background = bg;
-      item.innerHTML = `${timeSpan}<span style="min-width:18px;text-align:center">${icon}</span><span>${text}</span>`;
+      item.innerHTML = `${timeSpan}<span style="min-width:18px;display:flex;align-items:center;justify-content:center">${icon}</span>${text}`;
       logEl.appendChild(item);
     });
 
@@ -1564,11 +1662,12 @@ function listenToActivityLog(code) {
 
 window.clearAdminLog = function() {
   const logEl = document.getElementById('activity-log');
-  if (logEl) logEl.innerHTML = '<div style="color:#334155;font-size:0.78rem;text-align:center;padding:16px 0">Log dibersihkan.</div>';
+  if (logEl) logEl.innerHTML = '<div style="color:var(--t3);font-size:0.78rem;text-align:center;padding:16px 0">Log dibersihkan.</div>';
   seenLogKeys.clear();
   if (currentRoom) remove(ref(db, `rooms/${currentRoom}/logs`));
 };
 
+// ===== SCORES MONITOR =====
 function listenToScores() {
   const pRef = ref(db, `rooms/${currentRoom}/players`);
   const unsub = onValue(pRef, snap => {
@@ -1577,8 +1676,11 @@ function listenToScores() {
       Object.values(snap.val()).forEach(p => players.push(p));
     }
     players.sort((a, b) => (b.score || 0) - (a.score || 0));
+
     const list = document.getElementById('live-scores');
+    if (!list) return;
     list.innerHTML = '';
+
     const refTotalQ = activeQuestions?.length || questionCount || 10;
     const refBatchEnd = breakEvery > 0
       ? Math.min(Math.ceil((currentQIndex + 1) / breakEvery) * breakEvery, refTotalQ)
@@ -1592,12 +1694,13 @@ function listenToScores() {
         : pTotalQ;
       return (p.myQuestion || 0) >= pBatchEnd;
     }).length;
+
     const summaryEl = document.getElementById('batch-progress-summary');
     if (summaryEl) {
       summaryEl.textContent = breakEvery > 0
         ? `${doneBatch}/${players.length} peserta selesai batch ini (soal ${refBatchEnd})`
         : `${doneBatch}/${players.length} peserta selesai`;
-      summaryEl.style.color = doneBatch === players.length ? '#22c55e' : '#f97316';
+      summaryEl.style.color = (doneBatch === players.length && players.length > 0) ? 'var(--green)' : 'var(--accent)';
     }
 
     players.forEach((p, i) => {
@@ -1609,22 +1712,33 @@ function listenToScores() {
         : pTotalQ;
       const progress = Math.min(p.myQuestion || 0, pTotalQ);
       const isDone = progress >= pBatchEnd;
-      const progressBar = `<div style="width:80px;height:5px;background:#1e293b;border-radius:99px;overflow:hidden">
-        <div style="height:100%;width:${(progress/pTotalQ)*100}%;background:${isDone ? '#22c55e' : '#38bdf8'};border-radius:99px;transition:width 0.3s"></div>
-      </div>`;
+      const pct = pTotalQ > 0 ? (progress / pTotalQ) * 100 : 0;
+
+      const progressBar = `
+        <div style="width:80px;height:6px;background:var(--border2);border-radius:99px;overflow:hidden">
+          <div style="height:100%;width:${pct}%;background:${isDone ? 'var(--green)' : 'var(--cyan)'};border-radius:99px;transition:width 0.3s"></div>
+        </div>
+      `;
+
       li.innerHTML = `
-        <span style="flex:1">${i+1}. ${p.name}${levelBadgeAdmin(pLevel)}</span>
-        <span style="display:flex;gap:8px;align-items:center">
+        <span style="flex:1;display:flex;align-items:center;gap:6px">
+          <b style="color:var(--t3);font-family:var(--font-mono);min-width:20px">#${i+1}</b>
+          <span>${p.name}</span>
+          ${levelBadgeAdmin(pLevel)}
+        </span>
+        <span style="display:flex;gap:10px;align-items:center">
           ${progressBar}
-          <span style="font-size:0.78rem;color:${isDone ? '#22c55e' : '#94a3b8'};min-width:32px;text-align:right">${progress}/${pTotalQ}</span>
-          <span class="score-val" style="min-width:36px;text-align:right">${p.score || 0}</span>
-        </span>`;
+          <span style="font-family:var(--font-mono);font-size:0.75rem;color:${isDone ? 'var(--green)' : 'var(--t2)'};min-width:34px;text-align:right">${progress}/${pTotalQ}</span>
+          <span class="score-val" style="min-width:44px;text-align:right">${p.score || 0} pts</span>
+        </span>
+      `;
       list.appendChild(li);
     });
   });
   roomListeners.push(unsub);
 }
 
+// ===== FINAL RESULTS & HARDEST QUESTIONS =====
 async function showFinalScores() {
   await loadQuestions();
   const snap = await get(ref(db, `rooms/${currentRoom}/players`));
@@ -1633,28 +1747,51 @@ async function showFinalScores() {
     Object.values(snap.val()).forEach(p => players.push(p));
   }
   players.sort((a, b) => (b.score || 0) - (a.score || 0));
+
   const list = document.getElementById('final-scores');
-  list.innerHTML = '';
-  const medals = ['1st','2nd','3rd'];
-  players.forEach((p, i) => {
-    const li = document.createElement('li');
-    const correct = p.correct || 0;
-    const pLv = p.level || 1;
-    const totalQ = (activeQuestionsByLevel[pLv] || activeQuestions || []).length || questionCount || 10;
-    const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
-    const accText = `<span style="font-size:0.75rem;color:#64748b;margin-left:4px">${acc}%</span>`;
-    li.innerHTML = `<span>${medals[i] || `#${i+1}`} ${p.name}${levelBadgeAdmin(p.level || 1)}${accText}</span><span class="score-val">${p.score || 0} poin</span>`;
-    list.appendChild(li);
-  });
+  if (list) {
+    list.innerHTML = '';
+    const medals = ['🥇 1st', '🥈 2nd', '🥉 3rd'];
+    players.forEach((p, i) => {
+      const li = document.createElement('li');
+      const correct = p.correct || 0;
+      const pLv = p.level || 1;
+      const totalQ = (activeQuestionsByLevel[pLv] || activeQuestions || []).length || questionCount || 10;
+      const acc = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+      const accText = `<span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--t3);margin-left:6px">${acc}% akurasi (${correct}/${totalQ})</span>`;
+
+      li.innerHTML = `
+        <span style="display:flex;align-items:center;gap:6px">
+          <b style="font-family:var(--font-mono);color:var(--t1)">${medals[i] || `#${i+1}`}</b>
+          <span>${p.name}</span>
+          ${levelBadgeAdmin(p.level || 1)}
+          ${accText}
+        </span>
+        <span class="score-val" style="font-size:1.05rem">${p.score || 0} pts</span>
+      `;
+      list.appendChild(li);
+    });
+  }
+
   showRoomScreen('admin-result');
   analyzeHardestQuestions(snap);
 }
 
 function analyzeHardestQuestions(playersSnap) {
   const container = document.getElementById('hardest-questions-list');
+  if (!container) return;
+
   if (!playersSnap || !playersSnap.exists() || !activeTheme) {
-    container.innerHTML = '<div style="font-size:0.8rem;color:#475569;text-align:center;padding:8px">Tidak ada data jawaban.</div>';
+    container.innerHTML = '<div style="font-size:0.82rem;color:var(--t3);text-align:center;padding:12px">Tidak ada data jawaban peserta.</div>';
     return;
+  }
+
+  // Ensure activeQuestionsByLevel is available
+  if (Object.keys(activeQuestionsByLevel).length === 0) {
+    const allQ = QUESTIONS[activeTheme] || [];
+    [1, 2, 3].forEach(lv => {
+      activeQuestionsByLevel[lv] = allQ.filter(q => (q.level || 1) === lv).slice(0, questionCount);
+    });
   }
 
   const allScored = [];
@@ -1663,6 +1800,7 @@ function analyzeHardestQuestions(playersSnap) {
     if (!qs.length) return;
     const wrongCount = new Array(qs.length).fill(0);
     const answeredCount = new Array(qs.length).fill(0);
+
     playersSnap.forEach(child => {
       const p = child.val();
       if (!p.answers || (p.level || 1) !== lv) return;
@@ -1673,6 +1811,7 @@ function analyzeHardestQuestions(playersSnap) {
         if (given === -1 || given !== q.ans) wrongCount[i]++;
       });
     });
+
     qs.forEach((q, i) => {
       if (answeredCount[i] === 0) return;
       allScored.push({
@@ -1686,19 +1825,19 @@ function analyzeHardestQuestions(playersSnap) {
   allScored.sort((a, b) => b.pct - a.pct);
   const top3 = allScored.slice(0, 3);
   if (top3.length === 0) {
-    container.innerHTML = '<div style="font-size:0.8rem;color:#475569;text-align:center;padding:8px">Belum ada data jawaban peserta.</div>';
+    container.innerHTML = '<div style="font-size:0.82rem;color:var(--t3);text-align:center;padding:12px">Belum ada data evaluasi jawaban peserta.</div>';
     return;
   }
 
   const rankClass = ['', 'rank-2', 'rank-3'];
-  const rankLabel = ['#1 Paling Susah', '#2 Susah', '#3 Cukup Susah'];
+  const rankLabel = ['#1 Paling Sering Salah', '#2 Tingkat Kesalahan Tinggi', '#3 Cukup Sulit'];
   container.innerHTML = top3.map((s, ri) => `
     <div class="hard-q-card ${rankClass[ri]}">
-      <div class="hard-q-rank">${rankLabel[ri]} · L${s.level} Soal ${s.index + 1}</div>
+      <div class="hard-q-rank">${rankLabel[ri]} &bull; Level ${s.level} &bull; Soal ${s.index + 1}</div>
       <div class="hard-q-text">${s.q}</div>
-      <div class="hard-q-ans">${s.ansText}</div>
+      <div class="hard-q-ans"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg> Kunci Jawaban: <b>${s.ansText}</b></div>
       <div class="hard-q-bar-wrap">
-        <span style="font-size:0.72rem;color:#64748b;white-space:nowrap">${s.wrong}/${s.answered} salah</span>
+        <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--t2);white-space:nowrap">${s.wrong}/${s.answered} salah</span>
         <div class="hard-q-bar"><div class="hard-q-bar-fill" style="width:${s.pct}%"></div></div>
         <span class="hard-q-pct">${s.pct}%</span>
       </div>
@@ -1712,18 +1851,21 @@ window.newRoom = function() {
   activeTheme = null;
   activeQuestionsByLevel = {};
   _currentRoomScreen = null;
+  localStorage.removeItem('adminRoom');
+
   const createScreen = document.getElementById('screen-create');
   if (createScreen) createScreen.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
   streakThreshold = 3;
   document.querySelectorAll('#streak-2,#streak-3,#streak-4,#streak-5').forEach(c => c.classList.remove('selected'));
   const s3 = document.getElementById('streak-3');
   if (s3) s3.classList.add('selected');
+
   updateRoomBadge();
   updateDashboardRoom();
   showScreen('create');
 };
 
-// ===== REPLAY QUIZ =====
+// ===== REPLAY CONTROLS =====
 window.replayQuiz = async function(changeSetting) {
   if (changeSetting) {
     showRoomScreen('replay-config');
@@ -1733,7 +1875,7 @@ window.replayQuiz = async function(changeSetting) {
 };
 
 window.confirmReplaySetting = async function() {
-  if (!selectedTheme) return showError('theme-error2', 'Pilih tema dulu!');
+  if (!selectedTheme) return showError('theme-error2', 'Pilih tema kuis terlebih dahulu!');
   let resolvedBreakEvery = 0;
   if (breakMode === '5') resolvedBreakEvery = 5;
   else if (breakMode === 'custom') {
@@ -1743,14 +1885,17 @@ window.confirmReplaySetting = async function() {
   }
   breakEvery = resolvedBreakEvery;
   activeTheme = selectedTheme;
+
   const qc2 = parseInt(document.getElementById('input-question-count2').value);
   questionCount = (!qc2 || qc2 < 1) ? 25 : qc2;
+
   if (timerMode === 'custom') {
     const tVal = parseInt(document.getElementById('input-timer-custom2')?.value);
     timerDuration = (!tVal || tVal < 5) ? 15 : Math.min(tVal, 120);
   } else {
     timerDuration = parseInt(timerMode) || 15;
   }
+
   await doResetToWaiting(activeTheme, breakEvery, streakThreshold, questionCount, timerDuration, shuffleQuestions);
 };
 
@@ -1758,6 +1903,7 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, sh
   qCount = qCount || questionCount || 25;
   tDuration = tDuration || timerDuration || 15;
   shuffle = shuffle !== undefined ? shuffle : shuffleQuestions;
+
   const snap = await get(ref(db, `rooms/${currentRoom}/players`));
   if (snap.exists()) {
     const updates = {};
@@ -1794,6 +1940,7 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, sh
   currentQIndex = 0;
   selectedTheme = null;
   activeQuestionsByLevel = {};
+
   const replayScreen = document.getElementById('screen-replay-config');
   if (replayScreen) replayScreen.querySelectorAll('.theme-card').forEach(c => c.classList.remove('selected'));
 
@@ -1803,16 +1950,113 @@ async function doResetToWaiting(theme, bEvery, sThreshold, qCount, tDuration, sh
   updateDashboardRoom();
 }
 
+// ===== EXPORT TO EXCEL =====
+window.exportCSV = async function() {
+  if (!currentRoom) return alert('Tidak ada room aktif untuk diexport!');
+  const exportBtn = event?.currentTarget || document.querySelector('button[onclick="exportCSV()"]');
+  const origText = exportBtn ? exportBtn.innerHTML : '';
+  if (exportBtn) {
+    exportBtn.disabled = true;
+    exportBtn.textContent = 'Mempersiapkan File Excel...';
+  }
+  try {
+    const snap = await get(ref(db, `rooms/${currentRoom}/players`));
+    if (!snap.exists()) return alert('Tidak ada data player pada room ini!');
+
+    const players = [];
+    snap.forEach(child => {
+      players.push({ uid: child.key, ...child.val() });
+    });
+    players.sort((a, b) => (b.score || 0) - (a.score || 0));
+
+    const totalQ = activeQuestions?.length || questionCount || 10;
+    const logSnap = await get(ref(db, `rooms/${currentRoom}/logs`));
+    const sentMap = {}, receivedMap = {};
+    if (logSnap.exists()) {
+      logSnap.forEach(child => {
+        const e = child.val();
+        if (e.type === 'item_used_gun') sentMap[e.from] = (sentMap[e.from] || 0) + 1;
+        if (e.type === 'attack_hit') receivedMap[e.to] = (receivedMap[e.to] || 0) + 1;
+      });
+    }
+
+    if (!window.XLSX) {
+      await new Promise((res, rej) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+        s.onload = res; s.onerror = rej;
+        document.head.appendChild(s);
+      });
+    }
+
+    const XLSX = window.XLSX;
+    const wb = XLSX.utils.book_new();
+
+    const now = new Date();
+    const nowStr = now.toLocaleString('id-ID');
+    const themeLabels = { dasar: 'Dasar', programmer: 'Programmer', mechanic: 'Mechanic' };
+
+    // Sheet 1: Summary
+    const summaryData = [
+      ['LAPORAN HASIL KUIS - MANSA ROBOTICS QUIZ'],
+      [],
+      ['Kode Room', currentRoom],
+      ['Tema Materi', themeLabels[activeTheme] || activeTheme || '-'],
+      ['Total Soal', totalQ],
+      ['Total Peserta', players.length],
+      ['Tanggal Export', nowStr]
+    ];
+    const wsSummary = XLSX.utils.aoa_to_sheet(summaryData);
+    wsSummary['!cols'] = [{ wch: 20 }, { wch: 32 }];
+    XLSX.utils.book_append_sheet(wb, wsSummary, 'Info Ringkas');
+
+    // Sheet 2: Peringkat
+    const rankHeaders = ['Peringkat', 'Nama Peserta', 'Level', 'Skor Akhir', 'Akurasi (%)', 'Jawaban Benar', 'Jawaban Salah', 'Serangan Dikirim', 'Serangan Diterima'];
+    const rankRows = players.map((p, i) => {
+      const correct = p.correct || 0;
+      const pLvl = p.level || 1;
+      const pTotalQ = (activeQuestionsByLevel[pLvl] || activeQuestions || []).length || totalQ;
+      const wrong = Math.max(0, pTotalQ - correct);
+      const acc = pTotalQ > 0 ? Math.round((correct / pTotalQ) * 100) : 0;
+      return [i + 1, p.name || '-', `Level ${pLvl}`, p.score || 0, acc, correct, wrong, sentMap[p.name] || 0, receivedMap[p.name] || 0];
+    });
+    const wsRank = XLSX.utils.aoa_to_sheet([rankHeaders, ...rankRows]);
+    wsRank['!cols'] = [{ wch: 10 }, { wch: 22 }, { wch: 10 }, { wch: 12 }, { wch: 13 }, { wch: 15 }, { wch: 14 }, { wch: 18 }, { wch: 18 }];
+    XLSX.utils.book_append_sheet(wb, wsRank, 'Peringkat & Skor');
+
+    // Sheet 3: Detail Jawaban
+    const ansHeaders = ['Nama Peserta', 'Level', ...Array.from({ length: totalQ }, (_, i) => `Soal ${i + 1}`), 'Total Benar', 'Total Salah'];
+    const ansRows = players.map(p => {
+      const answers = p.answers || {};
+      const playerLevel = p.level || 1;
+      const playerQs = activeQuestionsByLevel[playerLevel] || activeQuestions || [];
+      const correctArr = playerQs.map((q, qi) => {
+        const ans = answers[`q${qi}`];
+        if (ans === undefined || ans === null) return '-';
+        return ans === q.ans ? '✓' : '✗';
+      });
+      while (correctArr.length < totalQ) correctArr.push('-');
+      const correct = p.correct || 0;
+      return [p.name || '-', `Level ${playerLevel}`, ...correctArr, correct, Math.max(0, playerQs.length - correct)];
+    });
+    const wsAns = XLSX.utils.aoa_to_sheet([ansHeaders, ...ansRows]);
+    wsAns['!cols'] = [{ wch: 22 }, { wch: 10 }, ...Array(totalQ).fill({ wch: 8 }), { wch: 13 }, { wch: 12 }];
+    XLSX.utils.book_append_sheet(wb, wsAns, 'Matriks Jawaban');
+
+    const dateStr = now.toLocaleDateString('id-ID').replace(/\//g, '-');
+    XLSX.writeFile(wb, `hasil-kuis-${currentRoom}-${dateStr}.xlsx`);
+  } catch(e) {
+    alert('Gagal mengekspor file Excel: ' + e.message);
+  } finally {
+    if (exportBtn) {
+      exportBtn.disabled = false;
+      exportBtn.innerHTML = origText;
+    }
+  }
+};
+
 // ===== USER MANAGEMENT (LEVEL) =====
 let _allUsers = [];
-
-function levelBadgeAdmin(level) {
-  const colors = { 1: '#22c55e', 2: '#f97316', 3: '#ef4444' };
-  const labels = { 1: 'Level 1', 2: 'Level 2', 3: 'Level 3' };
-  const c = colors[level] || '#64748b';
-  const l = labels[level] || `Level ${level}`;
-  return `<span style="font-size:0.72rem;font-weight:700;background:${c}22;color:${c};border:1px solid ${c}55;border-radius:6px;padding:2px 8px">${l}</span>`;
-}
 
 window.openUserManagement = async function() {
   showScreen('users');
@@ -1821,49 +2065,54 @@ window.openUserManagement = async function() {
 
 async function loadAllUsers() {
   const container = document.getElementById('user-list-container');
-  container.innerHTML = '<div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Memuat data pengguna...</div>';
+  if (!container) return;
+  container.innerHTML = '<div style="text-align:center;color:var(--t3);padding:24px;font-size:0.85rem">Memuat data pengguna dari cloud...</div>';
+
   try {
     const snap = await get(ref(db, 'users'));
     if (!snap.exists()) {
-      container.innerHTML = '<div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Belum ada pengguna yang pernah login.</div>';
+      container.innerHTML = '<div style="text-align:center;color:var(--t3);padding:24px;font-size:0.85rem">Belum ada pengguna yang pernah login.</div>';
       return;
     }
     _allUsers = [];
     snap.forEach(child => {
       const u = child.val();
-      _allUsers.push({ uid: child.key, name: u.name || '(no name)', email: u.email || '', level: u.level || 1 });
+      _allUsers.push({ uid: child.key, name: u.name || '(tanpa nama)', email: u.email || '', level: u.level || 1 });
     });
     _allUsers.sort((a, b) => a.name.localeCompare(b.name));
     renderUserList(_allUsers);
   } catch(e) {
-    container.innerHTML = `<div style="text-align:center;color:#ef4444;padding:24px;font-size:0.85rem">Gagal memuat: ${e.message}</div>`;
+    container.innerHTML = `<div style="text-align:center;color:var(--red);padding:24px;font-size:0.85rem">Gagal memuat: ${e.message}</div>`;
   }
 }
 
 function renderUserList(users) {
   const container = document.getElementById('user-list-container');
+  if (!container) return;
   if (!users.length) {
-    container.innerHTML = '<div style="text-align:center;color:#475569;padding:24px;font-size:0.85rem">Tidak ada pengguna yang cocok.</div>';
+    container.innerHTML = '<div style="text-align:center;color:var(--t3);padding:24px;font-size:0.85rem">Tidak ada pengguna yang cocok dengan pencarian.</div>';
     return;
   }
   container.innerHTML = '';
   users.forEach(u => {
     const card = document.createElement('div');
-    card.style.cssText = 'background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap';
+    card.className = 'user-card';
+    const initial = (u.name || 'U').charAt(0).toUpperCase();
+
     card.innerHTML = `
-      <div style="flex:1;min-width:120px">
-        <div style="font-weight:700;font-size:0.9rem;color:#e2e8f0">${u.name}</div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:2px">${u.email || 'No email'}</div>
+      <div class="user-avatar">${initial}</div>
+      <div style="flex:1;min-width:140px">
+        <div style="font-weight:700;font-size:0.92rem;color:var(--t1)">${u.name}</div>
+        <div style="font-size:0.75rem;color:var(--t3);margin-top:2px">${u.email || 'Tanpa email terdaftar'}</div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
-        ${levelBadgeAdmin(u.level)}
         <div style="display:flex;gap:4px">
-          <button onclick="setUserLevel('${u.uid}', ${u.level - 1}, this)" ${u.level <= 1 ? 'disabled' : ''} title="Turunkan level"
-            style="width:28px;height:28px;border-radius:7px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;${u.level <= 1 ? 'opacity:0.3;cursor:not-allowed' : ''}">▼</button>
-          <button onclick="setUserLevel('${u.uid}', ${u.level + 1}, this)" ${u.level >= 3 ? 'disabled' : ''} title="Naikkan level"
-            style="width:28px;height:28px;border-radius:7px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;${u.level >= 3 ? 'opacity:0.3;cursor:not-allowed' : ''}">▲</button>
+          <button class="level-pill-btn lvl-1 ${u.level === 1 ? 'active' : ''}" onclick="setUserLevel('${u.uid}', 1, this)" title="Set ke Level 1 (Pemula)">L1</button>
+          <button class="level-pill-btn lvl-2 ${u.level === 2 ? 'active' : ''}" onclick="setUserLevel('${u.uid}', 2, this)" title="Set ke Level 2 (Menengah)">L2</button>
+          <button class="level-pill-btn lvl-3 ${u.level === 3 ? 'active' : ''}" onclick="setUserLevel('${u.uid}', 3, this)" title="Set ke Level 3 (Lanjutan)">L3</button>
         </div>
-      </div>`;
+      </div>
+    `;
     container.appendChild(card);
   });
 }
@@ -1881,17 +2130,29 @@ window.filterUserList = function() {
 
 window.setUserLevel = async function(uid, newLevel, btn) {
   if (newLevel < 1 || newLevel > 3) return;
-  btn.disabled = true;
-  btn.style.opacity = '0.4';
+  if (btn) {
+    btn.disabled = true;
+    btn.style.opacity = '0.35';
+  }
   try {
     await update(ref(db, `users/${uid}`), { level: newLevel });
+    if (currentRoom) {
+      try {
+        const pSnap = await get(ref(db, `rooms/${currentRoom}/players/${uid}`));
+        if (pSnap.exists()) {
+          await update(ref(db, `rooms/${currentRoom}/players/${uid}`), { level: newLevel });
+        }
+      } catch(e) {}
+    }
     const u = _allUsers.find(x => x.uid === uid);
     if (u) u.level = newLevel;
     window.filterUserList();
   } catch(e) {
-    alert('Gagal update level: ' + e.message);
-    btn.disabled = false;
-    btn.style.opacity = '1';
+    alert('Gagal update level pengguna: ' + e.message);
+    if (btn) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
   }
 };
 </script>

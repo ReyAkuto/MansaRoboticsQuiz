@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" width="100%" height="100%">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="320" height="140" rx="10" fill="#0b111e" stroke="rgba(0,240,255,0.25)" stroke-width="1.5" />
+  <style>
+    .wire { stroke: #00f0ff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .gate { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; stroke-linejoin: round; }
+    .bubble { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; }
+    .label { fill: #00f0ff; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .out-label { fill: #f59e0b; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .gate-text { fill: #94a3b8; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 11px; text-anchor: middle; dominant-baseline: central; letter-spacing: 1px; }
+    .truth-th { fill: #00f0ff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; text-anchor: middle; }
+    .truth-td { fill: #f8fafc; font-family: 'Space Grotesk', monospace; font-size: 13px; text-anchor: middle; }
+  </style>
+  
+  <text x="35" y="45" class="label">A</text>
+  <text x="35" y="95" class="label">B</text>
+  <line x1="50" y1="45" x2="105" y2="45" class="wire" />
+  <line x1="50" y1="95" x2="105" y2="95" class="wire" />
+  <path d="M 105,30 L 140,30 A 40,40 0 0,1 140,110 L 105,110 Z" class="gate" />
+  <circle cx="188" cy="70" r="8" class="bubble" />
+  <text x="132" y="70" class="gate-text">NAND</text>
+  <line x1="196" y1="70" x2="250" y2="70" class="wire" />
+  <text x="268" y="70" class="out-label">Y</text>
+
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 145" width="100%" height="100%">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="320" height="145" rx="10" fill="#0b111e" stroke="rgba(0,240,255,0.25)" stroke-width="1.5" />
+  <style>
+    .wire { stroke: #00f0ff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .gate { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; stroke-linejoin: round; }
+    .bubble { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; }
+    .label { fill: #00f0ff; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .out-label { fill: #f59e0b; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .gate-text { fill: #94a3b8; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 11px; text-anchor: middle; dominant-baseline: central; letter-spacing: 1px; }
+    .truth-th { fill: #00f0ff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; text-anchor: middle; }
+    .truth-td { fill: #f8fafc; font-family: 'Space Grotesk', monospace; font-size: 13px; text-anchor: middle; }
+  </style>
+  
+  <text x="160" y="22" class="gate-text" style="font-size:12px;fill:#00f0ff">TABEL KEBENARAN GERBANG XOR</text>
+  <line x1="40" y1="32" x2="280" y2="32" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+  <text x="80" y="47" class="truth-th">A</text>
+  <text x="160" y="47" class="truth-th">B</text>
+  <text x="240" y="47" class="truth-th" style="fill:#f59e0b">Y (XOR)</text>
+  <line x1="40" y1="55" x2="280" y2="55" stroke="rgba(0,240,255,0.3)" stroke-width="1.5" />
+  <text x="80" y="73" class="truth-td">0</text><text x="160" y="73" class="truth-td">0</text><text x="240" y="73" class="truth-td" style="fill:#f59e0b">0</text>
+  <text x="80" y="91" class="truth-td">0</text><text x="160" y="91" class="truth-td">1</text><text x="240" y="91" class="truth-td" style="fill:#00f0ff;font-weight:700">1</text>
+  <text x="80" y="109" class="truth-td">1</text><text x="160" y="109" class="truth-td">0</text><text x="240" y="109" class="truth-td" style="fill:#00f0ff;font-weight:700">1</text>
+  <text x="80" y="127" class="truth-td">1</text><text x="160" y="127" class="truth-td">1</text><text x="240" y="127" class="truth-td" style="fill:#f59e0b">0</text>
+  <line x1="120" y1="35" x2="120" y2="135" stroke="rgba(255,255,255,0.1)" />
+  <line x1="200" y1="35" x2="200" y2="135" stroke="rgba(255,255,255,0.1)" />
+
+</svg>

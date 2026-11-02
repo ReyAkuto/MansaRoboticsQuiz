@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 155" width="100%" height="100%">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="340" height="155" rx="10" fill="#0b111e" stroke="rgba(0,240,255,0.25)" stroke-width="1.5" />
+  <style>
+    .wire { stroke: #00f0ff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .gate { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; stroke-linejoin: round; }
+    .bubble { stroke: #ffffff; stroke-width: 2.5; fill: #131e33; }
+    .label { fill: #00f0ff; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .out-label { fill: #f59e0b; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+    .gate-text { fill: #94a3b8; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 11px; text-anchor: middle; dominant-baseline: central; letter-spacing: 1px; }
+    .truth-th { fill: #00f0ff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; text-anchor: middle; }
+    .truth-td { fill: #f8fafc; font-family: 'Space Grotesk', monospace; font-size: 13px; text-anchor: middle; }
+  </style>
+  
+  <text x="18" y="35" class="label">A</text>
+  <text x="18" y="70" class="label">B</text>
+  <line x1="32" y1="35" x2="65" y2="35" class="wire" />
+  <line x1="32" y1="70" x2="65" y2="70" class="wire" />
+  <!-- NAND Gate (Top) -->
+  <path d="M 65,20 L 88,20 A 32,32 0 0,1 88,85 L 65,85 Z" class="gate" />
+  <circle cx="125" cy="52" r="5" class="bubble" />
+  <text x="82" y="52" class="gate-text" style="font-size:8px">NAND</text>
+  
+  <!-- Output NAND goes into OR input 1 -->
+  <path d="M 130,52 L 155,52 L 155,65 L 175,65" class="wire" />
+  <text x="155" y="45" style="fill:#38bdf8;font-size:10px;font-family:sans-serif;text-anchor:middle;">X</text>
+
+  <!-- Input C goes into OR input 2 -->
+  <text x="18" y="115" class="label">C</text>
+  <line x1="32" y1="115" x2="175" y2="115" class="wire" />
+
+  <!-- OR Gate -->
+  <path d="M 165,50 Q 185,90 165,130 Q 210,128 235,90 Q 210,52 165,50 Z" class="gate" />
+  <text x="190" y="90" class="gate-text">OR</text>
+  <line x1="235" y1="90" x2="280" y2="90" class="wire" />
+  <text x="298" y="90" class="out-label">Y</text>
+
+</svg>
