@@ -1,0 +1,4133 @@
+{
+  "dasar": [
+    {
+      "q": "Apa fungsi utama sensor pada robot?",
+      "opts": [
+        "Menggerakkan bagian tubuh robot",
+        "Mendeteksi kondisi di sekitar robot",
+        "Menyimpan program robot",
+        "Mengatur kecepatan motor robot"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Komponen mana yang termasuk aktuator pada robot?",
+      "opts": [
+        "Sensor cahaya",
+        "Papan Arduino",
+        "Motor DC",
+        "Sensor suhu"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Apa tugas controller pada sebuah robot?",
+      "opts": [
+        "Mendeteksi halangan di depan robot",
+        "Menggerakkan roda robot secara langsung",
+        "Memproses data dan memberi perintah ke aktuator",
+        "Menyimpan daya untuk robot"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Manakah yang merupakan contoh sensor jarak?",
+      "opts": [
+        "Motor servo",
+        "Sensor ultrasonik",
+        "Baterai Li-ion",
+        "Driver motor L298N"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Pada robot sederhana, urutan kerja yang benar adalah...",
+      "opts": [
+        "Controller → Sensor → Aktuator",
+        "Aktuator → Controller → Sensor",
+        "Sensor → Aktuator → Controller",
+        "Sensor → Controller → Aktuator"
+      ],
+      "ans": 3,
+      "level": 1
+    },
+    {
+      "q": "Sensor LDR digunakan untuk mendeteksi...",
+      "opts": [
+        "Getaran di sekitar robot",
+        "Intensitas cahaya di lingkungan",
+        "Jarak benda di depan robot",
+        "Kecepatan putaran roda robot"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan robot otonom?",
+      "opts": [
+        "Robot yang dikendalikan penuh oleh manusia",
+        "Robot yang hanya bisa bergerak lurus",
+        "Robot yang bisa bergerak dan mengambil keputusan sendiri",
+        "Robot yang tidak memiliki sensor sama sekali"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Baterai pada robot berfungsi sebagai...",
+      "opts": [
+        "Pengatur kecepatan semua motor",
+        "Penyimpan data dari sensor",
+        "Sumber energi listrik untuk semua komponen",
+        "Penghubung antara sensor dan controller"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Sensor suhu digunakan pada robot untuk...",
+      "opts": [
+        "Menggerakkan kipas secara manual",
+        "Mengetahui seberapa panas lingkungan atau komponen",
+        "Mengukur kecepatan angin di sekitar robot",
+        "Menyimpan nilai suhu ke dalam memori permanen"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Manakah yang bukan termasuk aktuator?",
+      "opts": [
+        "Motor stepper",
+        "Servo motor",
+        "Sensor infrared",
+        "Pompa air mini"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "LED pada robot biasanya digunakan sebagai...",
+      "opts": [
+        "Sensor pendeteksi cahaya",
+        "Indikator status atau lampu peringatan",
+        "Sumber daya cadangan robot",
+        "Pengganti layar LCD"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan input pada sistem robot?",
+      "opts": [
+        "Perintah yang dikirim ke motor",
+        "Data yang diterima controller dari sensor",
+        "Energi yang dihasilkan oleh baterai",
+        "Gerakan yang dihasilkan oleh aktuator"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Sensor PIR digunakan untuk mendeteksi...",
+      "opts": [
+        "Perubahan tekanan udara",
+        "Gerakan manusia atau makhluk hidup",
+        "Warna benda di depan robot",
+        "Kelembaban udara sekitar robot"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Robot line follower menggunakan sensor apa untuk mengikuti garis?",
+      "opts": [
+        "Sensor ultrasonik",
+        "Sensor infrared",
+        "Sensor suhu",
+        "Sensor tekanan"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa fungsi driver motor seperti L298N?",
+      "opts": [
+        "Membaca kecepatan putaran motor secara otomatis",
+        "Menyimpan program untuk menggerakkan motor",
+        "Mengontrol arah dan kecepatan motor dari sinyal controller",
+        "Mendeteksi apakah motor sedang panas atau tidak"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan output pada sistem robot?",
+      "opts": [
+        "Data yang dibaca oleh sensor",
+        "Sinyal yang diterima oleh controller",
+        "Gerakan atau aksi yang dihasilkan aktuator",
+        "Program yang ditulis oleh pengguna"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Sensor ultrasonik bekerja dengan cara...",
+      "opts": [
+        "Mengirim cahaya dan mengukur pantulannya",
+        "Mengirim gelombang suara dan mengukur waktu pantulannya",
+        "Mengukur perubahan medan magnet di sekitar benda",
+        "Mendeteksi panas yang dipancarkan benda"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa itu PWM dalam konteks kendali motor robot?",
+      "opts": [
+        "Jenis baterai yang digunakan pada robot",
+        "Teknik mengatur kecepatan motor dengan mengubah lebar pulsa sinyal",
+        "Protokol komunikasi antara dua robot",
+        "Metode mengukur jarak menggunakan gelombang radio"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Kenapa robot membutuhkan lebih dari satu sensor?",
+      "opts": [
+        "Karena satu sensor terlalu berat untuk robot kecil",
+        "Agar robot bisa mendapat informasi yang lebih lengkap tentang lingkungannya",
+        "Karena controller tidak bisa membaca hanya dari satu sensor",
+        "Supaya baterai tidak cepat habis saat robot bergerak"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang terjadi jika robot tidak memiliki controller?",
+      "opts": [
+        "Robot tetap bisa bergerak menggunakan sensor",
+        "Robot tidak bisa memproses data dan memberi perintah ke aktuator",
+        "Aktuator akan bekerja sendiri tanpa perintah",
+        "Sensor akan langsung menggerakkan motor"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Sensor kelembaban digunakan pada robot untuk...",
+      "opts": [
+        "Mengukur seberapa berat benda di depannya",
+        "Mendeteksi kadar air di udara atau permukaan",
+        "Menghitung jarak tempuh robot",
+        "Mengontrol kecepatan kipas pendingin robot"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Relay pada robot berfungsi sebagai...",
+      "opts": [
+        "Sensor untuk mendeteksi pergerakan",
+        "Saklar elektronik yang dikendalikan sinyal kecil",
+        "Komponen penyimpan daya cadangan",
+        "Penguat sinyal dari sensor ke controller"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa perbedaan sensor aktif dan sensor pasif?",
+      "opts": [
+        "Sensor aktif lebih mahal dari sensor pasif",
+        "Sensor aktif mengirimkan sinyal sendiri, sensor pasif hanya menerima",
+        "Sensor pasif butuh baterai, sensor aktif tidak",
+        "Sensor aktif lebih kecil ukurannya dari sensor pasif"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Manakah yang termasuk contoh controller pada robot?",
+      "opts": [
+        "Motor DC brushless",
+        "Sensor infrared",
+        "Arduino Uno",
+        "Baterai LiPo"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi buzzer pada robot?",
+      "opts": [
+        "Mendeteksi suara di sekitar robot",
+        "Menghasilkan bunyi sebagai notifikasi atau peringatan",
+        "Mengukur frekuensi getaran robot",
+        "Mengirim sinyal ke sensor lainnya"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Sensor flex (lentur) pada robot digunakan untuk mendeteksi...",
+      "opts": [
+        "Suhu pada sambungan robot",
+        "Seberapa besar tekukan atau lenturan pada bagian robot",
+        "Kecepatan putaran sendi robot",
+        "Jarak antar komponen dalam robot"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan feedback pada sistem kendali robot?",
+      "opts": [
+        "Perintah awal yang diberikan pengguna ke robot",
+        "Informasi dari output yang dikirim kembali ke controller untuk koreksi",
+        "Data yang disimpan permanen di memori robot",
+        "Sinyal dari baterai ke semua komponen"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Mengapa robot membutuhkan sumber daya listrik?",
+      "opts": [
+        "Agar sensor bisa mendeteksi lebih jauh",
+        "Karena semua komponen elektronik membutuhkan energi untuk bekerja",
+        "Supaya controller bisa menyimpan lebih banyak program",
+        "Agar motor bisa berputar tanpa perintah"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Sensor gyroscope pada robot berfungsi untuk...",
+      "opts": [
+        "Mengukur jarak tempuh robot di lapangan",
+        "Mendeteksi kemiringan dan rotasi robot",
+        "Mengukur kecepatan linier robot saat bergerak",
+        "Membaca medan magnet di sekitar robot"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang membedakan robot dari mesin biasa?",
+      "opts": [
+        "Robot pasti memiliki kaki dan bisa berjalan",
+        "Robot memiliki sensor, controller, dan aktuator yang bekerja bersama",
+        "Robot selalu terhubung ke internet secara permanen",
+        "Robot hanya bisa digunakan di pabrik besar"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Tombol push button pada robot biasanya digunakan sebagai...",
+      "opts": [
+        "Aktuator untuk menggerakkan lengan robot",
+        "Sensor input manual dari pengguna",
+        "Komponen untuk menyimpan posisi robot",
+        "Pengatur tegangan yang masuk ke motor"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa itu encoder pada robot?",
+      "opts": [
+        "Sensor untuk membaca kecepatan atau posisi putaran motor",
+        "Komponen yang mengubah sinyal analog menjadi audio",
+        "Alat untuk menyimpan program ke dalam memori",
+        "Driver yang mengontrol arah putaran motor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa robot sumo menggunakan sensor jarak di bagian depan?",
+      "opts": [
+        "Untuk mengukur berat lawan yang dihadapi",
+        "Agar robot tahu ada lawan di depan dan bisa mendorongnya",
+        "Untuk menghitung kecepatan lawan yang mendekat",
+        "Supaya robot bisa menyesuaikan warna dengan arena"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Sensor akselerometer pada robot digunakan untuk...",
+      "opts": [
+        "Mengukur percepatan dan perubahan gerak robot",
+        "Mendeteksi warna permukaan yang dilalui robot",
+        "Mengukur suhu motor saat bekerja keras",
+        "Membaca data dari sensor lain secara bersamaan"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan robot mobile?",
+      "opts": [
+        "Robot yang hanya bisa dikendalikan lewat smartphone",
+        "Robot yang dapat berpindah tempat menggunakan roda atau kaki",
+        "Robot yang berukuran sangat kecil dan ringan",
+        "Robot yang terhubung ke jaringan wifi secara terus menerus"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Kenapa sensor infrared sering digunakan pada robot line follower?",
+      "opts": [
+        "Karena bisa mendeteksi warna garis dengan sangat akurat",
+        "Karena bisa membedakan permukaan gelap dan terang dengan cepat",
+        "Karena tidak membutuhkan daya listrik sama sekali",
+        "Karena bisa mendeteksi garis dari jarak yang sangat jauh"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa fungsi kapasitor yang sering dipasang dekat motor pada robot?",
+      "opts": [
+        "Menyimpan program darurat jika baterai habis",
+        "Meredam gangguan listrik yang ditimbulkan motor saat berputar",
+        "Meningkatkan kecepatan putaran motor secara otomatis",
+        "Mendeteksi apakah motor sedang berputar atau tidak"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan sistem kendali terbuka (open loop) pada robot?",
+      "opts": [
+        "Sistem yang menggunakan banyak sensor sekaligus",
+        "Sistem yang tidak menggunakan feedback dari output",
+        "Sistem yang terhubung ke internet untuk menerima perintah",
+        "Sistem yang bisa memperbaiki dirinya sendiri secara otomatis"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa perbedaan robot analog dan robot digital?",
+      "opts": [
+        "Robot analog lebih cepat bergerak dari robot digital",
+        "Robot analog menggunakan sinyal kontinu, robot digital menggunakan sinyal diskrit 0 dan 1",
+        "Robot digital tidak membutuhkan baterai untuk beroperasi",
+        "Robot analog memiliki lebih banyak sensor dari robot digital"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Sensor magnetik (Hall effect) pada robot digunakan untuk...",
+      "opts": [
+        "Mendeteksi keberadaan medan magnet atau benda logam",
+        "Mengukur suhu komponen yang mengandung logam",
+        "Membaca kecepatan aliran udara di sekitar robot",
+        "Mendeteksi perubahan warna pada permukaan"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Apa itu duty cycle dalam kendali motor robot?",
+      "opts": [
+        "Jumlah putaran motor per menit saat berbeban",
+        "Persentase waktu sinyal aktif dalam satu periode PWM",
+        "Tegangan maksimum yang bisa diterima motor",
+        "Waktu jeda antara dua perintah dari controller"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Mengapa robot membutuhkan regulator tegangan?",
+      "opts": [
+        "Agar motor bisa berputar lebih cepat dari biasanya",
+        "Agar tegangan dari baterai disesuaikan dengan kebutuhan tiap komponen",
+        "Supaya sensor bisa membaca data lebih akurat",
+        "Agar baterai tidak cepat kehabisan daya"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa fungsi sensor tekanan (pressure sensor) pada robot?",
+      "opts": [
+        "Mengukur seberapa keras robot mendorong atau menekan sesuatu",
+        "Mendeteksi perubahan suhu saat robot bekerja",
+        "Membaca kecepatan pergerakan robot di udara",
+        "Mengukur jarak robot dari permukaan tanah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Kenapa robot perlu dikalibrasi sebelum digunakan?",
+      "opts": [
+        "Agar baterai robot terisi penuh sebelum beroperasi",
+        "Agar pembacaan sensor dan gerakan aktuator sesuai dengan nilai yang diharapkan",
+        "Supaya controller bisa mengenali semua jenis sensor",
+        "Agar program tidak mengalami error saat dijalankan"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan workspace pada robot arm?",
+      "opts": [
+        "Ruang tempat menyimpan robot saat tidak digunakan",
+        "Area yang bisa dijangkau oleh lengan robot",
+        "Program yang menentukan gerakan lengan robot",
+        "Nama lain untuk controller pada robot arm"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Sensor color (warna) pada robot digunakan untuk...",
+      "opts": [
+        "Mengubah warna LED sesuai perintah controller",
+        "Mendeteksi dan membedakan warna objek di depannya",
+        "Mengukur intensitas cahaya secara keseluruhan",
+        "Mengidentifikasi kecepatan perubahan cahaya"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang terjadi jika tegangan yang diberikan ke sensor melebihi spesifikasi maksimalnya?",
+      "opts": [
+        "Sensor akan bekerja lebih cepat dan akurat",
+        "Sensor bisa rusak secara permanen",
+        "Sensor otomatis menurunkan tegangannya sendiri",
+        "Data dari sensor akan lebih stabil"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa fungsi resistor pada rangkaian robot?",
+      "opts": [
+        "Menyimpan energi listrik sementara dalam rangkaian",
+        "Membatasi arus yang mengalir agar komponen tidak rusak",
+        "Mengubah arus bolak-balik menjadi arus searah",
+        "Memperkuat sinyal yang lemah dari sensor"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan GND pada rangkaian robot?",
+      "opts": [
+        "Tegangan tertinggi dalam rangkaian robot",
+        "Titik referensi nol atau negatif dalam rangkaian listrik",
+        "Pin khusus untuk menghubungkan sensor ke motor",
+        "Nama pin untuk menerima sinyal analog"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Sensor gas pada robot digunakan untuk...",
+      "opts": [
+        "Mengukur tekanan udara di sekitar robot",
+        "Mendeteksi keberadaan gas tertentu di lingkungan",
+        "Mengatur aliran udara yang masuk ke motor",
+        "Membaca suhu pembakaran bahan bakar"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Komponen yang menghasilkan bunyi pada robot adalah...",
+      "opts": [
+        "Relay",
+        "Buzzer",
+        "Resistor",
+        "Kapasitor"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Fungsi resistor dalam rangkaian elektronik adalah...",
+      "opts": [
+        "Membatasi arus",
+        "Menyimpan data",
+        "Menggerakkan motor",
+        "Membaca cahaya"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Breadboard biasa digunakan untuk...",
+      "opts": [
+        "Memotong kabel",
+        "Membuat roda",
+        "Merangkai komponen",
+        "Mengisi baterai"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Kabel jumper berfungsi untuk...",
+      "opts": [
+        "Mengukur jarak",
+        "Menghubungkan komponen",
+        "Mengatur putaran",
+        "Menyimpan program"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Alat yang digunakan untuk mengukur tegangan listrik disebut...",
+      "opts": [
+        "Tang",
+        "Obeng",
+        "Multimeter",
+        "Jangka sorong"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Satuan tegangan listrik adalah...",
+      "opts": [
+        "Ampere",
+        "Ohm",
+        "Watt",
+        "Volt"
+      ],
+      "ans": 3,
+      "level": 1
+    },
+    {
+      "q": "Satuan arus listrik adalah...",
+      "opts": [
+        "Ampere",
+        "Volt",
+        "Ohm",
+        "Hertz"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Komponen yang dapat menyimpan muatan listrik adalah...",
+      "opts": [
+        "Resistor",
+        "Kapasitor",
+        "Buzzer",
+        "Switch"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Sakelar pada robot digunakan untuk...",
+      "opts": [
+        "Membaca sensor",
+        "Mengubah program",
+        "Memutus rangkaian",
+        "Mengukur tegangan"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Jika kabel terputus, arus listrik biasanya akan...",
+      "opts": [
+        "Tetap mengalir",
+        "Mengalir lebih cepat",
+        "Berubah warna",
+        "Tidak mengalir"
+      ],
+      "ans": 3,
+      "level": 1
+    },
+    {
+      "q": "Bagian robot yang menjadi tempat pemasangan komponen disebut...",
+      "opts": [
+        "Rangka",
+        "Sensor",
+        "Program",
+        "Terminal"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Fungsi konektor pada rangkaian adalah...",
+      "opts": [
+        "Mengukur arus",
+        "Menghubungkan bagian",
+        "Menambah tegangan",
+        "Menyimpan energi"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "LED termasuk komponen yang dapat menghasilkan...",
+      "opts": [
+        "Gerakan",
+        "Tekanan",
+        "Cahaya",
+        "Suara"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Jika LED tidak menyala, salah satu hal pertama yang perlu diperiksa adalah...",
+      "opts": [
+        "Warna chassis",
+        "Ukuran roda",
+        "Kondisi kabel",
+        "Bentuk robot"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Sumber listrik yang umum digunakan pada robot adalah...",
+      "opts": [
+        "Baterai",
+        "Baut",
+        "Gear",
+        "Kabel"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Komponen yang digunakan untuk menghubungkan dan memutus arus disebut...",
+      "opts": [
+        "Switch",
+        "Sensor",
+        "Motor",
+        "Buzzer"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika dua kabel positif dan negatif dihubungkan secara langsung, kondisi tersebut dapat menyebabkan...",
+      "opts": [
+        "Robot lebih cepat",
+        "Hubung singkat",
+        "Sensor aktif",
+        "Program berhenti"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Warna kabel pada rangkaian biasanya membantu pengguna untuk...",
+      "opts": [
+        "Menentukan fungsi kabel",
+        "Mengubah tegangan",
+        "Mengatur sensor",
+        "Menambah arus"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Alat yang digunakan untuk mengupas lapisan kabel adalah...",
+      "opts": [
+        "Tang kupas",
+        "Palu",
+        "Penggaris",
+        "Cutter roda"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Komponen yang digunakan untuk melindungi rangkaian dari arus berlebih adalah...",
+      "opts": [
+        "LED",
+        "Sekring",
+        "Buzzer",
+        "Switch"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Dalam rangkaian elektronik, simbol V biasanya berkaitan dengan...",
+      "opts": [
+        "Arus",
+        "Tegangan",
+        "Hambatan",
+        "Daya"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Jika baterai dipasang terbalik pada rangkaian, hal yang perlu diperhatikan adalah...",
+      "opts": [
+        "Polaritas",
+        "Warna roda",
+        "Ukuran chassis",
+        "Bentuk sensor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Apa fungsi utama koneksi ground pada rangkaian elektronik?",
+      "opts": [
+        "Menambah kecepatan",
+        "Menjadi referensi tegangan",
+        "Menggerakkan motor",
+        "Membaca jarak"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Saat membuat rangkaian robot, kabel yang longgar dapat menyebabkan...",
+      "opts": [
+        "Koneksi terganggu",
+        "Motor bertambah kuat",
+        "Sensor membesar",
+        "Program bertambah cepat"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Sebelum robot digunakan, pemeriksaan kabel dan konektor dilakukan untuk...",
+      "opts": [
+        "Mengubah desain",
+        "Menambah berat",
+        "Memastikan koneksi",
+        "Mengurangi ukuran"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Jika pembacaan sensor robot tiba-tiba berubah-ubah padahal kondisi lingkungan tetap, kemungkinan masalahnya adalah...",
+      "opts": [
+        "Noise",
+        "Torsi",
+        "Gear",
+        "Chassis"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa pembacaan sensor biasanya perlu dikalibrasi?",
+      "opts": [
+        "Agar kabel lebih panjang",
+        "Agar hasil pembacaan lebih sesuai kondisi nyata",
+        "Agar motor lebih kuat",
+        "Agar baterai lebih besar"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Jika dua sensor membaca kondisi yang berbeda untuk situasi yang sama, langkah awal yang tepat adalah...",
+      "opts": [
+        "Mengganti semua motor",
+        "Memeriksa pemasangan dan pembacaan sensor",
+        "Mengubah ukuran roda",
+        "Mengganti chassis"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi pull-up resistor pada input digital?",
+      "opts": [
+        "Menjaga level logika tetap jelas",
+        "Menambah torsi motor",
+        "Mengurangi ukuran kabel",
+        "Mengubah sinyal menjadi suara"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Sinyal digital pada kondisi HIGH dan LOW digunakan untuk menunjukkan...",
+      "opts": [
+        "Dua kondisi logika",
+        "Dua jenis motor",
+        "Dua ukuran baterai",
+        "Dua arah chassis"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah tombol kadang terbaca ditekan dan kadang tidak saat ditekan sekali, salah satu penyebabnya adalah...",
+      "opts": [
+        "Debounce",
+        "Gear ratio",
+        "Overcurrent",
+        "Alignment"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa debounce diperlukan pada tombol mekanik?",
+      "opts": [
+        "Menghindari pembacaan berulang akibat kontak tombol",
+        "Mengurangi berat tombol",
+        "Menambah tegangan baterai",
+        "Mengatur arah motor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sensor dipasang terlalu dekat dengan sumber gangguan, hasil pembacaannya bisa...",
+      "opts": [
+        "Lebih stabil",
+        "Lebih mudah terganggu",
+        "Selalu nol",
+        "Tidak membutuhkan kalibrasi"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Dalam sistem robot, komunikasi antar komponen digunakan untuk...",
+      "opts": [
+        "Bertukar data",
+        "Mengubah ukuran motor",
+        "Menambah berat robot",
+        "Mengurangi jumlah roda"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika robot menggunakan beberapa sensor, keuntungan utamanya adalah...",
+      "opts": [
+        "Data yang diperoleh lebih beragam",
+        "Motor menjadi lebih besar",
+        "Baterai selalu lebih awet",
+        "Program otomatis lebih pendek"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa yang mungkin terjadi jika tegangan sumber tidak sesuai dengan kebutuhan komponen?",
+      "opts": [
+        "Komponen dapat bekerja tidak normal",
+        "Robot pasti lebih cepat",
+        "Sensor selalu lebih akurat",
+        "Program otomatis berubah"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika satu komponen membutuhkan tegangan lebih rendah dari baterai, komponen tersebut dapat membutuhkan...",
+      "opts": [
+        "Regulator",
+        "Gear",
+        "Bearing",
+        "Encoder"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Fungsi regulator tegangan adalah...",
+      "opts": [
+        "Menjaga tegangan pada nilai tertentu",
+        "Mengatur arah roda",
+        "Mengukur jarak",
+        "Menambah jumlah sensor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika robot tiba-tiba restart saat beberapa motor bekerja bersamaan, salah satu hal yang perlu dicurigai adalah...",
+      "opts": [
+        "Catu daya",
+        "Warna kabel",
+        "Ukuran roda",
+        "Bentuk chassis"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa ground antar perangkat elektronik kadang perlu disatukan?",
+      "opts": [
+        "Agar memiliki referensi tegangan yang sama",
+        "Agar motor menjadi lebih besar",
+        "Agar sensor tidak perlu program",
+        "Agar baterai bertambah kapasitas"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sensor menghasilkan nilai yang sangat besar ketika objek semakin dekat, hubungan tersebut dapat disebut...",
+      "opts": [
+        "Berbanding langsung",
+        "Berbanding terbalik",
+        "Tidak berkaitan",
+        "Selalu konstan"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa tujuan utama membaca datasheet sebuah komponen?",
+      "opts": [
+        "Mengetahui spesifikasi dan batas penggunaannya",
+        "Menentukan warna chassis",
+        "Menambah kapasitas baterai",
+        "Mengubah program menjadi otomatis"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah sensor memiliki batas jarak tertentu, objek di luar batas tersebut kemungkinan...",
+      "opts": [
+        "Tidak terbaca dengan baik",
+        "Selalu terbaca nol",
+        "Membuat motor berhenti",
+        "Mengubah tegangan baterai"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan resolusi sensor?",
+      "opts": [
+        "Kemampuan membedakan perubahan nilai",
+        "Kecepatan motor maksimum",
+        "Berat maksimum robot",
+        "Jarak antar roda"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sensor memiliki resolusi lebih tinggi, sensor tersebut umumnya dapat...",
+      "opts": [
+        "Mendeteksi perubahan lebih kecil",
+        "Menghasilkan daya lebih besar",
+        "Menggerakkan robot lebih cepat",
+        "Mengurangi ukuran controller"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa kabel sinyal yang terlalu panjang dapat menjadi masalah pada rangkaian tertentu?",
+      "opts": [
+        "Dapat lebih mudah terkena gangguan",
+        "Membuat baterai bertambah besar",
+        "Membuat motor berubah bentuk",
+        "Mengurangi berat robot"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika robot membaca sensor secara berkala setiap 100 ms, maka pembacaan dilakukan setiap...",
+      "opts": [
+        "10 ms",
+        "50 ms",
+        "100 ms",
+        "1000 ms"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Apa tujuan menggunakan beberapa pembacaan sensor lalu mengambil nilai rata-rata?",
+      "opts": [
+        "Mengurangi pengaruh perubahan kecil",
+        "Menambah tegangan sensor",
+        "Mengubah sensor menjadi aktuator",
+        "Mempercepat motor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika indikator baterai menunjukkan tegangan turun ketika motor mulai bekerja, kemungkinan penyebabnya adalah...",
+      "opts": [
+        "Beban meningkat",
+        "Sensor terlalu jauh",
+        "Program terlalu pendek",
+        "Chassis terlalu kecil"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Sebelum mengganti sensor yang dianggap rusak, langkah yang lebih baik adalah...",
+      "opts": [
+        "Memeriksa koneksi dan pembacaan terlebih dahulu",
+        "Mengganti semua komponen",
+        "Menghapus program",
+        "Mengubah ukuran roda"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Robot menggunakan sensor yang menghasilkan pembacaan 100, 102, 99, 101 saat kondisi sebenarnya hampir tetap. Kesimpulan paling tepat adalah...",
+      "opts": [
+        "Sensor pasti rusak",
+        "Ada variasi kecil pada pembacaan",
+        "Controller tidak bekerja",
+        "Motor terlalu kuat"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Jika pembacaan sensor memiliki noise yang cukup besar, salah satu cara sederhana untuk membuat keputusan lebih stabil adalah...",
+      "opts": [
+        "Mengambil beberapa sampel",
+        "Mengganti semua motor",
+        "Menambah ukuran roda",
+        "Mengurangi kabel"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Robot membaca sensor jarak setiap 10 ms, tetapi perubahan lingkungan hanya terjadi beberapa kali per detik. Masalah yang mungkin muncul adalah...",
+      "opts": [
+        "Data berlebihan",
+        "Torsi berkurang",
+        "Gear bertambah",
+        "Baterai berubah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika dua sensor digunakan untuk mendeteksi garis dan salah satunya selalu memberikan nilai terbalik, langkah yang tepat adalah...",
+      "opts": [
+        "Memeriksa konfigurasi pembacaan",
+        "Mengganti chassis",
+        "Menambah motor",
+        "Mengurangi roda"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah robot berhenti setiap kali dua motor dinyalakan bersamaan. Jika sensor dan program sudah diuji, bagian yang patut dicurigai berikutnya adalah...",
+      "opts": [
+        "Catu daya",
+        "Warna kabel",
+        "Bentuk chassis",
+        "Jenis sensor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Mengapa tegangan baterai dapat turun ketika motor diberi beban besar?",
+      "opts": [
+        "Arus meningkat",
+        "Sensor mati",
+        "Program bertambah",
+        "Gear berubah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot bergerak normal tanpa beban tetapi mati ketika membawa beban, kemungkinan masalahnya berkaitan dengan...",
+      "opts": [
+        "Beban dan daya",
+        "Warna roda",
+        "Nama variabel",
+        "Resolusi layar"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah sensor menghasilkan nilai yang berbeda untuk objek yang sama ketika jaraknya diukur dari sudut berbeda. Hal ini menunjukkan bahwa...",
+      "opts": [
+        "Posisi pemasangan berpengaruh",
+        "Motor terlalu cepat",
+        "Baterai terlalu besar",
+        "Program pasti salah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika dua sensor identik menghasilkan pembacaan berbeda pada kondisi yang sama, sebelum mengganti sensor sebaiknya...",
+      "opts": [
+        "Bandingkan kalibrasinya",
+        "Ganti baterai",
+        "Tambah motor",
+        "Potong kabel"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Apa tujuan melakukan filtering pada data sensor?",
+      "opts": [
+        "Mengurangi gangguan",
+        "Menambah tegangan",
+        "Mengubah motor",
+        "Mengurangi berat"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika filtering terlalu kuat, respons robot terhadap perubahan kondisi dapat menjadi...",
+      "opts": [
+        "Lambat",
+        "Lebih cepat",
+        "Tidak berubah",
+        "Selalu nol"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Robot menggunakan dua sumber daya berbeda untuk motor dan controller. Hal yang sangat penting diperhatikan adalah...",
+      "opts": [
+        "Referensi ground",
+        "Warna chassis",
+        "Diameter roda",
+        "Panjang program"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sensor bekerja baik ketika motor mati tetapi kacau ketika motor hidup, kemungkinan sumber gangguannya berasal dari...",
+      "opts": [
+        "Sistem motor",
+        "Ukuran sensor",
+        "Nama variabel",
+        "Bentuk roda"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Salah satu cara mengurangi gangguan listrik dari motor pada rangkaian adalah...",
+      "opts": [
+        "Memisahkan jalur daya",
+        "Menambah berat chassis",
+        "Mengurangi sensor",
+        "Mengubah nama program"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot mengambil keputusan berdasarkan satu pembacaan sensor yang berubah-ubah, robot dapat...",
+      "opts": [
+        "Bertindak tidak stabil",
+        "Selalu bergerak lurus",
+        "Menghemat daya",
+        "Mengurangi noise"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Robot memiliki sensor kiri dan kanan. Ketika keduanya membaca kondisi berbeda, robot sebaiknya menentukan tindakan berdasarkan...",
+      "opts": [
+        "Aturan kontrol",
+        "Warna robot",
+        "Ukuran baterai",
+        "Jenis baut"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika nilai sensor digunakan langsung untuk menentukan kecepatan motor, perubahan kecil pada sensor dapat menyebabkan...",
+      "opts": [
+        "Perubahan gerak",
+        "Perubahan chassis",
+        "Perubahan baterai",
+        "Perubahan program"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Mengapa sensor sebaiknya ditempatkan pada posisi yang konsisten?",
+      "opts": [
+        "Agar pembacaan dapat dibandingkan",
+        "Agar motor lebih kuat",
+        "Agar baterai lebih awet",
+        "Agar robot lebih berat"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot bekerja baik di meja tetapi gagal di arena, salah satu hal yang perlu diperiksa adalah...",
+      "opts": [
+        "Kondisi lingkungan",
+        "Nama variabel",
+        "Warna kabel",
+        "Ukuran controller"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Robot yang berhasil mendeteksi objek tetapi salah mengambil keputusan menunjukkan masalah kemungkinan berada pada...",
+      "opts": [
+        "Logika kontrol",
+        "Bentuk roda",
+        "Warna sensor",
+        "Baut chassis"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sensor memberikan nilai 50, 51, 50, 200, 49, nilai 200 kemungkinan merupakan...",
+      "opts": [
+        "Outlier",
+        "Setpoint",
+        "Output motor",
+        "Konstanta"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika satu sensor gagal tetapi robot masih dapat mengambil keputusan menggunakan sensor lain, sistem tersebut memiliki...",
+      "opts": [
+        "Redundansi",
+        "Resonansi",
+        "Friksi",
+        "Kalibrasi"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Apa keuntungan utama redundansi sensor?",
+      "opts": [
+        "Meningkatkan toleransi kegagalan",
+        "Mengurangi ukuran robot",
+        "Menambah torsi motor",
+        "Mengurangi jumlah data"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot semakin panas setelah digunakan lama, pemeriksaan yang paling relevan adalah...",
+      "opts": [
+        "Beban dan arus",
+        "Warna chassis",
+        "Nama fungsi",
+        "Ukuran sensor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Ketika mencari penyebab robot gagal bekerja, pendekatan paling baik adalah...",
+      "opts": [
+        "Menguji bagian secara bertahap",
+        "Mengganti semuanya",
+        "Menebak komponen",
+        "Menghapus program"
+      ],
+      "ans": 0,
+      "level": 3
+    }
+  ],
+  "programmer": [
+    {
+      "q": "Apa itu program komputer?",
+      "opts": [
+        "Kumpulan perintah yang diberikan ke komputer agar melakukan sesuatu",
+        "Alat untuk mengukur jarak pada robot",
+        "Kabel penghubung antara sensor dan motor",
+        "Nama lain dari baterai pada robot"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Apa itu algoritma?",
+      "opts": [
+        "Alat untuk menggerakkan motor robot",
+        "Langkah-langkah urut untuk menyelesaikan suatu masalah",
+        "Jenis sensor yang dipakai pada robot",
+        "Nama lain dari baterai lithium"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Manakah contoh algoritma dalam kehidupan sehari-hari?",
+      "opts": [
+        "Makan dulu sebelum lapar",
+        "Duduk, ambil sendok, ambil makanan, lalu makan",
+        "Tidur sambil makan supaya hemat waktu",
+        "Makan, ambil sendok, baru duduk"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa fungsi variabel dalam program?",
+      "opts": [
+        "Menghubungkan sensor ke motor robot",
+        "Mengatur kecepatan putaran roda",
+        "Menyimpan data atau nilai yang dibutuhkan program",
+        "Menggerakkan lengan robot secara otomatis"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Manakah contoh penulisan variabel yang benar?",
+      "opts": [
+        "while (true) {}",
+        "motor.stop()",
+        "int umur = 10",
+        "if (x > 5) {}"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dilakukan perintah if dalam program?",
+      "opts": [
+        "Mengulang program dari awal terus menerus",
+        "Memeriksa kondisi dan menjalankan perintah jika kondisi benar",
+        "Menghentikan semua motor yang sedang berputar",
+        "Menyimpan nilai ke dalam memori robot"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Kapan bagian else dalam if-else dijalankan?",
+      "opts": [
+        "Saat program pertama kali dinyalakan",
+        "Saat motor robot berhenti berputar",
+        "Saat kondisi if ternyata salah",
+        "Saat variabel belum diberi nilai"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Jika nilai = 50, apa yang terjadi pada kode: if (nilai > 60) { lulus } else { ulang }?",
+      "opts": [
+        "Perintah lulus dijalankan karena 50 cukup besar",
+        "Program berhenti karena terjadi error",
+        "Nilai berubah otomatis menjadi 60",
+        "Perintah ulang dijalankan karena 50 tidak lebih dari 60"
+      ],
+      "ans": 3,
+      "level": 1
+    },
+    {
+      "q": "Tipe data apa yang tepat untuk menyimpan angka bulat seperti 5 atau 100?",
+      "opts": [
+        "float untuk angka bulat positif",
+        "boolean untuk nilai numerik",
+        "int untuk bilangan bulat",
+        "char untuk karakter angka"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Tipe data apa yang digunakan untuk menyimpan nilai benar atau salah?",
+      "opts": [
+        "int karena bisa bernilai 0 atau 1",
+        "float karena nilainya bisa desimal",
+        "char karena hanya satu karakter",
+        "boolean karena hanya bernilai true atau false"
+      ],
+      "ans": 3,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan input dalam sebuah program?",
+      "opts": [
+        "Hasil akhir yang ditampilkan oleh program",
+        "Perintah untuk menghentikan program",
+        "Data atau nilai yang dimasukkan ke dalam program",
+        "Nama dari variabel yang dipakai"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan output dalam sebuah program?",
+      "opts": [
+        "Hasil yang dikeluarkan atau ditampilkan oleh program",
+        "Data awal yang dimasukkan pengguna",
+        "Variabel yang belum memiliki nilai",
+        "Nama fungsi yang sedang dipakai"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Dalam program robot sederhana, urutan yang benar adalah...",
+      "opts": [
+        "Output dulu, baru proses, baru input",
+        "Proses dulu, baru input, baru output",
+        "Input dulu, lalu diproses, lalu menghasilkan output",
+        "Output dulu, baru input, baru proses"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Simbol apa yang digunakan untuk memeriksa apakah dua nilai sama?",
+      "opts": [
+        "= untuk membandingkan dua nilai",
+        "!= untuk mengecek kesamaan",
+        "=> untuk kondisi sama",
+        "== untuk memeriksa apakah dua nilai sama"
+      ],
+      "ans": 3,
+      "level": 1
+    },
+    {
+      "q": "Apa arti tanda != dalam program?",
+      "opts": [
+        "Lebih besar dari nilai lain",
+        "Sama persis dengan nilai lain",
+        "Tidak sama dengan nilai lain",
+        "Lebih kecil dari nilai lain"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Apa arti tanda > dalam kondisi program?",
+      "opts": [
+        "Nilainya sama dengan yang lain",
+        "Nilainya lebih besar dari yang lain",
+        "Nilainya tidak sama dengan lain",
+        "Nilainya lebih kecil dari yang lain"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa arti tanda < dalam kondisi program?",
+      "opts": [
+        "Nilainya lebih besar dari yang lain",
+        "Nilainya sama dengan yang lain",
+        "Nilainya tidak sama dengan lain",
+        "Nilainya lebih kecil dari yang lain"
+      ],
+      "ans": 3,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan percabangan dalam algoritma?",
+      "opts": [
+        "Cara menyimpan banyak nilai sekaligus",
+        "Pengulangan perintah yang sama berkali-kali",
+        "Pilihan jalan yang berbeda tergantung kondisi",
+        "Langkah terakhir untuk menghentikan program"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "int a = 10, int b = 3, int c = a - b. Berapa nilai c?",
+      "opts": [
+        "13",
+        "30",
+        "7",
+        "103"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "int x = 4, lalu x = x + 1. Berapa nilai x sekarang?",
+      "opts": [
+        "4 karena nilai awal tidak berubah",
+        "1 karena hanya ditambah satu",
+        "41 karena digabung jadi string",
+        "5 karena 4 ditambah 1"
+      ],
+      "ans": 3,
+      "level": 2
+    },
+    {
+      "q": "Mengapa urutan langkah dalam algoritma itu penting?",
+      "opts": [
+        "Agar program terlihat panjang dan rapi",
+        "Urutan yang salah bisa membuat hasil tidak sesuai harapan",
+        "Karena komputer tidak bisa membaca urutan acak",
+        "Agar variabel bisa menyimpan lebih banyak nilai"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan kondisi dalam if-else?",
+      "opts": [
+        "Pertanyaan benar atau salah yang menentukan jalannya program",
+        "Jenis data yang disimpan dalam robot",
+        "Nama variabel yang dipakai dalam program",
+        "Kecepatan eksekusi program per detik"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika dua kondisi harus benar semua, operator apa yang dipakai?",
+      "opts": [
+        "|| karena memeriksa dua kondisi",
+        "! karena membalik kondisi",
+        "== karena membandingkan nilai",
+        "&& karena kedua kondisi harus benar"
+      ],
+      "ans": 3,
+      "level": 2
+    },
+    {
+      "q": "Jika cukup salah satu kondisi saja yang benar, operator apa yang dipakai?",
+      "opts": [
+        "|| karena salah satu sudah cukup",
+        "&& karena memeriksa dua kondisi",
+        "! karena membalik nilainya",
+        "!= karena kondisinya berbeda"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan komentar dalam program?",
+      "opts": [
+        "Perintah penting yang wajib dijalankan program",
+        "Nama variabel yang sangat panjang",
+        "Teks penjelasan yang tidak dijalankan program",
+        "Fungsi khusus untuk menampilkan teks"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan bug dalam program?",
+      "opts": [
+        "Fitur tambahan yang ditambah belakangan",
+        "Nama lain dari tipe data variabel",
+        "Kesalahan dalam program yang membuat hasil tidak sesuai",
+        "Jenis perulangan yang sangat cepat"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Manakah yang merupakan contoh output sebuah program robot?",
+      "opts": [
+        "Tombol yang ditekan oleh pengguna",
+        "Nilai jarak yang dibaca sensor",
+        "Lampu LED yang menyala karena perintah program",
+        "Baterai yang sedang mengisi daya"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Manakah yang merupakan contoh input dalam program robot?",
+      "opts": [
+        "Motor yang berputar menggerakkan roda",
+        "LED yang menyala sebagai indikator",
+        "Bunyi buzzer sebagai peringatan",
+        "Nilai jarak yang dibaca dari sensor"
+      ],
+      "ans": 3,
+      "level": 2
+    },
+    {
+      "q": "Apa yang terjadi jika kondisi if salah dan tidak ada else?",
+      "opts": [
+        "Program error dan langsung berhenti",
+        "Kode di dalam if tetap dijalankan",
+        "Program lanjut ke perintah berikutnya",
+        "Semua variabel direset otomatis"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Manakah penulisan variabel yang benar?",
+      "opts": [
+        "int 1angka = 5",
+        "5 = int angka",
+        "angka int = 5",
+        "int angka = 5"
+      ],
+      "ans": 3,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan mendeklarasikan variabel?",
+      "opts": [
+        "Memberitahu program bahwa variabel ada beserta tipe datanya",
+        "Menghapus variabel yang sudah tidak dipakai",
+        "Menyalin nilai dari satu variabel ke variabel lain",
+        "Menampilkan nilai variabel ke layar monitor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Algoritma yang baik harus...",
+      "opts": [
+        "Langkahnya tidak perlu berurutan",
+        "Memiliki langkah jelas dan menghasilkan output",
+        "Hanya boleh memiliki satu langkah saja",
+        "Tidak perlu memiliki titik akhir"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Contoh algoritma menyalakan lampu yang benar adalah...",
+      "opts": [
+        "Lampu nyala, tekan saklar, cari saklar",
+        "Cari saklar, tekan saklar, lampu menyala",
+        "Tekan saklar, lampu nyala, cari saklar",
+        "Lampu nyala, cari saklar, tekan saklar"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan nilai awal variabel?",
+      "opts": [
+        "Mengubah tipe data variabel saat program berjalan",
+        "Menghapus nilai variabel setelah selesai dipakai",
+        "Nilai pertama yang diberikan ke variabel saat dibuat",
+        "Menyalin variabel ke dalam fungsi lain"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Tipe data float digunakan untuk menyimpan...",
+      "opts": [
+        "Nilai true atau false saja",
+        "Angka bulat seperti 1, 2, 3",
+        "Satu karakter huruf saja",
+        "Angka desimal seperti 3.14 atau 1.5"
+      ],
+      "ans": 3,
+      "level": 3
+    },
+    {
+      "q": "Contoh penggunaan if-else dalam kehidupan nyata adalah...",
+      "opts": [
+        "Jika hujan maka bawa payung, jika tidak maka tidak perlu",
+        "Bawa payung setiap hari tanpa melihat cuaca",
+        "Jika hujan maka tetap jalan tanpa payung",
+        "Bawa payung hanya saat cuaca sangat cerah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan program yang benar?",
+      "opts": [
+        "Program yang sangat panjang dan kompleks",
+        "Program yang memakai banyak variabel berbeda",
+        "Program yang menghasilkan output sesuai yang diharapkan",
+        "Program yang ditulis dengan huruf kapital semua"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Jika robot mendeteksi halangan, contoh if-else yang tepat adalah...",
+      "opts": [
+        "Jika ada halangan maka terus maju saja",
+        "Jika ada halangan maka belok, jika tidak maka maju",
+        "Jika tidak ada halangan maka berhenti total",
+        "Jika ada halangan maka matikan semua sensor"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan logika dalam program?",
+      "opts": [
+        "Cara menyimpan banyak variabel sekaligus",
+        "Nama lain dari tipe data integer",
+        "Aturan berpikir yang menentukan keputusan program",
+        "Cara menghubungkan dua sensor berbeda"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Manakah contoh kondisi if yang benar penulisannya?",
+      "opts": [
+        "if x > 5 { }",
+        "if [x > 5] { }",
+        "if (x > 5) { }",
+        "if x = 5 { }"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Mengapa nama variabel harus jelas dan deskriptif?",
+      "opts": [
+        "Karena nama panjang membuat program lebih cepat",
+        "Agar mudah dipahami saat membaca program kembali",
+        "Karena komputer hanya bisa membaca nama panjang",
+        "Agar sensor dapat mengenali variabel tersebut"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa itu pseudocode?",
+      "opts": [
+        "Bahasa pemrograman khusus untuk robot",
+        "Cara menulis algoritma dengan bahasa sehari-hari sebelum jadi kode",
+        "Nama lain dari variabel boolean",
+        "Kode rahasia untuk mengunci program robot"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang terjadi jika urutan algoritma salah?",
+      "opts": [
+        "Program tetap berjalan dengan hasil benar",
+        "Variabel otomatis memperbaiki urutannya",
+        "Hasilnya bisa tidak sesuai atau terjadi error",
+        "Komputer otomatis mengurutkan ulang langkahnya"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Apa hubungan algoritma dengan program?",
+      "opts": [
+        "Algoritma adalah hasil akhir dari program",
+        "Algoritma tidak ada hubungannya dengan program",
+        "Program adalah cara lain menyebut algoritma",
+        "Algoritma adalah rencana langkah yang kemudian ditulis jadi program"
+      ],
+      "ans": 3,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan proses dalam program?",
+      "opts": [
+        "Data awal yang dimasukkan pengguna ke program",
+        "Hasil akhir yang ditampilkan oleh program",
+        "Pengolahan data input menjadi output yang diinginkan",
+        "Nama lain dari variabel dalam program"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Contoh proses dalam program robot adalah...",
+      "opts": [
+        "Menekan tombol on pada robot",
+        "Lampu LED menyala sebagai tanda aktif",
+        "Menghitung jarak lalu memutuskan belok atau lurus",
+        "Baterai yang terisi penuh sebelum dipakai"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan instruksi dalam program?",
+      "opts": [
+        "Nama lain dari variabel dalam program",
+        "Perintah spesifik yang diberikan ke komputer untuk dilakukan",
+        "Hasil akhir dari sebuah algoritma",
+        "Cara menghubungkan dua program berbeda"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Manakah yang bukan termasuk tipe data dasar dalam program?",
+      "opts": [
+        "int untuk bilangan bulat",
+        "boolean untuk benar atau salah",
+        "motor untuk menggerakkan roda",
+        "float untuk bilangan desimal"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan program sederhana?",
+      "opts": [
+        "Program yang hanya bisa dijalankan satu kali",
+        "Program yang tidak membutuhkan variabel apapun",
+        "Program dengan langkah sedikit yang mudah dipahami",
+        "Program yang ditulis tanpa menggunakan if-else"
+      ],
+      "ans": 2,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan debugging?",
+      "opts": [
+        "Menambah fitur baru ke dalam program",
+        "Proses mencari dan memperbaiki kesalahan dalam program",
+        "Cara mempercepat jalannya program",
+        "Cara menghapus variabel yang tidak dipakai"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Variabel dalam program digunakan untuk...",
+      "opts": [
+        "Menyimpan nilai",
+        "Menggerakkan roda",
+        "Mengisi baterai",
+        "Membaca warna"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika `x = 10`, angka 10 disebut...",
+      "opts": [
+        "Operator",
+        "Nilai",
+        "Fungsi",
+        "Perintah"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Tanda `=` dalam banyak bahasa pemrograman digunakan untuk...",
+      "opts": [
+        "Membandingkan",
+        "Menjumlahkan",
+        "Memberi nilai",
+        "Menghapus data"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Perintah yang dijalankan berulang disebut...",
+      "opts": [
+        "Percabangan",
+        "Perulangan",
+        "Variabel",
+        "Komentar"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Jika robot harus berhenti saat sensor mendeteksi benda, program membutuhkan...",
+      "opts": [
+        "Kondisi",
+        "Kabel",
+        "Baterai",
+        "Chassis"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Pernyataan `if` biasanya digunakan untuk...",
+      "opts": [
+        "Mengulang data",
+        "Memeriksa kondisi",
+        "Membuat kabel",
+        "Mengatur baterai"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Jika kondisi bernilai benar, program akan...",
+      "opts": [
+        "Mengabaikannya",
+        "Menjalankan perintah",
+        "Menghapus variabel",
+        "Mematikan komputer"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Nilai `true` dan `false` termasuk tipe data...",
+      "opts": [
+        "String",
+        "Float",
+        "Boolean",
+        "Integer"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Angka `25` termasuk contoh data...",
+      "opts": [
+        "Boolean",
+        "Integer",
+        "String",
+        "Character"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Teks `\"Robot\"` termasuk data...",
+      "opts": [
+        "String",
+        "Integer",
+        "Boolean",
+        "Float"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika program meminta pengguna memasukkan angka, angka tersebut merupakan...",
+      "opts": [
+        "Input",
+        "Output",
+        "Fungsi",
+        "Loop"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Hasil yang ditampilkan oleh program disebut...",
+      "opts": [
+        "Input",
+        "Output",
+        "Variabel",
+        "Kondisi"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Sebuah fungsi biasanya dibuat untuk...",
+      "opts": [
+        "Menyimpan baterai",
+        "Mengelompokkan perintah",
+        "Mengganti kabel",
+        "Mengukur roda"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Komentar dalam kode biasanya digunakan untuk...",
+      "opts": [
+        "Menjelaskan kode",
+        "Menggerakkan motor",
+        "Menambah tegangan",
+        "Membaca sensor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika robot harus melakukan \"maju, berhenti, maju\", maka program perlu memiliki...",
+      "opts": [
+        "Beberapa instruksi",
+        "Satu sensor saja",
+        "Dua baterai",
+        "Tiga motor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Operator `+` biasanya digunakan untuk...",
+      "opts": [
+        "Pengurangan",
+        "Perkalian",
+        "Penjumlahan",
+        "Perbandingan"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Jika `5 + 3` dijalankan dalam program, hasilnya adalah...",
+      "opts": [
+        "2",
+        "8",
+        "15",
+        "53"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Jika `10 - 4` dihitung, hasilnya adalah...",
+      "opts": [
+        "6",
+        "14",
+        "40",
+        "4"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Urutan langkah untuk menyelesaikan masalah disebut...",
+      "opts": [
+        "Algoritma",
+        "Variabel",
+        "Sensor",
+        "Output"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika robot harus bergerak setelah tombol ditekan, tombol dapat menjadi...",
+      "opts": [
+        "Input",
+        "Output",
+        "Fungsi",
+        "Variabel"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Program yang tidak memiliki kesalahan penulisan sintaks dapat...",
+      "opts": [
+        "Dibaca oleh compiler",
+        "Mengisi baterai",
+        "Mengubah sensor",
+        "Memutar roda langsung"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Saat membuat program robot, urutan instruksi penting karena...",
+      "opts": [
+        "Urutan memengaruhi tindakan",
+        "Urutan mengubah warna kabel",
+        "Urutan memperbesar baterai",
+        "Urutan mengubah ukuran motor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika sebuah perintah ditempatkan dalam perulangan, perintah tersebut dapat...",
+      "opts": [
+        "Berjalan berkali-kali",
+        "Hilang dari program",
+        "Mengubah tipe data",
+        "Menghapus sensor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika `umur = 12`, maka nama `umur` merupakan...",
+      "opts": [
+        "Nilai",
+        "Operator",
+        "Variabel",
+        "Output"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Sebuah program robot yang baik seharusnya memiliki instruksi yang...",
+      "opts": [
+        "Acak",
+        "Jelas",
+        "Berulang semua",
+        "Tidak berurutan"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Jika nilai sensor disimpan dalam variabel `jarak`, perintah berikut digunakan untuk... if (jarak < 20)",
+      "opts": [
+        "Mengubah jarak",
+        "Memeriksa kondisi jarak",
+        "Menghapus jarak",
+        "Menambah jarak"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Jika `x = 5` lalu `x = x + 3`, nilai x menjadi...",
+      "opts": [
+        "2",
+        "5",
+        "8",
+        "15"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Jika `motor = 0`, perintah tersebut biasanya digunakan untuk...",
+      "opts": [
+        "Menghentikan atau memberi nilai nol pada motor",
+        "Menambah kecepatan motor",
+        "Menghapus motor",
+        "Membalik sensor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi `else` pada percabangan?",
+      "opts": [
+        "Menjalankan pilihan lain",
+        "Mengulang program",
+        "Membuat variabel",
+        "Menghapus kondisi"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika kondisi `if` bernilai salah dan terdapat `else`, maka program akan...",
+      "opts": [
+        "Mengulang if",
+        "Menjalankan else",
+        "Menghapus variabel",
+        "Berhenti selamanya"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Jika `a = 10` dan `b = 10`, hasil dari `a == b` adalah...",
+      "opts": [
+        "True",
+        "False",
+        "10",
+        "Error"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika `a = 7` dan `b = 3`, hasil `a > b` adalah...",
+      "opts": [
+        "False",
+        "3",
+        "True",
+        "Error"
+      ],
+      "ans": 2,
+      "level": 2
+    },
+    {
+      "q": "Jika robot harus maju ketika sensor kiri dan kanan sama-sama mendeteksi garis, operator yang cocok adalah...",
+      "opts": [
+        "||",
+        "&&",
+        "!",
+        "=="
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Sebuah fungsi yang digunakan berkali-kali berguna untuk...",
+      "opts": [
+        "Mengurangi pengulangan kode",
+        "Menambah tegangan",
+        "Mengubah motor",
+        "Membaca baterai"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika fungsi `maju()` berisi perintah untuk menjalankan dua motor, pemanggilan `maju()` akan...",
+      "opts": [
+        "Menjalankan isi fungsi",
+        "Menghapus fungsi",
+        "Mengubah sensor",
+        "Menghentikan program"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa keuntungan memisahkan program menjadi beberapa fungsi?",
+      "opts": [
+        "Kode lebih mudah dikelola",
+        "Motor menjadi lebih kuat",
+        "Sensor menjadi lebih jauh",
+        "Baterai menjadi lebih besar"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika program membaca sensor terus-menerus dalam `loop()`, maka sensor akan...",
+      "opts": [
+        "Dibaca berulang",
+        "Dibaca sekali",
+        "Tidak dibaca",
+        "Terhapus"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah robot harus berhenti selama 2 detik sebelum bergerak lagi, program membutuhkan...",
+      "opts": [
+        "Delay",
+        "Array",
+        "Operator",
+        "Variabel warna"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa risiko penggunaan delay yang terlalu lama pada robot interaktif?",
+      "opts": [
+        "Respons robot menjadi lambat",
+        "Motor menjadi lebih kuat",
+        "Sensor bertambah",
+        "Program menjadi lebih pendek"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika robot harus memilih tiga tindakan berdasarkan kondisi sensor, konsep yang cocok adalah...",
+      "opts": [
+        "Percabangan",
+        "Komentar",
+        "Variabel tunggal",
+        "Konstanta"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi array dalam program?",
+      "opts": [
+        "Menyimpan beberapa nilai",
+        "Mengatur tegangan",
+        "Menggerakkan roda",
+        "Mengukur arus"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika array berisi `[10, 20, 30]`, nilai kedua adalah...",
+      "opts": [
+        "10",
+        "20",
+        "30",
+        "0"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Dalam banyak bahasa pemrograman, indeks array biasanya dimulai dari...",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "10"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika program membaca sensor lalu langsung mengatur motor berdasarkan hasilnya, alurnya adalah...",
+      "opts": [
+        "Input lalu proses lalu output",
+        "Output lalu input lalu proses",
+        "Proses lalu output lalu input",
+        "Output lalu proses lalu input"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika nilai sensor tidak sesuai harapan, langkah pertama saat mencari kesalahan program adalah...",
+      "opts": [
+        "Memeriksa nilai dan alur program",
+        "Mengganti semua motor",
+        "Menghapus semua kode",
+        "Mengganti chassis"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah variabel tidak pernah digunakan setelah dibuat, variabel tersebut...",
+      "opts": [
+        "Tidak memberi efek pada program",
+        "Selalu menggerakkan motor",
+        "Mengubah sensor",
+        "Menghentikan controller"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa tujuan memberi nama variabel yang jelas seperti `jarakDepan`?",
+      "opts": [
+        "Memudahkan membaca kode",
+        "Menambah kecepatan robot",
+        "Menghemat baterai",
+        "Menambah resolusi sensor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika robot harus mengulang gerakan selama tombol belum ditekan, konsep yang sesuai adalah...",
+      "opts": [
+        "Perulangan dengan kondisi",
+        "Komentar",
+        "Konstanta",
+        "Array kosong"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah kondisi selalu bernilai benar, perulangan berdasarkan kondisi tersebut dapat...",
+      "opts": [
+        "Terus berjalan",
+        "Selalu berhenti",
+        "Menghapus variabel",
+        "Mengubah sensor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa program robot perlu diuji secara bertahap?",
+      "opts": [
+        "Agar kesalahan lebih mudah ditemukan",
+        "Agar kode terlihat panjang",
+        "Agar baterai cepat habis",
+        "Agar motor selalu menyala"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Perhatikan kode berikut: x = 5; x = x * 2; x = x + 3. Nilai akhir x adalah...",
+      "opts": [
+        "13",
+        "10",
+        "8",
+        "15"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Perhatikan: if (jarak < 20) { motorStop(); } Jika jarak bernilai 25, maka...",
+      "opts": [
+        "Motor berhenti",
+        "Kondisi tidak terpenuhi",
+        "Program mengulang",
+        "Sensor dimatikan"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah loop tidak memiliki kondisi berhenti yang mungkin tercapai, akibatnya adalah...",
+      "opts": [
+        "Loop terus berjalan",
+        "Program langsung selesai",
+        "Sensor mati",
+        "Variabel terhapus"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Perhatikan: int x = 0; while (x < 3) { x = x + 1; } Nilai x setelah loop selesai adalah...",
+      "opts": [
+        "2",
+        "3",
+        "4",
+        "0"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Jika program membaca sensor terlalu cepat tanpa memberi waktu komponen merespons, masalah yang mungkin muncul adalah...",
+      "opts": [
+        "Pembacaan tidak sesuai",
+        "Motor bertambah besar",
+        "Program terhapus",
+        "Chassis berubah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah robot melakukan aksi berdasarkan nilai sensor sebelumnya, bukan nilai terbaru. Hal ini dapat menyebabkan...",
+      "opts": [
+        "Respons terlambat",
+        "Motor lebih kuat",
+        "Sensor lebih akurat",
+        "Program lebih pendek"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah fungsi mengubah nilai variabel global, perubahan tersebut dapat...",
+      "opts": [
+        "Terlihat di bagian lain program",
+        "Hanya terjadi di sensor",
+        "Mengubah baterai",
+        "Menghapus controller"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika kondisi berikut digunakan: if (A && B), program masuk ke blok jika...",
+      "opts": [
+        "A atau B benar",
+        "A dan B benar",
+        "A dan B salah",
+        "Hanya A salah"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Jika kondisi: if (A || B), maka blok dijalankan ketika...",
+      "opts": [
+        "Keduanya salah",
+        "Salah satu benar",
+        "Hanya A salah",
+        "Tidak ada kondisi"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Jika sensor menghasilkan nilai 0 sampai 1023, lalu program hanya membutuhkan rentang 0 sampai 100, proses mengubah rentang tersebut disebut...",
+      "opts": [
+        "Mapping",
+        "Looping",
+        "Parsing",
+        "Compiling"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika program melakukan mapping nilai sensor tetapi batas minimum dan maksimum salah, hasilnya dapat...",
+      "opts": [
+        "Tidak sesuai skala",
+        "Selalu nol",
+        "Motor mati",
+        "Program terhapus"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah robot menggunakan: if (sensor > 500) maju(); else mundur(); Jika sensor bernilai 500, robot akan...",
+      "opts": [
+        "Maju",
+        "Mundur",
+        "Berhenti",
+        "Error"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Mengapa nilai batas seperti 500 pada program sensor sebaiknya tidak tersebar di banyak tempat?",
+      "opts": [
+        "Sulit diubah",
+        "Membuat motor panas",
+        "Mengurangi tegangan",
+        "Mengubah sensor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Cara yang lebih baik untuk menyimpan nilai batas sensor adalah...",
+      "opts": [
+        "Konstanta",
+        "Komentar",
+        "Loop",
+        "Array kosong"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah program robot memiliki banyak kondisi yang saling tumpang tindih, masalah yang mungkin terjadi adalah...",
+      "opts": [
+        "Kondisi tertentu tidak pernah tercapai",
+        "Motor selalu lebih cepat",
+        "Sensor bertambah",
+        "Baterai mengisi sendiri"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika perintah berhenti diletakkan setelah perintah maju dalam urutan yang sama tanpa kondisi, robot kemungkinan...",
+      "opts": [
+        "Tidak sempat bergerak jauh",
+        "Selalu bergerak maju",
+        "Membaca sensor dua kali",
+        "Menghapus motor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah variabel lokal dibuat di dalam fungsi, variabel tersebut umumnya...",
+      "opts": [
+        "Terbatas pada ruang lingkupnya",
+        "Selalu global",
+        "Menjadi konstanta",
+        "Menjadi sensor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Apa tujuan utama state machine pada robot?",
+      "opts": [
+        "Mengatur robot berdasarkan keadaan",
+        "Mengukur tegangan",
+        "Mengubah ukuran roda",
+        "Mengatur baut"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Robot memiliki keadaan MENCARI, MENGEJAR, dan BERHENTI. Ketiganya merupakan contoh...",
+      "opts": [
+        "State",
+        "Sensor",
+        "Variabel analog",
+        "Aktuator"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot berpindah dari MENCARI ke MENGEJAR ketika objek ditemukan, pemicu perpindahan tersebut disebut...",
+      "opts": [
+        "Kondisi transisi",
+        "Output analog",
+        "Konstanta",
+        "Komentar"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika program bekerja benar sendiri tetapi gagal ketika dua fungsi berjalan bersamaan, salah satu masalah yang perlu dicurigai adalah...",
+      "opts": [
+        "Konflik sumber daya",
+        "Warna kabel",
+        "Ukuran roda",
+        "Nama sensor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika dua bagian program sama-sama mencoba mengendalikan motor pada waktu yang sama, hasilnya dapat...",
+      "opts": [
+        "Tidak terduga",
+        "Selalu benar",
+        "Selalu berhenti",
+        "Tidak berubah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Mengapa waktu eksekusi program penting dalam robot yang bergerak cepat?",
+      "opts": [
+        "Respons harus mengikuti perubahan kondisi",
+        "Agar kode lebih panjang",
+        "Agar sensor lebih besar",
+        "Agar baterai lebih berat"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot terlambat bereaksi terhadap objek yang sudah dekat, salah satu hal yang perlu diperiksa adalah...",
+      "opts": [
+        "Waktu respons program",
+        "Warna chassis",
+        "Jenis baut",
+        "Ukuran roda"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Ketika robot gagal melakukan tugas kompleks, cara debugging yang paling efektif adalah...",
+      "opts": [
+        "Memecah masalah menjadi bagian kecil",
+        "Mengganti semua komponen",
+        "Menghapus seluruh program",
+        "Menambah delay sebanyak mungkin"
+      ],
+      "ans": 0,
+      "level": 3
+    }
+  ],
+  "mechanic": [
+    {
+      "q": "Apa fungsi roda pada robot bergerak?",
+      "opts": [
+        "Mendeteksi permukaan di bawah robot",
+        "Mengubah putaran motor menjadi gerak robot",
+        "Menstabilkan sinyal dari sensor",
+        "Menyerap getaran agar sensor akurat"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Mengapa robot perlu rangka (chassis)?",
+      "opts": [
+        "Agar sensor bisa membaca data lebih cepat",
+        "Sebagai tempat menyimpan program robot",
+        "Untuk menopang dan menyatukan semua komponen robot",
+        "Agar motor mendapat arus listrik lebih stabil"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Motor servo biasanya digunakan untuk...",
+      "opts": [
+        "Memutar roda robot dengan kecepatan tinggi",
+        "Menggerakkan bagian robot ke sudut tertentu",
+        "Menghasilkan listrik dari gerakan robot",
+        "Membaca posisi roda secara otomatis"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa perbedaan utama motor DC dan motor servo?",
+      "opts": [
+        "Motor DC lebih kecil dan ringan dari servo",
+        "Servo lebih cepat berputar dibanding motor DC",
+        "Motor DC berputar terus, servo bisa dikontrol sudutnya",
+        "Motor DC butuh program khusus, servo tidak"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Baterai pada robot berfungsi sebagai...",
+      "opts": [
+        "Pengatur kecepatan semua motor",
+        "Penyimpan data dari sensor",
+        "Sumber energi listrik untuk semua komponen",
+        "Penghubung antara sensor dan controller"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Apa fungsi gear (roda gigi) pada robot?",
+      "opts": [
+        "Mendeteksi posisi roda secara presisi",
+        "Mengubah kecepatan dan torsi yang dihasilkan motor",
+        "Menstabilkan tegangan yang masuk ke motor",
+        "Menghubungkan motor dengan controller"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Mengapa robot yang berat membutuhkan motor dengan torsi lebih besar?",
+      "opts": [
+        "Karena motor besar lebih efisien dalam menggunakan daya",
+        "Karena torsi yang besar dibutuhkan untuk menggerakkan beban yang berat",
+        "Karena motor torsi besar lebih tahan terhadap panas",
+        "Karena berat robot mempengaruhi kecepatan sensor"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa keuntungan menggunakan material aluminium untuk rangka robot?",
+      "opts": [
+        "Aluminium sangat murah dibanding material lainnya",
+        "Aluminium ringan namun cukup kuat untuk menopang komponen robot",
+        "Aluminium tidak bisa berkarat meski terkena air terus menerus",
+        "Aluminium mudah diprogram untuk mengikuti bentuk robot"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan torsi pada motor robot?",
+      "opts": [
+        "Kecepatan putaran motor dalam satu menit",
+        "Gaya putar yang dihasilkan motor untuk menggerakkan beban",
+        "Tegangan minimum yang dibutuhkan motor untuk berputar",
+        "Jarak yang bisa ditempuh motor dalam satu putaran"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Kenapa robot dengan empat roda lebih stabil dari robot dua roda?",
+      "opts": [
+        "Karena empat roda bisa berputar lebih cepat",
+        "Karena distribusi berat lebih merata dan titik tumpuan lebih banyak",
+        "Karena dua roda tidak cukup untuk menopang sensor",
+        "Karena empat roda menghasilkan traksi yang sama"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa fungsi bearing (bantalan) pada robot?",
+      "opts": [
+        "Menyerap energi listrik berlebih dari motor",
+        "Mengurangi gesekan pada bagian yang berputar agar lebih lancar",
+        "Menghubungkan dua motor yang berputar berlawanan",
+        "Mengukur kecepatan putaran poros motor"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa keuntungan menggunakan roda omni pada robot?",
+      "opts": [
+        "Roda omni bisa bergerak lebih cepat dari roda biasa",
+        "Robot bisa bergerak ke segala arah tanpa perlu berputar terlebih dahulu",
+        "Roda omni tidak membutuhkan motor untuk bergerak",
+        "Robot bisa melewati rintangan lebih tinggi"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Mengapa motor stepper sering digunakan pada robot yang membutuhkan gerakan presisi?",
+      "opts": [
+        "Karena motor stepper tidak membutuhkan driver khusus",
+        "Karena bisa bergerak dalam langkah sudut tertentu secara akurat tanpa sensor tambahan",
+        "Karena motor stepper lebih ringan dari motor DC biasa",
+        "Karena kecepatan motor stepper selalu konstan"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa yang dimaksud dengan RPM pada motor robot?",
+      "opts": [
+        "Rasio daya motor terhadap beban yang dibawa",
+        "Jumlah putaran yang dilakukan motor dalam satu menit",
+        "Jarak tempuh robot untuk setiap putaran roda",
+        "Tegangan yang dibutuhkan motor per menit"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Kenapa sambungan baut dan mur lebih disukai dari lem pada robot kompetisi?",
+      "opts": [
+        "Karena baut lebih ringan dari lem struktural",
+        "Karena sambungan baut bisa dibuka dan dipasang ulang saat perbaikan",
+        "Karena lem tidak bisa menahan beban berat sama sekali",
+        "Karena baut tidak membutuhkan alat khusus untuk dipasang"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa perbedaan motor brushed dan motor brushless?",
+      "opts": [
+        "Motor brushed lebih mahal dari brushless",
+        "Motor brushed menggunakan sikat karbon, brushless tidak dan lebih efisien",
+        "Motor brushless membutuhkan lebih banyak kabel dari brushed",
+        "Motor brushed berputar lebih cepat dari brushless"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Apa fungsi shock absorber pada robot yang bergerak di medan tidak rata?",
+      "opts": [
+        "Mengukur seberapa keras guncangan yang dialami robot",
+        "Meredam getaran dan benturan agar komponen tidak rusak",
+        "Menambah kecepatan robot di medan bergelombang",
+        "Menghubungkan roda ke motor secara lebih kuat"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Mengapa penting menjaga keseimbangan berat (center of gravity) pada robot?",
+      "opts": [
+        "Agar sensor yang dipasang di atas bekerja lebih akurat",
+        "Agar robot tidak mudah terjatuh dan bergerak lebih stabil",
+        "Supaya motor bekerja pada kecepatan yang sama",
+        "Agar program controller lebih mudah ditulis"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa kegunaan timing belt pada robot dibanding rantai biasa?",
+      "opts": [
+        "Timing belt lebih kuat menahan beban berat dari rantai",
+        "Timing belt tidak memerlukan pelumasan dan lebih halus gerakannya",
+        "Timing belt bisa digunakan di suhu yang lebih tinggi",
+        "Timing belt lebih mudah dipasang tanpa alat apapun"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan payload pada robot arm?",
+      "opts": [
+        "Berat total robot termasuk semua komponen",
+        "Beban maksimum yang bisa diangkat atau dipindahkan oleh robot",
+        "Daya listrik yang dibutuhkan robot untuk bergerak",
+        "Kecepatan maksimum lengan robot saat bergerak"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Kenapa kabel pada robot perlu diatur rapi dan diikat?",
+      "opts": [
+        "Agar kabel tidak mempengaruhi pembacaan sensor magnet",
+        "Agar kabel tidak tersangkut pada bagian yang bergerak dan merusak sistem",
+        "Supaya arus listrik mengalir lebih cepat ke motor",
+        "Agar robot terlihat lebih profesional saat kompetisi"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi propeller pada robot terbang (drone)?",
+      "opts": [
+        "Mengukur ketinggian drone dari permukaan tanah",
+        "Menghasilkan gaya angkat dan dorong agar drone bisa terbang",
+        "Menstabilkan sinyal GPS pada drone",
+        "Menyeimbangkan berat baterai di dalam drone"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Mengapa robot bawah air menggunakan sealed housing untuk elektroniknya?",
+      "opts": [
+        "Agar sinyal WiFi bisa menembus air lebih jauh",
+        "Agar komponen elektronik terlindungi dari air dan tekanan air",
+        "Supaya robot bisa bergerak lebih cepat di dalam air",
+        "Agar sensor bisa membaca data lebih akurat di dalam air"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa perbedaan gripper pneumatik dan gripper elektrik pada robot?",
+      "opts": [
+        "Gripper pneumatik menggunakan listrik, elektrik menggunakan udara",
+        "Gripper pneumatik menggunakan tekanan udara, elektrik menggunakan motor atau solenoid",
+        "Gripper elektrik lebih kuat dari gripper pneumatik",
+        "Keduanya bekerja dengan cara yang sama"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi poros (shaft) pada sistem gerak robot?",
+      "opts": [
+        "Mengukur kecepatan putaran motor secara langsung",
+        "Menghubungkan motor ke roda atau komponen berputar lainnya",
+        "Menyerap energi berlebih dari motor saat berhenti",
+        "Mengubah gerakan putar menjadi gerakan naik turun"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Kenapa material plastik ABS sering digunakan untuk body robot kecil?",
+      "opts": [
+        "ABS adalah material terkuat yang tersedia untuk robot",
+        "ABS ringan, mudah dibentuk dengan 3D printer, dan cukup kuat untuk robot kecil",
+        "ABS bisa menghantarkan listrik dengan sangat baik",
+        "ABS lebih murah dari semua material lainnya"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan DOF (Degree of Freedom) pada robot arm?",
+      "opts": [
+        "Kecepatan maksimum yang bisa dicapai lengan robot",
+        "Jumlah sumbu gerak independen yang dimiliki robot arm",
+        "Berat maksimum yang bisa diangkat oleh robot arm",
+        "Jarak jangkauan lengan robot dalam satu arah"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa kegunaan roda caster pada robot bergerak?",
+      "opts": [
+        "Menambah kecepatan robot saat berbelok",
+        "Memberikan titik tumpuan tambahan tanpa mengganggu kemudi robot",
+        "Mendeteksi permukaan yang dilalui robot",
+        "Menggerakkan robot ke arah yang berlawanan"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Mengapa motor DC yang digunakan pada robot perlu dilindungi dengan flyback diode?",
+      "opts": [
+        "Agar motor berputar lebih halus dan tanpa getaran",
+        "Untuk melindungi driver motor dari lonjakan tegangan balik saat motor berhenti",
+        "Supaya motor bisa menerima sinyal PWM dengan lebih baik",
+        "Agar kecepatan motor bisa diatur lebih presisi"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan kinematik pada robot?",
+      "opts": [
+        "Studi tentang daya dan energi yang digunakan robot",
+        "Studi tentang gerak robot tanpa mempertimbangkan gaya yang menyebabkannya",
+        "Cara mengontrol motor robot dari jarak jauh",
+        "Sistem sensor untuk mendeteksi posisi robot"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa keuntungan robot beroda dibanding robot berkaki di permukaan rata?",
+      "opts": [
+        "Robot beroda bisa melewati rintangan lebih tinggi",
+        "Robot beroda lebih efisien energi dan lebih cepat di permukaan rata",
+        "Robot beroda lebih stabil di semua jenis medan",
+        "Robot beroda lebih mudah diprogram dari robot berkaki"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Kenapa mur pengunci (lock nut) digunakan pada sambungan robot yang bergetar?",
+      "opts": [
+        "Untuk mempermudah pembukaan baut saat perbaikan",
+        "Agar baut tidak longgar akibat getaran yang terjadi saat robot beroperasi",
+        "Supaya sambungan lebih ringan dari baut biasa",
+        "Karena mur pengunci lebih kuat dari mur biasa"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa perbedaan antara motor DC gearbox dan motor DC biasa?",
+      "opts": [
+        "Motor DC gearbox lebih cepat dari motor DC biasa",
+        "Motor DC gearbox memiliki rasio gigi yang menurunkan kecepatan tapi meningkatkan torsi",
+        "Motor DC biasa memiliki torsi lebih besar dari gearbox",
+        "Motor DC gearbox tidak membutuhkan controller"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Apa yang dimaksud dengan traksi pada roda robot?",
+      "opts": [
+        "Kecepatan maksimum yang bisa dicapai roda robot",
+        "Kemampuan roda untuk mencengkeram permukaan tanpa slip",
+        "Gaya yang dibutuhkan untuk menghentikan roda berputar",
+        "Jarak yang ditempuh roda dalam satu putaran penuh"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Mengapa robot arm membutuhkan counterbalance (penyeimbang)?",
+      "opts": [
+        "Agar lengan bisa bergerak lebih cepat saat mengangkat beban",
+        "Untuk mengurangi beban motor dengan menyeimbangkan berat lengan itu sendiri",
+        "Supaya sensor pada lengan bisa membaca lebih akurat",
+        "Agar lengan tidak membutuhkan program kontrol yang rumit"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa fungsi coupler (kopling) pada sistem transmisi robot?",
+      "opts": [
+        "Meningkatkan kecepatan putaran antara dua poros",
+        "Menghubungkan dua poros dan meneruskan torsi dengan meredam misalignment",
+        "Mengukur torsi yang ditransfer antara dua motor",
+        "Memutuskan koneksi motor saat robot berhenti"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Kenapa robot kompetisi sering menggunakan baterai LiPo dibanding baterai AA?",
+      "opts": [
+        "Baterai AA lebih mudah ditemukan di pasaran",
+        "LiPo memiliki energi lebih padat, lebih ringan, dan bisa memberikan arus tinggi",
+        "LiPo lebih aman dari baterai AA untuk robot",
+        "Baterai AA tidak bisa digunakan untuk motor DC"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan end-effector pada robot arm?",
+      "opts": [
+        "Controller yang mengatur gerakan lengan robot",
+        "Bagian ujung lengan robot yang berinteraksi langsung dengan objek",
+        "Sensor yang membaca posisi akhir lengan robot",
+        "Motor yang menggerakkan sendi terakhir robot arm"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Mengapa perlu melakukan perawatan berkala pada roda gigi robot?",
+      "opts": [
+        "Agar roda gigi bisa berputar dengan kecepatan lebih tinggi",
+        "Untuk mencegah keausan berlebih dan menjaga performanya tetap optimal",
+        "Supaya robot bisa mendeteksi posisi gigi dengan akurat",
+        "Agar program controller bisa mengontrol gigi dengan lebih baik"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa perbedaan antara sendi revolute dan sendi prismatik pada robot arm?",
+      "opts": [
+        "Sendi revolute bergerak lurus, prismatik berputar",
+        "Sendi revolute bergerak memutar, prismatik bergerak translasi (maju-mundur)",
+        "Keduanya bergerak dengan cara yang sama",
+        "Sendi revolute lebih kuat dari sendi prismatik"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan footprint pada desain robot?",
+      "opts": [
+        "Jejak yang ditinggalkan roda robot di permukaan",
+        "Luas area yang ditempati robot dilihat dari atas",
+        "Beban yang diterima setiap roda robot",
+        "Nama lain untuk center of gravity robot"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Kenapa robot bawah air membutuhkan thruster yang bisa berputar dua arah?",
+      "opts": [
+        "Agar robot bisa menghasilkan lebih banyak daya dorong",
+        "Agar robot bisa maju dan mundur tanpa perlu memutar badannya",
+        "Supaya sinyal kontrol thruster lebih sederhana",
+        "Agar konsumsi daya thruster lebih hemat"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan mekanisme rack and pinion pada robot?",
+      "opts": [
+        "Sistem pendingin yang menggunakan roda gigi",
+        "Mekanisme yang mengubah putaran motor menjadi gerakan linier",
+        "Cara menghubungkan dua motor secara bersamaan",
+        "Sistem transmisi yang meningkatkan torsi motor"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa keuntungan robot dengan kaki dibanding robot beroda di medan berbatu?",
+      "opts": [
+        "Robot berkaki lebih cepat di semua jenis medan",
+        "Robot berkaki bisa melangkahi rintangan dan beradaptasi dengan medan tidak rata",
+        "Robot berkaki lebih mudah dikontrol dari jarak jauh",
+        "Robot berkaki lebih hemat energi di medan berbatu"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Mengapa penting memeriksa keselarasan (alignment) roda pada robot beroda?",
+      "opts": [
+        "Agar sensor roda bisa membaca kecepatan dengan akurat",
+        "Agar robot bisa bergerak lurus tanpa membuang energi karena gesekan berlebih",
+        "Supaya roda tidak berputar lebih cepat dari yang diprogramkan",
+        "Agar baterai tidak cepat habis karena beban roda"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa fungsi worm gear pada sistem transmisi robot?",
+      "opts": [
+        "Meningkatkan kecepatan putaran dengan efisiensi tinggi",
+        "Memberikan rasio gear tinggi dan self-locking agar posisi terjaga tanpa daya motor",
+        "Menghubungkan motor ke roda secara langsung",
+        "Mengukur kecepatan rotasi motor secara presisi"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Kenapa robot medis membutuhkan material food-grade atau medical-grade?",
+      "opts": [
+        "Karena material tersebut lebih ringan dari material biasa",
+        "Karena material tersebut aman bersentuhan dengan tubuh manusia dan mudah disterilkan",
+        "Karena material tersebut lebih kuat dari baja biasa",
+        "Karena material tersebut tidak membutuhkan perawatan apapun"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan mekanisme slider-crank pada robot?",
+      "opts": [
+        "Sistem yang mengubah gerakan putar menjadi gerakan maju-mundur linier",
+        "Cara menghubungkan dua sendi robot secara bersamaan",
+        "Mekanisme pengunci untuk mencegah robot bergerak sendiri",
+        "Sistem roda gigi untuk meningkatkan torsi motor"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Mengapa penting memperhatikan IP rating (Ingress Protection) pada robot outdoor?",
+      "opts": [
+        "IP rating menentukan kecepatan maksimum robot di luar ruangan",
+        "IP rating menunjukkan seberapa tahan robot terhadap debu dan air",
+        "IP rating menentukan daya baterai yang bisa digunakan robot",
+        "IP rating mengatur program controller untuk medan luar ruangan"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Apa yang dimaksud dengan backlash pada sistem roda gigi robot?",
+      "opts": [
+        "Kecepatan balik motor saat berhenti mendadak",
+        "Celah kecil antara gigi yang menyebabkan sedikit kelonggaran saat arah gerak berbalik",
+        "Bunyi berisik yang dihasilkan gigi saat berputar cepat",
+        "Gesekan berlebih pada gigi yang sudah aus"
+      ],
+      "ans": 1,
+      "level": 3
+    },
+    {
+      "q": "Baut dan mur digunakan untuk...",
+      "opts": [
+        "Mengikat komponen",
+        "Membaca sensor",
+        "Mengatur program",
+        "Mengukur arus"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Alat yang umum digunakan untuk mengencangkan baut adalah...",
+      "opts": [
+        "Obeng",
+        "Tang",
+        "Kunci",
+        "Gunting"
+      ],
+      "ans": 2,
+      "level": 1
+    },
+    {
+      "q": "Obeng digunakan untuk...",
+      "opts": [
+        "Mengencangkan sekrup",
+        "Mengukur panjang",
+        "Memotong plat",
+        "Mengukur arus"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Komponen yang membantu poros berputar dengan lancar disebut...",
+      "opts": [
+        "Bearing",
+        "Bracket",
+        "Washer",
+        "Spacer"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Fungsi washer pada sambungan baut adalah...",
+      "opts": [
+        "Membagi tekanan",
+        "Mengubah arah motor",
+        "Mengukur torsi",
+        "Mengatur sensor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Spacer pada konstruksi robot digunakan untuk...",
+      "opts": [
+        "Memberi jarak",
+        "Mengukur arus",
+        "Menggerakkan roda",
+        "Menyimpan program"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Bracket pada robot biasanya digunakan untuk...",
+      "opts": [
+        "Menopang komponen",
+        "Mengisi baterai",
+        "Membaca sensor",
+        "Mengatur program"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Poros yang bengkok dapat menyebabkan putaran menjadi...",
+      "opts": [
+        "Tidak stabil",
+        "Lebih terang",
+        "Lebih dingin",
+        "Lebih ringan"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika sebuah baut terlalu longgar, komponen dapat...",
+      "opts": [
+        "Bergeser",
+        "Bertambah kuat",
+        "Berputar cepat",
+        "Menghasilkan listrik"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika baut terlalu kencang, salah satu risikonya adalah...",
+      "opts": [
+        "Ulir rusak",
+        "Motor membesar",
+        "Roda menyala",
+        "Sensor berubah"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Alat untuk mengukur panjang komponen disebut...",
+      "opts": [
+        "Multimeter",
+        "Penggaris",
+        "Tang",
+        "Obeng"
+      ],
+      "ans": 1,
+      "level": 1
+    },
+    {
+      "q": "Alat yang dapat mengukur ukuran dengan lebih presisi adalah...",
+      "opts": [
+        "Jangka sorong",
+        "Palu",
+        "Cutter",
+        "Tang"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Gesekan yang terlalu besar pada mekanisme dapat membuat gerakan menjadi...",
+      "opts": [
+        "Berat",
+        "Terang",
+        "Cepat",
+        "Dingin"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Pelumas pada mekanisme digunakan untuk mengurangi...",
+      "opts": [
+        "Gesekan",
+        "Tegangan",
+        "Berat",
+        "Panjang"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Komponen yang berfungsi sebagai penopang sambungan mekanik dapat berupa...",
+      "opts": [
+        "Bracket",
+        "Sensor",
+        "Buzzer",
+        "Resistor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika dua roda memiliki ukuran berbeda, gerakan robot dapat menjadi...",
+      "opts": [
+        "Tidak seimbang",
+        "Lebih terang",
+        "Lebih dingin",
+        "Tidak berbunyi"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Roda yang tidak terpasang lurus dapat membuat robot...",
+      "opts": [
+        "Bergerak menyimpang",
+        "Membaca suhu",
+        "Menghemat kabel",
+        "Mengisi baterai"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Pusat massa robot perlu diperhatikan agar robot...",
+      "opts": [
+        "Lebih stabil",
+        "Lebih terang",
+        "Lebih bersuara",
+        "Lebih panjang"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Komponen mekanik yang digunakan untuk menghubungkan poros dengan roda disebut...",
+      "opts": [
+        "Hub",
+        "Sensor",
+        "Relay",
+        "Buzzer"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika roda sulit diputar dengan tangan, kemungkinan ada masalah pada...",
+      "opts": [
+        "Mekanisme",
+        "Program",
+        "Sensor",
+        "Kabel USB"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Pemilihan material rangka robot perlu disesuaikan dengan...",
+      "opts": [
+        "Kebutuhan desain",
+        "Warna kabel",
+        "Jenis program",
+        "Nama sensor"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Rangka yang terlalu berat dapat menyebabkan robot membutuhkan...",
+      "opts": [
+        "Tenaga lebih besar",
+        "Kabel lebih pendek",
+        "Sensor lebih kecil",
+        "Program lebih sedikit"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Sambungan mekanik yang kuat membantu robot agar...",
+      "opts": [
+        "Tidak mudah lepas",
+        "Lebih mudah diprogram",
+        "Lebih cepat membaca sensor",
+        "Lebih mudah mengisi baterai"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Sebelum menjalankan robot, bagian mekanik sebaiknya diperiksa untuk memastikan...",
+      "opts": [
+        "Tidak ada bagian longgar",
+        "Semua sensor menyala",
+        "Semua program terhapus",
+        "Baterai berubah ukuran"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika sebuah komponen bergerak dan menyentuh bagian lain yang tidak seharusnya, masalah tersebut dapat disebut...",
+      "opts": [
+        "Interferensi mekanik",
+        "Input digital",
+        "Error program",
+        "Hubung singkat"
+      ],
+      "ans": 0,
+      "level": 1
+    },
+    {
+      "q": "Jika dua gear saling bersentuhan, arah putaran keduanya adalah...",
+      "opts": [
+        "Sama",
+        "Berlawanan",
+        "Acak",
+        "Tidak berubah"
+      ],
+      "ans": 1,
+      "level": 2
+    },
+    {
+      "q": "Jika gear penggerak lebih kecil daripada gear yang digerakkan, sistem biasanya menghasilkan...",
+      "opts": [
+        "Torsi lebih besar",
+        "Kecepatan lebih besar",
+        "Berat lebih kecil",
+        "Gesekan nol"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika gear penggerak lebih besar daripada gear yang digerakkan, sistem cenderung menghasilkan...",
+      "opts": [
+        "Kecepatan lebih tinggi",
+        "Torsi lebih tinggi",
+        "Beban lebih besar",
+        "Gesekan lebih tinggi"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi gearbox pada mekanisme robot?",
+      "opts": [
+        "Mengubah hubungan kecepatan dan torsi",
+        "Membaca posisi robot",
+        "Menyimpan program",
+        "Mengukur tegangan"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika robot terasa berat ketika mulai bergerak, salah satu hal mekanik yang perlu diperiksa adalah...",
+      "opts": [
+        "Gesekan",
+        "Warna kabel",
+        "Nama variabel",
+        "Ukuran sensor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa akibat roda mengalami slip saat robot bergerak?",
+      "opts": [
+        "Gerakan kurang akurat",
+        "Motor selalu berhenti",
+        "Sensor mati",
+        "Program terhapus"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Traksi roda akan dipengaruhi oleh...",
+      "opts": [
+        "Kontak roda dan permukaan",
+        "Nama program",
+        "Warna chassis",
+        "Jenis kabel USB"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika beban robot bertambah tetapi motor tetap sama, robot kemungkinan akan...",
+      "opts": [
+        "Lebih sulit bergerak",
+        "Bergerak lebih cepat",
+        "Membutuhkan sensor lebih sedikit",
+        "Menjadi lebih ringan"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa yang terjadi jika pusat beban robot terlalu tinggi?",
+      "opts": [
+        "Robot lebih mudah kehilangan kestabilan",
+        "Robot lebih cepat membaca sensor",
+        "Motor lebih dingin",
+        "Program lebih singkat"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa distribusi berat pada robot perlu diperhatikan?",
+      "opts": [
+        "Untuk menjaga kestabilan",
+        "Untuk memperbesar sensor",
+        "Untuk menghemat kode",
+        "Untuk mengubah tegangan"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika roda kanan memiliki grip jauh lebih kuat daripada roda kiri, robot dapat...",
+      "opts": [
+        "Cenderung menyimpang",
+        "Selalu berhenti",
+        "Bergerak tanpa motor",
+        "Menghasilkan tegangan"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi belt atau timing belt pada mekanisme?",
+      "opts": [
+        "Meneruskan putaran",
+        "Membaca sensor",
+        "Menyimpan data",
+        "Mengatur program"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Salah satu keuntungan transmisi belt adalah...",
+      "opts": [
+        "Dapat meneruskan putaran antar poros",
+        "Selalu menghasilkan torsi nol",
+        "Tidak membutuhkan penyetelan",
+        "Tidak mengalami gesekan"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika belt terlalu longgar, kemungkinan yang terjadi adalah...",
+      "opts": [
+        "Slip",
+        "Overclock",
+        "Short circuit",
+        "Overflow"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika belt terlalu kencang, beban pada bearing dapat...",
+      "opts": [
+        "Bertambah",
+        "Hilang",
+        "Menjadi nol",
+        "Berubah menjadi sinyal"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi bearing pada mekanisme berputar?",
+      "opts": [
+        "Mengurangi hambatan putaran",
+        "Menambah tegangan",
+        "Membaca posisi",
+        "Mengatur program"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika dua bagian mekanik saling bergesekan tanpa seharusnya, masalah tersebut dapat menyebabkan...",
+      "opts": [
+        "Keausan",
+        "Resolusi",
+        "Kompilasi",
+        "Kalibrasi"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa poros harus terpasang cukup lurus?",
+      "opts": [
+        "Agar putaran lebih stabil",
+        "Agar sensor lebih sensitif",
+        "Agar program lebih cepat",
+        "Agar baterai lebih besar"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah sambungan menggunakan baut tetapi sering mengalami getaran, sambungan dapat...",
+      "opts": [
+        "Menjadi longgar",
+        "Menjadi lebih ringan",
+        "Menghasilkan listrik",
+        "Mengubah rasio gear"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa fungsi lock nut pada sambungan mekanik?",
+      "opts": [
+        "Membantu mencegah baut longgar",
+        "Mengurangi diameter poros",
+        "Mengubah arah roda",
+        "Mengatur sensor"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah lengan robot membawa beban lebih jauh dari titik putarnya, kebutuhan torsinya cenderung...",
+      "opts": [
+        "Bertambah",
+        "Berkurang",
+        "Tetap nol",
+        "Tidak berkaitan"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Apa yang terjadi jika titik beban pada lengan dipindahkan semakin dekat ke poros?",
+      "opts": [
+        "Beban mekanik berkurang",
+        "Beban mekanik bertambah",
+        "Gear berhenti",
+        "Roda slip"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mekanisme yang mengubah gerakan putar menjadi gerakan linier dapat menggunakan...",
+      "opts": [
+        "Rack dan pinion",
+        "Bearing dan washer",
+        "Baut dan mur",
+        "Sensor dan kabel"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika sebuah mekanisme bergerak tidak mulus setelah dirakit, hal pertama yang sebaiknya diperiksa adalah...",
+      "opts": [
+        "Alignment dan gesekan",
+        "Warna kabel",
+        "Nama program",
+        "Jenis baterai"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Mengapa mekanisme robot sebaiknya diuji tanpa beban terlebih dahulu?",
+      "opts": [
+        "Untuk melihat gerakan dasar",
+        "Untuk memperbesar torsi",
+        "Untuk menghemat program",
+        "Untuk mengubah ukuran gear"
+      ],
+      "ans": 0,
+      "level": 2
+    },
+    {
+      "q": "Jika diameter roda diperbesar sementara motor tetap sama, kecepatan linear robot secara teori cenderung...",
+      "opts": [
+        "Bertambah",
+        "Berkurang",
+        "Tetap nol",
+        "Tidak mungkin bergerak"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Dengan motor yang sama, roda lebih besar biasanya membutuhkan...",
+      "opts": [
+        "Torsi lebih besar",
+        "Tegangan nol",
+        "Sensor tambahan",
+        "Gear lebih kecil"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika gear ratio dibuat lebih reduksi, keuntungan utama yang diperoleh adalah...",
+      "opts": [
+        "Torsi meningkat",
+        "Massa berkurang",
+        "Sensor bertambah",
+        "Gesekan hilang"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah lengan robot membawa beban semakin jauh dari poros, torsi yang dibutuhkan akan...",
+      "opts": [
+        "Bertambah",
+        "Berkurang",
+        "Tetap",
+        "Menjadi nol"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Mengapa beban yang sama terasa lebih berat ketika diangkat dengan lengan yang lebih panjang?",
+      "opts": [
+        "Momen bertambah",
+        "Gear mengecil",
+        "Bearing berhenti",
+        "Roda slip"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah robot memiliki pusat massa terlalu dekat dengan salah satu sisi. Saat berbelok cepat, robot lebih berisiko...",
+      "opts": [
+        "Terguling",
+        "Menghemat daya",
+        "Menambah torsi",
+        "Membaca sensor lebih cepat"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika roda kiri dan kanan memiliki diameter berbeda, tanpa kompensasi robot cenderung...",
+      "opts": [
+        "Menyimpang",
+        "Berputar sempurna",
+        "Tetap lurus",
+        "Berhenti total"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Dua roda memiliki ukuran sama tetapi salah satunya lebih licin. Saat akselerasi, kemungkinan terjadi...",
+      "opts": [
+        "Slip",
+        "Kalibrasi",
+        "Kompresi",
+        "Resonansi"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika roda sering slip saat robot mulai bergerak, salah satu solusi mekanik yang mungkin adalah...",
+      "opts": [
+        "Meningkatkan traksi",
+        "Mengurangi sensor",
+        "Menambah delay",
+        "Mengubah program"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika bearing dipasang tidak sejajar dengan poros, efek yang mungkin muncul adalah...",
+      "opts": [
+        "Gesekan meningkat",
+        "Tegangan meningkat",
+        "Program berhenti",
+        "Sensor berubah"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Dua gear dengan jumlah gigi 10 dan 30 digunakan sebagai reduksi. Jika gear 10 menjadi penggerak, gear 30 akan berputar...",
+      "opts": [
+        "Lebih lambat",
+        "Lebih cepat",
+        "Sama cepat",
+        "Tidak berputar"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Pada pasangan gear 10:30, keuntungan mekanis utama berada pada sisi...",
+      "opts": [
+        "Gear 30",
+        "Gear 10",
+        "Keduanya nol",
+        "Tidak ada"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika mekanisme robot menghasilkan suara gesekan yang sebelumnya tidak ada, hal pertama yang layak diperiksa adalah...",
+      "opts": [
+        "Alignment",
+        "Program",
+        "Sensor cahaya",
+        "Baterai"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah belt terus terlepas dari pulley, salah satu penyebab mekaniknya adalah...",
+      "opts": [
+        "Alignment buruk",
+        "Program salah",
+        "Sensor terlalu sensitif",
+        "Tegangan baterai"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Belt yang terlalu longgar dapat menyebabkan...",
+      "opts": [
+        "Slip",
+        "Torsi tak terbatas",
+        "Berat berkurang",
+        "Bearing membesar"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Belt yang terlalu kencang dapat meningkatkan...",
+      "opts": [
+        "Beban bearing",
+        "Resolusi sensor",
+        "Kecepatan program",
+        "Kapasitas baterai"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah rangka robot terlalu fleksibel, efeknya pada sistem mekanik dapat berupa...",
+      "opts": [
+        "Gerakan kurang presisi",
+        "Motor lebih kuat",
+        "Sensor lebih cepat",
+        "Program lebih stabil"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Mengapa rangka yang kaku penting untuk robot dengan gerakan presisi?",
+      "opts": [
+        "Posisi komponen lebih konsisten",
+        "Baterai lebih besar",
+        "Motor lebih ringan",
+        "Sensor tidak diperlukan"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika dua bagian mekanik yang seharusnya sejajar ternyata miring, kondisi tersebut disebut masalah...",
+      "opts": [
+        "Alignment",
+        "Boolean",
+        "Sampling",
+        "Parsing"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika sebuah sambungan bergetar terus-menerus, solusi yang tepat bukan hanya mengencangkan baut, tetapi juga mempertimbangkan...",
+      "opts": [
+        "Mekanisme pengunci",
+        "Warna chassis",
+        "Jenis sensor",
+        "Ukuran program"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah robot membutuhkan gaya besar tetapi bergerak sangat lambat. Karakter tersebut biasanya menunjukkan...",
+      "opts": [
+        "Prioritas torsi",
+        "Prioritas kecepatan",
+        "Beban nol",
+        "Traksi nol"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Sebuah robot bergerak cepat tetapi mudah kehilangan tenaga ketika membawa beban. Kemungkinan sistemnya lebih mengutamakan...",
+      "opts": [
+        "Kecepatan",
+        "Torsi",
+        "Stabilitas",
+        "Kekakuan"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika posisi baterai dipindahkan dari bagian tengah ke ujung robot, perubahan yang paling mungkin adalah...",
+      "opts": [
+        "Distribusi massa",
+        "Resolusi sensor",
+        "Rasio program",
+        "Tegangan logika"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Jika robot mudah terangkat pada bagian depan ketika berakselerasi, hal yang perlu diperiksa adalah...",
+      "opts": [
+        "Distribusi massa",
+        "Nama variabel",
+        "Sensor suhu",
+        "Ukuran kabel"
+      ],
+      "ans": 0,
+      "level": 3
+    },
+    {
+      "q": "Saat sebuah mekanisme baru selesai dirakit, pengujian tanpa beban terlebih dahulu berguna untuk...",
+      "opts": [
+        "Memeriksa gerakan dasar",
+        "Mengukur kapasitas baterai",
+        "Menentukan warna robot",
+        "Menguji program sensor"
+      ],
+      "ans": 0,
+      "level": 3
+    }
+  ]
+}
