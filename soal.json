@@ -1,12 +1,12 @@
 {
   "dasar": [
     {
-      "q": "Sistem bilangan biner merupakan sistem bilangan yang menggunakan basis...",
+      "q": "Apa pengertian paling tepat dari sebuah robot?",
       "opts": [
-        "Basis 2 (hanya angka 0 dan 1)",
-        "Basis 8 (angka 0 sampai 7)",
-        "Basis 10 (angka 0 sampai 9)",
-        "Basis 16 (angka 0 sampai F)"
+        "Alat mekanik elektronik yang dapat diprogram untuk membantu pekerjaan manusia",
+        "Hanya patung besi yang menyerupai tubuh manusia",
+        "Alat rumah tangga yang tidak membutuhkan energi listrik",
+        "Mesin yang hanya bisa bergerak maju lurus selamanya"
       ],
       "ans": 0,
       "level": 1,
@@ -14,1624 +14,324 @@
       "img_url": null
     },
     {
-      "q": "Setiap satu digit angka pada sistem bilangan biner disebut dengan istilah...",
+      "q": "Komponen yang bertindak sebagai 'otak' pada robot untuk menjalankan program adalah...",
       "opts": [
-        "Byte",
+        "Mikrokontroler (seperti board Arduino)",
+        "Baterai",
+        "Kabel jumper",
+        "Roda plastik"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Komponen output pada robot yang berfungsi untuk menghasilkan cahaya adalah...",
+      "opts": [
+        "Lampu LED (Light Emitting Diode)",
+        "Buzzer piezo",
+        "Motor DC",
+        "Resistor"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Komponen output yang berfungsi menghasilkan bunyi tit-tit atau nada peringatan pada robot adalah...",
+      "opts": [
+        "Buzzer",
+        "Lampu LED",
+        "Motor servo",
+        "Sensor cahaya"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Komponen yang digunakan untuk memutar roda agar robot bisa bergerak maju dan mundur adalah...",
+      "opts": [
+        "Motor DC",
+        "Kapasitor",
+        "Lampu LED",
+        "Buzzer"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Sumber energi listrik utama bagi robot bergerak (mobile robot) adalah...",
+      "opts": [
+        "Baterai",
+        "Kabel colokan PLN",
+        "Sinar matahari malam",
+        "Baling-baling angin"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Alat mekanik sederhana untuk menyambungkan atau memutuskan aliran listrik disebut...",
+      "opts": [
+        "Saklar (Switch)",
+        "Motor DC",
+        "Buzzer",
+        "Baterai"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Sinyal digital dalam elektronika hanya memiliki 2 kondisi, yaitu...",
+      "opts": [
+        "HIGH (1) dan LOW (0)",
+        "Merah dan Biru",
+        "Cepat dan Lambat",
+        "Kiri dan Kanan"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam sistem digital mikrokontroler, kondisi sinyal HIGH menandakan...",
+      "opts": [
+        "Adanya tegangan listrik (biasanya 5 Volt / Hidup)",
+        "Tidak ada tegangan (0 Volt / Mati)",
+        "Robot kehabisan baterai",
+        "Kabel putus"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam sistem digital mikrokontroler, kondisi sinyal LOW menandakan...",
+      "opts": [
+        "Tegangan 0 Volt (Mati / Ground)",
+        "Tegangan 100 Volt",
+        "Lampu menyala paling terang",
+        "Motor berputar kecepatan penuh"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Sistem bilangan biner merupakan sistem bilangan yang hanya terdiri dari 2 angka, yaitu...",
+      "opts": [
+        "0 dan 1",
+        "1 dan 2",
+        "1 sampai 10",
+        "0 sampai 9"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Satu digit angka pada bilangan biner (angka 0 atau 1) disebut dengan istilah...",
+      "opts": [
         "Bit (Binary Digit)",
-        "Nibble",
-        "Word"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0001?",
-      "opts": [
-        "0",
-        "1",
-        "2",
-        "4"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0010?",
-      "opts": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0011?",
-      "opts": [
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0100?",
-      "opts": [
-        "2",
-        "3",
-        "4",
-        "8"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0101?",
-      "opts": [
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0110?",
-      "opts": [
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 0111?",
-      "opts": [
-        "5",
-        "6",
-        "7",
-        "8"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1000?",
-      "opts": [
-        "4",
-        "6",
-        "8",
-        "10"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1001?",
-      "opts": [
-        "7",
-        "8",
-        "9",
-        "11"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1010?",
-      "opts": [
-        "8",
-        "10",
-        "12",
-        "14"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1011?",
-      "opts": [
-        "9",
-        "10",
-        "11",
-        "13"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1100?",
-      "opts": [
-        "10",
-        "11",
-        "12",
-        "14"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1101?",
-      "opts": [
-        "11",
-        "12",
-        "13",
-        "15"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1110?",
-      "opts": [
-        "12",
-        "13",
-        "14",
-        "16"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1111?",
-      "opts": [
-        "13",
-        "14",
-        "15",
-        "16"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan angka desimal 5 ke dalam bentuk bilangan biner 4-bit!",
-      "opts": [
-        "0100",
-        "0101",
-        "0110",
-        "0111"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan angka desimal 9 ke dalam bentuk bilangan biner 4-bit!",
-      "opts": [
-        "1000",
-        "1001",
-        "1010",
-        "1100"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan angka desimal 14 ke dalam bentuk bilangan biner 4-bit!",
-      "opts": [
-        "1100",
-        "1101",
-        "1110",
-        "1111"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan gambar berikut. Simbol diagram ini merupakan gerbang logika dasar apa?",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang AND",
-        "Gerbang NOT",
-        "Gerbang NAND"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/and_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan gambar berikut. Simbol diagram ini merupakan gerbang logika dasar apa?",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang AND",
-        "Gerbang NOT",
-        "Gerbang NOR"
+        "Byte",
+        "Hertz",
+        "Volt"
       ],
       "ans": 0,
       "level": 1,
-      "image": "assets/images/or_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Perhatikan gambar berikut. Simbol diagram segitiga dengan bulatan kecil di ujungnya ini adalah gerbang...",
+      "q": "Berapakah nilai desimal dari bilangan biner 1?",
       "opts": [
-        "Gerbang AND",
-        "Gerbang OR",
-        "Gerbang NOT (Inverter)",
-        "Gerbang Buffer"
+        "1",
+        "0",
+        "2",
+        "10"
       ],
-      "ans": 2,
+      "ans": 0,
       "level": 1,
-      "image": "assets/images/not_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Gerbang logika yang berfungsi membalikkan nilai sinyal input (dari 1 menjadi 0 atau sebaliknya) adalah gerbang...",
+      "q": "Berapakah nilai desimal dari bilangan biner 10?",
       "opts": [
+        "2",
+        "1",
+        "10",
+        "4"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 11?",
+      "opts": [
+        "3",
+        "2",
+        "11",
+        "4"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 100?",
+      "opts": [
+        "4",
+        "3",
+        "100",
+        "8"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang logika AND: Jika dua saklar dipasang seri, lampu hanya akan menyala JIKA...",
+      "opts": [
+        "KEDUA saklar ditekan bersamaan",
+        "Cukup salah satu saklar saja yang ditekan",
+        "Tidak ada saklar yang ditekan",
+        "Baterai dilepas"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang AND, jika input A = 1 dan input B = 1, maka hasil outputnya adalah...",
+      "opts": [
+        "1 (Menyala)",
+        "0 (Padam)",
+        "2",
+        "Tergantung suhu"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang AND, jika input A = 1 dan input B = 0, maka hasil outputnya adalah...",
+      "opts": [
+        "0 (Padam)",
+        "1 (Menyala)",
+        "Tidak tentu",
+        "Banjir arus"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang logika OR: Lampu akan menyala JIKA...",
+      "opts": [
+        "SALAH SATU atau KEDUA saklar ditekan",
+        "Hanya jika kedua saklar dilepas",
+        "Wajib kedua saklar mati bersamaan",
+        "Tidak ada arus listrik"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang OR, jika input A = 0 dan input B = 1, maka hasil outputnya adalah...",
+      "opts": [
+        "1 (Menyala)",
+        "0 (Padam)",
+        "Error",
+        "Mati sejenak"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang OR, kapan output bernilai 0 (Padam)?",
+      "opts": [
+        "Hanya ketika kedua input A = 0 dan B = 0",
+        "Ketika salah satu input 1",
+        "Ketika kedua input 1",
+        "Kapan saja secara acak"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang logika yang bertindak sebagai pembalik sinyal (inverter) adalah gerbang...",
+      "opts": [
+        "NOT",
         "AND",
         "OR",
-        "NOT",
-        "NAND"
+        "BUFFER"
       ],
-      "ans": 2,
+      "ans": 0,
       "level": 1,
-      "image": "assets/images/not_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Jika input gerbang NOT diberikan sinyal 1 (HIGH), maka output yang dihasilkan adalah...",
+      "q": "Jika input gerbang NOT diberi sinyal 1 (HIGH), maka output yang keluar adalah...",
       "opts": [
         "0 (LOW)",
         "1 (HIGH)",
         "2",
-        "Tetap 1"
+        "Tetap"
       ],
       "ans": 0,
       "level": 1,
-      "image": "assets/images/not_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
+      "image": null,
+      "img_url": null
     },
     {
-      "q": "Jika input gerbang NOT diberikan sinyal 0 (LOW), maka output yang dihasilkan adalah...",
+      "q": "Jika input gerbang NOT diberi sinyal 0 (LOW), maka output yang keluar adalah...",
       "opts": [
-        "0 (LOW)",
         "1 (HIGH)",
-        "-1",
-        "Tidak ada sinyal"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/not_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
-    },
-    {
-      "q": "Rumus aljabar Boolean untuk gerbang NOT dengan input A dituliskan sebagai...",
-      "opts": [
-        "Y = A . B",
-        "Y = A + B",
-        "Y = A' (atau NOT A)",
-        "Y = A ⊕ B"
-      ],
-      "ans": 2,
-      "level": 1,
-      "image": "assets/images/table_not.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/NOT_ANSI.svg"
-    },
-    {
-      "q": "Gerbang logika yang menghasilkan output 1 HANYA JIKA semua inputnya bernilai 1 adalah...",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang AND",
-        "Gerbang NOT",
-        "Gerbang NOR"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/and_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Rumus aljabar Boolean untuk gerbang AND dengan input A dan B adalah...",
-      "opts": [
-        "Y = A + B",
-        "Y = A . B",
-        "Y = A'",
-        "Y = A / B"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/and_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang AND, jika input A = 1 dan B = 1, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "2",
-        "Error"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/table_and.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang AND, jika input A = 1 dan B = 0, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "2",
-        "Tidak tentu"
+        "0 (LOW)",
+        "Mati",
+        "Minus"
       ],
       "ans": 0,
       "level": 1,
-      "image": "assets/images/table_and.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang AND, jika input A = 0 dan B = 1, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Tergantung frekuensi"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": "assets/images/table_and.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang AND, jika kedua input A = 0 dan B = 0, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Bisa 0 atau 1"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": "assets/images/table_and.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Gerbang logika yang menghasilkan output 1 jika SALAH SATU atau KEDUA inputnya bernilai 1 adalah...",
-      "opts": [
-        "Gerbang AND",
-        "Gerbang OR",
-        "Gerbang NOT",
-        "Gerbang NAND"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/or_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
-    },
-    {
-      "q": "Rumus aljabar Boolean untuk gerbang OR dengan input A dan B adalah...",
-      "opts": [
-        "Y = A . B",
-        "Y = A + B",
-        "Y = A'",
-        "Y = A / B"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/or_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang OR, jika input A = 1 dan B = 0, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "2",
-        "LOW"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/table_or.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang OR, jika input A = 0 dan B = 0, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "10"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": "assets/images/table_or.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang OR, jika kedua input A = 1 dan B = 1, maka nilai output Y adalah...",
-      "opts": [
-        "0",
-        "1",
-        "2",
-        "Off"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/table_or.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
-    },
-    {
-      "q": "Tabel yang menampilkan semua kemungkinan kombinasi nilai input beserta outputnya dinamakan...",
-      "opts": [
-        "Tabel Logaritma",
-        "Tabel Kebenaran (Truth Table)",
-        "Tabel Frekuensi",
-        "Tabel Periodik"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/table_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Simbol operasi titik (.) pada persamaan Boolean Y = A . B melambangkan operasi logika...",
-      "opts": [
-        "Penjumlahan (OR)",
-        "Perkalian Logika (AND)",
-        "Pembalikan (NOT)",
-        "Eksklusif (XOR)"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/and_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Simbol operasi tambah (+) pada persamaan Boolean Y = A + B melambangkan operasi logika...",
-      "opts": [
-        "Penjumlahan Logika (OR)",
-        "Perkalian Logika (AND)",
-        "Pembalikan (NOT)",
-        "Pembagian Logika"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": "assets/images/or_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg"
-    },
-    {
-      "q": "Jika dua saklar listrik disusun secara SERI (harus keduanya terhubung agar lampu menyala), ini identik dengan prinsip gerbang...",
-      "opts": [
-        "OR",
-        "AND",
-        "NOT",
-        "NOR"
-      ],
-      "ans": 1,
-      "level": 1,
-      "image": "assets/images/and_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg"
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 16?",
-      "opts": [
-        "10000",
-        "10001",
-        "10010",
-        "11000"
-      ],
-      "ans": 0,
-      "level": 2,
       "image": null,
       "img_url": null
     },
     {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 17?",
-      "opts": [
-        "10000",
-        "10001",
-        "10011",
-        "10101"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 18?",
-      "opts": [
-        "10001",
-        "10010",
-        "10100",
-        "11000"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 19?",
-      "opts": [
-        "10010",
-        "10011",
-        "10101",
-        "10111"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 20?",
-      "opts": [
-        "10011",
-        "10100",
-        "10101",
-        "11010"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 21?",
-      "opts": [
-        "10100",
-        "10101",
-        "10110",
-        "11001"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 22?",
-      "opts": [
-        "10101",
-        "10110",
-        "10111",
-        "11010"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 24?",
-      "opts": [
-        "10100",
-        "11000",
-        "11001",
-        "11010"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 25?",
-      "opts": [
-        "11000",
-        "11001",
-        "11010",
-        "11011"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 26?",
-      "opts": [
-        "11001",
-        "11010",
-        "11011",
-        "11100"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 27?",
-      "opts": [
-        "11010",
-        "11011",
-        "11100",
-        "11101"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 28?",
-      "opts": [
-        "11011",
-        "11100",
-        "11101",
-        "11110"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 30?",
-      "opts": [
-        "11100",
-        "11101",
-        "11110",
-        "11111"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah bentuk biner 5-bit dari angka desimal 31?",
-      "opts": [
-        "11110",
-        "11111",
-        "100000",
-        "100001"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan bilangan biner 10001 ke bentuk nilai desimal!",
-      "opts": [
-        "15",
-        "16",
-        "17",
-        "18"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan bilangan biner 10011 ke bentuk nilai desimal!",
-      "opts": [
-        "17",
-        "18",
-        "19",
-        "21"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan bilangan biner 10101 ke bentuk nilai desimal!",
-      "opts": [
-        "19",
-        "20",
-        "21",
-        "23"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan bilangan biner 11001 ke bentuk nilai desimal!",
-      "opts": [
-        "23",
-        "24",
-        "25",
-        "27"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan bilangan biner 11010 ke bentuk nilai desimal!",
-      "opts": [
-        "24",
-        "25",
-        "26",
-        "28"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Konversikan bilangan biner 11110 ke bentuk nilai desimal!",
-      "opts": [
-        "28",
-        "29",
-        "30",
-        "31"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan gambar berikut. Simbol gerbang logika dengan bulatan inversi pada output AND ini adalah...",
-      "opts": [
-        "Gerbang NOR",
-        "Gerbang NAND",
-        "Gerbang XOR",
-        "Gerbang XNOR"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Gerbang kombinasi NAND merupakan singkatan dari istilah...",
-      "opts": [
-        "Negative AND",
-        "NOT-AND",
-        "Non-AND",
-        "Next-AND"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Rumus aljabar Boolean untuk gerbang NAND dengan input A dan B adalah...",
-      "opts": [
-        "Y = A . B",
-        "Y = (A . B)'",
-        "Y = A + B",
-        "Y = (A + B)'"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang NAND, jika kedua input A = 1 dan B = 1, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang NAND, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "Tidak ada",
-        "Error"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang NAND, jika input A = 0 dan B = 0, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "-1"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan gambar berikut. Simbol gerbang logika dengan bulatan inversi pada output OR ini adalah...",
-      "opts": [
-        "Gerbang NAND",
-        "Gerbang NOR",
-        "Gerbang XOR",
-        "Gerbang XNOR"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Gerbang kombinasi NOR merupakan singkatan dari istilah...",
-      "opts": [
-        "Negative OR",
-        "NOT-OR",
-        "Non-OR",
-        "Next-OR"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Rumus aljabar Boolean untuk gerbang NOR dengan input A dan B adalah...",
-      "opts": [
-        "Y = A + B",
-        "Y = (A + B)'",
-        "Y = A . B",
-        "Y = (A . B)'"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang NOR, jika kedua input A = 0 dan B = 0, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak aktif"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang NOR, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Tergantung VCC"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang NOR, jika kedua input A = 1 dan B = 1, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan gambar berikut. Simbol gerbang dengan garis lengkung ganda di bagian inputnya ini adalah...",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang XOR",
-        "Gerbang XNOR",
-        "Gerbang NOR"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/xor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
-    },
-    {
-      "q": "Ciri utama gerbang XOR 2-input adalah outputnya bernilai 1 HANYA JIKA...",
-      "opts": [
-        "Kedua input bernilai sama",
-        "Kedua input bernilai berbeda (satu bernilai 1 dan satu bernilai 0)",
-        "Kedua input bernilai 0",
-        "Kedua input bernilai 1"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/table_xor.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
-    },
-    {
-      "q": "Simbol operasi aljabar Boolean untuk gerbang XOR dituliskan menggunakan lambang...",
-      "opts": [
-        "Titik (.)",
-        "Tambah (+)",
-        "Tambah dilingkari (⊕)",
-        "Petik (')"
-      ],
-      "ans": 2,
-      "level": 2,
-      "image": "assets/images/xor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang XOR, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tak tentu"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/table_xor.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang XOR, jika kedua input bernilai sama yaitu A = 1 dan B = 1, maka outputnya adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": "assets/images/table_xor.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan gambar berikut. Simbol gerbang XOR yang diberi bulatan inversi pada outputnya ini dinamakan...",
-      "opts": [
-        "Gerbang XOR",
-        "Gerbang XNOR",
-        "Gerbang NOR",
-        "Gerbang NAND"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/xnor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
-    },
-    {
-      "q": "Ciri utama gerbang XNOR 2-input adalah outputnya bernilai 1 HANYA JIKA...",
-      "opts": [
-        "Kedua input bernilai sama (keduanya 0 atau keduanya 1)",
-        "Kedua input bernilai beda",
-        "Hanya jika A lebih besar dari B",
-        "Hanya jika A = 1 dan B = 0"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": "assets/images/xnor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang XNOR, jika input A = 1 dan B = 1, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak aktif"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/xnor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
-    },
-    {
-      "q": "Pada gerbang XNOR, jika input A = 1 dan B = 0, maka output yang dihasilkan adalah...",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Tetap 1"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": "assets/images/xnor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
-    },
-    {
-      "q": "Dua gerbang logika yang sering dijuluki sebagai 'Gerbang Universal' (dapat membentuk semua jenis gerbang logika lain) adalah...",
-      "opts": [
-        "AND dan OR",
-        "NAND dan NOR",
-        "XOR dan XNOR",
-        "NOT dan AND"
-      ],
-      "ans": 1,
-      "level": 2,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Output gerbang AND dihubungkan langsung ke input gerbang NOT. Rangkaian gabungan ini setara dengan gerbang...",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang NOR",
-        "Gerbang NAND",
-        "Gerbang XOR"
-      ],
-      "ans": 2,
-      "level": 3,
-      "image": "assets/images/circuit_and_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Output gerbang OR dihubungkan langsung ke input gerbang NOT. Rangkaian gabungan ini setara dengan gerbang...",
-      "opts": [
-        "Gerbang AND",
-        "Gerbang NOR",
-        "Gerbang NAND",
-        "Gerbang XNOR"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_or_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Output gerbang XOR dihubungkan langsung ke input gerbang NOT. Rangkaian gabungan ini setara dengan gerbang...",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang AND",
-        "Gerbang XNOR",
-        "Gerbang NOR"
-      ],
-      "ans": 2,
-      "level": 3,
-      "image": "assets/images/circuit_xor_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Jika output dari sebuah gerbang NAND dipasangi gerbang NOT (inverter), maka fungsi keseluruhannya kembali menjadi gerbang...",
-      "opts": [
-        "Gerbang AND",
-        "Gerbang OR",
-        "Gerbang NOR",
-        "Gerbang XOR"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/nand_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg"
-    },
-    {
-      "q": "Jika output dari sebuah gerbang NOR dipasangi gerbang NOT (inverter), maka fungsi keseluruhannya kembali menjadi gerbang...",
-      "opts": [
-        "Gerbang AND",
-        "Gerbang OR",
-        "Gerbang NAND",
-        "Gerbang XNOR"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/nor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NOR_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan diagram berikut. Sebuah gerbang NAND yang kedua pin inputnya disambung menjadi satu jalur input A akan berfungsi sebagai...",
-      "opts": [
-        "Gerbang OR",
-        "Gerbang NOT (Inverter)",
-        "Gerbang XOR",
-        "Buffer sinyal"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_nand_tied.svg",
-      "img_url": null
-    },
-    {
-      "q": "Gerbang logika apa yang paling tepat dipakai sebagai 'komparator kesamaan bit' (output 1 jika kedua bit bernilai sama)?",
-      "opts": [
-        "Gerbang AND",
-        "Gerbang OR",
-        "Gerbang XOR",
-        "Gerbang XNOR"
-      ],
-      "ans": 3,
-      "level": 3,
-      "image": "assets/images/xnor_gate.svg",
-      "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg"
-    },
-    {
-      "q": "Perhatikan rangkaian diagram. Jika input A = 1 dan B = 1, berapakah output akhir Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_and_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian diagram. Jika input A = 1 dan B = 0, berapakah output akhir Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "-1"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_and_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian diagram OR + NOT. Jika input A = 0 dan B = 0, berapakah output akhir Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak aktif"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_or_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian diagram OR + NOT. Jika input A = 1 dan B = 0, berapakah output akhir Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Bisa 0 atau 1"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_or_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Input A = 0 masuk ke NOT menghasilkan X, lalu X bersama B = 1 masuk ke AND. Berapakah nilai Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Error"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_not_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Input A = 1 masuk ke NOT menghasilkan X, lalu X bersama B = 1 masuk ke AND. Berapakah nilai Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_not_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Input A = 0 masuk ke NOT menghasilkan X, lalu X bersama B = 0 masuk ke OR. Berapakah nilai Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak berubah"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_not_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan rangkaian berikut. Input A = 1 masuk ke NOT menghasilkan X, lalu X bersama B = 0 masuk ke OR. Berapakah nilai Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "10"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_not_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A OR B) AND C. Jika input A = 1, B = 0, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak stabil"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_or_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A OR B) AND C. Jika input A = 0, B = 0, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_or_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A OR B) AND C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Error"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_or_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A AND B) OR C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak terdefinisi"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_and_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A AND B) OR C. Jika input A = 1, B = 0, dan C = 0, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Error"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_and_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A AND B) OR C. Jika input A = 0, B = 0, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Off"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_and_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram XOR + NOT. Jika input A = 1 dan B = 0, berapakah output akhir Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_xor_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram XOR + NOT. Jika input A = 1 dan B = 1, berapakah output akhir Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "-1"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_xor_not.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A NAND B) OR C. Jika input A = 1, B = 1, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Off"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_nand_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A NAND B) OR C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_nand_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A NAND B) AND C. Jika input A = 1, B = 1, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_nand_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A NAND B) AND C. Jika input A = 1, B = 0, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Off"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_nand_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A NOR B) AND C. Jika input A = 0, B = 0, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Error"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_nor_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan diagram (A NOR B) AND C. Jika input A = 1, B = 0, dan C = 1, berapakah nilai output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "10"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_nor_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Diberikan persamaan Boolean Y = (A . B) + C. Jika input A = 1, B = 1, dan C = 0, berapakah nilai Y?",
-      "opts": [
-        "0",
-        "1",
-        "2",
-        "LOW"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_and_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Diberikan persamaan Boolean Y = (A + B) . C. Jika input A = 0, B = 1, dan C = 1, berapakah nilai Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "Tidak terdefinisi"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_or_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan gambar berikut. Sebuah gerbang AND memiliki 3 input: A = 1, B = 1, dan C = 0. Berapakah output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "2"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_3input_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan gambar berikut. Sebuah gerbang AND memiliki 3 input: A = 1, B = 1, dan C = 1. Berapakah output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "3"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_3input_and.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan gambar berikut. Sebuah gerbang OR memiliki 3 input: A = 0, B = 0, dan C = 1. Berapakah output Y?",
-      "opts": [
-        "0",
-        "1",
-        "LOW",
-        "01"
-      ],
-      "ans": 1,
-      "level": 3,
-      "image": "assets/images/circuit_3input_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan gambar berikut. Sebuah gerbang OR memiliki 3 input: A = 0, B = 0, dan C = 0. Berapakah output Y?",
-      "opts": [
-        "0",
-        "1",
-        "HIGH",
-        "Tidak tentu"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": "assets/images/circuit_3input_or.svg",
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 100000 (6-bit)?",
-      "opts": [
-        "30",
-        "31",
-        "32",
-        "64"
-      ],
-      "ans": 2,
-      "level": 3,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah nilai desimal dari bilangan biner 1000000 (7-bit)?",
-      "opts": [
-        "32",
-        "60",
-        "64",
-        "128"
-      ],
-      "ans": 2,
-      "level": 3,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Lakukan operasi logika AND bit demi bit (bitwise AND) antara biner 1010 dan 1100. Hasilnya adalah...",
-      "opts": [
-        "1000",
-        "1110",
-        "1100",
-        "0110"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Lakukan operasi logika OR bit demi bit (bitwise OR) antara biner 1010 dan 0101. Hasilnya adalah...",
-      "opts": [
-        "0000",
-        "1010",
-        "1111",
-        "1001"
-      ],
-      "ans": 2,
-      "level": 3,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Lakukan operasi logika NOT bit demi bit (inversi) pada bilangan biner 4-bit 1010. Hasilnya adalah...",
-      "opts": [
-        "0101",
-        "0011",
-        "1100",
-        "1111"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapakah hasil operasi logika XOR bit demi bit antara biner 1100 dan 1010?",
-      "opts": [
-        "0110",
-        "1110",
-        "1000",
-        "0000"
-      ],
-      "ans": 0,
-      "level": 3,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Apa fungsi dari perintah pinMode(13, OUTPUT) pada pemrograman mikrokontroler?",
-      "opts": [
-        "Mengatur pin 13 sebagai pin keluaran (output) untuk mengalirkan sinyal ke komponen",
-        "Membaca nilai analog dari sensor di pin 13",
-        "Mematikan daya mikrokontroler di pin 13",
-        "Menyimpan nilai data angka 13 ke dalam memori permanen"
+      "q": "Kabel kecil berwarna-warni yang dipakai merangkai komponen robot dinamakan kabel...",
+      "opts": [
+        "Kabel Jumper",
+        "Kabel Fiber Optik",
+        "Kabel HDMI",
+        "Kabel VGA"
       ],
       "ans": 0,
       "level": 1,
@@ -1639,12 +339,12 @@
       "img_url": null
     },
     {
-      "q": "Apa fungsi dari perintah pinMode(2, INPUT) pada board mikrokontroler?",
+      "q": "Dalam standar rangkaian robot, kabel kutub negatif (Ground / GND) biasanya berwarna...",
       "opts": [
-        "Mengatur pin 2 sebagai pin masukan (input) untuk menerima sinyal dari sensor/tombol",
-        "Mengirimkan arus listrik tegangan tinggi ke pin 2",
-        "Menghubungkan pin 2 langsung ke ground (GND)",
-        "Mengatur putaran motor servo pada pin 2"
+        "Hitam",
+        "Merah",
+        "Kuning",
+        "Putih"
       ],
       "ans": 0,
       "level": 1,
@@ -1652,12 +352,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan baris kode: int ledPin = 13; Apa tipe data dari variabel tersebut dan apa nilainya?",
+      "q": "Dalam standar rangkaian robot, kabel kutub positif tegangan (VCC / 5V) biasanya berwarna...",
       "opts": [
-        "Tipe data int (bilangan bulat) dengan nilai 13",
-        "Tipe data float (desimal) dengan nilai 13.0",
-        "Tipe data boolean dengan nilai benar",
-        "Tipe data string dengan nilai teks '13'"
+        "Merah",
+        "Hitam",
+        "Abu-abu",
+        "Coklat tua"
       ],
       "ans": 0,
       "level": 1,
@@ -1665,12 +365,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan inisialisasi berikut: float suhuRuangan = 28.5; Mengapa tipe data float digunakan?",
+      "q": "Apa fungsi dari perintah pinMode(13, OUTPUT) pada Arduino?",
       "opts": [
-        "Karena menyimpan angka pecahan/desimal (ada koma)",
-        "Karena hanya bernilai BENAR atau SALAH",
-        "Karena hanya dapat menyimpan satu huruf",
-        "Karena nilainya tidak boleh berubah selamanya"
+        "Menjadikan pin 13 sebagai jalur keluar sinyal (misal untuk menyalakan LED)",
+        "Membaca suhu ruangan di pin 13",
+        "Mematikan fungsi mikrokontroler",
+        "Menghapus kode program"
       ],
       "ans": 0,
       "level": 1,
@@ -1678,12 +378,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode: bool robotAktif = true; Berapa banyak kemungkinan nilai yang dapat disimpan oleh tipe data bool?",
+      "q": "Apa fungsi dari perintah pinMode(2, INPUT) pada Arduino?",
       "opts": [
-        "Hanya 2 nilai: true (benar/1) atau false (salah/0)",
-        "Semua angka bulat dari 0 sampai 255",
-        "Semua bilangan pecahan tak hingga",
-        "Kumpulan kalimat teks bebas"
+        "Menjadikan pin 2 sebagai jalur masuk untuk menerima sinyal dari tombol/sensor",
+        "Mengirim daya listrik besar ke pin 2",
+        "Memutar motor servo",
+        "Menghubungkan ke speaker"
       ],
       "ans": 0,
       "level": 1,
@@ -1691,12 +391,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode berikut: char statusGigi = 'N'; Tanda yang digunakan untuk mengapit nilai tipe data char adalah...",
+      "q": "Apa yang terjadi saat kita menjalankan perintah digitalWrite(13, HIGH); ?",
       "opts": [
-        "Tanda petik tunggal (' ')",
-        "Tanda petik ganda (\" \")",
-        "Tanda kurung siku ([ ])",
-        "Tanda kurung kurawal ({ })"
+        "Lampu LED di pin 13 akan menyala",
+        "Lampu LED di pin 13 akan padam",
+        "Pin 13 akan terbakar",
+        "Robot akan mundur"
       ],
       "ans": 0,
       "level": 1,
@@ -1704,12 +404,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan deklarasi: String namaRobot = \"MANSA_ROBOT\"; Tipe data String digunakan untuk menyimpan...",
+      "q": "Apa yang terjadi saat kita menjalankan perintah digitalWrite(13, LOW); ?",
       "opts": [
-        "Kumpulan teks kata atau kalimat",
-        "Bilangan bulat tanpa desimal",
-        "Nilai logika biner tunggal",
-        "Frekuensi gelombang suara"
+        "Lampu LED di pin 13 akan padam",
+        "Lampu LED di pin 13 akan menyala terang",
+        "Program akan berhenti total",
+        "Buzzer akan berbunyi keras"
       ],
       "ans": 0,
       "level": 1,
@@ -1717,38 +417,12 @@
       "img_url": null
     },
     {
-      "q": "Apa fungsi dari perintah digitalWrite(13, HIGH)?",
-      "opts": [
-        "Memberi tegangan output (5V) ke pin 13 sehingga LED menyala",
-        "Memutuskan arus dan memberikan 0V ke pin 13",
-        "Membaca input frekuensi di pin 13",
-        "Menghapus program yang ada di pin 13"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Apa fungsi dari perintah digitalWrite(13, LOW)?",
-      "opts": [
-        "Memutuskan tegangan (memberikan 0V) pada pin 13 sehingga LED mati",
-        "Menyalakan LED dengan kecerahan maksimal",
-        "Menggandakan arus listrik pada pin 13",
-        "Mengubah fungsi pin 13 menjadi sensor suhu"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Berapa lama program akan berhenti sementara jika diberi instruksi delay(1000); ?",
+      "q": "Berapa lama robot akan berhenti sejenak jika diberi perintah delay(1000); ?",
       "opts": [
         "1 detik (1000 milidetik)",
         "10 detik",
         "0.1 detik",
-        "100 detik"
+        "1 menit"
       ],
       "ans": 0,
       "level": 1,
@@ -1756,7 +430,7 @@
       "img_url": null
     },
     {
-      "q": "Jika kita ingin membuat lampu LED menyala jeda selama setengah detik, perintah delay yang tepat adalah...",
+      "q": "Jika kita ingin memberi jeda waktu setengah detik, perintah delay yang benar adalah...",
       "opts": [
         "delay(500);",
         "delay(50);",
@@ -1769,12 +443,12 @@
       "img_url": null
     },
     {
-      "q": "Kapan blok fungsi void setup() dijalankan oleh mikrokontroler?",
+      "q": "Blok kode void setup() pada program Arduino dieksekusi sebanyak...",
       "opts": [
-        "Tepat satu kali saat robot pertama kali dinyalakan atau di-reset",
-        "Berulang-ulang tanpa henti selama robot menyala",
-        "Hanya saat tombol darurat ditekan",
-        "Setiap 1 menit sekali secara otomatis"
+        "Hanya 1 kali saat robot pertama kali dinyalakan",
+        "Berulang-ulang tanpa henti",
+        "Setiap 1 menit sekali",
+        "Hanya jika ada sensor mendeteksi"
       ],
       "ans": 0,
       "level": 1,
@@ -1782,12 +456,12 @@
       "img_url": null
     },
     {
-      "q": "Apa fungsi utama dari blok void loop() pada sketch mikrokontroler?",
+      "q": "Blok kode void loop() pada program Arduino berfungsi untuk...",
       "opts": [
-        "Mengeksekusi perintah di dalamnya secara berulang-ulang terus-menerus",
-        "Hanya mengeksekusi instruksi satu kali lalu mematikan robot",
-        "Mengatur koneksi internet WiFi pada board",
-        "Menghapus memori program setelah selesai"
+        "Menjalankan perintah secara berulang-ulang terus menerus",
+        "Menjalankan perintah 1 kali saja lalu mati",
+        "Mengatur jam pada komputer",
+        "Memformat memori robot"
       ],
       "ans": 0,
       "level": 1,
@@ -1795,12 +469,12 @@
       "img_url": null
     },
     {
-      "q": "Apa fungsi tanda titik koma ( ; ) di akhir setiap baris instruksi coding C/C++?",
+      "q": "Perhatikan kode: int jumlahRoda = 4; Tipe data int digunakan untuk menyimpan...",
       "opts": [
-        "Sebagai penanda akhir dari satu baris instruksi/pernyataan (statement)",
-        "Sebagai tanda untuk memulai perhitungan matematika",
-        "Sebagai komentar yang tidak dibaca oleh compiler",
-        "Sebagai tanda jeda waktu satu detik"
+        "Bilangan bulat (seperti 1, 4, 10)",
+        "Bilangan pecahan koma",
+        "Kumpulan kalimat panjang",
+        "Suara audio"
       ],
       "ans": 0,
       "level": 1,
@@ -1808,12 +482,12 @@
       "img_url": null
     },
     {
-      "q": "Tanda apa yang digunakan untuk menuliskan komentar satu baris yang tidak akan dieksekusi oleh mesin?",
+      "q": "Perhatikan kode: float suhu = 26.5; Tipe data float digunakan karena nilainya...",
       "opts": [
-        "// (garis miring ganda)",
-        "## (pagar ganda)",
-        "$$ (dolar ganda)",
-        "** (bintang ganda)"
+        "Merupakan bilangan desimal / ada koma pecahan",
+        "Hanya bernilai benar atau salah",
+        "Hanya satu huruf alfabet",
+        "Tidak boleh dihitung matematika"
       ],
       "ans": 0,
       "level": 1,
@@ -1821,12 +495,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode: const int PIN_BUZZER = 8; Kata kunci const artinya...",
+      "q": "Perhatikan kode: bool saklar = true; Tipe data bool hanya bisa bernilai...",
       "opts": [
-        "Nilai variabel bersifat tetap/konstan dan tidak dapat diubah selama program berjalan",
-        "Variabel akan bertambah nilainya secara otomatis",
-        "Variabel hanya aktif saat sensor mendeteksi objek",
-        "Variabel tersebut disimpan di server cloud"
+        "true (benar) atau false (salah)",
+        "Angka berapapun dari 0 sampai 1000",
+        "Kumpulan huruf nama robot",
+        "Warna kabel"
       ],
       "ans": 0,
       "level": 1,
@@ -1834,12 +508,12 @@
       "img_url": null
     },
     {
-      "q": "Dalam pemrograman mikrokontroler, apa perbedaan tanda '=' dan '==' ?",
+      "q": "Perhatikan kode: String nama = \"Mansa\"; Tipe data String digunakan untuk menyimpan...",
       "opts": [
-        "'=' untuk mengisi nilai ke variabel, sedangkan '==' untuk membandingkan kesamaan dua nilai",
-        "'=' untuk perbandingan, sedangkan '==' untuk mengisi nilai",
-        "Kedua tanda memiliki fungsi yang persis sama tanpa perbedaan",
-        "'==' digunakan khusus untuk operasi pembagian"
+        "Teks kata atau kalimat",
+        "Angka pecahan saja",
+        "Status tombol ON/OFF",
+        "Frekuensi nada buzzer"
       ],
       "ans": 0,
       "level": 1,
@@ -1847,7 +521,46 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode berikut: int skor = 10; skor = skor + 5; Berapakah nilai akhir dari variabel skor?",
+      "q": "Tanda apa yang WAJIB diletakkan di akhir setiap baris pernyataan coding C/C++?",
+      "opts": [
+        "Titik koma ( ; )",
+        "Tanda seru ( ! )",
+        "Tanda tanya ( ? )",
+        "Titik dua ( : )"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Tanda apa yang digunakan untuk membuat catatan / komentar satu baris di kode Arduino?",
+      "opts": [
+        "// (dua garis miring)",
+        "## (dua pagar)",
+        "@@ (dua keong)",
+        "?? (dua tanda tanya)"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Simbol yang digunakan untuk mengelilingi isi blok kode sebuah fungsi adalah...",
+      "opts": [
+        "Kurung kurawal { }",
+        "Kurung siku [ ]",
+        "Tanda petik \" \"",
+        "Garis tegak | |"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: int skor = 10; skor = skor + 5; Berapakah nilai skor sekarang?",
       "opts": [
         "15",
         "10",
@@ -1860,12 +573,12 @@
       "img_url": null
     },
     {
-      "q": "Simbol apakah yang digunakan untuk membungkus blok kode sebuah fungsi di C/C++?",
+      "q": "Perhatikan kode: int hitung = 0; hitung++; Perintah hitung++ artinya nilai variabel...",
       "opts": [
-        "Kurung kurawal { }",
-        "Kurung siku [ ]",
-        "Tanda kutip \" \"",
-        "Tanda kurung biasa ( )"
+        "Bertambah 1 (menjadi 1)",
+        "Berkurang 1 (menjadi -1)",
+        "Tetap 0",
+        "Dikalikan 2"
       ],
       "ans": 0,
       "level": 1,
@@ -1873,25 +586,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode: int hitung = 0; hitung++; Berapakah nilai variabel hitung setelah baris tersebut dieksekusi?",
+      "q": "Sensor ultrasonik (seperti HC-SR04) pada robot berfungsi untuk...",
       "opts": [
-        "1 (bertambah satu)",
-        "0 (tidak berubah)",
-        "2 (bertambah dua)",
-        "-1 (berkurang satu)"
-      ],
-      "ans": 0,
-      "level": 1,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Apa fungsi dari instruksi digitalRead(pin)?",
-      "opts": [
-        "Membaca sinyal logika digital pada pin (menghasilkan nilai HIGH atau LOW)",
-        "Mengirimkan tegangan analog variabel dari 0V hingga 5V",
-        "Mengubah fungsi pin menjadi output daya motor",
-        "Menghitung frekuensi sinyal radio yang masuk"
+        "Mengukur jarak benda/halangan di depan robot",
+        "Mengukur suhu udara ruangan",
+        "Mendeteksi warna lantai",
+        "Merekam suara manusia"
       ],
       "ans": 0,
       "level": 2,
@@ -1899,12 +599,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan instruksi: if (digitalRead(tombol) == HIGH) { ... } Kapan kode di dalam kurung kurawal akan dijalankan?",
+      "q": "Gelombang yang dipancarkan oleh sensor ultrasonik untuk mendeteksi benda adalah...",
       "opts": [
-        "Hanya ketika tombol dalam kondisi aktif/ditekan (berlogika HIGH)",
-        "Hanya ketika tombol dalam kondisi terlepas (LOW)",
-        "Secara terus-menerus tanpa memedulikan tombol",
-        "Hanya sekali saat mikrokontroler pertama dinyalakan"
+        "Gelombang suara frekuensi tinggi (ultrasonik)",
+        "Gelombang sinar X",
+        "Sinar laser merah",
+        "Gelombang radio FM"
       ],
       "ans": 0,
       "level": 2,
@@ -1912,12 +612,389 @@
       "img_url": null
     },
     {
-      "q": "Fungsi analogRead(A0) pada ADC 10-bit mikrokontroler menghasilkan rentang nilai angka antara...",
+      "q": "Sensor garis inframerah (IR Sensor) pada robot pengikut garis berfungsi untuk membedakan...",
+      "opts": [
+        "Warna hitam dan putih pada lintasan",
+        "Jarak lubang jurang 5 meter",
+        "Kecepatan angin",
+        "Berat beban robot"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Sensor cahaya LDR (Light Dependent Resistor) akan berubah hambatannya jika terkena...",
+      "opts": [
+        "Intensitas cahaya terang atau gelap",
+        "Tetesan air",
+        "Getaran roda",
+        "Suhu panas"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa keunggulan utama motor servo dibanding motor DC biasa?",
+      "opts": [
+        "Dapat diatur sudut perputarannya dengan presisi (misal 0 sampai 180 derajat)",
+        "Hanya bisa berputar searah jarum jam",
+        "Tidak membutuhkan tegangan listrik",
+        "Ukurannya selalu raksasa"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Jika kedua roda (kiri dan kanan) robot berputar maju bersamaan dengan kecepatan sama, robot akan...",
+      "opts": [
+        "Bergerak lurus ke depan",
+        "Belok tajam ke kanan",
+        "Berputar di tempat",
+        "Mundur perlahan"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Agar robot beroda bisa berbelok ke kanan, tindakan pada kedua roda adalah...",
+      "opts": [
+        "Roda kiri berputar maju, roda kanan berhenti atau mundur",
+        "Roda kanan berputar maju, roda kiri berhenti",
+        "Kedua roda berputar mundur bersamaan",
+        "Kedua roda dimatikan"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Agar robot beroda bisa berbelok ke kiri, tindakan pada kedua roda adalah...",
+      "opts": [
+        "Roda kanan berputar maju, roda kiri berhenti atau mundur",
+        "Roda kiri berputar maju, roda kanan berhenti",
+        "Kedua roda berputar maju kencang",
+        "Mematikan baterai"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Driver motor (seperti modul L298N) dipasang di antara mikrokontroler dan motor berfungsi untuk...",
+      "opts": [
+        "Mengatur arus daya dan arah putaran motor dengan aman",
+        "Mengubah suara menjadi cahaya",
+        "Mengukur jarak halangan",
+        "Menyimpan baris coding"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Papan berlubang yang digunakan untuk merangkai komponen robot tanpa perlu disolder disebut...",
+      "opts": [
+        "Breadboard (Project Board)",
+        "Keyboard",
+        "Motherboard PC",
+        "Skateboard"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapa tegangan output standar yang umum disediakan pin 5V pada Arduino?",
+      "opts": [
+        "5 Volt",
+        "220 Volt",
+        "12 Volt",
+        "0.5 Volt"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pin GND pada mikrokontroler bertindak sebagai jalur...",
+      "opts": [
+        "Ground (Kutub negatif / 0 Volt)",
+        "Tegangan positif tinggi",
+        "Keluaran suara",
+        "Penerima sinyal satelit"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Mengapa lampu LED perlu dipasangi resistor saat dihubungkan ke sumber 5V?",
+      "opts": [
+        "Membatasi arus listrik agar LED tidak putus / terbakar",
+        "Agar lampu bisa berubah warna otomatis",
+        "Agar tegangan naik menjadi 10V",
+        "Menjadikan lampu bisa berbunyi"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang logika NAND merupakan singkatan dari istilah...",
+      "opts": [
+        "NOT AND (kebalikan dari gerbang AND)",
+        "NEW AND",
+        "NEXT AND",
+        "NO AND"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang NAND, output akan bernilai 0 (padam) HANYA JIKA...",
+      "opts": [
+        "Kedua input bernilai 1 semua",
+        "Kedua input bernilai 0 semua",
+        "Salah satu input bernilai 0",
+        "Baterai dilepas"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang logika NOR merupakan singkatan dari istilah...",
+      "opts": [
+        "NOT OR (kebalikan dari gerbang OR)",
+        "NON OR",
+        "NEXT OR",
+        "NEAR OR"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang NOR, output akan bernilai 1 (menyala) HANYA JIKA...",
+      "opts": [
+        "Kedua input bernilai 0 semua",
+        "Kedua input bernilai 1 semua",
+        "Salah satu input bernilai 1",
+        "Input berganti-ganti"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang XOR (Exclusive OR) akan menghasilkan output 1 JIKA...",
+      "opts": [
+        "Kedua inputnya BERBEDA (satu bernilai 1 dan satu bernilai 0)",
+        "Kedua inputnya bernilai 1 bersamaan",
+        "Kedua inputnya bernilai 0 bersamaan",
+        "Kabel input dilepas"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang XOR, jika input A = 1 dan input B = 1, maka hasil outputnya adalah...",
+      "opts": [
+        "0 (karena inputnya sama)",
+        "1",
+        "2",
+        "Error"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 101?",
+      "opts": [
+        "5",
+        "4",
+        "6",
+        "7"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 110?",
+      "opts": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 111?",
+      "opts": [
+        "7",
+        "6",
+        "8",
+        "9"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1000?",
+      "opts": [
+        "8",
+        "7",
+        "10",
+        "16"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Fungsi digitalRead(pin) digunakan untuk...",
+      "opts": [
+        "Membaca kondisi sinyal digital (apakah sedang HIGH atau LOW)",
+        "Menyalakan lampu LED",
+        "Mengatur kecepatan motor",
+        "Menghitung waktu detik"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: if (digitalRead(tombol) == HIGH) { ... } Kapan perintah di dalam kurung kurawal dijalankan?",
+      "opts": [
+        "Hanya saat tombol ditekan (sinyal HIGH)",
+        "Hanya saat tombol dilepas (sinyal LOW)",
+        "Terus menerus tanpa henti",
+        "Hanya saat baterai lemah"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Struktur if ... else digunakan dalam program ketika kita ingin...",
+      "opts": [
+        "Membuat pilihan: jika kondisi benar lakukan A, jika salah lakukan B",
+        "Mengulang perintah 100 kali",
+        "Mematikan fungsi mikrokontroler",
+        "Membaca koordinat GPS"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perintah Serial.begin(9600); pada blok setup() bertujuan untuk...",
+      "opts": [
+        "Membuka jalur komunikasi teks ke komputer dengan kecepatan 9600 bps",
+        "Mengatur kecepatan motor ke 9600 RPM",
+        "Menunda program selama 9600 detik",
+        "Menyalakan 9600 lampu LED"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perintah Serial.println(\"Mansa Bot\"); akan...",
+      "opts": [
+        "Menampilkan teks 'Mansa Bot' di layar Serial Monitor laptop lalu ganti baris",
+        "Membunyikan speaker robot",
+        "Menghidupkan motor penggerak",
+        "Menghapus kode di mikrokontroler"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam kondisi: if (sensorKiri == HIGH && sensorKanan == HIGH) Simbol '&&' artinya...",
+      "opts": [
+        "DAN (kedua sensor harus sama-sama bernilai HIGH)",
+        "ATAU (cukup salah satu sensor saja yang HIGH)",
+        "BUKAN (membalikkan nilai)",
+        "PEMBAGIAN nilai sensor"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam kondisi: if (sensorA == HIGH || sensorB == HIGH) Simbol '||' artinya...",
+      "opts": [
+        "ATAU (cukup salah satu atau kedua sensor bernilai HIGH)",
+        "DAN (wajib kedua sensor bernilai HIGH)",
+        "TIDAK SAMA DENGAN",
+        "PENGURANGAN nilai"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: bool status = false; status = !status; Berapakah nilai variabel status sekarang?",
+      "opts": [
+        "true (karena tanda '!' membalikkan false jadi true)",
+        "false",
+        "0",
+        "null"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Fungsi analogRead(A0) pada pin analog Arduino menghasilkan rentang nilai antara...",
       "opts": [
         "0 sampai 1023",
         "0 sampai 255",
-        "0 sampai 100",
-        "0 atau 1 saja"
+        "0 atau 1 saja",
+        "0 sampai 100"
       ],
       "ans": 0,
       "level": 2,
@@ -1925,12 +1002,12 @@
       "img_url": null
     },
     {
-      "q": "Berapakah rentang nilai parameter kecerahan/kecepatan pada fungsi output PWM analogWrite(pin, nilai)?",
+      "q": "Perintah analogWrite(pinLED, 255); akan membuat lampu LED menyala...",
       "opts": [
-        "0 sampai 255 (resolusi 8-bit)",
-        "0 sampai 1023",
-        "0 sampai 100",
-        "0 sampai 5000"
+        "Paling terang (daya maksimal 100%)",
+        "Redup 50%",
+        "Mati padam total",
+        "Berkedip 255 kali"
       ],
       "ans": 0,
       "level": 2,
@@ -1938,12 +1015,12 @@
       "img_url": null
     },
     {
-      "q": "Jika sebuah motor DC dikendalikan dengan analogWrite(pinMotor, 127); berapa persen perkiraan kecepatan motor terhadap daya maksimum?",
+      "q": "Perintah analogWrite(pinMotor, 127); akan mengatur kecepatan motor ke sekitar...",
       "opts": [
-        "Sekitar 50% (setengah dari daya penuh)",
-        "Tepat 100% (daya maksimum)",
-        "Sekitar 25% (seperempat daya)",
-        "0% (motor berhenti total)"
+        "50% (setengah dari kecepatan penuh)",
+        "100% (kecepatan maksimal)",
+        "0% (motor mati)",
+        "10% saja"
       ],
       "ans": 0,
       "level": 2,
@@ -1951,12 +1028,12 @@
       "img_url": null
     },
     {
-      "q": "Apa tujuan dari instruksi Serial.begin(9600); pada void setup()?",
+      "q": "Perintah analogWrite(pinLED, 0); akan membuat lampu LED...",
       "opts": [
-        "Memulai komunikasi serial antara board dan komputer pada baud rate 9600 bps",
-        "Mengatur kecepatan putaran motor servo ke 9600 RPM",
-        "Menunda program selama 9600 milidetik",
-        "Mengalokasikan memori RAM sebesar 9600 byte"
+        "Padam (daya 0%)",
+        "Sangat terang",
+        "Berganti warna",
+        "Banjir arus"
       ],
       "ans": 0,
       "level": 2,
@@ -1964,12 +1041,12 @@
       "img_url": null
     },
     {
-      "q": "Apa perbedaan antara perintah Serial.print() dan Serial.println()?",
+      "q": "Apa fungsi direktif #include <Servo.h> di baris paling atas sketch Arduino?",
       "opts": [
-        "Serial.println() otomatis menambahkan baris baru (Enter) di akhir teks, sedangkan Serial.print() tidak",
-        "Serial.print() hanya bisa mencetak angka, Serial.println() hanya mencetak huruf",
-        "Serial.print() mengirim data ke Bluetooth, Serial.println() ke USB",
-        "Keduanya tidak memiliki perbedaan fungsi"
+        "Memasukkan library Servo agar kita bisa memakai perintah pengontrol motor servo",
+        "Menyalakan servo secara otomatis",
+        "Mengunci posisi servo ke 0 derajat",
+        "Menghubungkan servo ke Bluetooth"
       ],
       "ans": 0,
       "level": 2,
@@ -1977,12 +1054,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kondisi: if (sensorDepan == HIGH && sensorBelakang == HIGH) Simbol '&&' menyatakan operasi logika...",
+      "q": "Perintah myservo.attach(9); bertujuan untuk...",
       "opts": [
-        "AND (keduanya harus bernilai benar agar aksi dijalankan)",
-        "OR (salah satu benar sudah cukup)",
-        "NOT (membalikkan nilai sensor)",
-        "XOR (hanya satu yang boleh bernilai benar)"
+        "Menghubungkan kabel sinyal motor servo ke pin digital 9",
+        "Menggerakkan servo 9 kali",
+        "Mengukur voltase pin 9",
+        "Menonaktifkan pin 9"
       ],
       "ans": 0,
       "level": 2,
@@ -1990,12 +1067,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kondisi: if (sensorKiri == HIGH || sensorKanan == HIGH) Simbol '||' menyatakan operasi logika...",
+      "q": "Perintah myservo.write(90); akan menggerakkan motor servo ke posisi sudut...",
       "opts": [
-        "OR (cukup salah satu atau kedua sensor mendeteksi objek)",
-        "AND (wajib kedua sensor mendeteksi objek)",
-        "NOT (kedua sensor harus mati)",
-        "NAND (kedua sensor tidak boleh aktif bersamaan)"
+        "90 derajat (posisi tengah)",
+        "0 derajat (sudut minimal)",
+        "180 derajat (sudut maksimal)",
+        "360 derajat putaran penuh"
       ],
       "ans": 0,
       "level": 2,
@@ -2003,12 +1080,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode: bool statusLED = false; statusLED = !statusLED; Berapakah nilai variabel statusLED sekarang?",
+      "q": "Perintah myservo.write(0); akan menggerakkan motor servo ke posisi sudut...",
       "opts": [
-        "true (karena operator '!' membalikkan nilai false menjadi true)",
-        "false (tidak berubah)",
-        "0 (menjadi angka nol)",
-        "null (kosong tanpa nilai)"
+        "0 derajat",
+        "90 derajat",
+        "180 derajat",
+        "Berputar terus tanpa henti"
       ],
       "ans": 0,
       "level": 2,
@@ -2016,12 +1093,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan deklarasi array: int sensorGaris[3] = {10, 20, 30}; Berapakah nilai dari sensorGaris[0]?",
+      "q": "Perhatikan array: int rodaPins[2] = {5, 6}; Berapakah nilai rodaPins[0]?",
       "opts": [
-        "10 (karena indeks array dimulai dari angka 0)",
-        "20",
-        "30",
-        "3"
+        "5 (karena indeks array dimulai dari angka 0)",
+        "6",
+        "2",
+        "0"
       ],
       "ans": 0,
       "level": 2,
@@ -2029,12 +1106,12 @@
       "img_url": null
     },
     {
-      "q": "Dalam bahasa C/C++ pada mikrokontroler, indeks pertama dari sebuah array selalu dimulai dari angka...",
+      "q": "Dalam pemrograman C/C++, nomor indeks urutan pertama pada array selalu diawali dengan angka...",
       "opts": [
         "0",
         "1",
         "-1",
-        "10"
+        "2"
       ],
       "ans": 0,
       "level": 2,
@@ -2042,12 +1119,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan struktur: if (nilai > 80) { maju(); } else { stop(); } Kapan fungsi stop() akan dipanggil?",
+      "q": "Perhatikan loop: for (int i = 0; i < 3; i++) { bunyikanBuzzer(); } Berapa kali buzzer akan berbunyi?",
       "opts": [
-        "Ketika nilai bernilai kurang dari atau sama dengan 80",
-        "Ketika nilai lebih dari 80",
-        "Setiap kali fungsi maju() selesai berjalan",
-        "Hanya saat tombol reset ditekan"
+        "3 kali (saat i = 0, 1, dan 2)",
+        "2 kali",
+        "4 kali",
+        "1 kali"
       ],
       "ans": 0,
       "level": 2,
@@ -2055,38 +1132,12 @@
       "img_url": null
     },
     {
-      "q": "Apa fungsi dari mode pinMode(4, INPUT_PULLUP)?",
+      "q": "Perhatikan kode: int speed = 100; speed -= 20; Berapakah nilai speed sekarang?",
       "opts": [
-        "Mengaktifkan resistor pull-up internal board sehingga pin bernilai default HIGH saat tombol tidak ditekan",
-        "Memberikan tegangan tinggi 12V ke pin 4",
-        "Mengubah pin 4 menjadi ground tanpa resistor",
-        "Mematikan tombol secara permanen"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan loop berikut: for (int i = 0; i < 4; i++) { kedipLED(); } Berapa kali fungsi kedipLED() akan dieksekusi?",
-      "opts": [
-        "4 kali (saat i = 0, 1, 2, 3)",
-        "3 kali",
-        "5 kali",
-        "Tak terhingga kali"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Perhatikan kode: int kecepatan = 100; kecepatan -= 20; Berapakah nilai akhir dari variabel kecepatan?",
-      "opts": [
-        "80 (berkurang 20)",
-        "120 (bertambah 20)",
+        "80",
+        "120",
         "20",
-        "-20"
+        "0"
       ],
       "ans": 0,
       "level": 2,
@@ -2094,12 +1145,12 @@
       "img_url": null
     },
     {
-      "q": "Apa fungsi dari direktif #include <Servo.h> di baris paling atas sebuah program?",
+      "q": "Perhatikan kode: while (tombol == LOW) { delay(10); } Perulangan while akan berhenti saat...",
       "opts": [
-        "Memasukkan/mengimpor library Servo agar perintah kontrol motor servo dapat digunakan",
-        "Menyalakan motor servo secara otomatis",
-        "Mengatur pin default servo ke pin 1",
-        "Menghubungkan mikrokontroler ke server Arduino"
+        "Nilai tombol berubah menjadi HIGH (ditekan)",
+        "Setelah 10 menit",
+        "Hanya jika baterai habis",
+        "Saat lampu LED mati"
       ],
       "ans": 0,
       "level": 2,
@@ -2107,12 +1158,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan deklarasi: int dataSensor = analogRead(A2); Mengapa variabel dataSensor menggunakan tipe data int?",
+      "q": "Mode pinMode(2, INPUT_PULLUP) mengaktifkan resistor internal board sehingga saat tombol tidak ditekan, pin bernilai...",
       "opts": [
-        "Karena hasil pembacaan analogRead adalah bilangan bulat (0 sampai 1023)",
-        "Karena sensor hanya menghasilkan teks alfabet",
-        "Karena pin analog hanya bisa membaca angka negatif",
-        "Karena nilai sensor tidak boleh disimpan di RAM"
+        "HIGH secara default",
+        "LOW secara default",
+        "0 Volt",
+        "Terbakar"
       ],
       "ans": 0,
       "level": 2,
@@ -2120,38 +1171,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode perulangan: while (tombolDitekan == false) { ... } Kapan perulangan while ini akan berhenti?",
+      "q": "Pada robot Line Follower 2 sensor (0 = putih, 1 = hitam): jika sensor KIRI membaca hitam dan sensor KANAN membaca putih, robot harus...",
       "opts": [
-        "Ketika variabel tombolDitekan bernilai true",
-        "Setelah berjalan tepat 10 detik",
-        "Ketika mikrokontroler kehabisan daya baterai",
-        "Hanya jika ada perintah delay(1000)"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Tipe data apa yang paling tepat untuk menyimpan hasil hitungan milidetik dari fungsi millis() yang terus bertambah besar?",
-      "opts": [
-        "unsigned long (bilangan bulat positif kapasitas 32-bit)",
-        "bool (kapasitas 1-bit)",
-        "char (kapasitas 8-bit)",
-        "byte (hanya sampai 255)"
-      ],
-      "ans": 0,
-      "level": 2,
-      "image": null,
-      "img_url": null
-    },
-    {
-      "q": "Apa fungsi utama dari pemanggilan fungsi millis() pada program robot otonom?",
-      "opts": [
-        "Mengetahui waktu yang telah berlalu (dalam milidetik) sejak mikrokontroler menyala tanpa memblokir CPU",
-        "Menghitung jumlah putaran roda robot per detik",
-        "Mengukur voltase baterai mikrokontroler secara berkala",
-        "Menghentikan sementara jalannya mikrokontroler selama 1 milidetik"
+        "Belok ke KIRI agar kembali ke atas garis hitam",
+        "Belok ke KANAN menjauhi garis",
+        "Mundur ke belakang",
+        "Berhenti total"
       ],
       "ans": 0,
       "level": 3,
@@ -2159,12 +1184,12 @@
       "img_url": null
     },
     {
-      "q": "Mengapa programmer robot lebih menyukai menggunakan teknik millis() daripada delay() untuk mengatur jadwal eksekusi?",
+      "q": "Pada robot Line Follower 2 sensor: jika sensor KANAN membaca hitam dan sensor KIRI membaca putih, robot harus...",
       "opts": [
-        "Karena millis() bersifat non-blocking (robot tetap bisa membaca sensor dan kendali motor tanpa freeze)",
-        "Karena delay() membuat konsumsi baterai menjadi dua kali lebih boros",
-        "Karena delay() tidak dapat menghitung waktu di bawah 1 detik",
-        "Karena millis() otomatis meningkatkan kecepatan prosesor"
+        "Belok ke KANAN agar kembali ke jalur garis",
+        "Belok ke KIRI",
+        "Maju lurus kencang",
+        "Mematikan motor"
       ],
       "ans": 0,
       "level": 3,
@@ -2172,12 +1197,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode berikut: Servo myservo; myservo.attach(9); myservo.write(90); Perintah write(90) bertujuan untuk...",
+      "q": "Pada robot Line Follower: jika kedua sensor (kiri dan kanan) sama-sama membaca warna putih, arah robot yang benar adalah...",
       "opts": [
-        "Menggerakkan lengan motor servo ke posisi sudut 90 derajat (posisi tengah)",
-        "Memutar motor servo dengan kecepatan 90 RPM terus-menerus",
-        "Memberi daya sebesar 90 Watt ke motor servo",
-        "Menunda pergerakan servo selama 90 milidetik"
+        "Maju lurus (garis hitam berada tepat di antara kedua sensor)",
+        "Putar 360 derajat di tempat",
+        "Mundur seketika",
+        "Bunyikan sirine"
       ],
       "ans": 0,
       "level": 3,
@@ -2185,12 +1210,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan fungsi: int outputPWM = map(nilaiSensor, 0, 1023, 0, 255); Apa fungsi dari perintah map() tersebut?",
+      "q": "Pada lintasan robot pengikut garis, garis hitam pekat yang melintang lebar biasanya menandakan...",
       "opts": [
-        "Mengonversi nilai skala pembacaan analog (0-1023) menjadi skala output PWM (0-255) secara proporsional",
-        "Membuat denah navigasi labirin pada memori robot",
-        "Membatasi nilai agar tidak pernah melebihi 255",
-        "Menyimpan koordinat GPS posisi robot"
+        "Garis finish (titik henti lomba) atau perempatan lintasan",
+        "Baterai robot habis",
+        "Sensor rusak",
+        "Robot harus melompat"
       ],
       "ans": 0,
       "level": 3,
@@ -2198,12 +1223,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan instruksi: int kecepatanAman = constrain(kecepatan, 50, 200); Jika nilai variabel kecepatan adalah 240, berapakah nilai kecepatanAman?",
+      "q": "Robot penghindar rintangan (Obstacle Avoidance): jika sensor ultrasonik membaca jarak benda < 15 cm, tindakan terbaik robot adalah...",
       "opts": [
-        "200 (karena dibatasi oleh nilai batas atas)",
-        "240 (tetap)",
-        "50 (diubah ke batas bawah)",
-        "0 (dinonaktifkan)"
+        "Berhenti sejenak, mundur sedikit, lalu belok menghindari tabrakan",
+        "Maju kencang menabrak halangan",
+        "Mematikan seluruh sistem",
+        "Diam selamanya di tempat"
       ],
       "ans": 0,
       "level": 3,
@@ -2211,12 +1236,12 @@
       "img_url": null
     },
     {
-      "q": "Pada robot Line Follower 2 sensor (0 = putih, 1 = garis hitam): if (sensorKiri == 0 && sensorKanan == 1) Aksi kemudi yang tepat adalah...",
+      "q": "Pada robot penghindar rintangan: jika sensor ultrasonik membaca jarak aman (> 30 cm), robot akan...",
       "opts": [
-        "Belok ke kanan agar sensor kanan kembali ke posisi tengah garis",
-        "Belok ke kiri menjauhi garis hitam",
-        "Mundur dengan kecepatan penuh",
-        "Berhenti total dan menyalakan alarm"
+        "Terus bergerak maju lurus dengan aman",
+        "Berputar-putar bingung",
+        "Mundur ke belakang",
+        "Menyalakan buzzer darurat"
       ],
       "ans": 0,
       "level": 3,
@@ -2224,12 +1249,12 @@
       "img_url": null
     },
     {
-      "q": "Pada robot Line Follower: if (sensorKiri == 0 && sensorKanan == 0) (kedua sensor membaca permukaan terang), aksi gerakan yang tepat adalah...",
+      "q": "Sensor yang paling tepat digunakan pada robot pemadam api untuk mendeteksi keberadaan lidah api adalah...",
       "opts": [
-        "Bergerak lurus maju (garis hitam berada di antara kedua sensor)",
-        "Memutar robot 360 derajat di tempat",
-        "Mengerem motor seketika",
-        "Mengaktifkan sirine bahaya"
+        "Flame Sensor (Sensor Api Inframerah)",
+        "Sensor Garis",
+        "Sensor Ultrasonik",
+        "Sensor Kelembaban Tanah"
       ],
       "ans": 0,
       "level": 3,
@@ -2237,12 +1262,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode navigasi robot penghindar rintangan: if (jarak < 15) { hindariRintangan(); } else { maju(); } Arti logika tersebut adalah...",
+      "q": "Setelah robot pemadam api menemukan titik api pada jarak dekat, aksi selanjutnya adalah...",
       "opts": [
-        "Jika sensor ultrasonik mendeteksi halangan di bawah 15 cm, robot bermanuver menghindar, jika tidak robot maju",
-        "Robot hanya bergerak maju jika jarak halangan kurang dari 15 cm",
-        "Sensor hanya aktif saat robot berjarak tepat 15 cm dari dinding",
-        "Robot menabrak halangan lalu mematikan sistem"
+        "Berhenti dan mengaktifkan kipas angin motor DC atau pompa air pemadam",
+        "Menabrak lilin sampai roboh",
+        "Mundur dan kabur meninggalkan api",
+        "Mematikan daya mikrokontroler"
       ],
       "ans": 0,
       "level": 3,
@@ -2250,12 +1275,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan pembuatan fungsi sendiri: void gerakMaju() { ... } Kata kunci void di depan nama fungsi menyatakan bahwa...",
+      "q": "Robot pengikut cahaya (Light Follower) dipasangi 2 sensor LDR. Jika sensor KANAN menerima cahaya lebih terang dari kiri, robot akan...",
       "opts": [
-        "Fungsi tersebut tidak mengembalikan nilai apapun (no return value)",
-        "Fungsi tersebut hanya boleh dipanggil saat darurat",
-        "Fungsi tersebut berisi variabel bernilai kosong",
-        "Fungsi tersebut hanya dieksekusi selama 0 detik"
+        "Belok ke KANAN mengejar sumber cahaya",
+        "Belok ke KIRI menjauhi cahaya",
+        "Mundur ke tempat gelap",
+        "Padam total"
       ],
       "ans": 0,
       "level": 3,
@@ -2263,12 +1288,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan fungsi: int hitungJarak() { int hasil = durasi * 0.034 / 2; return hasil; } Kata return berfungsi untuk...",
+      "q": "Komponen penggerak utama yang dipasang di setiap persendian lengan robot (Robotic Arm) adalah...",
       "opts": [
-        "Mengirimkan kembali nilai hasil perhitungan ke bagian program yang memanggil fungsi tersebut",
-        "Mengulang kembali eksekusi fungsi dari baris pertama",
-        "Membatalkan seluruh perintah yang ada di dalam fungsi",
-        "Memutar arah motor robot menjadi mundur"
+        "Motor Servo",
+        "Lampu LED",
+        "Buzzer piezo",
+        "Relay mekanik"
       ],
       "ans": 0,
       "level": 3,
@@ -2276,12 +1301,90 @@
       "img_url": null
     },
     {
-      "q": "Pada driver motor DC L298N: jika IN1 diberi sinyal HIGH dan IN2 diberi sinyal LOW, motor berputar maju. Agar motor berputar mundur, konfigurasinya adalah...",
+      "q": "Bagian penjepit mekanik di ujung lengan robot yang berfungsi mengambil objek disebut...",
+      "opts": [
+        "Gripper",
+        "Chassis",
+        "Bumper",
+        "Propeller"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Sensor bumper mekanik (Limit Switch) pada robot berfungsi untuk mendeteksi...",
+      "opts": [
+        "Sentuhan fisik / benturan saat robot menabrak dinding",
+        "Warna cat dinding",
+        "Suhu udara",
+        "Kecepatan roda"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Mengapa motor DC tidak boleh dihubungkan langsung ke pin Arduino tanpa IC Driver Motor?",
+      "opts": [
+        "Karena motor butuh arus besar yang dapat merusak / membakar pin mikrokontroler",
+        "Karena kabel motor terlalu tebal",
+        "Karena putaran motor akan menjadi terbalik",
+        "Karena lampu LED akan ikut menyala"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Mengapa baterai LiPo (Lithium Polymer) sangat populer digunakan pada robot kompetisi?",
+      "opts": [
+        "Bobotnya relatif ringan dan mampu menyuplai arus listrik besar secara stabil",
+        "Bisa dicas dengan air garam",
+        "Tidak bisa habis selamanya",
+        "Tegangannya 1000 Volt"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Sensor PIR (Passive Infrared) pada robot pengawas ruangan berfungsi untuk mendeteksi...",
+      "opts": [
+        "Pergerakan manusia atau benda bersuhu tubuh",
+        "Jarak lantai ke roda",
+        "Intensitas warna hijau",
+        "Kandungan gas oksigen"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Roda khusus robot yang dapat meluncur ke samping tanpa memutar arah badan robot disebut...",
+      "opts": [
+        "Omni Wheel / Mecanum Wheel",
+        "Roda pedati",
+        "Roda bergerigi tank",
+        "Roda ban mati"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada driver motor DC L298N: jika IN1=HIGH dan IN2=LOW motor berputar maju. Agar motor berputar mundur, konfigurasinya adalah...",
       "opts": [
         "IN1 = LOW dan IN2 = HIGH",
         "IN1 = HIGH dan IN2 = HIGH",
         "IN1 = LOW dan IN2 = LOW",
-        "Kedua pin diputus dari mikrokontroler"
+        "Kedua pin dicabut"
       ],
       "ans": 0,
       "level": 3,
@@ -2289,12 +1392,12 @@
       "img_url": null
     },
     {
-      "q": "Bagaimana cara melakukan pengereman aktif (active brake) pada motor DC yang dikendalikan driver L298N melalui kode program?",
+      "q": "Bagaimana cara melakukan pengereman aktif (Active Brake) pada motor DC melalui driver L298N?",
       "opts": [
-        "Memberikan sinyal HIGH ke kedua pin input motor (IN1=HIGH, IN2=HIGH) atau keduanya LOW secara bersamaan",
-        "Memberikan sinyal PWM bernilai 255 ke pin enable saja",
-        "Memutuskan kabel daya baterai utama",
-        "Mengubah arah putaran motor setiap 1 milidetik"
+        "Memberi sinyal sama ke kedua pin motor (IN1=HIGH dan IN2=HIGH secara bersamaan)",
+        "Mencabut kabel power baterai",
+        "Membalik polaritas baterai",
+        "Menyalakan lampu LED"
       ],
       "ans": 0,
       "level": 3,
@@ -2302,12 +1405,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan rumus sensor ultrasonik: jarak = (durasi * 0.034) / 2; Mengapa hasil perkalian durasi gelombang harus dibagi 2?",
+      "q": "Mengapa rumus hitung jarak sensor ultrasonik 'jarak = durasi * 0.034 / 2' harus dibagi 2?",
       "opts": [
-        "Karena gelombang suara menempuh jarak dua kali (pergi ke objek lalu memantul kembali ke sensor)",
-        "Karena sensor ultrasonik memiliki dua tabung silinder",
-        "Karena kecepatan suara di udara berkurang setengahnya",
-        "Karena tegangan kerja sensor ultrasonik adalah 2.5V"
+        "Karena gelombang suara menempuh perjalanan bolak-balik (pergi dan memantul kembali)",
+        "Karena sensor ultrasonik memiliki 2 silinder",
+        "Karena kecepatan suara berkurang setengah",
+        "Karena voltasenya 2.5 Volt"
       ],
       "ans": 0,
       "level": 3,
@@ -2315,12 +1418,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan struktur: switch (stateRobot) { case 1: maju(); break; case 2: belok(); break; } Apa fungsi perintah break pada struktur tersebut?",
+      "q": "Jika output gerbang AND dihubungkan langsung ke input gerbang NOT, rangkaian gabungan ini setara dengan gerbang...",
       "opts": [
-        "Menghentikan evaluasi dan segera keluar dari blok switch setelah case yang cocok dieksekusi",
-        "Mengerem roda robot hingga berhenti total",
-        "Merusak nilai yang ada pada variabel stateRobot",
-        "Mengulang kembali pengecekan case dari awal"
+        "NAND",
+        "NOR",
+        "XOR",
+        "OR"
       ],
       "ans": 0,
       "level": 3,
@@ -2328,12 +1431,194 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan operator perbandingan: if (statusSensor != 0) Simbol '!=' artinya...",
+      "q": "Jika output gerbang OR dihubungkan langsung ke input gerbang NOT, rangkaian gabungan ini setara dengan gerbang...",
       "opts": [
-        "Tidak sama dengan (kondisi benar jika statusSensor bukan bernilai 0)",
+        "NOR",
+        "NAND",
+        "AND",
+        "XNOR"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Jika output gerbang XOR dihubungkan langsung ke input gerbang NOT, rangkaian gabungan ini setara dengan gerbang...",
+      "opts": [
+        "XNOR",
+        "NOR",
+        "NAND",
+        "AND"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang AND dengan 3 input (A, B, C): output akan bernilai 1 HANYA JIKA...",
+      "opts": [
+        "Ketiga input A=1, B=1, dan C=1 semua",
+        "Salah satu input bernilai 1",
+        "Ketiga input bernilai 0",
+        "Input A saja yang 1"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang AND 3 input: jika input A=1, B=1, dan C=0, maka outputnya adalah...",
+      "opts": [
+        "0 (karena ada satu input yang 0)",
+        "1",
+        "2",
+        "Tidak tentu"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang OR dengan 3 input (A, B, C): jika A=0, B=0, dan C=1, maka outputnya adalah...",
+      "opts": [
+        "1 (karena ada input yang bernilai 1)",
+        "0",
+        "Tidak keluar tegangan",
+        "Minus 1"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang OR 3 input, kapan outputnya bernilai 0?",
+      "opts": [
+        "Hanya ketika ketiga inputnya bernilai 0 semua (A=0, B=0, C=0)",
+        "Saat ada salah satu input yang 1",
+        "Saat ketiga inputnya bernilai 1",
+        "Kapan saja secara berkala"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang NAND, jika input A = 1 dan B = 1, maka hasil outputnya adalah...",
+      "opts": [
+        "0 (kebalikan dari AND)",
+        "1",
+        "2",
+        "Tidak stabil"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang NAND, jika input A = 1 dan B = 0, maka hasil outputnya adalah...",
+      "opts": [
+        "1 (kebalikan dari AND yang menghasilkan 0)",
+        "0",
+        "Padam",
+        "Konslet"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang NOR, jika input A = 0 dan B = 0, maka hasil outputnya adalah...",
+      "opts": [
+        "1 (kebalikan dari OR)",
+        "0",
+        "Padam",
+        "Error"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada gerbang NOR, jika input A = 1 dan B = 0, maka hasil outputnya adalah...",
+      "opts": [
+        "0 (kebalikan dari OR yang menghasilkan 1)",
+        "1",
+        "Menyala",
+        "Kedip"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Gerbang XNOR akan menghasilkan output 1 (menyala) JIKA...",
+      "opts": [
+        "Kedua inputnya bernilai SAMA (misal 1 dan 1, atau 0 dan 0)",
+        "Kedua inputnya berbeda",
+        "Input A lebih besar dari B",
+        "Tidak ada tegangan masuk"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: if (jarak < 20) { mundur(); } else { maju(); } Arti logika program tersebut adalah...",
+      "opts": [
+        "Jika jarak halangan kurang dari 20 cm robot mundur, jika tidak robot maju",
+        "Robot hanya maju jika menabrak halangan",
+        "Sensor ultrasonik dimatikan jika jarak 20 cm",
+        "Robot berhenti selamanya"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan pembuatan fungsi: void belokKanan() { ... } Kata 'void' di depan nama fungsi menandakan bahwa...",
+      "opts": [
+        "Fungsi tersebut tidak mengembalikan angka kembalian (no return value)",
+        "Fungsi tersebut hanya berjalan 0 detik",
+        "Fungsi tersebut hanya untuk tombol darurat",
+        "Fungsi tersebut tidak boleh ada isinya"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan struktur: switch (pilihan) { case 1: maju(); break; case 2: stop(); break; } Fungsi kata 'break;' adalah...",
+      "opts": [
+        "Segera keluar dari blok switch setelah menemukan case yang cocok",
+        "Mengerem roda robot hingga bannya pecah",
+        "Menghapus variabel pilihan",
+        "Mengulang kembali dari case pertama"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam kode: if (statusSensor != 0) Simbol '!=' artinya...",
+      "opts": [
+        "Tidak sama dengan (kondisi benar jika nilai statusSensor bukan 0)",
         "Sama dengan nol",
-        "Lebih kecil atau sama dengan nol",
-        "Faktorial dari angka nol"
+        "Faktorial",
+        "Penjumlahan berulang"
       ],
       "ans": 0,
       "level": 3,
@@ -2341,12 +1626,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan perintah nada: tone(buzzerPin, 1000, 200); Parameter '1000' dan '200' secara berurutan menyatakan...",
+      "q": "Perintah tone(pinBuzzer, 1000, 500); akan membunyikan buzzer dengan...",
       "opts": [
-        "Frekuensi nada 1000 Hz dan durasi bunyi 200 milidetik",
-        "Volume suara 1000% dan jeda waktu 200 detik",
-        "Nomor pin 1000 dan voltase 200 milivolt",
-        "Banyaknya getaran 1000 kali dan hambatan 200 Ohm"
+        "Frekuensi nada 1000 Hz selama durasi 500 milidetik (setengah detik)",
+        "Kecepatan 1000 RPM selama 500 detik",
+        "Voltase 1000V selama 500 menit",
+        "Kekuatan 1000 Watt"
       ],
       "ans": 0,
       "level": 3,
@@ -2354,12 +1639,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan fungsi buatan: void aturMotor(int pinPWM, int kecepatan) Parameter kecepatan berfungsi untuk...",
+      "q": "Perintah untuk mematikan suara nada pada pin buzzer seketika adalah...",
       "opts": [
-        "Menerima nilai input kecepatan yang dikirimkan saat fungsi dipanggil untuk diproses di dalam fungsi",
-        "Menyimpan nilai kecepatan di memori EEPROM",
-        "Menentukan pin mikrokontroler yang digunakan motor",
-        "Mengatur arah putaran jarum jam"
+        "noTone(pinBuzzer);",
+        "stopTone(pinBuzzer);",
+        "silence(pinBuzzer);",
+        "mute(pinBuzzer);"
       ],
       "ans": 0,
       "level": 3,
@@ -2367,12 +1652,12 @@
       "img_url": null
     },
     {
-      "q": "Perhatikan kode: if (baterai < 10.5 && !isCharging) { bunyikanAlarm(); } Kapan fungsi bunyikanAlarm() akan dipanggil?",
+      "q": "Mengapa programmer robot cerdas lebih suka memakai fungsi millis() daripada delay()?",
       "opts": [
-        "Ketika tegangan baterai di bawah 10.5V DAN robot sedang TIDAK diisi daya (isCharging false)",
-        "Ketika tegangan baterai di atas 10.5V dan sedang di-charge",
-        "Hanya ketika baterai tepat bernilai 10.5V",
-        "Setiap saat secara bergantian"
+        "Karena millis() tidak menghentikan (non-blocking) CPU sehingga robot tetap responsif membaca sensor",
+        "Karena delay() membuat baterai langsung habis",
+        "Karena delay() tidak bisa dipakai untuk sensor",
+        "Karena millis() membuat roda lebih kencang"
       ],
       "ans": 0,
       "level": 3,
@@ -2380,12 +1665,12 @@
       "img_url": null
     },
     {
-      "q": "Apa yang terjadi jika kita mendeklarasikan variabel di dalam sebuah fungsi (variabel lokal) dibandingkan di luar fungsi (variabel global)?",
+      "q": "Perhatikan kode: int kecepatan = 100; kecepatan = kecepatan + 50; Berapakah nilai akhir kecepatan?",
       "opts": [
-        "Variabel lokal hanya dapat diakses dan digunakan di dalam fungsi tempat ia dideklarasikan",
-        "Variabel lokal dapat diakses dari seluruh fungsi manapun di program",
-        "Variabel lokal nilainya tidak pernah terhapus dari memori",
-        "Variabel lokal otomatis menjadi konstanta yang tidak bisa diubah"
+        "150",
+        "100",
+        "50",
+        "5000"
       ],
       "ans": 0,
       "level": 3,
@@ -2393,12 +1678,77 @@
       "img_url": null
     },
     {
-      "q": "Pada robotika cerdas, apa kegunaan dari state machine (FSM) yang diimplementasikan dengan enum dan switch-case?",
+      "q": "Perhatikan kode: bool adaHalangan = false; if (jarak < 10) { adaHalangan = true; } Jika sensor membaca jarak = 6 cm, nilai variabel adaHalangan adalah...",
       "opts": [
-        "Mengorganisasi perilaku robot (misal: IDLE, SEARCH, FOLLOW, AVOID) secara terstruktur dan teratur sesuai kondisi",
-        "Membuat robot bergerak lebih kencang melampaui batas motor",
-        "Menyimpan foto rintangan ke dalam kartu memori SD",
-        "Menghilangkan kebutuhan akan catu daya baterai"
+        "true",
+        "false",
+        "0",
+        "null"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1010?",
+      "opts": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1100?",
+      "opts": [
+        "12",
+        "10",
+        "14",
+        "16"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 1111?",
+      "opts": [
+        "15",
+        "14",
+        "16",
+        "20"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah nilai desimal dari bilangan biner 10000 (5-bit)?",
+      "opts": [
+        "16",
+        "15",
+        "32",
+        "8"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada robot pemecah labirin (Maze Solver), metode sederhana 'Wall Follower' bekerja dengan cara...",
+      "opts": [
+        "Selalu menyusuri salah satu sisi dinding labirin (misal selalu ikuti dinding kiri)",
+        "Menabrak semua dinding secara acak",
+        "Terbang melompati dinding labirin",
+        "Menunggu labirin runtuh"
       ],
       "ans": 0,
       "level": 3,
