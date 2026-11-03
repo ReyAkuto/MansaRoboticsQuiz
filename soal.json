@@ -1624,6 +1624,786 @@
       "level": 3,
       "image": null,
       "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari perintah pinMode(13, OUTPUT) pada pemrograman mikrokontroler?",
+      "opts": [
+        "Mengatur pin 13 sebagai pin keluaran (output) untuk mengalirkan sinyal ke komponen",
+        "Membaca nilai analog dari sensor di pin 13",
+        "Mematikan daya mikrokontroler di pin 13",
+        "Menyimpan nilai data angka 13 ke dalam memori permanen"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari perintah pinMode(2, INPUT) pada board mikrokontroler?",
+      "opts": [
+        "Mengatur pin 2 sebagai pin masukan (input) untuk menerima sinyal dari sensor/tombol",
+        "Mengirimkan arus listrik tegangan tinggi ke pin 2",
+        "Menghubungkan pin 2 langsung ke ground (GND)",
+        "Mengatur putaran motor servo pada pin 2"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan baris kode: int ledPin = 13; Apa tipe data dari variabel tersebut dan apa nilainya?",
+      "opts": [
+        "Tipe data int (bilangan bulat) dengan nilai 13",
+        "Tipe data float (desimal) dengan nilai 13.0",
+        "Tipe data boolean dengan nilai benar",
+        "Tipe data string dengan nilai teks '13'"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan inisialisasi berikut: float suhuRuangan = 28.5; Mengapa tipe data float digunakan?",
+      "opts": [
+        "Karena menyimpan angka pecahan/desimal (ada koma)",
+        "Karena hanya bernilai BENAR atau SALAH",
+        "Karena hanya dapat menyimpan satu huruf",
+        "Karena nilainya tidak boleh berubah selamanya"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: bool robotAktif = true; Berapa banyak kemungkinan nilai yang dapat disimpan oleh tipe data bool?",
+      "opts": [
+        "Hanya 2 nilai: true (benar/1) atau false (salah/0)",
+        "Semua angka bulat dari 0 sampai 255",
+        "Semua bilangan pecahan tak hingga",
+        "Kumpulan kalimat teks bebas"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode berikut: char statusGigi = 'N'; Tanda yang digunakan untuk mengapit nilai tipe data char adalah...",
+      "opts": [
+        "Tanda petik tunggal (' ')",
+        "Tanda petik ganda (\" \")",
+        "Tanda kurung siku ([ ])",
+        "Tanda kurung kurawal ({ })"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan deklarasi: String namaRobot = \"MANSA_ROBOT\"; Tipe data String digunakan untuk menyimpan...",
+      "opts": [
+        "Kumpulan teks kata atau kalimat",
+        "Bilangan bulat tanpa desimal",
+        "Nilai logika biner tunggal",
+        "Frekuensi gelombang suara"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari perintah digitalWrite(13, HIGH)?",
+      "opts": [
+        "Memberi tegangan output (5V) ke pin 13 sehingga LED menyala",
+        "Memutuskan arus dan memberikan 0V ke pin 13",
+        "Membaca input frekuensi di pin 13",
+        "Menghapus program yang ada di pin 13"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari perintah digitalWrite(13, LOW)?",
+      "opts": [
+        "Memutuskan tegangan (memberikan 0V) pada pin 13 sehingga LED mati",
+        "Menyalakan LED dengan kecerahan maksimal",
+        "Menggandakan arus listrik pada pin 13",
+        "Mengubah fungsi pin 13 menjadi sensor suhu"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapa lama program akan berhenti sementara jika diberi instruksi delay(1000); ?",
+      "opts": [
+        "1 detik (1000 milidetik)",
+        "10 detik",
+        "0.1 detik",
+        "100 detik"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Jika kita ingin membuat lampu LED menyala jeda selama setengah detik, perintah delay yang tepat adalah...",
+      "opts": [
+        "delay(500);",
+        "delay(50);",
+        "delay(5);",
+        "delay(5000);"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Kapan blok fungsi void setup() dijalankan oleh mikrokontroler?",
+      "opts": [
+        "Tepat satu kali saat robot pertama kali dinyalakan atau di-reset",
+        "Berulang-ulang tanpa henti selama robot menyala",
+        "Hanya saat tombol darurat ditekan",
+        "Setiap 1 menit sekali secara otomatis"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi utama dari blok void loop() pada sketch mikrokontroler?",
+      "opts": [
+        "Mengeksekusi perintah di dalamnya secara berulang-ulang terus-menerus",
+        "Hanya mengeksekusi instruksi satu kali lalu mematikan robot",
+        "Mengatur koneksi internet WiFi pada board",
+        "Menghapus memori program setelah selesai"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi tanda titik koma ( ; ) di akhir setiap baris instruksi coding C/C++?",
+      "opts": [
+        "Sebagai penanda akhir dari satu baris instruksi/pernyataan (statement)",
+        "Sebagai tanda untuk memulai perhitungan matematika",
+        "Sebagai komentar yang tidak dibaca oleh compiler",
+        "Sebagai tanda jeda waktu satu detik"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Tanda apa yang digunakan untuk menuliskan komentar satu baris yang tidak akan dieksekusi oleh mesin?",
+      "opts": [
+        "// (garis miring ganda)",
+        "## (pagar ganda)",
+        "$$ (dolar ganda)",
+        "** (bintang ganda)"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: const int PIN_BUZZER = 8; Kata kunci const artinya...",
+      "opts": [
+        "Nilai variabel bersifat tetap/konstan dan tidak dapat diubah selama program berjalan",
+        "Variabel akan bertambah nilainya secara otomatis",
+        "Variabel hanya aktif saat sensor mendeteksi objek",
+        "Variabel tersebut disimpan di server cloud"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam pemrograman mikrokontroler, apa perbedaan tanda '=' dan '==' ?",
+      "opts": [
+        "'=' untuk mengisi nilai ke variabel, sedangkan '==' untuk membandingkan kesamaan dua nilai",
+        "'=' untuk perbandingan, sedangkan '==' untuk mengisi nilai",
+        "Kedua tanda memiliki fungsi yang persis sama tanpa perbedaan",
+        "'==' digunakan khusus untuk operasi pembagian"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode berikut: int skor = 10; skor = skor + 5; Berapakah nilai akhir dari variabel skor?",
+      "opts": [
+        "15",
+        "10",
+        "5",
+        "50"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Simbol apakah yang digunakan untuk membungkus blok kode sebuah fungsi di C/C++?",
+      "opts": [
+        "Kurung kurawal { }",
+        "Kurung siku [ ]",
+        "Tanda kutip \" \"",
+        "Tanda kurung biasa ( )"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: int hitung = 0; hitung++; Berapakah nilai variabel hitung setelah baris tersebut dieksekusi?",
+      "opts": [
+        "1 (bertambah satu)",
+        "0 (tidak berubah)",
+        "2 (bertambah dua)",
+        "-1 (berkurang satu)"
+      ],
+      "ans": 0,
+      "level": 1,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari instruksi digitalRead(pin)?",
+      "opts": [
+        "Membaca sinyal logika digital pada pin (menghasilkan nilai HIGH atau LOW)",
+        "Mengirimkan tegangan analog variabel dari 0V hingga 5V",
+        "Mengubah fungsi pin menjadi output daya motor",
+        "Menghitung frekuensi sinyal radio yang masuk"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan instruksi: if (digitalRead(tombol) == HIGH) { ... } Kapan kode di dalam kurung kurawal akan dijalankan?",
+      "opts": [
+        "Hanya ketika tombol dalam kondisi aktif/ditekan (berlogika HIGH)",
+        "Hanya ketika tombol dalam kondisi terlepas (LOW)",
+        "Secara terus-menerus tanpa memedulikan tombol",
+        "Hanya sekali saat mikrokontroler pertama dinyalakan"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Fungsi analogRead(A0) pada ADC 10-bit mikrokontroler menghasilkan rentang nilai angka antara...",
+      "opts": [
+        "0 sampai 1023",
+        "0 sampai 255",
+        "0 sampai 100",
+        "0 atau 1 saja"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Berapakah rentang nilai parameter kecerahan/kecepatan pada fungsi output PWM analogWrite(pin, nilai)?",
+      "opts": [
+        "0 sampai 255 (resolusi 8-bit)",
+        "0 sampai 1023",
+        "0 sampai 100",
+        "0 sampai 5000"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Jika sebuah motor DC dikendalikan dengan analogWrite(pinMotor, 127); berapa persen perkiraan kecepatan motor terhadap daya maksimum?",
+      "opts": [
+        "Sekitar 50% (setengah dari daya penuh)",
+        "Tepat 100% (daya maksimum)",
+        "Sekitar 25% (seperempat daya)",
+        "0% (motor berhenti total)"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa tujuan dari instruksi Serial.begin(9600); pada void setup()?",
+      "opts": [
+        "Memulai komunikasi serial antara board dan komputer pada baud rate 9600 bps",
+        "Mengatur kecepatan putaran motor servo ke 9600 RPM",
+        "Menunda program selama 9600 milidetik",
+        "Mengalokasikan memori RAM sebesar 9600 byte"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa perbedaan antara perintah Serial.print() dan Serial.println()?",
+      "opts": [
+        "Serial.println() otomatis menambahkan baris baru (Enter) di akhir teks, sedangkan Serial.print() tidak",
+        "Serial.print() hanya bisa mencetak angka, Serial.println() hanya mencetak huruf",
+        "Serial.print() mengirim data ke Bluetooth, Serial.println() ke USB",
+        "Keduanya tidak memiliki perbedaan fungsi"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kondisi: if (sensorDepan == HIGH && sensorBelakang == HIGH) Simbol '&&' menyatakan operasi logika...",
+      "opts": [
+        "AND (keduanya harus bernilai benar agar aksi dijalankan)",
+        "OR (salah satu benar sudah cukup)",
+        "NOT (membalikkan nilai sensor)",
+        "XOR (hanya satu yang boleh bernilai benar)"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kondisi: if (sensorKiri == HIGH || sensorKanan == HIGH) Simbol '||' menyatakan operasi logika...",
+      "opts": [
+        "OR (cukup salah satu atau kedua sensor mendeteksi objek)",
+        "AND (wajib kedua sensor mendeteksi objek)",
+        "NOT (kedua sensor harus mati)",
+        "NAND (kedua sensor tidak boleh aktif bersamaan)"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: bool statusLED = false; statusLED = !statusLED; Berapakah nilai variabel statusLED sekarang?",
+      "opts": [
+        "true (karena operator '!' membalikkan nilai false menjadi true)",
+        "false (tidak berubah)",
+        "0 (menjadi angka nol)",
+        "null (kosong tanpa nilai)"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan deklarasi array: int sensorGaris[3] = {10, 20, 30}; Berapakah nilai dari sensorGaris[0]?",
+      "opts": [
+        "10 (karena indeks array dimulai dari angka 0)",
+        "20",
+        "30",
+        "3"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Dalam bahasa C/C++ pada mikrokontroler, indeks pertama dari sebuah array selalu dimulai dari angka...",
+      "opts": [
+        "0",
+        "1",
+        "-1",
+        "10"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan struktur: if (nilai > 80) { maju(); } else { stop(); } Kapan fungsi stop() akan dipanggil?",
+      "opts": [
+        "Ketika nilai bernilai kurang dari atau sama dengan 80",
+        "Ketika nilai lebih dari 80",
+        "Setiap kali fungsi maju() selesai berjalan",
+        "Hanya saat tombol reset ditekan"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari mode pinMode(4, INPUT_PULLUP)?",
+      "opts": [
+        "Mengaktifkan resistor pull-up internal board sehingga pin bernilai default HIGH saat tombol tidak ditekan",
+        "Memberikan tegangan tinggi 12V ke pin 4",
+        "Mengubah pin 4 menjadi ground tanpa resistor",
+        "Mematikan tombol secara permanen"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan loop berikut: for (int i = 0; i < 4; i++) { kedipLED(); } Berapa kali fungsi kedipLED() akan dieksekusi?",
+      "opts": [
+        "4 kali (saat i = 0, 1, 2, 3)",
+        "3 kali",
+        "5 kali",
+        "Tak terhingga kali"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: int kecepatan = 100; kecepatan -= 20; Berapakah nilai akhir dari variabel kecepatan?",
+      "opts": [
+        "80 (berkurang 20)",
+        "120 (bertambah 20)",
+        "20",
+        "-20"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi dari direktif #include <Servo.h> di baris paling atas sebuah program?",
+      "opts": [
+        "Memasukkan/mengimpor library Servo agar perintah kontrol motor servo dapat digunakan",
+        "Menyalakan motor servo secara otomatis",
+        "Mengatur pin default servo ke pin 1",
+        "Menghubungkan mikrokontroler ke server Arduino"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan deklarasi: int dataSensor = analogRead(A2); Mengapa variabel dataSensor menggunakan tipe data int?",
+      "opts": [
+        "Karena hasil pembacaan analogRead adalah bilangan bulat (0 sampai 1023)",
+        "Karena sensor hanya menghasilkan teks alfabet",
+        "Karena pin analog hanya bisa membaca angka negatif",
+        "Karena nilai sensor tidak boleh disimpan di RAM"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode perulangan: while (tombolDitekan == false) { ... } Kapan perulangan while ini akan berhenti?",
+      "opts": [
+        "Ketika variabel tombolDitekan bernilai true",
+        "Setelah berjalan tepat 10 detik",
+        "Ketika mikrokontroler kehabisan daya baterai",
+        "Hanya jika ada perintah delay(1000)"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Tipe data apa yang paling tepat untuk menyimpan hasil hitungan milidetik dari fungsi millis() yang terus bertambah besar?",
+      "opts": [
+        "unsigned long (bilangan bulat positif kapasitas 32-bit)",
+        "bool (kapasitas 1-bit)",
+        "char (kapasitas 8-bit)",
+        "byte (hanya sampai 255)"
+      ],
+      "ans": 0,
+      "level": 2,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa fungsi utama dari pemanggilan fungsi millis() pada program robot otonom?",
+      "opts": [
+        "Mengetahui waktu yang telah berlalu (dalam milidetik) sejak mikrokontroler menyala tanpa memblokir CPU",
+        "Menghitung jumlah putaran roda robot per detik",
+        "Mengukur voltase baterai mikrokontroler secara berkala",
+        "Menghentikan sementara jalannya mikrokontroler selama 1 milidetik"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Mengapa programmer robot lebih menyukai menggunakan teknik millis() daripada delay() untuk mengatur jadwal eksekusi?",
+      "opts": [
+        "Karena millis() bersifat non-blocking (robot tetap bisa membaca sensor dan kendali motor tanpa freeze)",
+        "Karena delay() membuat konsumsi baterai menjadi dua kali lebih boros",
+        "Karena delay() tidak dapat menghitung waktu di bawah 1 detik",
+        "Karena millis() otomatis meningkatkan kecepatan prosesor"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode berikut: Servo myservo; myservo.attach(9); myservo.write(90); Perintah write(90) bertujuan untuk...",
+      "opts": [
+        "Menggerakkan lengan motor servo ke posisi sudut 90 derajat (posisi tengah)",
+        "Memutar motor servo dengan kecepatan 90 RPM terus-menerus",
+        "Memberi daya sebesar 90 Watt ke motor servo",
+        "Menunda pergerakan servo selama 90 milidetik"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan fungsi: int outputPWM = map(nilaiSensor, 0, 1023, 0, 255); Apa fungsi dari perintah map() tersebut?",
+      "opts": [
+        "Mengonversi nilai skala pembacaan analog (0-1023) menjadi skala output PWM (0-255) secara proporsional",
+        "Membuat denah navigasi labirin pada memori robot",
+        "Membatasi nilai agar tidak pernah melebihi 255",
+        "Menyimpan koordinat GPS posisi robot"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan instruksi: int kecepatanAman = constrain(kecepatan, 50, 200); Jika nilai variabel kecepatan adalah 240, berapakah nilai kecepatanAman?",
+      "opts": [
+        "200 (karena dibatasi oleh nilai batas atas)",
+        "240 (tetap)",
+        "50 (diubah ke batas bawah)",
+        "0 (dinonaktifkan)"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada robot Line Follower 2 sensor (0 = putih, 1 = garis hitam): if (sensorKiri == 0 && sensorKanan == 1) Aksi kemudi yang tepat adalah...",
+      "opts": [
+        "Belok ke kanan agar sensor kanan kembali ke posisi tengah garis",
+        "Belok ke kiri menjauhi garis hitam",
+        "Mundur dengan kecepatan penuh",
+        "Berhenti total dan menyalakan alarm"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada robot Line Follower: if (sensorKiri == 0 && sensorKanan == 0) (kedua sensor membaca permukaan terang), aksi gerakan yang tepat adalah...",
+      "opts": [
+        "Bergerak lurus maju (garis hitam berada di antara kedua sensor)",
+        "Memutar robot 360 derajat di tempat",
+        "Mengerem motor seketika",
+        "Mengaktifkan sirine bahaya"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode navigasi robot penghindar rintangan: if (jarak < 15) { hindariRintangan(); } else { maju(); } Arti logika tersebut adalah...",
+      "opts": [
+        "Jika sensor ultrasonik mendeteksi halangan di bawah 15 cm, robot bermanuver menghindar, jika tidak robot maju",
+        "Robot hanya bergerak maju jika jarak halangan kurang dari 15 cm",
+        "Sensor hanya aktif saat robot berjarak tepat 15 cm dari dinding",
+        "Robot menabrak halangan lalu mematikan sistem"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan pembuatan fungsi sendiri: void gerakMaju() { ... } Kata kunci void di depan nama fungsi menyatakan bahwa...",
+      "opts": [
+        "Fungsi tersebut tidak mengembalikan nilai apapun (no return value)",
+        "Fungsi tersebut hanya boleh dipanggil saat darurat",
+        "Fungsi tersebut berisi variabel bernilai kosong",
+        "Fungsi tersebut hanya dieksekusi selama 0 detik"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan fungsi: int hitungJarak() { int hasil = durasi * 0.034 / 2; return hasil; } Kata return berfungsi untuk...",
+      "opts": [
+        "Mengirimkan kembali nilai hasil perhitungan ke bagian program yang memanggil fungsi tersebut",
+        "Mengulang kembali eksekusi fungsi dari baris pertama",
+        "Membatalkan seluruh perintah yang ada di dalam fungsi",
+        "Memutar arah motor robot menjadi mundur"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada driver motor DC L298N: jika IN1 diberi sinyal HIGH dan IN2 diberi sinyal LOW, motor berputar maju. Agar motor berputar mundur, konfigurasinya adalah...",
+      "opts": [
+        "IN1 = LOW dan IN2 = HIGH",
+        "IN1 = HIGH dan IN2 = HIGH",
+        "IN1 = LOW dan IN2 = LOW",
+        "Kedua pin diputus dari mikrokontroler"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Bagaimana cara melakukan pengereman aktif (active brake) pada motor DC yang dikendalikan driver L298N melalui kode program?",
+      "opts": [
+        "Memberikan sinyal HIGH ke kedua pin input motor (IN1=HIGH, IN2=HIGH) atau keduanya LOW secara bersamaan",
+        "Memberikan sinyal PWM bernilai 255 ke pin enable saja",
+        "Memutuskan kabel daya baterai utama",
+        "Mengubah arah putaran motor setiap 1 milidetik"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan rumus sensor ultrasonik: jarak = (durasi * 0.034) / 2; Mengapa hasil perkalian durasi gelombang harus dibagi 2?",
+      "opts": [
+        "Karena gelombang suara menempuh jarak dua kali (pergi ke objek lalu memantul kembali ke sensor)",
+        "Karena sensor ultrasonik memiliki dua tabung silinder",
+        "Karena kecepatan suara di udara berkurang setengahnya",
+        "Karena tegangan kerja sensor ultrasonik adalah 2.5V"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan struktur: switch (stateRobot) { case 1: maju(); break; case 2: belok(); break; } Apa fungsi perintah break pada struktur tersebut?",
+      "opts": [
+        "Menghentikan evaluasi dan segera keluar dari blok switch setelah case yang cocok dieksekusi",
+        "Mengerem roda robot hingga berhenti total",
+        "Merusak nilai yang ada pada variabel stateRobot",
+        "Mengulang kembali pengecekan case dari awal"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan operator perbandingan: if (statusSensor != 0) Simbol '!=' artinya...",
+      "opts": [
+        "Tidak sama dengan (kondisi benar jika statusSensor bukan bernilai 0)",
+        "Sama dengan nol",
+        "Lebih kecil atau sama dengan nol",
+        "Faktorial dari angka nol"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan perintah nada: tone(buzzerPin, 1000, 200); Parameter '1000' dan '200' secara berurutan menyatakan...",
+      "opts": [
+        "Frekuensi nada 1000 Hz dan durasi bunyi 200 milidetik",
+        "Volume suara 1000% dan jeda waktu 200 detik",
+        "Nomor pin 1000 dan voltase 200 milivolt",
+        "Banyaknya getaran 1000 kali dan hambatan 200 Ohm"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan fungsi buatan: void aturMotor(int pinPWM, int kecepatan) Parameter kecepatan berfungsi untuk...",
+      "opts": [
+        "Menerima nilai input kecepatan yang dikirimkan saat fungsi dipanggil untuk diproses di dalam fungsi",
+        "Menyimpan nilai kecepatan di memori EEPROM",
+        "Menentukan pin mikrokontroler yang digunakan motor",
+        "Mengatur arah putaran jarum jam"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Perhatikan kode: if (baterai < 10.5 && !isCharging) { bunyikanAlarm(); } Kapan fungsi bunyikanAlarm() akan dipanggil?",
+      "opts": [
+        "Ketika tegangan baterai di bawah 10.5V DAN robot sedang TIDAK diisi daya (isCharging false)",
+        "Ketika tegangan baterai di atas 10.5V dan sedang di-charge",
+        "Hanya ketika baterai tepat bernilai 10.5V",
+        "Setiap saat secara bergantian"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Apa yang terjadi jika kita mendeklarasikan variabel di dalam sebuah fungsi (variabel lokal) dibandingkan di luar fungsi (variabel global)?",
+      "opts": [
+        "Variabel lokal hanya dapat diakses dan digunakan di dalam fungsi tempat ia dideklarasikan",
+        "Variabel lokal dapat diakses dari seluruh fungsi manapun di program",
+        "Variabel lokal nilainya tidak pernah terhapus dari memori",
+        "Variabel lokal otomatis menjadi konstanta yang tidak bisa diubah"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
+    },
+    {
+      "q": "Pada robotika cerdas, apa kegunaan dari state machine (FSM) yang diimplementasikan dengan enum dan switch-case?",
+      "opts": [
+        "Mengorganisasi perilaku robot (misal: IDLE, SEARCH, FOLLOW, AVOID) secara terstruktur dan teratur sesuai kondisi",
+        "Membuat robot bergerak lebih kencang melampaui batas motor",
+        "Menyimpan foto rintangan ke dalam kartu memori SD",
+        "Menghilangkan kebutuhan akan catu daya baterai"
+      ],
+      "ans": 0,
+      "level": 3,
+      "image": null,
+      "img_url": null
     }
   ],
   "programmer": [
