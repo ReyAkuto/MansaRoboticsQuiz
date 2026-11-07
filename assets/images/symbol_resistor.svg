@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="100%" height="100%">
+  <rect width="300" height="140" fill="#1e222d" rx="10"/>
+  <text x="150" y="25" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">SIMBOL SKEMATIK RESISTOR</text>
+  <!-- Jalur Kawat & Zig-zag -->
+  <path d="M 30,70 L 80,70 L 95,50 L 115,90 L 135,50 L 155,90 L 175,50 L 195,90 L 205,70 L 270,70" 
+        fill="none" stroke="#00e676" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="70" r="5" fill="#00e676"/>
+  <circle cx="270" cy="70" r="5" fill="#00e676"/>
+  <text x="150" y="120" fill="#b0bec5" font-family="sans-serif" font-size="12" text-anchor="middle">Resistor Tetap (Fixed Resistor) - R</text>
+</svg>

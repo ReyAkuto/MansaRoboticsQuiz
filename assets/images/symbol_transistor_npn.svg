@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="100%" height="100%">
+  <rect width="300" height="160" fill="#1e222d" rx="10"/>
+  <text x="150" y="25" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">SIMBOL TRANSISTOR NPN BJT</text>
+  <!-- Lingkaran Komponen -->
+  <circle cx="150" cy="85" r="40" fill="none" stroke="#546e7a" stroke-width="2"/>
+  <!-- Kaki Basis (B) -->
+  <line x1="60" y1="85" x2="135" y2="85" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <!-- Garis Batang Basis -->
+  <line x1="135" y1="60" x2="135" y2="110" stroke="#00e676" stroke-width="5" stroke-linecap="round"/>
+  <!-- Jalur Kolektor (C) -->
+  <line x1="135" y1="70" x2="175" y2="50" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <line x1="175" y1="50" x2="230" y2="50" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <!-- Jalur Emitor (E) dengan Panah Keluar -->
+  <line x1="135" y1="100" x2="175" y2="120" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="175,120 160,113 166,105" fill="#ff5252"/>
+  <line x1="175" y1="120" x2="230" y2="120" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <!-- Label Pin -->
+  <text x="45" y="90" fill="#00e676" font-family="sans-serif" font-size="14" font-weight="bold">B</text>
+  <text x="245" y="55" fill="#00e676" font-family="sans-serif" font-size="14" font-weight="bold">C</text>
+  <text x="245" y="125" fill="#ff5252" font-family="sans-serif" font-size="14" font-weight="bold">E</text>
+  <text x="150" y="148" fill="#b0bec5" font-family="sans-serif" font-size="11" text-anchor="middle">Transistor NPN (Panah Emitor Mengarah Keluar)</text>
+</svg>
