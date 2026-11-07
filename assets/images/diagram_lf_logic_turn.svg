@@ -1,39 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="100%" height="100%">
-  <rect width="420" height="220" fill="#1e222d" rx="12"/>
-  <text x="210" y="24" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">LOGIKA KONTROL LINE FOLLOWER: BELOK KIRI</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="100%" height="100%">
+  <rect width="420" height="200" fill="#1e222d" rx="12"/>
+  <text x="210" y="24" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">SKENARIO SENSOR ROBOT LINE FOLLOWER</text>
 
   <!-- Lintasan Garis Hitam Belok -->
-  <path d="M 60,190 L 170,120 L 160,50" fill="none" stroke="#000000" stroke-width="36" stroke-linecap="round"/>
-  <path d="M 60,190 L 170,120 L 160,50" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4,4"/>
+  <path d="M 60,180 L 170,110 L 160,45" fill="none" stroke="#000000" stroke-width="36" stroke-linecap="round"/>
+  <path d="M 60,180 L 170,110 L 160,45" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4,4"/>
 
   <!-- Badan Robot -->
-  <g transform="translate(190, 110)">
+  <g transform="translate(190, 105)">
     <rect x="-35" y="-45" width="70" height="90" fill="#3b82f6" rx="8" stroke="#93c5fd" stroke-width="2"/>
     
     <!-- Sensor Kiri (Mendeteksi Garis Hitam) -->
     <circle cx="-18" cy="-55" r="9" fill="#000000" stroke="#f87171" stroke-width="3"/>
-    <text x="-18" y="-70" fill="#f87171" font-size="10" font-weight="bold" text-anchor="middle" font-family="sans-serif">Sensor Kiri (HITAM)</text>
+    <text x="-18" y="-70" fill="#f87171" font-size="10" font-weight="bold" text-anchor="middle" font-family="sans-serif">Sensor Kiri (Hitam)</text>
 
     <!-- Sensor Kanan (Mendeteksi Lantai Putih) -->
     <circle cx="18" cy="-55" r="9" fill="#ffffff" stroke="#4ade80" stroke-width="3"/>
-    <text x="50" y="-70" fill="#4ade80" font-size="10" font-weight="bold" text-anchor="middle" font-family="sans-serif">Sensor Kanan (PUTIH)</text>
+    <text x="50" y="-70" fill="#4ade80" font-size="10" font-weight="bold" text-anchor="middle" font-family="sans-serif">Sensor Kanan (Putih)</text>
 
-    <!-- Roda Kiri (Mati / Pelan) -->
+    <!-- Roda Kiri -->
     <rect x="-47" y="-15" width="12" height="36" fill="#1e293b" rx="2" stroke="#64748b"/>
-    <text x="-56" y="8" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="end" font-family="sans-serif">Mati / Pelan</text>
+    <text x="-54" y="8" fill="#cbd5e1" font-size="9" text-anchor="end" font-family="sans-serif">Motor Kiri</text>
 
-    <!-- Roda Kanan (Maju Cepat) -->
-    <rect x="35" y="-15" width="12" height="36" fill="#1e293b" rx="2" stroke="#4ade80" stroke-width="2"/>
-    <text x="54" y="8" fill="#4ade80" font-size="9" font-weight="bold" text-anchor="start" font-family="sans-serif">Maju Cepat ➔</text>
+    <!-- Roda Kanan -->
+    <rect x="35" y="-15" width="12" height="36" fill="#1e293b" rx="2" stroke="#64748b"/>
+    <text x="54" y="8" fill="#cbd5e1" font-size="9" text-anchor="start" font-family="sans-serif">Motor Kanan</text>
   </g>
 
-  <!-- Panah Belok Kiri -->
-  <path d="M 190,45 A 25,25 0 0,0 155,65" fill="none" stroke="#facc15" stroke-width="3" marker-end="url(#arrow)"/>
-  <polygon points="152,70 160,62 162,72" fill="#facc15"/>
-  <text x="135" y="45" fill="#facc15" font-size="11" font-weight="bold" font-family="sans-serif">Belok Kiri</text>
-
-  <!-- Penjelasan Logika -->
-  <text x="210" y="205" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="sans-serif">
-    Logika: Sensor Kiri mendeteksi garis hitam ➔ Motor Kanan berputar maju ➔ Robot belok ke kiri
+  <!-- Keterangan Status Sensor (Tanpa Bocoran Respon Motor) -->
+  <text x="210" y="185" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="sans-serif">
+    Status: Sensor Kiri mendeteksi garis hitam &amp; Sensor Kanan mendeteksi lantai putih
   </text>
 </svg>

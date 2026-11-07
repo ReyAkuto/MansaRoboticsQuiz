@@ -17,7 +17,7 @@
   </defs>
 
   <rect width="400" height="160" fill="#1e222d" rx="12"/>
-  <text x="200" y="28" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="1">RESISTOR 4 GELANG: 220 Ω ±5%</text>
+  <text x="200" y="28" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="1">KODE WARNA RESISTOR 4 GELANG</text>
 
   <!-- Kaki Kiri & Kanan -->
   <rect x="25" y="76" width="90" height="8" fill="url(#leadGrad)" rx="2"/>
@@ -26,20 +26,19 @@
   <!-- Badan Resistor -->
   <g filter="url(#shadow)">
     <path d="M 110,60 C 110,50 125,50 140,58 L 260,58 C 275,50 290,50 290,60 L 290,100 C 290,110 275,110 260,102 L 140,102 C 125,110 110,110 110,100 Z" fill="url(#bodyGrad)"/>
-    <!-- Gelang 1: Merah (2) -->
+    <!-- Gelang 1: Merah -->
     <rect x="135" y="55" width="14" height="50" fill="#e53935"/>
-    <!-- Gelang 2: Merah (2) -->
+    <!-- Gelang 2: Merah -->
     <rect x="168" y="58" width="14" height="44" fill="#e53935"/>
-    <!-- Gelang 3: Cokelat (x10) -->
+    <!-- Gelang 3: Cokelat -->
     <rect x="202" y="58" width="14" height="44" fill="#6d4c41"/>
-    <!-- Gelang 4: Emas (Toleransi ±5%) -->
+    <!-- Gelang 4: Emas -->
     <rect x="252" y="55" width="14" height="50" fill="#ffd700"/>
   </g>
 
-  <!-- Label Penjelas -->
-  <text x="142" y="126" fill="#ef9a9a" font-family="sans-serif" font-size="11" text-anchor="middle">Merah</text>
-  <text x="175" y="126" fill="#ef9a9a" font-family="sans-serif" font-size="11" text-anchor="middle">Merah</text>
-  <text x="209" y="126" fill="#bcaaa4" font-family="sans-serif" font-size="11" text-anchor="middle">Cokelat</text>
-  <text x="259" y="126" fill="#ffe082" font-family="sans-serif" font-size="11" text-anchor="middle">Emas</text>
-  <text x="200" y="148" fill="#e0e0e0" font-family="sans-serif" font-size="12" text-anchor="middle">[ 2 ] [ 2 ] × 10 Ω = 220 Ω ±5%</text>
+  <!-- Label Netral Tanpa Hint -->
+  <text x="142" y="128" fill="#b0bec5" font-family="sans-serif" font-size="11" text-anchor="middle">Gelang 1</text>
+  <text x="175" y="128" fill="#b0bec5" font-family="sans-serif" font-size="11" text-anchor="middle">Gelang 2</text>
+  <text x="209" y="128" fill="#b0bec5" font-family="sans-serif" font-size="11" text-anchor="middle">Gelang 3</text>
+  <text x="259" y="128" fill="#b0bec5" font-family="sans-serif" font-size="11" text-anchor="middle">Gelang 4</text>
 </svg>

@@ -1,20 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="100%" height="100%">
-  <rect width="300" height="140" fill="#1e222d" rx="10"/>
-  <text x="150" y="25" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">SIMBOL LED (LIGHT EMITTING DIODE)</text>
-  <!-- Kawat Kiri (Anoda +) -->
-  <line x1="30" y1="70" x2="120" y2="70" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
-  <!-- Segitiga Dioda -->
-  <polygon points="120,40 120,100 170,70" fill="#00e676"/>
-  <!-- Garis Bar Katoda (-) -->
-  <line x1="170" y1="38" x2="170" y2="102" stroke="#00e676" stroke-width="5" stroke-linecap="round"/>
-  <!-- Kawat Kanan (Katoda -) -->
-  <line x1="170" y1="70" x2="270" y2="70" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="100%" height="100%">
+  <rect width="300" height="130" fill="#1e222d" rx="10"/>
+  <text x="150" y="24" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="1">SIMBOL SKEMATIK</text>
+  <!-- Kawat Kiri -->
+  <line x1="30" y1="65" x2="120" y2="65" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <!-- Segitiga -->
+  <polygon points="120,35 120,95 170,65" fill="#00e676"/>
+  <!-- Garis Bar Katoda -->
+  <line x1="170" y1="33" x2="170" y2="97" stroke="#00e676" stroke-width="5" stroke-linecap="round"/>
+  <!-- Kawat Kanan -->
+  <line x1="170" y1="65" x2="270" y2="65" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
   <!-- 2 Panah Pancaran Cahaya -->
-  <line x1="145" y1="35" x2="170" y2="15" stroke="#ffeb3b" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="170,15 160,18 165,24" fill="#ffeb3b"/>
-  <line x1="160" y1="45" x2="185" y2="25" stroke="#ffeb3b" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="185,25 175,28 180,34" fill="#ffeb3b"/>
-  <circle cx="30" cy="70" r="5" fill="#00e676"/>
-  <circle cx="270" cy="70" r="5" fill="#00e676"/>
-  <text x="150" y="122" fill="#b0bec5" font-family="sans-serif" font-size="12" text-anchor="middle">Dioda Pemancar Cahaya (Kaki Panjang = Anoda)</text>
+  <line x1="145" y1="30" x2="170" y2="10" stroke="#ffeb3b" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="170,10 160,13 165,19" fill="#ffeb3b"/>
+  <line x1="160" y1="40" x2="185" y2="20" stroke="#ffeb3b" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="185,20 175,23 180,29" fill="#ffeb3b"/>
+  <circle cx="30" cy="65" r="5" fill="#00e676"/>
+  <circle cx="270" cy="65" r="5" fill="#00e676"/>
 </svg>

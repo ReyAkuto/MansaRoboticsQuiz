@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="100%" height="100%">
-  <rect width="300" height="140" fill="#1e222d" rx="10"/>
-  <text x="150" y="25" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">SIMBOL SKEMATIK INDUKTOR</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="100%" height="100%">
+  <rect width="300" height="130" fill="#1e222d" rx="10"/>
+  <text x="150" y="24" fill="#00d2ff" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="1">SIMBOL SKEMATIK</text>
   <!-- Kawat Kiri -->
-  <line x1="30" y1="75" x2="80" y2="75" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <line x1="30" y1="70" x2="80" y2="70" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
   <!-- 4 Gelombang Lengkungan Induktor -->
-  <path d="M 80,75 A 17.5,17.5 0 0,1 115,75 A 17.5,17.5 0 0,1 150,75 A 17.5,17.5 0 0,1 185,75 A 17.5,17.5 0 0,1 220,75" 
+  <path d="M 80,70 A 17.5,17.5 0 0,1 115,70 A 17.5,17.5 0 0,1 150,70 A 17.5,17.5 0 0,1 185,70 A 17.5,17.5 0 0,1 220,70" 
         fill="none" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
   <!-- Kawat Kanan -->
-  <line x1="220" y1="75" x2="270" y2="75" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="30" cy="75" r="5" fill="#00e676"/>
-  <circle cx="270" cy="75" r="5" fill="#00e676"/>
-  <text x="150" y="122" fill="#b0bec5" font-family="sans-serif" font-size="12" text-anchor="middle">Kumparan Kawat (Menyimpan Medan Magnet) - L</text>
+  <line x1="220" y1="70" x2="270" y2="70" stroke="#00e676" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="30" cy="70" r="5" fill="#00e676"/>
+  <circle cx="270" cy="70" r="5" fill="#00e676"/>
 </svg>
